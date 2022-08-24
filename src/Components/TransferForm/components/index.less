@@ -1,0 +1,82 @@
+.transferBox {
+  :global {
+    .ant-transfer {
+      .ant-transfer-list:first-child {
+        width: 640px;
+        box-shadow: inset 0px 0px 0px 10px #f0f2f5;
+
+        .ant-transfer-list-header {
+          position: absolute;
+          top: 58px;
+          margin: 0px 20px;
+          width: 480px;
+          height: 60px;
+          border-bottom-color: transparent;
+
+          .ant-transfer-list-header-title {
+            padding-right: 8px;
+          }
+
+          .ant-transfer-list-header-selected {
+            flex: 0 0 128px;
+          }
+
+          .ant-transfer-list-header-dropdown {
+            display: none;
+          }
+
+          .ant-transfer-list-checkbox {
+            flex: 0 0 20px;
+          }
+        }
+
+        .ant-transfer-list-body {
+          background: #f0f2f5;
+
+          .ant-transfer-list-content {
+            margin-top: 50px;
+            padding: 20px;
+            padding-top: 0;
+            width: 520px;
+            height: 200px;
+            border-top: 1px solid #ccc;
+            border-top-color: transparent;
+
+            .ant-transfer-list-content-item {
+              flex-direction: row-reverse;
+            }
+          }
+        }
+
+        .ant-transfer-list-body-search-wrapper {
+          padding: 12px 21px;
+          background: #f0f2f5;
+          text-align: center;
+
+          .ant-input-affix-wrapper {
+            width: 480px;
+            border-color: transparent;
+          }
+        }
+      }
+
+      .ant-transfer-list:last-child {
+        width: 540px;
+
+        .ant-transfer-list-body {
+          .ant-transfer-list-body-search-wrapper {
+            display: none;
+          }
+        }
+
+        .ant-transfer-list-content-item-remove {
+          color: #1348a2;
+        }
+      }
+
+      .ant-transfer-list-content-item {
+        background-color: #fff !important;
+      }
+    }
+  }
+}
