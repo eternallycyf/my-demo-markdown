@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## index
+## demo
 
 <code src="./index.tsx"></code>
 

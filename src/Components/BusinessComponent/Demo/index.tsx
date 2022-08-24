@@ -1,6 +1,4 @@
 import React from 'react';
-import { Foo } from "../..";
-
 export interface IHelloProps {
   /**
    * 可以这样写属性描述
@@ -11,6 +9,6 @@ export interface IHelloProps {
   className?: string; // 支持识别 TypeScript 可选类型为非必选属性
 }
 
-const Hello: React.FC<IHelloProps> = () => <><Foo title="hello world" /></>;
+const Hello: React.FC<IHelloProps> = () => <></>;
 
 export default Hello;
