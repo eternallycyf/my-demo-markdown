@@ -1,17 +1,26 @@
 import { defineConfig } from 'dumi';
-const path = require("path");
+const path = require('path');
 
 const repo = 'my-demo-markdown';
 
 export default defineConfig({
+  define: {
+    'process.env': process.env,
+  },
   title: repo,
-  favicon: '/images/favicon.ico',
-  logo: '/images/logo.png',
+  favicon:
+    process.env.APP_ENV === 'development'
+      ? '/images/favicon.ico'
+      : `/${repo}/images/favicon.ico`,
+  logo:
+    process.env.APP_ENV === 'development'
+      ? '/images/logo.png'
+      : `/${repo}/images/logo.png`,
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
-  base: `/${repo}/`,
-  publicPath: `/${repo}/`,
+  base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
+  publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
   fastRefresh: {},
   ignoreMomentLocale: true,
   // cssModulesTypescriptLoader: {},
@@ -23,9 +32,12 @@ export default defineConfig({
     MyComponents: path.resolve(__dirname, '.', 'src/MyComponents/'),
     style: path.resolve(__dirname, '.', 'src/style/'),
   },
-  links: [
-    { rel: 'stylesheet', type: 'text/css', href: `../css/global.less` },
-  ],
+  links: [{ rel: 'stylesheet', type: 'text/css', href: `../css/global.less` }],
+  nodeModulesTransform: {
+    type: 'none',
+  },
+  devtool:
+    process.env.NODE_ENV === 'development' ? 'cheap-module-source-map' : 'eval',
   extraBabelPlugins: [
     [
       'babel-plugin-import',

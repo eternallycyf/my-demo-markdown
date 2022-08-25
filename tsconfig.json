@@ -10,17 +10,13 @@
     "baseUrl": "./",
     "strict": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@@/*": [
-        "src/.umi/*"
-      ]
+      "@/*": ["src/*"],
+      "@@/*": ["src/.umi/*"]
     },
     "allowSyntheticDefaultImports": true
   },
   "include": [
-    "./typings/*.ts",
+    "./typings/*.d.ts",
     "mock/**/*",
     "src/**/*",
     "config/**/*",
