@@ -28,6 +28,7 @@ export default defineConfig({
   exportStatic: {},
   alias: {
     src: path.resolve(__dirname, '.', './src/'),
+    public: path.resolve(__dirname, '.', './public/'),
     Components: path.resolve(__dirname, '.', 'src/Components/'),
     MyComponents: path.resolve(__dirname, '.', 'src/MyComponents/'),
     style: path.resolve(__dirname, '.', 'src/style/'),
