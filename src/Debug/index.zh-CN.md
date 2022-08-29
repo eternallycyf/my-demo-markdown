@@ -1,6 +1,12 @@
+---
+toc: menu
+nav:
+  title: Debug
+---
+
 ## 我遇到的千奇百怪的 bug
 
-### 1.transform3d 闪烁
+## 1.transform3d 闪烁
 
 ```js
 - 问题描述: Chrome 开启硬件加速时 做一个类似硬币一样的东西
@@ -10,7 +16,7 @@ webkit- backface-visibility:hidden
 webkit-perspective: 1000
 ```
 
-### 2.antd mobile-v2 轮播图滑动报错
+## 2.antd mobile-v2 轮播图滑动报错
 
 ```js
 1.使用react 17.0以下版本
@@ -18,7 +24,7 @@ webkit-perspective: 1000
 carousel.js  400行  注释掉：e.preventDefault()
 ```
 
-### 3.vuepress 无法使用 上次 git 上传时间
+## 3.vuepress 无法使用 上次 git 上传时间
 
 ```js
 /Users/eternallycyf/Documents/GitHub/case/pluviophobe-vue-document/node_modules/@vuepress/plugin-last-updated/index.js
@@ -26,7 +32,7 @@ const lastUpdated = dateFormat(timestamp, 'yyyy-MM-dd hh:mm:ss')
 自己重新定义一个时间过滤的函数
 ```
 
-### 4.react return 加注释就报错
+## 4.react return 加注释就报错
 
 ```js
 # 1
@@ -38,7 +44,7 @@ const Hello = ()=> {
 # 2 return 后面什么都不写也会报错
 ```
 
-### 5. rcpress build 上传后 刷新就 404
+## 5. rcpress build 上传后 刷新就 404
 
 ```js
 由于rcpress 只提供了 history API 路由的跳转方式
@@ -65,7 +71,7 @@ git push -f git@github.com:eternallycyf/pluviophobe-react-document.git master:gh
 cd -
 ```
 
-### 6. 阿里云 mysql 本地 navicat 不能连接 提示 1045
+## 6. 阿里云 mysql 本地 navicat 不能连接 提示 1045
 
 ```js
 首先需要服务器防火墙开放3306端口 阿里云安全组放行3306
@@ -78,7 +84,7 @@ cd -
 navicat 主机是公网ip root 密码是自己设置的
 ```
 
-### 7. vscode tsconfig path 别名不起作用
+## 7. vscode tsconfig path 别名不起作用
 
 ```js
 // 可以看 vscode右下角提示, 在某个文件时 就会显示 tsconfig or jsconfig 是否生效
@@ -98,7 +104,7 @@ vscode右下角已经显示 ok 了, 但是 事实还没有好, 不能跳转到 �
 然后 再改回 jsx文件 就 success 了
 ```
 
-### 8. 线上环境正则表达式无法识别 中文字符
+## 8. 线上环境正则表达式无法识别 中文字符
 
 ```js
 我用了一个正则截取中文 （
@@ -109,14 +115,14 @@ var reg1 = /\uff08/g
 这样就可以了
 ```
 
-### 9. vue 父传子 调试工具显示正常 但 console.log 输出 {**ob**: Observer}
+## 9. vue 父传子 调试工具显示正常 但 console.log 输出 {**ob**: Observer}
 
 ```js
 原因: 子组件渲染不会等待 axios的请求
 <子组件
  v-if='xxx.length > 0'
 />
-### 或者在子组件内部 监听
+## 或者在子组件内部 监听
   watch: {
     chartData: {
       deep: true,
@@ -126,17 +132,17 @@ var reg1 = /\uff08/g
       }
     }
   },
-###      Object.assign({}, this.chartData)
+##      Object.assign({}, this.chartData)
 ```
 
-### 10. antd select placeholder 无效
+## 10. antd select placeholder 无效
 
 ```js
 设置初始值为 undefined  就可以了
 <Select value={ xxx ? xxx : undefined } />
 ```
 
-### 11. vue props 异步 watch 监听
+## 11. vue props 异步 watch 监听
 
 ```js
 // this.drawLine 原来是 mounted中的方法
@@ -153,7 +159,7 @@ var reg1 = /\uff08/g
   },
 ```
 
-### 12. vue 在 style 中使用变量
+## 12. vue 在 style 中使用变量
 
 - 使用原生的方法 react 也差不多
 
@@ -195,13 +201,13 @@ export default App;
 }
 ```
 
-### 13. vscode 双击时删除键无效
+## 13. vscode 双击时删除键无效
 
 ```js
 关闭Comment Translate插件
 ```
 
-### 14. redux 调试工具有的项目用不了
+## 14. redux 调试工具有的项目用不了
 
 ```js
 一个新的umi项目 redux调试工具一直是黑框
@@ -212,14 +218,14 @@ export default App;
 redux调试工具貌似升级了 看着样式也变了
 ```
 
-### 15. dva subscriptions 监听路由会触发两次
+## 15. dva subscriptions 监听路由会触发两次
 
 - 使用 `umi` 的 `Link` 组件跳转
 - 不要使用 `history.push()`
 - `github isszue` 上有相关的讨论
 - 还有一些别的解决方法
 
-### 16. antd 表单重新进入页面的时候有残留
+## 16. antd 表单重新进入页面的时候有残留
 
 - 表现为多了一个值
 
@@ -227,13 +233,13 @@ redux调试工具貌似升级了 看着样式也变了
 页面初始化时候 清除表单值 form.resetFieldValue
 ```
 
-### 17. antd-vue 不能禁用年份
+## 17. antd-vue 不能禁用年份
 
 ```js
 升级到最新版;
 ```
 
-### 18. 近期 vue-cli 找不到 peacenotwar。docker 打包失败
+## 18. 近期 vue-cli 找不到 peacenotwar。docker 打包失败
 
 ```js
 vue-cli 依赖于 node-ipc
@@ -248,13 +254,13 @@ https://www.zhihu.com/question/522144107
   },
 ```
 
-### 19. vue 使用 echarts 切换页面后地图未初始化
+## 19. vue 使用 echarts 切换页面后地图未初始化
 
 ```js
 使用ref来获取dom;
 ```
 
-### 20. antd-charts 坐标轴是乱序
+## 20. antd-charts 坐标轴是乱序
 
 ```js
 # 横坐标lable乱序触发条件
@@ -283,14 +289,14 @@ https://www.zhihu.com/question/522144107
 https://g2.antv.vision/zh/docs/manual/tutorial/scale#%E5%BA%A6%E9%87%8F%E5%AE%9A%E4%B9%89
 ```
 
-### 21. Border 放大变成空心
+## 21. Border 放大变成空心
 
 ```js
 增加背景色;
 background: xxx;
 ```
 
-### 22. vue-admin-element 页签点击首页会触发上个页面的生命周期
+## 22. vue-admin-element 页签点击首页会触发上个页面的生命周期
 
 ```js
 # 使用组件内的钩子 进行处理
@@ -303,7 +309,7 @@ background: xxx;
 # 根据路由变化进行 watch 重新调用初始化函数
 ```
 
-### 23. vue 调试工具打不开
+## 23. vue 调试工具打不开
 
 ```js
 # vue2
@@ -312,7 +318,7 @@ Vue.config.devtools = true
 app.config.performance = true
 ```
 
-### 24. react 会渲染两次 闪烁
+## 24. react 会渲染两次 闪烁
 
 ```js
 - aaa的数据更新后又重新触发了渲染

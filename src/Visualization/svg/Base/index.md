@@ -1,6 +1,6 @@
 ---
 nav:
-  title: visualization
+  title: Visualization
   path: /visualization
 ---
 
