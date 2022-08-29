@@ -7,9 +7,7 @@ const word = require('public/word.docx');
 const repo = 'my-demo-markdown';
 
 const path =
-  process.env.APP_ENV === 'development'
-    ? `/${repo}/word.docx`
-    : `/${repo}/word.docx`;
+  process.env.APP_ENV === 'development' ? `/word.docx` : `/${repo}/word.docx`;
 /**
  * description： 导出echarts图片，格式转换
  */
