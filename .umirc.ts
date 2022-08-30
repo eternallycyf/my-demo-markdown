@@ -37,10 +37,6 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  locales: [
-    ['zh-CN', '中文'],
-    ['en-US', 'English'],
-  ],
   devtool:
     process.env.NODE_ENV === 'development' ? 'cheap-module-source-map' : 'eval',
   extraBabelPlugins: [

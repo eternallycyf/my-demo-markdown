@@ -1,12 +1,12 @@
 ---
 nav:
-  title: visualization
+  title: Visualization
   path: /visualization
 ---
 
 ## canvas
 
-## 1. Canvas 初始化
+### 1. Canvas 初始化
 
 > canvas 的样式通过 canvas 标签处 设置
 
@@ -22,7 +22,7 @@ nav:
 
 ---
 
-## 2. **Canvas** 基础模板
+### 2. **Canvas** 基础模板
 
 ```javascript
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ var ctx = myCanvas.getContext('2d');
 
 ---
 
-## 3. canvas 基本方法
+### 3. canvas 基本方法
 
 ```javascript
 <script>
@@ -61,7 +61,7 @@ var ctx = myCanvas.getContext('2d');
 </script>
 ```
 
-### 3.1 基础外形样式
+#### 3.1 基础外形样式
 
 | 样式类型   | 样式名称       | 使用方法                       | 其他注释                        |
 | ---------- | -------------- | ------------------------------ | ------------------------------- |
@@ -92,7 +92,7 @@ var ctx = myCanvas.getContext('2d');
 |            |                |                                |                                 |
 |            |                |                                |                                 |
 
-### 3.2 复杂功能样式
+#### 3.2 复杂功能样式
 
 | 函数作用       | 函数名称  | 使用方法               | 其他注释               |
 | -------------- | --------- | ---------------------- | ---------------------- |
@@ -105,9 +105,9 @@ var ctx = myCanvas.getContext('2d');
 |                |           |                        |                        |
 |                |           |                        |                        |
 
-### 3. 3 应用
+#### 3. 3 应用
 
-#### 3.3.1 渐变矩形
+###### 3.3.1 渐变矩形
 
 ```javascript
 ctx.lineWidth = 30;
@@ -120,7 +120,7 @@ for (var i = 0; i < 255; i++) {
 }
 ```
 
-#### 3.3.2 渐变矩形
+###### 3.3.2 渐变矩形
 
 ```javascript
 /*2.网格的大小*/
@@ -147,7 +147,7 @@ for (var i = 0; i <= yLineTotal; i++) {
 }
 ```
 
-#### 3.3.3 坐标系
+###### 3.3.3 坐标系
 
 ```javascript
 var space = 20;
@@ -179,7 +179,7 @@ ctx.fill();
 ctx.stroke();
 ```
 
-#### 3.3.4 点
+###### 3.3.4 点
 
 ```javascript
 var coordinate = {
@@ -196,7 +196,7 @@ ctx.closePath();
 ctx.fill();
 ```
 
-#### 3.3.5 折线图
+###### 3.3.5 折线图
 
 ```javascript
 /*1.构造函数*/
@@ -355,7 +355,7 @@ var lineChart = new LineChart();
 lineChart.init(data);
 ```
 
-#### 3.3.6 渐变矩形
+###### 3.3.6 渐变矩形
 
 ```javascript
 第一种方法
@@ -376,9 +376,9 @@ var linearGradient = ctx.createLinearGradient(100, 100, 500, 400);
       ctx.fillRect(100, 100, 400, 100);
 ```
 
-## 4. 图形绘制进阶
+### 4. 图形绘制进阶
 
-### 4.1 矩形
+#### 4.1 矩形
 
 ```markdown
 - rect(x,y,w,h) 没有独立路径
@@ -387,7 +387,7 @@ var linearGradient = ctx.createLinearGradient(100, 100, 500, 400);
 - clearRect(x,y,w,h) 擦除矩形区域
 ```
 
-### 4.2 圆弧绘制
+#### 4.2 圆弧绘制
 
 ```markdown
 弧度概念 π/180===弧度
@@ -415,7 +415,7 @@ canvas 工具 中心坐标即为（ w/2, y/2 ）
 <img width="400px" height="300px" src="images/square.jpg"></img>
 ```
 
-### 4.3 绘制文本
+#### 4.3 绘制文本
 
 ```markdown
 - ctx.font = '18px 微软雅黑' 设置字体
@@ -449,11 +449,11 @@ canvas 工具 中心坐标即为（ w/2, y/2 ）
 
 4.6
 
-## 5.动画
+### 5.动画
 
-#### 绘制图片
+###### 绘制图片
 
-### 5.1drawImage()
+#### 5.1drawImage()
 
 ```markdown
 - 三个参数 drawImage(img,x,y)
@@ -469,7 +469,7 @@ canvas 工具 中心坐标即为（ w/2, y/2 ）
   - x1,y1,w1,h1 画布中的一个矩形区域
 ```
 
-### 5.2 序列帧动画
+#### 5.2 序列帧动画
 
 ```markdown
 - 绘制精灵图
@@ -478,7 +478,7 @@ canvas 工具 中心坐标即为（ w/2, y/2 ）
 - 键盘控制
 ```
 
-### 5.3 坐标变换
+#### 5.3 坐标变换
 
 ```markdown
 - 平移 移动画布的原点
@@ -489,7 +489,7 @@ canvas 工具 中心坐标即为（ w/2, y/2 ）
   - rotate(angle) 参数表示旋转角度
 ```
 
-## 6. canvas 出现的问题
+### 6. canvas 出现的问题
 
 - 非零环绕规则： 针对填充问题
 
