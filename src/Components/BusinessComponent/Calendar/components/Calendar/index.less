@@ -1,0 +1,60 @@
+.my-calendar {
+  width: 324px;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  color: #666;
+  font-size: 12px;
+
+  thead {
+    border-bottom: 1px solid #ddd;
+  }
+
+  tr {
+    height: 38px;
+  }
+
+  td {
+    text-align: center;
+  }
+
+  th {
+    font-weight: normal;
+  }
+
+  .week-day {
+  }
+
+  .day {
+    &.rest-day {
+      color: #ccc;
+    }
+
+    &.current-day {
+      cursor: pointer;
+    }
+
+    &.current {
+      color: hotpink;
+      font-weight: bold;
+    }
+
+    &.selected {
+      border-radius: 100%;
+      background: #1890ff;
+      color: #fff;
+    }
+
+    &:hover {
+      color: hotpink;
+    }
+  }
+
+  .current {
+  }
+
+  .rest-day {
+  }
+
+  .current-day {
+  }
+}

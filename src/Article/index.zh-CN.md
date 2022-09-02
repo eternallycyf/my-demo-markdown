@@ -262,7 +262,3 @@ https://live.juejin.cn/4354/256219?utm_source=bannner&utm_medium=bannner&utm_cam
 
 - [28 个 canvas 知名的库](https://juejin.cn/post/7038267477121302542#heading-4)
 - [canvas 资源大全(200+)](https://github.com/chinaBerg/awesome-canvas)
-
-## docker
-
-<embed src="./docker.md"></embed>

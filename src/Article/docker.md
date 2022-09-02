@@ -368,3 +368,6 @@ http {
 - https://github.com/eternallycyf/nuxtjs-docker-nginx-demo
 
 ### vite
+
+```tsx
+```

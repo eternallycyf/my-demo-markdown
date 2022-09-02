@@ -22,7 +22,6 @@ export default defineConfig({
   base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
   publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
   fastRefresh: {},
-  ignoreMomentLocale: true,
   // cssModulesTypescriptLoader: {},
   // cssnano: { normalizeUrl: false, },
   exportStatic: {},
