@@ -1,8 +1,12 @@
 ---
-hide: true
+order: 1
+group:
+  path: /github
+  title: Github
+  order: 1
 ---
 
-## 3.github 卡顿原因
+- github 卡顿原因
 
 ```js
 github没有被墙 但是亚洲cdn被墙了 所以git push git clone 会卡
@@ -14,7 +18,7 @@ github没有被墙 但是亚洲cdn被墙了 所以git push git clone 会卡
     安装后在github ssh http zip下载都会多出几个下载方式
 ```
 
-### 1.在 host 文件写入最新的动态 ip
+- 1.在 host 文件写入最新的动态 ip
 
 ```js
 # https://www.ipaddress.com/
@@ -26,7 +30,7 @@ github没有被墙 但是亚洲cdn被墙了 所以git push git clone 会卡
 sudo killall -HUP mDNSResponder
 ```
 
-### 2.ssr 小飞机代理
+- 2.ssr 小飞机代理
 
 ```js
 # 下载 ShadowsocksX-NG (github上也有)

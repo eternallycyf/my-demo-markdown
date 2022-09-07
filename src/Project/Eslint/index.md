@@ -1,8 +1,12 @@
 ---
-hide: true
+order: 1
+group:
+  path: /eslint
+  title: Eslint
+  order: 1
 ---
 
-## 2.Eslint
+## Eslint
 
 ### prettier
 

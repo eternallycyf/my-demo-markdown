@@ -1,8 +1,12 @@
 ---
-hide: true
+order: 1
+group:
+  path: /github
+  title: Github
+  order: 1
 ---
 
-## 3.github 卡顿原因
+## github 卡顿原因
 
 ```js
 github没有被墙 但是亚洲cdn被墙了 所以git push git clone 会卡

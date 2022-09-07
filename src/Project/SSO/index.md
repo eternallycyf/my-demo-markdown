@@ -1,8 +1,10 @@
 ---
-hide: true
+order: 1
+group:
+  path: /sso
+  title: sso单点登录
+  order: 1
 ---
-
-## 5.单点登录
 
 - 1.前端把要登录系统的标识和登录人的 id 发给后端
 - 2.后端把该信息储存起来并生成一个 code,返回给前端

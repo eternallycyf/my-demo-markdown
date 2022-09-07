@@ -5,14 +5,14 @@ nav:
   order: 1
 ---
 
-## 1.[I have encountered many strange bugs](/debug)
+## 1.[我遇到的千奇百怪的 bug](/debug)
 
-## 2.[Component](/components)
+## 2.[封装的组件](/components)
 
-## 3.[Visualization](/visualization)
+## 3.[可视化](/visualization)
 
-## 4.[npm package](/npm)
+## 4.[npm 包](/npm)
 
-## 5.[project difficulties](/project)
+## 5.[项目难点](/project)
 
-## 6.[Article](/article)
+## 6.[文章](/article)

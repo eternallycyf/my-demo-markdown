@@ -1,3 +1,11 @@
+---
+order: 1
+group:
+  path: /docker
+  title: docker
+  order: 1
+---
+
 ## 1.服务器安装 docker
 
 ### 卸载 docker
@@ -368,6 +376,3 @@ http {
 - https://github.com/eternallycyf/nuxtjs-docker-nginx-demo
 
 ### vite
-
-```tsx
-```
