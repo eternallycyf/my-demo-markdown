@@ -1,9 +1,7 @@
 ---
-order: 1
 group:
   path: /websocket
   title: Websocket
-  order: 1
 ---
 
 ## Websocket

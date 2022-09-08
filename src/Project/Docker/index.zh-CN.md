@@ -1,10 +1,11 @@
 ---
-order: 1
+order: 6
 group:
   path: /docker
   title: docker
-  order: 1
 ---
+
+## docker
 
 ## 1.服务器安装 docker
 

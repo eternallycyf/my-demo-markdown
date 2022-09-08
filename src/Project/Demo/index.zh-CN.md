@@ -1,9 +1,8 @@
 ---
-order: 1
+order: 20
 group:
   path: /demo
   title: Demo
-  order: 1
 ---
 
 ## Demo

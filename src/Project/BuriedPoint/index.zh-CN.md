@@ -1,9 +1,7 @@
 ---
-order: 1
 group:
   path: /BuriedPoint
   title: BuriedPoint
-  order: 1
 ---
 
 ## BuriedPoint

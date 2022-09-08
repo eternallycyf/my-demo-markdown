@@ -1,9 +1,7 @@
 ---
-order: 1
 group:
   path: /sso
   title: sso单点登录
-  order: 1
 ---
 
 - 1.前端把要登录系统的标识和登录人的 id 发给后端

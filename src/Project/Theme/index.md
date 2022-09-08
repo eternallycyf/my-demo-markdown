@@ -1,10 +1,11 @@
 ---
-order: 1
+order: 5
 group:
   path: /theme
   title: theme
-  order: 1
 ---
+
+## theme
 
 ## 以 umi3 为例
 

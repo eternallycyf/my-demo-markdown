@@ -2,8 +2,7 @@
 order: 1
 group:
   path: /github
-  title: Github
-  order: 1
+  title: Github提交卡顿原因
 ---
 
 - github 卡顿原因

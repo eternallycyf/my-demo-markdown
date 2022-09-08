@@ -2,6 +2,8 @@
 nav:
   title: Visualization
   path: /visualization
+group:
+  title: canvas
 ---
 
 ## canvas

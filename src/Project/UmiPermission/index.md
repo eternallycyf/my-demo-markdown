@@ -1,12 +1,11 @@
 ---
-order: 1
+order: 6
 group:
   path: /umi_permission
-  title: umi权限控制流程
-  order: 1
+  title: UmiPermission
 ---
 
-## 权限流程
+## UmiPermission
 
 ## layout 布局
 

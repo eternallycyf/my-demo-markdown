@@ -1,9 +1,8 @@
 ---
-order: 1
+order: 4
 group:
   path: /eslint
   title: Eslint
-  order: 1
 ---
 
 ## Eslint

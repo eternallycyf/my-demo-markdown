@@ -1,7 +1,7 @@
 ---
 toc: menu
 nav:
-  title: Debug
+  title: 我遇到的千奇百怪的 bug
 ---
 
 ## 我遇到的千奇百怪的 bug

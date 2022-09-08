@@ -1,12 +1,10 @@
 ---
-order: 1
 group:
   path: /Persistence
   title: Persistence
-  order: 1
 ---
 
-## 持久化
+## Persistence
 
 ```tsx | pure
 // app.tsx

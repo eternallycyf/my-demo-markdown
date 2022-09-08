@@ -1,9 +1,7 @@
 ---
-order: 1
 group:
   path: /MultipleTag
   title: MultipleTag
-  order: 1
 ---
 
 ## MultipleTag
