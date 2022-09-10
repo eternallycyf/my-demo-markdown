@@ -19,6 +19,13 @@ export default defineConfig({
   outputPath: 'docs-dist',
   mode: 'site',
   hash: true,
+  navs: [
+    null,
+    {
+      title: 'GitHub',
+      path: 'https://github.com/eternallycyf/my-demo-markdown',
+    },
+  ],
   base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
   publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
   fastRefresh: {},
