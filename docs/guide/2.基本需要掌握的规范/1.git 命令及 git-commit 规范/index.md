@@ -1,10 +1,11 @@
 ---
 order: 2
-toc: menu
-title: 2.需要掌握的基本规范
+nav:
+  title: 前端之路
+  path: /guide
 ---
 
-## 1. git 命令
+## git 命令及 git-commit 规范
 
 ### init / query
 
@@ -28,15 +29,15 @@ title: 2.需要掌握的基本规范
 
 ### Remove cancel version
 
-| 删除命令                     | 描述                                |
-| ---------------------------- | ----------------------------------- |
-| git checkout <filePath>      | 撤销工作区修改                      |
-| git reset HEAD --hard        | 撤销 git add 命令                   |
-| git reset --hard \<CommitID> | 版本跳转到指定提交版本的 git 仓库   |
-| rm -rf .git                  | 只移除本地仓库 不移除文件           |
-| git rm -f <fileName>         | 移除文件 => 本地仓库 && 工作区      |
-| git rm --cached <fileName>   | 移除文件 => 本地仓库 [不移除工作区] |
-|                              |                                     |
+| 删除命令                    | 描述                                |
+| --------------------------- | ----------------------------------- |
+| git checkout <filePath>     | 撤销工作区修改                      |
+| git reset HEAD --hard       | 撤销 git add 命令                   |
+| git reset --hard 'CommitID' | 版本跳转到指定提交版本的 git 仓库   |
+| rm -rf .git                 | 只移除本地仓库 不移除文件           |
+| git rm -f <fileName>        | 移除文件 => 本地仓库 && 工作区      |
+| git rm --cached <fileName>  | 移除文件 => 本地仓库 [不移除工作区] |
+|                             |                                     |
 
 ### branch
 
@@ -53,7 +54,7 @@ title: 2.需要掌握的基本规范
 | git checkout <remoteBranchName>                                          | 下载远程分支                                   |
 | git checkout -b <localBranchName> <remoteReposityoryName>/<remoteBranch> | 跟踪分支 => 将远程分支下载到本地仓库 并重命名  |
 | git push <remoteRepositoryName> --delete <remoteBranchName>              | 删除远程仓库的指定分支                         |
-| git push -u origin \<BranchName>                                         | 将分支推送到远程仓库                           |
+| git push -u origin 'BranchName'                                          | 将分支推送到远程仓库                           |
 
 ### push pull
 
@@ -169,13 +170,9 @@ exec：执行shell命令（缩写:x）
 drop：我要丢弃该commit（缩写:d）
 ```
 
-## 2. git-commit 规范
+## 2. commit 规范
 
-### Commit message 目的
-
-- `commit message` 应该清晰明了，说明本次提交的目的。
-
-#### Augular 规范
+## Augular 规范
 
 - `Header` 是必需的，`Body` 和 `Footer` 可以省略。
 
@@ -187,13 +184,13 @@ drop：我要丢弃该commit（缩写:d）
 <footer>
 ```
 
-### 格式讲解
+## 格式讲解
 
-#### Header
+### Header
 
 - `Header`部分只有一行，包括三个字段：`type`（必需）、`scope`（可选）和`subject`（必需）。
 
-#### type
+### type
 
 用于说明本次`commit`的类别，只允许使用下面`7`个标识
 
@@ -210,15 +207,15 @@ drop：我要丢弃该commit（缩写:d）
 其他情况（docs、chore、style、refactor、test）由你决定，要不要放入 Change log，建议是不要。
 ```
 
-#### scope
+### scope
 
 - 用于说明 `commit` 影响的范围，比如数据层、控制层、视图层等等，视项目不同而不同
 
-#### subject
+### subject
 
 - 是 `commit` 目的的简短描述，不超过`50`个字符。
 
-#### Body
+### Body
 
 - 有两个注意点：
   - 使用第一人称现在时，比如使用`change`而不是`changed`或`changes`。
@@ -302,166 +299,3 @@ Body部分的格式是固定的，必须写成This reverts commit <hash>.，
 - https://www.jianshu.com/p/c7e40dab5b05
 - https://jiongks.name/blog/git-commit/
 - https://www.npmjs.com/package/commitizen
-
-## 3. typescript 注释规范
-
-### 基本类型
-
-### @type
-
-```typescript
-# @type 描述类型 变量的注释
-  @type {string|boolean} {Window} {HTMLElement}
-  {(s: string, b: boolean) => number}
-  {Function}
-  {const}
-  {接口}
-  {typeof import('./xxx').xxx}
-  {*}  =>   any
-  {?}  =>   unknown
-  var xxx;
-```
-
-### @typedef
-
-```typescript
-# @typedef 添加注释接口 别的地方可以直接用@typedef定义的
-  @typedef {string} A
-  @type {A}
-```
-
-### @filename
-
-```typescript
-# @filename 导入文件
-  ts: @filename: types.d.ts
-  js: @param { import("./types").Pet } p
-```
-
-### @param
-
-```typescript
-# @param 描述参数 和type方式一样 但是加了参数名
-  @param {string} 参数名
-         {string} [p]         可选
-         {string} [p1='test'] 可选+默认值
-         {string} options.prop1
-```
-
-### @returns
-
-```typescript
-# 返回值 @returns
-  @returns {Promise<string[]>}
-```
-
-### @property
-
-```typescript
-# 对象的属性 @property
-  @property {string} [prop1='1']
-  @prop {string} [prop1='1']
-```
-
-### @callback
-
-```typescript
-# 指定回调函数类型 @callback
-  @callback requestCallback
-```
-
-### @template
-
-```typescript
-# 泛型 @template
-  @template T
-  @template [T=object] 默认值
-  @template U,V
-  @param {T} x
-  @template {string} T
-```
-
-### @emum
-
-```typescript
-# emum
-  @emum {number}
-  @enum {function(number): number}
-```
-
-### class
-
-```typescript
-#
-class Demo {
-  /**
-   * @param {number} data
-   */
-  constructor(data){
-    this.name = 'foo';
-    /** @type {string | null} */
-    this.title = null
-  }
-
-  /**
-   * @param
-   */
-  init(s){
-
-  }
-}
-#
-/** @public */
-/** @private */
-/** @protected */
-/** @readonly */
-/** @override */  覆盖基类方法上使用
-/** @implements {重构的方法名} */
-# 继承
-/**
- * @template T
- * @extends {Set<T>}
- */
-class SortableSet extends Set {
-  // ...
-}
-# constructor
-添加后检查更严格  this
-@constructor
-```
-
-### 其他
-
-```typescript
-# this
-@this {HTMLElement}
-
-# 当一个函数被弃用时 会加入一个删除线
-/** @deprecated */
-
-# @see 链接到程序中的其他名称 点击会跳转
-type Box<T> = { t: T }
-/** @see Box for implementation details */
-type Boxify<T> = { [K in keyof T]: Box<T> };
-
-# @link 可以在任何标签里面使用 和@see一样
-  @link xxx 文字
-
-# @author 作者
-  @author Jun <xxx@qq.com>
-
-# 可以为空的类型
-  @type {!number}
-```
-
-### 参考链接
-
-- https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html
-
-- https://jsdoc.app/
-
-- https://google.github.io/styleguide/jsguide.html
-
-## 4. json-schema
-
-- https://json-schema.apifox.cn/

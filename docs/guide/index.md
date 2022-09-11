@@ -20,47 +20,46 @@ nav:
 
 ## 2. 需要掌握的基本规范
 
-- [git 命令及 git-commit 规范](/guide/2#1-git-命令)
-- [typescript 注释规范](/guide/2#3-typescript-注释规范)
-- [json-schema](/guide/2#4-json-schema)
+- [git 命令及 git-commit 规范](/guide/2.基本需要掌握的规范/git%20命令及%20git-commit%20规范)
+- [typescript 注释规范](/guide/2.基本需要掌握的规范/typescript%20注释规范)
+- [json-schema](/guide/2.基本需要掌握的规范/json-schema)
 
 ## 3. CSS
 
-- [TailwindCSS](/guide/3#1-tailwindcss)
-- [Grid 布局](/guide/3#2-grid-布局)
-- [Flex 布局](/guide/3#3-flex-布局)
-- [CSS 原生变量 var(--color)](/guide/3#4-css-原生变量-var--color)
+- [TailwindCSS](/guide/3.css/tailwind-css)
+- [Grid 布局](/guide/3.css/grid%20布局)
+- [Flex 布局](/guide/3.css/flex%20布局)
+- [CSS 原生变量 var(--color)](/guide/3.css/css变量)
 
 ## 4.写文档的工具
 
-- [dumi](/guide/4#1-dumi)
-- [vuepress](/guide/4#2-vuepress)
-- [rcpress](/guide/4#3-rcpress)
-- [storybook](/guide/4#4-storybook)
-- [hexo](/guide/4#4-hexo)
+- [dumi](/guide/4.写文档的工具/dumi)
+- [vuepress](/guide/4.写文档的工具/vuepress)
+- [rcpress](/guide/4.写文档的工具/rcpress)
+- [storybook](/guide/4.写文档的工具/storybook)
+- [hexo](/guide/4.写文档的工具/hexo)
 
 ## 5. 前端工程化
 
-- [webpack](/guide/5#1-webpack)
-- [项目-eslint-prettierrc-及-vscode-插件-配置](/guide/5#2-项目-eslint-prettierrc-及-vscode-插件-配置)
-- [node-脚本自动注入路由](/guide/5#3-node-脚本自动注入路由)
-- [browserslistrc](/guide/5#4-browserslistrc)
-- [commitlintconfigjs](/guide/5#5-commitlintconfigjs)
-- [gitattributes](/guide/5#6-gitattributes)
-- [license](/guide/5#7-license)
-- [npmrc](/guide/5#8-npmrc)
-- [stylelintrc](/guide/5#9-stylelintrc)
-- [tsconfig](/guide/5#10-tsconfig)
+- [webpack](/guide/5.前端工程化/webpack)
+- [项目-eslint-prettierrc-及-vscode-插件-配置](/guide/5.前端工程化/项目-eslint-prettierrc-及-vscode-插件-配置)
+- [node-脚本自动注入路由](/guide/5.前端工程化/node-脚本自动注入路由)
+- [browserslistrc](/guide/5.前端工程化/browserslistrc)
+- [commitlintconfigjs](/guide/5.前端工程化/commitlintconfigjs)
+- [gitattributes](/guide/5.前端工程化/gitattributes)
+- [license](/guide/5.前端工程化/license)
+- [npmrc](/guide/5.前端工程化/npmrc)
+- [stylelintrc](/guide/5.前端工程化/stylelintrc)
+- [tsconfig](/guide/5.前端工程化/tsconfig)
 
 ## 6. 运维相关
 
-- 阿里云 宝塔
-- linux 命令
-- nginx 配置
-- docker dockerfile docker-compose docker-swam
-- cicd
-- jenkins
-- k8s
+- [阿里云](/guide/6.运维相关/阿里云)
+- [linux 命令](/guide/6.运维相关/linux命令)
+- [nginx 配置](/guide/6.运维相关/nginx)
+- [docker](/guide/6.运维相关/docker)
+- [cicd](/guide/6.运维相关/cicd)
+- [k8s](/guide/6.运维相关/k8s)
 
 ## 7. 单元测试
 
