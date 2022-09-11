@@ -1,7 +1,6 @@
 ---
 title: 总览
 order: 1
-toc: menu
 nav:
   title: 前端之路
   order: 1
@@ -34,27 +33,24 @@ nav:
 
 ## 4.写文档的工具
 
-- dumi
-- vuepress
-- rcpress
-- storybook
-- hexo
+- [dumi](/guide/4#1-dumi)
+- [vuepress](/guide/4#2-vuepress)
+- [rcpress](/guide/4#3-rcpress)
+- [storybook](/guide/4#4-storybook)
+- [hexo](/guide/4#4-hexo)
 
 ## 5. 前端工程化
 
-- `vscode`插件及`eslint` `prettier` 等配置
-- webpacK
-  - prettier
-  - node 脚本
-  - browserslistrc
-  - commitlint.config.js
-  - editorconfig
-  - gitattributes
-  - License
-  - npmrc
-  - stylelintrc
-  - prettierc
-  - tsconfig
+- [webpack](/guide/5#1-webpack)
+- [项目-eslint-prettierrc-及-vscode-插件-配置](/guide/5#2-项目-eslint-prettierrc-及-vscode-插件-配置)
+- [node-脚本自动注入路由](/guide/5#3-node-脚本自动注入路由)
+- [browserslistrc](/guide/5#4-browserslistrc)
+- [commitlintconfigjs](/guide/5#5-commitlintconfigjs)
+- [gitattributes](/guide/5#6-gitattributes)
+- [license](/guide/5#7-license)
+- [npmrc](/guide/5#8-npmrc)
+- [stylelintrc](/guide/5#9-stylelintrc)
+- [tsconfig](/guide/5#10-tsconfig)
 
 ## 6. 运维相关
 
