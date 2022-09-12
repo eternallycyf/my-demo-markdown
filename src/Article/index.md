@@ -39,22 +39,12 @@ nav:
 
 ### react hooks 中 typescript 的写法
 
-https://github.com/typescript-cheatsheets/react
+- https://github.com/typescript-cheatsheets/react
+- https://github.com/mqyqingfeng/Blog
 
 ### 实现 React requestIdleCallback 调度能力
 
-https://juejin.cn/post/7021506472232583199#heading-8
-
-### 关于何时应该将数据存入 redux 或者 vuex 中的决策方法论
-
-```
-第一步，看这个状态是否会被多个组件共享。
-所谓共享，就是多个组件需要读取或者修改这个状态，如果是，那不用多想，应该放在 Store 上，因为 Store 上状态方便被多个组件共用，避免组件之间传递数据；如果不是，继续看第二步。
-第二步，看这个组件被 unmount 之后重新被 mount，之前的状态是否需要保留。
-举个简单例子，一个对话框组件。用户在对话框打开的时候输入了一些内容，不做提交直接关闭这个对话框，这时候对话框就被 unmount 了，然后重新打开这个对话框（也就是重新 mount），需求是否要求刚才输入的内容依然显示？如果是，那么应该把状态放在 Store 上，因为组件在 unmount 之后其中的状态也随之消失了，要想在重新 mount 时重获之前的状态，只能把状态放在组件之外，Store 当然是一个好的选择；如果需求不要求重新 mount 时保持 unmount 之前的状态，继续看第三步。
-第三步，到这一步，基本上可以确定，这个状态可以放在组件中了。
-不过，如果你觉得这个状态很复杂，需要跟踪修改过程，那看你个人喜好，可以选择放在 Store 上；如果你想简单处理，可以心安理得地让这个状态由组件自己管理。
-```
+- https://juejin.cn/post/7021506472232583199#heading-8
 
 ## Vue
 
@@ -87,16 +77,6 @@ https://juejin.cn/post/7040649951923142687
 ### vue 版本的点击跳转到代码的插件（只支持 vite）
 
 https://github.com/webfansplz/vite-plugin-vue-inspector
-
-### Vue3 组件库
-
-看网上评价挺不错的, 支持组件级别定制主题色
-
-https://www.naiveui.com/zh-CN/os-theme
-
-### vue3 实现仿苹果系统侧边消息提示
-
-https://juejin.cn/post/7042114791791394824
 
 ## 地图相关的学习资料
 
@@ -138,16 +118,6 @@ https://docs.geoserver.org/latest/en/user/services/wms/reference.html#benefits-o
 4. https://madeapie.com/#/
 5. http://chart.majh.top/
 
-## TypeScript
-
-### TypeScript 高级类型
-
-https://juejin.cn/post/6865860467307315207
-
-### 深入理解 TypeScript
-
-https://jkchao.github.io/typescript-book-chinese/
-
 ## 技术资料
 
 ### 前端监控 SDK 的一些技术要点原理分析
@@ -157,10 +127,6 @@ https://juejin.cn/post/7017974567943536671
 ### 文件上传攻略
 
 https://juejin.cn/post/6844903968338870285
-
-### 从零开发一个 npm 插件(了解下开发 npm 插件的步骤):
-
-https://juejin.cn/post/7007615666609979400
 
 ### 树状数据操作(对递归不熟悉的可以看看)
 
