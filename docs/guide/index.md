@@ -20,46 +20,46 @@ nav:
 
 ## 2. 需要掌握的基本规范
 
-- [git 命令及 git-commit 规范](/guide/2.基本需要掌握的规范/git%20命令及%20git-commit%20规范)
-- [typescript 注释规范](/guide/2.基本需要掌握的规范/typescript%20注释规范)
-- [json-schema](/guide/2.基本需要掌握的规范/json-schema)
+- [git 命令及 git-commit 规范](/article/2.基本需要掌握的规范/1.git%20命令及%20git-commit%20规范)
+- [typescript 注释规范](/article/2.基本需要掌握的规范/2.typescript%20注释规范)
+- [json-schema](/article/2.基本需要掌握的规范/3.json-schema)
 
 ## 3. CSS
 
-- [TailwindCSS](/guide/3.css/tailwind-css)
-- [Grid 布局](/guide/3.css/grid%20布局)
-- [Flex 布局](/guide/3.css/flex%20布局)
-- [CSS 原生变量 var(--color)](/guide/3.css/css变量)
+- [TailwindCSS](/article/3.css/tailwind-css)
+- [Grid 布局](/article/3.css/grid%20布局)
+- [Flex 布局](/article/3.css/flex%20布局)
+- [CSS 原生变量 var(--color)](/article/3.css/css变量)
 
 ## 4.写文档的工具
 
-- [dumi](/guide/4.写文档的工具/dumi)
-- [vuepress](/guide/4.写文档的工具/vuepress)
-- [rcpress](/guide/4.写文档的工具/rcpress)
-- [storybook](/guide/4.写文档的工具/storybook)
-- [hexo](/guide/4.写文档的工具/hexo)
+- [dumi](/article/4.写文档的工具/dumi)
+- [vuepress](/article/4.写文档的工具/vuepress)
+- [rcpress](/article/4.写文档的工具/rcpress)
+- [storybook](/article/4.写文档的工具/storybook)
+- [hexo](/article/4.写文档的工具/hexo)
 
 ## 5. 前端工程化
 
-- [webpack](/guide/5.前端工程化/webpack)
-- [项目-eslint-prettierrc-及-vscode-插件-配置](/guide/5.前端工程化/项目-eslint-prettierrc-及-vscode-插件-配置)
-- [node-脚本自动注入路由](/guide/5.前端工程化/node-脚本自动注入路由)
-- [browserslistrc](/guide/5.前端工程化/browserslistrc)
-- [commitlintconfigjs](/guide/5.前端工程化/commitlintconfigjs)
-- [gitattributes](/guide/5.前端工程化/gitattributes)
-- [license](/guide/5.前端工程化/license)
-- [npmrc](/guide/5.前端工程化/npmrc)
-- [stylelintrc](/guide/5.前端工程化/stylelintrc)
-- [tsconfig](/guide/5.前端工程化/tsconfig)
+- [webpack](/article/5.前端工程化/webpack)
+- [项目-eslint-prettierrc-及-vscode-插件-配置](/article/5.前端工程化/项目-eslint-prettierrc-及-vscode-插件-配置)
+- [node-脚本自动注入路由](/article/5.前端工程化/node-脚本自动注入路由)
+- [browserslistrc](/article/5.前端工程化/browserslistrc)
+- [commitlintconfigjs](/article/5.前端工程化/commitlintconfigjs)
+- [gitattributes](/article/5.前端工程化/gitattributes)
+- [license](/article/5.前端工程化/license)
+- [npmrc](/article/5.前端工程化/npmrc)
+- [stylelintrc](/article/5.前端工程化/stylelintrc)
+- [tsconfig](/article/5.前端工程化/tsconfig)
 
 ## 6. 运维相关
 
-- [阿里云](/guide/6.运维相关/阿里云)
-- [linux 命令](/guide/6.运维相关/linux命令)
-- [nginx 配置](/guide/6.运维相关/nginx)
-- [docker](/guide/6.运维相关/docker)
-- [cicd](/guide/6.运维相关/cicd)
-- [k8s](/guide/6.运维相关/k8s)
+- [阿里云](/article/6.运维相关/阿里云)
+- [linux 命令](/article/6.运维相关/linux命令)
+- [nginx 配置](/article/6.运维相关/nginx)
+- [docker](/article/6.运维相关/docker)
+- [cicd](/article/6.运维相关/cicd)
+- [k8s](/article/6.运维相关/k8s)
 
 ## 7. 单元测试
 
@@ -115,22 +115,22 @@ nav:
 
 - [react](guide/9.react/react)
 - [reactNative](guide/9.react/react-native)
-- [nextjs](/guide/9.react/nextjs)
-- [umi](/guide/9.react/umi)
-- [dva](/guide/9.react/dva)
-- [umi4](/guide/9.react/umi4)
-- [antd pro](/guide/9.react/antd-pro)
-- [ahooks](/guide/9.react/ahooks)
-- [antdDesign](/guide/9.react/antd-design)
-- [react-charts(antv)](</guide/9.react/react-charts(antv)>)
-- [react-map](/guide/9.react/react-map)
-- [zustand](/guide/9.react/zustand)
+- [nextjs](/article/9.react/nextjs)
+- [umi](/article/9.react/umi)
+- [dva](/article/9.react/dva)
+- [umi4](/article/9.react/umi4)
+- [antd pro](/article/9.react/antd-pro)
+- [ahooks](/article/9.react/ahooks)
+- [antdDesign](/article/9.react/antd-design)
+- [react-charts(antv)](</article/9.react/react-charts(antv)>)
+- [react-map](/article/9.react/react-map)
+- [zustand](/article/9.react/zustand)
 
 ## 10. vue 及周边
 
-- [vue](/guide/10.vue/vue)
-- [vue3](/guide/10.vue/vue3)
-- [vite](/guide/10.vue/vite)
+- [vue](/article2/10.vue/vue)
+- [vue3](/article2/10.vue/vue3)
+- [vite](/article2/10.vue/vite)
 
 ## 11. 微信小程序
 
@@ -140,7 +140,7 @@ nav:
 
 ## 12. typescript
 
-- [typescript](/guide/12.typescript/typescript)
+- [typescript](/article2/12.typescript/typescript)
 - https://github.com/typescript-cheatsheets/react
 - https://github.com/mqyqingfeng/Blog
 
@@ -218,9 +218,9 @@ vue sfc
 
 ## 14. 可视化
 
-- [canvas](/guide/14.可视化/canvas)
-- [svg](/guide/14.可视化/svg)
-- [d3](/guide/14.可视化/d3)
+- [canvas](/article2/14.可视化/canvas)
+- [svg](/article2/14.可视化/svg)
+- [d3](/article2/14.可视化/d3)
 - <Badge>three.js</Badge>
 
 ## 15. gis
@@ -232,7 +232,7 @@ vue sfc
 
 ## 17. [项目难点](/project)
 
-## 18. [设计模式](/guide/18.设计模式/1.简单工厂模式)
+## 18. [设计模式](/article2/18.设计模式/1.简单工厂模式)
 
 ## 19. 算法
 
@@ -240,7 +240,7 @@ vue sfc
 
 - lottie
 
-## 21.[macos 相关](/guide/21.macos相关/copilot)
+## 21.[macos 相关](/article2/21.macos相关/copilot)
 
 - oh-my-zsh
 - github 卡顿原因
