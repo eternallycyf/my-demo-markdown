@@ -51,7 +51,6 @@ nav:
 - [gis 相关概念](http://marsgis.cn/doc/study-gis.pdf)
 - [坐标转换](http://epsg.io/transform#s_srs=4326&t_srs=3857)
 - [GeoJSON 格式规范说明](https://www.oschina.net/translate/geojson-spec?cmp)
-
 - [GeoServer](https://docs.geoserver.org/latest/en/user/tutorials/cql/cql_tutorial.html)
 - [WMS 参考](https://docs.geoserver.org/latest/en/user/services/wms/reference.html#benefits-of-wms)
 

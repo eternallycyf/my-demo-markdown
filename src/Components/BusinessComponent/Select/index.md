@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## demo
+## Select
 
 ```tsx
 import React, { useState } from 'react';
@@ -49,7 +49,5 @@ const App = () => {
 
 export default App;
 ```
-
-<code src="./index.tsx"></code>
 
 <API src="/index.tsx"></API>

@@ -1,7 +1,9 @@
 ---
+order: 4
 toc: menu
 nav:
   title: 我遇到的千奇百怪的 bug
+  order: 4
 ---
 
 ## 我遇到的千奇百怪的 bug

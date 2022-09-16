@@ -70,7 +70,7 @@ nav:
 
 - 利用 hexo 搭建个人博客
   - http://wangxince.site
-- ## 写一个组件库(类似)并利用 vuepress rcpress 书写其文档
+- 写一个组件库(类似)并利用 vuepress rcpress 书写其文档
   - https://github.com/eternallycyf/pluviophobe-react
   - https://github.com/eternallycyf/pluviophobe-react
 - 利用 docker docker-compose k8s 部署前端环境 熟悉常用 linux 命令
@@ -113,8 +113,8 @@ nav:
 
 ## 9. react 及周边
 
-- [react](guide/9.react/react)
-- [reactNative](guide/9.react/react-native)
+- [react](/article/9.react/react)
+- [reactNative](/article/9.react/react-native)
 - [nextjs](/article/9.react/nextjs)
 - [umi](/article/9.react/umi)
 - [dva](/article/9.react/dva)
@@ -122,7 +122,7 @@ nav:
 - [antd pro](/article/9.react/antd-pro)
 - [ahooks](/article/9.react/ahooks)
 - [antdDesign](/article/9.react/antd-design)
-- [react-charts(antv)](</article/9.react/react-charts(antv)>)
+- [react-charts(antv)](/article/9.react/react-charts)
 - [react-map](/article/9.react/react-map)
 - [zustand](/article/9.react/zustand)
 
@@ -140,9 +140,23 @@ nav:
 
 ## 12. typescript
 
-- [typescript](/article2/12.typescript/typescript)
-- https://github.com/typescript-cheatsheets/react
-- https://github.com/mqyqingfeng/Blog
+- [typescript 笔记](/article2/12.typescript/typescript)
+- [TypeScript 官方文档](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
+- [TypeScript 中文汉化部分文档](https://github.com/mqyqingfeng/Blog)
+- [深刻理解 TypeScript 英语文档](https://basarat.gitbook.io/typescript/type-system)
+- [深刻理解 TypeScript 中文文档](https://jkchao.github.io/typescript-book-chinese/)
+- [React+TypeScript](https://github.com/typescript-cheatsheets/react)
+- [TypeScript 官网文档 Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
+- [有趣的 TypeScript 代码](https://github.com/sl1673495/typescript-codes)
+- [React + Typescript 工程化治理实践](https://juejin.cn/post/6844903996826583048)
+- [Writing Type-Safe Polymorphic React Components (Without Crashing TypeScript)](https://blog.andrewbran.ch/polymorphic-react-components/)
+- [10++ TypeScript Pro tips/patterns with (or without) React](https://medium.com/@martin_hotell/10-typescript-pro-tips-patterns-with-or-without-react-5799488d6680)
+- [TS 一些工具泛型的使用及其实现](https://zhuanlan.zhihu.com/p/40311981)
+- [巧用 TypeScript（五）-- infer](https://juejin.cn/post/6844903796997357582)
+- [Conditional Types in TypeScript](https://mariusschulz.com/blog/conditional-types-in-typescript)
+- [TypeScript 参数简化实战（进阶知识点 conditional types，中高级必会）](https://juejin.cn/post/6844904057010651143)
+- [Vue Ref 拆包源代码](https://github.com/vuejs/core/blob/985f4c91d9d3f47e1314d230c249b3faf79c6b90/packages/reactivity/src/ref.ts#L89)
+- [Vue3 跟着尤雨溪学 TypeScript 之 Ref 类型从零实现](https://juejin.cn/post/6844904126283776014)
 
 ## 13. 源码
 
@@ -224,6 +238,12 @@ vue sfc
 - <Badge>three.js</Badge>
 
 ## 15. gis
+
+- [gis 相关概念](http://marsgis.cn/doc/study-gis.pdf)
+- [坐标转换](http://epsg.io/transform#s_srs=4326&t_srs=3857)
+- [GeoJSON 格式规范说明](https://www.oschina.net/translate/geojson-spec?cmp)
+- [GeoServer](https://docs.geoserver.org/latest/en/user/tutorials/cql/cql_tutorial.html)
+- [WMS 参考](https://docs.geoserver.org/latest/en/user/services/wms/reference.html#benefits-of-wms)
 
 ## 16. 前端的其他 API
 
