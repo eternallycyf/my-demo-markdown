@@ -34,7 +34,6 @@ export default defineConfig({
   fastRefresh: {},
   // cssModulesTypescriptLoader: {},
   // cssnano: { normalizeUrl: false, },
-  exportStatic: {},
   alias: {
     src: path.resolve(__dirname, '.', './src/'),
     public: path.resolve(__dirname, '.', './public/'),
@@ -46,8 +45,7 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  devtool:
-    process.env.NODE_ENV === 'development' ? 'cheap-module-source-map' : 'eval',
+  devtool: 'eval',
   extraBabelPlugins: [
     [
       'babel-plugin-import',
@@ -57,5 +55,70 @@ export default defineConfig({
         style: true,
       },
     ],
+  ],
+  exportStatic: {},
+  ignoreMomentLocale: true,
+  dynamicImport: {
+    loading: '@/Loading',
+  },
+  // chunks: ['vendors', 'umi'],
+  // chainWebpack: function (config, { webpack }) {
+  //   config.merge({
+  //     optimization: {
+  //       minimize: true,
+  //       splitChunks: {
+  //         chunks: 'async',
+  //         minSize: 30000, //文件最小打包体积，单位byte，默认30000，若单个文件不满足会合并其他文件组成一个
+  //         minChunks: 2, //最小使用到次数，超过2次执行
+  //         automaticNameDelimiter: '.', //连接符
+  //         cacheGroups: {
+  //           vendor: {
+  //             // 基本框架
+  //             name: 'vendors',
+  //             test: /^.*node_modules[\\/](?!react|react-dom|antd).*$/,
+  //             chunks: 'all',
+  //             priority: 10,
+  //           },
+  //           echartsVenodr: {
+  //             // 异步加载echarts包
+  //             name: 'echartsVenodr',
+  //             test: /(echarts|zrender)/,
+  //             chunks: 'async',
+  //             priority: 10, // 高于async-commons优先级
+  //           },
+  //           'async-commons': {
+  //             // 其余异步加载包
+  //             chunks: 'async',
+  //             minChunks: 2,
+  //             name: 'async-commons',
+  //             priority: 9,
+  //           },
+  //           commons: {
+  //             // 其余同步加载包
+  //             chunks: 'all',
+  //             minChunks: 2,
+  //             name: 'commons',
+  //             priority: 8,
+  //           },
+  //         },
+  //       },
+  //     },
+  //   });
+  // },
+  externals: {
+    //   react: 'window.React',
+    //   'react-dom': 'window.ReactDOM',
+    moment: 'window.moment',
+    echarts: 'window.echarts',
+    d3: 'window.d3',
+    exceljs: 'window.exceljs',
+  },
+  scripts: [
+    //   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
+    //   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
+    'https://unpkg.com/moment@2.29.4/moment.js',
+    'https://unpkg.com/echarts@5.3.3/dist/echarts.js',
+    'https://unpkg.com/d3@7.6.1/dist/d3.min.js',
+    'https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js',
   ],
 });

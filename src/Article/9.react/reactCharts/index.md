@@ -11,7 +11,7 @@ nav:
 
 ### canvas
 
-```js
+```js | pure
 yarn add @ant-design/charts
 
 import React from 'react';
