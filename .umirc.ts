@@ -27,10 +27,10 @@ export default defineConfig({
     },
   ],
   // 现在使用github actions来部署，所以不需要在生产模式指定 ${repo} 基础路径
-  base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
-  publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
   // base: process.env.APP_ENV === 'development' ? `/${repo}` : `/`,
   // publicPath: process.env.APP_ENV === 'development' ? `/${repo}` : `/`,
+  base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
+  publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
   fastRefresh: {},
   // cssModulesTypescriptLoader: {},
   // cssnano: { normalizeUrl: false, },
