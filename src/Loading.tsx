@@ -1,5 +1,15 @@
+import { Spin } from 'antd';
 import React from 'react';
 
-export default () => {
-  return <div>加载中...</div>;
-};
+const PageLoding = () => (
+  <div
+    style={{
+      paddingTop: 100,
+      textAlign: 'center',
+    }}
+  >
+    <Spin size="large" />
+  </div>
+);
+
+export default PageLoding;
