@@ -3,7 +3,6 @@ import { PureComponent } from "react";
 import style from "./fileView.less";
 import cx from "classnames";
 import { Skeleton, Image } from "antd";
-import FileViewer from "react-file-viewer";
 import { OutTable } from "react-excel-renderer";
 import { defaultOptions, renderAsync } from "docx-preview";
 import MarkDown from "./MarkDown";
@@ -184,14 +183,7 @@ ${text}
     }
 
     return (
-      <FileViewer
-        title="预览"
-        className={cx(style.iframeStyle, className)}
-        style={styles}
-        fileType={fileType}
-        filePath={src}
-        unsupportedComponent={"不支持"}
-      />
+      <span>不支持</span>
     );
   }
 }

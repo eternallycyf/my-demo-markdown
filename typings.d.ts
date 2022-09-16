@@ -1,6 +1,5 @@
 declare module '*.css';
 declare module '*.less';
-declare module 'react-file-viewer';
 declare module 'react-excel-renderer';
 declare module 'pizzip';
 declare module 'jszip-utils';
