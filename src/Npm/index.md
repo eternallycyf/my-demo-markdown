@@ -1,69 +1,69 @@
-## npm
+## Npm
 
 ### js
 
 ```json
-//AES encryption and decryption library
+// aes 加密解密库
 "crypto-js":"^4.0.0",
-//Operation cookie
+// 操作cookie
 "js-cookie":"^2.2.1",
-//Encryption
+// 加密
 "jsencrypt":"^3.0.0-rc.1",
 "lodash":"^4.17.19",
-//Crop picture
+// 裁切图片
 https://fengyuanchen.github.io/cropper/
-//Rich text editor
+// 富文本编辑器
 https://github.com/fex-team/ueditor
-//Draggable calendar
+// 可拖动的日历
 https://www.npmjs.com/package/fullcalendar
-//Copy
+// 复制
 https://www.npmjs.com/package/clipboard
-//HTML alignment
+// html对齐
 https://www.npmjs.com/package/dom-align
-//Download File
+// 下载文件
 https://www.npmjs.com/package/downloadjs
-//JS using media query
+// js使用媒体查询
 https://www.npmjs.com/package/enquire.js
-//QR code
+// 二维码
 https://www.npmjs.com/package/qrcode
-//JS operation zip
+// js操作zip
 https://www.npmjs.com/package/jszip
-//Save file
+// 保存文件
 https://www.npmjs.com/package/file-saver
-//Operation video ...
+// 操作视频等
 https://www.npmjs.com/package/ezuikit-js
-//Export Excel
+// 导出excel
 https://www.npmjs.com/package/js-export-excel
 ```
 
 ### jquery
 
 ```js
-//Full screen scrolling
+// 全屏滚动
 https://www.dowebok.com/demo/2014/77/
 ```
 
 ### node
 
 ```json
-//Convert path parameters to regular
+// 将路径参数转为正则
 "path-to-regexp":"^6.2.0",
-//Nodejs query string formatting
+// nodejs 查询字符串格式化
 "querystring":"^0.2.0",
-//Convert windows backslash to slash path
+// 将windows 反斜杠转换为斜杠路径
 "slash2":"^2.0.0",
-//TS node environment
+// ts-node 环境
 "ts-node": "^10.4.0",
-//Template engine
+// 模板引擎
 "ejs": "^3.1.6",
-//Operating environment variables under different operating systems
+// 不同操作系统下操作环境变量
 "cross-env": "^7.0.3"
 ```
 
-### animation
+### 动画
 
 ```json
-//Animation library
+// 动画库
 "popmotion":"^9.0.0",
 // animate.css
 https://animate.style/
@@ -72,47 +72,47 @@ https://animate.style/
 ### canvas svg
 
 ```json
-//Visual drag to zoom in and out SVG canvas images
+// 可视化拖拽放大缩小 svg canvas 图片
 https://github.com/fabricjs/fabric.js
-//Lottie cross platform animation reactive web H5
+// lottie 跨平台动画 reactnative web h5
 https://lottiefiles.com/featured
-//React slide picture verification code
+// react滑动图片验证码
 https://github.com/MrXujiang/react-slider-vertify
-//Vue sliding verification code
+// vue滑动验证码
 https://www.npmjs.com/package/vue-puzzle-vcode
-//React picture verification code
+// react图片验证码
 https://github.com/WebEngineerLi/react-captcha
-//React rich text
+// react富文本
 https://braft.margox.cn/
-//React image editor
+// react图像编辑器
 https://github.com/YaoKaiLun/react-img-editor
-//Emoji expression
+// emoji表情
 https://github.com/missive/emoji-mart
-//React QR code
+// react二维码
 https://github.com/zpao/qrcode.react
-// react File Preview pdf csv xslx docx video audio
+// react 文件预览 pdf csv xslx docx video audio
 https://github.com/plangrid/react-file-viewer#readme
-// react Grid operation zoom in zoom out visual drag
+// react 网格操作 放大缩小 可视化拖动
 https://github.com/react-grid-layout/react-grid-layout
-// vue Grid operation zoom in zoom out visual drag
+// vue 网格操作 放大缩小 可视化拖动
 https://github.com/jbaysolutions/vue-grid-layout
-// react Color aspirator
+// react 颜色吸取器
 https://github.com/odedglas/react-linear-gradient-picker
-// vue Image trimming
+// vue图片裁切
 https://www.npmjs.com/package/vue-cropper
-// vue Visual drag
+// vue可视化拖动
 https://www.npmjs.com/package/vue-drag-resize
-// vue Picture view
+// vue图片查看
 https://www.npmjs.com/package/v-viewer
-// react Pdf Preview
+// react pdf预览
 https://github.com/wojtekmaj/react-pdf
-// react Canvas signature
+// react canvas签名
 https://github.com/agilgur5/react-signature-canvas
-// Merge pictures
+// 合并图片
 https://github.com/MarcGodard/merge-images-v2
 ```
 
-### Front end import and export
+### 前端导入导出
 
 ```json
 "xlsx": "^0.17.4"
@@ -120,39 +120,39 @@ https://github.com/MarcGodard/merge-images-v2
 https://github.com/SheetJS/sheetjs
 // excel
 https://www.npmjs.com/package/exceljs
-// js export excel
+// js导出excel
 https://www.npmjs.com/package/js-export-excel
 ```
 
-### Documentation tools
+### 文档工具
 
 ```js
 // vuepress
 https://vuepress.vuejs.org/zh/
-// react vuepress
+// react版本的vuepress
 https://github.com/YvesCoding/rcpress
 // dumi
 https://d.umijs.org/zh-CN/plugin
 ```
 
-### Chart visualization
+### 图表可视化
 
 ```json
 "d3":"^7.3.0",
 "echarts": "^4.8.0",
 // echarts v4
 https://echarts.apache.org/v4/zh/option.html#title
-// echarts demo website
+// echarts demo网站
 https://www.isqqw.com/homepage#/homepage
-// antv react version
+// antv react版本
 "@ant-design/charts": "^1.0.18",
 // antv js
 https://g2plot.antv.vision/zh
-// antv mobile terminal
+// antv 移动端
 https://f2.antv.vision/zh/
-// antv map
+// antv 地图
 https://l7.antv.vision/
-// antv weixin applet f2
+// antv 微信小程序 f2
 https://f2.antv.vision/zh/
 // d3
 https://github.com/d3/d3
@@ -162,105 +162,105 @@ https://github.com/mrdoob/three.js
 https://github.com/pixijs/pixijs
 ```
 
-### map
+### 地图
 
 ```js
-// react-amap Gaud map
+// react-amap 高德地图
 https://elemefe.github.io/react-amap/articles/start
-// Custom capture map area data
+// 自定义截取地图区域数据
 http://datav.aliyun.com/portal/school/atlas/area_selector
-// vue Gaud map
+// vue高德地图
 https://www.npmjs.com/package/vue-amap
-// Thermodynamic diagram
+// 热力图
 https://github.com/pa7/heatmap.js
 ```
 
 ## react
 
 ```json
-// Compatible with different components between antd V3 and V4
+// 兼容 antd v3 和 v4 之间的不同组件
 "@ant-design/compatible": "^1.1.0",
-// Antv data management underlying package
+// antv 数据管理底层包
 "@antv/data-set":"^0.11.4",
-// react Rich Text Editor
+// react 富文本编辑器
 "braft-editor":"^2.3.9"
-// react Rich Text Editor Expansion package markdown Color finder, Emoji, input word limit,...
+// react 富文本编辑器 拓展包 markdown 取色器 表情包 输入字数限制 等等
 "braft-extensions":"^0.0.20",
-// echarts react Wrapper
+// echarts react包装器
 "echarts-for-react":"^2.0.16",
-// immutabible package
+// immutabible 包
 "immutability-helper":"^3.1.1",
-// Base table
+// 基础表格
 "react-base-table":"^1.12.0",
-// react Encapsulated Baidu map
+// react 封装的百度地图
 "react-bmapgl":"^0.1.1",
-// react Drag
+// react 拖拽
 "react-dnd":"^10.0.2",
-// react Drag html5
+// react 拖拽 html5后端版本
 "react-dnd-html5-backend":"^10.0.2",
-// react Browser label bar styles
+// react 浏览器标签栏样式
 "react-helmet": "^6.1.0",
 // pdf
 "react-pdf":"^4.2.0",
-// raect Drag size
+// raect 可拖拽大小
 "react-resizable":"^1.10.1",
 // react hook
 "react-use": "^17.2.4",
-// react Manipulate the picture to enlarge and Preview
+// react 操控图片 放大预览
 "react-zmage": "^0.8.5-beta.36",
-// Persistence redux data
+// 持久化 redux数据
 "redux-persist": "^6.0.0",
-// The react version of keepalive is used to create multiple tabs
+// react版本的 keepalive用来做多页签
 "react-activation": "^0.9.7",
-// React deep combined with antd hooks Library
+// react深度结合antd的hooks库
 "ahooks": "^3.5.2"
-// React virtual list
+// react 虚拟列表
 https://blog.51cto.com/u_15089765/2600316
-// React cross platform framework
+// react 跨平台框架
 https://microsoft.github.io/reactxp/
-// React virtual list
+// react 虚拟列表
 https://github.com/bvaughn/react-virtualized/tree/master/docs#documentation
-// React replication
+// react 复制
 https://github.com/vigosan/react-copy-to-clipboard
-// React TS node document
+// react ts 节点文档
 https://github.com/DefinitelyTyped/DefinitelyTyped/blob/1349b640d4d07f40aa7c1c6931f18e3fbf667f3a/types/react/index.d.ts#L223
-// UMI multi tab plug-in
+// umi 多页签插件
 https://github.com/fangzhengjin/umi-plugin-panel-tabs
-// React jump to vscode
+// react跳转到vscode
 react-dev-inspector
 ```
 
 ### vue
 
 ```json
-// Vue custom document.title
+// vue 自定义 document.title
 https://vue-meta.nuxtjs.org/
 // vue hooks
 https://vueuse.org/
-// Vue rich text editor
+// vue 富文本编辑器
 https://github.com/tinymce/tinymce-vue
-// Vue province city linkage
+// vue省市区联动
 https://github.com/tinymce/tinymce-vue
-// Vue province city linkage
+// vue条形码
 https://www.npmjs.com/package/vue-barcode
-// Vue countdown
+// vue倒计时
 http://panjiachen.github.io/countTo/demo/
-// Vue image clipping
+// vue图片裁切
 https://www.npmjs.com/package/vue-cropper
-// Vue visual drag
+// vue可视化拖动
 https://www.npmjs.com/package/vue-drag-resize
-// Vue infinite scroll instruction
+// vue无限滚动指令
 https://github.com/ElemeFE/vue-infinite-scroll
-// Vue local storage
+// vue本地存储
 https://www.npmjs.com/package/vue-ls
-// Vue picture view
+// vue图片查看
 https://www.npmjs.com/package/v-viewer
-// Vue rotation chart
+// vue轮播图
 https://www.npmjs.com/package/vue-awesome-swiper
-// Vue replication
+// vue复制
 https://www.npmjs.com/package/vue-clipboard2
 // vue qr
 https://www.npmjs.com/package/vue-qr
 ```
 
-### Others to be sorted out
+### 其他待整理

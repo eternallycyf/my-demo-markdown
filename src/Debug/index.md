@@ -6,7 +6,9 @@ nav:
   order: 4
 ---
 
-## 我遇到的千奇百怪的 bug
+# Debug
+
+<Alert>我遇到的千奇百怪的 bug</Alert>
 
 ## 1.transform3d 闪烁
 

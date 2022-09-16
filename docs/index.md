@@ -5,6 +5,8 @@ hero:
   title: my-demo
   desc: 📖 My various demo and bug summary
   actions:
+    - text: Vue-Markdown-demo
+      link: http://wangxince.site/vue-markdown-demo/
     - text: Getting Started
       link: /guide
 # features:

@@ -5,6 +5,8 @@ hero:
   title: my-demo
   desc: 📖 我的各种demo及bug总结
   actions:
+    - text: Vue-Markdown-demo
+      link: http://wangxince.site/vue-markdown-demo/
     - text: 快速上手
       link: /zh-CN/guide
 # features:
