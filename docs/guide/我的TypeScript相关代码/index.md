@@ -298,15 +298,43 @@ interface B extends Omit<A, 'a'> {
 ### `NonNullable<Type>`
 
 - 从 T 中剔除 null 和 undefined
+- `type NonNullable<T> = T extends null | undefined ? never : T;`
 
 ### `Parameters<Type>`
 
 ```ts
+/**
+ * Obtain the parameters of a function type in a tuple
+ */
+type Parameters<T extends (...args: any[]) => any> = T extends (
+  ...args: infer P
+) => any
+  ? P
+  : never;
+
+type A = Parameters<() => void>; // []
+type B = Parameters<typeof Array.isArray>; // [any]
+type C = Parameters<typeof parseInt>; // [string, (number | undefined)?]
+type D = Parameters<typeof Math.max>; // number[]
 ```
 
 ### `ConstructorParameters<Type>`
 
 ```ts
+/**
+ * Obtain the parameters of a constructor function type in a tuple
+ */
+type ConstructorParameters<
+  T extends new (...args: any[]) => any
+> = T extends new (...args: infer P) => any ? P : never;
+type A = ConstructorParameters<ErrorConstructor>;
+// [(string | undefined)?]
+
+type B = ConstructorParameters<FunctionConstructor>;
+// string[]
+
+type C = ConstructorParameters<RegExpConstructor>;
+// [string, (string | undefined)?]
 ```
 
 ### `ReturnType<Type>`
@@ -321,6 +349,20 @@ type T0 = ReturnType<() => string>;
 ### `InstanceType<Type>`
 
 - 获取构造函数类型的实例类型
+
+```ts
+/**
+ * Obtain the return type of a constructor function type
+ */
+type InstanceType<T extends new (...args: any[]) => any> = T extends new (
+  ...args: any[]
+) => infer R
+  ? R
+  : any;
+type A = InstanceType<ErrorConstructor>; // Error
+type B = InstanceType<FunctionConstructor>; // Function
+type C = InstanceType<RegExpConstructor>; // RegExp
+```
 
 ### `ThisParameterType<Type>`
 
@@ -713,4 +755,73 @@ const App: React.FC = () => {
 import xxx from './xxx'
 const Child = ref<InstanceType<typeof xxx>>(null!)
 </script>
+```
+
+## 报错的解决
+
+### 元组
+
+```ts
+const args = [8, 5] as const;
+const angle = Math.atan2(...args);
+```
+
+### 对象索引形式
+
+```ts
+const props = {
+  foo: 'bar',
+};
+props['foo'] = 'baz'; // Element implicitly has an 'any' type because expression of type 'string' can't be used to index type
+```
+
+```ts
+interface Props {
+  foo: string;
+  [key: string]: Props[keyof Props];
+}
+
+const props: Props = {
+  foo: 'bar',
+};
+
+props['foo'] = 'baz'; // ok
+props['bar'] = 'baz'; // error
+```
+
+### 对象尚未定义
+
+```ts
+class Component extends React.Component<{}, {}> {
+    // 这个属性可能是undefined
+    graph: Graph?;
+
+    componentDidMount() {
+      this.graph = new Graph()
+      this.init(this.graph)
+    }
+
+    init() {
+      this.graph.on("click", () => {})  // Object is possibly 'undefined'
+    }
+
+    render() {
+        return <div>foo</div>
+    }
+}
+```
+
+```ts
+// 需要使用 type guards
+init() {
+    if (this.graph) this.graph.on("click", () => {})  // ok
+}
+// !.xxx
+init() {
+    this.graph!.on("click", () => {})  // ok
+}
+// ?.
+init() {
+   this.graph?.on("click", () => {})  // ok
+}
 ```
