@@ -1,12 +1,12 @@
 ---
-title: TypeScript进阶
+title: TypeScript进阶文章
 order: 1
 nav:
   title: 前端之路
   order: 1
 ---
 
-## TypeScript 进阶
+## TypeScript 进阶文章
 
 - [TypeScript 官方文档](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)
 - [TypeScript 中文汉化部分文档](https://github.com/mqyqingfeng/Blog)
