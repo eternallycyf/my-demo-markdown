@@ -171,3 +171,97 @@ nav:
 ```
 
 ## Vue3
+
+- `usePromiseFetch.tsx`
+
+```tsx
+import { reactive, onMounted, unref, defineComponent } from 'vue';
+
+/**
+ * HOC Component transform function
+ * @param {JSX.Element} Wrapped
+ * @param {() => Promise<any>} promiseFn
+ */
+const usePromiseFetch = (
+  Wrapped: JSX.IntrinsicElements | any,
+  promiseFn: (params: any) => Promise<any>,
+  params = {},
+) => {
+  const obj = reactive<{ result: null | {}; error: boolean; loading: boolean }>(
+    {
+      result: null,
+      error: false,
+      loading: false,
+    },
+  );
+
+  const fetchRequest = async params => {
+    obj.loading = true;
+    const result = await promiseFn(params).finally(() => {
+      obj.loading = false;
+    });
+    obj.result = result;
+  };
+
+  onMounted(() => fetchRequest(params));
+
+  const NewWrapped = defineComponent<InstanceType<typeof Wrapped>>({
+    render() {
+      if (obj.loading) return <span>loading...</span>;
+      if (obj.error) return <span>error...</span>;
+      return (
+        <Wrapped loading={unref(obj.loading)} result={unref(obj.result)} />
+      );
+    },
+  });
+
+  return NewWrapped;
+};
+
+export default usePromiseFetch;
+```
+
+- View.vue
+
+```html
+<template>
+  <div>
+    <span>{{ result?.name }}</span>
+  </div>
+</template>
+<script setup lang="tsx">
+  import { useSlots, useAttrs } from 'vue';
+  const { result, loading } = defineProps(['result', 'loading']);
+
+  const slots = useSlots();
+  const attrs = useAttrs();
+  defineExpose({
+    slots,
+    attrs,
+  });
+</script>
+```
+
+- `index.vue`
+
+```html
+<template> <HOC /></template>
+<script setup lang="tsx">
+  import usePromiseFetch from './usePromiseFetch';
+  import View from './View.vue';
+
+  const params = { id: 10 };
+
+  const request = (params = {}) => {
+    // mock the fetch
+    // parmas is the params of the request
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve({ name: 'ssh' });
+      }, 1000);
+    });
+  };
+
+  const HOC = usePromiseFetch(View, request, params);
+</script>
+```
