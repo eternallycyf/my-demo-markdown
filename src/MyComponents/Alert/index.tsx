@@ -1,9 +1,8 @@
-import { Alert } from 'antd'
-import React, { Children } from "react"
-import { AlertProps } from 'antd'
+import { Alert, AlertProps } from 'antd';
+import React from 'react';
 
 const AlertComponent = (props: AlertProps) => {
-  return <Alert showIcon {...props} />
-}
+  return <Alert showIcon {...props} />;
+};
 
-export default AlertComponent
+export default AlertComponent;
