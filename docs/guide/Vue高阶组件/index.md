@@ -8,6 +8,10 @@ nav:
 
 <Alert>待整理 整理后将移动到其他地方</Alert>
 
+# Vue 高阶组件
+
+## vue2
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +31,7 @@ nav:
         </template>
       </hoc>
     </div>
-    <script src="./vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10"></script>
     <script>
       var view = {
         props: ['result'],
@@ -55,61 +59,74 @@ nav:
         `,
       };
 
-      const withPromise = (wrapped, promiseFn) => {
-        return {
-          data() {
-            return {
-              loading: false,
-              error: false,
-              result: null,
-            };
-          },
-          methods: {
-            async request() {
-              this.loading = true;
-              // 从子组件实例里拿到数据
-              const { requestParams } = this.$refs.wrapped;
-              // 传递给请求函数
-              const result = await promiseFn(requestParams).finally(() => {
-                this.loading = false;
-              });
-              this.result = result;
+      const withPromise = promiseFn => {
+        return function(wrapped) {
+          return {
+            data() {
+              return {
+                loading: false,
+                error: false,
+                result: null,
+              };
             },
-          },
-          async mounted() {
-            // 立刻发送请求，并且监听参数变化重新请求
-            this.$refs.wrapped.$watch(
-              'requestParams',
-              this.request.bind(this),
-              {
-                immediate: true,
+            methods: {
+              async request() {
+                this.loading = true;
+                // 从子组件实例里拿到数据
+                const { requestParams } = this.$refs.wrapped;
+                // 传递给请求函数
+                const result = await promiseFn(requestParams).finally(() => {
+                  this.loading = false;
+                });
+                this.result = result;
               },
-            );
+            },
+            async mounted() {
+              // 立刻发送请求，并且监听参数变化重新请求
+              this.$refs.wrapped.$watch(
+                'requestParams',
+                this.request.bind(this),
+                {
+                  immediate: true,
+                },
+              );
+            },
+            render(h) {
+              const args = {
+                props: {
+                  // 混入 $attrs
+                  ...this.$attrs,
+                  result: this.result,
+                  loading: this.loading,
+                },
+
+                // 传递事件
+                on: this.$listeners,
+
+                // 传递 $scopedSlots
+                scopedSlots: this.$scopedSlots,
+                ref: 'wrapped',
+              };
+
+              const wrapper = h('div', [
+                this.loading ? h('span', ['加载中……']) : null,
+                this.error ? h('span', ['加载错误']) : null,
+                h(wrapped, args),
+              ]);
+
+              return wrapper;
+            },
+          };
+        };
+      };
+
+      const withLog = wrapped => {
+        return {
+          mounted() {
+            console.log('I am mounted!');
           },
           render(h) {
-            const args = {
-              props: {
-                // 混入 $attrs
-                ...this.$attrs,
-                result: this.result,
-                loading: this.loading,
-              },
-
-              // 传递事件
-              on: this.$listeners,
-
-              // 传递 $scopedSlots
-              scopedSlots: this.$scopedSlots,
-              ref: 'wrapped',
-            };
-
-            const wrapper = h('div', [
-              this.loading ? h('span', ['加载中……']) : null,
-              this.error ? h('span', ['加载错误']) : null,
-              h(wrapped, args),
-            ]);
-
-            return wrapper;
+            return h(wrapped, normalizeProps(this));
           },
         };
       };
@@ -122,7 +139,9 @@ nav:
         });
       };
 
-      var hoc = withPromise(view, request);
+      const composed = compose(withLog, withPromise(request));
+
+      var hoc = composed(view);
 
       new Vue({
         el: '#app',
@@ -133,25 +152,22 @@ nav:
           onChange() {},
         },
       });
+
+      function compose(...funcs) {
+        return funcs.reduce((a, b) => (...args) => a(b(...args)));
+      }
+
+      function normalizeProps(vm) {
+        return {
+          on: vm.$listeners,
+          attr: vm.$attrs,
+          // 传递 $scopedSlots
+          scopedSlots: vm.$scopedSlots,
+        };
+      }
     </script>
   </body>
 </html>
 ```
 
-```js
-import { getListData } from 'api';
-import { withPromise } from 'hoc';
-
-const listView = {
-  props: ['result'],
-  template: `
-    <ul v-if="result>
-      <li v-for="item in result">
-        {{ item }}
-      </li>
-    </ul>
-  `,
-};
-
-export default withPromise(listView, getListData);
-```
+## Vue3
