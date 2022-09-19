@@ -174,7 +174,7 @@ nav:
 
 - `usePromiseFetch.tsx`
 
-```tsx
+```tsx | pure
 import { reactive, onMounted, unref, defineComponent } from 'vue';
 
 /**
