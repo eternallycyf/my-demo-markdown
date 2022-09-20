@@ -175,7 +175,7 @@ nav:
 - `usePromiseFetch.tsx`
 
 ```tsx | pure
-import { reactive, onMounted, unref, defineComponent } from 'vue';
+import { reactive, onMounted, unref, defineComponent, watch } from 'vue';
 
 /**
  * HOC Component transform function
@@ -205,19 +205,33 @@ const usePromiseFetch = (
 
   onMounted(() => fetchRequest(params));
 
+  watch(params, newVal => fetchRequest(newVal), { immediate: true });
+
   const NewWrapped = defineComponent<InstanceType<typeof Wrapped>>({
+    setup(props, ctx) {
+      return {
+        slots: ctx.slots,
+        attrs: ctx.attrs,
+        props,
+      };
+    },
     render() {
       if (obj.loading) return <span>loading...</span>;
       if (obj.error) return <span>error...</span>;
       return (
-        <Wrapped loading={unref(obj.loading)} result={unref(obj.result)} />
+        <Wrapped
+          slots={this.slots}
+          attrs={this.attrs}
+          props={this.props}
+          loading={unref(obj.loading)}
+          result={unref(obj.result)}
+        />
       );
     },
   });
 
   return NewWrapped;
 };
-
 export default usePromiseFetch;
 ```
 
