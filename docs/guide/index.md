@@ -71,9 +71,9 @@ nav:
 - [利用 hexo 搭建个人博客](http://wangxince.site)
 - 写一个组件库(类似)并利用 vuepress rcpress 书写其文档
   - https://github.com/eternallycyf/pluviophobe-react
-  - https://github.com/eternallycyf/pluviophobe-react
+  - https://github.com/eternallycyf/pluviophobe-react-document
 - 利用 docker docker-compose k8s 部署前端环境 熟悉常用 linux 命令
-- 利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd
+- [利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd](/article/8.实践操作/搭建一个gitlab)
 - 阿里云配置 K8s 集群 熟悉相关基本命令
 - [reactNative 搭建基本项目环境并安卓打包](https://github.com/eternallycyf/story-reader-application)
 - [自己写一个脚手架](https://github.com/eternallycyf/lrxc-cli)
