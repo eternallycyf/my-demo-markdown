@@ -56,6 +56,7 @@ export default defineConfig({
       },
     ],
   ],
+
   exportStatic: {},
   ignoreMomentLocale: true,
   dynamicImport: {
@@ -113,7 +114,35 @@ export default defineConfig({
     // d3: 'window.d3',
     // exceljs: 'window.exceljs',
   },
+  styles: [
+    `.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.02);
+    pointer-events: none;
+    z-index: 100001;
+  }`,
+  ],
+  headScripts: [
+    { src: 'https://cdn.bootcdn.net/ajax/libs/three.js/0.144.0/three.js' },
+    { src: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js' },
+  ],
   scripts: [
+    {
+      content: `(function(){
+        let divs = document.createElement('div');
+        divs.className = 'snow-container';
+        document.querySelector('body')?.appendChild(divs);
+        })()
+      `,
+      charset: 'utf-8',
+    },
+    {
+      src: '/js/show.js',
+    },
     //   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
     //   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
     // 'https://unpkg.com/moment@2.29.4/moment.js',
