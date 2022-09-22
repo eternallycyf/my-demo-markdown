@@ -141,7 +141,7 @@ export default defineConfig({
       charset: 'utf-8',
     },
     {
-      src: '/js/show.js',
+      src: `${repo}/js/show.js`,
     },
     //   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
     //   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
