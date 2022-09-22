@@ -8,7 +8,7 @@ const TransferDemo = () => {
   const [form] = Form.useForm();
   const [mockData, setMockData] = useState<any>([]);
 
-  const TransferRef = useRef<any>(null);
+  const TransferRef = useRef<React.ElementRef<typeof TransferHookForm>>(null!);
 
   useEffect(() => {
     const initData = Array.from({

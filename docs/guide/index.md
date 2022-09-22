@@ -68,48 +68,42 @@ nav:
 
 ## 8. 实践操作
 
-- 利用 hexo 搭建个人博客
-  - http://wangxince.site
+- [利用 hexo 搭建个人博客](http://wangxince.site)
 - 写一个组件库(类似)并利用 vuepress rcpress 书写其文档
   - https://github.com/eternallycyf/pluviophobe-react
-  - https://github.com/eternallycyf/pluviophobe-react
+  - https://github.com/eternallycyf/pluviophobe-react-document
 - 利用 docker docker-compose k8s 部署前端环境 熟悉常用 linux 命令
-- 利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd
+- [利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd](/article/8.实践操作/搭建一个gitlab)
 - 阿里云配置 K8s 集群 熟悉相关基本命令
-- reactNative 搭建基本项目环境并安卓打包
-  - https://github.com/eternallycyf/story-reader-application
-- 自己写一个脚手架
-  - https://github.com/eternallycyf/lrxc-cli
-- 自己写一个 vscode 插件
-  - https://github.com/eternallycyf/lrxc-cli-help-vscode
+- [reactNative 搭建基本项目环境并安卓打包](https://github.com/eternallycyf/story-reader-application)
+- [自己写一个脚手架](https://github.com/eternallycyf/lrxc-cli)
+- [自己写一个 vscode 插件](https://github.com/eternallycyf/lrxc-cli-help-vscode)
 - 手写 webpacK plugin loader
   - https://github.com/eternallycyf/my-webpack-loader
   - https://github.com/eternallycyf/my-webpack-plugin
-- js API 源码手写
-  - https://github.com/eternallycyf/jsFunctionsRewrite
+- [js API 源码手写](https://github.com/eternallycyf/jsFunctionsRewrite)
 - vue 源码手写
-  - https://github.com/eternallycyf/Vue2-data
-  - https://github.com/eternallycyf/Vue-template
-  - https://github.com/eternallycyf/Vue2-Reactive
-  - https://github.com/eternallycyf/Vue-Reactive
-  - https://github.com/eternallycyf/Vue3-Reactive-event
-  - https://github.com/eternallycyf/Vue-v-model
-  - https://github.com/eternallycyf/vue-v-if-v-show
-  - https://github.com/eternallycyf/vue-v-for
-  - https://github.com/eternallycyf/Vue-diff
-  - https://github.com/eternallycyf/vue-computed-watch
-  - https://github.com/eternallycyf/vue_AST
+  - [Vue2 实现 data](https://github.com/eternallycyf/Vue2-data)
+  - [Vue 实现模板字符串](https://github.com/eternallycyf/Vue-template)
+  - [实现 Vue2-Reactive](https://github.com/eternallycyf/Vue2-Reactive)
+  - [实现 Vue-Reactive](https://github.com/eternallycyf/Vue-Reactive)
+  - [实现 Vue3-Reactive](https://github.com/eternallycyf/Vue3-Reactive-event)
+  - [实现 v-model](https://github.com/eternallycyf/Vue-v-model)
+  - [实现 v-if/v-show](https://github.com/eternallycyf/vue-v-if-v-show)
+  - [实现 v-for](https://github.com/eternallycyf/vue-v-for)
+  - [实现 diff 算法](https://github.com/eternallycyf/Vue-diff)
+  - [实现 computed 和 watch](https://github.com/eternallycyf/vue-computed-watch)
+  - [实现 AST 树](https://github.com/eternallycyf/vue_AST)
 - react 源码手写
-  - https://github.com/eternallycyf/React-hook-useState
-- axios 源码手写
-  - https://github.com/eternallycyf/eternallcyf-axios
+  - [手写 useState](https://github.com/eternallycyf/React-hook-useState)
+  - [手写 axios 源码](https://github.com/eternallycyf/eternallcyf-axios)
 - 搭建环境
-  - https://github.com/eternallycyf/create-Electron-template-app
-  - https://github.com/eternallycyf/nextjs-docker-nginx-demo
-  - https://github.com/eternallycyf/nuxtjs-docker-nginx-demo
-  - https://github.com/eternallycyf/react-native-dva-template
-  - https://github.com/eternallycyf/umi-h5-template
-  - https://github.com/eternallycyf/taro-dva-template
+  - [Electron-项目模板](https://github.com/eternallycyf/create-Electron-template-app)
+  - [nextJS-docker-部署项目模板](https://github.com/eternallycyf/nextjs-docker-nginx-demo)
+  - [nuxtJS-docker-部署项目模板](https://github.com/eternallycyf/nuxtjs-docker-nginx-demo)
+  - [react-native-dva-项目模板](https://github.com/eternallycyf/react-native-dva-template)
+  - [umi-h5-项目模板](https://github.com/eternallycyf/umi-h5-template)
+  - [taro-dva-微信小程序模板](https://github.com/eternallycyf/taro-dva-template)
 
 ## 9. react 及周边
 
@@ -160,75 +154,55 @@ nav:
 
 ## 13. 源码
 
-- js 书写各种内置函数方法源码
-  - https://github.com/eternallycyf/jsFunctionsRewrite
+- [js 书写各种内置函数方法源码](https://github.com/eternallycyf/jsFunctionsRewrite)
+- 深入 object&&array&&string 的每一个函数
 
-```js
-# 深入 object&&array&&string 的每一个函数
-lookupGetter;
-Object.getPrototypeOf;
-Object.setPrototypeOf;
-Object.isExtensible;
-Object.preventExtensions;
-Object.getOwnPropertyDescriptor;
-Object.getOwnPropertyDescriptors;
-Object.hasOwnProperty;
-Object.getOwnPropertyNames;
-Object.getOwnPropertySymbols;
-Object.isPrototypeOf;
-Object.propertyIsEnumerable;
-手写原生js方法
-promise
-bind
-call
-apply
-instanceof
-object.entries
-freeze
-formEntries
-new
-Symbol.iterator
-forEach
-map
-filter
-every
-some
-reduce
-reduceRight
-```
+  - lookupGetter;
+  - Object.getPrototypeOf;
+  - Object.setPrototypeOf;
+  - Object.isExtensible;
+  - Object.preventExtensions;
+  - Object.getOwnPropertyDescriptor;
+  - Object.getOwnPropertyDescriptors;
+  - Object.hasOwnProperty;
+  - Object.getOwnPropertyNames;
+  - Object.getOwnPropertySymbols;
+  - Object.isPrototypeOf;
+  - Object.propertyIsEnumerable;
+  - 手写原生 js 方法
+  - promise
+  - bind
+  - call
+  - apply
+  - instanceof
+  - object.entries
+  - freeze
+  - formEntries
+  - new
+  - Symbol.iterator
+  - forEach
+  - map
+  - filter
+  - every
+  - some
+  - reduce
+  - reduceRight
 
 - vue 源码
-  - https://github.com/eternallycyf/Vue2-data
-  - https://github.com/eternallycyf/Vue-template
-  - https://github.com/eternallycyf/Vue2-Reactive
-  - https://github.com/eternallycyf/Vue-Reactive
-  - https://github.com/eternallycyf/Vue3-Reactive-event
-  - https://github.com/eternallycyf/Vue-v-model
-  - https://github.com/eternallycyf/vue-v-if-v-show
-  - https://github.com/eternallycyf/vue-v-for
-  - https://github.com/eternallycyf/Vue-diff
-  - https://github.com/eternallycyf/vue-computed-watch
-  - https://github.com/eternallycyf/vue_AST
+  - [Vue2 实现 data](https://github.com/eternallycyf/Vue2-data)
+  - [Vue 实现模板字符串](https://github.com/eternallycyf/Vue-template)
+  - [实现 Vue2-Reactive](https://github.com/eternallycyf/Vue2-Reactive)
+  - [实现 Vue-Reactive](https://github.com/eternallycyf/Vue-Reactive)
+  - [实现 Vue3-Reactive](https://github.com/eternallycyf/Vue3-Reactive-event)
+  - [实现 v-model](https://github.com/eternallycyf/Vue-v-model)
+  - [实现 v-if/v-show](https://github.com/eternallycyf/vue-v-if-v-show)
+  - [实现 v-for](https://github.com/eternallycyf/vue-v-for)
+  - [实现 diff 算法](https://github.com/eternallycyf/Vue-diff)
+  - [实现 computed 和 watch](https://github.com/eternallycyf/vue-computed-watch)
+  - [实现 AST 树](https://github.com/eternallycyf/vue_AST)
 
-```js
-data
-template
-vue3-reactive
-vue2-reactive
-diff
-v-model
-v-if/v-show
-v-for
-data watch computed
-事件处理
-ast树
-vue sfc
-```
-
-- react 源码
-  - https://github.com/eternallycyf/React-hook-useState
-- axios 源码
-  - https://github.com/eternallycyf/eternallcyf-axios
+* [react 源码](https://github.com/eternallycyf/React-hook-useState)
+* [axios 源码](https://github.com/eternallycyf/eternallcyf-axios)
 
 ## 14. 可视化
 
@@ -250,22 +224,22 @@ vue sfc
 - <Badge>websocket</Badge>
 - <Badge>requestAnimationFrame</Badge>
 
-## 17. [项目难点](/project)
+## [17. 项目难点](/project)
 
-## 18. [设计模式](/article2/18.设计模式/1.简单工厂模式)
+## [18. 设计模式](/article2/18.设计模式/1.简单工厂模式)
 
 ## 19. 算法
 
 ## 20. 有意思的库
 
-- lottie
+- [lottie](/article2/20.有意思的库/lottie)
 
-## 21.[macos 相关](/article2/21.macos相关/copilot)
+## 21.macos 相关
 
 - oh-my-zsh
-- github 卡顿原因
-- github badge
-- 使用在线 vscode 打开 github
-- 智能提示
-- 油猴脚本
+- [copilot](/article2/21.macos相关/copilot)
+- [github 卡顿原因](/article2/21.macos相关/github卡顿原因)
+- [github badge](/article2/21.macos相关/github-badge)
+- [使用在线 vscode 打开 github](//article2/21.macos相关/使用在线vscode打开github)
+- [油猴脚本](//article2/21.macos相关/油猴脚本)
 - alfred

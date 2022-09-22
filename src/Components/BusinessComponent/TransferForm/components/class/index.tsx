@@ -6,14 +6,15 @@ import { Form, Select } from "antd";
 import type { ModalProps } from "antd/es/modal";
 import type { TransferProps } from "antd/es/transfer";
 import type { FormInstance } from "antd/es/form";
+import { RefObject } from 'React'
 
-interface Iprops {
+export interface Iprops {
   /**确定按钮的回调函数 */
   transferOkCallBack: () => void;
   /**初始化所有的数据源 */
   originData: any[];
   /**外界传入的Antd-form-ref */
-  formRef: FormInstance;
+  formRef: RefObject<FormInstance>;
   /**同步变动的select formItem name */
   falseSelectItmeName?: string;
   /**模态框的其他props */
@@ -21,6 +22,12 @@ interface Iprops {
   /**穿梭框的其他props */
   transferProps?: TransferProps<any>;
   [props: string]: any;
+}
+
+export interface IHandle {
+  getData: () => [number[], number[]]
+  setData: (arr: any) => void
+  useVisible: (bool: boolean | ((prevState: boolean) => boolean)) => void
 }
 
 // 打平数组
@@ -39,7 +46,7 @@ const findAllMessage = (originArr: any, keyArr: any) => {
   return flattenDeep(arr);
 };
 
-const TransferForm = (props: Iprops) => {
+const TransferForm: React.ForwardRefRenderFunction<IHandle, Iprops> = (props) => {
   const [targetKeys, setTargetKeys] = useState<any>([]);
   const [selectedKeys, setSelectedKeys] = useState<any>([]);
   const [visible, setVisible] = useState<boolean>(false);
@@ -63,7 +70,7 @@ const TransferForm = (props: Iprops) => {
   useEffect(() => {
     setTargetKeys([]);
     setSelectedKeys([]);
-    formRef.current.setFieldsValue({
+    formRef.current!.setFieldsValue({
       [falseSelectItmeName]: [],
     });
   }, [falseSelectItmeName, formRef, originData.length]);
@@ -116,13 +123,13 @@ const TransferForm = (props: Iprops) => {
     setSelectedKeys([...selectedKeysArr]);
     setTargetKeys([...targetKeysArr]);
     // 同步为一个select设置相同的状态 select选中
-    formRef.current.setFieldsValue({
+    formRef.current!.setFieldsValue({
       [falseSelectItmeName]: findAllMessage(originData, formItemArr),
     });
   };
 
   const handleModalOk = () => {
-    formRef.current.setFieldsValue({
+    formRef.current!.setFieldsValue({
       [falseSelectItmeName]: findAllMessage(originData, targetKeys),
     });
     setVisible(false);

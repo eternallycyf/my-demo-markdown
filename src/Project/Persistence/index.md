@@ -6,6 +6,8 @@ group:
 
 ## Persistence
 
+### react-umi
+
 ```tsx | pure
 // app.tsx
 import { persistReducer, persistStore } from 'redux-persist';
@@ -52,4 +54,22 @@ export const dva = {
     },
   },
 };
+```
+
+### vue2-vuex
+
+- npm install --save vuex-persistedstate
+
+```tsx | pure
+import { createStore } from 'vuex';
+import createPersistedState from 'vuex-persistedstate';
+
+const dataState = createPersistedState({
+  paths: ['app', 'user'],
+});
+
+const store = createStore({
+  // ...
+  plugins: [dataState],
+});
 ```

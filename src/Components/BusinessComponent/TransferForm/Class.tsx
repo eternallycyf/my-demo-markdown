@@ -1,12 +1,13 @@
 import TransferClassForm from "./components/class";
-import React from "react";
+import React, { RefObject } from "react";
 import { Form, Button } from "antd";
 import type { FormInstance } from "antd/es/form";
 import { Card } from "antd";
+import { IHandle } from './components/class/index'
 
 export default class TransferDemo extends React.Component {
-  TransferRef: any = React.createRef();
-  formRef: any = React.createRef<FormInstance>();
+  TransferRef = React.createRef<IHandle>();
+  formRef = React.createRef<FormInstance>();
   state = {
     mockData: [],
   };
@@ -34,10 +35,9 @@ export default class TransferDemo extends React.Component {
   };
 
   transferOkCallBack = () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { getData } = this.TransferRef.current;
+    const { getData } = this.TransferRef!.current!;
     const ref = this.formRef.current;
-    console.log(ref?.getFieldValue("test"));
+    console.log(ref!.getFieldValue("test"));
   };
 
   onFinish = (values: any) => {
@@ -51,7 +51,7 @@ export default class TransferDemo extends React.Component {
           <h1>
             <button
               onClick={() => {
-                this.TransferRef.current.useVisible(true);
+                this.TransferRef!.current!.useVisible(true);
               }}
             >
               打开穿梭框
