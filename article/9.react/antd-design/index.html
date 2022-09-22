@@ -12,6 +12,18 @@
       href="/my-demo-markdown/images/favicon.ico"
     />
     <link rel="stylesheet" type="text/css" href="../css/global.less" />
+    <style>
+      .snow-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.02);
+        pointer-events: none;
+        z-index: 100001;
+      }
+    </style>
     <link rel="stylesheet" href="/my-demo-markdown/umi.8c3e9365.css" />
     <script>
       window.routerBase = "/my-demo-markdown";
@@ -19,6 +31,8 @@
     <script>
       //! umi version: 3.5.34
     </script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/three.js/0.144.0/three.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
     <script>
       !(function () {
         var e = localStorage.getItem("dumi:prefers-color"),
@@ -35,6 +49,14 @@
   <body>
     <div id="root"></div>
 
-    <script src="/my-demo-markdown/umi.5adf41c5.js"></script>
+    <script charset="utf-8">
+      (function () {
+        let divs = document.createElement("div");
+        divs.className = "snow-container";
+        document.querySelector("body")?.appendChild(divs);
+      })();
+    </script>
+    <script src="/js/show.js"></script>
+    <script src="/my-demo-markdown/umi.47f0535b.js"></script>
   </body>
 </html>
