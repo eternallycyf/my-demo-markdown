@@ -6,6 +6,7 @@ import React, {
   useRef,
   useEffect,
   forwardRef,
+  Ref,
 } from "react";
 import styles from "../index.less";
 import { Form, Select } from "antd";
@@ -13,7 +14,7 @@ import type { FormInstance } from "antd/es/form";
 import type { ModalProps } from "antd/es/modal";
 import type { TransferProps } from "antd/es/transfer";
 
-interface Iprops {
+export interface Iprops {
   /**确定按钮的回调函数 */
   transferOkCallBack: () => void;
   /**初始化所有的数据源 */
@@ -27,6 +28,12 @@ interface Iprops {
   /**穿梭框的其他props */
   transferProps?: TransferProps<any>;
   [props: string]: any;
+}
+
+export interface IHandle {
+  getData: () => [number[], number[]]
+  setData: (arr: any) => void
+  useVisible: (bool: boolean | ((prevState: boolean) => boolean)) => void
 }
 
 // 打平数组
@@ -45,7 +52,7 @@ const findAllMessage = (originArr: any, keyArr: any) => {
 };
 
 
-const TransferForm = (props: Iprops, TransferRef: any) => {
+const TransferForm: React.ForwardRefRenderFunction<IHandle, Iprops> = (props, TransferRef: any) => {
   const [targetKeys, setTargetKeys] = useState<any>([]);
   const [selectedKeys, setSelectedKeys] = useState<any>([]);
   const [visible, setVisible] = useState<boolean>(false);

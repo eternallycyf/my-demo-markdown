@@ -7,7 +7,7 @@ const TransferDemo = () => {
   // const TransferRef = useRef(null)
   const [form] = Form.useForm();
   const [mockData, setMockData] = useState<any>([]);
-  const TransferRef = useRef<any>([]);
+  const TransferRef = useRef<React.ElementRef<typeof TransferHookForm>[]>([]);
 
   useEffect(() => {
     const initData = Array.from({
@@ -71,7 +71,7 @@ const TransferDemo = () => {
             <TransferHookForm
               formRef={form}
               originData={mockData}
-              ref={(el) => (TransferRef.current[0] = el)}
+              ref={(el) => (TransferRef.current[0] = el!)}
               transferOkCallBack={() => transferOkCallBack()}
             />
           </Form.Item>
@@ -79,7 +79,7 @@ const TransferDemo = () => {
             <TransferHookForm
               formRef={form}
               originData={mockData}
-              ref={(el) => (TransferRef.current[1] = el)}
+              ref={(el) => (TransferRef.current[1] = el!)}
               transferOkCallBack={() => transferOkCallBack()}
               falseSelectItmeName="asasd"
             />
