@@ -2,12 +2,11 @@ import Docxtemplater from 'docxtemplater';
 import PizZip from 'pizzip';
 import JSZipUtils from 'jszip-utils';
 import { saveAs } from 'file-saver';
-const word = require('public/word.docx');
-
-const repo = 'my-demo-markdown';
 
 const path =
-  process.env.APP_ENV === 'development' ? `/word.docx` : `/${repo}/word.docx`;
+  process.env.APP_ENV === 'development'
+    ? `/word.docx`
+    : `/my-demo-markdown/word.docx`;
 /**
  * description： 导出echarts图片，格式转换
  */
