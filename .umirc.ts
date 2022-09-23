@@ -114,7 +114,6 @@ export default defineConfig({
   }`,
   ],
   headScripts: [
-    { src: 'https://cdn.bootcdn.net/ajax/libs/three.js/0.144.0/three.js' },
     { src: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js' },
   ],
   scripts: [
