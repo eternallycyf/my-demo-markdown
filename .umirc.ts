@@ -18,7 +18,6 @@ export default defineConfig({
       : `/${repo}/images/logo.png`,
   outputPath: 'docs-dist',
   mode: 'site',
-  hash: true,
   navs: [
     null,
     {
@@ -31,7 +30,6 @@ export default defineConfig({
   // publicPath: process.env.APP_ENV === 'development' ? `/${repo}` : `/`,
   base: process.env.APP_ENV === 'development' ? '/' : `/${repo}`,
   publicPath: process.env.APP_ENV === 'development' ? '/' : `/${repo}/`,
-  fastRefresh: {},
   // cssModulesTypescriptLoader: {},
   // cssnano: { normalizeUrl: false, },
   alias: {
@@ -41,10 +39,14 @@ export default defineConfig({
     MyComponents: path.resolve(__dirname, '.', 'src/MyComponents/'),
     style: path.resolve(__dirname, '.', 'src/style/'),
   },
-  links: [{ rel: 'stylesheet', type: 'text/css', href: `../css/global.less` }],
+  links: [
+    { rel: 'stylesheet', type: 'text/css', href: `/${repo}/css/global.less` },
+  ],
   nodeModulesTransform: {
     type: 'none',
   },
+  fastRefresh: {},
+  hash: true,
   targets: {
     chrome: 79,
     firefox: false,
@@ -97,6 +99,7 @@ export default defineConfig({
     echarts: 'window.echarts',
     d3: 'window.d3',
     exceljs: 'window.exceljs',
+    '@ant-design/plots': 'widows[@ant-design/plots]',
   },
   styles: [
     `.snow-container {
@@ -133,5 +136,6 @@ export default defineConfig({
     'https://unpkg.com/echarts@5.3.3/dist/echarts.js',
     'https://unpkg.com/d3@7.6.1/dist/d3.min.js',
     'https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js',
+    'https://unpkg.com/@ant-design/plots@1.2.2/dist/plots.min.js',
   ],
 });
