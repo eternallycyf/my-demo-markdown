@@ -161,11 +161,15 @@ background: xxx;`,lang:"js"}),e.a.createElement("h2",{id:"22-vue-admin-element-\
 # \u6839\u636E\u8DEF\u7531\u53D8\u5316\u8FDB\u884C watch \u91CD\u65B0\u8C03\u7528\u521D\u59CB\u5316\u51FD\u6570`,lang:"js"}),e.a.createElement("h2",{id:"23-vue-\u8C03\u8BD5\u5DE5\u5177\u6253\u4E0D\u5F00"},e.a.createElement(u.AnchorLink,{to:"#23-vue-\u8C03\u8BD5\u5DE5\u5177\u6253\u4E0D\u5F00","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"23. vue \u8C03\u8BD5\u5DE5\u5177\u6253\u4E0D\u5F00"),e.a.createElement(n.a,{code:`# vue2
 Vue.config.devtools = true
 # vue3
-app.config.performance = true`,lang:"js"}),e.a.createElement("h2",{id:"24-react-\u4F1A\u6E32\u67D3\u4E24\u6B21-\u95EA\u70C1"},e.a.createElement(u.AnchorLink,{to:"#24-react-\u4F1A\u6E32\u67D3\u4E24\u6B21-\u95EA\u70C1","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"24. react \u4F1A\u6E32\u67D3\u4E24\u6B21 \u95EA\u70C1"),e.a.createElement(n.a,{code:`- aaa\u7684\u6570\u636E\u66F4\u65B0\u540E\u53C8\u91CD\u65B0\u89E6\u53D1\u4E86\u6E32\u67D3
+app.config.performance = true
+#
+react\u8C03\u8BD5\u5DE5\u5177\u6709\u65F6\u5019\u4F1A\u548Cvue\u8C03\u8BD5\u5DE5\u5177\u51B2\u7A81 \u5982\u679C\u6709\u95EE\u9898\u5C31\u5148\u5173\u95EDreact\u8C03\u8BD5\u5DE5\u5177`,lang:"js"}),e.a.createElement("h2",{id:"24-react-\u4F1A\u6E32\u67D3\u4E24\u6B21-\u95EA\u70C1"},e.a.createElement(u.AnchorLink,{to:"#24-react-\u4F1A\u6E32\u67D3\u4E24\u6B21-\u95EA\u70C1","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"24. react \u4F1A\u6E32\u67D3\u4E24\u6B21 \u95EA\u70C1"),e.a.createElement(n.a,{code:`- aaa\u7684\u6570\u636E\u66F4\u65B0\u540E\u53C8\u91CD\u65B0\u89E6\u53D1\u4E86\u6E32\u67D3
 xxx(){
   if(aaa.length>0) return true
   return false
 }
-
-
-{this.xxx()?'':'xxx'}`,lang:"js"}))));l.default=t=>{const E=e.a.useContext(u.context),i=E.demos;return e.a.useEffect(()=>{var c;t!=null&&(c=t.location)!==null&&c!==void 0&&c.hash&&u.AnchorLink.scrollToAnchor(decodeURIComponent(t.location.hash.slice(1)))},[]),e.a.createElement(s,{demos:i})}}}]);
+{this.xxx()?'':'xxx'}`,lang:"js"}),e.a.createElement("h2",{id:"25jquery-\u7684\u5C4E\u5C71\u5168\u662F\u5B57\u7B26\u4E32\u62FC\u63A5"},e.a.createElement(u.AnchorLink,{to:"#25jquery-\u7684\u5C4E\u5C71\u5168\u662F\u5B57\u7B26\u4E32\u62FC\u63A5","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"25.jQuery \u7684\u5C4E\u5C71\u5168\u662F\u5B57\u7B26\u4E32\u62FC\u63A5"),e.a.createElement(n.a,{code:`\u4F7F\u7528eslint\u5168\u90E8\u8F6C\u6362\u6210\u6A21\u677F\u5B57\u7B26\u4E32;
+https://stackoverflow.com/questions/45308933/automatically-convert-string-concatenation-to-template-literals
+// \u52A0\u6743\u9650
+chmod 777 xxx.js
+eslint xxx.js --rule '{prefer-template:[2]}' --fix`,lang:"js"}))));l.default=t=>{const i=e.a.useContext(u.context),E=i.demos;return e.a.useEffect(()=>{var c;t!=null&&(c=t.location)!==null&&c!==void 0&&c.hash&&u.AnchorLink.scrollToAnchor(decodeURIComponent(t.location.hash.slice(1)))},[]),e.a.createElement(s,{demos:E})}}}]);
