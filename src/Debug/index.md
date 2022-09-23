@@ -320,6 +320,8 @@ background: xxx;
 Vue.config.devtools = true
 # vue3
 app.config.performance = true
+#
+react调试工具有时候会和vue调试工具冲突 如果有问题就先关闭react调试工具
 ```
 
 ## 24. react 会渲染两次 闪烁
@@ -330,8 +332,15 @@ xxx(){
   if(aaa.length>0) return true
   return false
 }
-
-
 {this.xxx()?'':'xxx'}
+```
 
+## 25.jQuery 的屎山全是字符串拼接
+
+```js
+使用eslint全部转换成模板字符串;
+https://stackoverflow.com/questions/45308933/automatically-convert-string-concatenation-to-template-literals
+// 加权限
+chmod 777 xxx.js
+eslint xxx.js --rule '{prefer-template:[2]}' --fix
 ```
