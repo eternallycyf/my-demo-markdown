@@ -45,7 +45,14 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  devtool: 'eval',
+  targets: {
+    chrome: 79,
+    firefox: false,
+    safari: false,
+    edge: false,
+    ios: false,
+  },
+  devtool: false,
   extraBabelPlugins: [
     [
       'babel-plugin-import',
@@ -56,63 +63,40 @@ export default defineConfig({
       },
     ],
   ],
-
-  exportStatic: {},
+  // exportStatic: {},
   ignoreMomentLocale: true,
   dynamicImport: {
     loading: '@/Loading',
   },
-  // chunks: ['vendors', 'umi'],
-  // chainWebpack: function (config, { webpack }) {
-  //   config.merge({
-  //     optimization: {
-  //       minimize: true,
-  //       splitChunks: {
-  //         chunks: 'async',
-  //         minSize: 30000, //文件最小打包体积，单位byte，默认30000，若单个文件不满足会合并其他文件组成一个
-  //         minChunks: 2, //最小使用到次数，超过2次执行
-  //         automaticNameDelimiter: '.', //连接符
-  //         cacheGroups: {
-  //           vendor: {
-  //             // 基本框架
-  //             name: 'vendors',
-  //             test: /^.*node_modules[\\/](?!react|react-dom|antd).*$/,
-  //             chunks: 'all',
-  //             priority: 10,
-  //           },
-  //           echartsVenodr: {
-  //             // 异步加载echarts包
-  //             name: 'echartsVenodr',
-  //             test: /(echarts|zrender)/,
-  //             chunks: 'async',
-  //             priority: 10, // 高于async-commons优先级
-  //           },
-  //           'async-commons': {
-  //             // 其余异步加载包
-  //             chunks: 'async',
-  //             minChunks: 2,
-  //             name: 'async-commons',
-  //             priority: 9,
-  //           },
-  //           commons: {
-  //             // 其余同步加载包
-  //             chunks: 'all',
-  //             minChunks: 2,
-  //             name: 'commons',
-  //             priority: 8,
-  //           },
-  //         },
-  //       },
-  //     },
-  //   });
-  // },
+  chunks: ['vendors', 'umi'],
+  chainWebpack: function(config, { webpack }) {
+    config.merge({
+      optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 30000,
+          minChunks: 3,
+          automaticNameDelimiter: '.',
+          cacheGroups: {
+            vendor: {
+              name: 'vendors',
+              test({ resource }: any) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
+  },
   externals: {
-    //   react: 'window.React',
-    //   'react-dom': 'window.ReactDOM',
-    // moment: 'window.moment',
-    // echarts: 'window.echarts',
-    // d3: 'window.d3',
-    // exceljs: 'window.exceljs',
+    react: 'window.React',
+    'react-dom': 'window.ReactDOM',
+    moment: 'window.moment',
+    echarts: 'window.echarts',
+    d3: 'window.d3',
+    exceljs: 'window.exceljs',
   },
   styles: [
     `.snow-container {
@@ -143,11 +127,11 @@ export default defineConfig({
     {
       src: `/${repo}/js/show.js`,
     },
-    //   'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
-    //   'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
-    // 'https://unpkg.com/moment@2.29.4/moment.js',
-    // 'https://unpkg.com/echarts@5.3.3/dist/echarts.js',
-    // 'https://unpkg.com/d3@7.6.1/dist/d3.min.js',
-    // 'https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js',
+    'https://unpkg.com/react@18.2.0/umd/react.production.min.js',
+    'https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js',
+    'https://unpkg.com/moment@2.29.4/moment.js',
+    'https://unpkg.com/echarts@5.3.3/dist/echarts.js',
+    'https://unpkg.com/d3@7.6.1/dist/d3.min.js',
+    'https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js',
   ],
 });

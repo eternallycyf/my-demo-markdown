@@ -33,7 +33,6 @@
     ]
   },
   "dependencies": {
-    "@ant-design/charts": "^1.4.1",
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.22.7",
     "classnames": "^2.3.1",

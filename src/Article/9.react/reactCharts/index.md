@@ -1230,7 +1230,7 @@ meta: {
 
 #### 方法
 
-```js
+```js | pure
 import React, { useRef } from 'react';
 import { Line } from '@ant-design/charts';
 
