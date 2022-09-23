@@ -99,7 +99,6 @@ export default defineConfig({
     echarts: 'window.echarts',
     d3: 'window.d3',
     exceljs: 'window.exceljs',
-    '@ant-design/plots': 'widows[@ant-design/plots]',
   },
   styles: [
     `.snow-container {
@@ -136,6 +135,5 @@ export default defineConfig({
     'https://unpkg.com/echarts@5.3.3/dist/echarts.js',
     'https://unpkg.com/d3@7.6.1/dist/d3.min.js',
     'https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js',
-    'https://unpkg.com/@ant-design/plots@1.2.2/dist/plots.min.js',
   ],
 });
