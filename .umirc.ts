@@ -70,6 +70,7 @@ export default defineConfig({
   dynamicImport: {
     loading: '@/Loading',
   },
+  esbuild: {},
   chunks: ['vendors', 'umi'],
   chainWebpack: function(config, { webpack }) {
     config.merge({
