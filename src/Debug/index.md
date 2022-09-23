@@ -344,4 +344,3 @@ https://stackoverflow.com/questions/45308933/automatically-convert-string-concat
 chmod 777 xxx.js
 eslint xxx.js --rule '{prefer-template:[2]}' --fix
 ```
-
