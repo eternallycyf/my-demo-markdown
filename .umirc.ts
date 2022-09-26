@@ -39,7 +39,6 @@ export default defineConfig({
     MyComponents: path.resolve(__dirname, '.', 'src/MyComponents/'),
     style: path.resolve(__dirname, '.', 'src/style/'),
   },
-  mfsu: {},
   links: [
     { rel: 'stylesheet', type: 'text/css', href: `/${repo}/css/global.less` },
   ],
