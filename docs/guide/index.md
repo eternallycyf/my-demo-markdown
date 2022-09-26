@@ -96,6 +96,8 @@ nav:
   - [实现 AST 树](https://github.com/eternallycyf/vue_AST)
 - react 源码手写
   - [手写 useState](https://github.com/eternallycyf/React-hook-useState)
+  - [手写 redux](https://github.com/eternallycyf/my-redux-react-redux/blob/main/src/component/redux.js)
+  - [手写 react-redux](https://github.com/eternallycyf/my-redux-react-redux)
   - [手写 axios 源码](https://github.com/eternallycyf/eternallcyf-axios)
 - 搭建环境
   - [Electron-项目模板](https://github.com/eternallycyf/create-Electron-template-app)
