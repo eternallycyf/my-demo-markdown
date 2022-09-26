@@ -1,14 +1,10 @@
 ---
-title: Vue高阶组件
-order: 1
-nav:
-  title: 前端之路
-  order: 1
+group:
+  path: /VueHOC
+  title: VueHOC
 ---
 
-<Alert>待整理 整理后将移动到其他地方</Alert>
-
-# Vue 高阶组件
+# VueHOC
 
 ## Vue3
 

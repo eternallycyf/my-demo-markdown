@@ -94,6 +94,8 @@ nav:
   - [实现 diff 算法](https://github.com/eternallycyf/Vue-diff)
   - [实现 computed 和 watch](https://github.com/eternallycyf/vue-computed-watch)
   - [实现 AST 树](https://github.com/eternallycyf/vue_AST)
+  - [Vue 封装高阶组件仓库](https://github.com/eternallycyf/vue-hoc-component)
+  - [Vue 封装高阶组件在线](/project/VueHOC/vue-hoc)
 - react 源码手写
   - [手写 useState](https://github.com/eternallycyf/React-hook-useState)
   - [手写 redux](https://github.com/eternallycyf/my-redux-react-redux/blob/main/src/component/redux.js)
