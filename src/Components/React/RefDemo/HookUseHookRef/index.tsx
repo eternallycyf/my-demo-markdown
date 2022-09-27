@@ -5,6 +5,7 @@ import {
   forwardRef,
 } from "react";
 import { Card } from "antd";
+import React from "react";
 
 const Child = (props: any, ModalRef: any) => {
   useImperativeHandle(ModalRef, () => ({

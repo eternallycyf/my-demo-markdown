@@ -6,6 +6,7 @@ import { Skeleton, Image } from "antd";
 import { OutTable } from "react-excel-renderer";
 import { defaultOptions, renderAsync } from "docx-preview";
 import MarkDown from "./MarkDown";
+import React from "react";
 
 interface IProps {
   styles?: CSSProperties;

@@ -1,5 +1,4 @@
 import moment from "moment";
-
 export default class ToolClass {
   protected _range = (start: number, end: number) => {
     const result = [];

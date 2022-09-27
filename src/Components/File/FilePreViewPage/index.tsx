@@ -2,6 +2,7 @@ import FilePreView from "./components/FilePreView";
 import { useRef } from "react";
 import { Upload, Form, Button, Card, Table } from "antd";
 import { columns, dataSource } from "./constant";
+import React from "react";
 
 const normFile = (e: any) => {
   if (Array.isArray(e)) return e;

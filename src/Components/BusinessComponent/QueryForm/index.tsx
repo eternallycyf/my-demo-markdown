@@ -2,7 +2,7 @@ import type { FC } from "react";
 import { Card } from "antd";
 import { Filter } from "./components";
 import searchList from "./constant";
-
+import React from "react";
 
 const Queryform: FC<any> = () => {
   const onSearch = (values: any) => {

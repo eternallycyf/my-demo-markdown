@@ -1,9 +1,10 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Card, Button } from "antd";
 import styles from "./index.less";
 import { exportWord } from "./utils";
 import Chart from "./components/chart";
 import Table from "./components/table";
+
 
 const data = {
   p0: "8月3日，中国人民解放军东部战区在台岛周边海空域组织实战化联合演训。",
