@@ -110,7 +110,7 @@ export default defineConfig({
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.02);
     pointer-events: none;
-    z-index: 100001;
+    z-index: 100;
   }`,
   ],
   headScripts: [
