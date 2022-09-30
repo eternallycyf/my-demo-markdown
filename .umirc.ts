@@ -93,14 +93,6 @@ export default defineConfig({
       },
     });
   },
-  externals: {
-    react: 'window.React',
-    'react-dom': 'window.ReactDOM',
-    moment: 'window.moment',
-    echarts: 'window.echarts',
-    d3: 'window.d3',
-    exceljs: 'window.exceljs',
-  },
   styles: [
     `.snow-container {
     position: fixed;
@@ -116,6 +108,14 @@ export default defineConfig({
   headScripts: [
     { src: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js' },
   ],
+  externals: {
+    react: 'window.React',
+    'react-dom': 'window.ReactDOM',
+    moment: 'window.moment',
+    echarts: 'window.echarts',
+    d3: 'window.d3',
+    exceljs: 'window.exceljs',
+  },
   scripts: [
     {
       content: `(function(){
