@@ -345,4 +345,124 @@ chmod 777 xxx.js
 eslint xxx.js --rule '{prefer-template:[2]}' --fix
 ```
 
+## 26. Ant Design Charts-react
 
+### 1.Y 轴图表溢出 || lable 溢出
+
+```markdown
+配置 padding 和 appendPadding 挤压
+```
+
+### 2.Label 重叠
+
+```js
+autoRotate;
+autoHide;
+```
+
+### 3.自适应 y 轴
+
+```js
+自己自定义min max
+```
+
+### 4.横坐标乱序
+
+```js
+需要对时间处理成 g2 能识别的时间格式
+https://g2.antv.vision/zh/docs/manual/tutorial/scale#%E5%BA%A6%E9%87%8F%E5%AE%9A%E4%B9%89
+```
+
+### 5.自定义 y 轴坐标个数
+
+```js
+{
+  tickCount: 8,
+  tickMethod: function tickMethod(_ref) {
+    var max = _ref.max;
+    var interval = Math.ceil(max / 9);
+    return [
+      0,
+      interval,
+      interval * 2,
+      interval * 3,
+      interval * 4,
+      interval * 5,
+      interval * 6,
+      ~~max,
+    ];
+  },
+}
+```
+
+### 6.子弹图目标值 y 轴对不上
+
+- 只有当异步获取数据的时候才会出现这个问题
+- 解决方法是手动加一条数据 触发它的重绘 然后将这条数据颜色改成透明色
+
+```js
+let time = {};
+if (data?.length) {
+  time = bdata[data.length - 1];
+}
+bDate = [...bdata];
+bDate.push({
+  isType: false,
+  ...time,
+  ranges: [],
+  measure: [],
+  target: 1000,
+});
+```
+
+```js
+{
+  target: datum => {
+    return {
+      stroke:
+        datum.target === targetMaxLimit ? 'transparent' : 'rgba(11, 10, 25, 1)',
+      lineWidth: 2.5,
+    };
+  },
+};
+```
+
+### 7. min max 不生效
+
+```js
+# 使用期望出现几条
+tickCount: 6,
+# 手动指定
+meta:{
+    value:{
+      min:100,
+      ticks: [0, 20, 50, 100, 150, 300]
+    }
+  },
+```
+
+### 8. 刻度上方是空的
+
+```js
+xAxis:{
+  nice: true,
+  min: 0,
+  max: 35,
+  tickInterval: 7,
+  tickCount: 8,
+  tickMethod: function tickMethod(_ref) {
+          var max = _ref.max;
+          var interval = Math.ceil(max / 9);
+          return [
+            0,
+            interval,
+            interval * 2,
+            interval * 3,
+            interval * 4,
+            interval * 5,
+            interval * 6,
+            ~~max,
+          ];
+        },
+}
+```
