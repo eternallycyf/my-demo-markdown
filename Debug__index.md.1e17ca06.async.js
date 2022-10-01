@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[99],{fymY:function(d,l,a){"use strict";a.r(l);var r=a("cDcd"),e=a.n(r),u=a("dEAq"),m=a.n(u),o=a("JQtJ"),n=a("6T1g");const s=e.a.memo(({demos:t})=>e.a.createElement(e.a.Fragment,null,e.a.createElement("div",{className:"markdown"},e.a.createElement("h1",{id:"debug"},e.a.createElement(u.AnchorLink,{to:"#debug","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"Debug"),e.a.createElement("p",null,e.a.createElement(o.a,null,"\u6211\u9047\u5230\u7684\u5343\u5947\u767E\u602A\u7684 bug")),e.a.createElement("h2",{id:"1transform3d-\u95EA\u70C1"},e.a.createElement(u.AnchorLink,{to:"#1transform3d-\u95EA\u70C1","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"1.transform3d \u95EA\u70C1"),e.a.createElement(n.a,{code:`- \u95EE\u9898\u63CF\u8FF0: Chrome \u5F00\u542F\u786C\u4EF6\u52A0\u901F\u65F6 \u505A\u4E00\u4E2A\u7C7B\u4F3C\u786C\u5E01\u4E00\u6837\u7684\u4E1C\u897F
+(window.webpackJsonp=window.webpackJsonp||[]).push([[99],{fymY:function(d,l,a){"use strict";a.r(l);var r=a("cDcd"),e=a.n(r),u=a("dEAq"),m=a.n(u),i=a("JQtJ"),n=a("6T1g");const E=e.a.memo(({demos:t})=>e.a.createElement(e.a.Fragment,null,e.a.createElement("div",{className:"markdown"},e.a.createElement("h1",{id:"debug"},e.a.createElement(u.AnchorLink,{to:"#debug","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"Debug"),e.a.createElement("p",null,e.a.createElement(i.a,null,"\u6211\u9047\u5230\u7684\u5343\u5947\u767E\u602A\u7684 bug")),e.a.createElement("h2",{id:"1transform3d-\u95EA\u70C1"},e.a.createElement(u.AnchorLink,{to:"#1transform3d-\u95EA\u70C1","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"1.transform3d \u95EA\u70C1"),e.a.createElement(n.a,{code:`- \u95EE\u9898\u63CF\u8FF0: Chrome \u5F00\u542F\u786C\u4EF6\u52A0\u901F\u65F6 \u505A\u4E00\u4E2A\u7C7B\u4F3C\u786C\u5E01\u4E00\u6837\u7684\u4E1C\u897F
 \u5F53\u9F20\u6807\u7ECF\u8FC7\u7684\u65F6\u5019 \u8BA9\u8FD9\u4E2A\u5706\u5F62\u7269\u4F53 \u7FFB\u8F6C\u5230\u80CC\u9762 \u6B64\u65F6\u51FA\u73B0\u4E86\u95EA\u70C1(\u7C7B\u4F3C\u9B3C\u755C\u4E00\u6837\u3002\u3002\u3002)
 - \u89E3\u51B3\u65B9\u6CD5:
 webkit- backface-visibility:hidden
@@ -172,4 +172,69 @@ xxx(){
 https://stackoverflow.com/questions/45308933/automatically-convert-string-concatenation-to-template-literals
 // \u52A0\u6743\u9650
 chmod 777 xxx.js
-eslint xxx.js --rule '{prefer-template:[2]}' --fix`,lang:"js"}))));l.default=t=>{const i=e.a.useContext(u.context),E=i.demos;return e.a.useEffect(()=>{var c;t!=null&&(c=t.location)!==null&&c!==void 0&&c.hash&&u.AnchorLink.scrollToAnchor(decodeURIComponent(t.location.hash.slice(1)))},[]),e.a.createElement(s,{demos:E})}}}]);
+eslint xxx.js --rule '{prefer-template:[2]}' --fix`,lang:"js"}),e.a.createElement("h2",{id:"26-ant-design-charts-react"},e.a.createElement(u.AnchorLink,{to:"#26-ant-design-charts-react","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"26. Ant Design Charts-react"),e.a.createElement("h3",{id:"1y-\u8F74\u56FE\u8868\u6EA2\u51FA--lable-\u6EA2\u51FA"},e.a.createElement(u.AnchorLink,{to:"#1y-\u8F74\u56FE\u8868\u6EA2\u51FA--lable-\u6EA2\u51FA","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"1.Y \u8F74\u56FE\u8868\u6EA2\u51FA || lable \u6EA2\u51FA"),e.a.createElement(n.a,{code:"\u914D\u7F6E padding \u548C appendPadding \u6324\u538B",lang:"markdown"}),e.a.createElement("h3",{id:"2label-\u91CD\u53E0"},e.a.createElement(u.AnchorLink,{to:"#2label-\u91CD\u53E0","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"2.Label \u91CD\u53E0"),e.a.createElement(n.a,{code:`autoRotate;
+autoHide;`,lang:"js"}),e.a.createElement("h3",{id:"3\u81EA\u9002\u5E94-y-\u8F74"},e.a.createElement(u.AnchorLink,{to:"#3\u81EA\u9002\u5E94-y-\u8F74","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"3.\u81EA\u9002\u5E94 y \u8F74"),e.a.createElement(n.a,{code:"\u81EA\u5DF1\u81EA\u5B9A\u4E49min max",lang:"js"}),e.a.createElement("h3",{id:"4\u6A2A\u5750\u6807\u4E71\u5E8F"},e.a.createElement(u.AnchorLink,{to:"#4\u6A2A\u5750\u6807\u4E71\u5E8F","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"4.\u6A2A\u5750\u6807\u4E71\u5E8F"),e.a.createElement(n.a,{code:`\u9700\u8981\u5BF9\u65F6\u95F4\u5904\u7406\u6210 g2 \u80FD\u8BC6\u522B\u7684\u65F6\u95F4\u683C\u5F0F
+https://g2.antv.vision/zh/docs/manual/tutorial/scale#%E5%BA%A6%E9%87%8F%E5%AE%9A%E4%B9%89`,lang:"js"}),e.a.createElement("h3",{id:"5\u81EA\u5B9A\u4E49-y-\u8F74\u5750\u6807\u4E2A\u6570"},e.a.createElement(u.AnchorLink,{to:"#5\u81EA\u5B9A\u4E49-y-\u8F74\u5750\u6807\u4E2A\u6570","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"5.\u81EA\u5B9A\u4E49 y \u8F74\u5750\u6807\u4E2A\u6570"),e.a.createElement(n.a,{code:`{
+  tickCount: 8,
+  tickMethod: function tickMethod(_ref) {
+    var max = _ref.max;
+    var interval = Math.ceil(max / 9);
+    return [
+      0,
+      interval,
+      interval * 2,
+      interval * 3,
+      interval * 4,
+      interval * 5,
+      interval * 6,
+      ~~max,
+    ];
+  },
+}`,lang:"js"}),e.a.createElement("h3",{id:"6\u5B50\u5F39\u56FE\u76EE\u6807\u503C-y-\u8F74\u5BF9\u4E0D\u4E0A"},e.a.createElement(u.AnchorLink,{to:"#6\u5B50\u5F39\u56FE\u76EE\u6807\u503C-y-\u8F74\u5BF9\u4E0D\u4E0A","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"6.\u5B50\u5F39\u56FE\u76EE\u6807\u503C y \u8F74\u5BF9\u4E0D\u4E0A"),e.a.createElement("ul",null,e.a.createElement("li",null,"\u53EA\u6709\u5F53\u5F02\u6B65\u83B7\u53D6\u6570\u636E\u7684\u65F6\u5019\u624D\u4F1A\u51FA\u73B0\u8FD9\u4E2A\u95EE\u9898"),e.a.createElement("li",null,"\u89E3\u51B3\u65B9\u6CD5\u662F\u624B\u52A8\u52A0\u4E00\u6761\u6570\u636E \u89E6\u53D1\u5B83\u7684\u91CD\u7ED8 \u7136\u540E\u5C06\u8FD9\u6761\u6570\u636E\u989C\u8272\u6539\u6210\u900F\u660E\u8272")),e.a.createElement(n.a,{code:`let time = {};
+if (data?.length) {
+  time = bdata[data.length - 1];
+}
+bDate = [...bdata];
+bDate.push({
+  isType: false,
+  ...time,
+  ranges: [],
+  measure: [],
+  target: 1000,
+});`,lang:"js"}),e.a.createElement(n.a,{code:`{
+  target: datum => {
+    return {
+      stroke:
+        datum.target === targetMaxLimit ? 'transparent' : 'rgba(11, 10, 25, 1)',
+      lineWidth: 2.5,
+    };
+  },
+};`,lang:"js"}),e.a.createElement("h3",{id:"7-min-max-\u4E0D\u751F\u6548"},e.a.createElement(u.AnchorLink,{to:"#7-min-max-\u4E0D\u751F\u6548","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"7. min max \u4E0D\u751F\u6548"),e.a.createElement(n.a,{code:`# \u4F7F\u7528\u671F\u671B\u51FA\u73B0\u51E0\u6761
+tickCount: 6,
+# \u624B\u52A8\u6307\u5B9A
+meta:{
+    value:{
+      min:100,
+      ticks: [0, 20, 50, 100, 150, 300]
+    }
+  },`,lang:"js"}),e.a.createElement("h3",{id:"8-\u523B\u5EA6\u4E0A\u65B9\u662F\u7A7A\u7684"},e.a.createElement(u.AnchorLink,{to:"#8-\u523B\u5EA6\u4E0A\u65B9\u662F\u7A7A\u7684","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"8. \u523B\u5EA6\u4E0A\u65B9\u662F\u7A7A\u7684"),e.a.createElement(n.a,{code:`xAxis:{
+  nice: true,
+  min: 0,
+  max: 35,
+  tickInterval: 7,
+  tickCount: 8,
+  tickMethod: function tickMethod(_ref) {
+          var max = _ref.max;
+          var interval = Math.ceil(max / 9);
+          return [
+            0,
+            interval,
+            interval * 2,
+            interval * 3,
+            interval * 4,
+            interval * 5,
+            interval * 6,
+            ~~max,
+          ];
+        },
+}`,lang:"js"}))));l.default=t=>{const o=e.a.useContext(u.context),s=o.demos;return e.a.useEffect(()=>{var c;t!=null&&(c=t.location)!==null&&c!==void 0&&c.hash&&u.AnchorLink.scrollToAnchor(decodeURIComponent(t.location.hash.slice(1)))},[]),e.a.createElement(E,{demos:s})}}}]);
