@@ -9,7 +9,7 @@ nav:
 
 ## 1 准备阶段
 
-```tsx | pure | pure
+```typescript
 tsc hello.ts     =>  .ts
 tsc --init
 终端 ctrl+shift+b 监视tsc
@@ -20,7 +20,7 @@ tsc --init
 
 ### tsconfig
 
-```json
+```js
 {
    "compilerOptions": {
        // 开启js提示
@@ -68,7 +68,7 @@ react-app-env.d.ts => declare
 
 ### namespace
 
-```tsx | pure
+```js
 # 相当于自执行函数
 namespace xxx {
   export function log(){}
@@ -82,11 +82,9 @@ import Bar = importing.Foo;
 let bar: Bar; // ok
 ```
 
-### mixin
+### [mixin](https://www.typescriptlang.org/docs/handbook/mixins.html)
 
-- https://mariusschulz.com/blog/mixin-classes-in-typescript
-
-```tsx | pure
+```js
 class SmartObject implements Disposable, Activatable { }
 #
 applyMixins(SmartObject, [Disposable, Activatable]);
@@ -102,7 +100,7 @@ function applyMixins(derivedCtor: any, baseCtors: any[]) {
 
 ### this 指向
 
-```tsx | pure
+```js
 type ThisPointer = { name: '19Qingfeng' };
 function xxx(this: ThisPointer) {
   this.name;
@@ -111,7 +109,7 @@ function xxx(this: ThisPointer) {
 
 ### 版本问题
 
-```tsx | pure
+```js
 @types/react 要和ts版本对应 不然会报错
 ```
 
@@ -169,7 +167,7 @@ function xxx(this: ThisPointer) {
 | ?          | -?:       |      |
 |            |           |      |
 
-```tsx | pure
+```js
 # 删除属性中的只读属性
 type CreateMutable<Type> = {
   -readonly [Property in keyof Type]: Type[Property];
@@ -199,7 +197,7 @@ type MappedTypeWithNewProperties<Type> = {
 
 #### Uppercase
 
-```tsx | pure
+```js
 # Uppercase 把每个字符转为大写形式：
 type Greeting = "Hello, world"
 type ShoutyGreeting = Uppercase<Greeting>
@@ -212,7 +210,7 @@ type MainID = ASCIICacheKey<"my_app">
 
 #### Lowercase
 
-```tsx | pure
+```js
 type Greeting = "Hello, world"
 type QuietGreeting = Lowercase<Greeting>
 // type QuietGreeting = "hello, world"
@@ -224,7 +222,7 @@ type MainID = ASCIICacheKey<"MY_APP">
 
 #### Capitalize
 
-```tsx | pure
+```js
 # Capitalize 字符串的第一个字符转为大写形式
 type LowercaseGreeting = "hello, world";
 type Greeting = Capitalize<LowercaseGreeting>;
@@ -233,7 +231,7 @@ type Greeting = Capitalize<LowercaseGreeting>;
 
 #### Uncapitalize
 
-```tsx | pure
+```js
 # Uncapitalize
 type UppercaseGreeting = "HELLO WORLD";
 type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>;
@@ -242,11 +240,46 @@ type UncomfortableGreeting = Uncapitalize<UppercaseGreeting>;
 
 ### 模板字面量
 
-```tsx | pure
+```js
 type World = "world";
 type Greeting = `hello ${World}`;
 // type Greeting = "hello world"
 # 如果是联合类型 就会有多种可能
+```
+
+- as
+
+```ts
+// 通过模板字面量创建一个新属性名
+type Getters<Type> = {
+    [Property in keyof Type as `get${Capitalize<string & Property>}`]: () => Type[Property]
+};
+interface Person {
+    name: string;
+    age: number;
+    location: string;
+}
+type LazyPerson = Getters<Person>;
+// type LazyPerson = {
+//    getName: () => string;
+//    getAge: () => number;
+//    getLocation: () => string;
+// }
+
+// 通过条件类型返回一个never 过滤某些属性
+// Remove the 'kind' property
+type RemoveKindField<Type> = {
+    [Property in keyof Type as Exclude<Property, "kind">]: Type[Property]
+};
+interface Circle {
+    kind: "circle";
+    radius: number;
+}
+type KindlessCircle = RemoveKindField<Circle>;
+
+// type KindlessCircle = {
+//    radius: number;
+// }
 ```
 
 ## 4. 基本 API
@@ -307,7 +340,7 @@ function fn(ctor: SomeConstructor) {
 - [常量枚举和直接枚举的区别](https://www.typescriptlang.org/docs/handbook/enums.html#const-enums): 会生成额外的代码
 - 相同名称的枚举自动合并
 
-```ts | pure
+```typescript
 // 默认从0开始递增 直到枚举进行反向映射
 enum Days {
   Sun = 3,
@@ -341,7 +374,7 @@ keyof typeof Methods;  // "GET" | "POST"
 
 - 只能返回 number string symbol 类型 需要自己收窄类型
 
-```tsx | pure
+```js
 # 获取一个接口的所有key
 interface Foo {
   name: string;
@@ -359,7 +392,7 @@ type xxx = keyof typeof 变量(enum)
 
 - 索引访问类型
 
-```tsx | pure
+```js
 # 生成value
 type Person = { age: number; name: string; alive: boolean };
 
@@ -398,18 +431,87 @@ type Age2 = Person["age"];
 
 ### infer
 
-```tsx | pure
-// 表示在 extends 条件语句中待推断的类型变量
-type Info<T> = T extends { a: infer U; b: infer U } ? U : never;
-// Props类： string | number
-type Props = Info<{ a: string; b: number }>;
-// Props类型： never
-type Props1 = Info<number>;
+- 条件类型 => 减少重载
+
+```js
+type NameOrId<T extends number | string> = T extends number
+  ? IdLabel
+  : NameLabel;
+function createLabel<T extends number | string>(idOrName: T): NameOrId<T> {
+  throw "unimplemented";
+}
+
+let a = createLabel("typescript");
+// let a: NameLabel
+
+let b = createLabel(2.8);
+// let b: IdLabel
+
+let c = createLabel(Math.random() ? "hello" : 42);
+// let c: NameLabel | IdLabel
 ```
+
+- 条件类型约束
+
+```js
+type MessageOf<T> = T extends { message: unknown } ? T["message"] : never;
+
+interface Email {
+  message: string;
+}
+
+interface Dog {
+  bark(): void;
+}
+
+type EmailMessageContents = MessageOf<Email>;
+// type EmailMessageContents = string
+
+type DogMessageContents = MessageOf<Dog>;
+// type DogMessageContents = never
+#
+type Flatten<T> = T extends any[] ? T[number] : T;
+
+// Extracts out the element type.
+type Str = Flatten<string[]>;
+// type Str = string
+
+// Leaves the type alone.
+type Num = Flatten<number>;
+// type Num = number
+```
+
+- infer
+
+````js
+- 可以从正在比较的类型中推断类型，然后在 true 分支里引用该推断结果
+  - 在条件类型里推断
+```ts
+// type Flatten<T> = T extends any[] ? T[number] : T;
+type Flatten<T> = T extends Array<infer Item> ? Item : T;
+# 获取一个函数的返回值类型
+type GetReturnType<Type> = Type extends (...args: never[]) => infer Return
+  ? Return
+  : never;
+type Bools = GetReturnType<(a: boolean, b: boolean) => boolean[]>;
+// type Bools = boolean[]
+```
+  - 分发条件类型
+```ts
+// 传入联合类型就会变成分发
+type ToArray<Type> = Type extends any ? Type[] : never;
+type StrArrOrNumArr = ToArray<string | number>;
+// type StrArrOrNumArr = string[] | number[]
+#
+type ToArrayNonDist<Type> = [Type] extends [any] ? Type[] : never;
+// 'StrArrOrNumArr' is no longer a union.
+type StrArrOrNumArr = ToArrayNonDist<string | number>;
+// type StrArrOrNumArr = (string | number)[]
+````
 
 ### in
 
-```tsx | pure
+```js
 in 则可以遍历枚举类型
 type Keys = "a" | "b"
 type Obj =  {
@@ -431,20 +533,19 @@ type Flags = {
 
 ### is
 
-```tsx | pure
-function isNumber(x: any): x is number {
-  //默认传入的是number类型
-  return typeof x === 'number';
+```js
+function isNumber(x: any): x is number { //默认传入的是number类型
+  return typeof x === "number";
 }
 
-console.log(isNumber(7)); // true
-console.log(isNumber('7')); //false
-console.log(isNumber(true)); //false
+console.log(isNumber(7)) // true
+console.log(isNumber('7')) //false
+console.log(isNumber(true)) //false
 ```
 
 ## 5.inerface
 
-```tsx | pure
+```js
 # base
 interface IPerson {
    readonly name: string | number,  // 只读
@@ -464,7 +565,7 @@ function longest<Type extends { length: number }>(a: Type, b: Type) {
 
 ## 6. 泛型
 
-```tsx | pure
+```js
 #
 function swap<T, U>(data: [T, U]): [U, T] { } T[]
 # 约束泛型
@@ -490,13 +591,13 @@ const xxx = new Person<string>('张三')
 
 ### js
 
-```tsx | pure
+```js
 #私有属性
 ```
 
 ### API
 
-```tsx | pure
+```js
 # 遍历属性
 Object.kes(实例名).forEach(key=>实例名[key])
 # 遍历方法
@@ -507,7 +608,7 @@ Object.getOwnPropertyNames([className].prototype)
 
 ### 类表达式
 
-```tsx | pure
+```js
 const aaa = class {
   // 匿名
 }
@@ -521,13 +622,13 @@ const bbb = class ccc {
 
 #### public
 
-```tsx | pure
+```js
 实例和父类能都访问;
 ```
 
 #### static
 
-```tsx | pure
+```js
 // 只能父类点出来
 // 类似于直接在 Person.prototype.aaaa = '孙悟空'
 //  constructor() { this.bbb = 12; }
@@ -537,13 +638,13 @@ class Person {
   bbb!: number = 12;
   [s: string]: boolean | ((s: string) => boolean);
 }
-const per = new Person();
-console.log(Person.aaaa);
+const per = new Person()
+console.log(Person.aaaa)
 ```
 
 #### private
 
-```tsx | pure
+```js
 // private    私有的         外界无法访问 不能被继承
 为了避免直接修改 class中的属性 产生数据混乱
 用private 定义属性 拒绝外界访问
@@ -572,13 +673,13 @@ console.log(per) //10
 
 #### protected
 
-```tsx | pure
+```js
 // protected  受保护的       外界无法访问 可以被继承
 ```
 
 ### readonly
 
-```tsx | pure
+```js
 readonly ccc: string = 'ss'
 static readonly ccc: string = 'ss'
 只能在构造器里面修改
@@ -586,7 +687,7 @@ static readonly ccc: string = 'ss'
 
 ### get set
 
-```tsx | pure
+```js
 // 手动定义 获取和更改方法 的computed
 // get 定义的 可以直接点出来 不用调方法
 // 如果不是关键字 get 就得使用定义的方法修改
@@ -598,24 +699,24 @@ class Person {
     this._age = _age;
   }
   get age() {
-    return this._age;
+    return this._age
   }
   set age(value: number) {
     if (value < 10) {
-      this._age = value;
+      this._age = value
     }
   }
 }
-const per = new Person('张三', 10);
-per.age = 200;
-console.log(per); //10
+const per = new Person('张三', 10)
+per.age = 200
+console.log(per) //10
 ```
 
 ### constructor
 
 #### constructor
 
-```tsx | pure
+```js
 class Person {
   name: string;
   age: number;
@@ -641,7 +742,7 @@ const per: Person = new Person('2', 2)
 
 #### super
 
-```tsx | pure
+```js
 class Animal {
   name: string;
   age: number;
@@ -669,14 +770,14 @@ new Cat('as', 1, 'asd').sayHi();
 
 ### extends
 
-```tsx | pure
+```js
 子类重写方法 在子类中 会覆盖父类的方法
 // 如果要加属性 必须写super 重写属性
 ```
 
 ### implements
 
-```tsx | pure
+```js
 # implements  需要重写属性和方法
 class A implements 接口{
    /**
@@ -688,7 +789,7 @@ class A implements 接口{
 
 ### abstract
 
-```tsx | pure
+```js
 # 抽象类 禁止被实例化 用来被继承的
 abstract class Parent{
 
@@ -705,7 +806,7 @@ abstract class Parent{
 
 - 在运行时立即调用 被装饰的声明信息做为参数传入
 
-```tsx | pure
+```js
 function Path(name: string) {
   console.log('需要通过柯里化形式拿到参数,默认传入的是target')
   return function (traget: any) {
@@ -728,7 +829,13 @@ class Hello {
 
 ## 9. Utility Types
 
+- 可以包含 promise 也可以不包含
+
 ### `Awaited<Type>`
+
+```ts
+type C = Awaited<boolean | Promise<number>>;
+```
 
 ### `Partial<Type>`
 
@@ -750,7 +857,7 @@ class Hello {
 - 将 K 中所有的属性的值转化为 T 类型(定义一个接口的 key 和 value)
 - `type Record<K extends keyof any, T> = { [P in K]: T };`
 
-```tsx | pure
+```ts
 type keys = 'A' | 'B' | 'C';
 const result: Record<keys, number> = {
   A: 1,
@@ -764,7 +871,7 @@ const result: Record<keys, number> = {
 - 从 T 中取出 一系列 K 的属性
 - `type Pick<T, K extends keyof T> = { [P in K]: T[P] };`
 
-```tsx | pure
+```ts
 // Pick<接口,'key1','key2',...>
 interface Props {
   name: string;
@@ -776,7 +883,7 @@ type ChildrenProps = Pick<Props, 'name' | 'label'>;
 
 ### `Omit<Type, Keys>`
 
-```tsx | pure
+```ts
 // 忽视重写某个属性
 interface A {
   a: number;
@@ -804,7 +911,7 @@ interface B extends Omit<A, 'a'> {
 
 ### `Parameters<Type>`
 
-```tsx | pure
+```ts
 /**
  * Obtain the parameters of a function type in a tuple
  */
@@ -815,6 +922,7 @@ type Parameters<T extends (...args: any[]) => any> = T extends (
   : never;
 
 type A = Parameters<() => void>; // []
+type T1 = Parameters<(s: string) => void>; // [s:string]
 type B = Parameters<typeof Array.isArray>; // [any]
 type C = Parameters<typeof parseInt>; // [string, (number | undefined)?]
 type D = Parameters<typeof Math.max>; // number[]
@@ -822,7 +930,7 @@ type D = Parameters<typeof Math.max>; // number[]
 
 ### `ConstructorParameters<Type>`
 
-```tsx | pure
+```ts
 /**
  * Obtain the parameters of a constructor function type in a tuple
  */
@@ -844,7 +952,7 @@ type C = ConstructorParameters<RegExpConstructor>;
 - 获取函数返回值类型
 - `type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;`
 
-```tsx | pure
+```ts
 type T0 = ReturnType<() => string>;
 ```
 
@@ -852,7 +960,7 @@ type T0 = ReturnType<() => string>;
 
 - 获取构造函数类型的实例类型
 
-```tsx | pure
+```ts
 /**
  * Obtain the return type of a constructor function type
  */
@@ -872,7 +980,7 @@ type C = InstanceType<RegExpConstructor>; // RegExp
 
 - 覆盖接口属性
 
-```tsx | pure
+```ts
 /**
  * Returns object T, but with T[K] overridden to type U.
  * @example
@@ -887,7 +995,7 @@ export type OverrideProperty<T, K extends keyof T, U> = Omit<T, K> &
 
 #### DeepPartial
 
-```tsx | pure
+```ts
 type DeepPartial<T> = {
   [K in keyof T]?: T[K] extends object ? DeepPartial<T[K]> : T[K];
 };
@@ -895,7 +1003,7 @@ type DeepPartial<T> = {
 
 #### DeepRequired
 
-```tsx | pure
+```ts
 type DeepRequired<T> = {
   [K in keyof T]-?: T[K] extends object ? DeepRequired<T[K]> : T[K];
 };
@@ -903,7 +1011,7 @@ type DeepRequired<T> = {
 
 #### GetCommonKeys
 
-```tsx | pure
+```ts
 // 提取公众属性
 type CommonKeys = Extract<keyof Worker, keyof Student>;
 ```
@@ -912,7 +1020,7 @@ type CommonKeys = Extract<keyof Worker, keyof Student>;
 
 - 删除属性中的可选属性
 
-```tsx | pure
+```ts
 type Concrete<Type> = {
   [Property in keyof Type]-?: Type[Property];
 };
@@ -922,7 +1030,7 @@ type Concrete<Type> = {
 
 - worKer 在 student 中不存在的 key
 
-```tsx | pure
+```ts
 type ExcludeKeys = Exclude<keyof Worker, keyof Student>;
 ```
 
@@ -930,7 +1038,7 @@ type ExcludeKeys = Exclude<keyof Worker, keyof Student>;
 
 - [string, number] -> string | number
 
-```tsx | pure
+```ts
 type TTuple = [string, number];
 type Res = TTuple[number]; // string | number
 ```
@@ -939,7 +1047,7 @@ type Res = TTuple[number]; // string | number
 
 - T1 | T2 -> T1 & T2
 
-```tsx | pure
+```ts
 type UnionToIntersection<U> = (U extends any
 ? (k: U) => void
 : never) extends (k: infer I) => void
@@ -951,9 +1059,11 @@ type Result = UnionToIntersection<T1 | T2>; // T1 & T2
 
 ## 11. [react 接口](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/1349b640d4d07f40aa7c1c6931f18e3fbf667f3a/types/react/index.d.ts#L835)
 
+- https://github.com/typescript-cheatsheets/react
+
 #### base
 
-```tsx | pure
+```js
 # 组件
 class xxx extends React.Component<PropType,StateType>{ }
 xxx: React.FunctionComponent | FC
@@ -1001,11 +1111,63 @@ const el = <TestComponent name="foo" />;
 # 组件实例 见下方
 ```
 
+#### getDerivedStateFromProps
+
+```ts
+static getDerivedStateFromProps(
+    props: Props,
+    state: State
+  ): Partial<State> | null {
+    //
+  }
+#
+class Comp extends React.Component<
+  Props,
+  ReturnType<typeof Comp["getDerivedStateFromProps"]>
+> {
+  static getDerivedStateFromProps(props: Props) {}
+}
+```
+
+#### defaultProps
+
+```ts
+// internal contract, should not be exported out
+type GreetProps = {
+  age: number;
+};
+
+class Greet extends Component<GreetProps> {
+  static defaultProps = { age: 21 };
+}
+
+// external contract
+export type ApparentGreetProps = JSX.LibraryManagedAttributes<
+  typeof Greet,
+  GreetProps
+>;
+
+
+##
+type ComponentProps<T> = T extends
+  | React.ComponentType<infer P>
+  | React.Component<infer P>
+  ? JSX.LibraryManagedAttributes<T, P>
+  : never;
+
+const TestComponent = (props: ComponentProps<typeof GreetComponent>) => {
+  return <h1 />;
+};
+
+// No error
+const el = <TestComponent name="foo" />;
+```
+
 #### 组件实例
 
 #### class
 
-```tsx | pure
+```ts
 import React from 'react';
 export default class Child extends React.Component {
   b = () => {};
@@ -1035,7 +1197,7 @@ class AAA extends React.Component {
 
 - 第一种方式
 
-```tsx | pure
+```js
 import React from 'react';
 import Countdown, { CountdownHandle } from './Countdown';
 
@@ -1052,7 +1214,7 @@ function App() {
 }
 ```
 
-```tsx | pure
+```js
 import React from 'react';
 export type CountdownHandle = {
   start: () => void;
@@ -1078,15 +1240,15 @@ export default Countdown;
 
 - 第二种方式
 
-```tsx | pure
+```js
 import React from 'react';
 type CountdownHandle = {
-  start: () => void;
+  start: () => void,
 };
 type CountdownProps = {};
 const Countdown: React.ForwardRefRenderFunction<
   CountdownHandle,
-  CountdownProps
+  CountdownProps,
 > = (props, forwardedRef) => {
   React.useImperativeHandle(forwardedRef, () => ({
     start() {
@@ -1099,7 +1261,7 @@ const Countdown: React.ForwardRefRenderFunction<
 export default React.forwardRef(Countdown);
 ```
 
-```tsx | pure
+```js
 import React from 'react';
 import Countdown from './Countdown';
 
@@ -1112,9 +1274,69 @@ const App: React.FC = () => {
 
 #### vue3
 
-```tsx | pure
+```js
 <script setup lang="ts">
 import xxx from './xxx'
 const Child = ref<InstanceType<typeof xxx>>(null!)
 </script>
+```
+
+## Bug
+
+#### numbe Index sign
+
+```ts
+interface Animal {
+  name: string;
+}
+interface Dog extends Animal {
+  breed: string;
+}
+interface NotOkay {
+  // 数字索引的返回类型必须是 字符索引返回类型的子类型
+  // 因为js会默认转为字符串
+  [x: number]: Dog;
+  [x: string]: Animal;
+}
+```
+
+#### tuple assignment parameters error
+
+```ts
+const args = [8, 5] as const;
+const angle = Math.atan2(...args);
+```
+
+#### double assign
+
+```js
+as any as JSX.Element
+```
+
+#### this.setState
+
+```js
+// 如果报错 需要声明接口
+React.Component<IPorps,IStates>
+```
+
+#### ObjectIndex
+
+```js
+const props = {
+  foo: "bar"
+};
+props["foo"] = "baz";
+#
+interface Props {
+  foo: string;
+  [key: string]: Props[keyof Props];
+}
+
+const props: Props = {
+  foo: "bar"
+};
+
+props["foo"] = "baz"; // ok
+props["bar"] = "baz"; // error
 ```
