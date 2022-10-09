@@ -60,7 +60,83 @@ const base = useMemo(fn, []);
 
 ### 3.虚拟列表
 
+- https://usehooks-ts.com/react-hook/use-intersection-observer
+
 ### 4.惰性渲染 && 惰性函数
+
+- 惰性加载表示函数执行的分支只会在函数第一次调用的时候执行。在第一次调用的过程中。
+- 该函数被覆盖为另一个按照合适的方式执行的函数。这样任何对原函数的调用就不用再经过执行的分支了
+
+```js
+#
+ var timeStamp = null;
+  function getTimeStamp() {
+    if (timeStamp) {
+      return timeStamp
+    }
+    // 直接为外界的变量赋值
+    timeStamp = new Date().getTime()
+    return timeStamp;
+  }
+  console.log(getTimeStamp());
+  console.log(getTimeStamp());
+  console.log(getTimeStamp());
+  console.log(getTimeStamp());
+# 自执行函数 避免污染全局变量
+  var getTimeStamp = (function () {
+    var timeStamp = null;
+    return function () {
+      if (timeStamp) {
+        return timeStamp;
+      }
+      timeStamp = new Date().getTime()
+      return timeStamp;
+    }
+  })()
+# 第一次只是在给函数重新定义 第二次执行时候才生效
+ var getTimeStamp = function () {
+    var timeStamp = new Date().getTime()
+    getTimeStamp = function () {
+      return timeStamp
+    }
+    return getTimeStamp()
+  }
+# element ui 源码 处理 dom 事件
+export const on = (function() {
+  if (!isServer && document.addEventListener) {
+    return function(element, event, handler) {
+      if (element && event && handler) {
+        element.addEventListener(event, handler, false);
+      }
+    };
+  } else {
+    return function(element, event, handler) {
+      if (element && event && handler) {
+        element.attachEvent('on' + event, handler);
+      }
+    };
+  }
+})();
+#
+   function test(num) {
+    switch (num) {
+      case 1:
+        test = () => 1
+        break;
+      case 2:
+        test = () => 2
+        break;
+      case 3:
+        test = () => 3
+        break;
+      default:
+        test = () => null
+        break;
+    }
+    return test()
+  }
+  console.log(test(null)); // null
+```
 
 ### 5.减少使用箭头函数 => 实例方法
 
@@ -145,6 +221,11 @@ if (this.props.name == 'Mayank') {
 ### 9.复杂变动的组件+Key
 
 - 并不是只有 map 渲染的时候才能写 key
+- element 等组件库会将一些 API 利用 computed 缓存（computed 只有当 props 和 data 中的变量变化的时候才会重新缓存）
+- vue 的 diff 算法有时候自动计算会直接缓存
+  - （比如你写了两个 El-Button 这时候 diff 算法将他们当成一个,而组件库内部的 computed 没有重新计算）
+  - 此时就可能产生值变化 但是表单的 API 未变化的 bug
+  - 这时候就需要给其加不同的 key
 
 ### 10.避免使用内联样式
 
@@ -156,4 +237,182 @@ if (this.props.name == 'Mayank') {
 
 ### 13.gzip 压缩
 
+```conf
+http{
+  gzip on;                      #开启gzip功能
+  gzip_types *;                 #压缩源文件类型,根据具体的访问资源类型设定
+  gzip_comp_level 6;            #gzip压缩级别
+  gzip_min_length 1024;         #进行压缩响应页面的最小长度,content-length
+  gzip_buffers 4 16K;           #缓存空间大小
+  gzip_http_version 1.1;        #指定压缩响应所需要的最低HTTP请求版本
+  gzip_vary  on;                #往头信息中添加压缩标识
+  gzip_disable "MSIE [1-6]\.";  #对IE6以下的版本都不进行压缩
+  gzip_proxied  off;            #nginx作为反向代理压缩服务端返回数据的条件
+}
+```
+
 ### 14.webpack 拆包
+
+#### css 抽离
+
+```js
+plugins: [
+   new MiniCssExtractPlugin({
+     // 对输出的css文件进行重命名
+     filename: 'css/built.css'
+   }),
+   // 压缩css
+   new OptimizeCssAssetsWebpackPlugin()
+]
+
+#
+  {
+        test: /\.css$/,
+        use: [ 'file-loader']
+             ['file-loader?name=[name].bundle[hash].css']
+  },
+```
+
+#### js 抽离
+
+```js
+ output: {
+    filename: 'js/[name].js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+```
+
+#### 代码切割
+
+```js
+1. 多入口 自动打包多个文件
+   entry: {
+    'jquery': './src/index.js',
+    'angular': './src/2.js'
+  },
+2. 异部的chunk
+   require.ensure([],function(_require){
+     _require('./xxx')
+   })
+  import('./2.css').then(() => {
+    ...
+  })
+}
+#
+3.
+optimization: {
+  splitChunks: {
+    chunks: 'all'
+  }
+}
+#
+externals: {
+  jquery: 'jQuery'
+}
+引入cdn
+```
+
+#### dll
+
+```js
+#
+硬链接一个 包,再手动scrit引入这个包 之后webpack就不用编译了
+#
+yarn add add-asset-html-webpack-plugin
+webpack --config webpack.config.dll.js && webpack
+# 文件路径
+  webpack.config.js
+  webpack.config.dll.js
+  dist
+     index.html
+  src
+  public
+  dll
+     jquery
+     manifest.json
+# webpack.config.js
+const path = require('path')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
+module.export = {
+  ...
+  externals: {
+    jquery: 'jQuery'
+  },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template: './index.html',
+      filename: 'index.html',
+      minify: { removeComments: true }
+    }),
+    // 告诉webpack哪些库不参与打包，同时使用时的名称也得变~
+    new webpack.DllReferencePlugin({
+        manifest: resolve(__dirname, 'dll/manifest.json')
+    }),
+    // 将某个文件打包输出去，并在html中自动引入该资源
+    new AddAssetHtmlPlugin({
+       filepath: path.resolve(__dirname, 'dll/jquery.js'),
+       publicPath: '../dll',
+       outputPath: 'vendor',
+    }),
+  ]
+}
+# webpack.config.dll.js
+const path = require('path');
+const webpack = require('webpack')
+module.exports = {
+  entry: {
+    jquery: ['jquery'],
+  },
+  output: {
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dll'),
+    library: '[name]_[hash]'
+  },
+  plugins: [
+    // 打包生成一个 manifest.json --> 提供和jquery映射
+    new webpack.DllPlugin({
+      // 映射库的暴露的内容名称 和 library 相同
+      name: '[name]_[hash]',
+      path: path.join(__dirname, 'dll/manifest.json'),
+    })
+  ],
+  mode: 'production'
+};
+```
+
+```js
+externals: {
+    jquery: 'jQuery'
+},
+new webpack.ProvidePlugin({
+   $: path.resolve(path.join(__dirname, 'dll/jquery.js'))
+}),
+```
+
+#### 其他 cli 集成
+
+```ts
+  chainWebpack: function(config, { webpack }) {
+    config.merge({
+      optimization: {
+        splitChunks: {
+          chunks: 'all',
+          minSize: 30000,
+          minChunks: 3,
+          automaticNameDelimiter: '.',
+          cacheGroups: {
+            vendor: {
+              name: 'vendors',
+              test({ resource }: any) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
+            },
+          },
+        },
+      },
+    });
+  },
+```
