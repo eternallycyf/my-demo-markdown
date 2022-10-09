@@ -38,12 +38,15 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.1/jquery.js"></script>
     <script>
       !(function () {
-        var e = localStorage.getItem("dumi:prefers-color"),
-          t = window.matchMedia("(prefers-color-scheme: dark)").matches,
-          r = ["light", "dark", "auto"];
+        var e =
+            navigator.cookieEnabled && void 0 !== window.localStorage
+              ? localStorage.getItem("dumi:prefers-color")
+              : "auto",
+          o = window.matchMedia("(prefers-color-scheme: dark)").matches,
+          t = ["light", "dark", "auto"];
         document.documentElement.setAttribute(
           "data-prefers-color",
-          e === r[2] ? (t ? r[1] : r[0]) : r.indexOf(e) > -1 ? e : r[0]
+          e === t[2] ? (o ? t[1] : t[0]) : t.indexOf(e) > -1 ? e : t[0]
         );
       })();
     </script>
@@ -65,7 +68,7 @@
     <script src="https://unpkg.com/echarts@5.3.3/dist/echarts.js"></script>
     <script src="https://unpkg.com/d3@7.6.1/dist/d3.min.js"></script>
     <script src="https://unpkg.com/exceljs@4.3.0/dist/exceljs.min.js"></script>
-    <script src="/my-demo-markdown/vendors.960087a1.async.js"></script>
-    <script src="/my-demo-markdown/umi.48bab00c.js"></script>
+    <script src="/my-demo-markdown/vendors.e580f8e0.async.js"></script>
+    <script src="/my-demo-markdown/umi.a4d8922b.js"></script>
   </body>
 </html>
