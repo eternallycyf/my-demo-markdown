@@ -1,1 +1,377 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"0Owb":function(M,f,t){"use strict";t.d(f,"a",function(){return h});function h(){return h=Object.assign?Object.assign.bind():function(j){for(var u=1;u<arguments.length;u++){var m=arguments[u];for(var d in m)Object.prototype.hasOwnProperty.call(m,d)&&(j[d]=m[d])}return j},h.apply(this,arguments)}},DGhM:function(M,f,t){"use strict";t.r(f);var h=t("EFp3"),j=t("YkAm"),u=t("wx14"),m=t("ODXe"),d=t("rePB"),z=t("jO45"),H=t("Ue1A"),J=t("jN4g"),K=t("2BaD"),X=t("4i/N"),G=t("IMoZ"),Q=t("RCxd"),Z=t("zueq"),w=t("+YFz"),V=t("TSYQ"),N=t.n(V),W=t("8XRh"),a=t("cDcd"),k=t.n(a),q=t("H84U"),_=t("RqAY"),ee=t("0n0R"),te=t("1OyB"),ne=t("vuIU"),oe=t("Ji7U"),ae=t("LK+K"),re=function(l){Object(oe.a)(r,l);var e=Object(ae.a)(r);function r(){var n;return Object(te.a)(this,r),n=e.apply(this,arguments),n.state={error:void 0,info:{componentStack:""}},n}return Object(ne.a)(r,[{key:"componentDidCatch",value:function(o,c){this.setState({error:o,info:c})}},{key:"render",value:function(){var o=this.props,c=o.message,i=o.description,x=o.children,E=this.state,g=E.error,C=E.info,I=C&&C.componentStack?C.componentStack:null,b=typeof c=="undefined"?(g||"").toString():c,S=typeof i=="undefined"?I:i;return g?a.createElement(P,{type:"error",message:b,description:a.createElement("pre",null,S)}):x}}]),r}(a.Component),le=function(l,e){var r={};for(var n in l)Object.prototype.hasOwnProperty.call(l,n)&&e.indexOf(n)<0&&(r[n]=l[n]);if(l!=null&&typeof Object.getOwnPropertySymbols=="function")for(var o=0,n=Object.getOwnPropertySymbols(l);o<n.length;o++)e.indexOf(n[o])<0&&Object.prototype.propertyIsEnumerable.call(l,n[o])&&(r[n[o]]=l[n[o]]);return r},se={success:z.a,info:Z.a,error:J.a,warning:G.a},ce={success:H.a,info:w.a,error:K.a,warning:Q.a},ie=function(e){var r=e.description,n=e.icon,o=e.prefixCls,c=e.type,i=(r?ce:se)[c]||null;return n?Object(ee.d)(n,a.createElement("span",{className:"".concat(o,"-icon")},n),function(){return{className:N()("".concat(o,"-icon"),Object(d.a)({},n.props.className,n.props.className))}}):a.createElement(i,{className:"".concat(o,"-icon")})},de=function(e){var r=e.isClosable,n=e.closeText,o=e.prefixCls,c=e.closeIcon,i=e.handleClose;return r?a.createElement("button",{type:"button",onClick:i,className:"".concat(o,"-close-icon"),tabIndex:0},n?a.createElement("span",{className:"".concat(o,"-close-text")},n):c):null},A=function(e){var r,n=e.description,o=e.prefixCls,c=e.message,i=e.banner,x=e.className,E=x===void 0?"":x,g=e.style,C=e.onMouseEnter,I=e.onMouseLeave,b=e.onClick,S=e.afterClose,T=e.showIcon,fe=e.closable,R=e.closeText,D=e.closeIcon,me=D===void 0?a.createElement(X.a,null):D,L=e.action,p=le(e,["description","prefixCls","message","banner","className","style","onMouseEnter","onMouseLeave","onClick","afterClose","showIcon","closable","closeText","closeIcon","action"]),Ce=a.useState(!1),B=Object(m.a)(Ce,2),F=B[0],pe=B[1],ye=a.useRef(),$=a.useContext(q.b),Oe=$.getPrefixCls,he=$.direction,s=Oe("alert",o),xe=function(v){var O;pe(!0),(O=p.onClose)===null||O===void 0||O.call(p,v)},Ee=function(){var v=p.type;return v!==void 0?v:i?"warning":"info"},ge=R?!0:fe,Y=Ee(),U=i&&T===void 0?!0:T,je=N()(s,"".concat(s,"-").concat(Y),(r={},Object(d.a)(r,"".concat(s,"-with-description"),!!n),Object(d.a)(r,"".concat(s,"-no-icon"),!U),Object(d.a)(r,"".concat(s,"-banner"),!!i),Object(d.a)(r,"".concat(s,"-rtl"),he==="rtl"),r),E),Ne=Object(_.a)(p);return a.createElement(W.b,{visible:!F,motionName:"".concat(s,"-motion"),motionAppear:!1,motionEnter:!1,onLeaveStart:function(v){return{maxHeight:v.offsetHeight}},onLeaveEnd:S},function(y){var v=y.className,O=y.style;return a.createElement("div",Object(u.a)({ref:ye,"data-show":!F,className:N()(je,v),style:Object(u.a)(Object(u.a)({},g),O),onMouseEnter:C,onMouseLeave:I,onClick:b,role:"alert"},Ne),U?a.createElement(ie,{description:n,icon:p.icon,prefixCls:s,type:Y}):null,a.createElement("div",{className:"".concat(s,"-content")},c?a.createElement("div",{className:"".concat(s,"-message")},c):null,n?a.createElement("div",{className:"".concat(s,"-description")},n):null),L?a.createElement("div",{className:"".concat(s,"-action")},L):null,a.createElement(de,{isClosable:!!ge,closeText:R,prefixCls:s,closeIcon:me,handleClose:xe}))})};A.ErrorBoundary=re;var P=A,ve=t("0Owb");const ue=l=>k.a.createElement(P,Object(ve.a)({showIcon:!0},l));var Ie=f.default=ue},YkAm:function(M,f,t){}}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{"0Owb":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return _extends; });
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
+
+//# sourceURL=webpack:///./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/extends.js?`)},DGhM:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/antd/es/style/default.less
+var style_default = __webpack_require__("EFp3");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/alert/style/index.less
+var alert_style = __webpack_require__("YkAm");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/alert/style/index.js
+
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__("wx14");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
+var slicedToArray = __webpack_require__("ODXe");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+var defineProperty = __webpack_require__("rePB");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/CheckCircleFilled.js + 1 modules
+var CheckCircleFilled = __webpack_require__("jO45");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/CheckCircleOutlined.js + 1 modules
+var CheckCircleOutlined = __webpack_require__("Ue1A");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/CloseCircleFilled.js + 1 modules
+var CloseCircleFilled = __webpack_require__("jN4g");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/CloseCircleOutlined.js + 1 modules
+var CloseCircleOutlined = __webpack_require__("2BaD");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/CloseOutlined.js + 1 modules
+var CloseOutlined = __webpack_require__("4i/N");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/ExclamationCircleFilled.js + 1 modules
+var ExclamationCircleFilled = __webpack_require__("IMoZ");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/ExclamationCircleOutlined.js + 1 modules
+var ExclamationCircleOutlined = __webpack_require__("RCxd");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/InfoCircleFilled.js + 1 modules
+var InfoCircleFilled = __webpack_require__("zueq");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/InfoCircleOutlined.js + 1 modules
+var InfoCircleOutlined = __webpack_require__("+YFz");
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__("TSYQ");
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/rc-motion/es/index.js + 11 modules
+var es = __webpack_require__("8XRh");
+
+// EXTERNAL MODULE: external "window.React"
+var external_window_React_ = __webpack_require__("cDcd");
+var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
+
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__("H84U");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/getDataOrAriaProps.js
+var getDataOrAriaProps = __webpack_require__("RqAY");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/reactNode.js
+var reactNode = __webpack_require__("0n0R");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+var classCallCheck = __webpack_require__("1OyB");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+var createClass = __webpack_require__("vuIU");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
+var inherits = __webpack_require__("Ji7U");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createSuper.js + 3 modules
+var createSuper = __webpack_require__("LK+K");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/alert/ErrorBoundary.js
+
+
+
+
+
+
+
+var ErrorBoundary_ErrorBoundary = /*#__PURE__*/function (_React$Component) {
+  Object(inherits["a" /* default */])(ErrorBoundary, _React$Component);
+
+  var _super = Object(createSuper["a" /* default */])(ErrorBoundary);
+
+  function ErrorBoundary() {
+    var _this;
+
+    Object(classCallCheck["a" /* default */])(this, ErrorBoundary);
+
+    _this = _super.apply(this, arguments);
+    _this.state = {
+      error: undefined,
+      info: {
+        componentStack: ''
+      }
+    };
+    return _this;
+  }
+
+  Object(createClass["a" /* default */])(ErrorBoundary, [{
+    key: "componentDidCatch",
+    value: function componentDidCatch(error, info) {
+      this.setState({
+        error: error,
+        info: info
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          message = _this$props.message,
+          description = _this$props.description,
+          children = _this$props.children;
+      var _this$state = this.state,
+          error = _this$state.error,
+          info = _this$state.info;
+      var componentStack = info && info.componentStack ? info.componentStack : null;
+      var errorMessage = typeof message === 'undefined' ? (error || '').toString() : message;
+      var errorDescription = typeof description === 'undefined' ? componentStack : description;
+
+      if (error) {
+        return /*#__PURE__*/external_window_React_["createElement"](es_alert, {
+          type: "error",
+          message: errorMessage,
+          description: /*#__PURE__*/external_window_React_["createElement"]("pre", null, errorDescription)
+        });
+      }
+
+      return children;
+    }
+  }]);
+
+  return ErrorBoundary;
+}(external_window_React_["Component"]);
+
+
+// CONCATENATED MODULE: ./node_modules/antd/es/alert/index.js
+
+
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var iconMapFilled = {
+  success: CheckCircleFilled["a" /* default */],
+  info: InfoCircleFilled["a" /* default */],
+  error: CloseCircleFilled["a" /* default */],
+  warning: ExclamationCircleFilled["a" /* default */]
+};
+var iconMapOutlined = {
+  success: CheckCircleOutlined["a" /* default */],
+  info: InfoCircleOutlined["a" /* default */],
+  error: CloseCircleOutlined["a" /* default */],
+  warning: ExclamationCircleOutlined["a" /* default */]
+};
+
+var alert_IconNode = function IconNode(props) {
+  var description = props.description,
+      icon = props.icon,
+      prefixCls = props.prefixCls,
+      type = props.type;
+  var iconType = (description ? iconMapOutlined : iconMapFilled)[type] || null;
+
+  if (icon) {
+    return Object(reactNode["d" /* replaceElement */])(icon, /*#__PURE__*/external_window_React_["createElement"]("span", {
+      className: "".concat(prefixCls, "-icon")
+    }, icon), function () {
+      return {
+        className: classnames_default()("".concat(prefixCls, "-icon"), Object(defineProperty["a" /* default */])({}, icon.props.className, icon.props.className))
+      };
+    });
+  }
+
+  return /*#__PURE__*/external_window_React_["createElement"](iconType, {
+    className: "".concat(prefixCls, "-icon")
+  });
+};
+
+var alert_CloseIcon = function CloseIcon(props) {
+  var isClosable = props.isClosable,
+      closeText = props.closeText,
+      prefixCls = props.prefixCls,
+      closeIcon = props.closeIcon,
+      handleClose = props.handleClose;
+  return isClosable ? /*#__PURE__*/external_window_React_["createElement"]("button", {
+    type: "button",
+    onClick: handleClose,
+    className: "".concat(prefixCls, "-close-icon"),
+    tabIndex: 0
+  }, closeText ? /*#__PURE__*/external_window_React_["createElement"]("span", {
+    className: "".concat(prefixCls, "-close-text")
+  }, closeText) : closeIcon) : null;
+};
+
+var alert_Alert = function Alert(_a) {
+  var _classNames2;
+
+  var description = _a.description,
+      customizePrefixCls = _a.prefixCls,
+      message = _a.message,
+      banner = _a.banner,
+      _a$className = _a.className,
+      className = _a$className === void 0 ? '' : _a$className,
+      style = _a.style,
+      onMouseEnter = _a.onMouseEnter,
+      onMouseLeave = _a.onMouseLeave,
+      onClick = _a.onClick,
+      afterClose = _a.afterClose,
+      showIcon = _a.showIcon,
+      closable = _a.closable,
+      closeText = _a.closeText,
+      _a$closeIcon = _a.closeIcon,
+      closeIcon = _a$closeIcon === void 0 ? /*#__PURE__*/external_window_React_["createElement"](CloseOutlined["a" /* default */], null) : _a$closeIcon,
+      action = _a.action,
+      props = __rest(_a, ["description", "prefixCls", "message", "banner", "className", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action"]);
+
+  var _React$useState = external_window_React_["useState"](false),
+      _React$useState2 = Object(slicedToArray["a" /* default */])(_React$useState, 2),
+      closed = _React$useState2[0],
+      setClosed = _React$useState2[1];
+
+  var ref = external_window_React_["useRef"]();
+
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      direction = _React$useContext.direction;
+
+  var prefixCls = getPrefixCls('alert', customizePrefixCls);
+
+  var handleClose = function handleClose(e) {
+    var _a;
+
+    setClosed(true);
+    (_a = props.onClose) === null || _a === void 0 ? void 0 : _a.call(props, e);
+  };
+
+  var getType = function getType() {
+    var type = props.type;
+
+    if (type !== undefined) {
+      return type;
+    } // banner \u6A21\u5F0F\u9ED8\u8BA4\u4E3A\u8B66\u544A
+
+
+    return banner ? 'warning' : 'info';
+  }; // closeable when closeText is assigned
+
+
+  var isClosable = closeText ? true : closable;
+  var type = getType(); // banner \u6A21\u5F0F\u9ED8\u8BA4\u6709 Icon
+
+  var isShowIcon = banner && showIcon === undefined ? true : showIcon;
+  var alertCls = classnames_default()(prefixCls, "".concat(prefixCls, "-").concat(type), (_classNames2 = {}, Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-with-description"), !!description), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-no-icon"), !isShowIcon), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-banner"), !!banner), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-rtl"), direction === 'rtl'), _classNames2), className);
+  var dataOrAriaProps = Object(getDataOrAriaProps["a" /* default */])(props);
+  return /*#__PURE__*/external_window_React_["createElement"](es["b" /* default */], {
+    visible: !closed,
+    motionName: "".concat(prefixCls, "-motion"),
+    motionAppear: false,
+    motionEnter: false,
+    onLeaveStart: function onLeaveStart(node) {
+      return {
+        maxHeight: node.offsetHeight
+      };
+    },
+    onLeaveEnd: afterClose
+  }, function (_ref) {
+    var motionClassName = _ref.className,
+        motionStyle = _ref.style;
+    return /*#__PURE__*/external_window_React_["createElement"]("div", Object(esm_extends["a" /* default */])({
+      ref: ref,
+      "data-show": !closed,
+      className: classnames_default()(alertCls, motionClassName),
+      style: Object(esm_extends["a" /* default */])(Object(esm_extends["a" /* default */])({}, style), motionStyle),
+      onMouseEnter: onMouseEnter,
+      onMouseLeave: onMouseLeave,
+      onClick: onClick,
+      role: "alert"
+    }, dataOrAriaProps), isShowIcon ? /*#__PURE__*/external_window_React_["createElement"](alert_IconNode, {
+      description: description,
+      icon: props.icon,
+      prefixCls: prefixCls,
+      type: type
+    }) : null, /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-content")
+    }, message ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-message")
+    }, message) : null, description ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-description")
+    }, description) : null), action ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-action")
+    }, action) : null, /*#__PURE__*/external_window_React_["createElement"](alert_CloseIcon, {
+      isClosable: !!isClosable,
+      closeText: closeText,
+      prefixCls: prefixCls,
+      closeIcon: closeIcon,
+      handleClose: handleClose
+    }));
+  });
+};
+
+alert_Alert.ErrorBoundary = ErrorBoundary_ErrorBoundary;
+/* harmony default export */ var es_alert = (alert_Alert);
+// EXTERNAL MODULE: ./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/extends.js
+var helpers_esm_extends = __webpack_require__("0Owb");
+
+// CONCATENATED MODULE: ./src/MyComponents/Alert/index.tsx
+
+
+
+
+
+const AlertComponent = props => {
+  return /*#__PURE__*/external_window_React_default.a.createElement(es_alert, Object(helpers_esm_extends["a" /* default */])({
+    showIcon: true
+  }, props));
+};
+
+/* harmony default export */ var MyComponents_Alert = __webpack_exports__["default"] = (AlertComponent);
+
+//# sourceURL=webpack:///./src/MyComponents/Alert/index.tsx_+_3_modules?`)},YkAm:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/alert/style/index.less?`)}}]);
