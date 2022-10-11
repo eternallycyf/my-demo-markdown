@@ -1,7 +1,6 @@
 import type { ColumnType } from "antd/es/table/interface";
-// @ts-ignore
 import { saveAs } from "file-saver";
-import * as ExcelJs from "exceljs";
+import ExcelJs from 'exceljs/dist/exceljs';
 import type { Workbook, Worksheet, Row, Cell } from "exceljs";
 import JsZip from "jszip";
 
@@ -50,14 +49,14 @@ export interface IStyleAttr {
   color?: string;
   fontSize?: number;
   horizontal?:
-    | "fill"
-    | "distributed"
-    | "justify"
-    | "center"
-    | "left"
-    | "right"
-    | "centerContinuous"
-    | undefined;
+  | "fill"
+  | "distributed"
+  | "justify"
+  | "center"
+  | "left"
+  | "right"
+  | "centerContinuous"
+  | undefined;
   bold?: boolean;
 }
 
