@@ -1,7 +1,8 @@
 import { Button, Space, Card, Table } from "antd";
 import React, { useEffect, useState } from "react";
 import type { ColumnsType } from "antd/lib/table/interface";
-import * as ExcelJs from "exceljs";
+import ExcelJs from 'exceljs/dist/exceljs';
+
 import {
   generateHeaders,
   saveWorkbook,
