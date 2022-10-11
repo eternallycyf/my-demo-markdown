@@ -54,7 +54,7 @@ export default defineConfig({
     edge: false,
     ios: false,
   },
-  devtool: false,
+  devtool: process.env.APP_ENV === 'development' ? 'source-map' : 'eval',
   extraBabelPlugins: [
     [
       'babel-plugin-import',
