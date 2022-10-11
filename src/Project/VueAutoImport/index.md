@@ -14,16 +14,19 @@ group:
 ```tsx | pure
 const AutoImport = require('unplugin-auto-import/webpack');
 const Components = require('unplugin-vue-components/webpack');
-const { ElementPlusResolver } = require('unplugin-vue-components/resolvers');
+const {
+  ElementPlusResolver,
+  AntDesignVueResolver,
+} = require('unplugin-vue-components/resolvers');
 
 module.exports = {
   configureWebpack: {
     plugins: [
       AutoImport({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver(), AntDesignVueResolver()],
       }),
       Components({
-        resolvers: [ElementPlusResolver()],
+        resolvers: [ElementPlusResolver(), AntDesignVueResolver()],
       }),
     ],
   },
