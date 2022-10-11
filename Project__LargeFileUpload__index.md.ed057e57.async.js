@@ -1,216 +1,52 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[104],{bBYk:function(c,o,e){"use strict";e.r(o);var r=e("cDcd"),n=e.n(r),i=e("dEAq"),p=e.n(i),a=e("6T1g");const s=n.a.memo(({demos:t})=>n.a.createElement(n.a.Fragment,null,n.a.createElement("div",{className:"markdown"},n.a.createElement(a.a,{code:`// index.tsx
-import SparkMD5 from 'spark-md5';
-import { getBlobSlice } from './util';
+(window.webpackJsonp=window.webpackJsonp||[]).push([[104],{bBYk:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("dEAq");
+/* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("6T1g");
 
-const DEFAULT_CHUNK_SIZE = 5 * 1024 * 1024;
-const DEFAULT_OPTIONS = {
-  chunkSize: DEFAULT_CHUNK_SIZE,
-};
 
-export interface IFileUploaderClientOptions {
-  chunkSize: number;
-  requestOptions?: {
-    retryTimes: number;
-    initFilePartUploadFunc: () => Promise<any>;
-    uploadPartFileFunc: (chunk: Blob, index: number) => Promise<any>;
-    finishFilePartUploadFunc: (md5: string) => Promise<any>;
-  };
-}
 
-export class FileUploaderClient {
-  fileUploaderClientOptions: IFileUploaderClientOptions;
 
-  constructor(options: IFileUploaderClientOptions) {
-    this.fileUploaderClientOptions = Object.assign(DEFAULT_OPTIONS, options);
-  }
 
-  /**
-   * \u5C06file\u5BF9\u8C61\u8FDB\u884C\u5207\u7247\uFF0C\u7136\u540E\u6839\u636E\u5207\u7247\u8BA1\u7B97md5
-   * @param file \u8981\u4E0A\u4F20\u7684\u6587\u4EF6
-   * @returns \u8FD4\u56DEmd5\u548C\u5207\u7247\u5217\u8868
-   */
-  public async getChunkListAndFileMd5(
-    file: File,
-  ): Promise<{ md5: string; chunkList: Blob[] }> {
-    return new Promise((resolve, reject) => {
-      let currentChunk = 0;
-      const chunkSize = this.fileUploaderClientOptions.chunkSize;
-      const chunks = Math.ceil(file.size / chunkSize);
-      const spark = new SparkMD5.ArrayBuffer();
-      const fileReader = new FileReader();
-      const blobSlice = getBlobSlice();
-      const chunkList: Blob[] = [];
 
-      fileReader.onload = function(e) {
-        if (e?.target?.result instanceof ArrayBuffer) {
-          spark.append(e.target.result);
-        }
-        currentChunk++;
 
-        if (currentChunk < chunks) {
-          loadNextChunk();
-        } else {
-          const computedHash = spark.end();
-          resolve({ md5: computedHash, chunkList });
-        }
-      };
 
-      fileReader.onerror = function(e) {
-        console.warn('read file error', e);
-        reject(e);
-      };
 
-      function loadNextChunk() {
-        const start = currentChunk * chunkSize;
-        const end =
-          start + chunkSize >= file.size ? file.size : start + chunkSize;
 
-        const chunk = blobSlice.call(file, start, end);
-        chunkList.push(chunk);
-        fileReader.readAsArrayBuffer(chunk);
-      }
+ // memo for page content, to avoid useless re-render since other context fields changed
 
-      loadNextChunk();
-    });
-  }
+const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(({
+  demos: DUMI_ALL_DEMOS
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "markdown"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+    code: "// index.tsx\\nimport SparkMD5 from 'spark-md5';\\nimport { getBlobSlice } from './util';\\n\\nconst DEFAULT_CHUNK_SIZE = 5 * 1024 * 1024;\\nconst DEFAULT_OPTIONS = {\\n  chunkSize: DEFAULT_CHUNK_SIZE,\\n};\\n\\nexport interface IFileUploaderClientOptions {\\n  chunkSize: number;\\n  requestOptions?: {\\n    retryTimes: number;\\n    initFilePartUploadFunc: () => Promise<any>;\\n    uploadPartFileFunc: (chunk: Blob, index: number) => Promise<any>;\\n    finishFilePartUploadFunc: (md5: string) => Promise<any>;\\n  };\\n}\\n\\nexport class FileUploaderClient {\\n  fileUploaderClientOptions: IFileUploaderClientOptions;\\n\\n  constructor(options: IFileUploaderClientOptions) {\\n    this.fileUploaderClientOptions = Object.assign(DEFAULT_OPTIONS, options);\\n  }\\n\\n  /**\\n   * \u5C06file\u5BF9\u8C61\u8FDB\u884C\u5207\u7247\uFF0C\u7136\u540E\u6839\u636E\u5207\u7247\u8BA1\u7B97md5\\n   * @param file \u8981\u4E0A\u4F20\u7684\u6587\u4EF6\\n   * @returns \u8FD4\u56DEmd5\u548C\u5207\u7247\u5217\u8868\\n   */\\n  public async getChunkListAndFileMd5(\\n    file: File,\\n  ): Promise<{ md5: string; chunkList: Blob[] }> {\\n    return new Promise((resolve, reject) => {\\n      let currentChunk = 0;\\n      const chunkSize = this.fileUploaderClientOptions.chunkSize;\\n      const chunks = Math.ceil(file.size / chunkSize);\\n      const spark = new SparkMD5.ArrayBuffer();\\n      const fileReader = new FileReader();\\n      const blobSlice = getBlobSlice();\\n      const chunkList: Blob[] = [];\\n\\n      fileReader.onload = function(e) {\\n        if (e?.target?.result instanceof ArrayBuffer) {\\n          spark.append(e.target.result);\\n        }\\n        currentChunk++;\\n\\n        if (currentChunk < chunks) {\\n          loadNextChunk();\\n        } else {\\n          const computedHash = spark.end();\\n          resolve({ md5: computedHash, chunkList });\\n        }\\n      };\\n\\n      fileReader.onerror = function(e) {\\n        console.warn('read file error', e);\\n        reject(e);\\n      };\\n\\n      function loadNextChunk() {\\n        const start = currentChunk * chunkSize;\\n        const end =\\n          start + chunkSize >= file.size ? file.size : start + chunkSize;\\n\\n        const chunk = blobSlice.call(file, start, end);\\n        chunkList.push(chunk);\\n        fileReader.readAsArrayBuffer(chunk);\\n      }\\n\\n      loadNextChunk();\\n    });\\n  }\\n\\n  /**\\n   * \u4E0A\u4F20\u6587\u4EF6\u65B9\u6CD5\uFF0C\u5F53FileUploaderClient\u7684\u914D\u7F6E\u9879\u4E2D\u4F20\u5165\u4E86requestOptions\u624D\u80FD\u4F7F\u7528\\n   * \u4F1A\u4F9D\u6B21\u6267\u884CgetChunkListAndFileMd5\u3001\u914D\u7F6E\u9879\u4E2D\u7684initFilePartUploadFunc\u3001\u914D\u7F6E\u9879\u4E2D\u7684uploadPartFileFunc\u3001\u914D\u7F6E\u9879\u4E2D\u7684finishFilePartUploadFunc\\n   * \u6267\u884C\u5B8C\u6210\u540E\u8FD4\u56DE\u4E0A\u4F20\u7ED3\u679C\uFF0C\u82E5\u6709\u5206\u7247\u4E0A\u4F20\u5931\u8D25\uFF0C\u5219\u4F1A\u81EA\u52A8\u91CD\u8BD5\\n   * @param file \u8981\u4E0A\u4F20\u7684\u6587\u4EF6\\n   * @returns finishFilePartUploadFunc\u51FD\u6570Promise resolve\u7684\u503C\\n   */\\n  public async uploadFile(file: File): Promise<any> {\\n    const requestOptions = this.fileUploaderClientOptions.requestOptions;\\n    const { md5, chunkList } = await this.getChunkListAndFileMd5(file);\\n    const retryList = [];\\n    if (\\n      requestOptions?.retryTimes === undefined ||\\n      !requestOptions?.initFilePartUploadFunc ||\\n      !requestOptions?.uploadPartFileFunc ||\\n      !requestOptions?.finishFilePartUploadFunc\\n    ) {\\n      throw Error(\\n        'invalid request options, need retryTimes, initFilePartUploadFunc, uploadPartFileFunc and finishFilePartUploadFunc',\\n      );\\n    }\\n\\n    await requestOptions.initFilePartUploadFunc();\\n\\n    for (let index = 0; index < chunkList.length; index++) {\\n      try {\\n        await requestOptions.uploadPartFileFunc(chunkList[index], index);\\n      } catch (e) {\\n        console.warn(\`\${index} part upload failed\`);\\n        retryList.push(index);\\n      }\\n    }\\n\\n    for (let retry = 0; retry < requestOptions.retryTimes; retry++) {\\n      if (retryList.length > 0) {\\n        console.log(\`retry start, times: \${retry}\`);\\n        for (let a = 0; a < retryList.length; a++) {\\n          const blobIndex = retryList[a];\\n          try {\\n            await requestOptions.uploadPartFileFunc(\\n              chunkList[blobIndex],\\n              blobIndex,\\n            );\\n            retryList.splice(a, 1);\\n          } catch (e) {\\n            console.warn(\\n              \`\${blobIndex} part retry upload failed, times: \${retry}\`,\\n            );\\n          }\\n        }\\n      }\\n    }\\n\\n    if (retryList.length === 0) {\\n      return await requestOptions.finishFilePartUploadFunc(md5);\\n    } else {\\n      throw Error(\\n        \`upload failed, some chunks upload failed: \${JSON.stringify(\\n          retryList,\\n        )}\`,\\n      );\\n    }\\n  }\\n}",
+    lang: "tsx"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+    code: "// utils.tsx\\nexport function getBlobSlice() {\\n  return (\\n    File.prototype.slice ||\\n    (File.prototype as any).mozSlice ||\\n    (File.prototype as any).webkitSlice\\n  );\\n}",
+    lang: "tsx"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+    code: "// \u4F7F\u7528\\nimport { useRef, useState } from 'react';\\nimport './App.css';\\nimport axios from 'axios';\\nimport { FileUploaderClient } from './index';\\n\\nconst HOST = 'http://localhost:10001/';\\n\\nfunction App() {\\n  const fileInput = useRef(null);\\n  const [url, setUrl] = useState<string>('');\\n  let uploadId = '';\\n\\n  const fileUploaderClient = new FileUploaderClient({\\n    chunkSize: 2 * 1024 * 1024, // 2MB\\n    requestOptions: {\\n      retryTimes: 2,\\n      initFilePartUploadFunc: async () => {\\n        const fileName = (fileInput.current as any).files[0].name;\\n        const { data } = await axios.post(\`\${HOST}api/initUpload\`, {\\n          name: fileName,\\n        });\\n        uploadId = data.uploadId;\\n        console.log('\u521D\u59CB\u5316\u4E0A\u4F20\u5B8C\u6210');\\n        setUrl('');\\n      },\\n      uploadPartFileFunc: async (chunk: Blob, index: number) => {\\n        const formData = new FormData();\\n        formData.append('uploadId', uploadId);\\n        formData.append('partIndex', index.toString());\\n        formData.append('partFile', chunk);\\n\\n        await axios.post(\`\${HOST}api/uploadPart\`, formData, {\\n          headers: { 'Content-Type': 'multipart/form-data' },\\n        });\\n        console.log(\`\u4E0A\u4F20\u5206\u7247\${index}\u5B8C\u6210\`);\\n      },\\n      finishFilePartUploadFunc: async (md5: string) => {\\n        const fileName = (fileInput.current as any).files[0].name;\\n        const { data } = await axios.post(\`\${HOST}api/finishUpload\`, {\\n          name: fileName,\\n          uploadId,\\n          md5,\\n        });\\n        console.log(\`\u4E0A\u4F20\u5B8C\u6210\uFF0C\u5B58\u50A8\u5730\u5740\u4E3A\uFF1A\${HOST}\${data.path}\`);\\n        setUrl(\`\${HOST}\${data.path}\`);\\n      },\\n    },\\n  });\\n\\n  const upload = () => {\\n    if (fileInput.current) {\\n      fileUploaderClient.uploadFile((fileInput.current as any).files[0]);\\n    }\\n  };\\n\\n  return (\\n    <div className=\\"App\\">\\n      <h1>easy-file-uploader-demo</h1>\\n      <h3>\u9009\u62E9\u6587\u4EF6\u540E\u70B9\u51FB\u201C\u4E0A\u4F20\u6587\u4EF6\u201D\u6309\u94AE\u5373\u53EF</h3>\\n      <div className=\\"App\\">\\n        <input type=\\"file\\" name=\\"file\\" ref={fileInput} />\\n        <input type=\\"button\\" value=\\"\u4E0A\u4F20\u6587\u4EF6\\" onClick={upload} />\\n      </div>\\n      {url && <h3>{\`\u6587\u4EF6\u5730\u5740\uFF1A\${url}\`}</h3>}\\n    </div>\\n  );\\n}\\n\\nexport default App;",
+    lang: "tsx"
+  })));
+});
+/* harmony default export */ __webpack_exports__["default"] = (props => {
+  const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
+        demos = _React$useContext.demos; // scroll to anchor after page component loaded
 
-  /**
-   * \u4E0A\u4F20\u6587\u4EF6\u65B9\u6CD5\uFF0C\u5F53FileUploaderClient\u7684\u914D\u7F6E\u9879\u4E2D\u4F20\u5165\u4E86requestOptions\u624D\u80FD\u4F7F\u7528
-   * \u4F1A\u4F9D\u6B21\u6267\u884CgetChunkListAndFileMd5\u3001\u914D\u7F6E\u9879\u4E2D\u7684initFilePartUploadFunc\u3001\u914D\u7F6E\u9879\u4E2D\u7684uploadPartFileFunc\u3001\u914D\u7F6E\u9879\u4E2D\u7684finishFilePartUploadFunc
-   * \u6267\u884C\u5B8C\u6210\u540E\u8FD4\u56DE\u4E0A\u4F20\u7ED3\u679C\uFF0C\u82E5\u6709\u5206\u7247\u4E0A\u4F20\u5931\u8D25\uFF0C\u5219\u4F1A\u81EA\u52A8\u91CD\u8BD5
-   * @param file \u8981\u4E0A\u4F20\u7684\u6587\u4EF6
-   * @returns finishFilePartUploadFunc\u51FD\u6570Promise resolve\u7684\u503C
-   */
-  public async uploadFile(file: File): Promise<any> {
-    const requestOptions = this.fileUploaderClientOptions.requestOptions;
-    const { md5, chunkList } = await this.getChunkListAndFileMd5(file);
-    const retryList = [];
-    if (
-      requestOptions?.retryTimes === undefined ||
-      !requestOptions?.initFilePartUploadFunc ||
-      !requestOptions?.uploadPartFileFunc ||
-      !requestOptions?.finishFilePartUploadFunc
-    ) {
-      throw Error(
-        'invalid request options, need retryTimes, initFilePartUploadFunc, uploadPartFileFunc and finishFilePartUploadFunc',
-      );
+
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(() => {
+    var _props$location;
+
+    if (props !== null && props !== void 0 && (_props$location = props.location) !== null && _props$location !== void 0 && _props$location.hash) {
+      dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"].scrollToAnchor(decodeURIComponent(props.location.hash.slice(1)));
     }
-
-    await requestOptions.initFilePartUploadFunc();
-
-    for (let index = 0; index < chunkList.length; index++) {
-      try {
-        await requestOptions.uploadPartFileFunc(chunkList[index], index);
-      } catch (e) {
-        console.warn(\`\${index} part upload failed\`);
-        retryList.push(index);
-      }
-    }
-
-    for (let retry = 0; retry < requestOptions.retryTimes; retry++) {
-      if (retryList.length > 0) {
-        console.log(\`retry start, times: \${retry}\`);
-        for (let a = 0; a < retryList.length; a++) {
-          const blobIndex = retryList[a];
-          try {
-            await requestOptions.uploadPartFileFunc(
-              chunkList[blobIndex],
-              blobIndex,
-            );
-            retryList.splice(a, 1);
-          } catch (e) {
-            console.warn(
-              \`\${blobIndex} part retry upload failed, times: \${retry}\`,
-            );
-          }
-        }
-      }
-    }
-
-    if (retryList.length === 0) {
-      return await requestOptions.finishFilePartUploadFunc(md5);
-    } else {
-      throw Error(
-        \`upload failed, some chunks upload failed: \${JSON.stringify(
-          retryList,
-        )}\`,
-      );
-    }
-  }
-}`,lang:"tsx"}),n.a.createElement(a.a,{code:`// utils.tsx
-export function getBlobSlice() {
-  return (
-    File.prototype.slice ||
-    (File.prototype as any).mozSlice ||
-    (File.prototype as any).webkitSlice
-  );
-}`,lang:"tsx"}),n.a.createElement(a.a,{code:`// \u4F7F\u7528
-import { useRef, useState } from 'react';
-import './App.css';
-import axios from 'axios';
-import { FileUploaderClient } from './index';
-
-const HOST = 'http://localhost:10001/';
-
-function App() {
-  const fileInput = useRef(null);
-  const [url, setUrl] = useState<string>('');
-  let uploadId = '';
-
-  const fileUploaderClient = new FileUploaderClient({
-    chunkSize: 2 * 1024 * 1024, // 2MB
-    requestOptions: {
-      retryTimes: 2,
-      initFilePartUploadFunc: async () => {
-        const fileName = (fileInput.current as any).files[0].name;
-        const { data } = await axios.post(\`\${HOST}api/initUpload\`, {
-          name: fileName,
-        });
-        uploadId = data.uploadId;
-        console.log('\u521D\u59CB\u5316\u4E0A\u4F20\u5B8C\u6210');
-        setUrl('');
-      },
-      uploadPartFileFunc: async (chunk: Blob, index: number) => {
-        const formData = new FormData();
-        formData.append('uploadId', uploadId);
-        formData.append('partIndex', index.toString());
-        formData.append('partFile', chunk);
-
-        await axios.post(\`\${HOST}api/uploadPart\`, formData, {
-          headers: { 'Content-Type': 'multipart/form-data' },
-        });
-        console.log(\`\u4E0A\u4F20\u5206\u7247\${index}\u5B8C\u6210\`);
-      },
-      finishFilePartUploadFunc: async (md5: string) => {
-        const fileName = (fileInput.current as any).files[0].name;
-        const { data } = await axios.post(\`\${HOST}api/finishUpload\`, {
-          name: fileName,
-          uploadId,
-          md5,
-        });
-        console.log(\`\u4E0A\u4F20\u5B8C\u6210\uFF0C\u5B58\u50A8\u5730\u5740\u4E3A\uFF1A\${HOST}\${data.path}\`);
-        setUrl(\`\${HOST}\${data.path}\`);
-      },
-    },
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PageContent, {
+    demos: demos
   });
+});
 
-  const upload = () => {
-    if (fileInput.current) {
-      fileUploaderClient.uploadFile((fileInput.current as any).files[0]);
-    }
-  };
-
-  return (
-    <div className="App">
-      <h1>easy-file-uploader-demo</h1>
-      <h3>\u9009\u62E9\u6587\u4EF6\u540E\u70B9\u51FB\u201C\u4E0A\u4F20\u6587\u4EF6\u201D\u6309\u94AE\u5373\u53EF</h3>
-      <div className="App">
-        <input type="file" name="file" ref={fileInput} />
-        <input type="button" value="\u4E0A\u4F20\u6587\u4EF6" onClick={upload} />
-      </div>
-      {url && <h3>{\`\u6587\u4EF6\u5730\u5740\uFF1A\${url}\`}</h3>}
-    </div>
-  );
-}
-
-export default App;`,lang:"tsx"}))));o.default=t=>{const u=n.a.useContext(i.context),d=u.demos;return n.a.useEffect(()=>{var l;t!=null&&(l=t.location)!==null&&l!==void 0&&l.hash&&i.AnchorLink.scrollToAnchor(decodeURIComponent(t.location.hash.slice(1)))},[]),n.a.createElement(s,{demos:d})}}}]);
+//# sourceURL=webpack:///./src/Project/LargeFileUpload/index.md?`)}}]);

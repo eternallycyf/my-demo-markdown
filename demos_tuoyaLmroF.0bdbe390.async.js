@@ -1,5 +1,1746 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[133],{DYRE:function($,P,n){"use strict";var S=n("EFp3"),c=n.n(S),w=n("OPEp"),_=n.n(w)},KuHX:function($,P,n){"use strict";n.r(P);var S=n("IzEo"),c=n("bx4M"),w=n("14J3"),_=n("BMrR"),Ee=n("jCWc"),G=n("kPKH"),R=n("5NDa"),B=n("5rEg"),pe=n("DYRE"),r=n("zeV3"),ne=n("y8nQ"),C=n("Vl3Y"),ze=n("giR+"),re=n("fyUT"),be=n("cDcd"),o=n.n(be);const m=()=>o.a.createElement(o.a.Fragment,null,o.a.createElement(c.a,{style:{margin:24}},o.a.createElement("h1",null,"1. ","<space />"," "),o.a.createElement(C.a.Item,null,o.a.createElement(r.b,{align:"baseline",size:"large"},o.a.createElement(r.b,{align:"baseline"},o.a.createElement(C.a.Item,{name:"1"},o.a.createElement(re.a,{min:0,max:100})),o.a.createElement("span",null,"%")))),o.a.createElement("h1",null,"2. inline-flex"),o.a.createElement(C.a.Item,{label:"\u540D\u79F0\u4E00",style:{marginBottom:0}},o.a.createElement(C.a.Item,{style:{display:"inline-flex",width:"calc(45% - 4px)"}},o.a.createElement(B.a,null)),o.a.createElement(C.a.Item,{style:{display:"inline-flex",width:"calc(55% - 4px)",marginLeft:"8px"},name:"name2"},o.a.createElement(B.a,null)),o.a.createElement(C.a.Item,{label:"InputNumber\u8868\u5355",style:{height:32}},o.a.createElement(r.b,{align:"baseline",size:"large"},o.a.createElement(r.b,{align:"baseline"},o.a.createElement(C.a.Item,{name:"inputNumber1"},o.a.createElement(re.a,{min:0,max:100})),o.a.createElement("span",null,"%"))))),o.a.createElement("h1",null,"3. row and col"),o.a.createElement(_.a,null,o.a.createElement(G.a,{span:12},o.a.createElement(C.a.Item,{label:"col1"},o.a.createElement(B.a,null))),o.a.createElement(G.a,{span:12},o.a.createElement(C.a.Item,{label:"col2"},o.a.createElement(B.a,null)))),o.a.createElement("h1",null,"4. \u6307\u5B9A\u5177\u4F53\u7684\u5BBD\u5EA6"),`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[133],{DYRE:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
+/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("OPEp");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+//# sourceURL=webpack:///./node_modules/antd/es/space/style/index.js?`)},KuHX:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd_es_card_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("IzEo");
+/* harmony import */ var antd_es_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("bx4M");
+/* harmony import */ var antd_es_row_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("14J3");
+/* harmony import */ var antd_es_row__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("BMrR");
+/* harmony import */ var antd_es_col_style__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("jCWc");
+/* harmony import */ var antd_es_col__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__("kPKH");
+/* harmony import */ var antd_es_input_style__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__("5NDa");
+/* harmony import */ var antd_es_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__("5rEg");
+/* harmony import */ var antd_es_space_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__("DYRE");
+/* harmony import */ var antd_es_space__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__("zeV3");
+/* harmony import */ var antd_es_form_style__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__("y8nQ");
+/* harmony import */ var antd_es_form__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__("Vl3Y");
+/* harmony import */ var antd_es_input_number_style__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__("giR+");
+/* harmony import */ var antd_es_input_number__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__("fyUT");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_14__);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const FormLayout = () => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_14___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_card__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"], {
+    style: {
+      margin: 24
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("h1", null, "1. ", "<space />", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_space__WEBPACK_IMPORTED_MODULE_9__[/* default */ "b"], {
+    align: "baseline",
+    size: "large"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_space__WEBPACK_IMPORTED_MODULE_9__[/* default */ "b"], {
+    align: "baseline"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    name: "1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input_number__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+    min: 0,
+    max: 100
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("span", null, "%")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("h1", null, "2. inline-flex"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    label: "\\u540D\\u79F0\\u4E00",
+    style: {
+      marginBottom: 0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    style: {
+      display: "inline-flex",
+      width: "calc(45% - 4px)"
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    style: {
+      display: "inline-flex",
+      width: "calc(55% - 4px)",
+      marginLeft: "8px"
+    },
+    name: "name2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    label: "InputNumber\\u8868\\u5355",
+    style: {
+      height: 32
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_space__WEBPACK_IMPORTED_MODULE_9__[/* default */ "b"], {
+    align: "baseline",
+    size: "large"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_space__WEBPACK_IMPORTED_MODULE_9__[/* default */ "b"], {
+    align: "baseline"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    name: "inputNumber1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input_number__WEBPACK_IMPORTED_MODULE_13__[/* default */ "a"], {
+    min: 0,
+    max: 100
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("span", null, "%"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("h1", null, "3. row and col"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_row__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
+    span: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    label: "col1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_col__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"], {
+    span: 12
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_form__WEBPACK_IMPORTED_MODULE_11__[/* default */ "a"].Item, {
+    label: "col2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement(antd_es_input__WEBPACK_IMPORTED_MODULE_7__[/* default */ "a"], null)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_14___default.a.createElement("h1", null, "4. \\u6307\\u5B9A\\u5177\\u4F53\\u7684\\u5BBD\\u5EA6"), \`
           labelCol={{ flex: '0 0 100px' }} 
           wrapperCol={{ flex: '0 0 100px' }} 
           style={{ display: 'inline-flex', width: 'calc(45% - 4px)' }} 
-        `));P.default=m},OPEp:function($,P,n){},QbM5:function($,P,n){},fyUT:function($,P,n){"use strict";var S=n("wx14"),c=n("rePB"),w=n("U8pU"),_=n("ODXe"),Ee=n("8Skl"),G=n("y3Kf"),R=n("TSYQ"),B=n.n(R),pe=n("Ff2n"),r=n("cDcd"),ne=n("4IlW"),C=n("TNol"),ze=n("c+Xe"),re=n("1OyB"),be=n("vuIU");function o(){return typeof BigInt=="function"}function m(e){var a=e.trim(),t=a.startsWith("-");t&&(a=a.slice(1)),a=a.replace(/(\.\d*[^0])0*$/,"$1").replace(/\.0*$/,"").replace(/^0+/,""),a.startsWith(".")&&(a="0".concat(a));var i=a||"0",l=i.split("."),v=l[0]||"0",y=l[1]||"0";v==="0"&&y==="0"&&(t=!1);var E=t?"-":"";return{negative:t,negativeStr:E,trimStr:i,integerStr:v,decimalStr:y,fullStr:"".concat(E).concat(i)}}function I(e){var a=String(e);return!Number.isNaN(Number(a))&&a.includes("e")}function j(e){var a=String(e);if(I(e)){var t=Number(a.slice(a.indexOf("e-")+2)),i=a.match(/\.(\d+)/);return(i==null?void 0:i[1])&&(t+=i[1].length),t}return a.includes(".")&&U(a)?a.length-a.indexOf(".")-1:0}function O(e){var a=String(e);if(I(e)){if(e>Number.MAX_SAFE_INTEGER)return String(o()?BigInt(e).toString():Number.MAX_SAFE_INTEGER);if(e<Number.MIN_SAFE_INTEGER)return String(o()?BigInt(e).toString():Number.MIN_SAFE_INTEGER);a=e.toFixed(j(a))}return m(a).fullStr}function U(e){return typeof e=="number"?!Number.isNaN(e):e?/^\s*-?\d+(\.\d+)?\s*$/.test(e)||/^\s*-?\d+\.\s*$/.test(e)||/^\s*-?\.\d+\s*$/.test(e):!1}function L(e){var a=typeof e=="number"?O(e):m(e).fullStr,t=a.includes(".");return t?m(a.replace(/(\d)\.(\d)/g,"$1$2.")).fullStr:e+"0"}var H=function(){function e(a){if(Object(re.a)(this,e),this.origin="",this.number=void 0,this.empty=void 0,!a&&a!==0||!String(a).trim()){this.empty=!0;return}this.origin=String(a),this.number=Number(a)}return Object(be.a)(e,[{key:"negate",value:function(){return new e(-this.toNumber())}},{key:"add",value:function(t){if(this.isInvalidate())return new e(t);var i=Number(t);if(Number.isNaN(i))return this;var l=this.number+i;if(l>Number.MAX_SAFE_INTEGER)return new e(Number.MAX_SAFE_INTEGER);if(l<Number.MIN_SAFE_INTEGER)return new e(Number.MIN_SAFE_INTEGER);var v=Math.max(j(this.number),j(i));return new e(l.toFixed(v))}},{key:"isEmpty",value:function(){return this.empty}},{key:"isNaN",value:function(){return Number.isNaN(this.number)}},{key:"isInvalidate",value:function(){return this.isEmpty()||this.isNaN()}},{key:"equals",value:function(t){return this.toNumber()===(t==null?void 0:t.toNumber())}},{key:"lessEquals",value:function(t){return this.add(t.negate().toString()).toNumber()<=0}},{key:"toNumber",value:function(){return this.number}},{key:"toString",value:function(){var t=arguments.length>0&&arguments[0]!==void 0?arguments[0]:!0;return t?this.isInvalidate()?"":O(this.number):this.origin}}]),e}(),Oe=function(){function e(a){if(Object(re.a)(this,e),this.origin="",this.negative=void 0,this.integer=void 0,this.decimal=void 0,this.decimalLen=void 0,this.empty=void 0,this.nan=void 0,!a&&a!==0||!String(a).trim()){this.empty=!0;return}if(this.origin=String(a),a==="-"){this.nan=!0;return}var t=a;if(I(t)&&(t=Number(t)),t=typeof t=="string"?t:O(t),U(t)){var i=m(t);this.negative=i.negative;var l=i.trimStr.split(".");this.integer=BigInt(l[0]);var v=l[1]||"0";this.decimal=BigInt(v),this.decimalLen=v.length}else this.nan=!0}return Object(be.a)(e,[{key:"getMark",value:function(){return this.negative?"-":""}},{key:"getIntegerStr",value:function(){return this.integer.toString()}},{key:"getDecimalStr",value:function(){return this.decimal.toString().padStart(this.decimalLen,"0")}},{key:"alignDecimal",value:function(t){var i="".concat(this.getMark()).concat(this.getIntegerStr()).concat(this.getDecimalStr().padEnd(t,"0"));return BigInt(i)}},{key:"negate",value:function(){var t=new e(this.toString());return t.negative=!t.negative,t}},{key:"add",value:function(t){if(this.isInvalidate())return new e(t);var i=new e(t);if(i.isInvalidate())return this;var l=Math.max(this.getDecimalStr().length,i.getDecimalStr().length),v=this.alignDecimal(l),y=i.alignDecimal(l),E=(v+y).toString(),D=m(E),x=D.negativeStr,p=D.trimStr,h="".concat(x).concat(p.padStart(l+1,"0"));return new e("".concat(h.slice(0,-l),".").concat(h.slice(-l)))}},{key:"isEmpty",value:function(){return this.empty}},{key:"isNaN",value:function(){return this.nan}},{key:"isInvalidate",value:function(){return this.isEmpty()||this.isNaN()}},{key:"equals",value:function(t){return this.toString()===(t==null?void 0:t.toString())}},{key:"lessEquals",value:function(t){return this.add(t.negate().toString()).toNumber()<=0}},{key:"toNumber",value:function(){return this.isNaN()?NaN:Number(this.toString())}},{key:"toString",value:function(){var t=arguments.length>0&&arguments[0]!==void 0?arguments[0]:!0;return t?this.isInvalidate()?"":m("".concat(this.getMark()).concat(this.getIntegerStr(),".").concat(this.getDecimalStr())).fullStr:this.origin}}]),e}();function N(e){return o()?new Oe(e):new H(e)}function z(e,a,t){var i=arguments.length>3&&arguments[3]!==void 0?arguments[3]:!1;if(e==="")return"";var l=m(e),v=l.negativeStr,y=l.integerStr,E=l.decimalStr,D="".concat(a).concat(E),x="".concat(v).concat(y);if(t>=0){var p=Number(E[t]);if(p>=5&&!i){var h=N(e).add("".concat(v,"0.").concat("0".repeat(t)).concat(10-p));return z(h.toString(),a,t,i)}return t===0?x:"".concat(x).concat(a).concat(E.padEnd(t,"0").slice(0,t))}return D===".0"?x:"".concat(x).concat(D)}var Pe=n("5Z9U"),ie=200,ye=600;function F(e){var a=e.prefixCls,t=e.upNode,i=e.downNode,l=e.upDisabled,v=e.downDisabled,y=e.onStep,E=r.useRef(),D=r.useRef();D.current=y;var x=function(K,Q){K.preventDefault(),D.current(Q);function J(){D.current(Q),E.current=setTimeout(J,ie)}E.current=setTimeout(J,ye)},p=function(){clearTimeout(E.current)};if(r.useEffect(function(){return p},[]),Object(Pe.a)())return null;var h="".concat(a,"-handler"),M=B()(h,"".concat(h,"-up"),Object(c.a)({},"".concat(h,"-up-disabled"),l)),Y=B()(h,"".concat(h,"-down"),Object(c.a)({},"".concat(h,"-down-disabled"),v)),q={unselectable:"on",role:"button",onMouseUp:p,onMouseLeave:p};return r.createElement("div",{className:"".concat(h,"-wrap")},r.createElement("span",Object(S.a)({},q,{onMouseDown:function(K){x(K,!0)},"aria-label":"Increase Value","aria-disabled":l,className:M}),t||r.createElement("span",{unselectable:"on",className:"".concat(a,"-handler-up-inner")})),r.createElement("span",Object(S.a)({},q,{onMouseDown:function(K){x(K,!1)},"aria-label":"Decrease Value","aria-disabled":v,className:Y}),i||r.createElement("span",{unselectable:"on",className:"".concat(a,"-handler-down-inner")})))}var qe=n("Kwbf");function et(e,a){var t=Object(r.useRef)(null);function i(){try{var v=e.selectionStart,y=e.selectionEnd,E=e.value,D=E.substring(0,v),x=E.substring(y);t.current={start:v,end:y,value:E,beforeTxt:D,afterTxt:x}}catch(p){}}function l(){if(e&&t.current&&a)try{var v=e.value,y=t.current,E=y.beforeTxt,D=y.afterTxt,x=y.start,p=v.length;if(v.endsWith(D))p=v.length-t.current.afterTxt.length;else if(v.startsWith(E))p=E.length;else{var h=E[x-1],M=v.indexOf(h,x-1);M!==-1&&(p=M+1)}e.setSelectionRange(p,p)}catch(Y){Object(qe.a)(!1,"Something warning of cursor restore. Please fire issue about this: ".concat(Y.message))}}return[i,l]}var Fe=n("wgJM"),We=function(){var e=Object(r.useRef)(0),a=function(){Fe.a.cancel(e.current)};return Object(r.useEffect)(function(){return a},[]),function(t){a(),e.current=Object(Fe.a)(function(){t()})}},Ve=["prefixCls","className","style","min","max","step","defaultValue","value","disabled","readOnly","upHandler","downHandler","keyboard","controls","stringMode","parser","formatter","precision","decimalSeparator","onChange","onInput","onPressEnter","onStep"],$e=function(a,t){return a||t.isEmpty()?t.toString():t.toNumber()},le=function(a){var t=N(a);return t.isInvalidate()?null:t},Ge=r.forwardRef(function(e,a){var t,i=e.prefixCls,l=i===void 0?"rc-input-number":i,v=e.className,y=e.style,E=e.min,D=e.max,x=e.step,p=x===void 0?1:x,h=e.defaultValue,M=e.value,Y=e.disabled,q=e.readOnly,ce=e.upHandler,K=e.downHandler,Q=e.keyboard,J=e.controls,Je=J===void 0?!0:J,Be=e.stringMode,oe=e.parser,se=e.formatter,A=e.precision,ee=e.decimalSeparator,d=e.onChange,de=e.onInput,fe=e.onPressEnter,Ue=e.onStep,Se=Object(pe.a)(e,Ve),ve="".concat(l,"-input"),Ne=r.useRef(null),at=r.useState(!1),Ze=Object(_.a)(at,2),Ie=Ze[0],Ae=Ze[1],Z=r.useRef(!1),te=r.useRef(!1),me=r.useRef(!1),ge=r.useState(function(){return N(M!=null?M:h)}),T=Object(_.a)(ge,2),b=T[0],ae=T[1];function _e(s){M===void 0&&ae(s)}var De=r.useCallback(function(s,u){if(!u)return A>=0?A:Math.max(j(s),j(p))},[A,p]),xe=r.useCallback(function(s){var u=String(s);if(oe)return oe(u);var g=u;return ee&&(g=g.replace(ee,".")),g.replace(/[^\w.-]+/g,"")},[oe,ee]),Te=r.useRef(""),ke=r.useCallback(function(s,u){if(se)return se(s,{userTyping:u,input:String(Te.current)});var g=typeof s=="number"?O(s):s;if(!u){var f=De(g,u);if(U(g)&&(ee||f>=0)){var V=ee||".";g=z(g,V,f)}}return g},[se,De,ee]),nt=r.useState(function(){var s=h!=null?h:M;return b.isInvalidate()&&["string","number"].includes(Object(w.a)(s))?Number.isNaN(s)?"":s:ke(b.toString(),!1)}),we=Object(_.a)(nt,2),k=we[0],W=we[1];Te.current=k;function Ke(s,u){W(ke(s.isInvalidate()?s.toString(!1):s.toString(!u),u))}var Me=r.useMemo(function(){return le(D)},[D,A]),Ce=r.useMemo(function(){return le(E)},[E,A]),ct=r.useMemo(function(){return!Me||!b||b.isInvalidate()?!1:Me.lessEquals(b)},[Me,b]),ot=r.useMemo(function(){return!Ce||!b||b.isInvalidate()?!1:b.lessEquals(Ce)},[Ce,b]),gt=et(Ne.current,Ie),st=Object(_.a)(gt,2),Et=st[0],pt=st[1],dt=function(u){return Me&&!u.lessEquals(Me)?Me:Ce&&!Ce.lessEquals(u)?Ce:null},rt=function(u){return!dt(u)},it=function(u,g){var f=u,V=rt(f)||f.isEmpty();if(!f.isEmpty()&&!g&&(f=dt(f)||f,V=!0),!q&&!Y&&V){var Le=f.toString(),lt=De(Le,g);return lt>=0&&(f=N(z(Le,".",lt)),rt(f)||(f=N(z(Le,".",lt,!0)))),f.equals(b)||(_e(f),d==null||d(f.isEmpty()?null:$e(Be,f)),M===void 0&&Ke(f,g)),f}return b},bt=We(),ft=function s(u){if(Et(),W(u),!te.current){var g=xe(u),f=N(g);f.isNaN()||it(f,!0)}de==null||de(u),bt(function(){var V=u;oe||(V=u.replace(/。/g,".")),V!==u&&s(V)})},Ot=function(){te.current=!0},yt=function(){te.current=!1,ft(Ne.current.value)},ht=function(u){ft(u.target.value)},vt=function(u){var g;if(!(u&&ct||!u&&ot)){Z.current=!1;var f=N(me.current?L(p):p);u||(f=f.negate());var V=(b||N(0)).add(f.toString()),Le=it(V,!1);Ue==null||Ue($e(Be,Le),{offset:me.current?L(p):p,type:u?"up":"down"}),(g=Ne.current)===null||g===void 0||g.focus()}},mt=function(u){var g=N(xe(k)),f=g;g.isNaN()?f=b:f=it(g,u),M!==void 0?Ke(b,!1):f.isNaN()||Ke(f,!1)},St=function(u){var g=u.which,f=u.shiftKey;Z.current=!0,f?me.current=!0:me.current=!1,g===ne.a.ENTER&&(te.current||(Z.current=!1),mt(!1),fe==null||fe(u)),Q!==!1&&!te.current&&[ne.a.UP,ne.a.DOWN].includes(g)&&(vt(ne.a.UP===g),u.preventDefault())},Nt=function(){Z.current=!1,me.current=!1},It=function(){mt(!1),Ae(!1),Z.current=!1};return Object(C.b)(function(){b.isInvalidate()||Ke(b,!1)},[A]),Object(C.b)(function(){var s=N(M);ae(s);var u=N(xe(k));(!s.equals(u)||!Z.current||se)&&Ke(s,Z.current)},[M]),Object(C.b)(function(){se&&pt()},[k]),r.createElement("div",{className:B()(l,v,(t={},Object(c.a)(t,"".concat(l,"-focused"),Ie),Object(c.a)(t,"".concat(l,"-disabled"),Y),Object(c.a)(t,"".concat(l,"-readonly"),q),Object(c.a)(t,"".concat(l,"-not-a-number"),b.isNaN()),Object(c.a)(t,"".concat(l,"-out-of-range"),!b.isInvalidate()&&!rt(b)),t)),style:y,onFocus:function(){Ae(!0)},onBlur:It,onKeyDown:St,onKeyUp:Nt,onCompositionStart:Ot,onCompositionEnd:yt},Je&&r.createElement(F,{prefixCls:l,upNode:ce,downNode:K,upDisabled:ct,downDisabled:ot,onStep:vt}),r.createElement("div",{className:"".concat(ve,"-wrap")},r.createElement("input",Object(S.a)({autoComplete:"off",role:"spinbutton","aria-valuemin":E,"aria-valuemax":D,"aria-valuenow":b.isInvalidate()?null:b.toString(),step:p},Se,{ref:Object(ze.a)(Ne,a),className:ve,value:k,onChange:ht,disabled:Y,readOnly:q}))))});Ge.displayName="InputNumber";var He=Ge,Re=He,he=n("H84U"),Xe=n("caoh"),Ye=n("3Nzz"),X=n("ihLV"),Qe=n("0n0R"),ue=n("ATYA"),tt=function(e,a){var t={};for(var i in e)Object.prototype.hasOwnProperty.call(e,i)&&a.indexOf(i)<0&&(t[i]=e[i]);if(e!=null&&typeof Object.getOwnPropertySymbols=="function")for(var l=0,i=Object.getOwnPropertySymbols(e);l<i.length;l++)a.indexOf(i[l])<0&&Object.prototype.propertyIsEnumerable.call(e,i[l])&&(t[i[l]]=e[i[l]]);return t},je=r.forwardRef(function(e,a){var t,i=r.useContext(he.b),l=i.getPrefixCls,v=i.direction,y=r.useContext(Ye.b),E=r.useState(!1),D=Object(_.a)(E,2),x=D[0],p=D[1],h=r.useRef(null);r.useImperativeHandle(a,function(){return h.current});var M=e.className,Y=e.size,q=e.disabled,ce=e.prefixCls,K=e.addonBefore,Q=e.addonAfter,J=e.prefix,Je=e.bordered,Be=Je===void 0?!0:Je,oe=e.readOnly,se=e.status,A=e.controls,ee=tt(e,["className","size","disabled","prefixCls","addonBefore","addonAfter","prefix","bordered","readOnly","status","controls"]),d=l("input-number",ce),de=r.createElement(G.a,{className:"".concat(d,"-handler-up-inner")}),fe=r.createElement(Ee.a,{className:"".concat(d,"-handler-down-inner")}),Ue=typeof A=="boolean"?A:void 0;Object(w.a)(A)==="object"&&(de=typeof A.upIcon=="undefined"?de:r.createElement("span",{className:"".concat(d,"-handler-up-inner")},A.upIcon),fe=typeof A.downIcon=="undefined"?fe:r.createElement("span",{className:"".concat(d,"-handler-down-inner")},A.downIcon));var Se=Object(r.useContext)(X.b),ve=Se.hasFeedback,Ne=Se.status,at=Se.isFormItemInput,Ze=Se.feedbackIcon,Ie=Object(ue.a)(Ne,se),Ae=Y||y,Z=r.useContext(Xe.b),te=q||Z,me=B()((t={},Object(c.a)(t,"".concat(d,"-lg"),Ae==="large"),Object(c.a)(t,"".concat(d,"-sm"),Ae==="small"),Object(c.a)(t,"".concat(d,"-rtl"),v==="rtl"),Object(c.a)(t,"".concat(d,"-borderless"),!Be),Object(c.a)(t,"".concat(d,"-in-form-item"),at),t),Object(ue.b)(d,Ie),M),ge=r.createElement(Re,Object(S.a)({ref:h,disabled:te,className:me,upHandler:de,downHandler:fe,prefixCls:d,readOnly:oe,controls:Ue},ee));if(J!=null||ve){var T,b=B()("".concat(d,"-affix-wrapper"),Object(ue.b)("".concat(d,"-affix-wrapper"),Ie,ve),(T={},Object(c.a)(T,"".concat(d,"-affix-wrapper-focused"),x),Object(c.a)(T,"".concat(d,"-affix-wrapper-disabled"),e.disabled),Object(c.a)(T,"".concat(d,"-affix-wrapper-sm"),y==="small"),Object(c.a)(T,"".concat(d,"-affix-wrapper-lg"),y==="large"),Object(c.a)(T,"".concat(d,"-affix-wrapper-rtl"),v==="rtl"),Object(c.a)(T,"".concat(d,"-affix-wrapper-readonly"),oe),Object(c.a)(T,"".concat(d,"-affix-wrapper-borderless"),!Be),Object(c.a)(T,"".concat(M),!(K||Q)&&M),T));ge=r.createElement("div",{className:b,style:e.style,onMouseUp:function(){return h.current.focus()}},J&&r.createElement("span",{className:"".concat(d,"-prefix")},J),Object(Qe.a)(ge,{style:null,value:e.value,onFocus:function(k){var W;p(!0),(W=e.onFocus)===null||W===void 0||W.call(e,k)},onBlur:function(k){var W;p(!1),(W=e.onBlur)===null||W===void 0||W.call(e,k)}}),ve&&r.createElement("span",{className:"".concat(d,"-suffix")},Ze))}if(K!=null||Q!=null){var ae,_e="".concat(d,"-group"),De="".concat(_e,"-addon"),xe=K?r.createElement("div",{className:De},K):null,Te=Q?r.createElement("div",{className:De},Q):null,ke=B()("".concat(d,"-wrapper"),_e,Object(c.a)({},"".concat(_e,"-rtl"),v==="rtl")),nt=B()("".concat(d,"-group-wrapper"),(ae={},Object(c.a)(ae,"".concat(d,"-group-wrapper-sm"),y==="small"),Object(c.a)(ae,"".concat(d,"-group-wrapper-lg"),y==="large"),Object(c.a)(ae,"".concat(d,"-group-wrapper-rtl"),v==="rtl"),ae),Object(ue.b)("".concat(d,"-group-wrapper"),Ie,ve),M);ge=r.createElement("div",{className:nt,style:e.style},r.createElement("div",{className:ke},xe&&r.createElement(X.e,{status:!0,override:!0},xe),Object(Qe.a)(ge,{style:null,disabled:te}),Te&&r.createElement(X.e,{status:!0,override:!0},Te)))}return ge}),ut=P.a=je},"giR+":function($,P,n){"use strict";var S=n("EFp3"),c=n.n(S),w=n("QbM5"),_=n.n(w)},jCWc:function($,P,n){"use strict";var S=n("EFp3"),c=n.n(S),w=n("1GLa")},kPKH:function($,P,n){"use strict";var S=n("/kpp");P.a=S.a},y3Kf:function($,P,n){"use strict";var S=n("VTBJ"),c=n("cDcd"),w={icon:{tag:"svg",attrs:{viewBox:"64 64 896 896",focusable:"false"},children:[{tag:"path",attrs:{d:"M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z"}}]},name:"up",theme:"outlined"},_=w,Ee=n("6VBw"),G=function(pe,r){return c.createElement(Ee.a,Object(S.a)(Object(S.a)({},pe),{},{ref:r,icon:_}))};G.displayName="UpOutlined";var R=P.a=c.forwardRef(G)},zeV3:function($,P,n){"use strict";n.d(P,"a",function(){return C});var S=n("wx14"),c=n("rePB"),w=n("ODXe"),_=n("TSYQ"),Ee=n.n(_),G=n("Zm9Q"),R=n("cDcd"),B=n("H84U"),pe=n("P80f");function r(m){var I=m.className,j=m.direction,O=m.index,U=m.marginDirection,L=m.children,H=m.split,Oe=m.wrap,N=R.useContext(C),z=N.horizontalSize,Pe=N.verticalSize,ie=N.latestIndex,ye=N.supportFlexGap,F={};return ye||(j==="vertical"?O<ie&&(F={marginBottom:z/(H?2:1)}):F=Object(S.a)(Object(S.a)({},O<ie&&Object(c.a)({},U,z/(H?2:1))),Oe&&{paddingBottom:Pe})),L==null?null:R.createElement(R.Fragment,null,R.createElement("div",{className:I,style:F},L),O<ie&&H&&R.createElement("span",{className:"".concat(I,"-split"),style:F},H))}var ne=function(m,I){var j={};for(var O in m)Object.prototype.hasOwnProperty.call(m,O)&&I.indexOf(O)<0&&(j[O]=m[O]);if(m!=null&&typeof Object.getOwnPropertySymbols=="function")for(var U=0,O=Object.getOwnPropertySymbols(m);U<O.length;U++)I.indexOf(O[U])<0&&Object.prototype.propertyIsEnumerable.call(m,O[U])&&(j[O[U]]=m[O[U]]);return j},C=R.createContext({latestIndex:0,horizontalSize:0,verticalSize:0,supportFlexGap:!1}),ze={small:8,middle:16,large:24};function re(m){return typeof m=="string"?ze[m]:m||0}var be=function(I){var j,O=R.useContext(B.b),U=O.getPrefixCls,L=O.space,H=O.direction,Oe=I.size,N=Oe===void 0?(L==null?void 0:L.size)||"small":Oe,z=I.align,Pe=I.className,ie=I.children,ye=I.direction,F=ye===void 0?"horizontal":ye,qe=I.prefixCls,et=I.split,Fe=I.style,We=I.wrap,Ve=We===void 0?!1:We,$e=ne(I,["size","align","className","children","direction","prefixCls","split","style","wrap"]),le=Object(pe.a)(),Ge=R.useMemo(function(){return(Array.isArray(N)?N:[N,N]).map(function(t){return re(t)})},[N]),He=Object(w.a)(Ge,2),Re=He[0],he=He[1],Xe=Object(G.a)(ie,{keepEmpty:!0}),Ye=z===void 0&&F==="horizontal"?"center":z,X=U("space",qe),Qe=Ee()(X,"".concat(X,"-").concat(F),(j={},Object(c.a)(j,"".concat(X,"-rtl"),H==="rtl"),Object(c.a)(j,"".concat(X,"-align-").concat(Ye),Ye),j),Pe),ue="".concat(X,"-item"),tt=H==="rtl"?"marginLeft":"marginRight",je=0,ut=Xe.map(function(t,i){t!=null&&(je=i);var l=t&&t.key||"".concat(ue,"-").concat(i);return R.createElement(r,{className:ue,key:l,direction:F,index:i,marginDirection:tt,split:et,wrap:Ve},t)}),e=R.useMemo(function(){return{horizontalSize:Re,verticalSize:he,latestIndex:je,supportFlexGap:le}},[Re,he,je,le]);if(Xe.length===0)return null;var a={};return Ve&&(a.flexWrap="wrap",le||(a.marginBottom=-he)),le&&(a.columnGap=Re,a.rowGap=he),R.createElement("div",Object(S.a)({className:Qe,style:Object(S.a)(Object(S.a)({},a),Fe)},$e),R.createElement(C.Provider,{value:e},ut))},o=P.b=be}}]);
+        \`));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (FormLayout);
+
+//# sourceURL=webpack:///./src/Components/Antd/FormLayout/index.tsx?`)},OPEp:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/space/style/index.less?`)},QbM5:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/input-number/style/index.less?`)},fyUT:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__("wx14");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+var defineProperty = __webpack_require__("rePB");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/typeof.js
+var esm_typeof = __webpack_require__("U8pU");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
+var slicedToArray = __webpack_require__("ODXe");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/DownOutlined.js + 1 modules
+var DownOutlined = __webpack_require__("8Skl");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/UpOutlined.js + 1 modules
+var UpOutlined = __webpack_require__("y3Kf");
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__("TSYQ");
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__("Ff2n");
+
+// EXTERNAL MODULE: external "window.React"
+var external_window_React_ = __webpack_require__("cDcd");
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/KeyCode.js
+var KeyCode = __webpack_require__("4IlW");
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/hooks/useLayoutEffect.js
+var useLayoutEffect = __webpack_require__("TNol");
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/ref.js
+var es_ref = __webpack_require__("c+Xe");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/classCallCheck.js
+var classCallCheck = __webpack_require__("1OyB");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
+var createClass = __webpack_require__("vuIU");
+
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/utils/supportUtil.js
+function supportBigInt() {
+  return typeof BigInt === 'function';
+}
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/utils/numberUtil.js
+
+/**
+ * Format string number to readable number
+ */
+
+function trimNumber(numStr) {
+  var str = numStr.trim();
+  var negative = str.startsWith('-');
+
+  if (negative) {
+    str = str.slice(1);
+  }
+
+  str = str // Remove decimal 0. \`1.000\` => \`1.\`, \`1.100\` => \`1.1\`
+  .replace(/(\\.\\d*[^0])0*$/, '$1') // Remove useless decimal. \`1.\` => \`1\`
+  .replace(/\\.0*$/, '') // Remove integer 0. \`0001\` => \`1\`, 000.1' => \`.1\`
+  .replace(/^0+/, '');
+
+  if (str.startsWith('.')) {
+    str = "0".concat(str);
+  }
+
+  var trimStr = str || '0';
+  var splitNumber = trimStr.split('.');
+  var integerStr = splitNumber[0] || '0';
+  var decimalStr = splitNumber[1] || '0';
+
+  if (integerStr === '0' && decimalStr === '0') {
+    negative = false;
+  }
+
+  var negativeStr = negative ? '-' : '';
+  return {
+    negative: negative,
+    negativeStr: negativeStr,
+    trimStr: trimStr,
+    integerStr: integerStr,
+    decimalStr: decimalStr,
+    fullStr: "".concat(negativeStr).concat(trimStr)
+  };
+}
+function isE(number) {
+  var str = String(number);
+  return !Number.isNaN(Number(str)) && str.includes('e');
+}
+/**
+ * [Legacy] Convert 1e-9 to 0.000000001.
+ * This may lose some precision if user really want 1e-9.
+ */
+
+function getNumberPrecision(number) {
+  var numStr = String(number);
+
+  if (isE(number)) {
+    var precision = Number(numStr.slice(numStr.indexOf('e-') + 2));
+    var decimalMatch = numStr.match(/\\.(\\d+)/);
+
+    if (decimalMatch === null || decimalMatch === void 0 ? void 0 : decimalMatch[1]) {
+      precision += decimalMatch[1].length;
+    }
+
+    return precision;
+  }
+
+  return numStr.includes('.') && validateNumber(numStr) ? numStr.length - numStr.indexOf('.') - 1 : 0;
+}
+/**
+ * Convert number (includes scientific notation) to -xxx.yyy format
+ */
+
+function num2str(number) {
+  var numStr = String(number);
+
+  if (isE(number)) {
+    if (number > Number.MAX_SAFE_INTEGER) {
+      return String(supportBigInt() ? BigInt(number).toString() : Number.MAX_SAFE_INTEGER);
+    }
+
+    if (number < Number.MIN_SAFE_INTEGER) {
+      return String(supportBigInt() ? BigInt(number).toString() : Number.MIN_SAFE_INTEGER);
+    }
+
+    numStr = number.toFixed(getNumberPrecision(numStr));
+  }
+
+  return trimNumber(numStr).fullStr;
+}
+function validateNumber(num) {
+  if (typeof num === 'number') {
+    return !Number.isNaN(num);
+  } // Empty
+
+
+  if (!num) {
+    return false;
+  }
+
+  return (// Normal type: 11.28
+    /^\\s*-?\\d+(\\.\\d+)?\\s*$/.test(num) || // Pre-number: 1.
+    /^\\s*-?\\d+\\.\\s*$/.test(num) || // Post-number: .1
+    /^\\s*-?\\.\\d+\\s*$/.test(num)
+  );
+}
+function getDecupleSteps(step) {
+  var stepStr = typeof step === 'number' ? num2str(step) : trimNumber(step).fullStr;
+  var hasPoint = stepStr.includes('.');
+
+  if (!hasPoint) {
+    return step + '0';
+  }
+
+  return trimNumber(stepStr.replace(/(\\d)\\.(\\d)/g, '$1$2.')).fullStr;
+}
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/utils/MiniDecimal.js
+
+
+
+/* eslint-disable max-classes-per-file */
+
+
+/**
+ * We can remove this when IE not support anymore
+ */
+
+var MiniDecimal_NumberDecimal = /*#__PURE__*/function () {
+  function NumberDecimal(value) {
+    Object(classCallCheck["a" /* default */])(this, NumberDecimal);
+
+    this.origin = '';
+    this.number = void 0;
+    this.empty = void 0;
+
+    if (!value && value !== 0 || !String(value).trim()) {
+      this.empty = true;
+      return;
+    }
+
+    this.origin = String(value);
+    this.number = Number(value);
+  }
+
+  Object(createClass["a" /* default */])(NumberDecimal, [{
+    key: "negate",
+    value: function negate() {
+      return new NumberDecimal(-this.toNumber());
+    }
+  }, {
+    key: "add",
+    value: function add(value) {
+      if (this.isInvalidate()) {
+        return new NumberDecimal(value);
+      }
+
+      var target = Number(value);
+
+      if (Number.isNaN(target)) {
+        return this;
+      }
+
+      var number = this.number + target; // [Legacy] Back to safe integer
+
+      if (number > Number.MAX_SAFE_INTEGER) {
+        return new NumberDecimal(Number.MAX_SAFE_INTEGER);
+      }
+
+      if (number < Number.MIN_SAFE_INTEGER) {
+        return new NumberDecimal(Number.MIN_SAFE_INTEGER);
+      }
+
+      var maxPrecision = Math.max(getNumberPrecision(this.number), getNumberPrecision(target));
+      return new NumberDecimal(number.toFixed(maxPrecision));
+    }
+  }, {
+    key: "isEmpty",
+    value: function isEmpty() {
+      return this.empty;
+    }
+  }, {
+    key: "isNaN",
+    value: function isNaN() {
+      return Number.isNaN(this.number);
+    }
+  }, {
+    key: "isInvalidate",
+    value: function isInvalidate() {
+      return this.isEmpty() || this.isNaN();
+    }
+  }, {
+    key: "equals",
+    value: function equals(target) {
+      return this.toNumber() === (target === null || target === void 0 ? void 0 : target.toNumber());
+    }
+  }, {
+    key: "lessEquals",
+    value: function lessEquals(target) {
+      return this.add(target.negate().toString()).toNumber() <= 0;
+    }
+  }, {
+    key: "toNumber",
+    value: function toNumber() {
+      return this.number;
+    }
+  }, {
+    key: "toString",
+    value: function toString() {
+      var safe = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+      if (!safe) {
+        return this.origin;
+      }
+
+      if (this.isInvalidate()) {
+        return '';
+      }
+
+      return num2str(this.number);
+    }
+  }]);
+
+  return NumberDecimal;
+}();
+var MiniDecimal_BigIntDecimal = /*#__PURE__*/function () {
+  /** BigInt will convert \`0009\` to \`9\`. We need record the len of decimal */
+  function BigIntDecimal(value) {
+    Object(classCallCheck["a" /* default */])(this, BigIntDecimal);
+
+    this.origin = '';
+    this.negative = void 0;
+    this.integer = void 0;
+    this.decimal = void 0;
+    this.decimalLen = void 0;
+    this.empty = void 0;
+    this.nan = void 0;
+
+    if (!value && value !== 0 || !String(value).trim()) {
+      this.empty = true;
+      return;
+    }
+
+    this.origin = String(value); // Act like Number convert
+
+    if (value === '-') {
+      this.nan = true;
+      return;
+    }
+
+    var mergedValue = value; // We need convert back to Number since it require \`toFixed\` to handle this
+
+    if (isE(mergedValue)) {
+      mergedValue = Number(mergedValue);
+    }
+
+    mergedValue = typeof mergedValue === 'string' ? mergedValue : num2str(mergedValue);
+
+    if (validateNumber(mergedValue)) {
+      var trimRet = trimNumber(mergedValue);
+      this.negative = trimRet.negative;
+      var numbers = trimRet.trimStr.split('.');
+      this.integer = BigInt(numbers[0]);
+      var decimalStr = numbers[1] || '0';
+      this.decimal = BigInt(decimalStr);
+      this.decimalLen = decimalStr.length;
+    } else {
+      this.nan = true;
+    }
+  }
+
+  Object(createClass["a" /* default */])(BigIntDecimal, [{
+    key: "getMark",
+    value: function getMark() {
+      return this.negative ? '-' : '';
+    }
+  }, {
+    key: "getIntegerStr",
+    value: function getIntegerStr() {
+      return this.integer.toString();
+    }
+  }, {
+    key: "getDecimalStr",
+    value: function getDecimalStr() {
+      return this.decimal.toString().padStart(this.decimalLen, '0');
+    }
+    /**
+     * Align BigIntDecimal with same decimal length. e.g. 12.3 + 5 = 1230000
+     * This is used for add function only.
+     */
+
+  }, {
+    key: "alignDecimal",
+    value: function alignDecimal(decimalLength) {
+      var str = "".concat(this.getMark()).concat(this.getIntegerStr()).concat(this.getDecimalStr().padEnd(decimalLength, '0'));
+      return BigInt(str);
+    }
+  }, {
+    key: "negate",
+    value: function negate() {
+      var clone = new BigIntDecimal(this.toString());
+      clone.negative = !clone.negative;
+      return clone;
+    }
+  }, {
+    key: "add",
+    value: function add(value) {
+      if (this.isInvalidate()) {
+        return new BigIntDecimal(value);
+      }
+
+      var offset = new BigIntDecimal(value);
+
+      if (offset.isInvalidate()) {
+        return this;
+      }
+
+      var maxDecimalLength = Math.max(this.getDecimalStr().length, offset.getDecimalStr().length);
+      var myAlignedDecimal = this.alignDecimal(maxDecimalLength);
+      var offsetAlignedDecimal = offset.alignDecimal(maxDecimalLength);
+      var valueStr = (myAlignedDecimal + offsetAlignedDecimal).toString(); // We need fill string length back to \`maxDecimalLength\` to avoid parser failed
+
+      var _trimNumber = trimNumber(valueStr),
+          negativeStr = _trimNumber.negativeStr,
+          trimStr = _trimNumber.trimStr;
+
+      var hydrateValueStr = "".concat(negativeStr).concat(trimStr.padStart(maxDecimalLength + 1, '0'));
+      return new BigIntDecimal("".concat(hydrateValueStr.slice(0, -maxDecimalLength), ".").concat(hydrateValueStr.slice(-maxDecimalLength)));
+    }
+  }, {
+    key: "isEmpty",
+    value: function isEmpty() {
+      return this.empty;
+    }
+  }, {
+    key: "isNaN",
+    value: function isNaN() {
+      return this.nan;
+    }
+  }, {
+    key: "isInvalidate",
+    value: function isInvalidate() {
+      return this.isEmpty() || this.isNaN();
+    }
+  }, {
+    key: "equals",
+    value: function equals(target) {
+      return this.toString() === (target === null || target === void 0 ? void 0 : target.toString());
+    }
+  }, {
+    key: "lessEquals",
+    value: function lessEquals(target) {
+      return this.add(target.negate().toString()).toNumber() <= 0;
+    }
+  }, {
+    key: "toNumber",
+    value: function toNumber() {
+      if (this.isNaN()) {
+        return NaN;
+      }
+
+      return Number(this.toString());
+    }
+  }, {
+    key: "toString",
+    value: function toString() {
+      var safe = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+      if (!safe) {
+        return this.origin;
+      }
+
+      if (this.isInvalidate()) {
+        return '';
+      }
+
+      return trimNumber("".concat(this.getMark()).concat(this.getIntegerStr(), ".").concat(this.getDecimalStr())).fullStr;
+    }
+  }]);
+
+  return BigIntDecimal;
+}();
+function getMiniDecimal(value) {
+  // We use BigInt here.
+  // Will fallback to Number if not support.
+  if (supportBigInt()) {
+    return new MiniDecimal_BigIntDecimal(value);
+  }
+
+  return new MiniDecimal_NumberDecimal(value);
+}
+/**
+ * Align the logic of toFixed to around like 1.5 => 2.
+ * If set \`cutOnly\`, will just remove the over decimal part.
+ */
+
+function toFixed(numStr, separatorStr, precision) {
+  var cutOnly = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : false;
+
+  if (numStr === '') {
+    return '';
+  }
+
+  var _trimNumber2 = trimNumber(numStr),
+      negativeStr = _trimNumber2.negativeStr,
+      integerStr = _trimNumber2.integerStr,
+      decimalStr = _trimNumber2.decimalStr;
+
+  var precisionDecimalStr = "".concat(separatorStr).concat(decimalStr);
+  var numberWithoutDecimal = "".concat(negativeStr).concat(integerStr);
+
+  if (precision >= 0) {
+    // We will get last + 1 number to check if need advanced number
+    var advancedNum = Number(decimalStr[precision]);
+
+    if (advancedNum >= 5 && !cutOnly) {
+      var advancedDecimal = getMiniDecimal(numStr).add("".concat(negativeStr, "0.").concat('0'.repeat(precision)).concat(10 - advancedNum));
+      return toFixed(advancedDecimal.toString(), separatorStr, precision, cutOnly);
+    }
+
+    if (precision === 0) {
+      return numberWithoutDecimal;
+    }
+
+    return "".concat(numberWithoutDecimal).concat(separatorStr).concat(decimalStr.padEnd(precision, '0').slice(0, precision));
+  }
+
+  if (precisionDecimalStr === '.0') {
+    return numberWithoutDecimal;
+  }
+
+  return "".concat(numberWithoutDecimal).concat(precisionDecimalStr);
+}
+// EXTERNAL MODULE: ./node_modules/rc-util/es/isMobile.js
+var isMobile = __webpack_require__("5Z9U");
+
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/StepHandler.js
+
+
+
+/* eslint-disable react/no-unknown-property */
+
+
+
+/**
+ * When click and hold on a button - the speed of auto changing the value.
+ */
+
+var STEP_INTERVAL = 200;
+/**
+ * When click and hold on a button - the delay before auto changing the value.
+ */
+
+var STEP_DELAY = 600;
+function StepHandler(_ref) {
+  var prefixCls = _ref.prefixCls,
+      upNode = _ref.upNode,
+      downNode = _ref.downNode,
+      upDisabled = _ref.upDisabled,
+      downDisabled = _ref.downDisabled,
+      onStep = _ref.onStep;
+  // ======================== Step ========================
+  var stepTimeoutRef = external_window_React_["useRef"]();
+  var onStepRef = external_window_React_["useRef"]();
+  onStepRef.current = onStep; // We will interval update step when hold mouse down
+
+  var onStepMouseDown = function onStepMouseDown(e, up) {
+    e.preventDefault();
+    onStepRef.current(up); // Loop step for interval
+
+    function loopStep() {
+      onStepRef.current(up);
+      stepTimeoutRef.current = setTimeout(loopStep, STEP_INTERVAL);
+    } // First time press will wait some time to trigger loop step update
+
+
+    stepTimeoutRef.current = setTimeout(loopStep, STEP_DELAY);
+  };
+
+  var onStopStep = function onStopStep() {
+    clearTimeout(stepTimeoutRef.current);
+  };
+
+  external_window_React_["useEffect"](function () {
+    return onStopStep;
+  }, []); // ======================= Render =======================
+
+  if (Object(isMobile["a" /* default */])()) {
+    return null;
+  }
+
+  var handlerClassName = "".concat(prefixCls, "-handler");
+  var upClassName = classnames_default()(handlerClassName, "".concat(handlerClassName, "-up"), Object(defineProperty["a" /* default */])({}, "".concat(handlerClassName, "-up-disabled"), upDisabled));
+  var downClassName = classnames_default()(handlerClassName, "".concat(handlerClassName, "-down"), Object(defineProperty["a" /* default */])({}, "".concat(handlerClassName, "-down-disabled"), downDisabled));
+  var sharedHandlerProps = {
+    unselectable: 'on',
+    role: 'button',
+    onMouseUp: onStopStep,
+    onMouseLeave: onStopStep
+  };
+  return /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: "".concat(handlerClassName, "-wrap")
+  }, /*#__PURE__*/external_window_React_["createElement"]("span", Object(esm_extends["a" /* default */])({}, sharedHandlerProps, {
+    onMouseDown: function onMouseDown(e) {
+      onStepMouseDown(e, true);
+    },
+    "aria-label": "Increase Value",
+    "aria-disabled": upDisabled,
+    className: upClassName
+  }), upNode || /*#__PURE__*/external_window_React_["createElement"]("span", {
+    unselectable: "on",
+    className: "".concat(prefixCls, "-handler-up-inner")
+  })), /*#__PURE__*/external_window_React_["createElement"]("span", Object(esm_extends["a" /* default */])({}, sharedHandlerProps, {
+    onMouseDown: function onMouseDown(e) {
+      onStepMouseDown(e, false);
+    },
+    "aria-label": "Decrease Value",
+    "aria-disabled": downDisabled,
+    className: downClassName
+  }), downNode || /*#__PURE__*/external_window_React_["createElement"]("span", {
+    unselectable: "on",
+    className: "".concat(prefixCls, "-handler-down-inner")
+  })));
+}
+// EXTERNAL MODULE: ./node_modules/rc-util/es/warning.js
+var warning = __webpack_require__("Kwbf");
+
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/hooks/useCursor.js
+
+
+/**
+ * Keep input cursor in the correct position if possible.
+ * Is this necessary since we have \`formatter\` which may mass the content?
+ */
+
+function useCursor(input, focused) {
+  var selectionRef = Object(external_window_React_["useRef"])(null);
+
+  function recordCursor() {
+    // Record position
+    try {
+      var start = input.selectionStart,
+          end = input.selectionEnd,
+          value = input.value;
+      var beforeTxt = value.substring(0, start);
+      var afterTxt = value.substring(end);
+      selectionRef.current = {
+        start: start,
+        end: end,
+        value: value,
+        beforeTxt: beforeTxt,
+        afterTxt: afterTxt
+      };
+    } catch (e) {// Fix error in Chrome:
+      // Failed to read the 'selectionStart' property from 'HTMLInputElement'
+      // http://stackoverflow.com/q/21177489/3040605
+    }
+  }
+  /**
+   * Restore logic:
+   *  1. back string same
+   *  2. start string same
+   */
+
+
+  function restoreCursor() {
+    if (input && selectionRef.current && focused) {
+      try {
+        var value = input.value;
+        var _selectionRef$current = selectionRef.current,
+            beforeTxt = _selectionRef$current.beforeTxt,
+            afterTxt = _selectionRef$current.afterTxt,
+            start = _selectionRef$current.start;
+        var startPos = value.length;
+
+        if (value.endsWith(afterTxt)) {
+          startPos = value.length - selectionRef.current.afterTxt.length;
+        } else if (value.startsWith(beforeTxt)) {
+          startPos = beforeTxt.length;
+        } else {
+          var beforeLastChar = beforeTxt[start - 1];
+          var newIndex = value.indexOf(beforeLastChar, start - 1);
+
+          if (newIndex !== -1) {
+            startPos = newIndex + 1;
+          }
+        }
+
+        input.setSelectionRange(startPos, startPos);
+      } catch (e) {
+        Object(warning["a" /* default */])(false, "Something warning of cursor restore. Please fire issue about this: ".concat(e.message));
+      }
+    }
+  }
+
+  return [recordCursor, restoreCursor];
+}
+// EXTERNAL MODULE: ./node_modules/rc-util/es/raf.js
+var raf = __webpack_require__("wgJM");
+
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/hooks/useFrame.js
+
+
+/**
+ * Always trigger latest once when call multiple time
+ */
+
+/* harmony default export */ var useFrame = (function () {
+  var idRef = Object(external_window_React_["useRef"])(0);
+
+  var cleanUp = function cleanUp() {
+    raf["a" /* default */].cancel(idRef.current);
+  };
+
+  Object(external_window_React_["useEffect"])(function () {
+    return cleanUp;
+  }, []);
+  return function (callback) {
+    cleanUp();
+    idRef.current = Object(raf["a" /* default */])(function () {
+      callback();
+    });
+  };
+});
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/InputNumber.js
+
+
+
+
+
+var _excluded = ["prefixCls", "className", "style", "min", "max", "step", "defaultValue", "value", "disabled", "readOnly", "upHandler", "downHandler", "keyboard", "controls", "stringMode", "parser", "formatter", "precision", "decimalSeparator", "onChange", "onInput", "onPressEnter", "onStep"];
+
+
+
+
+
+
+
+
+
+
+/**
+ * We support \`stringMode\` which need handle correct type when user call in onChange
+ * format max or min value
+ * 1. if isInvalid return null
+ * 2. if precision is undefined, return decimal
+ * 3. format with precision
+ *    I. if max > 0, round down with precision. Example: max= 3.5, precision=0  afterFormat: 3
+ *    II. if max < 0, round up with precision. Example: max= -3.5, precision=0  afterFormat: -4
+ *    III. if min > 0, round up with precision. Example: min= 3.5, precision=0  afterFormat: 4
+ *    IV. if min < 0, round down with precision. Example: max= -3.5, precision=0  afterFormat: -3
+ */
+
+var getDecimalValue = function getDecimalValue(stringMode, decimalValue) {
+  if (stringMode || decimalValue.isEmpty()) {
+    return decimalValue.toString();
+  }
+
+  return decimalValue.toNumber();
+};
+
+var InputNumber_getDecimalIfValidate = function getDecimalIfValidate(value) {
+  var decimal = getMiniDecimal(value);
+  return decimal.isInvalidate() ? null : decimal;
+};
+
+var InputNumber = /*#__PURE__*/external_window_React_["forwardRef"](function (props, ref) {
+  var _classNames;
+
+  var _props$prefixCls = props.prefixCls,
+      prefixCls = _props$prefixCls === void 0 ? 'rc-input-number' : _props$prefixCls,
+      className = props.className,
+      style = props.style,
+      min = props.min,
+      max = props.max,
+      _props$step = props.step,
+      step = _props$step === void 0 ? 1 : _props$step,
+      defaultValue = props.defaultValue,
+      value = props.value,
+      disabled = props.disabled,
+      readOnly = props.readOnly,
+      upHandler = props.upHandler,
+      downHandler = props.downHandler,
+      keyboard = props.keyboard,
+      _props$controls = props.controls,
+      controls = _props$controls === void 0 ? true : _props$controls,
+      stringMode = props.stringMode,
+      parser = props.parser,
+      formatter = props.formatter,
+      precision = props.precision,
+      decimalSeparator = props.decimalSeparator,
+      onChange = props.onChange,
+      onInput = props.onInput,
+      onPressEnter = props.onPressEnter,
+      onStep = props.onStep,
+      inputProps = Object(objectWithoutProperties["a" /* default */])(props, _excluded);
+
+  var inputClassName = "".concat(prefixCls, "-input");
+  var inputRef = external_window_React_["useRef"](null);
+
+  var _React$useState = external_window_React_["useState"](false),
+      _React$useState2 = Object(slicedToArray["a" /* default */])(_React$useState, 2),
+      focus = _React$useState2[0],
+      setFocus = _React$useState2[1];
+
+  var userTypingRef = external_window_React_["useRef"](false);
+  var compositionRef = external_window_React_["useRef"](false);
+  var shiftKeyRef = external_window_React_["useRef"](false); // ============================ Value =============================
+  // Real value control
+
+  var _React$useState3 = external_window_React_["useState"](function () {
+    return getMiniDecimal(value !== null && value !== void 0 ? value : defaultValue);
+  }),
+      _React$useState4 = Object(slicedToArray["a" /* default */])(_React$useState3, 2),
+      decimalValue = _React$useState4[0],
+      setDecimalValue = _React$useState4[1];
+
+  function setUncontrolledDecimalValue(newDecimal) {
+    if (value === undefined) {
+      setDecimalValue(newDecimal);
+    }
+  } // ====================== Parser & Formatter ======================
+
+  /**
+   * \`precision\` is used for formatter & onChange.
+   * It will auto generate by \`value\` & \`step\`.
+   * But it will not block user typing.
+   *
+   * Note: Auto generate \`precision\` is used for legacy logic.
+   * We should remove this since we already support high precision with BigInt.
+   *
+   * @param number  Provide which number should calculate precision
+   * @param userTyping  Change by user typing
+   */
+
+
+  var getPrecision = external_window_React_["useCallback"](function (numStr, userTyping) {
+    if (userTyping) {
+      return undefined;
+    }
+
+    if (precision >= 0) {
+      return precision;
+    }
+
+    return Math.max(getNumberPrecision(numStr), getNumberPrecision(step));
+  }, [precision, step]); // >>> Parser
+
+  var mergedParser = external_window_React_["useCallback"](function (num) {
+    var numStr = String(num);
+
+    if (parser) {
+      return parser(numStr);
+    }
+
+    var parsedStr = numStr;
+
+    if (decimalSeparator) {
+      parsedStr = parsedStr.replace(decimalSeparator, '.');
+    } // [Legacy] We still support auto convert \`$ 123,456\` to \`123456\`
+
+
+    return parsedStr.replace(/[^\\w.-]+/g, '');
+  }, [parser, decimalSeparator]); // >>> Formatter
+
+  var inputValueRef = external_window_React_["useRef"]('');
+  var mergedFormatter = external_window_React_["useCallback"](function (number, userTyping) {
+    if (formatter) {
+      return formatter(number, {
+        userTyping: userTyping,
+        input: String(inputValueRef.current)
+      });
+    }
+
+    var str = typeof number === 'number' ? num2str(number) : number; // User typing will not auto format with precision directly
+
+    if (!userTyping) {
+      var mergedPrecision = getPrecision(str, userTyping);
+
+      if (validateNumber(str) && (decimalSeparator || mergedPrecision >= 0)) {
+        // Separator
+        var separatorStr = decimalSeparator || '.';
+        str = toFixed(str, separatorStr, mergedPrecision);
+      }
+    }
+
+    return str;
+  }, [formatter, getPrecision, decimalSeparator]); // ========================== InputValue ==========================
+
+  /**
+   * Input text value control
+   *
+   * User can not update input content directly. It update with follow rules by priority:
+   *  1. controlled \`value\` changed
+   *    * [SPECIAL] Typing like \`1.\` should not immediately convert to \`1\`
+   *  2. User typing with format (not precision)
+   *  3. Blur or Enter trigger revalidate
+   */
+
+  var _React$useState5 = external_window_React_["useState"](function () {
+    var initValue = defaultValue !== null && defaultValue !== void 0 ? defaultValue : value;
+
+    if (decimalValue.isInvalidate() && ['string', 'number'].includes(Object(esm_typeof["a" /* default */])(initValue))) {
+      return Number.isNaN(initValue) ? '' : initValue;
+    }
+
+    return mergedFormatter(decimalValue.toString(), false);
+  }),
+      _React$useState6 = Object(slicedToArray["a" /* default */])(_React$useState5, 2),
+      inputValue = _React$useState6[0],
+      setInternalInputValue = _React$useState6[1];
+
+  inputValueRef.current = inputValue; // Should always be string
+
+  function setInputValue(newValue, userTyping) {
+    setInternalInputValue(mergedFormatter( // Invalidate number is sometime passed by external control, we should let it go
+    // Otherwise is controlled by internal interactive logic which check by userTyping
+    // You can ref 'show limited value when input is not focused' test for more info.
+    newValue.isInvalidate() ? newValue.toString(false) : newValue.toString(!userTyping), userTyping));
+  } // >>> Max & Min limit
+
+
+  var maxDecimal = external_window_React_["useMemo"](function () {
+    return InputNumber_getDecimalIfValidate(max);
+  }, [max, precision]);
+  var minDecimal = external_window_React_["useMemo"](function () {
+    return InputNumber_getDecimalIfValidate(min);
+  }, [min, precision]);
+  var upDisabled = external_window_React_["useMemo"](function () {
+    if (!maxDecimal || !decimalValue || decimalValue.isInvalidate()) {
+      return false;
+    }
+
+    return maxDecimal.lessEquals(decimalValue);
+  }, [maxDecimal, decimalValue]);
+  var downDisabled = external_window_React_["useMemo"](function () {
+    if (!minDecimal || !decimalValue || decimalValue.isInvalidate()) {
+      return false;
+    }
+
+    return decimalValue.lessEquals(minDecimal);
+  }, [minDecimal, decimalValue]); // Cursor controller
+
+  var _useCursor = useCursor(inputRef.current, focus),
+      _useCursor2 = Object(slicedToArray["a" /* default */])(_useCursor, 2),
+      recordCursor = _useCursor2[0],
+      restoreCursor = _useCursor2[1]; // ============================= Data =============================
+
+  /**
+   * Find target value closet within range.
+   * e.g. [11, 28]:
+   *    3  => 11
+   *    23 => 23
+   *    99 => 28
+   */
+
+
+  var getRangeValue = function getRangeValue(target) {
+    // target > max
+    if (maxDecimal && !target.lessEquals(maxDecimal)) {
+      return maxDecimal;
+    } // target < min
+
+
+    if (minDecimal && !minDecimal.lessEquals(target)) {
+      return minDecimal;
+    }
+
+    return null;
+  };
+  /**
+   * Check value is in [min, max] range
+   */
+
+
+  var isInRange = function isInRange(target) {
+    return !getRangeValue(target);
+  };
+  /**
+   * Trigger \`onChange\` if value validated and not equals of origin.
+   * Return the value that re-align in range.
+   */
+
+
+  var triggerValueUpdate = function triggerValueUpdate(newValue, userTyping) {
+    var updateValue = newValue;
+    var isRangeValidate = isInRange(updateValue) || updateValue.isEmpty(); // Skip align value when trigger value is empty.
+    // We just trigger onChange(null)
+    // This should not block user typing
+
+    if (!updateValue.isEmpty() && !userTyping) {
+      // Revert value in range if needed
+      updateValue = getRangeValue(updateValue) || updateValue;
+      isRangeValidate = true;
+    }
+
+    if (!readOnly && !disabled && isRangeValidate) {
+      var numStr = updateValue.toString();
+      var mergedPrecision = getPrecision(numStr, userTyping);
+
+      if (mergedPrecision >= 0) {
+        updateValue = getMiniDecimal(toFixed(numStr, '.', mergedPrecision)); // When to fixed. The value may out of min & max range.
+        // 4 in [0, 3.8] => 3.8 => 4 (toFixed)
+
+        if (!isInRange(updateValue)) {
+          updateValue = getMiniDecimal(toFixed(numStr, '.', mergedPrecision, true));
+        }
+      } // Trigger event
+
+
+      if (!updateValue.equals(decimalValue)) {
+        setUncontrolledDecimalValue(updateValue);
+        onChange === null || onChange === void 0 ? void 0 : onChange(updateValue.isEmpty() ? null : getDecimalValue(stringMode, updateValue)); // Reformat input if value is not controlled
+
+        if (value === undefined) {
+          setInputValue(updateValue, userTyping);
+        }
+      }
+
+      return updateValue;
+    }
+
+    return decimalValue;
+  }; // ========================== User Input ==========================
+
+
+  var onNextPromise = useFrame(); // >>> Collect input value
+
+  var collectInputValue = function collectInputValue(inputStr) {
+    recordCursor(); // Update inputValue incase input can not parse as number
+
+    setInternalInputValue(inputStr); // Parse number
+
+    if (!compositionRef.current) {
+      var finalValue = mergedParser(inputStr);
+      var finalDecimal = getMiniDecimal(finalValue);
+
+      if (!finalDecimal.isNaN()) {
+        triggerValueUpdate(finalDecimal, true);
+      }
+    } // Trigger onInput later to let user customize value if they want do handle something after onChange
+
+
+    onInput === null || onInput === void 0 ? void 0 : onInput(inputStr); // optimize for chinese input experience
+    // https://github.com/ant-design/ant-design/issues/8196
+
+    onNextPromise(function () {
+      var nextInputStr = inputStr;
+
+      if (!parser) {
+        nextInputStr = inputStr.replace(/\u3002/g, '.');
+      }
+
+      if (nextInputStr !== inputStr) {
+        collectInputValue(nextInputStr);
+      }
+    });
+  }; // >>> Composition
+
+
+  var onCompositionStart = function onCompositionStart() {
+    compositionRef.current = true;
+  };
+
+  var onCompositionEnd = function onCompositionEnd() {
+    compositionRef.current = false;
+    collectInputValue(inputRef.current.value);
+  }; // >>> Input
+
+
+  var onInternalInput = function onInternalInput(e) {
+    collectInputValue(e.target.value);
+  }; // ============================= Step =============================
+
+
+  var onInternalStep = function onInternalStep(up) {
+    var _inputRef$current;
+
+    // Ignore step since out of range
+    if (up && upDisabled || !up && downDisabled) {
+      return;
+    } // Clear typing status since it may caused by up & down key.
+    // We should sync with input value.
+
+
+    userTypingRef.current = false;
+    var stepDecimal = getMiniDecimal(shiftKeyRef.current ? getDecupleSteps(step) : step);
+
+    if (!up) {
+      stepDecimal = stepDecimal.negate();
+    }
+
+    var target = (decimalValue || getMiniDecimal(0)).add(stepDecimal.toString());
+    var updatedValue = triggerValueUpdate(target, false);
+    onStep === null || onStep === void 0 ? void 0 : onStep(getDecimalValue(stringMode, updatedValue), {
+      offset: shiftKeyRef.current ? getDecupleSteps(step) : step,
+      type: up ? 'up' : 'down'
+    });
+    (_inputRef$current = inputRef.current) === null || _inputRef$current === void 0 ? void 0 : _inputRef$current.focus();
+  }; // ============================ Flush =============================
+
+  /**
+   * Flush current input content to trigger value change & re-formatter input if needed
+   */
+
+
+  var flushInputValue = function flushInputValue(userTyping) {
+    var parsedValue = getMiniDecimal(mergedParser(inputValue));
+    var formatValue = parsedValue;
+
+    if (!parsedValue.isNaN()) {
+      // Only validate value or empty value can be re-fill to inputValue
+      // Reassign the formatValue within ranged of trigger control
+      formatValue = triggerValueUpdate(parsedValue, userTyping);
+    } else {
+      formatValue = decimalValue;
+    }
+
+    if (value !== undefined) {
+      // Reset back with controlled value first
+      setInputValue(decimalValue, false);
+    } else if (!formatValue.isNaN()) {
+      // Reset input back since no validate value
+      setInputValue(formatValue, false);
+    }
+  };
+
+  var onKeyDown = function onKeyDown(event) {
+    var which = event.which,
+        shiftKey = event.shiftKey;
+    userTypingRef.current = true;
+
+    if (shiftKey) {
+      shiftKeyRef.current = true;
+    } else {
+      shiftKeyRef.current = false;
+    }
+
+    if (which === KeyCode["a" /* default */].ENTER) {
+      if (!compositionRef.current) {
+        userTypingRef.current = false;
+      }
+
+      flushInputValue(false);
+      onPressEnter === null || onPressEnter === void 0 ? void 0 : onPressEnter(event);
+    }
+
+    if (keyboard === false) {
+      return;
+    } // Do step
+
+
+    if (!compositionRef.current && [KeyCode["a" /* default */].UP, KeyCode["a" /* default */].DOWN].includes(which)) {
+      onInternalStep(KeyCode["a" /* default */].UP === which);
+      event.preventDefault();
+    }
+  };
+
+  var onKeyUp = function onKeyUp() {
+    userTypingRef.current = false;
+    shiftKeyRef.current = false;
+  }; // >>> Focus & Blur
+
+
+  var onBlur = function onBlur() {
+    flushInputValue(false);
+    setFocus(false);
+    userTypingRef.current = false;
+  }; // ========================== Controlled ==========================
+  // Input by precision
+
+
+  Object(useLayoutEffect["b" /* useLayoutUpdateEffect */])(function () {
+    if (!decimalValue.isInvalidate()) {
+      setInputValue(decimalValue, false);
+    }
+  }, [precision]); // Input by value
+
+  Object(useLayoutEffect["b" /* useLayoutUpdateEffect */])(function () {
+    var newValue = getMiniDecimal(value);
+    setDecimalValue(newValue);
+    var currentParsedValue = getMiniDecimal(mergedParser(inputValue)); // When user typing from \`1.2\` to \`1.\`, we should not convert to \`1\` immediately.
+    // But let it go if user set \`formatter\`
+
+    if (!newValue.equals(currentParsedValue) || !userTypingRef.current || formatter) {
+      // Update value as effect
+      setInputValue(newValue, userTypingRef.current);
+    }
+  }, [value]); // ============================ Cursor ============================
+
+  Object(useLayoutEffect["b" /* useLayoutUpdateEffect */])(function () {
+    if (formatter) {
+      restoreCursor();
+    }
+  }, [inputValue]); // ============================ Render ============================
+
+  return /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: classnames_default()(prefixCls, className, (_classNames = {}, Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-focused"), focus), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-disabled"), disabled), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-readonly"), readOnly), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-not-a-number"), decimalValue.isNaN()), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-out-of-range"), !decimalValue.isInvalidate() && !isInRange(decimalValue)), _classNames)),
+    style: style,
+    onFocus: function onFocus() {
+      setFocus(true);
+    },
+    onBlur: onBlur,
+    onKeyDown: onKeyDown,
+    onKeyUp: onKeyUp,
+    onCompositionStart: onCompositionStart,
+    onCompositionEnd: onCompositionEnd
+  }, controls && /*#__PURE__*/external_window_React_["createElement"](StepHandler, {
+    prefixCls: prefixCls,
+    upNode: upHandler,
+    downNode: downHandler,
+    upDisabled: upDisabled,
+    downDisabled: downDisabled,
+    onStep: onInternalStep
+  }), /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: "".concat(inputClassName, "-wrap")
+  }, /*#__PURE__*/external_window_React_["createElement"]("input", Object(esm_extends["a" /* default */])({
+    autoComplete: "off",
+    role: "spinbutton",
+    "aria-valuemin": min,
+    "aria-valuemax": max,
+    "aria-valuenow": decimalValue.isInvalidate() ? null : decimalValue.toString(),
+    step: step
+  }, inputProps, {
+    ref: Object(es_ref["a" /* composeRef */])(inputRef, ref),
+    className: inputClassName,
+    value: inputValue,
+    onChange: onInternalInput,
+    disabled: disabled,
+    readOnly: readOnly
+  }))));
+});
+InputNumber.displayName = 'InputNumber';
+/* harmony default export */ var es_InputNumber = (InputNumber);
+// CONCATENATED MODULE: ./node_modules/rc-input-number/es/index.js
+
+/* harmony default export */ var es = (es_InputNumber);
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__("H84U");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/DisabledContext.js
+var DisabledContext = __webpack_require__("caoh");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/SizeContext.js
+var SizeContext = __webpack_require__("3Nzz");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/form/context.js
+var form_context = __webpack_require__("ihLV");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/reactNode.js
+var reactNode = __webpack_require__("0n0R");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/statusUtils.js
+var statusUtils = __webpack_require__("ATYA");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/input-number/index.js
+
+
+
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+var input_number_InputNumber = /*#__PURE__*/external_window_React_["forwardRef"](function (props, ref) {
+  var _classNames;
+
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      direction = _React$useContext.direction;
+
+  var size = external_window_React_["useContext"](SizeContext["b" /* default */]);
+
+  var _React$useState = external_window_React_["useState"](false),
+      _React$useState2 = Object(slicedToArray["a" /* default */])(_React$useState, 2),
+      focused = _React$useState2[0],
+      setFocus = _React$useState2[1];
+
+  var inputRef = external_window_React_["useRef"](null);
+  external_window_React_["useImperativeHandle"](ref, function () {
+    return inputRef.current;
+  });
+
+  var className = props.className,
+      customizeSize = props.size,
+      customDisabled = props.disabled,
+      customizePrefixCls = props.prefixCls,
+      addonBefore = props.addonBefore,
+      addonAfter = props.addonAfter,
+      prefix = props.prefix,
+      _props$bordered = props.bordered,
+      bordered = _props$bordered === void 0 ? true : _props$bordered,
+      readOnly = props.readOnly,
+      customStatus = props.status,
+      controls = props.controls,
+      others = __rest(props, ["className", "size", "disabled", "prefixCls", "addonBefore", "addonAfter", "prefix", "bordered", "readOnly", "status", "controls"]);
+
+  var prefixCls = getPrefixCls('input-number', customizePrefixCls);
+  var upIcon = /*#__PURE__*/external_window_React_["createElement"](UpOutlined["a" /* default */], {
+    className: "".concat(prefixCls, "-handler-up-inner")
+  });
+  var downIcon = /*#__PURE__*/external_window_React_["createElement"](DownOutlined["a" /* default */], {
+    className: "".concat(prefixCls, "-handler-down-inner")
+  });
+  var controlsTemp = typeof controls === 'boolean' ? controls : undefined;
+
+  if (Object(esm_typeof["a" /* default */])(controls) === 'object') {
+    upIcon = typeof controls.upIcon === 'undefined' ? upIcon : /*#__PURE__*/external_window_React_["createElement"]("span", {
+      className: "".concat(prefixCls, "-handler-up-inner")
+    }, controls.upIcon);
+    downIcon = typeof controls.downIcon === 'undefined' ? downIcon : /*#__PURE__*/external_window_React_["createElement"]("span", {
+      className: "".concat(prefixCls, "-handler-down-inner")
+    }, controls.downIcon);
+  }
+
+  var _useContext = Object(external_window_React_["useContext"])(form_context["b" /* FormItemInputContext */]),
+      hasFeedback = _useContext.hasFeedback,
+      contextStatus = _useContext.status,
+      isFormItemInput = _useContext.isFormItemInput,
+      feedbackIcon = _useContext.feedbackIcon;
+
+  var mergedStatus = Object(statusUtils["a" /* getMergedStatus */])(contextStatus, customStatus);
+  var mergeSize = customizeSize || size; // ===================== Disabled =====================
+
+  var disabled = external_window_React_["useContext"](DisabledContext["b" /* default */]);
+  var mergedDisabled = customDisabled || disabled;
+  var inputNumberClass = classnames_default()((_classNames = {}, Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-lg"), mergeSize === 'large'), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-sm"), mergeSize === 'small'), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-rtl"), direction === 'rtl'), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-borderless"), !bordered), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-in-form-item"), isFormItemInput), _classNames), Object(statusUtils["b" /* getStatusClassNames */])(prefixCls, mergedStatus), className);
+  var element = /*#__PURE__*/external_window_React_["createElement"](es, Object(esm_extends["a" /* default */])({
+    ref: inputRef,
+    disabled: mergedDisabled,
+    className: inputNumberClass,
+    upHandler: upIcon,
+    downHandler: downIcon,
+    prefixCls: prefixCls,
+    readOnly: readOnly,
+    controls: controlsTemp
+  }, others));
+
+  if (prefix != null || hasFeedback) {
+    var _classNames2;
+
+    var affixWrapperCls = classnames_default()("".concat(prefixCls, "-affix-wrapper"), Object(statusUtils["b" /* getStatusClassNames */])("".concat(prefixCls, "-affix-wrapper"), mergedStatus, hasFeedback), (_classNames2 = {}, Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-focused"), focused), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-disabled"), props.disabled), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-sm"), size === 'small'), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-lg"), size === 'large'), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-rtl"), direction === 'rtl'), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-readonly"), readOnly), Object(defineProperty["a" /* default */])(_classNames2, "".concat(prefixCls, "-affix-wrapper-borderless"), !bordered), Object(defineProperty["a" /* default */])(_classNames2, "".concat(className), !(addonBefore || addonAfter) && className), _classNames2));
+    element = /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: affixWrapperCls,
+      style: props.style,
+      onMouseUp: function onMouseUp() {
+        return inputRef.current.focus();
+      }
+    }, prefix && /*#__PURE__*/external_window_React_["createElement"]("span", {
+      className: "".concat(prefixCls, "-prefix")
+    }, prefix), Object(reactNode["a" /* cloneElement */])(element, {
+      style: null,
+      value: props.value,
+      onFocus: function onFocus(event) {
+        var _a;
+
+        setFocus(true);
+        (_a = props.onFocus) === null || _a === void 0 ? void 0 : _a.call(props, event);
+      },
+      onBlur: function onBlur(event) {
+        var _a;
+
+        setFocus(false);
+        (_a = props.onBlur) === null || _a === void 0 ? void 0 : _a.call(props, event);
+      }
+    }), hasFeedback && /*#__PURE__*/external_window_React_["createElement"]("span", {
+      className: "".concat(prefixCls, "-suffix")
+    }, feedbackIcon));
+  }
+
+  if (addonBefore != null || addonAfter != null) {
+    var _classNames4;
+
+    var wrapperClassName = "".concat(prefixCls, "-group");
+    var addonClassName = "".concat(wrapperClassName, "-addon");
+    var addonBeforeNode = addonBefore ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: addonClassName
+    }, addonBefore) : null;
+    var addonAfterNode = addonAfter ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: addonClassName
+    }, addonAfter) : null;
+    var mergedWrapperClassName = classnames_default()("".concat(prefixCls, "-wrapper"), wrapperClassName, Object(defineProperty["a" /* default */])({}, "".concat(wrapperClassName, "-rtl"), direction === 'rtl'));
+    var mergedGroupClassName = classnames_default()("".concat(prefixCls, "-group-wrapper"), (_classNames4 = {}, Object(defineProperty["a" /* default */])(_classNames4, "".concat(prefixCls, "-group-wrapper-sm"), size === 'small'), Object(defineProperty["a" /* default */])(_classNames4, "".concat(prefixCls, "-group-wrapper-lg"), size === 'large'), Object(defineProperty["a" /* default */])(_classNames4, "".concat(prefixCls, "-group-wrapper-rtl"), direction === 'rtl'), _classNames4), Object(statusUtils["b" /* getStatusClassNames */])("".concat(prefixCls, "-group-wrapper"), mergedStatus, hasFeedback), className);
+    element = /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: mergedGroupClassName,
+      style: props.style
+    }, /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: mergedWrapperClassName
+    }, addonBeforeNode && /*#__PURE__*/external_window_React_["createElement"](form_context["e" /* NoFormStyle */], {
+      status: true,
+      override: true
+    }, addonBeforeNode), Object(reactNode["a" /* cloneElement */])(element, {
+      style: null,
+      disabled: mergedDisabled
+    }), addonAfterNode && /*#__PURE__*/external_window_React_["createElement"](form_context["e" /* NoFormStyle */], {
+      status: true,
+      override: true
+    }, addonAfterNode)));
+  }
+
+  return element;
+});
+/* harmony default export */ var input_number = __webpack_exports__["a"] = (input_number_InputNumber);
+
+//# sourceURL=webpack:///./node_modules/antd/es/input-number/index.js_+_8_modules?`)},"giR+":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
+/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("QbM5");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
+
+ // deps-lint-skip: form
+
+//# sourceURL=webpack:///./node_modules/antd/es/input-number/style/index.js?`)},jCWc:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
+/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _grid_style__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("1GLa");
+ // style dependencies
+// deps-lint-skip: grid
+
+
+
+//# sourceURL=webpack:///./node_modules/antd/es/col/style/index.js?`)},kPKH:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _grid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("/kpp");
+
+/* harmony default export */ __webpack_exports__["a"] = (_grid__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"]);
+
+//# sourceURL=webpack:///./node_modules/antd/es/col/index.js?`)},y3Kf:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+var objectSpread2 = __webpack_require__("VTBJ");
+
+// EXTERNAL MODULE: external "window.React"
+var external_window_React_ = __webpack_require__("cDcd");
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/UpOutlined.js
+// This icon file is generated automatically.
+var UpOutlined_UpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M890.5 755.3L537.9 269.2c-12.8-17.6-39-17.6-51.7 0L133.5 755.3A8 8 0 00140 768h75c5.1 0 9.9-2.5 12.9-6.6L512 369.8l284.1 391.6c3 4.1 7.8 6.6 12.9 6.6h75c6.5 0 10.3-7.4 6.5-12.7z" } }] }, "name": "up", "theme": "outlined" };
+/* harmony default export */ var asn_UpOutlined = (UpOutlined_UpOutlined);
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/components/AntdIcon.js + 3 modules
+var AntdIcon = __webpack_require__("6VBw");
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/UpOutlined.js
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var icons_UpOutlined_UpOutlined = function UpOutlined(props, ref) {
+  return /*#__PURE__*/external_window_React_["createElement"](AntdIcon["a" /* default */], Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
+    ref: ref,
+    icon: asn_UpOutlined
+  }));
+};
+
+icons_UpOutlined_UpOutlined.displayName = 'UpOutlined';
+/* harmony default export */ var icons_UpOutlined = __webpack_exports__["a"] = (/*#__PURE__*/external_window_React_["forwardRef"](icons_UpOutlined_UpOutlined));
+
+//# sourceURL=webpack:///./node_modules/@ant-design/icons/es/icons/UpOutlined.js_+_1_modules?`)},zeV3:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, "a", function() { return /* binding */ SpaceContext; });
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__("wx14");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
+var defineProperty = __webpack_require__("rePB");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
+var slicedToArray = __webpack_require__("ODXe");
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__("TSYQ");
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/Children/toArray.js
+var toArray = __webpack_require__("Zm9Q");
+
+// EXTERNAL MODULE: external "window.React"
+var external_window_React_ = __webpack_require__("cDcd");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__("H84U");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/hooks/useFlexGapSupport.js
+var useFlexGapSupport = __webpack_require__("P80f");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/space/Item.js
+
+
+
+
+function Item(_ref) {
+  var className = _ref.className,
+      direction = _ref.direction,
+      index = _ref.index,
+      marginDirection = _ref.marginDirection,
+      children = _ref.children,
+      split = _ref.split,
+      wrap = _ref.wrap;
+
+  var _React$useContext = external_window_React_["useContext"](SpaceContext),
+      horizontalSize = _React$useContext.horizontalSize,
+      verticalSize = _React$useContext.verticalSize,
+      latestIndex = _React$useContext.latestIndex,
+      supportFlexGap = _React$useContext.supportFlexGap;
+
+  var style = {};
+
+  if (!supportFlexGap) {
+    if (direction === 'vertical') {
+      if (index < latestIndex) {
+        style = {
+          marginBottom: horizontalSize / (split ? 2 : 1)
+        };
+      }
+    } else {
+      style = Object(esm_extends["a" /* default */])(Object(esm_extends["a" /* default */])({}, index < latestIndex && Object(defineProperty["a" /* default */])({}, marginDirection, horizontalSize / (split ? 2 : 1))), wrap && {
+        paddingBottom: verticalSize
+      });
+    }
+  }
+
+  if (children === null || children === undefined) {
+    return null;
+  }
+
+  return /*#__PURE__*/external_window_React_["createElement"](external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: className,
+    style: style
+  }, children), index < latestIndex && split && /*#__PURE__*/external_window_React_["createElement"]("span", {
+    className: "".concat(className, "-split"),
+    style: style
+  }, split));
+}
+// CONCATENATED MODULE: ./node_modules/antd/es/space/index.js
+
+
+
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+var SpaceContext = /*#__PURE__*/external_window_React_["createContext"]({
+  latestIndex: 0,
+  horizontalSize: 0,
+  verticalSize: 0,
+  supportFlexGap: false
+});
+var spaceSize = {
+  small: 8,
+  middle: 16,
+  large: 24
+};
+
+function getNumberSize(size) {
+  return typeof size === 'string' ? spaceSize[size] : size || 0;
+}
+
+var space_Space = function Space(props) {
+  var _classNames;
+
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+      getPrefixCls = _React$useContext.getPrefixCls,
+      space = _React$useContext.space,
+      directionConfig = _React$useContext.direction;
+
+  var _props$size = props.size,
+      size = _props$size === void 0 ? (space === null || space === void 0 ? void 0 : space.size) || 'small' : _props$size,
+      align = props.align,
+      className = props.className,
+      children = props.children,
+      _props$direction = props.direction,
+      direction = _props$direction === void 0 ? 'horizontal' : _props$direction,
+      customizePrefixCls = props.prefixCls,
+      split = props.split,
+      style = props.style,
+      _props$wrap = props.wrap,
+      wrap = _props$wrap === void 0 ? false : _props$wrap,
+      otherProps = __rest(props, ["size", "align", "className", "children", "direction", "prefixCls", "split", "style", "wrap"]);
+
+  var supportFlexGap = Object(useFlexGapSupport["a" /* default */])();
+
+  var _React$useMemo = external_window_React_["useMemo"](function () {
+    return (Array.isArray(size) ? size : [size, size]).map(function (item) {
+      return getNumberSize(item);
+    });
+  }, [size]),
+      _React$useMemo2 = Object(slicedToArray["a" /* default */])(_React$useMemo, 2),
+      horizontalSize = _React$useMemo2[0],
+      verticalSize = _React$useMemo2[1];
+
+  var childNodes = Object(toArray["a" /* default */])(children, {
+    keepEmpty: true
+  });
+  var mergedAlign = align === undefined && direction === 'horizontal' ? 'center' : align;
+  var prefixCls = getPrefixCls('space', customizePrefixCls);
+  var cn = classnames_default()(prefixCls, "".concat(prefixCls, "-").concat(direction), (_classNames = {}, Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-rtl"), directionConfig === 'rtl'), Object(defineProperty["a" /* default */])(_classNames, "".concat(prefixCls, "-align-").concat(mergedAlign), mergedAlign), _classNames), className);
+  var itemClassName = "".concat(prefixCls, "-item");
+  var marginDirection = directionConfig === 'rtl' ? 'marginLeft' : 'marginRight'; // Calculate latest one
+
+  var latestIndex = 0;
+  var nodes = childNodes.map(function (child, i) {
+    if (child !== null && child !== undefined) {
+      latestIndex = i;
+    }
+
+    var key = child && child.key || "".concat(itemClassName, "-").concat(i);
+    return /*#__PURE__*/external_window_React_["createElement"](Item, {
+      className: itemClassName,
+      key: key,
+      direction: direction,
+      index: i,
+      marginDirection: marginDirection,
+      split: split,
+      wrap: wrap
+    }, child);
+  });
+  var spaceContext = external_window_React_["useMemo"](function () {
+    return {
+      horizontalSize: horizontalSize,
+      verticalSize: verticalSize,
+      latestIndex: latestIndex,
+      supportFlexGap: supportFlexGap
+    };
+  }, [horizontalSize, verticalSize, latestIndex, supportFlexGap]); // =========================== Render ===========================
+
+  if (childNodes.length === 0) {
+    return null;
+  }
+
+  var gapStyle = {};
+
+  if (wrap) {
+    gapStyle.flexWrap = 'wrap'; // Patch for gap not support
+
+    if (!supportFlexGap) {
+      gapStyle.marginBottom = -verticalSize;
+    }
+  }
+
+  if (supportFlexGap) {
+    gapStyle.columnGap = horizontalSize;
+    gapStyle.rowGap = verticalSize;
+  }
+
+  return /*#__PURE__*/external_window_React_["createElement"]("div", Object(esm_extends["a" /* default */])({
+    className: cn,
+    style: Object(esm_extends["a" /* default */])(Object(esm_extends["a" /* default */])({}, gapStyle), style)
+  }, otherProps), /*#__PURE__*/external_window_React_["createElement"](SpaceContext.Provider, {
+    value: spaceContext
+  }, nodes));
+};
+
+/* harmony default export */ var es_space = __webpack_exports__["b"] = (space_Space);
+
+//# sourceURL=webpack:///./node_modules/antd/es/space/index.js_+_1_modules?`)}}]);

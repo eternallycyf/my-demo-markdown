@@ -1,75 +1,87 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{y9DP:function(r,o,t){"use strict";t.r(o);var s=t("cDcd"),e=t.n(s),n=t("dEAq"),i=t.n(n),l=t("6T1g");const c=e.a.memo(({demos:a})=>e.a.createElement(e.a.Fragment,null,e.a.createElement("div",{className:"markdown"},e.a.createElement("h2",{id:"\u7EC4\u5408\u6A21\u5F0F"},e.a.createElement(n.AnchorLink,{to:"#\u7EC4\u5408\u6A21\u5F0F","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"\u7EC4\u5408\u6A21\u5F0F"),e.a.createElement("ul",null,e.a.createElement("li",null,"\u5C06\u5BF9\u8C61\u7EC4\u5408\u6210\u6811\u5F62\u7ED3\u6784\u4EE5\u8868\u793A\u201C\u90E8\u5206-\u6574\u4F53\u201D\u7684\u5C42\u6B21\u7ED3\u6784\u3002\u7EC4\u5408\u4F7F\u5F97\u7528\u6237\u5BF9\u5355\u4E2A\u5BF9\u8C61\u548C\u7EC4\u5408\u5BF9\u8C61\u7684\u4F7F\u7528\u5177\u6709\u4E00\u81F4\u6027\u3002"),e.a.createElement("li",null,"\u5E38\u89C1\u573A\u666F: \u6587\u4EF6\u76EE\u5F55")),e.a.createElement("h2",{id:"\u4EE3\u7801\u5B9E\u73B0"},e.a.createElement(n.AnchorLink,{to:"#\u4EE3\u7801\u5B9E\u73B0","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"\u4EE3\u7801\u5B9E\u73B0"),e.a.createElement("ul",null,e.a.createElement("li",null,"\u7EC4\u5408\u5BF9\u8C61\u548C\u53F6\u5B50\u5BF9\u8C61\u5E76\u4E0D\u662F\u7236\u5B50\u5173\u7CFB\uFF0C\u800C\u662F\u7EC4\u5408\u5173\u7CFB"),e.a.createElement("li",null,"\u5B9E\u73B0\u65F6\uFF0C\u6211\u4EEC\u4F1A\u5C06\u7EC4\u5408\u5BF9\u8C61\u7C7B ",e.a.createElement("code",null,"Composite")," \u6216\u8005\u53F6\u5B50\u5BF9\u8C61\u7C7B ",e.a.createElement("code",null,"Leaf")," \u7EE7\u627F\u4E8E\u540C\u4E00\u4E2A\u62BD\u8C61\u7C7B ",e.a.createElement("code",null,"Component"))),e.a.createElement(l.a,{code:`abstract class Component {
-  operation() {}
-}
-class Composite extends Component {
-  operation() {
-    console.log('\u7EC4\u5408\u5BF9\u8C61\u7684\u5B9E\u73B0');
-  }
-}
-class Leaf extends Component {
-  operation() {
-    console.log('\u53F6\u5B50\u5BF9\u8C61\u7684\u5B9E\u73B0');
-  }
-}`,lang:"typescript"}),e.a.createElement(l.a,{code:`abstract class TreeBase {
-  name: string;
-  nodes: TreeBase[] = [];
-  constructor(name: string) {
-    this.name = name;
-  }
-  add(n: TreeBase) {}
-  remove(n: TreeBase) {}
-  show() {}
-}
+(window.webpackJsonp=window.webpackJsonp||[]).push([[16],{y9DP:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("dEAq");
+/* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("6T1g");
 
-class TreeComposite extends TreeBase {
-  constructor(name: string) {
-    super(name);
-  }
 
-  add(n: TreeBase) {
-    this.nodes.push(n);
-  }
 
-  remove(n: TreeBase) {
-    this.nodes.splice(
-      this.nodes.findIndex(e => e.name === n.name),
-      1,
-    );
-  }
 
-  show() {
-    console.log(\`\${this.name}, I am a composite node\`);
-    this.nodes.forEach(e => {
-      e.show();
-    });
-  }
-}
-class Leaf extends TreeBase {
-  constructor(name: string) {
-    super(name);
-  }
 
-  show() {
-    console.log(\`\${this.name}, I am a leaf\`);
-  }
-}
-const root = new TreeComposite('root');
-const node1 = new TreeComposite('node1');
-const leaf1 = new Leaf('leaf1');
-const leaf2 = new Leaf('leaf2');
-const leaf3 = new Leaf('leaf3');
 
-root.add(node1);
-root.add(leaf3);
-node1.add(leaf1);
-node1.add(leaf2);
-root.show();
-/**
- *
- * root, I am a composite node
- * tree.component.ts:51 node1, I am a composite node
- * tree.component.ts:64 leaf1, I am a leaf
- * tree.component.ts:64 leaf2, I am a leaf
- * tree.component.ts:64 leaf3, I am a leaf
- *
- **/`,lang:"typescript"}),e.a.createElement("h2",{id:"\u53C2\u8003\u94FE\u63A5"},e.a.createElement(n.AnchorLink,{to:"#\u53C2\u8003\u94FE\u63A5","aria-hidden":"true",tabIndex:-1},e.a.createElement("span",{className:"icon icon-link"})),"\u53C2\u8003\u94FE\u63A5"),e.a.createElement("ul",null,e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://www.jianshu.com/p/a6e236040505"},"https://www.jianshu.com/p/a6e236040505")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://segmentfault.com/a/1190000019773556"},"https://segmentfault.com/a/1190000019773556")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://github.com/tcorral/Design-Patterns-in-Javascript"},"https://github.com/tcorral/Design-Patterns-in-Javascript")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://www.runoob.com/design-pattern/composite-pattern.html"},"https://www.runoob.com/design-pattern/composite-pattern.html")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://www.cnblogs.com/TomXu/archive/2012/04/12/2435530.html"},"https://www.cnblogs.com/TomXu/archive/2012/04/12/2435530.html")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://github.com/sohamkamani/javascript-design-patterns-for-humans#-composite"},"https://github.com/sohamkamani/javascript-design-patterns-for-humans#-composite")),e.a.createElement("li",null,e.a.createElement(n.Link,{to:"https://xhui.top/2018/12/20/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-8-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"},"https://xhui.top/2018/12/20/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-8-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"))))));o.default=a=>{const m=e.a.useContext(n.context),E=m.demos;return e.a.useEffect(()=>{var u;a!=null&&(u=a.location)!==null&&u!==void 0&&u.hash&&n.AnchorLink.scrollToAnchor(decodeURIComponent(a.location.hash.slice(1)))},[]),e.a.createElement(c,{demos:E})}}}]);
+
+
+
+
+ // memo for page content, to avoid useless re-render since other context fields changed
+
+const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(({
+  demos: DUMI_ALL_DEMOS
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "markdown"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "\\u7EC4\\u5408\\u6A21\\u5F0F"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#\\u7EC4\\u5408\\u6A21\\u5F0F",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "\\u7EC4\\u5408\\u6A21\\u5F0F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5C06\\u5BF9\\u8C61\\u7EC4\\u5408\\u6210\\u6811\\u5F62\\u7ED3\\u6784\\u4EE5\\u8868\\u793A\\u201C\\u90E8\\u5206-\\u6574\\u4F53\\u201D\\u7684\\u5C42\\u6B21\\u7ED3\\u6784\\u3002\\u7EC4\\u5408\\u4F7F\\u5F97\\u7528\\u6237\\u5BF9\\u5355\\u4E2A\\u5BF9\\u8C61\\u548C\\u7EC4\\u5408\\u5BF9\\u8C61\\u7684\\u4F7F\\u7528\\u5177\\u6709\\u4E00\\u81F4\\u6027\\u3002"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5E38\\u89C1\\u573A\\u666F: \\u6587\\u4EF6\\u76EE\\u5F55")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "\\u4EE3\\u7801\\u5B9E\\u73B0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#\\u4EE3\\u7801\\u5B9E\\u73B0",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "\\u4EE3\\u7801\\u5B9E\\u73B0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u7EC4\\u5408\\u5BF9\\u8C61\\u548C\\u53F6\\u5B50\\u5BF9\\u8C61\\u5E76\\u4E0D\\u662F\\u7236\\u5B50\\u5173\\u7CFB\\uFF0C\\u800C\\u662F\\u7EC4\\u5408\\u5173\\u7CFB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5B9E\\u73B0\\u65F6\\uFF0C\\u6211\\u4EEC\\u4F1A\\u5C06\\u7EC4\\u5408\\u5BF9\\u8C61\\u7C7B ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "Composite"), " \\u6216\\u8005\\u53F6\\u5B50\\u5BF9\\u8C61\\u7C7B ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "Leaf"), " \\u7EE7\\u627F\\u4E8E\\u540C\\u4E00\\u4E2A\\u62BD\\u8C61\\u7C7B ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("code", null, "Component"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+    code: "abstract class Component {\\n  operation() {}\\n}\\nclass Composite extends Component {\\n  operation() {\\n    console.log('\u7EC4\u5408\u5BF9\u8C61\u7684\u5B9E\u73B0');\\n  }\\n}\\nclass Leaf extends Component {\\n  operation() {\\n    console.log('\u53F6\u5B50\u5BF9\u8C61\u7684\u5B9E\u73B0');\\n  }\\n}",
+    lang: "typescript"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"], {
+    code: "abstract class TreeBase {\\n  name: string;\\n  nodes: TreeBase[] = [];\\n  constructor(name: string) {\\n    this.name = name;\\n  }\\n  add(n: TreeBase) {}\\n  remove(n: TreeBase) {}\\n  show() {}\\n}\\n\\nclass TreeComposite extends TreeBase {\\n  constructor(name: string) {\\n    super(name);\\n  }\\n\\n  add(n: TreeBase) {\\n    this.nodes.push(n);\\n  }\\n\\n  remove(n: TreeBase) {\\n    this.nodes.splice(\\n      this.nodes.findIndex(e => e.name === n.name),\\n      1,\\n    );\\n  }\\n\\n  show() {\\n    console.log(\`\${this.name}, I am a composite node\`);\\n    this.nodes.forEach(e => {\\n      e.show();\\n    });\\n  }\\n}\\nclass Leaf extends TreeBase {\\n  constructor(name: string) {\\n    super(name);\\n  }\\n\\n  show() {\\n    console.log(\`\${this.name}, I am a leaf\`);\\n  }\\n}\\nconst root = new TreeComposite('root');\\nconst node1 = new TreeComposite('node1');\\nconst leaf1 = new Leaf('leaf1');\\nconst leaf2 = new Leaf('leaf2');\\nconst leaf3 = new Leaf('leaf3');\\n\\nroot.add(node1);\\nroot.add(leaf3);\\nnode1.add(leaf1);\\nnode1.add(leaf2);\\nroot.show();\\n/**\\n *\\n * root, I am a composite node\\n * tree.component.ts:51 node1, I am a composite node\\n * tree.component.ts:64 leaf1, I am a leaf\\n * tree.component.ts:64 leaf2, I am a leaf\\n * tree.component.ts:64 leaf3, I am a leaf\\n *\\n **/",
+    lang: "typescript"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "\\u53C2\\u8003\\u94FE\\u63A5"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#\\u53C2\\u8003\\u94FE\\u63A5",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "\\u53C2\\u8003\\u94FE\\u63A5"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://www.jianshu.com/p/a6e236040505"
+  }, "https://www.jianshu.com/p/a6e236040505")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://segmentfault.com/a/1190000019773556"
+  }, "https://segmentfault.com/a/1190000019773556")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://github.com/tcorral/Design-Patterns-in-Javascript"
+  }, "https://github.com/tcorral/Design-Patterns-in-Javascript")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://www.runoob.com/design-pattern/composite-pattern.html"
+  }, "https://www.runoob.com/design-pattern/composite-pattern.html")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://www.cnblogs.com/TomXu/archive/2012/04/12/2435530.html"
+  }, "https://www.cnblogs.com/TomXu/archive/2012/04/12/2435530.html")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://github.com/sohamkamani/javascript-design-patterns-for-humans#-composite"
+  }, "https://github.com/sohamkamani/javascript-design-patterns-for-humans#-composite")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://xhui.top/2018/12/20/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-8-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"
+  }, "https://xhui.top/2018/12/20/JS%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F-8-%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/")))));
+});
+/* harmony default export */ __webpack_exports__["default"] = (props => {
+  const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
+        demos = _React$useContext.demos; // scroll to anchor after page component loaded
+
+
+  react__WEBPACK_IMPORTED_MODULE_0___default.a.useEffect(() => {
+    var _props$location;
+
+    if (props !== null && props !== void 0 && (_props$location = props.location) !== null && _props$location !== void 0 && _props$location.hash) {
+      dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"].scrollToAnchor(decodeURIComponent(props.location.hash.slice(1)));
+    }
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(PageContent, {
+    demos: demos
+  });
+});
+
+//# sourceURL=webpack:///./src/Article2/18.%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/13.%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/index.md?`)}}]);
