@@ -191,6 +191,7 @@ nav:
   - some
   - reduce
   - reduceRight
+  - [async](https://github.com/eternallycyf/my-async-await)
 
 - vue 源码
   - [Vue2 实现 data](https://github.com/eternallycyf/Vue2-data)

@@ -6,7 +6,16 @@ nav:
   order: 1
 ---
 
-<Alert>待整理 整理后将移动到其他地方</Alert>
+```tsx
+/**
+ * inline: true
+ */
+import React from 'react';
+import Alert from '@/MyComponents/Alert';
+export default () => (
+  <Alert type="warning" message="待整理" description="整理后将移动到其他地方" />
+);
+```
 
 # 我的 TypeScript 相关代码
 
