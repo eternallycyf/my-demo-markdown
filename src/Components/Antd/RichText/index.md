@@ -1,7 +1,7 @@
 ---
 order: 1
 group:
-  path: /rich_text
+  path: /antd
   title: antd
   order: 1
 ---
