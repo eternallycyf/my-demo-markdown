@@ -1,9 +1,9 @@
 ---
-order: 1
+order: 2
 group:
-  path: /antd
-  title: antd
-  order: 1
+  path: /my-components
+  title: 封装的业务组件
+  order: 2
 ---
 
 ## RichText
