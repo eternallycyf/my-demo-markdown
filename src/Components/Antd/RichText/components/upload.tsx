@@ -4,17 +4,17 @@ import { Upload } from 'antd';
 import { ExtendControlType } from 'braft-editor';
 import { ContentUtils } from 'braft-utils';
 
-const uploadHandler = (param: any, { form, name }: any) => {
-  if (!param.file) return false;
-  const editorState = form.getFieldValue(name);
-  const content = ContentUtils.insertMedias(editorState, [
-    {
-      type: 'IMAGE',
-      url: URL.createObjectURL(param.file),
-    },
-  ]);
-  form.setFieldsValue({ [name]: content });
-};
+// const uploadHandler = (param: any, { form, name }: any) => {
+//   if (!param.file) return false;
+//   const editorState = form.getFieldValue(name);
+//   const content = ContentUtils.insertMedias(editorState, [
+//     {
+//       type: 'IMAGE',
+//       url: URL.createObjectURL(param.file),
+//     },
+//   ]);
+//   form.setFieldsValue({ [name]: content });
+// };
 
 const uploadControl = (
   editor: any,

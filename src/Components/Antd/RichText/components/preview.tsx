@@ -23,8 +23,6 @@ import { ExtendControlType } from 'braft-editor';
 // };
 
 const previewControl = (editor: any, options: any): ExtendControlType => {
-  console.log(options.editorState.toHTML());
-
   return {
     key: 'preview',
     type: 'button',
@@ -39,6 +37,7 @@ const previewControl = (editor: any, options: any): ExtendControlType => {
         icon: false,
         centered: true,
         maskClosable: false,
+        bodyStyle: { minWidth: 500 },
         width: 'auto',
         okText: '确定',
         cancelText: '取消',

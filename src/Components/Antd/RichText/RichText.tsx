@@ -10,13 +10,13 @@ import 'braft-extensions/dist/color-picker.css';
 import 'braft-extensions/dist/code-highlighter.css';
 import CustomControls from './components/controls';
 import { FormInstance } from 'rc-field-form';
-import { CONTROLS_ALL, CONTROLS_LESS } from './components/constant';
-import { Upload } from 'antd';
+import { MAX_LENGTH, CONTROLS_ALL, CONTROLS_LESS } from './components/constant';
+import { message } from 'antd';
 
 BraftEditor.use(Table());
 BraftEditor.use(
   MaxLength({
-    defaultValue: 10000,
+    defaultValue: MAX_LENGTH,
   }),
 );
 BraftEditor.use(
@@ -32,18 +32,20 @@ interface EditorProps {
   extendControlKey?: any[];
   value?: string;
   valueType?: 'html' | 'raw';
+  showWordLimitPrompt?: boolean;
+  getImageURL?: (file: File) => Promise<string>;
   onChange?: (value: string) => void;
+  [props: string]: any;
 }
 
 export default class UploadDemo extends React.Component<EditorProps> {
-  editorRef = React.createRef();
-
+  editorRef = React.createRef<BraftEditorProps>();
   state = {
     editorState: BraftEditor.createEditorState(null),
   };
 
-  isContentEmpty = (content: EditorState) => {
-    return content.toHTML() === '<p></p>';
+  isContentEmpty = () => {
+    return this.state.editorState.toHTML() === '<p></p>';
   };
 
   // 处理文本粘贴
@@ -81,25 +83,28 @@ export default class UploadDemo extends React.Component<EditorProps> {
 
   handleChange = (editorState: EditorState) => {
     const { form, name, valueType, onChange } = this.props;
-    console.log(editorState.toHTML());
     const content =
       valueType === 'raw' ? editorState.toRAW() : editorState.toHTML();
     this.setState({ editorState });
-    form?.setFieldsValue({ [name]: content });
+    form?.setFieldsValue({ [name as string]: content });
     if (onChange) {
       onChange(content);
     }
   };
 
-  uploadHandler = param => {
-    const { form, name, valueType, onChange } = this.props;
-    if (!param.file) {
-      return false;
-    }
+  uploadHandler = async (params: any) => {
+    const { getImageURL } = this.props;
+    const reg = /.(png|jpg|gif|jpeg|webp)$/;
+    const str = '.' + params.file.type.split('/')?.[1];
+    console.log(str);
+    if (!reg.test(str)) return message.error('富文本只支持图片格式');
+    if (!params.file) return false;
     const content = ContentUtils.insertMedias(this.state.editorState, [
       {
         type: 'IMAGE',
-        url: URL.createObjectURL(param.file),
+        url: getImageURL
+          ? await getImageURL(params.file)
+          : URL.createObjectURL(params.file),
       },
     ]);
     this.setState({
@@ -115,6 +120,8 @@ export default class UploadDemo extends React.Component<EditorProps> {
       extendControlKey,
       value,
       onChange,
+      getImageURL,
+      showWordLimitPrompt = true,
       ...restProps
     } = this.props;
     const { editorRef, handlePastedText } = this;
@@ -128,34 +135,39 @@ export default class UploadDemo extends React.Component<EditorProps> {
     });
 
     return (
-      <div>
-        <div className="editor-wrapper">
-          <BraftEditor
-            ref={editorRef}
-            value={this.state.editorState}
-            controlBarStyle={{ background: '#f1f1f1' }}
-            handlePastedText={handlePastedText}
-            contentStyle={{ height: 500 }}
-            onChange={this.handleChange}
-            controls={CONTROLS_LESS as any}
-            media={{
-              externals: {
-                image: true,
-                video: false,
-                audio: false,
-                embed: false,
-              },
-            }}
-            extendControls={extendControls.map((control: any) =>
-              control(editorRef, {
-                form,
-                uploadHandler: this.uploadHandler,
-                editorState: this.state.editorState,
-                ...restProps,
-              }),
-            )}
-            {...restProps}
-          />
+      <div className="editor-wrapper">
+        <BraftEditor
+          ref={editorRef}
+          value={this.state.editorState}
+          controlBarStyle={{ background: '#f1f1f1' }}
+          handlePastedText={handlePastedText}
+          contentStyle={{
+            minHeight: 500,
+            border: '1px solid #ccc',
+            // overflow: 'unset'
+          }}
+          onChange={this.handleChange}
+          controls={CONTROLS_LESS as any}
+          media={{
+            externals: {
+              image: true,
+              video: false,
+              audio: false,
+              embed: false,
+            },
+          }}
+          extendControls={extendControls.map((control: any) =>
+            control(editorRef, {
+              form,
+              uploadHandler: this.uploadHandler,
+              editorState: this.state.editorState,
+              ...restProps,
+            }),
+          )}
+          {...restProps}
+        />
+        <div>
+          {this.state.editorState.toText().length}/{MAX_LENGTH}
         </div>
       </div>
     );
