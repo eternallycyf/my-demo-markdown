@@ -37020,6 +37020,12 @@ function _objectWithoutProperties(source, excluded) {
 
   return target;
 }
+// EXTERNAL MODULE: ./node_modules/antd/es/message/style/index.js
+var message_style = __webpack_require__("miYZ");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/message/index.js + 1 modules
+var message = __webpack_require__("tsqr");
+
 // EXTERNAL MODULE: ./node_modules/braft-editor/dist/index.js
 var dist = __webpack_require__("yEr3");
 var dist_default = /*#__PURE__*/__webpack_require__.n(dist);
@@ -37081,7 +37087,6 @@ var modal = __webpack_require__("kLXV");
 //   );
 // };
 const previewControl = (editor, options) => {
-  console.log(options.editorState.toHTML());
   return {
     key: 'preview',
     type: 'button',
@@ -37096,6 +37101,9 @@ const previewControl = (editor, options) => {
         icon: false,
         centered: true,
         maskClosable: false,
+        bodyStyle: {
+          minWidth: 500
+        },
         width: 'auto',
         okText: '\u786E\u5B9A',
         cancelText: '\u53D6\u6D88',
@@ -37150,22 +37158,17 @@ icons_PictureFilled_PictureFilled.displayName = 'PictureFilled';
 
 
 
-
-const upload_uploadHandler = (param, {
-  form,
-  name
-}) => {
-  if (!param.file) return false;
-  const editorState = form.getFieldValue(name);
-  const content = braft_utils_dist["ContentUtils"].insertMedias(editorState, [{
-    type: 'IMAGE',
-    url: URL.createObjectURL(param.file)
-  }]);
-  form.setFieldsValue({
-    [name]: content
-  });
-};
-
+// const uploadHandler = (param: any, { form, name }: any) => {
+//   if (!param.file) return false;
+//   const editorState = form.getFieldValue(name);
+//   const content = ContentUtils.insertMedias(editorState, [
+//     {
+//       type: 'IMAGE',
+//       url: URL.createObjectURL(param.file),
+//     },
+//   ]);
+//   form.setFieldsValue({ [name]: content });
+// };
 const uploadControl = (editor, {
   form,
   name,
@@ -37194,12 +37197,48 @@ const uploadControl = (editor, {
   uploader: components_upload
 });
 // CONCATENATED MODULE: ./src/Components/Antd/RichText/components/constant.ts
+const MAX_LENGTH = 20000;
 const CONTROLS_ALL = ['undo', 'redo', 'separator', 'font-size', 'line-height', 'letter-spacing', 'separator', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'separator', 'superscript', 'subscript', 'remove-styles', 'emoji', 'separator', 'text-indent', 'text-align', 'separator', 'headings', 'list-ul', 'list-ol', 'blockquote', 'code', 'separator', 'link', 'separator', 'hr', 'separator', 'media', 'separator', 'clear'];
-const CONTROLS_LESS = ['font-size', 'text-color', 'bold', 'italic', 'underline', 'strike-through', 'text-align', 'emoji', 'text-indent', 'link', 'hr', 'separator', 'media'];
+const CONTROLS_LESS = [// \u5E38\u89C4
+'headings', // \u52A0\u7C97
+'bold', // \u4E0B\u5212\u7EBF
+'underline', // \u5BF9\u9F50\u65B9\u5F0F
+'text-align', // \u6709\u5E8F\u5217\u8868
+'list-ol', // \u65E0\u5E8F\u5217\u8868
+'list-ul', // \u94FE\u63A5
+'link', 'undo', 'redo', 'blockquote', 'preview', 'fullscreen']; // font-size	\u6587\u5B57\u5B57\u53F7\u9009\u62E9\u5668
+// font-family	\u6587\u5B57\u5B57\u4F53\u9009\u62E9\u5668
+// line-height	\u6587\u5B57\u884C\u9AD8\u9009\u62E9\u5668
+// letter-spacing	\u6587\u5B57\u5B57\u95F4\u8DDD\u9009\u62E9\u5668
+// text-color	\u6587\u5B57\u989C\u8272\u9009\u62E9\u5668\uFF0C\u5305\u542B\u6587\u5B57\u80CC\u666F\u989C\u8272\u8BBE\u7F6E
+// bold	\u8BBE\u7F6E\u6587\u5B57\u52A0\u7C97
+// italic	\u8BBE\u7F6E\u6587\u5B57\u659C\u4F53
+// underline	\u8BBE\u7F6E\u6587\u5B57\u4E0B\u5212\u7EBF
+// strike-through	\u8BBE\u7F6E\u6587\u5B57\u5220\u9664\u7EBF
+// superscript	\u8BBE\u7F6E\u6587\u5B57\u4E3A\u4E0A\u6807
+// subscript	\u8BBE\u7F6E\u6587\u5B57\u4E3A\u4E0B\u6807
+// remove-styles	\u6E05\u9664\u6587\u5B57\u6837\u5F0F
+// emoji	Emoji\u8868\u60C5\u9009\u62E9\u5668
+// text-align	\u6587\u5B57\u5BF9\u9F50\u65B9\u5F0F\u5DE5\u5177\uFF0C\u53EF\u901A\u8FC7textAligns\u5C5E\u6027\u6765\u6307\u5B9A\u53EF\u4EE5\u4F7F\u7528\u54EA\u4E9B\u5BF9\u9F50\u65B9\u5F0F
+// text-indent	\u6BB5\u843D\u7F29\u8FDB\u5DE5\u5177\uFF0C\u6700\u591A\u53EF\u7F29\u8FDB6\u7EA7
+// link	\u94FE\u63A5\u63D2\u5165\u5DE5\u5177
+// headings	\u6BB5\u843D\u7C7B\u578B\uFF08\u6807\u98981-6\u3001\u5E38\u89C4\uFF09
+// list-ul	\u65E0\u5E8F\u5217\u8868
+// list-ol	\u6709\u5E8F\u5217\u8868
+// blockquote	\u5F15\u7528\u6BB5\u843D
+// code	\u4EE3\u7801\u5757
+// hr	\u6C34\u5E73\u7EBF\u5DE5\u5177
+// media	\u591A\u5A92\u4F53\u63D2\u5165\u5DE5\u5177
+// clear	\u5185\u5BB9\u6E05\u9664\u5DE5\u5177
+// undo	\u64A4\u9500\u64CD\u4F5C
+// redo	\u91CD\u505A\u64CD\u4F5C
+// separator	\u5206\u5272\u7EBF\uFF0C\u8FDE\u7EED\u7684\u591A\u4E2Aseparator\u5C06\u53EA\u663E\u793A\u4E3A1\u4E2A
 // CONCATENATED MODULE: ./src/Components/Antd/RichText/RichText.tsx
 
 
-const _excluded = ["form", "valueType", "extendControlKey", "value", "onChange"];
+
+
+const _excluded = ["form", "valueType", "extendControlKey", "value", "onChange", "getImageURL", "showWordLimitPrompt"];
 
 
 
@@ -37214,7 +37253,7 @@ const _excluded = ["form", "valueType", "extendControlKey", "value", "onChange"]
 
 dist_default.a.use(table_default()());
 dist_default.a.use(max_length_default()({
-  defaultValue: 10000
+  defaultValue: MAX_LENGTH
 }));
 dist_default.a.use(color_picker_default()({
   theme: 'light' // \u652F\u6301dark\u548Clight\u4E24\u79CD\u4E3B\u9898\uFF0C\u9ED8\u8BA4\u4E3Adark
@@ -37228,8 +37267,8 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
       editorState: dist_default.a.createEditorState(null)
     };
 
-    this.isContentEmpty = content => {
-      return content.toHTML() === '<p></p>';
+    this.isContentEmpty = () => {
+      return this.state.editorState.toHTML() === '<p></p>';
     };
 
     this.handlePastedText = (text, HTML, editorState, editor) => {
@@ -37259,7 +37298,6 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
             name = _this$props.name,
             valueType = _this$props.valueType,
             onChange = _this$props.onChange;
-      console.log(editorState.toHTML());
       const content = valueType === 'raw' ? editorState.toRAW() : editorState.toHTML();
       this.setState({
         editorState
@@ -37273,20 +37311,18 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
       }
     };
 
-    this.uploadHandler = param => {
-      const _this$props2 = this.props,
-            form = _this$props2.form,
-            name = _this$props2.name,
-            valueType = _this$props2.valueType,
-            onChange = _this$props2.onChange;
+    this.uploadHandler = async params => {
+      var _params$file$type$spl;
 
-      if (!param.file) {
-        return false;
-      }
-
+      const getImageURL = this.props.getImageURL;
+      const reg = /.(png|jpg|gif|jpeg|webp)$/;
+      const str = '.' + ((_params$file$type$spl = params.file.type.split('/')) === null || _params$file$type$spl === void 0 ? void 0 : _params$file$type$spl[1]);
+      console.log(str);
+      if (!reg.test(str)) return message["b" /* default */].error('\u5BCC\u6587\u672C\u53EA\u652F\u6301\u56FE\u7247\u683C\u5F0F');
+      if (!params.file) return false;
       const content = braft_utils_dist["ContentUtils"].insertMedias(this.state.editorState, [{
         type: 'IMAGE',
-        url: URL.createObjectURL(param.file)
+        url: getImageURL ? await getImageURL(params.file) : URL.createObjectURL(params.file)
       }]);
       this.setState({
         editorState: content
@@ -37296,13 +37332,16 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
   }
 
   render() {
-    const _this$props3 = this.props,
-          form = _this$props3.form,
-          valueType = _this$props3.valueType,
-          extendControlKey = _this$props3.extendControlKey,
-          value = _this$props3.value,
-          onChange = _this$props3.onChange,
-          restProps = _objectWithoutProperties(_this$props3, _excluded);
+    const _this$props2 = this.props,
+          form = _this$props2.form,
+          valueType = _this$props2.valueType,
+          extendControlKey = _this$props2.extendControlKey,
+          value = _this$props2.value,
+          onChange = _this$props2.onChange,
+          getImageURL = _this$props2.getImageURL,
+          _this$props2$showWord = _this$props2.showWordLimitPrompt,
+          showWordLimitPrompt = _this$props2$showWord === void 0 ? true : _this$props2$showWord,
+          restProps = _objectWithoutProperties(_this$props2, _excluded);
 
     const editorRef = this.editorRef,
           handlePastedText = this.handlePastedText; // \u81EA\u5B9A\u4E49\u63A7\u4EF6
@@ -37315,7 +37354,7 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
         return controls[customControlsKeys[index]];
       }
     });
-    return /*#__PURE__*/external_window_React_default.a.createElement("div", null, /*#__PURE__*/external_window_React_default.a.createElement("div", {
+    return /*#__PURE__*/external_window_React_default.a.createElement("div", {
       className: "editor-wrapper"
     }, /*#__PURE__*/external_window_React_default.a.createElement(dist_default.a, Object(esm_extends["a" /* default */])({
       ref: editorRef,
@@ -37325,7 +37364,9 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
       },
       handlePastedText: handlePastedText,
       contentStyle: {
-        height: 500
+        minHeight: 500,
+        border: '1px solid #ccc' // overflow: 'unset'
+
       },
       onChange: this.handleChange,
       controls: CONTROLS_LESS,
@@ -37343,11 +37384,12 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
         editorState: this.state.editorState,
         ...restProps
       }))
-    }, restProps))));
+    }, restProps)), /*#__PURE__*/external_window_React_default.a.createElement("div", null, this.state.editorState.toText().length, "/", MAX_LENGTH));
   }
 
 }
 // CONCATENATED MODULE: ./src/Components/Antd/RichText/index.tsx
+
 
 
 
@@ -37365,8 +37407,16 @@ const Index = () => {
         _Form$useForm2 = Object(slicedToArray["default"])(_Form$useForm, 1),
         form = _Form$useForm2[0];
 
+  const richTextRef = Object(external_window_React_["useRef"])(null);
+
   const onFinish = values => {
     console.log(values);
+    console.log(form.getFieldValue('content'));
+    console.log(richTextRef.current.isContentEmpty());
+  };
+
+  const getImageURL = async file => {
+    return await 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn18%2F600%2Fw800h600%2F20180902%2F80c7-hiqtcam8704158.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668560367&t=7375792b4704ea72657886d40a3fa0f6';
   };
 
   return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */], {
@@ -37376,15 +37426,27 @@ const Index = () => {
     type: "primary",
     htmlType: "submit"
   }, "Submit"), /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], null, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
-    span: 15
+    span: 17
   }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
     name: "content",
-    label: "\\u5BCC\\u6587\\u672C" // rules={[{ required: true, message: '\u8BF7\u7F16\u8F91\u5177\u4F53\u7684\u5185\u5BB9' }]}
+    label: "\\u5BCC\\u6587\\u672C",
+    rules: [{
+      required: true,
+      validator: () => {
+        if (richTextRef.current.isContentEmpty()) {
+          return Promise.reject(new Error('\u8BF7\u586B\u5199\u5177\u4F53\u7684\u5185\u5BB9'));
+        }
 
+        return Promise.resolve('');
+      }
+    }]
   }, /*#__PURE__*/external_window_React_default.a.createElement(RichText_UploadDemo, {
+    ref: richTextRef,
     form: form,
     name: "content",
-    extendControlKey: ['preview', 'uploader']
+    extendControlKey: ['preview', 'uploader'],
+    getImageURL: getImageURL,
+    placeholder: "\\u8BF7\\u8F93\\u5165\\u6B63\\u6587\\u5185\\u5BB9"
   }))))));
 };
 
@@ -39633,7 +39695,9 @@ function decodeEntityRanges(text, ranges) {
 
 module.exports = decodeEntityRanges;
 
-//# sourceURL=webpack:///./node_modules/draft-js/lib/decodeEntityRanges.js?`)},bd9B:function(module,exports,__webpack_require__){"use strict";eval(`/**
+//# sourceURL=webpack:///./node_modules/draft-js/lib/decodeEntityRanges.js?`)},bXwC:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/message/style/index.less?`)},bd9B:function(module,exports,__webpack_require__){"use strict";eval(`/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
@@ -43078,7 +43142,14 @@ function createBaseFor(fromRight) {
 module.exports = createBaseFor;
 
 
-//# sourceURL=webpack:///./node_modules/lodash/_createBaseFor.js?`)},mjHj:function(module,exports,__webpack_require__){"use strict";eval(`/**
+//# sourceURL=webpack:///./node_modules/lodash/_createBaseFor.js?`)},miYZ:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
+/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("bXwC");
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+//# sourceURL=webpack:///./node_modules/antd/es/message/style/index.js?`)},mjHj:function(module,exports,__webpack_require__){"use strict";eval(`/**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
  * This source code is licensed under the MIT license found in the
