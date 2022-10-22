@@ -2051,6 +2051,7 @@ const handleRenderPath = (arr, separator = '|', maxLength = BREADCRUMB_MAX_LENGT
   }
 
   list = arr;
+  if (arr.length == 0) return null;
 
   const getBreadcrumb = arr => {
     return arr.map(item => {
@@ -2079,7 +2080,7 @@ const handleRenderPath = (arr, separator = '|', maxLength = BREADCRUMB_MAX_LENGT
   }, /*#__PURE__*/external_window_React_default.a.createElement(breadcrumb, {
     separator: separator,
     style: INLINE_BLOCK
-  }, getBreadcrumb(newPathList), "\\xA0", separator, "\\xA0..."));
+  }, getBreadcrumb(newPathList)), "\\xA0", separator, "\\xA0...");
 };
 class utils_TreeHelpUtils {
   constructor({
@@ -2185,7 +2186,7 @@ class utils_TreeHelpUtils {
 
       return tree.filter(item => {
         item[this.children] = item[this.children] && this.filterTreeByFunc(item[this.children], func);
-        return func(item) || item[this.children] && item[this.children].length;
+        return func(item) || (item === null || item === void 0 ? void 0 : item[this.children]) || [];
       });
     };
 
@@ -2321,7 +2322,9 @@ class utils_TreeHelpUtils {
       const getLeaf = tree => {
         tree.forEach(item => {
           if (!item[that.children]) {
-            result.push(...item[that.list]);
+            if (item[that.list]) {
+              result.push(...item[that.list]);
+            }
           } else {
             getLeaf(item[that.children]);
           }
@@ -2649,7 +2652,7 @@ const Department = props => {
     span: 12
   }, /*#__PURE__*/external_window_React_default.a.createElement(breadcrumb, {
     separator: '>'
-  }, pathList.length == 0 && /*#__PURE__*/external_window_React_default.a.createElement(breadcrumb.Item, null, ' ', (_dataSource$0$NAME = dataSource === null || dataSource === void 0 ? void 0 : (_dataSource$ = dataSource[0]) === null || _dataSource$ === void 0 ? void 0 : _dataSource$[NAME]) !== null && _dataSource$0$NAME !== void 0 ? _dataSource$0$NAME : '--'), handleRenderPath(pathList, '>', BREADCRUMB_MAX_LENGTH, false))), /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+  }, pathList.length == 0 && /*#__PURE__*/external_window_React_default.a.createElement(breadcrumb.Item, null, ' ', (_dataSource$0$NAME = dataSource === null || dataSource === void 0 ? void 0 : (_dataSource$ = dataSource[0]) === null || _dataSource$ === void 0 ? void 0 : _dataSource$[NAME]) !== null && _dataSource$0$NAME !== void 0 ? _dataSource$0$NAME : '--')), handleRenderPath(pathList, '>', BREADCRUMB_MAX_LENGTH, false)), /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
     span: 12
   }, /*#__PURE__*/external_window_React_default.a.createElement(Search, {
     placeholder: "\\u641C\\u7D22\\u4EBA\\u5458",
@@ -2769,7 +2772,14 @@ const ChooseTree = (props, ref) => {
 
   const dataSourceAllLeaf = Object(external_window_React_["useMemo"])(() => {
     return getDataSourceAllLeaf(dataSource);
-  }, [dataSource]); // \u83B7\u53D6\u6240\u6709\u53F6\u5B50\u8282\u70B9\u7684\u8DEF\u5F84\u76F8\u5173\u5C5E\u6027
+  }, [dataSource]);
+  Object(external_window_React_["useImperativeHandle"])(ModalRef, () => ({
+    useVisible: () => [visible, setVisible],
+    useDataSource: () => [dataSource, setDataSource],
+    useSelectData: () => [selectList, setSelectList],
+    handleClearAll: () => handleClearAll(),
+    handleGetAllPathNode: (arr, data) => arr.map(item => ChooseTree_transformFn.getNodePath(data, item[ID]))
+  })); // \u83B7\u53D6\u6240\u6709\u53F6\u5B50\u8282\u70B9\u7684\u8DEF\u5F84\u76F8\u5173\u5C5E\u6027
 
   const handleGetAllPathNode = arr => {
     return arr.map(item => ChooseTree_transformFn.getNodePath(dataSource, item[ID]));
@@ -2801,13 +2811,6 @@ const ChooseTree = (props, ref) => {
     handleModalOk && handleModalOk(selectFormLabelInValueList);
   };
 
-  Object(external_window_React_["useImperativeHandle"])(ModalRef, () => ({
-    useVisible: () => [visible, setVisible],
-    useDataSource: () => [dataSource, setDataSource],
-    useSelectData: () => [selectList, setSelectList],
-    handleClearAll: () => handleClearAll(),
-    handleGetAllPathNode: (arr, data) => arr.map(item => ChooseTree_transformFn.getNodePath(data, item[ID]))
-  }));
   const items = [{
     label: '\u4EBA\u5458',
     key: 'item-1',
@@ -2895,9 +2898,7 @@ const App = () => {
   }, []); // \u5904\u7406\u5F02\u6B65\u95EE\u9898
 
   Object(external_window_React_["useEffect"])(() => {
-    const _ModalRef$current = ModalRef.current,
-          useSelectData = _ModalRef$current.useSelectData,
-          useDataSource = _ModalRef$current.useDataSource;
+    const useSelectData = ModalRef.current.useSelectData;
 
     const _useSelectData = useSelectData(),
           _useSelectData2 = Object(slicedToArray["default"])(_useSelectData, 2),
@@ -2910,9 +2911,9 @@ const App = () => {
   }, [selectvalue]);
 
   const handlePageInit = async () => {
-    const _ModalRef$current2 = ModalRef.current,
-          useSelectData = _ModalRef$current2.useSelectData,
-          useDataSource = _ModalRef$current2.useDataSource;
+    const _ModalRef$current = ModalRef.current,
+          useSelectData = _ModalRef$current.useSelectData,
+          useDataSource = _ModalRef$current.useDataSource;
 
     const _useDataSource = useDataSource(),
           _useDataSource2 = Object(slicedToArray["default"])(_useDataSource, 2),
@@ -2954,10 +2955,7 @@ const App = () => {
   };
 
   const handleOpenChoosePersonModal = () => {
-    const _ModalRef$current3 = ModalRef.current,
-          useVisible = _ModalRef$current3.useVisible,
-          useSelectData = _ModalRef$current3.useSelectData,
-          useDataSource = _ModalRef$current3.useDataSource;
+    const useVisible = ModalRef.current.useVisible;
 
     const _useVisible = useVisible(),
           _useVisible2 = Object(slicedToArray["default"])(_useVisible, 2),
