@@ -19,7 +19,7 @@ const App: FC<any> = () => {
 
   // 处理异步问题
   useEffect(() => {
-    const { useSelectData, useDataSource } = ModalRef.current;
+    const { useSelectData } = ModalRef.current;
     const [selectList, setSelectList] = useSelectData();
     if (!selectvalue) return setSelectList([]);
     if (selectvalue.length == 0) return setSelectList([]);
@@ -51,7 +51,7 @@ const App: FC<any> = () => {
   };
 
   const handleOpenChoosePersonModal = () => {
-    const { useVisible, useSelectData, useDataSource } = ModalRef.current;
+    const { useVisible } = ModalRef.current;
     const [visible, setVisible] = useVisible();
     setVisible(true);
   };

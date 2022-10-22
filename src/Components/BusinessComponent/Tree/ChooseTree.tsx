@@ -6,6 +6,7 @@ import {
   useMemo,
   useRef,
   useState,
+  useEffect,
 } from 'react';
 import { ID } from './components/constant';
 import CurrentList from './components/CurrentList';
@@ -48,6 +49,15 @@ const ChooseTree: ForwardRefRenderFunction<
     return getDataSourceAllLeaf(dataSource);
   }, [dataSource]);
 
+  useImperativeHandle(ModalRef, () => ({
+    useVisible: () => [visible, setVisible],
+    useDataSource: () => [dataSource, setDataSource],
+    useSelectData: () => [selectList, setSelectList],
+    handleClearAll: () => handleClearAll(),
+    handleGetAllPathNode: (arr: any, data: any[]) =>
+      arr.map((item: any) => transformFn.getNodePath(data, item[ID])),
+  }));
+
   // 获取所有叶子节点的路径相关属性
   const handleGetAllPathNode = (arr: any[]) => {
     return arr.map(item => transformFn.getNodePath(dataSource, item[ID]));
@@ -79,15 +89,6 @@ const ChooseTree: ForwardRefRenderFunction<
     );
     handleModalOk && handleModalOk(selectFormLabelInValueList);
   };
-
-  useImperativeHandle(ModalRef, () => ({
-    useVisible: () => [visible, setVisible],
-    useDataSource: () => [dataSource, setDataSource],
-    useSelectData: () => [selectList, setSelectList],
-    handleClearAll: () => handleClearAll(),
-    handleGetAllPathNode: (arr: any, data: any[]) =>
-      arr.map((item: any) => transformFn.getNodePath(data, item[ID])),
-  }));
 
   const items = [
     {

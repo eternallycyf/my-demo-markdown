@@ -121,8 +121,8 @@ const Department: FC<IDepartmentTabsProps> = props => {
                   {dataSource?.[0]?.[NAME] ?? '--'}
                 </Breadcrumb.Item>
               )}
-              {handleRenderPath(pathList, '>', BREADCRUMB_MAX_LENGTH, false)}
             </Breadcrumb>
+            {handleRenderPath(pathList, '>', BREADCRUMB_MAX_LENGTH, false)}
           </Col>
           <Col span={12}>
             <Search

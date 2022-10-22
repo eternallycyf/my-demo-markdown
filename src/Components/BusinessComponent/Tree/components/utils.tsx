@@ -57,7 +57,7 @@ export const handleRenderPath = (
     arr.reverse().pop();
   }
   list = arr;
-
+  if (arr.length == 0) return null;
   const getBreadcrumb = (arr: any[]) => {
     return arr.map((item: { name: string; id: number }) => {
       return (
@@ -83,8 +83,9 @@ export const handleRenderPath = (
       }
     >
       <Breadcrumb separator={separator} style={INLINE_BLOCK}>
-        {getBreadcrumb(newPathList)}&nbsp;{separator}&nbsp;...
+        {getBreadcrumb(newPathList)}
       </Breadcrumb>
+      &nbsp;{separator}&nbsp;...
     </Tooltip>
   );
 };
@@ -231,10 +232,7 @@ export class TreeHelpUtils {
       item[this.children as string] =
         item[this.children as string] &&
         this.filterTreeByFunc(item[this.children as string], func);
-      return (
-        func(item) ||
-        (item[this.children as string] && item[this.children as string].length)
-      );
+      return func(item) || item?.[this.children as string] || [];
     });
   };
 
@@ -441,7 +439,9 @@ export class TreeHelpUtils {
     const getLeaf = (tree: any[]) => {
       tree.forEach(item => {
         if (!item[that.children as string]) {
-          result.push(...item[that.list as string]);
+          if (item[that.list as string]) {
+            result.push(...item[that.list as string]);
+          }
         } else {
           getLeaf(item[that.children as string]);
         }
