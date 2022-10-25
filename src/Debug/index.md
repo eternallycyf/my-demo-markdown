@@ -492,3 +492,17 @@ onchange: ({file,fileList})=> {
   }}
 >
 ```
+
+## 28. antd table columns 设置 width 无效 依然是自适应
+
+- scroll:{x:true}
+- scroll={{ x: 'max-content' }}
+- 如果全部都设置了 width，width 并不会起作用，还是会百分比分配大小，只有在部分设置了 width，宽度才会起作用
+
+## 29 textArea 右下角的颜色
+
+```css
+::-webkit-resizer {
+  display: none;
+}
+```
