@@ -404,6 +404,19 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "8. \\u523B\\u5EA6\\u4E0A\\u65B9\\u662F\\u7A7A\\u7684"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "xAxis:{\\n  nice: true,\\n  min: 0,\\n  max: 35,\\n  tickInterval: 7,\\n  tickCount: 8,\\n  tickMethod: function tickMethod(_ref) {\\n          var max = _ref.max;\\n          var interval = Math.ceil(max / 9);\\n          return [\\n            0,\\n            interval,\\n            interval * 2,\\n            interval * 3,\\n            interval * 4,\\n            interval * 5,\\n            interval * 6,\\n            ~~max,\\n          ];\\n        },\\n}",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "27-antd-upload-onchange-\\u83B7\\u53D6\\u4E0D\\u5230-done-\\u72B6\\u6001"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#27-antd-upload-onchange-\\u83B7\\u53D6\\u4E0D\\u5230-done-\\u72B6\\u6001",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "27. antd upload onChange \\u83B7\\u53D6\\u4E0D\\u5230 done \\u72B6\\u6001"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u4F7F\\u7528\\u4E86 upload \\u81EA\\u5E26\\u7684 action \\u4E0A\\u4F20 \\u4F46\\u662F\\u9700\\u8981\\u83B7\\u53D6\\u4E0A\\u4F20\\u6210\\u529F\\u540E\\u7684\\u4FE1\\u606F \\u4F46\\u662F onChange \\u91CC\\u9762\\u83B7\\u53D6\\u4E0D\\u5230 done \\u72B6\\u6001"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+    to: "https://github.com/ant-design/ant-design/issues/2423"
+  }, "https://github.com/ant-design/ant-design/issues/2423"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "# \u6211\u7684\u4EE3\u7801\\nonchange: ({file,fileList})=> {\\n  if(file.status == 'done'){\\n    // do somethings\\n  }\\n}\\n# \u89E3\u51B3\u65B9\u6848\\n// \u9700\u8981\u52A0\u4E0Akey \u4E14\u53D7\u63A7\u63A7\u5236\\n<Upload\\n  key={'uploadFile'}\\n  fileList={fileList}\\n  onchange={({file,fileList})=> {\\n     setFileList(fileList)\\n     if(file.status == 'done'){\\n      // do somethings\\n     }\\n  }}\\n>",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {

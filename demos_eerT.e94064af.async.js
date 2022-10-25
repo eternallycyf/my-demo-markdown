@@ -2634,7 +2634,8 @@ const Department = props => {
             onExpand(record, e), e.stopPropagation();
           }
         });
-      }
+      },
+      defaultExpandedRowKeys: [-1]
     },
     onRow: record => {
       return {
