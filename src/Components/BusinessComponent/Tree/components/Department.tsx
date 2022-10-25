@@ -105,6 +105,7 @@ const Department: FC<IDepartmentTabsProps> = props => {
                 />
               );
             },
+            defaultExpandedRowKeys: [-1],
           }}
           onRow={record => {
             return { onClick: () => handleClickDepartment(record) };

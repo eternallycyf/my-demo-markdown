@@ -466,3 +466,29 @@ xAxis:{
         },
 }
 ```
+
+## 27. antd upload onChange 获取不到 done 状态
+
+- 使用了 upload 自带的 action 上传 但是需要获取上传成功后的信息 但是 onChange 里面获取不到 done 状态
+- https://github.com/ant-design/ant-design/issues/2423
+
+```js
+# 我的代码
+onchange: ({file,fileList})=> {
+  if(file.status == 'done'){
+    // do somethings
+  }
+}
+# 解决方案
+// 需要加上key 且受控控制
+<Upload
+  key={'uploadFile'}
+  fileList={fileList}
+  onchange={({file,fileList})=> {
+     setFileList(fileList)
+     if(file.status == 'done'){
+      // do somethings
+     }
+  }}
+>
+```
