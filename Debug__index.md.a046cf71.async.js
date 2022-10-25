@@ -417,6 +417,25 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   }, "https://github.com/ant-design/ant-design/issues/2423"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "# \u6211\u7684\u4EE3\u7801\\nonchange: ({file,fileList})=> {\\n  if(file.status == 'done'){\\n    // do somethings\\n  }\\n}\\n# \u89E3\u51B3\u65B9\u6848\\n// \u9700\u8981\u52A0\u4E0Akey \u4E14\u53D7\u63A7\u63A7\u5236\\n<Upload\\n  key={'uploadFile'}\\n  fileList={fileList}\\n  onchange={({file,fileList})=> {\\n     setFileList(fileList)\\n     if(file.status == 'done'){\\n      // do somethings\\n     }\\n  }}\\n>",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "28-antd-table-columns-\\u8BBE\\u7F6E-width-\\u65E0\\u6548-\\u4F9D\\u7136\\u662F\\u81EA\\u9002\\u5E94"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#28-antd-table-columns-\\u8BBE\\u7F6E-width-\\u65E0\\u6548-\\u4F9D\\u7136\\u662F\\u81EA\\u9002\\u5E94",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "28. antd table columns \\u8BBE\\u7F6E width \\u65E0\\u6548 \\u4F9D\\u7136\\u662F\\u81EA\\u9002\\u5E94"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "scroll:", "{", "x:true", "}"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "scroll=", "{", "{", " x: 'max-content' ", "}", "}"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5982\\u679C\\u5168\\u90E8\\u90FD\\u8BBE\\u7F6E\\u4E86 width\\uFF0Cwidth \\u5E76\\u4E0D\\u4F1A\\u8D77\\u4F5C\\u7528\\uFF0C\\u8FD8\\u662F\\u4F1A\\u767E\\u5206\\u6BD4\\u5206\\u914D\\u5927\\u5C0F\\uFF0C\\u53EA\\u6709\\u5728\\u90E8\\u5206\\u8BBE\\u7F6E\\u4E86 width\\uFF0C\\u5BBD\\u5EA6\\u624D\\u4F1A\\u8D77\\u4F5C\\u7528")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "29-textarea-\\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#29-textarea-\\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "29 textArea \\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "::-webkit-resizer {\\n  display: none;\\n}",
+    lang: "css"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
