@@ -126,7 +126,9 @@ const ChooseTree: ForwardRefRenderFunction<
           title={<Tabs items={items} destroyInactiveTabPane />}
           open={visible}
           onOk={handleOk}
-          onCancel={() => setVisible(false)}
+          onCancel={() => {
+            setVisible(false), setSelectList([]);
+          }}
           maskClosable={false}
           width={1100}
           getContainer={() => container.current}

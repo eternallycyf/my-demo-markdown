@@ -506,3 +506,28 @@ onchange: ({file,fileList})=> {
   display: none;
 }
 ```
+
+## 30 textArea 右下角的颜色
+
+```css
+::-webkit-resizer {
+  display: none;
+}
+```
+
+## 31 antd table 如果少于 10 条数据 依然有空白的宽度撑满
+
+```css
+.ant-table-body {
+  height: auto !important;
+}
+```
+
+## 32. antd textArea autoSize={true} 有时候失效
+
+- 打开模态框需要 resetFields
+
+## 33. treeCheckable 自动选中了 parent 的 tree
+
+- 需要点什么选什么
+- treeCheckStrictly
