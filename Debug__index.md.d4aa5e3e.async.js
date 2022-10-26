@@ -436,7 +436,45 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "29 textArea \\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "::-webkit-resizer {\\n  display: none;\\n}",
     lang: "css"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "30-textarea-\\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#30-textarea-\\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "30 textArea \\u53F3\\u4E0B\\u89D2\\u7684\\u989C\\u8272"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "::-webkit-resizer {\\n  display: none;\\n}",
+    lang: "css"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "31-antd-table-\\u5982\\u679C\\u5C11\\u4E8E-10-\\u6761\\u6570\\u636E-\\u4F9D\\u7136\\u6709\\u7A7A\\u767D\\u7684\\u5BBD\\u5EA6\\u6491\\u6EE1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#31-antd-table-\\u5982\\u679C\\u5C11\\u4E8E-10-\\u6761\\u6570\\u636E-\\u4F9D\\u7136\\u6709\\u7A7A\\u767D\\u7684\\u5BBD\\u5EA6\\u6491\\u6EE1",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "31 antd table \\u5982\\u679C\\u5C11\\u4E8E 10 \\u6761\\u6570\\u636E \\u4F9D\\u7136\\u6709\\u7A7A\\u767D\\u7684\\u5BBD\\u5EA6\\u6491\\u6EE1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: ".ant-table-body {\\n  height: auto !important;\\n}",
+    lang: "css"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "32-antd-textarea-autosizetrue-\\u6709\\u65F6\\u5019\\u5931\\u6548"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#32-antd-textarea-autosizetrue-\\u6709\\u65F6\\u5019\\u5931\\u6548",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "32. antd textArea autoSize=", "{", "true", "}", " \\u6709\\u65F6\\u5019\\u5931\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u6253\\u5F00\\u6A21\\u6001\\u6846\\u9700\\u8981 resetFields")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "33-treecheckable-\\u81EA\\u52A8\\u9009\\u4E2D\\u4E86-parent-\\u7684-tree"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#33-treecheckable-\\u81EA\\u52A8\\u9009\\u4E2D\\u4E86-parent-\\u7684-tree",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "33. treeCheckable \\u81EA\\u52A8\\u9009\\u4E2D\\u4E86 parent \\u7684 tree"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u9700\\u8981\\u70B9\\u4EC0\\u4E48\\u9009\\u4EC0\\u4E48"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "treeCheckStrictly"))));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),

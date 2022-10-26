@@ -2845,7 +2845,9 @@ const ChooseTree = (props, ref) => {
     }),
     open: visible,
     onOk: handleOk,
-    onCancel: () => setVisible(false),
+    onCancel: () => {
+      setVisible(false), setSelectList([]);
+    },
     maskClosable: false,
     width: 1100,
     getContainer: () => container.current,
