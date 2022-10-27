@@ -2768,7 +2768,12 @@ const ChooseTree = (props, ref) => {
   const _useState5 = Object(external_window_React_["useState"])([]),
         _useState6 = Object(slicedToArray["default"])(_useState5, 2),
         selectList = _useState6[0],
-        setSelectList = _useState6[1]; // \u83B7\u53D6\u6240\u6709\u53F6\u5B50\u8282\u70B9
+        setSelectList = _useState6[1];
+
+  const _useState7 = Object(external_window_React_["useState"])([]),
+        _useState8 = Object(slicedToArray["default"])(_useState7, 2),
+        cacheList = _useState8[0],
+        setCacheList = _useState8[1]; // \u83B7\u53D6\u6240\u6709\u53F6\u5B50\u8282\u70B9
 
 
   const dataSourceAllLeaf = Object(external_window_React_["useMemo"])(() => {
@@ -2779,7 +2784,8 @@ const ChooseTree = (props, ref) => {
     useDataSource: () => [dataSource, setDataSource],
     useSelectData: () => [selectList, setSelectList],
     handleClearAll: () => handleClearAll(),
-    handleGetAllPathNode: (arr, data) => arr.map(item => ChooseTree_transformFn.getNodePath(data, item[ID]))
+    handleGetAllPathNode: (arr, data) => arr.map(item => ChooseTree_transformFn.getNodePath(data, item[ID])),
+    handleSetCacheList: list => setCacheList(list)
   })); // \u83B7\u53D6\u6240\u6709\u53F6\u5B50\u8282\u70B9\u7684\u8DEF\u5F84\u76F8\u5173\u5C5E\u6027
 
   const handleGetAllPathNode = arr => {
@@ -2809,6 +2815,7 @@ const ChooseTree = (props, ref) => {
       [ID]: item
     })));
     const selectFormLabelInValueList = selectList.map((item, index) => data[index].pop());
+    setCacheList(selectList);
     handleModalOk && handleModalOk(selectFormLabelInValueList);
   };
 
@@ -2846,7 +2853,7 @@ const ChooseTree = (props, ref) => {
     open: visible,
     onOk: handleOk,
     onCancel: () => {
-      setVisible(false), setSelectList([]);
+      setVisible(false), setSelectList(cacheList);
     },
     maskClosable: false,
     width: 1100,
@@ -2916,7 +2923,8 @@ const App = () => {
   const handlePageInit = async () => {
     const _ModalRef$current = ModalRef.current,
           useSelectData = _ModalRef$current.useSelectData,
-          useDataSource = _ModalRef$current.useDataSource;
+          useDataSource = _ModalRef$current.useDataSource,
+          handleSetCacheList = _ModalRef$current.handleSetCacheList;
 
     const _useDataSource = useDataSource(),
           _useDataSource2 = Object(slicedToArray["default"])(_useDataSource, 2),
@@ -2934,6 +2942,7 @@ const App = () => {
 
     setDataSource(constant_dataSource);
     setSelectList(EDIT_DATA.map(item => item.value));
+    handleSetCacheList(EDIT_DATA.map(item => item.value));
   };
 
   const handleClearSelectForm = () => {
