@@ -73,7 +73,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     className: "icon icon-link"
   })), "2.1.\\u7EBF\\u6027\\u6BD4\\u4F8B\\u5C3A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
-      loader: async () => __webpack_require__.e(/* import() | embedded_md */ 150).then(__webpack_require__.bind(null, "bI1T")),
+      loader: async () => __webpack_require__.e(/* import() | embedded_md */ 149).then(__webpack_require__.bind(null, "bI1T")),
       loading: () => null
     }))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -88,7 +88,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     className: "icon icon-link"
   })), "2.2 \\u79BB\\u6563\\u6BD4\\u4F8B\\u5C3A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
     children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
-      loader: async () => __webpack_require__.e(/* import() | embedded_md */ 150).then(__webpack_require__.bind(null, "fPM3")),
+      loader: async () => __webpack_require__.e(/* import() | embedded_md */ 149).then(__webpack_require__.bind(null, "fPM3")),
       loading: () => null
     }))
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

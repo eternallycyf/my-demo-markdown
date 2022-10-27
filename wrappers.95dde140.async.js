@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[152],{"0Bia":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
+(window.webpackJsonp=window.webpackJsonp||[]).push([[151],{"0Bia":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: external "window.React"
@@ -1116,9 +1116,11 @@ var index_esm = __webpack_require__("rlch");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/React/MuitipleRef/index.tsx?dumi-raw-code
 /* harmony default export */ var MuitipleRefdumi_raw_code = ("/* eslint-disable react/jsx-key */\\nimport { useRef } from \\"react\\";\\nimport { Card } from \\"antd\\";\\nimport React from \\"react\\";\\n\\nconst MuitipleRef = () => {\\n  const list = [...Array(8).keys()];\\n  const inputRef = useRef([]);\\n  const handler = (idx: number): any => {\\n    const next = inputRef.current[idx + 1];\\n    if (next) {\\n      (next as any).focus();\\n    }\\n  };\\n\\n  return (\\n    <Card style={{ margin: 24 }}>\\n      <div className=\\"App\\">\\n        <div className=\\"input_boxes\\">\\n          {list.map((x) => (\\n            <div>\\n              <input\\n                key={x}\\n                ref={(el) => ((inputRef as any).current[x] = el)}\\n                onChange={handler(x)}\\n                type=\\"number\\"\\n                className=\\"otp_box\\"\\n              />\\n            </div>\\n          ))}\\n        </div>\\n      </div>\\n    </Card>\\n  );\\n};\\n\\nexport default MuitipleRef;");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/React/RefDemo/ClassUseHookRef/index.tsx?dumi-raw-code
-/* harmony default export */ var ClassUseHookRefdumi_raw_code = ("import { useImperativeHandle } from \\"react\\";\\nimport { Card } from \\"antd\\";\\nimport React from \\"react\\";\\n\\nconst Children = (props: { ModalRef: any }) => {\\n  const { ModalRef } = props;\\n\\n  useImperativeHandle(ModalRef, () => ({\\n    getData: () => {\\n      return [1, 2, 3];\\n    },\\n  }));\\n\\n  return <>Children</>;\\n};\\n\\nexport default class Father extends React.Component {\\n  ModalRef: any = React.createRef();\\n  state = {};\\n  componentDidMount() {\\n    console.log(this.ModalRef.current.getData());\\n  }\\n\\n  render() {\\n    return (\\n      <>\\n        <Card style={{ margin: 24 }}>\\n          <Children ModalRef={this.ModalRef} />\\n        </Card>\\n      </>\\n    );\\n  }\\n}");
+/* harmony default export */ var ClassUseHookRefdumi_raw_code = ("import { ElementRef, useImperativeHandle } from 'react';\\nimport { Card } from 'antd';\\nimport React from 'react';\\n\\ntype ChildrenHandle = {\\n  getData: () => number[];\\n};\\n\\ninterface ChildrenProps {\\n  ModalRef: React.RefObject<Partial<HTMLDivElement & ChildrenHandle>>;\\n}\\n\\nconst Child: React.ForwardRefRenderFunction<\\n  ChildrenHandle,\\n  ChildrenProps\\n> = props => {\\n  const { ModalRef } = props;\\n  useImperativeHandle(ModalRef, () => ({\\n    getData: () => {\\n      return [1, 2, 3];\\n    },\\n  }));\\n  return <>Children</>;\\n};\\nconst Children = React.forwardRef(Child);\\n\\nexport default class Father extends React.PureComponent<any, any> {\\n  private readonly ModalRef = React.createRef<ElementRef<typeof Children>>();\\n  state = {};\\n  componentDidMount() {\\n    console.log(this.ModalRef.current?.getData());\\n  }\\n\\n  render() {\\n    return (\\n      <>\\n        <Card style={{ margin: 24 }}>\\n          <Children ModalRef={this.ModalRef} />\\n        </Card>\\n      </>\\n    );\\n  }\\n}");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/React/RefDemo/HookUseHookRef/index.tsx?dumi-raw-code
-/* harmony default export */ var HookUseHookRefdumi_raw_code = ("import {\\n  useImperativeHandle,\\n  useRef,\\n  useEffect,\\n  forwardRef,\\n} from \\"react\\";\\nimport { Card } from \\"antd\\";\\nimport React from \\"react\\";\\n\\nconst Child = (props: any, ModalRef: any) => {\\n  useImperativeHandle(ModalRef, () => ({\\n    getData: () => {\\n      return [1, 2, 3];\\n    },\\n  }));\\n\\n  return (\\n    <>\\n      <div ref={ModalRef}>sss</div>\\n    </>\\n  );\\n};\\n\\nconst Children = forwardRef(Child);\\n\\nconst Father = () => {\\n  const ModalRef = useRef<any>(null);\\n\\n  useEffect(() => {\\n    console.log(ModalRef.current.getData());\\n  }, []);\\n\\n  return (\\n    <>\\n      <Card style={{ margin: 24 }}>\\n        <Children ref={ModalRef} />\\n      </Card>\\n    </>\\n  );\\n};\\n\\nexport default Father;");
+/* harmony default export */ var HookUseHookRefdumi_raw_code = ("import { Card } from 'antd';\\nimport React, {\\n  forwardRef,\\n  LegacyRef,\\n  useEffect,\\n  useImperativeHandle,\\n  useRef,\\n} from 'react';\\n\\ntype ChildrenHandle = {\\n  getData: () => number[];\\n};\\n\\ninterface ChildrenProps {\\n  ModalRef: React.RefObject<Partial<HTMLDivElement & ChildrenHandle>>;\\n}\\n\\nconst Child: React.ForwardRefRenderFunction<ChildrenHandle, ChildrenProps> = (\\n  props,\\n  ref,\\n) => {\\n  const { ModalRef } = props;\\n  useImperativeHandle(ModalRef, () => ({\\n    getData: () => [1, 2, 3],\\n  }));\\n\\n  return (\\n    <>\\n      <div>sss</div>\\n    </>\\n  );\\n};\\n\\nconst Children = forwardRef(Child);\\n\\nconst Father = () => {\\n  const ModalRef = useRef<React.ElementRef<typeof Children>>(null!);\\n\\n  useEffect(() => {\\n    console.log(ModalRef.current.getData());\\n  }, []);\\n\\n  return (\\n    <>\\n      <Card style={{ margin: 24 }}>\\n        <Children ModalRef={ModalRef} />\\n      </Card>\\n    </>\\n  );\\n};\\n\\nexport default Father;");
+// CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/React/RefDemo/UseClassRef/index.tsx?dumi-raw-code
+/* harmony default export */ var UseClassRefdumi_raw_code = ("import React, { useRef, useEffect } from 'react';\\n\\ninterface Iprops {}\\ninterface IState {\\n  name: any[];\\n}\\nclass Test extends React.PureComponent<Iprops, IState> {\\n  constructor(props: Iprops) {\\n    super(props);\\n    this.state = {\\n      name: [2],\\n    };\\n  }\\n  handleSetName = () => this.setState({ name: [1] });\\n  render() {\\n    return <>Test</>;\\n  }\\n}\\n\\nconst App = () => {\\n  const TestRef = useRef<InstanceType<typeof Test>>(null!);\\n  useEffect(() => console.log(TestRef.current.state.name), []);\\n  return <Test ref={TestRef} />;\\n};\\n\\nexport default App;");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Visualization/D3/barChart.tsx?dumi-raw-code
 /* harmony default export */ var barChartdumi_raw_code = ("import React, { useEffect, useState } from 'react';\\nimport { Card, Button } from 'antd';\\nimport * as d3 from 'd3';\\n\\nconst D3 = () => {\\n  const [dataset, setDataset] = useState([250, 210, 170, 130, 90]);\\n\\n  const handleInitChart = () => {\\n    let marge = { top: 30, bottom: 30, left: 30, right: 30 };\\n    let body = d3.select('body');\\n    let svg = body.select('#mainsvg');\\n    svg.selectAll('g').remove();\\n    let g = svg\\n      .append('g')\\n      .attr('transform', 'translate(' + marge.top + ',' + marge.left + ')');\\n\\n    let rectHeight = 30;\\n    g.selectAll('rect')\\n      .data(dataset)\\n      .enter()\\n      .append('rect')\\n      .attr('x', 20)\\n      .attr('y', function(d, i) {\\n        return i * rectHeight;\\n      })\\n      .attr('width', function(d) {\\n        return d;\\n      })\\n      .attr('height', rectHeight - 5)\\n      .attr('fill', 'blue');\\n\\n    g.selectAll('text')\\n      .data(dataset)\\n      .enter()\\n      .append('text')\\n      .attr('x', function(d) {\\n        return 30 + d;\\n      })\\n      .attr('y', function(d, i) {\\n        return i * rectHeight + 15;\\n      })\\n      .text(function(d) {\\n        return d;\\n      });\\n  };\\n\\n  useEffect(() => {\\n    handleInitChart();\\n  }, []);\\n\\n  const setNewChartData = () => {\\n    let arr = Array.from({ length: 4 }, () => ~~(Math.random(0, 1000) * 100));\\n    setDataset(arr);\\n    handleInitChart();\\n  };\\n\\n  return (\\n    <>\\n      <Card style={{ margin: 24 }}>\\n        <Button onClick={setNewChartData}>\u8BBE\u7F6E\u65B0\u7684\u6570\u636E</Button>\\n        <svg width=\\"1200\\" height=\\"180\\" id=\\"mainsvg\\" className=\\"svgs\\" />\\n      </Card>\\n    </>\\n  );\\n};\\nexport default D3;");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Visualization/D3/barChart1.tsx?dumi-raw-code
@@ -1205,10 +1207,11 @@ var index_esm = __webpack_require__("rlch");
 
 
 
+
 /* harmony default export */ var demos = ({
   'antd-datepicker': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_rekciPetaD */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(138)]).then(__webpack_require__.bind(null, "TGs9"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_rekciPetaD */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(137)]).then(__webpack_require__.bind(null, "TGs9"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1250,7 +1253,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'antd-formlayout': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_tuoyaLmroF */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(140)]).then(__webpack_require__.bind(null, "KuHX"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_tuoyaLmroF */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(139)]).then(__webpack_require__.bind(null, "KuHX"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1307,7 +1310,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'businesscomponent-calendar': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_radnelaC */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(137)]).then(__webpack_require__.bind(null, "Dp2K"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_radnelaC */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(136)]).then(__webpack_require__.bind(null, "Dp2K"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1354,7 +1357,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'businesscomponent-custtooltip': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_pitlooTtsuC */[__webpack_require__.e(0), __webpack_require__.e(136)]).then(__webpack_require__.bind(null, "FTBg"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_pitlooTtsuC */[__webpack_require__.e(0), __webpack_require__.e(135)]).then(__webpack_require__.bind(null, "FTBg"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1387,7 +1390,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'businesscomponent-queryform': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_mroFyreuQ */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(133)]).then(__webpack_require__.bind(null, "6Ilp"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_mroFyreuQ */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(133)]).then(__webpack_require__.bind(null, "6Ilp"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1431,7 +1434,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'businesscomponent-richtext': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_txeThciR */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(141)]).then(__webpack_require__.bind(null, "5nxY"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_txeThciR */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(140)]).then(__webpack_require__.bind(null, "5nxY"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1520,13 +1523,13 @@ var index_esm = __webpack_require__("rlch");
 
         var _interopRequireDefault = __webpack_require__("K+nK")["default"];
 
-        await Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(154)]).then(__webpack_require__.bind(null, "+BJd"));
+        await Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(153)]).then(__webpack_require__.bind(null, "+BJd"));
 
         var _tag = _interopRequireDefault(await __webpack_require__.e(/* import() */ 0).then(__webpack_require__.bind(null, "mr32")));
 
         var _slicedToArray2 = _interopRequireDefault(await Promise.resolve(/* import() */).then(__webpack_require__.bind(null, "tJVT")));
 
-        await Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(153)]).then(__webpack_require__.bind(null, "OaEy"));
+        await Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(152)]).then(__webpack_require__.bind(null, "OaEy"));
 
         var _select = _interopRequireDefault(await __webpack_require__.e(/* import() */ 0).then(__webpack_require__.bind(null, "2fM7")));
 
@@ -1601,7 +1604,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'transferform-class': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "yNen"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "yNen"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1637,7 +1640,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'transferform-hook': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "YMaR"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "YMaR"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1673,7 +1676,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'transferform-hook_multiple': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "UaRi"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "UaRi"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1884,7 +1887,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'file-filepreviewpage': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_egaPweiVerPeliF */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(129)]).then(__webpack_require__.bind(null, "E9IB"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_egaPweiVerPeliF */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(129)]).then(__webpack_require__.bind(null, "E9IB"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -1952,7 +1955,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'npm-echartsreact': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await __webpack_require__.e(/* import() | demos_tcaeRstrahcE */ 139).then(__webpack_require__.bind(null, "ZpqZ"))).default,
+      loader: async () => (await __webpack_require__.e(/* import() | demos_tcaeRstrahcE */ 138).then(__webpack_require__.bind(null, "ZpqZ"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2011,7 +2014,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'refdemo-classusehookref': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_omeDfeR */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(135)]).then(__webpack_require__.bind(null, "dCsF"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "dCsF"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2032,13 +2035,12 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         }
       },
-      "componentName": "RefDemo",
       "identifier": "refdemo-classusehookref"
     }
   },
   'refdemo-hookusehookref': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_omeDfeR */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(135)]).then(__webpack_require__.bind(null, "jdOd"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "jdOd"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2059,13 +2061,31 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         }
       },
-      "componentName": "RefDemo",
       "identifier": "refdemo-hookusehookref"
+    }
+  },
+  'refdemo-useclassref': {
+    component: Object(index_esm["c" /* dynamic */])({
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "5d3m"))).default,
+      loading: () => null
+    }),
+    previewerProps: {
+      "sources": {
+        "_": {
+          "tsx": UseClassRefdumi_raw_code
+        }
+      },
+      "dependencies": {
+        "react": {
+          "version": "18.2.0"
+        }
+      },
+      "identifier": "refdemo-useclassref"
     }
   },
   'd3-barchart': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "3aFa"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "3aFa"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2094,7 +2114,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-barchart1': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "Umss"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "Umss"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2123,7 +2143,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-barchart2': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "NP7x"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "NP7x"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2152,7 +2172,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-barchart3': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "wJRY"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "wJRY"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2183,7 +2203,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-pie': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "tc+L"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "tc+L"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2214,7 +2234,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-force': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "mDOk"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "mDOk"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2245,7 +2265,7 @@ var index_esm = __webpack_require__("rlch");
   },
   'd3-tree': {
     component: Object(index_esm["c" /* dynamic */])({
-      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "CxlS"))).default,
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(2), __webpack_require__.e(134)]).then(__webpack_require__.bind(null, "CxlS"))).default,
       loading: () => null
     }),
     previewerProps: {
@@ -2313,7 +2333,7 @@ var layout_default = /*#__PURE__*/__webpack_require__.n(layout);
   apis: apis
 })));
 
-//# sourceURL=webpack:///./src/.umi-production/dumi/layout.tsx_+_68_modules?`)},fVI1:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+//# sourceURL=webpack:///./src/.umi-production/dumi/layout.tsx_+_69_modules?`)},fVI1:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
 //# sourceURL=webpack:///./node_modules/dumi-theme-default/es/components/Navbar.less?`)},hJnp:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
