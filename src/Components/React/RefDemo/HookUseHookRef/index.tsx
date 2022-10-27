@@ -1,22 +1,32 @@
-import {
+import { Card } from 'antd';
+import React, {
+  forwardRef,
+  LegacyRef,
+  useEffect,
   useImperativeHandle,
   useRef,
-  useEffect,
-  forwardRef,
-} from "react";
-import { Card } from "antd";
-import React from "react";
+} from 'react';
 
-const Child = (props: any, ModalRef: any) => {
+type ChildrenHandle = {
+  getData: () => number[];
+};
+
+interface ChildrenProps {
+  ModalRef: React.RefObject<Partial<HTMLDivElement & ChildrenHandle>>;
+}
+
+const Child: React.ForwardRefRenderFunction<ChildrenHandle, ChildrenProps> = (
+  props,
+  ref,
+) => {
+  const { ModalRef } = props;
   useImperativeHandle(ModalRef, () => ({
-    getData: () => {
-      return [1, 2, 3];
-    },
+    getData: () => [1, 2, 3],
   }));
 
   return (
     <>
-      <div ref={ModalRef}>sss</div>
+      <div>sss</div>
     </>
   );
 };
@@ -24,7 +34,7 @@ const Child = (props: any, ModalRef: any) => {
 const Children = forwardRef(Child);
 
 const Father = () => {
-  const ModalRef = useRef<any>(null);
+  const ModalRef = useRef<React.ElementRef<typeof Children>>(null!);
 
   useEffect(() => {
     console.log(ModalRef.current.getData());
@@ -33,7 +43,7 @@ const Father = () => {
   return (
     <>
       <Card style={{ margin: 24 }}>
-        <Children ref={ModalRef} />
+        <Children ModalRef={ModalRef} />
       </Card>
     </>
   );

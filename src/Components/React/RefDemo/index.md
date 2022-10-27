@@ -15,3 +15,7 @@ group:
 ### HookUseHookRef
 
 <code src="./HookUseHookRef/index.tsx"></code>
+
+### UseClassRef
+
+<code src="./UseClassRef/index.tsx"></code>
