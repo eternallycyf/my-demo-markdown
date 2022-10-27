@@ -531,3 +531,5 @@ onchange: ({file,fileList})=> {
 
 - 需要点什么选什么
 - treeCheckStrictly
+
+## 34. scrollIntoView 滚动元素 使元素出现在视口
