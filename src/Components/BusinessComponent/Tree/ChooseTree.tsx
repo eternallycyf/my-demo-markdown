@@ -26,6 +26,9 @@ interface IChooseTreeHandle {
   useSelectData: () => [any[], React.Dispatch<React.SetStateAction<any[]>>];
   handleClearAll: () => void;
   handleGetAllPathNode: (arr: any[], data: any[]) => any[];
+  handleSetCacheList: (
+    list: any[],
+  ) => React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 type IChooseTreeProps = {
@@ -43,6 +46,7 @@ const ChooseTree: ForwardRefRenderFunction<
   const [visible, setVisible] = useState<boolean>(false);
   const [dataSource, setDataSource] = useState<any[]>([]);
   const [selectList, setSelectList] = useState<any[]>([]);
+  const [cacheList, setCacheList] = useState<any[]>([]);
 
   // 获取所有叶子节点
   const dataSourceAllLeaf = useMemo(() => {
@@ -56,6 +60,7 @@ const ChooseTree: ForwardRefRenderFunction<
     handleClearAll: () => handleClearAll(),
     handleGetAllPathNode: (arr: any, data: any[]) =>
       arr.map((item: any) => transformFn.getNodePath(data, item[ID])),
+    handleSetCacheList: (list: any[]) => setCacheList(list),
   }));
 
   // 获取所有叶子节点的路径相关属性
@@ -87,6 +92,7 @@ const ChooseTree: ForwardRefRenderFunction<
     const selectFormLabelInValueList = selectList.map((item, index) =>
       data[index].pop(),
     );
+    setCacheList(selectList);
     handleModalOk && handleModalOk(selectFormLabelInValueList);
   };
 
@@ -127,7 +133,7 @@ const ChooseTree: ForwardRefRenderFunction<
           open={visible}
           onOk={handleOk}
           onCancel={() => {
-            setVisible(false), setSelectList([]);
+            setVisible(false), setSelectList(cacheList);
           }}
           maskClosable={false}
           width={1100}

@@ -27,7 +27,11 @@ const App: FC<any> = () => {
   }, [selectvalue]);
 
   const handlePageInit = async () => {
-    const { useSelectData, useDataSource } = ModalRef.current;
+    const {
+      useSelectData,
+      useDataSource,
+      handleSetCacheList,
+    } = ModalRef.current;
     const [dataSource, setDataSource] = useDataSource();
     const [selectList, setSelectList] = useSelectData();
     form.setFieldsValue({
@@ -36,6 +40,7 @@ const App: FC<any> = () => {
     // todo 换成网络请求
     setDataSource(DATASOURCE);
     setSelectList(EDIT_DATA.map(item => item.value));
+    handleSetCacheList(EDIT_DATA.map(item => item.value));
   };
 
   const handleClearSelectForm = () => {
