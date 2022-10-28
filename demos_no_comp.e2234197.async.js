@@ -88,20 +88,11 @@ var slicedToArray = __webpack_require__("tJVT");
 
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/VirtualList/VirtualListHook/useVirtualList.tsx
 
+
 // \u865A\u62DF\u5217\u8868
 
+const IProps = props => /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null);
 
-/**
- *
- * @param {ReactRef} elementRef \u4F20\u5165\u865A\u62DF\u5217\u8868\u7236\u76D2\u5B50\u7684 ref
- * @param {object}
- * threshold         \u9600\u503C 0-1 1\u8868\u793A\u5B8C\u5168\u51FA\u73B0\u5728\u5C4F\u5E55\u53EF\u89C6\u533A\u57DF\u624D\u89E6\u53D1
- * root              \u8868\u793A\u6307\u5B9A\u6839\u5143\u7D20 \u9ED8\u8BA4\u4E3A\u6D4F\u89C8\u5668\u89C6\u53E3  \u7528\u4E8E\u68C0\u67E5\u76EE\u6807\u53EF\u89C1\u6027
- * rootMargin        root\u7684\u5916\u8FB9\u8DDD '0 0 0 0'
- * freezeOnceVisible \u662F\u5426\u7F13\u5B58 \u518D\u6B21\u6ED1\u52A8\u4E0D\u91CD\u65B0\u6E32\u67D3
- * @returns {Object} entry \u8FD9\u4E2A\u5BF9\u8C61\u5177\u6709\u5F53\u524D\u53EF\u89C6\u533A\u7684\u4FE1\u606F
- * \u4F8B\u5982 entry.isIntersecting \u662F\u5426\u5728\u53EF\u89C6\u533A\u8303\u56F4
- */
 function useVirtualList(elementRef, {
   threshold = 0,
   root = null,

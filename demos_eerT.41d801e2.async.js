@@ -296,10 +296,6 @@ var tabs_style = __webpack_require__("Znn+");
 var tabs = __webpack_require__("ZTPi");
 
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/Tree/components/constant.tsx
-const columns = [{
-  title: 'name',
-  dataIndex: 'name'
-}];
 const LIST = 'list';
 const PID = 'pid';
 const ID = 'id';
@@ -307,6 +303,10 @@ const NAME = 'name';
 const CHILDREN = 'children';
 const TITLE_MAX_LENGTH = 10;
 const BREADCRUMB_MAX_LENGTH = 4;
+const columns = [{
+  title: 'name',
+  dataIndex: NAME
+}];
 const constant_dataSource = [{
   id: -1,
   pid: 0,
@@ -2355,7 +2355,6 @@ class utils_TreeHelpUtils {
 
 
 
-
 const VirtualList = props => {
   const ref = Object(external_window_React_["useRef"])(null);
   const entry = utils_useVirtualList(ref, {
@@ -2487,7 +2486,7 @@ const CustomCheckBox = props => {
   const newData = data === null || data === void 0 ? void 0 : data.map((item, index) => ({ ...item,
     path: pathList[index]
   }));
-  return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(es_checkbox["a" /* default */].Group, {
+  return /*#__PURE__*/external_window_React_default.a.createElement(es_checkbox["a" /* default */].Group, {
     style: {
       width: '100%'
     },
@@ -2505,7 +2504,7 @@ const CustomCheckBox = props => {
       value: item === null || item === void 0 ? void 0 : item[ID],
       onChange: () => handleCheckboxOnchange(item === null || item === void 0 ? void 0 : item[ID])
     }, handleRenderPath(item.path, '|', BREADCRUMB_MAX_LENGTH)));
-  }))));
+  })));
 };
 
 /* harmony default export */ var components_CustomCheckBox = (CustomCheckBox);
@@ -2749,6 +2748,8 @@ var Treemodules_default = /*#__PURE__*/__webpack_require__.n(Treemodules);
 
 
 const ChooseTree_transformFn = new utils_TreeHelpUtils({});
+const IChooseTreeHandleAPI = props => /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null);
+const IChooseTreePropsAPI = props => /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null);
 
 const ChooseTree = (props, ref) => {
   const ModalRef = props.ModalRef,
