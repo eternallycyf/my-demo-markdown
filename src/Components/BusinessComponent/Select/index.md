@@ -8,46 +8,6 @@ group:
 
 ## Select
 
-```tsx
-import React, { useState } from 'react';
-import { Select, Input, Button, Tag, Form } from 'antd';
-
-const { Option } = Select;
-
-const App = () => {
-  const [open, setOpen] = useState(false);
-  const options = [
-    { lable: 'jack', value: '1' },
-    { lable: 'lucy', value: '2' },
-    { lable: 'Yiminghe', value: '3' },
-  ];
-  return (
-    <Select
-      style={{ width: 300 }}
-      open={open}
-      onDropdownVisibleChange={visible => setOpen(visible)}
-      dropdownRender={menu => {
-        return (
-          <>
-            {options.map(item => (
-              <Tag
-                onClick={() => {
-                  setOpen(false);
-                }}
-                key={item.value}
-              >
-                {item.lable}
-              </Tag>
-            ))}
-          </>
-        );
-      }}
-      options={options}
-    />
-  );
-};
-
-export default App;
-```
+<code src="./index.tsx"  title='展开的select' desc='当选择人员时更加清晰'></code>
 
 <API src="/index.tsx"></API>
