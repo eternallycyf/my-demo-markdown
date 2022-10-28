@@ -34,5 +34,6 @@ export interface IPersonnelTabsProps extends IBaseTabProps {}
 export interface IVirtualListProps {
   key: number | string;
   rows: number;
+  children: React.ReactNode;
   [props: number]: any;
 }

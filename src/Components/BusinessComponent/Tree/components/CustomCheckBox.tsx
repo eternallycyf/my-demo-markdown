@@ -21,24 +21,22 @@ const CustomCheckBox: FC<ICheckboxProps> = props => {
   }));
 
   return (
-    <>
-      <Checkbox.Group style={{ width: '100%' }} value={selectList}>
-        <Row justify="space-between" style={{ width: '100%' }}>
-          {newData?.map((item: any) => {
-            return (
-              <VirtualList key={item?.[ID]} rows={rows}>
-                <Checkbox
-                  value={item?.[ID]}
-                  onChange={() => handleCheckboxOnchange(item?.[ID])}
-                >
-                  {handleRenderPath(item.path, '|', BREADCRUMB_MAX_LENGTH)}
-                </Checkbox>
-              </VirtualList>
-            );
-          })}
-        </Row>
-      </Checkbox.Group>
-    </>
+    <Checkbox.Group style={{ width: '100%' }} value={selectList}>
+      <Row justify="space-between" style={{ width: '100%' }}>
+        {newData?.map((item: any) => {
+          return (
+            <VirtualList key={item?.[ID]} rows={rows}>
+              <Checkbox
+                value={item?.[ID]}
+                onChange={() => handleCheckboxOnchange(item?.[ID])}
+              >
+                {handleRenderPath(item.path, '|', BREADCRUMB_MAX_LENGTH)}
+              </Checkbox>
+            </VirtualList>
+          );
+        })}
+      </Row>
+    </Checkbox.Group>
   );
 };
 export default CustomCheckBox;

@@ -1,10 +1,3 @@
-export const columns = [
-  {
-    title: 'name',
-    dataIndex: 'name',
-  },
-];
-
 export const LIST = 'list';
 export const PID = 'pid';
 export const ID = 'id';
@@ -13,6 +6,13 @@ export const CHILDREN = 'children';
 
 export const TITLE_MAX_LENGTH = 10;
 export const BREADCRUMB_MAX_LENGTH = 4;
+
+export const columns = [
+  {
+    title: 'name',
+    dataIndex: NAME,
+  },
+];
 
 export const dataSource = [
   {

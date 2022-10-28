@@ -1,9 +1,9 @@
 import { Col } from 'antd';
-import { FC, useRef } from 'react';
+import React, { FunctionComponent, useRef } from 'react';
 import { IVirtualListProps } from './Interface';
 import { useVirtualList } from './utils';
 
-const VirtualList: FC<IVirtualListProps> = props => {
+const VirtualList: FunctionComponent<IVirtualListProps> = props => {
   const ref = useRef<HTMLDivElement>(null!);
   const entry = useVirtualList(ref, { freezeOnceVisible: false });
   const isVisible = !!entry?.isIntersecting;
