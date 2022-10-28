@@ -10,4 +10,4 @@ group:
 
 <code src="./index.tsx" title='CustTooltip' desc='省略文字组件'></code>
 
-<API src="./index.tsx" ></API>
+<API src="./CustTooltip.tsx"></API>

@@ -19,4 +19,5 @@ group:
 }
 ```
 
-<code src="./index.tsx"></code>
+<code src="./index.tsx"  title='富文本组件' desc='封装了antd-form-item的逻辑'></code>
+<API src="./RichText.tsx" hideTitle></API>

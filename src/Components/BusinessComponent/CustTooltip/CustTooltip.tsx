@@ -3,10 +3,10 @@ import { Tooltip } from 'antd';
 
 interface Iprops {
   text: string;
-  // 最大长度
+  /**最大长度  */
   maxLength?: number;
   style?: React.CSSProperties;
-  // 是否自动换行
+  /**是否自动换行  */
   isARow?: boolean;
 }
 

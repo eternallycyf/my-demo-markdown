@@ -45,20 +45,34 @@ export interface RenderedRows {
 
 export interface Props {
   className?: string;
+  /** Used to estimate the total size of the list before all of its items have actually been measured. The estimated total height is progressively adjusted as items are rendered. */
   estimatedItemSize?: number;
+  /** Height of List. This property will determine the number of rendered items when scrollDirection is 'vertical'. */
   height: number | string;
+  /** The number of items you want to render */
   itemCount: number;
+  /** Either a fixed height/width (depending on the scrollDirection), an array containing the heights of all the items in your list, or a function that returns the height of an item given its index: (index: number): number */
   itemSize: ItemSize;
+  /** Number of extra buffer items to render above/below the visible items. Tweaking this can help reduce scroll flickering on certain browsers/devices. */
   overscanCount?: number;
+  /** Can be used to control the scroll offset; Also useful for setting an initial scroll offset */
   scrollOffset?: number;
+  /** Item index to scroll to (by forcefully scrolling if necessary) x */
   scrollToIndex?: number;
+  /** Used in combination with scrollToIndex, this prop controls the alignment of the scrolled to item. One of: 'start', 'center', 'end' or 'auto'. Use 'start' to always align items to the top of the container and 'end' to align them bottom. Use 'center' to align them in the middle of the container. 'auto' scrolls the least amount possible to ensure that the specified scrollToIndex item is fully visible. */
   scrollToAlignment?: ALIGNMENT;
+  /** Whether the list should scroll vertically or horizontally. One of 'vertical' (default) or 'horizontal'. */
   scrollDirection?: DIRECTION;
+  /** An array of indexes (eg. [0, 10, 25, 30]) to make certain items in the list sticky (position: sticky) */
   stickyIndices?: number[];
   style?: React.CSSProperties;
+  /** Width of List. This property will determine the number of rendered items when scrollDirection is 'horizontal'. */
   width?: number | string;
+  /** Callback invoked with information about the slice of rows/columns that were just rendered. It has the following signature: ({startIndex: number, stopIndex: number}). */
   onItemsRendered?({ startIndex, stopIndex }: RenderedRows): void;
+  /** Callback invoked whenever the scroll offset changes within the inner scrollable region. It has the following signature: (scrollTop: number, event: React.UIEvent<HTMLDivElement>) */
   onScroll?(offset: number, event: UIEvent): void;
+  /** Responsible for rendering an item given it's index: ({index: number, style: Object}): React.PropTypes.node. The returned element must handle key and style. */
   renderItem(itemInfo: ItemInfo): React.ReactNode;
 }
 

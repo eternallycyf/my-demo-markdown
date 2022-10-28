@@ -26,14 +26,20 @@ BraftEditor.use(
 );
 
 interface EditorProps {
+  /** antd-Form实例对象*/
   form?: FormInstance;
-  // 表单名称
+  /** 富文本 Form-Item-name*/
   name?: string;
+  /** 自动拓展的功能*/
   extendControlKey?: any[];
   value?: string;
+  /** valueType */
   valueType?: 'html' | 'raw';
+  /** 是否显示文字最大可输入个数 */
   showWordLimitPrompt?: boolean;
+  /** 根据第一个参数的file通过调用服务器接口 返回一个服务器文件地址 */
   getImageURL?: (file: File) => Promise<string>;
+  /** 改变时触发 */
   onChange?: (value: string) => void;
   [props: string]: any;
 }

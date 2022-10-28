@@ -1,19 +1,24 @@
 // 虚拟列表
-import { RefObject, useEffect, useState } from 'react';
+import { RefObject, useEffect, useState, FC } from 'react';
 interface Args extends IntersectionObserverInit {
   freezeOnceVisible?: boolean;
 }
-/**
- *
- * @param {ReactRef} elementRef 传入虚拟列表父盒子的 ref
- * @param {object}
- * threshold         阀值 0-1 1表示完全出现在屏幕可视区域才触发
- * root              表示指定根元素 默认为浏览器视口  用于检查目标可见性
- * rootMargin        root的外边距 '0 0 0 0'
- * freezeOnceVisible 是否缓存 再次滑动不重新渲染
- * @returns {Object} entry 这个对象具有当前可视区的信息
- * 例如 entry.isIntersecting 是否在可视区范围
- */
+interface Iprop {
+  /** @param {ReactRef} elementRef 传入虚拟列表父盒子的 ref */
+  elementRef: RefObject<Element>;
+  /**
+   * @param {object}
+   * threshold         阀值 0-1 1表示完全出现在屏幕可视区域才触发
+   * root              表示指定根元素 默认为浏览器视口  用于检查目标可见性
+   * rootMargin        root的外边距 '0 0 0 0'
+   * freezeOnceVisible 是否缓存 再次滑动不重新渲染
+   * @returns {Object} entry 这个对象具有当前可视区的信息
+   * 例如 entry.isIntersecting 是否在可视区范围
+   */
+  args: Args;
+}
+export const IProps = <T,>(props: Iprop) => <></>;
+
 function useVirtualList(
   elementRef: RefObject<Element>,
   {

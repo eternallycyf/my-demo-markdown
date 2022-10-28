@@ -21,20 +21,31 @@ import styles from './index.less';
 export const transformFn = new TreeHelpUtils({});
 
 interface IChooseTreeHandle {
+  /** 操作模态框显示隐藏 */
   useVisible: () => [boolean, React.Dispatch<React.SetStateAction<boolean>>];
+  /** 操作数据源 */
   useDataSource: () => [any[], React.Dispatch<React.SetStateAction<any[]>>];
+  /** 操作选中的树 */
   useSelectData: () => [any[], React.Dispatch<React.SetStateAction<any[]>>];
+  /** 清除所有选中的数据 */
   handleClearAll: () => void;
+  /** 根据数据传入当前树形各个节点 */
   handleGetAllPathNode: (arr: any[], data: any[]) => any[];
+  /** 用于取消时的操作 需要在初始化dataSource时传入 初始选中的list */
   handleSetCacheList: (
     list: any[],
   ) => React.Dispatch<React.SetStateAction<any[]>>;
 }
 
 type IChooseTreeProps = {
+  /** 传入的ref实例 用于调用内部方法 */
   ModalRef: any;
+  /** 模态框确定时的回调函数 */
   handleModalOk: (arr: any[]) => void;
 };
+
+export const IChooseTreeHandleAPI = <T,>(props: IChooseTreeHandle) => <></>;
+export const IChooseTreePropsAPI = <T,>(props: IChooseTreeProps) => <></>;
 
 const ChooseTree: ForwardRefRenderFunction<
   IChooseTreeHandle,
