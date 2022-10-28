@@ -22,11 +22,25 @@ footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by sel
  */
 import React from 'react';
 import Alert from '@/MyComponents/Alert';
+import Marquee from 'react-fast-marquee';
 export default () => (
   <Alert
     type="warning"
     message="立即开始"
-    description="所有晦暗都留给过往，从遇见你开始，凛冬散尽，星河长明！🎉 🎉 🎉"
+    description={
+      <Marquee
+        direction="left"
+        speed={100}
+        gradientColor={[]}
+        gradientWidth={400}
+        className="mymarquee"
+        pauseOnHover
+        pauseOnClick
+        direction
+      >
+        所有晦暗都留给过往，从遇见你开始，凛冬散尽，星河长明！🎉 🎉 🎉
+      </Marquee>
+    }
   />
 );
 ```

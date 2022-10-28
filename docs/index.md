@@ -22,11 +22,26 @@ footer: Open-source MIT Licensed | Copyright © 2019-present<br />Powered by sel
  */
 import React from 'react';
 import Alert from '@/MyComponents/Alert';
+import Marquee from 'react-fast-marquee';
 export default () => (
   <Alert
     type="warning"
     message="Getting Started"
-    description="All the gloom is left to the past, from the beginning of meeting you, the winter is gone, the Star River is bright!🎉 🎉 🎉"
+    description={
+      <Marquee
+        direction="left"
+        speed={100}
+        gradientColor={[]}
+        gradientWidth={400}
+        className="mymarquee"
+        pauseOnHover
+        pauseOnClick
+        direction
+      >
+        All the gloom is left to the past, from the beginning of meeting you,
+        the winter is gone, the Star River is bright!🎉 🎉 🎉
+      </Marquee>
+    }
   />
 );
 ```
