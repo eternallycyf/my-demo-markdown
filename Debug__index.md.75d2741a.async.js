@@ -482,7 +482,15 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "34. scrollIntoView \\u6EDA\\u52A8\\u5143\\u7D20 \\u4F7F\\u5143\\u7D20\\u51FA\\u73B0\\u5728\\u89C6\\u53E3")));
+  })), "34. scrollIntoView \\u6EDA\\u52A8\\u5143\\u7D20 \\u4F7F\\u5143\\u7D20\\u51FA\\u73B0\\u5728\\u89C6\\u53E3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "35-antd-table-\\u5982\\u679C\\u6BCF\\u4E00\\u4E2A-columns-\\u90FD\\u6307\\u5B9A\\u4E86-width-\\u5C31\\u4F1A\\u4E0D\\u751F\\u6548"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#35-antd-table-\\u5982\\u679C\\u6BCF\\u4E00\\u4E2A-columns-\\u90FD\\u6307\\u5B9A\\u4E86-width-\\u5C31\\u4F1A\\u4E0D\\u751F\\u6548",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "35. antd table \\u5982\\u679C\\u6BCF\\u4E00\\u4E2A columns \\u90FD\\u6307\\u5B9A\\u4E86 width \\u5C31\\u4F1A\\u4E0D\\u751F\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5FC5\\u987B\\u8981\\u6709\\u4E00\\u4E2A\\u4E0D\\u6307\\u5B9A width \\u5426\\u5219\\u81EA\\u52A8\\u6240\\u6709\\u7684\\u81EA\\u9002\\u5E94"))));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
