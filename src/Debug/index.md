@@ -533,3 +533,7 @@ onchange: ({file,fileList})=> {
 - treeCheckStrictly
 
 ## 34. scrollIntoView 滚动元素 使元素出现在视口
+
+## 35. antd table 如果每一个 columns 都指定了 width 就会不生效
+
+- 必须要有一个不指定 width 否则自动所有的自适应
