@@ -14,7 +14,6 @@ const CustTooltip: React.FC<Iprops> = props => {
   const { text = '', maxLength = 35, style, isRow = false } = props;
   if (isRow)
     return (
-
       <span
         style={{
           maxWidth: 370,
