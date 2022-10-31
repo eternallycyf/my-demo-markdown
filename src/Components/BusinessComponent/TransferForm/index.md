@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## 穿梭框
+## Transfer 穿梭框
 
 <code src="./Class.tsx" title='Class' desc='使用穿梭框'></code>
 

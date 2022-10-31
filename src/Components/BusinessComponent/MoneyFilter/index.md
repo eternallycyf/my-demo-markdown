@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## MoneyFilter
+## MoneyFilter 金额格式化
 
 <code src="./index.tsx" title='MoneyFilter' desc='金额分隔' inline='true'></code>
 

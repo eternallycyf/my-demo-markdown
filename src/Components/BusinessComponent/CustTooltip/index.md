@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## CustTooltip
+## CustTooltip 溢出文字省略
 
 <code src="./index.tsx" title='CustTooltip' desc='省略文字组件'></code>
 

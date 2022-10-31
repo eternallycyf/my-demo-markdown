@@ -6,7 +6,7 @@ group:
   order: 1
 ---
 
-## TsRefInstance
+## TsRefInstance ref 的 ts 全部注解
 
 ### class 获取组件实例
 

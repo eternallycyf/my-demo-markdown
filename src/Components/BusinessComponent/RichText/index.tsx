@@ -23,7 +23,7 @@ const Index = () => {
           Submit
         </Button>
         <Row>
-          <Col span={17}>
+          <Col span={24}>
             <Form.Item
               name="content"
               label="富文本"

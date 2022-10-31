@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## QueryForm
+## QueryForm 查询表单组件
 
 <code src="./index.tsx" title='QueryForm' desc='查询表单'></code>
 

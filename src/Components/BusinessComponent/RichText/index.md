@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## RichText
+## RichText 富文本
 
 ```markdown
 {

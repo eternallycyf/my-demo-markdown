@@ -6,7 +6,7 @@ group:
   order: 2
 ---
 
-## Select
+## Select 多选展示风格
 
 <code src="./index.tsx"  title='展开的select' desc='当选择人员时更加清晰'></code>
 
