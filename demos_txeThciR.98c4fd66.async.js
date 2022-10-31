@@ -15735,7 +15735,7 @@ const Index = () => {
     type: "primary",
     htmlType: "submit"
   }, "Submit"), /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], null, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
-    span: 17
+    span: 24
   }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
     name: "content",
     label: "\\u5BCC\\u6587\\u672C",

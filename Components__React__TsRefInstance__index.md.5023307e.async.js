@@ -22,14 +22,14 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "markdown"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    id: "tsrefinstance"
+    id: "tsrefinstance-ref-\\u7684-ts-\\u5168\\u90E8\\u6CE8\\u89E3"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
-    to: "#tsrefinstance",
+    to: "#tsrefinstance-ref-\\u7684-ts-\\u5168\\u90E8\\u6CE8\\u89E3",
     "aria-hidden": "true",
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "TsRefInstance"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+  })), "TsRefInstance ref \\u7684 ts \\u5168\\u90E8\\u6CE8\\u89E3"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
     id: "class-\\u83B7\\u53D6\\u7EC4\\u4EF6\\u5B9E\\u4F8B"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
     to: "#class-\\u83B7\\u53D6\\u7EC4\\u4EF6\\u5B9E\\u4F8B",
