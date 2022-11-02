@@ -40,8 +40,7 @@ toc: menu
 
 ## mdx
 
-````js
-```tsx
+`````tsx | pure
 /**
  * inline: true
  */
@@ -55,7 +54,6 @@ export default () => (
   />
 );
 ```;
-````
 
 ## markdown
 
@@ -65,7 +63,7 @@ export default () => (
 ```jsx | pure
 // 我不会被渲染为 React 组件
 ```;
-````
+`````
 
 ### code
 
@@ -93,7 +91,9 @@ inline: true;
 
 <!-- 传递 exports 将显式指明渲染哪些导出，请确保值为合法的 JSON 字符串 -->
 
-<API exports='["default", "Other"]'></API>
+export const IChooseProps = <T,>(props: IChooseTreeHandle) => <></>;
+<API exports='["IChooseProps"]'></API>
+//
 
 <!-- 如果不需要 API 相关标题 ，可以使用hideTitle -->
 

@@ -10,84 +10,18 @@ nav:
 ## 1 准备阶段
 
 ```js
-注释语法  { /***/ }
-npx create-react-app my-app
-yarn create react-app my-app --template typescript
-
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-debugger; 输入这行代码就 有断点出现了
-     //#region
-     /#endregion
-     不能折叠的情况下
+# 自定义折叠区域
+//#region
+/#endregion
+# 包裹根元素就会自动检查
 <React.StrictMode> </React.StrictMode>
-     包裹根元素就会自动检查
-
-1.module.css
-import hello from './Hello.module.css'
-<input class={hello.current}>
-1.jsx | pure
-
-rcc  创建类组件
-rfc  创建函数组件
 # yarn eject
 暴露配置文件
-# react在标签属性中可以这样展开对象
-  ...obj
-# 受控组件需要 如果要同时传递e和参数  需要在函数内return 一个新函数拿到e
-  函数的柯里化 onChange必须是一个函数
-  onChange={ ()=>{this.xxx()} }
 # computed
-fn().map.....
-let newData = useMemo(()=>{
-  return a+b
-},[a,b])
-# watch
-componentDidUpdate(prevProps,preState){
-  if(preState.name != this.state.name){
-    this.setState({
-      name: this.state.name
-    })
-  }
+get xxx(){
+  return xxx
 }
-useEffect(() => {
-        console.log(count)
- }, [count])
-# 将setState改成同步
-  async setData (data) {
-    new Promise(() => this.setState(data))
-  }
-  getChangeEventList = async (message) => {
-    await this.setData({
-      changState: message
-    })
-    console.log(this.state.changState);
-  }
-# 解决setState异步 传数据问题
-如果是自己使用 直接在回调函数中 编写逻辑即可
-如果需要父子传递数字 在回调函数中进行传递
-this.setState({
-   count:50
-},()=> this.props.xxx(this.state.count))
-# 导入图片
-import Nav1 from 'xxx.png'
- <img src={Nav2} alt="" />
-# compontDidUpdate(preProps) 可以获取路由切换的信息
-  this.props
-# 实现 vue .native 的效果
- 获取 dom 元素
- 给dom元素绑定 click 事件
- e.stopPropagation()
- // click事件内执行原来的逻辑 调用外界事件的时候
- // 注意这里this 指向不同 需要在外界用  变量接受 let that = this
-# 防止xss攻击
-渲染之前会转义
-const title = response.potentiallyMaliciousInput;
-const element = <h1>{title}</h1>;
-# 全局指令 用于权限控制
-将方法挂载在windows上
-或者 umi 的 access
+new 组件().xxx
 ```
 
 ### 为什么需要绑定 this
@@ -102,25 +36,23 @@ speak() // undefined
 # 函数谁调用它 this执行谁
 class内部遵循严格模式
 当函数复制给变量 this就是undefined
-
 匿名函数需要绑定 this
-
 ```
 
-## 2 jsx | pure
+## 2 JSX
 
 - 语法规范
 
 ```react
-jsx | pure语法 => JavaScript XML
+JSX语法 => JavaScript XML
      通过@babel/preset-react编译 => 脚手架
      只能有一个根节点
-     推荐用小括号包裹jsx | pure 避免JS自动插入分号bug
+     推荐用小括号包裹JSX 避免JS自动插入分号bug
      驼峰命名
      {JavaScript表达式} => 表达式 map()  funtion()  demo()
      style={{backgroundColor: "violet" }}
      条件渲染 if-else  三元表达式 短路运算
-     列表渲染 map(item=>(jsx | pure))  key={item.id}不能用for他是语句
+     列表渲染 map(item=>(jsx))  key={item.id}不能用for他是语句
      标签首字母小写 转为html同名元素
      标签首字母大小 渲染组件
 const title = <h1>hello-react<span>这是spn</span></h1>
@@ -129,13 +61,13 @@ ReactDOM.render(title, document.getElementById("root"))
 
 - 特殊属性名
 
-| 特殊属性名              | jsx                            | pure 语法标签 |     |
-| ----------------------- | ------------------------------ | ------------- | --- |
-| class                   | className                      |               |
-| for                     | htmlfor                        |               |
-| tabindex                | tabIndex                       |               |
-| checked                 | defaultChecked 第一次才有用    |               |
-| dangerouslySetInnerHTML | ={{_html:'节点' }} 类似 v-html |               |
+| 特殊属性名              | JSX 语法标签                   |     |
+| ----------------------- | ------------------------------ | --- |
+| class                   | className                      |     |
+| for                     | htmlfor                        |     |
+| tabindex                | tabIndex                       |     |
+| checked                 | defaultChecked 第一次才有用    |     |
+| dangerouslySetInnerHTML | ={{_html:'节点' }} 类似 v-html |     |
 
 ### API
 
@@ -148,8 +80,6 @@ ReactDOM.render(title, document.getElementById("root"))
 | React. createContext()                                | Provider Consumer          |      |
 | React.PureComponent                                   |                            |      |
 | React.forwardRef                                      | 解决 HOC 组件传递 r 的问题 |      |
-|                                                       |                            |      |
-|                                                       |                            |      |
 
 ## 3 React 组件
 
@@ -199,7 +129,7 @@ changeCheckbox = (id) => {
 onChange={(e) => this.changeCheckbox(id,e)}
 changeCheckbox = (id,e) => {
       console.log(id, e);
-  }
+}
 ```
 
 ### this 指向
@@ -207,19 +137,19 @@ changeCheckbox = (id,e) => {
 ```react
 # 事件处理程序中 this 的值为 undefined
 # 因为函数内部开启严格模式 this就是undefined
-  1. 箭头函数  => 自身不绑定this 可以获取到setState
-      <button onClick={() => this.handle()}>点击</button>
-  2. Function.prototype.bind() => 绑定事件处理程序的this和组件
+1. 箭头函数  => 自身不绑定this 可以获取到setState
+  <button onClick={() => this.handle()}>点击</button>
+2. Function.prototype.bind()=>绑定事件处理程序的this和组件
       constructor () {
         super()
         this.handle = this.handle.bind(this)
       }
-  3. class 的实例方法  => 利用箭头函数形式的class实例方法
-       handle = () => {
-             this.setState({
-                count: this.state.count + 1
-              })
-         }
+3. class 的实例方法  => 利用箭头函数形式的class实例方法
+     handle = () => {
+       this.setState({
+         count: this.state.count + 1
+       })
+     }
 ```
 
 ### 表单处理
@@ -228,7 +158,7 @@ changeCheckbox = (id,e) => {
 # 非受控组件
 通过ref属性获得表单的value
 <input type='password' ref={c => this.passwordDOM = c} />
-this.passwordDOM .value
+this.passwordDOM.value
 
 # 受控组件
 为表单设置name  绑定相同的onChange事件
@@ -250,9 +180,7 @@ this.passwordDOM .value
    changeValue = (username,e) => {
        console.log(e,username)
   }
-
-
-   # 函数的柯里化
+# 函数的柯里化
 函数调用继续返回函数的方式 实现多次接收参数最后统一处理的函数编码形式
    function sum(a){
              return(b)=>{
@@ -270,25 +198,28 @@ this.passwordDOM .value
 ```react
 # 只有 类组件 才有生命周期。
  1. 初始化阶段: 由ReactDOM.render()触发---初次渲染
-								1.	constructor()
-								2.	getDerivedStateFromProps
-								3.	render()
-					#			4.	componentDidMount() 类似vue的 mounted
-	初始化state 为事件处理函数绑定this 开启定时器、发送网络请求、订阅消息
+							1.	constructor()
+						  2.	getDerivedStateFromProps
+						  3.	render()
+				      4.	componentDidMount() 类似vue的 mounted
+初始化state 为事件处理函数绑定this
+开启定时器、发送网络请求、订阅消息
 2. 更新阶段: 由组件内部this.setSate()或父组件重新render触发
-					1.	getDerivedStateFromProps return null or state
-					2.	shouldComponentUpdate() 返回布尔值决定是否渲染
-					3.	render()
-					4.	getSnapshotBeforeUpdate
-	 #			5.	componentDidUpdate()
-  发送网络请求  DOM操作 注意：如果要setState() 必须放在一个if条件中
-3. 卸载组件: 由ReactDOM.unmountComponentAtNode(dom元素)触发
+			1.	getDerivedStateFromProps
+          return null or state
+			2.	shouldComponentUpdate() 返回布尔值决定是否渲染
+			3.	render()
+			4.	getSnapshotBeforeUpdate
+	    5.	componentDidUpdate()
+          发送网络请求  DOM操作
+         注意：如果要setState() 必须放在一个if条件中
+3. 卸载组件由ReactDOM.unmountComponentAtNode(dom元素)触发
 import ReactDOM from 'react-dom'
 import { unmountComponentAtNode } from 'react-dom';
  ReactDOM.unmountComponentAtNode(document.getElementById("root"))
 还需要在componentWillUnmount中 关闭定时器等操作
-	#			  1.	componentWillUnmount()
-										关闭定时器、取消订阅消息
+	    1.	componentWillUnmount()
+			   关闭定时器、取消订阅消息
 
 # 操作其他副作用
 componentDidUpdate
@@ -299,7 +230,6 @@ getDerivedStateFromProps
 # 重置某些state
 // 获取最新的Props
 componentWillReceiveProps(nextProps, nextState)
-
 ```
 
 ### DIFF 算法 虚拟 DOM
@@ -324,29 +254,29 @@ React 更新视图的思想是：只要 state 变化就重新渲染视图
 # 函数组件需要 hooks
   - state的值是对象 表示一个组件中可以有多个数据
   class App extends React.Component {
-    constructor() {//通常用于 初始化state={}的值 改变函数this指向
-         super()   # es6的规范  必须写
-         this.state = {
-            count: 0
-          }
-       }
- //constructor 可以简化为
- //        state = {
- //             count: 0
- //        }
- }
+    state = { count: 0 }
+    constructor() {
+      super()   # es6的规范  必须写
+        this.state = {
+          count: 0
+        }
+      }
+  }
 # this.setState({})  对象形式
      this.setState({
              count: this.state.count + 1
-         },()=>这里的内容是同步的)
+     },()=>这里的内容是同步的 在这里子传父)
 # setState 函数形式
-多次调用setState({})   执行的结果不正确 因为都是异步的 没有顺序
-而使用setState((state,props)=>{xxx})这种形式就对了 它也是异步 有顺序
+多次调用setState({})
+执行的结果不正确 因为都是异步的 没有顺序
+而使用setState((state,props)=>{xxx})
+这种形式就对了 它也是异步 有顺序
 使用这种形式就可以 直接立即拿到更新后的值  类似vue nextTick
     this.setState((state, props) => ({
       count: state.count + 1
     }), () => { 这里是更新后的数据 })
-# state和Props 更新是异步的 顺序不一定 需要放到setState的回调函数中
+# state和Props 更新是异步的
+顺序不一定 需要放到setState的回调函数中
 ```
 
 ### ref
@@ -411,7 +341,7 @@ const MyInput = React.forwardRef((props, ref) => {
 父组件内部  =>
 <引用的子组件 自定义属性名={this.state.变量} />
 子组件内部  =>
-this.props.自定义属性名
+this.props.自定义属性名 在componentDidMount 里面传递
 ```
 
 ```react
@@ -969,24 +899,6 @@ PubSub.subscribe('delete‘,function(msg,data){ }); //订阅拿到数据
 - 只在最顶层使用 hook
 - 只在 React 函数中调用 Hook
 
-### 函数组件
-
-```js
-// 事件名 state  props  都不需要this
-function Demo() {
-  const [count, setScount] = React.userState(0);
-  function add() {
-    setCount(99);
-  }
-  return (
-    <div>
-      {count}
-      <button onClick={add} />
-    </div>
-  );
-}
-```
-
 ### useState
 
 ```js
@@ -1074,7 +986,7 @@ const preCount = CountRef.current
 
 ### 自定义 hook
 
-```jsx | pure
+```js | pure
 # 共享逻辑
 # 函数名称必须以 use 开头, 不共享 state
 const useXxx = () => {
@@ -1315,6 +1227,36 @@ const Section = (props) => {
 
 
 
+```
+
+```js
+import { Col } from 'antd'
+import { FC, useRef } from "react"
+import { IVirtualListProps } from './Interface'
+import { useVirtualList } from "./utils"
+
+const VirtualList: FC<IVirtualListProps> = (props) => {
+  const ref = useRef<HTMLDivElement>(null!)
+  const entry = useVirtualList(ref, { freezeOnceVisible: false })
+  const isVisible = !!entry?.isIntersecting
+  const { rows, children } = props
+  return (
+    <Col span={24 / rows} ref={ref} style={{ margin: '10px 0' }}>
+      {isVisible ? (children) : null}
+    </Col>
+  )
+}
+
+export default VirtualList
+#
+import VirtualList from './VirtualList';
+  {newData?.map((item: any) => {
+     return (
+     <VirtualList key={item?.[ID]} rows={rows} >
+                ...
+     </VirtualList>
+     )
+})}
 ```
 
 ### useReducer
@@ -1796,8 +1738,6 @@ Callback URL  登录成功跳转回的地址  http://localhost:3000/auth
 #
 App ID: 140639
 Client ID: Iv1.c569ce9b56fd26a5
-
-
 ```
 
 ### react-virtualized

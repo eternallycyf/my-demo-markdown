@@ -1613,6 +1613,7 @@ const passChangeFormItems = (changedFields, allFields) => {
 
 ```js
 # Input
+readOnly
   <input
      // 出现删除快捷图标
      allowClear
@@ -1679,6 +1680,11 @@ const passChangeFormItems = (changedFields, allFields) => {
   compact={boolean}
   size="large|default|small"
 />
+
+
+    readOnly 属性回来回显
+
+
 ```
 
 ##### Inputnumber
@@ -1895,6 +1901,10 @@ form.setFieldsValue([1,2,3])
 ```
 
 ##### Upload
+
+- 如果使用它的上传 必须受控
+- https://github.com/ant-design/ant-design/issues/2423#issuecomment-233523579
+- 组件设置唯一的 key
 
 ###### 逻辑
 
