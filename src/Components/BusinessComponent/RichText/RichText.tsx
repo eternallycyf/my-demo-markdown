@@ -54,6 +54,11 @@ export default class UploadDemo extends React.Component<EditorProps> {
     return this.state.editorState.toHTML() === '<p></p>';
   };
 
+  setEditorState = (RAW: {}) => {
+    const editorState = BraftEditor.createEditorState(RAW);
+    this.handleChange(editorState);
+  };
+
   // 处理文本粘贴
   handlePastedText = (
     text: string,
@@ -102,7 +107,6 @@ export default class UploadDemo extends React.Component<EditorProps> {
     const { getImageURL } = this.props;
     const reg = /.(png|jpg|gif|jpeg|webp)$/;
     const str = '.' + params.file.type.split('/')?.[1];
-    console.log(str);
     if (!reg.test(str)) return message.error('富文本只支持图片格式');
     if (!params.file) return false;
     const content = ContentUtils.insertMedias(this.state.editorState, [
