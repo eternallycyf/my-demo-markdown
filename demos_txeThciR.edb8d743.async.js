@@ -15580,6 +15580,11 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
       return this.state.editorState.toHTML() === '<p></p>';
     };
 
+    this.setEditorState = RAW => {
+      const editorState = dist_default.a.createEditorState(RAW);
+      this.handleChange(editorState);
+    };
+
     this.handlePastedText = (text, HTML, editorState, editor) => {
       // \u5728\u6B64\u5904\u6765\u81EA\u884C\u5904\u7406HTML\u5185\u5BB9\u4E4B\u7C7B\u7684
       const stripedHTMLStringFunc = HTML => {
@@ -15626,7 +15631,6 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
       const getImageURL = this.props.getImageURL;
       const reg = /.(png|jpg|gif|jpeg|webp)$/;
       const str = '.' + ((_params$file$type$spl = params.file.type.split('/')) === null || _params$file$type$spl === void 0 ? void 0 : _params$file$type$spl[1]);
-      console.log(str);
       if (!reg.test(str)) return message["b" /* default */].error('\u5BCC\u6587\u672C\u53EA\u652F\u6301\u56FE\u7247\u683C\u5F0F');
       if (!params.file) return false;
       const content = braft_utils_dist["ContentUtils"].insertMedias(this.state.editorState, [{
@@ -15711,21 +15715,26 @@ class RichText_UploadDemo extends external_window_React_default.a.Component {
 
 
 
+const IMAGE_SRC = 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn18%2F600%2Fw800h600%2F20180902%2F80c7-hiqtcam8704158.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668560367&t=7375792b4704ea72657886d40a3fa0f6';
+const RichText_HTML = \`<p>Hello <b>World!</b></p><img src="\${IMAGE_SRC}"/>\`;
+
 const Index = () => {
   const _Form$useForm = es_form["a" /* default */].useForm(),
         _Form$useForm2 = Object(slicedToArray["a" /* default */])(_Form$useForm, 1),
         form = _Form$useForm2[0];
 
   const richTextRef = Object(external_window_React_["useRef"])(null);
+  Object(external_window_React_["useEffect"])(() => {
+    const EditorState = dist_default.a.createEditorState(RichText_HTML).toRAW();
+    richTextRef.current.setEditorState(EditorState);
+  }, []);
 
-  const onFinish = values => {
-    console.log(values);
+  const onFinish = () => {
     console.log(form.getFieldValue('content'));
-    console.log(richTextRef.current.isContentEmpty());
   };
 
   const getImageURL = async file => {
-    return await 'https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn18%2F600%2Fw800h600%2F20180902%2F80c7-hiqtcam8704158.jpg&refer=http%3A%2F%2Fn.sinaimg.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1668560367&t=7375792b4704ea72657886d40a3fa0f6';
+    return await IMAGE_SRC;
   };
 
   return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */], {
@@ -15755,7 +15764,8 @@ const Index = () => {
     name: "content",
     extendControlKey: ['preview', 'uploader'],
     getImageURL: getImageURL,
-    placeholder: "\\u8BF7\\u8F93\\u5165\\u6B63\\u6587\\u5185\\u5BB9"
+    placeholder: "\\u8BF7\\u8F93\\u5165\\u6B63\\u6587\\u5185\\u5BB9",
+    valueType: "raw"
   }))))));
 };
 
