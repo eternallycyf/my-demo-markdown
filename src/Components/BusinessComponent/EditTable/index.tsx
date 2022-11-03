@@ -35,22 +35,21 @@ const TableEditForm = () => {
     })
   }
 
-  const handleCheckIsWeightExceedCeile = (_: any, val: string) => {
-    if (val == null) return Promise.reject(new Error('必填项'))
-    const tableFormValue = form.getFieldValue('tableForm') || []
-    if (!tableFormValue) return Promise.resolve("")
-    const weightSum = tableFormValue.reduce((acc: [], cur: any) => acc + (cur?.weight || 0), 0)
-    if (weightSum > 100) {
-      return Promise.reject(new Error('权重总和不能超出100%'))
-    }
-    return Promise.resolve("")
-  }
-
   const handleGetCurrentWeight = () => {
     const tableFormValue = form.getFieldsValue()?.tableForm || []
     if (tableFormValue.length === 0) setCurrentWeight(0)
     const weightSum = tableFormValue.reduce((acc: [], cur: any) => acc + (cur?.weight || 0), 0) || 0
     setCurrentWeight(weightSum)
+  }
+
+  const handleCheckIsWeightExceedCeile = (_: any, val: string) => {
+    if (val == null) return Promise.reject(new Error('必填项'))
+    const tableFormValue = form.getFieldValue('tableForm') || []
+    if (!tableFormValue) return Promise.resolve("")
+    if (currentWeight > 100) {
+      return Promise.reject(new Error('权重总和必须小于等于100%'))
+    }
+    return Promise.resolve("")
   }
 
   const onFinish = (values: IFormValues) => {
