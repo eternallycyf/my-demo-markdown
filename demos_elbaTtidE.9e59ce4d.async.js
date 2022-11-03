@@ -453,7 +453,8 @@ const getColumns = (add, remove, {
   isEdit,
   FormItemEditProps,
   handleChangeCode,
-  handleCheckIsWeightExceedCeile
+  handleCheckIsWeightExceedCeile,
+  currentWeight
 }) => {
   return [{
     title: '\u5E8F\u53F7',
@@ -540,7 +541,7 @@ const getColumns = (add, remove, {
     }
 
   }, {
-    title: '\u6743\u91CD',
+    title: /*#__PURE__*/external_window_React_default.a.createElement("div", null, "\\u6743\\u91CD", currentWeight, "%/100%"),
     dataIndex: 'weight',
     width: 150,
 
@@ -620,8 +621,14 @@ const TableEditForm = () => {
         isEdit = _useState2[0],
         setIsEdit = _useState2[1];
 
+  const _useState3 = Object(external_window_React_["useState"])(0),
+        _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
+        currentWeight = _useState4[0],
+        setCurrentWeight = _useState4[1];
+
   Object(external_window_React_["useEffect"])(() => {
     form.setFieldsValue(INIT_FORM_VALUES);
+    handleGetCurrentWeight();
   }, []); // \u7F16\u8F91\u65F6\u7684 formItemProps
 
   const FormItemEditProps = Object(external_window_React_["useMemo"])(() => {
@@ -649,13 +656,22 @@ const TableEditForm = () => {
     if (val == null) return Promise.reject(new Error('\u5FC5\u586B\u9879'));
     const tableFormValue = form.getFieldValue('tableForm') || [];
     if (!tableFormValue) return Promise.resolve("");
-    const weightSum = tableFormValue.reduce((acc, cur) => acc + (cur === null || cur === void 0 ? void 0 : cur.weight) || 0, 0);
+    const weightSum = tableFormValue.reduce((acc, cur) => acc + ((cur === null || cur === void 0 ? void 0 : cur.weight) || 0), 0);
 
     if (weightSum > 100) {
       return Promise.reject(new Error('\u6743\u91CD\u603B\u548C\u4E0D\u80FD\u8D85\u51FA100%'));
     }
 
     return Promise.resolve("");
+  };
+
+  const handleGetCurrentWeight = () => {
+    var _form$getFieldsValue;
+
+    const tableFormValue = ((_form$getFieldsValue = form.getFieldsValue()) === null || _form$getFieldsValue === void 0 ? void 0 : _form$getFieldsValue.tableForm) || [];
+    if (tableFormValue.length === 0) setCurrentWeight(0);
+    const weightSum = tableFormValue.reduce((acc, cur) => acc + ((cur === null || cur === void 0 ? void 0 : cur.weight) || 0), 0) || 0;
+    setCurrentWeight(weightSum);
   };
 
   const onFinish = values => {
@@ -670,11 +686,12 @@ const TableEditForm = () => {
     justify: "center",
     className: EditTablemodules_default.a.page
   }, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
-    span: 16
+    span: 24
   }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */], {
     form: form,
     onFinish: onFinish,
-    layout: "horizontal"
+    layout: "horizontal",
+    onValuesChange: () => handleGetCurrentWeight()
   }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, null, isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
     htmlType: "submit",
     type: "primary"
@@ -694,7 +711,8 @@ const TableEditForm = () => {
         isEdit,
         FormItemEditProps,
         handleChangeCode,
-        handleCheckIsWeightExceedCeile
+        handleCheckIsWeightExceedCeile,
+        currentWeight
       })
     }), isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
       wrapperCol: {
