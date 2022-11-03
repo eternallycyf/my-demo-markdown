@@ -652,19 +652,6 @@ const TableEditForm = () => {
     });
   };
 
-  const handleCheckIsWeightExceedCeile = (_, val) => {
-    if (val == null) return Promise.reject(new Error('\u5FC5\u586B\u9879'));
-    const tableFormValue = form.getFieldValue('tableForm') || [];
-    if (!tableFormValue) return Promise.resolve("");
-    const weightSum = tableFormValue.reduce((acc, cur) => acc + ((cur === null || cur === void 0 ? void 0 : cur.weight) || 0), 0);
-
-    if (weightSum > 100) {
-      return Promise.reject(new Error('\u6743\u91CD\u603B\u548C\u4E0D\u80FD\u8D85\u51FA100%'));
-    }
-
-    return Promise.resolve("");
-  };
-
   const handleGetCurrentWeight = () => {
     var _form$getFieldsValue;
 
@@ -672,6 +659,18 @@ const TableEditForm = () => {
     if (tableFormValue.length === 0) setCurrentWeight(0);
     const weightSum = tableFormValue.reduce((acc, cur) => acc + ((cur === null || cur === void 0 ? void 0 : cur.weight) || 0), 0) || 0;
     setCurrentWeight(weightSum);
+  };
+
+  const handleCheckIsWeightExceedCeile = (_, val) => {
+    if (val == null) return Promise.reject(new Error('\u5FC5\u586B\u9879'));
+    const tableFormValue = form.getFieldValue('tableForm') || [];
+    if (!tableFormValue) return Promise.resolve("");
+
+    if (currentWeight > 100) {
+      return Promise.reject(new Error('\u6743\u91CD\u603B\u548C\u5FC5\u987B\u5C0F\u4E8E\u7B49\u4E8E100%'));
+    }
+
+    return Promise.resolve("");
   };
 
   const onFinish = values => {
