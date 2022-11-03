@@ -1,0 +1,722 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[135],{"04oG":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/antd/es/row/style/index.js
+var style = __webpack_require__("14J3");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/row/index.js
+var row = __webpack_require__("BMrR");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/col/style/index.js
+var col_style = __webpack_require__("jCWc");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/col/index.js
+var col = __webpack_require__("kPKH");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/table/style/index.js + 2 modules
+var table_style = __webpack_require__("g9YV");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/table/index.js + 75 modules
+var table = __webpack_require__("wCAj");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/button/style/index.js
+var button_style = __webpack_require__("+L6B");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/button/index.js
+var es_button = __webpack_require__("2/Rp");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/form/style/index.js
+var form_style = __webpack_require__("y8nQ");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/form/index.js + 18 modules
+var es_form = __webpack_require__("Vl3Y");
+
+// EXTERNAL MODULE: ./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
+var slicedToArray = __webpack_require__("tJVT");
+
+// EXTERNAL MODULE: external "window.React"
+var external_window_React_ = __webpack_require__("cDcd");
+var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
+var PlusOutlined = __webpack_require__("xvlK");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/style/default.less
+var style_default = __webpack_require__("EFp3");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/popover/style/index.less
+var popover_style = __webpack_require__("UADf");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/popover/style/index.js
+
+
+// style dependencies
+// deps-lint-skip: tooltip
+// EXTERNAL MODULE: ./node_modules/antd/es/popconfirm/style/index.less
+var popconfirm_style = __webpack_require__("sE09");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/popconfirm/style/index.js
+
+// style dependencies
+// deps-lint-skip: tooltip, popover
+
+
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__("wx14");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
+var esm_slicedToArray = __webpack_require__("ODXe");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/ExclamationCircleFilled.js + 1 modules
+var ExclamationCircleFilled = __webpack_require__("IMoZ");
+
+// EXTERNAL MODULE: ./node_modules/classnames/index.js
+var classnames = __webpack_require__("TSYQ");
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/hooks/useMergedState.js
+var useMergedState = __webpack_require__("6cGi");
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/KeyCode.js
+var KeyCode = __webpack_require__("4IlW");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__("H84U");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/tooltip/index.js + 3 modules
+var tooltip = __webpack_require__("3S7+");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/_util/getRenderPropValue.js
+var getRenderPropValue = function getRenderPropValue(propValue) {
+  if (!propValue) {
+    return null;
+  }
+  var isRenderFunction = typeof propValue === 'function';
+  if (isRenderFunction) {
+    return propValue();
+  }
+  return propValue;
+};
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/motion.js
+var motion = __webpack_require__("EXcs");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/popover/index.js
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+var popover_Overlay = function Overlay(_ref) {
+  var title = _ref.title,
+    content = _ref.content,
+    prefixCls = _ref.prefixCls;
+  if (!title && !content) {
+    return null;
+  }
+  return /*#__PURE__*/external_window_React_["createElement"](external_window_React_["Fragment"], null, title && /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: "".concat(prefixCls, "-title")
+  }, getRenderPropValue(title)), /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: "".concat(prefixCls, "-inner-content")
+  }, getRenderPropValue(content)));
+};
+var Popover = /*#__PURE__*/external_window_React_["forwardRef"](function (props, ref) {
+  var customizePrefixCls = props.prefixCls,
+    title = props.title,
+    content = props.content,
+    _overlay = props._overlay,
+    _props$placement = props.placement,
+    placement = _props$placement === void 0 ? 'top' : _props$placement,
+    _props$trigger = props.trigger,
+    trigger = _props$trigger === void 0 ? 'hover' : _props$trigger,
+    _props$mouseEnterDela = props.mouseEnterDelay,
+    mouseEnterDelay = _props$mouseEnterDela === void 0 ? 0.1 : _props$mouseEnterDela,
+    _props$mouseLeaveDela = props.mouseLeaveDelay,
+    mouseLeaveDelay = _props$mouseLeaveDela === void 0 ? 0.1 : _props$mouseLeaveDela,
+    _props$overlayStyle = props.overlayStyle,
+    overlayStyle = _props$overlayStyle === void 0 ? {} : _props$overlayStyle,
+    otherProps = __rest(props, ["prefixCls", "title", "content", "_overlay", "placement", "trigger", "mouseEnterDelay", "mouseLeaveDelay", "overlayStyle"]);
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+    getPrefixCls = _React$useContext.getPrefixCls;
+  var prefixCls = getPrefixCls('popover', customizePrefixCls);
+  var rootPrefixCls = getPrefixCls();
+  return /*#__PURE__*/external_window_React_["createElement"](tooltip["a" /* default */], Object(esm_extends["a" /* default */])({
+    placement: placement,
+    trigger: trigger,
+    mouseEnterDelay: mouseEnterDelay,
+    mouseLeaveDelay: mouseLeaveDelay,
+    overlayStyle: overlayStyle
+  }, otherProps, {
+    prefixCls: prefixCls,
+    ref: ref,
+    overlay: _overlay || /*#__PURE__*/external_window_React_["createElement"](popover_Overlay, {
+      prefixCls: prefixCls,
+      title: title,
+      content: content
+    }),
+    transitionName: Object(motion["c" /* getTransitionName */])(rootPrefixCls, 'zoom-big', otherProps.transitionName)
+  }));
+});
+if (false) {}
+/* harmony default export */ var popover = (Popover);
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/reactNode.js
+var reactNode = __webpack_require__("0n0R");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/button/button.js + 2 modules
+var button_button = __webpack_require__("zvFY");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/_util/ActionButton.js
+var ActionButton = __webpack_require__("lkze");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/locale-provider/LocaleReceiver.js + 1 modules
+var LocaleReceiver = __webpack_require__("YMnH");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/locale/default.js + 1 modules
+var locale_default = __webpack_require__("ZvpZ");
+
+// CONCATENATED MODULE: ./node_modules/antd/es/popconfirm/PurePanel.js
+
+
+
+
+
+
+
+
+
+var PurePanel_Overlay = function Overlay(props) {
+  var prefixCls = props.prefixCls,
+    okButtonProps = props.okButtonProps,
+    cancelButtonProps = props.cancelButtonProps,
+    title = props.title,
+    cancelText = props.cancelText,
+    okText = props.okText,
+    okType = props.okType,
+    icon = props.icon,
+    _props$showCancel = props.showCancel,
+    showCancel = _props$showCancel === void 0 ? true : _props$showCancel,
+    close = props.close,
+    onConfirm = props.onConfirm,
+    onCancel = props.onCancel;
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+    getPrefixCls = _React$useContext.getPrefixCls;
+  return /*#__PURE__*/external_window_React_["createElement"](LocaleReceiver["a" /* default */], {
+    componentName: "Popconfirm",
+    defaultLocale: locale_default["a" /* default */].Popconfirm
+  }, function (contextLocale) {
+    return /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-inner-content")
+    }, /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-message")
+    }, icon, /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-message-title")
+    }, getRenderPropValue(title))), /*#__PURE__*/external_window_React_["createElement"]("div", {
+      className: "".concat(prefixCls, "-buttons")
+    }, showCancel && /*#__PURE__*/external_window_React_["createElement"](es_button["a" /* default */], Object(esm_extends["a" /* default */])({
+      onClick: onCancel,
+      size: "small"
+    }, cancelButtonProps), cancelText !== null && cancelText !== void 0 ? cancelText : contextLocale.cancelText), /*#__PURE__*/external_window_React_["createElement"](ActionButton["a" /* default */], {
+      buttonProps: Object(esm_extends["a" /* default */])(Object(esm_extends["a" /* default */])({
+        size: 'small'
+      }, Object(button_button["a" /* convertLegacyProps */])(okType)), okButtonProps),
+      actionFn: onConfirm,
+      close: close,
+      prefixCls: getPrefixCls('btn'),
+      quitOnNullishReturnValue: true,
+      emitEvent: true
+    }, okText !== null && okText !== void 0 ? okText : contextLocale.okText)));
+  });
+};
+// CONCATENATED MODULE: ./node_modules/antd/es/popconfirm/index.js
+
+
+var _this = undefined;
+var popconfirm_rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) {
+    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  }
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+var Popconfirm = /*#__PURE__*/external_window_React_["forwardRef"](function (props, ref) {
+  var _React$useContext = external_window_React_["useContext"](context["b" /* ConfigContext */]),
+    getPrefixCls = _React$useContext.getPrefixCls;
+  var _useMergedState = Object(useMergedState["a" /* default */])(false, {
+      value: props.open !== undefined ? props.open : props.visible,
+      defaultValue: props.defaultOpen !== undefined ? props.defaultOpen : props.defaultVisible
+    }),
+    _useMergedState2 = Object(esm_slicedToArray["a" /* default */])(_useMergedState, 2),
+    open = _useMergedState2[0],
+    setOpen = _useMergedState2[1];
+  // const isDestroyed = useDestroyed();
+  var settingOpen = function settingOpen(value, e) {
+    var _a, _b;
+    setOpen(value, true);
+    (_a = props.onVisibleChange) === null || _a === void 0 ? void 0 : _a.call(props, value, e);
+    (_b = props.onOpenChange) === null || _b === void 0 ? void 0 : _b.call(props, value, e);
+  };
+  var close = function close(e) {
+    settingOpen(false, e);
+  };
+  var onConfirm = function onConfirm(e) {
+    var _a;
+    return (_a = props.onConfirm) === null || _a === void 0 ? void 0 : _a.call(_this, e);
+  };
+  var onCancel = function onCancel(e) {
+    var _a;
+    settingOpen(false, e);
+    (_a = props.onCancel) === null || _a === void 0 ? void 0 : _a.call(_this, e);
+  };
+  var _onKeyDown = function onKeyDown(e) {
+    if (e.keyCode === KeyCode["a" /* default */].ESC && open) {
+      settingOpen(false, e);
+    }
+  };
+  var onOpenChange = function onOpenChange(value) {
+    var _props$disabled = props.disabled,
+      disabled = _props$disabled === void 0 ? false : _props$disabled;
+    if (disabled) {
+      return;
+    }
+    settingOpen(value);
+  };
+  var customizePrefixCls = props.prefixCls,
+    _props$placement = props.placement,
+    placement = _props$placement === void 0 ? 'top' : _props$placement,
+    _props$trigger = props.trigger,
+    trigger = _props$trigger === void 0 ? 'click' : _props$trigger,
+    _props$okType = props.okType,
+    okType = _props$okType === void 0 ? 'primary' : _props$okType,
+    _props$icon = props.icon,
+    icon = _props$icon === void 0 ? /*#__PURE__*/external_window_React_["createElement"](ExclamationCircleFilled["a" /* default */], null) : _props$icon,
+    children = props.children,
+    overlayClassName = props.overlayClassName,
+    restProps = popconfirm_rest(props, ["prefixCls", "placement", "trigger", "okType", "icon", "children", "overlayClassName"]);
+  var prefixCls = getPrefixCls('popover', customizePrefixCls);
+  var prefixClsConfirm = getPrefixCls('popconfirm', customizePrefixCls);
+  var overlayClassNames = classnames_default()(prefixClsConfirm, overlayClassName);
+  return /*#__PURE__*/external_window_React_["createElement"](popover, Object(esm_extends["a" /* default */])({}, restProps, {
+    trigger: trigger,
+    prefixCls: prefixCls,
+    placement: placement,
+    onOpenChange: onOpenChange,
+    open: open,
+    ref: ref,
+    overlayClassName: overlayClassNames,
+    _overlay: /*#__PURE__*/external_window_React_["createElement"](PurePanel_Overlay, Object(esm_extends["a" /* default */])({
+      okType: okType,
+      icon: icon
+    }, props, {
+      prefixCls: prefixCls,
+      close: close,
+      onConfirm: onConfirm,
+      onCancel: onCancel
+    }))
+  }), Object(reactNode["a" /* cloneElement */])(children, {
+    onKeyDown: function onKeyDown(e) {
+      var _a, _b;
+      if ( /*#__PURE__*/external_window_React_["isValidElement"](children)) {
+        (_b = children === null || children === void 0 ? void 0 : (_a = children.props).onKeyDown) === null || _b === void 0 ? void 0 : _b.call(_a, e);
+      }
+      _onKeyDown(e);
+    }
+  }));
+});
+/* harmony default export */ var popconfirm = (Popconfirm);
+// EXTERNAL MODULE: ./node_modules/antd/es/input-number/style/index.js
+var input_number_style = __webpack_require__("giR+");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/input-number/index.js + 8 modules
+var input_number = __webpack_require__("fyUT");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/input/style/index.js
+var input_style = __webpack_require__("5NDa");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/input/index.js + 5 modules
+var input = __webpack_require__("5rEg");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/select/style/index.js
+var select_style = __webpack_require__("OaEy");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/select/index.js
+var es_select = __webpack_require__("2fM7");
+
+// EXTERNAL MODULE: ./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/extends.js
+var helpers_esm_extends = __webpack_require__("0Owb");
+
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+var objectSpread2 = __webpack_require__("VTBJ");
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/DeleteFilled.js
+// This icon file is generated automatically.
+var DeleteFilled_DeleteFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z" } }] }, "name": "delete", "theme": "filled" };
+/* harmony default export */ var asn_DeleteFilled = (DeleteFilled_DeleteFilled);
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/components/AntdIcon.js + 3 modules
+var AntdIcon = __webpack_require__("6VBw");
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/DeleteFilled.js
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var icons_DeleteFilled_DeleteFilled = function DeleteFilled(props, ref) {
+  return /*#__PURE__*/external_window_React_["createElement"](AntdIcon["a" /* default */], Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
+    ref: ref,
+    icon: asn_DeleteFilled
+  }));
+};
+
+icons_DeleteFilled_DeleteFilled.displayName = 'DeleteFilled';
+/* harmony default export */ var icons_DeleteFilled = (/*#__PURE__*/external_window_React_["forwardRef"](icons_DeleteFilled_DeleteFilled));
+// CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/constant.tsx
+// \u53EA\u5C55\u793A\u7684 formItemProps
+const FORMITEMPROPS_ONLYREAD = {
+  allowclear: "false",
+  readOnly: true,
+  bordered: false
+};
+const CODE_OPTIONS_DICT = [{
+  label: 'product1-00001',
+  value: 100001,
+  codeName: "product1",
+  company: 'xxx1',
+  currentProfit: 100,
+  profit: 100,
+  yield: 100,
+  weight: 10
+}, {
+  label: 'product2-00002',
+  value: 100002,
+  codeName: "product2",
+  company: 'xxx2',
+  currentProfit: 200,
+  profit: 200,
+  yield: 200,
+  weight: 20
+}];
+const INIT_FORM_VALUES = {
+  tableForm: [{
+    code: {
+      label: 'product1-00001',
+      value: 100001
+    },
+    codeName: "00001",
+    company: 'company1',
+    currentProfit: 100,
+    yield: 100,
+    weight: 10
+  }]
+};
+// CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/columns.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const getColumns = (add, remove, {
+  isEdit,
+  FormItemEditProps,
+  handleChangeCode,
+  handleCheckIsWeightExceedCeile
+}) => {
+  return [{
+    title: '\u5E8F\u53F7',
+    dataIndex: 'index',
+    render: (_text, _field, index) => index + 1,
+    width: 80
+  }, {
+    title: '\u4EE3\u7801',
+    dataIndex: 'code',
+    width: 180,
+
+    render(text, field, index) {
+      const isOpen = isEdit ? {} : {
+        open: false
+      };
+      const isPlaceholder = isEdit ? {
+        placeholder: '\u8BF7\u9009\u62E9\u4EE3\u7801'
+      } : {};
+      const itemProps = { ...FormItemEditProps,
+        ...isOpen,
+        ...isPlaceholder,
+        showArrow: isEdit ? true : false
+      };
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        rules: isEdit ? [{
+          required: true,
+          message: '\u8BF7\u9009\u62E9\u4EE3\u7801'
+        }] : [],
+        name: [field.name, 'code'],
+        fieldKey: [field.key, 'code']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(es_select["a" /* default */], Object(helpers_esm_extends["a" /* default */])({
+        labelInValue: true,
+        options: CODE_OPTIONS_DICT,
+        onChange: value => handleChangeCode(value, index)
+      }, itemProps)));
+    }
+
+  }, {
+    title: '\u4EE3\u7801\u540D\u79F0',
+    dataIndex: 'codeName',
+    width: 150,
+
+    render(text, field, index) {
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        name: [field.name, 'codeName'],
+        fieldKey: [field.key, 'codeName']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
+    }
+
+  }, {
+    title: '\u516C\u53F8',
+    dataIndex: 'company',
+    width: 150,
+
+    render(text, field) {
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        name: [field.name, 'company'],
+        fieldKey: [field.key, 'company']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
+    }
+
+  }, {
+    title: '\u5F53\u524D\u503C',
+    dataIndex: 'currentProfit',
+    width: 150,
+
+    render(text, field) {
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        name: [field.name, 'currentProfit'],
+        fieldKey: [field.key, 'currentProfit']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
+    }
+
+  }, {
+    title: '\u6536\u76CA\u7387',
+    dataIndex: 'yield',
+    width: 150,
+
+    render(text, field) {
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        name: [field.name, 'yield'],
+        fieldKey: [field.key, 'yield']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
+    }
+
+  }, {
+    title: '\u6743\u91CD',
+    dataIndex: 'weight',
+    width: 150,
+
+    render(text, field) {
+      const isAddonAfter = isEdit ? {
+        addonAfter: '%'
+      } : {};
+      const itemProps = { ...FormItemEditProps,
+        ...isAddonAfter
+      };
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        rules: isEdit ? [{
+          required: true,
+          validator: handleCheckIsWeightExceedCeile
+        }] : [],
+        name: [field.name, 'weight'],
+        fieldKey: [field.key, 'weight']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input_number["a" /* default */], Object(helpers_esm_extends["a" /* default */])({
+        min: 0,
+        max: 100,
+        step: 1,
+        precision: 2
+      }, itemProps)));
+    }
+
+  }, {
+    title: '\u64CD\u4F5C',
+    dataIndex: 'operate',
+    className: 'operate',
+    width: 150,
+
+    render(text, field) {
+      return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(popconfirm, {
+        title: "\\u786E\\u8BA4\\u662F\\u5426\\u5220\\u9664",
+        onConfirm: () => remove(field.name),
+        okText: "\\u786E\\u8BA4",
+        cancelText: "\\u53D6\\u6D88"
+      }, /*#__PURE__*/external_window_React_default.a.createElement(icons_DeleteFilled, {
+        style: {
+          marginLeft: 10
+        }
+      })));
+    }
+
+  }];
+};
+// EXTERNAL MODULE: ./src/Components/BusinessComponent/EditTable/index.less?modules
+var EditTablemodules = __webpack_require__("3Hbs");
+var EditTablemodules_default = /*#__PURE__*/__webpack_require__.n(EditTablemodules);
+
+// CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/index.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const TableEditForm = () => {
+  const _Form$useForm = es_form["a" /* default */].useForm(),
+        _Form$useForm2 = Object(slicedToArray["a" /* default */])(_Form$useForm, 1),
+        form = _Form$useForm2[0];
+
+  const _useState = Object(external_window_React_["useState"])(true),
+        _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+        isEdit = _useState2[0],
+        setIsEdit = _useState2[1];
+
+  Object(external_window_React_["useEffect"])(() => {
+    form.setFieldsValue(INIT_FORM_VALUES);
+  }, []); // \u7F16\u8F91\u65F6\u7684 formItemProps
+
+  const FormItemEditProps = Object(external_window_React_["useMemo"])(() => {
+    if (isEdit) return {
+      allowclear: "true",
+      readOnly: false,
+      bordered: true
+    };
+    return { ...FORMITEMPROPS_ONLYREAD
+    };
+  }, [isEdit]);
+
+  const handleChangeCode = (value, index) => {
+    const item = CODE_OPTIONS_DICT.find(item => item.value == value.value) || {};
+    const tableFormValue = form.getFieldValue('tableForm') || [];
+    tableFormValue[index] = { ...tableFormValue[index],
+      ...item
+    };
+    form.setFieldsValue({
+      tableForm: tableFormValue
+    });
+  };
+
+  const handleCheckIsWeightExceedCeile = (_, val) => {
+    if (val == null) return Promise.reject(new Error('\u5FC5\u586B\u9879'));
+    const tableFormValue = form.getFieldValue('tableForm') || [];
+    if (!tableFormValue) return Promise.resolve("");
+    const weightSum = tableFormValue.reduce((acc, cur) => acc + (cur === null || cur === void 0 ? void 0 : cur.weight) || 0, 0);
+
+    if (weightSum > 100) {
+      return Promise.reject(new Error('\u6743\u91CD\u603B\u548C\u4E0D\u80FD\u8D85\u51FA100%'));
+    }
+
+    return Promise.resolve("");
+  };
+
+  const onFinish = values => {
+    console.log(values);
+    console.log(form.getFieldsValue());
+    setIsEdit(false);
+  };
+
+  return /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], {
+    gutter: [24, 12],
+    align: "middle",
+    justify: "center",
+    className: EditTablemodules_default.a.page
+  }, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+    span: 16
+  }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */], {
+    form: form,
+    onFinish: onFinish,
+    layout: "horizontal"
+  }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, null, isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+    htmlType: "submit",
+    type: "primary"
+  }, "\\u70B9\\u51FB\\u4FDD\\u5B58\\u8FDB\\u5165\\u67E5\\u770B\\u6A21\\u5F0F"), !isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+    onClick: () => setIsEdit(true)
+  }, "\\u8FD4\\u56DE\\u7F16\\u8F91")), /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].List, {
+    name: "tableForm"
+  }, (fields, {
+    add,
+    remove
+  }) => {
+    return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(table["a" /* default */], {
+      rowKey: "key",
+      pagination: false,
+      dataSource: fields,
+      columns: getColumns(add, remove, {
+        isEdit,
+        FormItemEditProps,
+        handleChangeCode,
+        handleCheckIsWeightExceedCeile
+      })
+    }), isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      wrapperCol: {
+        offset: 6,
+        span: 5
+      }
+    }, /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      type: "dashed",
+      onClick: () => add(),
+      block: true,
+      icon: /*#__PURE__*/external_window_React_default.a.createElement(PlusOutlined["a" /* default */], null)
+    }, "\\u6DFB\\u52A0\\u4EA7\\u54C1")));
+  }))));
+};
+
+/* harmony default export */ var EditTable = __webpack_exports__["default"] = (TableEditForm);
+
+//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.tsx_+_10_modules?`)},"3Hbs":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+module.exports = {"page":"page___1CrUj"};
+
+//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.less?`)},UADf:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/popover/style/index.less?`)},sE09:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+
+//# sourceURL=webpack:///./node_modules/antd/es/popconfirm/style/index.less?`)}}]);
