@@ -8,7 +8,7 @@ group:
 
 ## echarts-for-react
 
-<code src="./index.tsx" transform={true} iframe={true}></code>
+<code src="./index.tsx" inline={true} transform={true} iframe={true}></code>
 
 <API src="./REcharts/index.tsx" hideTitle></API>
 
