@@ -67,4 +67,115 @@ const App = () => {
 
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
-//# sourceURL=webpack:///./src/Components/BusinessComponent/MoneyFilter/index.tsx?`)}}]);
+//# sourceURL=webpack:///./src/Components/BusinessComponent/MoneyFilter/index.tsx?`)},XWPg:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Users_eternallycyf_Documents_GitHub_case_my_demo_markdown_node_modules_umijs_babel_preset_umi_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("tJVT");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Fk5u");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_2__);
+
+
+// echarts\u5F15\u5165
+
+
+
+const Echarts = () => {
+  const chartDom = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+        _useState2 = Object(_Users_eternallycyf_Documents_GitHub_case_my_demo_markdown_node_modules_umijs_babel_preset_umi_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+        myChart = _useState2[0],
+        setMyChart = _useState2[1]; // echarts \u914D\u7F6E\u9879
+
+
+  let option = {
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      top: '5%',
+      left: 'center'
+    },
+    series: [{
+      name: 'Access From',
+      type: 'pie',
+      radius: ['40%', '70%'],
+      avoidLabelOverlap: false,
+      itemStyle: {
+        borderRadius: 10,
+        borderColor: '#fff',
+        borderWidth: 2
+      },
+      label: {
+        show: false,
+        position: 'center'
+      },
+      emphasis: {
+        label: {
+          show: true,
+          fontSize: '40',
+          fontWeight: 'bold'
+        }
+      },
+      labelLine: {
+        show: false
+      },
+      data: [{
+        value: 1048,
+        name: 'Search Engine'
+      }, {
+        value: 735,
+        name: 'Direct'
+      }, {
+        value: 580,
+        name: 'Email'
+      }, {
+        value: 484,
+        name: 'Union Ads'
+      }, {
+        value: 300,
+        name: 'Video Ads'
+      }]
+    }]
+  };
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    setTimeout(() => {
+      // echarts \u521D\u59CB\u5316
+      (chartDom === null || chartDom === void 0 ? void 0 : chartDom.current) && setMyChart(echarts__WEBPACK_IMPORTED_MODULE_2__["init"](chartDom === null || chartDom === void 0 ? void 0 : chartDom.current));
+      myChart && option && myChart.setOption(option);
+    });
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    ref: chartDom,
+    style: {
+      width: 800,
+      height: 800,
+      display: 'inline-block',
+      verticalAlign: 'top'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    style: {
+      display: 'inline-block',
+      fontSize: '24px'
+    },
+    onMouseOver: () => {
+      // \u663E\u793Atooltip
+      myChart && myChart.dispatchAction({
+        type: 'showTip',
+        seriesIndex: 0,
+        dataIndex: 1,
+        position: 50
+      });
+    },
+    onMouseLeave: () => {
+      // \u9690\u85CFtooltip
+      myChart && myChart.dispatchAction({
+        type: 'hideTip'
+      });
+    }
+  }, "1111"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Echarts);
+
+//# sourceURL=webpack:///./src/Components/Npm/EchartsReact/demo.tsx?`)}}]);
