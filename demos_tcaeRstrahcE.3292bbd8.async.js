@@ -271,7 +271,145 @@ var createSensor = function createSensor(element) {
 
 exports.createSensor = createSensor;
 
-//# sourceURL=webpack:///./node_modules/size-sensor/lib/sensors/object.js?`)},ZpqZ:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
+//# sourceURL=webpack:///./node_modules/size-sensor/lib/sensors/object.js?`)},XWPg:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Users_eternallycyf_Documents_GitHub_case_my_demo_markdown_node_modules_umijs_babel_preset_umi_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("tJVT");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("Fk5u");
+/* harmony import */ var echarts__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(echarts__WEBPACK_IMPORTED_MODULE_2__);
+
+
+// echarts\u5F15\u5165
+
+
+
+const Echarts = () => {
+  const chartDom = Object(react__WEBPACK_IMPORTED_MODULE_1__["useRef"])(null);
+
+  const _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(),
+        _useState2 = Object(_Users_eternallycyf_Documents_GitHub_case_my_demo_markdown_node_modules_umijs_babel_preset_umi_node_modules_babel_runtime_helpers_esm_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(_useState, 2),
+        myChart = _useState2[0],
+        setMyChart = _useState2[1]; // echarts \u914D\u7F6E\u9879
+
+
+  var base = +new Date(1968, 9, 3);
+  var oneDay = 24 * 3600 * 1000;
+  var date = [];
+  var data = [Math.random() * 300];
+
+  for (var i = 1; i < 20000; i++) {
+    var now = new Date(base += oneDay);
+    date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+    data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+  }
+
+  const option = {
+    tooltip: {
+      trigger: 'axis',
+      position: function (pt) {
+        return [pt[0], '10%'];
+      }
+    },
+    title: {
+      left: 'center',
+      text: '\u5927\u6570\u636E\u91CF\u9762\u79EF\u56FE'
+    },
+    toolbox: {
+      feature: {
+        dataZoom: {
+          yAxisIndex: 'none'
+        },
+        restore: {},
+        saveAsImage: {}
+      }
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: date
+    },
+    yAxis: {
+      type: 'value',
+      boundaryGap: [0, '100%']
+    },
+    dataZoom: [{
+      type: 'inside',
+      start: 0,
+      end: 10
+    }, {
+      start: 0,
+      end: 10,
+      handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+      handleSize: '80%',
+      handleStyle: {
+        color: '#fff',
+        shadowBlur: 3,
+        shadowColor: 'rgba(0, 0, 0, 0.6)',
+        shadowOffsetX: 2,
+        shadowOffsetY: 2
+      }
+    }],
+    series: [{
+      name: '\u6A21\u62DF\u6570\u636E',
+      type: 'line',
+      smooth: true,
+      symbol: 'none',
+      sampling: 'average',
+      itemStyle: {
+        color: 'rgb(255, 70, 131)'
+      },
+      areaStyle: {
+        color: new echarts__WEBPACK_IMPORTED_MODULE_2__["graphic"].LinearGradient(0, 0, 0, 1, [{
+          offset: 0,
+          color: 'rgb(255, 158, 68)'
+        }, {
+          offset: 1,
+          color: 'rgb(255, 70, 131)'
+        }])
+      },
+      data: data
+    }]
+  };
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(() => {
+    setTimeout(() => {
+      // echarts \u521D\u59CB\u5316
+      (chartDom === null || chartDom === void 0 ? void 0 : chartDom.current) && setMyChart(echarts__WEBPACK_IMPORTED_MODULE_2__["init"](chartDom === null || chartDom === void 0 ? void 0 : chartDom.current));
+      myChart && option && myChart.setOption(option);
+    });
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    ref: chartDom,
+    style: {
+      width: 800,
+      height: 800,
+      display: 'inline-block',
+      verticalAlign: 'top'
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    style: {
+      display: 'inline-block',
+      fontSize: '24px'
+    },
+    onMouseOver: () => {
+      // \u663E\u793Atooltip
+      myChart && myChart.dispatchAction({
+        type: 'showTip',
+        x: date[0],
+        y: data[0]
+      });
+    },
+    onMouseLeave: () => {
+      // \u9690\u85CFtooltip
+      myChart && myChart.dispatchAction({
+        type: 'hideTip'
+      });
+    }
+  }, "1111"));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Echarts);
+
+//# sourceURL=webpack:///./src/Components/Npm/EchartsReact/demo.tsx?`)},ZpqZ:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: external "window.React"
@@ -530,121 +668,86 @@ const ReactEChart = (props, echartsRef) => {
 
 
 
+var base = +new Date(1968, 9, 3);
+var oneDay = 24 * 3600 * 1000;
+var date = [];
+var data = [Math.random() * 300];
+
+for (var i = 1; i < 20000; i++) {
+  var now = new Date(base += oneDay);
+  date.push([now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'));
+  data.push(Math.round((Math.random() - 0.5) * 20 + data[i - 1]));
+}
+
 const EchartsReact_option = {
   tooltip: {
-    trigger: "axis",
-    axisPointer: {
-      type: "shadow"
+    trigger: 'axis',
+    position: function (pt) {
+      return [pt[0], '10%'];
     }
+  },
+  title: {
+    left: 'center',
+    text: '\u5927\u6570\u636E\u91CF\u9762\u79EF\u56FE'
   },
   toolbox: {
-    show: true,
-    top: 20,
-    right: 20,
     feature: {
-      saveAsImage: {
-        name: "\u5C97\u4F4D\u8BA4\u8BC1",
-        title: "\u4E0B\u8F7D\u56FE\u7247"
-      }
+      dataZoom: {
+        yAxisIndex: 'none'
+      },
+      restore: {},
+      saveAsImage: {}
     }
   },
-  legend: {},
-  grid: {
-    left: "3%",
-    right: "4%",
-    bottom: "3%",
-    containLabel: true
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: date
   },
-  xAxis: [{
-    type: "category",
-    data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  }],
-  yAxis: [{
-    type: "value"
+  yAxis: {
+    type: 'value',
+    boundaryGap: [0, '100%']
+  },
+  dataZoom: [{
+    type: 'inside',
+    start: 0,
+    end: 10
+  }, {
+    start: 0,
+    end: 10,
+    handleIcon: 'M10.7,11.9v-1.3H9.3v1.3c-4.9,0.3-8.8,4.4-8.8,9.4c0,5,3.9,9.1,8.8,9.4v1.3h1.3v-1.3c4.9-0.3,8.8-4.4,8.8-9.4C19.5,16.3,15.6,12.2,10.7,11.9z M13.3,24.4H6.7V23h6.6V24.4z M13.3,19.6H6.7v-1.4h6.6V19.6z',
+    handleSize: '80%',
+    handleStyle: {
+      color: '#fff',
+      shadowBlur: 3,
+      shadowColor: 'rgba(0, 0, 0, 0.6)',
+      shadowOffsetX: 2,
+      shadowOffsetY: 2
+    }
   }],
   series: [{
-    name: "Direct",
-    type: "bar",
-    emphasis: {
-      focus: "series"
+    name: '\u6A21\u62DF\u6570\u636E',
+    type: 'line',
+    smooth: true,
+    symbol: 'none',
+    sampling: 'average',
+    itemStyle: {
+      color: 'rgb(255, 70, 131)'
     },
-    data: [320, 332, 301, 334, 390, 330, 320]
-  }, {
-    name: "Email",
-    type: "bar",
-    stack: "Ad",
-    emphasis: {
-      focus: "series"
-    },
-    data: [120, 132, 101, 134, 90, 230, 210]
-  }, {
-    name: "Union Ads",
-    type: "bar",
-    stack: "Ad",
-    emphasis: {
-      focus: "series"
-    },
-    data: [220, 182, 191, 234, 290, 330, 310]
-  }, {
-    name: "Video Ads",
-    type: "bar",
-    stack: "Ad",
-    emphasis: {
-      focus: "series"
-    },
-    data: [150, 232, 201, 154, 190, 330, 410]
-  }, {
-    name: "Search Engine",
-    type: "bar",
-    data: [862, 1018, 964, 1026, 1679, 1600, 1570],
-    emphasis: {
-      focus: "series"
-    },
-    markLine: {
-      lineStyle: {
-        type: "dashed"
-      },
-      data: [[{
-        type: "min"
+    areaStyle: {
+      color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+        offset: 0,
+        color: 'rgb(255, 158, 68)'
       }, {
-        type: "max"
-      }]]
-    }
-  }, {
-    name: "Baidu",
-    type: "bar",
-    barWidth: 5,
-    stack: "Search Engine",
-    emphasis: {
-      focus: "series"
+        offset: 1,
+        color: 'rgb(255, 70, 131)'
+      }])
     },
-    data: [620, 732, 701, 734, 1090, 1130, 1120]
-  }, {
-    name: "Google",
-    type: "bar",
-    stack: "Search Engine",
-    emphasis: {
-      focus: "series"
-    },
-    data: [120, 132, 101, 134, 290, 230, 220]
-  }, {
-    name: "Bing",
-    type: "bar",
-    stack: "Search Engine",
-    emphasis: {
-      focus: "series"
-    },
-    data: [60, 72, 71, 74, 190, 130, 110]
-  }, {
-    name: "Others",
-    type: "bar",
-    stack: "Search Engine",
-    emphasis: {
-      focus: "series"
-    },
-    data: [62, 82, 91, 84, 109, 110, 120]
+    data: data
   }]
 };
+console.log(data);
+console.log(date);
 
 const EchartsReact = () => {
   const echartsRef = Object(external_window_React_["useRef"])(null);
@@ -669,7 +772,26 @@ const EchartsReact = () => {
     ref: echartsRef,
     option: EchartsReact_option,
     onEvents: onEvents
-  }));
+  }), /*#__PURE__*/external_window_React_default.a.createElement("div", {
+    style: {
+      display: 'inline-block',
+      fontSize: '24px'
+    },
+    onMouseOver: () => {
+      // \u663E\u793Atooltip
+      echartsRef && echartsRef.current.dispatchAction({
+        type: 'showTip',
+        x: date[0],
+        y: data[0]
+      });
+    },
+    onMouseLeave: () => {
+      // \u9690\u85CFtooltip
+      echartsRef && echartsRef.current.dispatchAction({
+        type: 'hideTip'
+      });
+    }
+  }, "1111"));
 };
 
 /* harmony default export */ var Npm_EchartsReact = __webpack_exports__["default"] = (EchartsReact);
