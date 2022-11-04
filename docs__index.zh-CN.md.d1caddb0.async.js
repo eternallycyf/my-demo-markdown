@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[154],{"F+kV":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[154],{"QrP+":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("LtsZ");
@@ -34,7 +34,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
       var _default = function _default() {
         return /*#__PURE__*/_react["default"].createElement(_Alert["default"], {
           type: "warning",
-          message: "Getting Started",
+          message: "\\u7ACB\\u5373\\u5F00\\u59CB",
           description: /*#__PURE__*/_react["default"].createElement(_reactFastMarquee["default"], (0, _defineProperty2["default"])({
             direction: "left",
             speed: 100,
@@ -43,7 +43,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
             className: "mymarquee",
             pauseOnHover: true,
             pauseOnClick: true
-          }, "direction", true), "All the gloom is left to the past, from the beginning of meeting you, the winter is gone, the Star River is bright!\\uD83C\\uDF89 \\uD83C\\uDF89 \\uD83C\\uDF89")
+          }, "direction", true), "\\u6240\\u6709\\u6666\\u6697\\u90FD\\u7559\\u7ED9\\u8FC7\\u5F80\\uFF0C\\u4ECE\\u9047\\u89C1\\u4F60\\u5F00\\u59CB\\uFF0C\\u51DB\\u51AC\\u6563\\u5C3D\\uFF0C\\u661F\\u6CB3\\u957F\\u660E\\uFF01\\uD83C\\uDF89 \\uD83C\\uDF89 \\uD83C\\uDF89")
         });
       };
 
@@ -70,4 +70,4 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   });
 });
 
-//# sourceURL=webpack:///./docs/index.md?`)}}]);
+//# sourceURL=webpack:///./docs/index.zh-CN.md?`)}}]);
