@@ -1,5 +1,4 @@
 import * as echarts from 'echarts';
-import EChartsReact from 'echarts-for-react';
 import { useEffect, useRef, useState } from 'react';
 
 const option = {
@@ -172,18 +171,15 @@ const Echarts = () => {
   });
 
   return (
-    <>
-      <EChartsReact option={option} />
-      <div
-        ref={chartDom}
-        style={{
-          width: 800,
-          height: 800,
-          display: 'inline-block',
-          verticalAlign: 'top',
-        }}
-      ></div>
-    </>
+    <div
+      ref={chartDom}
+      style={{
+        width: 800,
+        height: 800,
+        display: 'inline-block',
+        verticalAlign: 'top',
+      }}
+    />
   );
 };
 
