@@ -8,9 +8,36 @@ group:
 
 ## echarts-for-react
 
-<code src="./index.tsx" inline={true} transform={true} iframe={true}></code>
+```tsx | pure
+import { useRef, useImperativeHandle, forwardRef } from "react";
+import type { EChartsReactProps } from "echarts-for-react/lib/types";
+import ReactECharts from "echarts-for-react";
+
+interface IHandle {
+  ref: echarts.ECharts
+}
+
+const ReactEChart: React.ForwardRefRenderFunction<IHandle, EChartsReactProps> = (props, echartsRef: any) => {
+  const { option, ...restProps } = props;
+  const ref = useRef<any>(null!);
+  useImperativeHandle(echartsRef, () => ({
+    ref: ref.current.getEchartsInstance(),
+  }));
+  return (
+    <div ref={echartsRef}>
+      <ReactECharts ref={ref} option={option} {...restProps} />
+    </div>
+  );
+};
+
+export default forwardRef(ReactEChart);
+```
 
 <API src="./REcharts/index.tsx" hideTitle></API>
+
+## DoubleCharts 两个图表联动
+
+<code src="./DoubleCharts/index.tsx" inline={true} transform={true} iframe={true}></code>
 
 ## 手动触发 hover
 
