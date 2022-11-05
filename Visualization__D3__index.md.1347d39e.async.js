@@ -9,7 +9,7 @@
 //# sourceURL=webpack:///./src/.umi-production/core/umiExports.ts?`)},vpRI:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("LtsZ");
+/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("rlch");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("dEAq");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var dumi_theme_default_es_builtins_Previewer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("Zxc8");
@@ -72,7 +72,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
   })), "2.1.\\u7EBF\\u6027\\u6BD4\\u4F8B\\u5C3A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__["dynamic"])({
+    children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
       loader: async () => __webpack_require__.e(/* import() | embedded_md */ 159).then(__webpack_require__.bind(null, "bI1T")),
       loading: () => null
     }))
@@ -87,7 +87,7 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
   })), "2.2 \\u79BB\\u6563\\u6BD4\\u4F8B\\u5C3A")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, {
-    children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__["dynamic"])({
+    children: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
       loader: async () => __webpack_require__.e(/* import() | embedded_md */ 159).then(__webpack_require__.bind(null, "fPM3")),
       loading: () => null
     }))

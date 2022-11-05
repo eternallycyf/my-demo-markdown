@@ -11031,14 +11031,17 @@ RefForm.useWatch = es_useWatch;
 
 function useNotification(notificationInstance) {
   var createdRef = react__WEBPACK_IMPORTED_MODULE_3__["useRef"]({});
+
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_3__["useState"]([]),
-    _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_React$useState, 2),
-    elements = _React$useState2[0],
-    setElements = _React$useState2[1];
+      _React$useState2 = Object(_babel_runtime_helpers_esm_slicedToArray__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(_React$useState, 2),
+      elements = _React$useState2[0],
+      setElements = _React$useState2[1];
+
   function notify(noticeProps) {
     var firstMount = true;
     notificationInstance.add(noticeProps, function (div, props) {
       var key = props.key;
+
       if (div && (!createdRef.current[key] || firstMount)) {
         var noticeEle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](_Notice__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"])({}, props, {
           holder: div
@@ -11048,17 +11051,22 @@ function useNotification(notificationInstance) {
           var index = originElements.findIndex(function (ele) {
             return ele.key === props.key;
           });
+
           if (index === -1) {
             return [].concat(Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(originElements), [noticeEle]);
           }
+
           var cloneList = Object(_babel_runtime_helpers_esm_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(originElements);
+
           cloneList[index] = noticeEle;
           return cloneList;
         });
       }
+
       firstMount = false;
     });
   }
+
   return [notify, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["createElement"](react__WEBPACK_IMPORTED_MODULE_3__["Fragment"], null, elements)];
 }
 
@@ -12121,38 +12129,49 @@ var _excluded = ["getContainer"];
 
 var seed = 0;
 var now = Date.now();
+
 function getUuid() {
   var id = seed;
   seed += 1;
   return "rcNotification_".concat(now, "_").concat(id);
 }
+
 var Notification_Notification = /*#__PURE__*/function (_Component) {
   Object(inherits["a" /* default */])(Notification, _Component);
+
   var _super = Object(createSuper["a" /* default */])(Notification);
+
   function Notification() {
     var _this;
+
     Object(classCallCheck["a" /* default */])(this, Notification);
+
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
+
     _this = _super.call.apply(_super, [this].concat(args));
     _this.state = {
       notices: []
     };
     _this.hookRefs = new Map();
+
     _this.add = function (originNotice, holderCallback) {
-      var _originNotice$key;
-      var key = (_originNotice$key = originNotice.key) !== null && _originNotice$key !== void 0 ? _originNotice$key : getUuid();
+      var key = originNotice.key || getUuid();
+
       var notice = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, originNotice), {}, {
         key: key
       });
+
       var maxCount = _this.props.maxCount;
+
       _this.setState(function (previousState) {
         var notices = previousState.notices;
         var noticeIndex = notices.map(function (v) {
           return v.notice.key;
         }).indexOf(key);
         var updatedNotices = notices.concat();
+
         if (noticeIndex !== -1) {
           updatedNotices.splice(noticeIndex, 1, {
             notice: notice,
@@ -12168,69 +12187,78 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
             // Change to \`updateMark\` for compare instead.
             // https://github.com/react-component/notification/commit/32299e6be396f94040bfa82517eea940db947ece
             notice.key = updatedNotices[0].notice.key;
-            notice.updateMark = getUuid();
-            // zombieJ: That's why. User may close by key directly.
+            notice.updateMark = getUuid(); // zombieJ: That's why. User may close by key directly.
             // We need record this but not re-render to avoid upper issue
             // https://github.com/react-component/notification/issues/129
+
             notice.userPassKey = key;
             updatedNotices.shift();
           }
+
           updatedNotices.push({
             notice: notice,
             holderCallback: holderCallback
           });
         }
+
         return {
           notices: updatedNotices
         };
       });
     };
+
     _this.remove = function (removeKey) {
       _this.setState(function (_ref) {
         var notices = _ref.notices;
         return {
           notices: notices.filter(function (_ref2) {
             var _ref2$notice = _ref2.notice,
-              key = _ref2$notice.key,
-              userPassKey = _ref2$notice.userPassKey;
-            var mergedKey = userPassKey !== null && userPassKey !== void 0 ? userPassKey : key;
+                key = _ref2$notice.key,
+                userPassKey = _ref2$notice.userPassKey;
+            var mergedKey = userPassKey || key;
             return mergedKey !== removeKey;
           })
         };
       });
     };
+
     _this.noticePropsMap = {};
     return _this;
   }
+
   Object(createClass["a" /* default */])(Notification, [{
     key: "getTransitionName",
     value: function getTransitionName() {
       var _this$props = this.props,
-        prefixCls = _this$props.prefixCls,
-        animation = _this$props.animation;
+          prefixCls = _this$props.prefixCls,
+          animation = _this$props.animation;
       var transitionName = this.props.transitionName;
+
       if (!transitionName && animation) {
         transitionName = "".concat(prefixCls, "-").concat(animation);
       }
+
       return transitionName;
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
+
       var notices = this.state.notices;
       var _this$props2 = this.props,
-        prefixCls = _this$props2.prefixCls,
-        className = _this$props2.className,
-        closeIcon = _this$props2.closeIcon,
-        style = _this$props2.style;
+          prefixCls = _this$props2.prefixCls,
+          className = _this$props2.className,
+          closeIcon = _this$props2.closeIcon,
+          style = _this$props2.style;
       var noticeKeys = [];
       notices.forEach(function (_ref3, index) {
         var notice = _ref3.notice,
-          holderCallback = _ref3.holderCallback;
+            holderCallback = _ref3.holderCallback;
         var updateMark = index === notices.length - 1 ? notice.updateMark : undefined;
         var key = notice.key,
-          userPassKey = notice.userPassKey;
+            userPassKey = notice.userPassKey;
+
         var noticeProps = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({
           prefixCls: prefixCls,
           closeIcon: closeIcon
@@ -12240,13 +12268,16 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
           updateMark: updateMark,
           onClose: function onClose(noticeKey) {
             var _notice$onClose;
+
             _this2.remove(noticeKey);
+
             (_notice$onClose = notice.onClose) === null || _notice$onClose === void 0 ? void 0 : _notice$onClose.call(notice);
           },
           onClick: notice.onClick,
           children: notice.content
-        });
-        // Give to motion
+        }); // Give to motion
+
+
         noticeKeys.push(key);
         _this2.noticePropsMap[key] = {
           props: noticeProps,
@@ -12261,18 +12292,20 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
         motionName: this.getTransitionName(),
         onVisibleChanged: function onVisibleChanged(changedVisible, _ref4) {
           var key = _ref4.key;
+
           if (!changedVisible) {
             delete _this2.noticePropsMap[key];
           }
         }
       }, function (_ref5) {
         var key = _ref5.key,
-          motionClassName = _ref5.className,
-          motionStyle = _ref5.style,
-          visible = _ref5.visible;
+            motionClassName = _ref5.className,
+            motionStyle = _ref5.style,
+            visible = _ref5.visible;
         var _this2$noticePropsMap = _this2.noticePropsMap[key],
-          noticeProps = _this2$noticePropsMap.props,
-          holderCallback = _this2$noticePropsMap.holderCallback;
+            noticeProps = _this2$noticePropsMap.props,
+            holderCallback = _this2$noticePropsMap.holderCallback;
+
         if (holderCallback) {
           return /*#__PURE__*/external_window_React_["createElement"]("div", {
             key: key,
@@ -12282,8 +12315,10 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
               if (typeof key === 'undefined') {
                 return;
               }
+
               if (div) {
                 _this2.hookRefs.set(key, div);
+
                 holderCallback(div, noticeProps);
               } else {
                 _this2.hookRefs.delete(key);
@@ -12291,6 +12326,7 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
             }
           });
         }
+
         return /*#__PURE__*/external_window_React_["createElement"](Notice["a" /* default */], Object(esm_extends["a" /* default */])({}, noticeProps, {
           className: classnames_default()(motionClassName, noticeProps === null || noticeProps === void 0 ? void 0 : noticeProps.className),
           style: Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, motionStyle), noticeProps === null || noticeProps === void 0 ? void 0 : noticeProps.style),
@@ -12299,8 +12335,10 @@ var Notification_Notification = /*#__PURE__*/function (_Component) {
       }));
     }
   }]);
+
   return Notification;
 }(external_window_React_["Component"]);
+
 Notification_Notification.newInstance = void 0;
 Notification_Notification.defaultProps = {
   prefixCls: 'rc-notification',
@@ -12310,22 +12348,28 @@ Notification_Notification.defaultProps = {
     left: '50%'
   }
 };
+
 Notification_Notification.newInstance = function newNotificationInstance(properties, callback) {
   var _ref6 = properties || {},
-    getContainer = _ref6.getContainer,
-    props = Object(objectWithoutProperties["a" /* default */])(_ref6, _excluded);
+      getContainer = _ref6.getContainer,
+      props = Object(objectWithoutProperties["a" /* default */])(_ref6, _excluded);
+
   var div = document.createElement('div');
+
   if (getContainer) {
     var root = getContainer();
     root.appendChild(div);
   } else {
     document.body.appendChild(div);
   }
+
   var called = false;
+
   function ref(notification) {
     if (called) {
       return;
     }
+
     called = true;
     callback({
       notice: function notice(noticeProps) {
@@ -12337,6 +12381,7 @@ Notification_Notification.newInstance = function newNotificationInstance(propert
       component: notification,
       destroy: function destroy() {
         Object(React_render["b" /* unmount */])(div);
+
         if (div.parentNode) {
           div.parentNode.removeChild(div);
         }
@@ -12346,13 +12391,16 @@ Notification_Notification.newInstance = function newNotificationInstance(propert
         return Object(es_useNotification["a" /* default */])(notification);
       }
     });
-  }
-  // Only used for test case usage
+  } // Only used for test case usage
+
+
   if (false) {}
+
   Object(React_render["a" /* render */])( /*#__PURE__*/external_window_React_["createElement"](Notification_Notification, Object(esm_extends["a" /* default */])({}, props, {
     ref: ref
   })), div);
 };
+
 /* harmony default export */ var es_Notification = (Notification_Notification);
 // CONCATENATED MODULE: ./node_modules/rc-notification/es/index.js
 
@@ -14690,29 +14738,40 @@ es_empty_Empty.PRESENTED_IMAGE_SIMPLE = simpleEmptyImg;
 
 
 
+
 var Notice = /*#__PURE__*/function (_Component) {
   Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"])(Notice, _Component);
+
   var _super = Object(_babel_runtime_helpers_esm_createSuper__WEBPACK_IMPORTED_MODULE_5__[/* default */ "a"])(Notice);
+
   function Notice() {
     var _this;
+
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_2__[/* default */ "a"])(this, Notice);
+
     for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
+
     _this = _super.call.apply(_super, [this].concat(args));
     _this.closeTimer = null;
+
     _this.close = function (e) {
       if (e) {
         e.stopPropagation();
       }
+
       _this.clearCloseTimer();
+
       var _this$props = _this.props,
-        onClose = _this$props.onClose,
-        noticeKey = _this$props.noticeKey;
+          onClose = _this$props.onClose,
+          noticeKey = _this$props.noticeKey;
+
       if (onClose) {
         onClose(noticeKey);
       }
     };
+
     _this.startCloseTimer = function () {
       if (_this.props.duration) {
         _this.closeTimer = window.setTimeout(function () {
@@ -14720,14 +14779,17 @@ var Notice = /*#__PURE__*/function (_Component) {
         }, _this.props.duration * 1000);
       }
     };
+
     _this.clearCloseTimer = function () {
       if (_this.closeTimer) {
         clearTimeout(_this.closeTimer);
         _this.closeTimer = null;
       }
     };
+
     return _this;
   }
+
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"])(Notice, [{
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -14736,8 +14798,7 @@ var Notice = /*#__PURE__*/function (_Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      if (this.props.duration !== prevProps.duration || this.props.updateMark !== prevProps.updateMark ||
-      // Visible again need reset timer
+      if (this.props.duration !== prevProps.duration || this.props.updateMark !== prevProps.updateMark || // Visible again need reset timer
       this.props.visible !== prevProps.visible && this.props.visible) {
         this.restartCloseTimer();
       }
@@ -14757,20 +14818,22 @@ var Notice = /*#__PURE__*/function (_Component) {
     key: "render",
     value: function render() {
       var _this2 = this;
+
       var _this$props2 = this.props,
-        prefixCls = _this$props2.prefixCls,
-        className = _this$props2.className,
-        closable = _this$props2.closable,
-        closeIcon = _this$props2.closeIcon,
-        style = _this$props2.style,
-        onClick = _this$props2.onClick,
-        children = _this$props2.children,
-        holder = _this$props2.holder;
+          prefixCls = _this$props2.prefixCls,
+          className = _this$props2.className,
+          closable = _this$props2.closable,
+          closeIcon = _this$props2.closeIcon,
+          style = _this$props2.style,
+          onClick = _this$props2.onClick,
+          children = _this$props2.children,
+          holder = _this$props2.holder;
       var componentClass = "".concat(prefixCls, "-notice");
       var dataOrAriaAttributeProps = Object.keys(this.props).reduce(function (acc, key) {
         if (key.substr(0, 5) === 'data-' || key.substr(0, 5) === 'aria-' || key === 'role') {
           acc[key] = _this2.props[key];
         }
+
         return acc;
       }, {});
       var node = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({
@@ -14788,14 +14851,18 @@ var Notice = /*#__PURE__*/function (_Component) {
       }, closeIcon || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6__["createElement"]("span", {
         className: "".concat(componentClass, "-close-x")
       })) : null);
+
       if (holder) {
         return /*#__PURE__*/react_dom__WEBPACK_IMPORTED_MODULE_7___default.a.createPortal(node, holder);
       }
+
       return node;
     }
   }]);
+
   return Notice;
 }(react__WEBPACK_IMPORTED_MODULE_6__["Component"]);
+
 Notice.defaultProps = {
   onClose: function onClose() {},
   duration: 1.5
@@ -20567,7 +20634,7 @@ function _wrapNativeSuper(Class) {
 var formatRegExp = /%[sdj%]/g;
 var warning = function warning() {}; // don't print warning message when in production env or node runtime
 
-if (typeof process !== 'undefined' && {"npm_config_save_dev":"","npm_config_legacy_bundling":"","npm_config_dry_run":"","npm_config_leveldown_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown/v{version}","npm_package_devDependencies_lint_staged":"^10.0.7","NVM_INC":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/include/node","npm_config_viewer":"man","npm_config_only":"","npm_config_commit_hooks":"true","npm_config_browser":"","npm_config_couchbase_binary_host_mirror":"https://npm.taobao.org/mirrors/couchbase/v{version}","npm_package_gitHead":"7e9d0aa74c806d1f22a21ded948e65376849e9ed","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_echarts_for_react":"^3.0.2","npm_package_dependencies_braft_extensions":"^0.1.1","NVMW_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","WEBIDE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webide.vmoptions","PYCHARM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/pycharm.vmoptions","npm_config_also":"","npm_config_sign_git_commit":"","npm_config_rollback":"true","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","TERM_PROGRAM":"Apple_Terminal","npm_config_usage":"","npm_config_audit":"true","NODE":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_version_git_tag":"true","npm_package_homepage":"https://github.com/eternallycyf/my-demo-markdown#readme","npm_package_dependencies_moment":"^2.29.4","ANDROID_HOME":"/Users/eternallycyf/Library/Android/sdk","NVM_CD_FLAGS":"-q","INIT_CWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_globalignorefile":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmignore","npm_config_zmq_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/zmq-prebuilt/v{version}","npm_config_flow_bin_binary_host_mirror":"https://npm.taobao.org/mirrors/flow/v","TERM":"xterm-256color","JETBRAINSCLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrainsclient.vmoptions","SHELL":"/bin/zsh","npm_config_shell":"/bin/zsh","npm_config_maxsockets":"50","npm_config_init_author_url":"","npm_config_gl_binary_host_mirror":"https://npm.taobao.org/mirrors/gl/v{version}","npm_package_dependencies_vditor":"^3.8.17","npm_config_shrinkwrap":"true","npm_config_parseable":"","npm_config_metrics_registry":"https://registry.npm.taobao.org/","TMPDIR":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/","npm_config_timing":"","npm_config_init_license":"MIT","npm_package_scripts_release":"npm run build && npm publish","GRADLE_HOME":"/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4","npm_config_if_present":"","npm_config_chromedriver_cdnurl":"https://npm.taobao.org/mirrors/chromedriver","TERM_PROGRAM_VERSION":"447","npm_config_grpc_node_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_config_sign_git_tag":"","npm_config_init_author_email":"","npm_config_cache_max":"Infinity","npm_package_dependencies_remark_gfm":"^3.0.1","npm_config_preid":"","npm_config_long":"","npm_config_local_address":"","npm_config_git_tag_version":"true","npm_config_cert":"","npm_config_sodium_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/sodium-prebuilt/v{version}","NODIST_IOJS_MIRROR":"https://npm.taobao.org/mirrors/iojs","TERM_SESSION_ID":"6992B8DC-4515-43B1-A111-7EC4AB884944","npm_config_noproxy":"","npm_config_fetch_retries":"2","npm_config_home":"https://npm.taobao.org","npm_config_registry":"https://registry.npm.taobao.org/","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_private":"true","npm_config_no_proxy":"registry.taobao.org","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_dependencies_react_dom":"^18.2.0","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies__ant_design_icons":"^4.7.0","npm_package_repository_url":"git+https://github.com/eternallycyf/my-demo-markdown.git","PNPM_HOME":"/Users/eternallycyf/Library/pnpm","ZSH":"/Users/eternallycyf/.oh-my-zsh","npm_config_versions":"","npm_config_message":"%s","npm_config_key":"","npm_package_readmeFilename":"README.md","NVMW_NPM_MIRROR":"https://npm.taobao.org/mirrors/npm","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","NVM_DIR":"/Users/eternallycyf/.nvm","USER":"eternallycyf","npm_config_phantomjs_cdnurl":"https://npm.taobao.org/mirrors/phantomjs","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react":"^18.0.17","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","npm_config_globalconfig":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmrc","IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_prefer_online":"","npm_config_logs_max":"10","npm_config_always_auth":"","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.5vWWpevyPD/Listeners","PHPSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/phpstorm.vmoptions","npm_config_utp_native_binary_host_mirror":"https://npm.taobao.org/mirrors/utp-native/v{version}","npm_config_node_tk5_binary_host_mirror":"https://npm.taobao.org/mirrors/node-tk5/v{version}","__CF_USER_TEXT_ENCODING":"0x1F5:0x19:0x34","npm_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/npm-cli.js","npm_config_global_style":"","npm_config_cache_lock_retries":"10","GOLAND_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/goland.vmoptions","npm_config_update_notifier":"true","npm_config_cafile":"","npm_config_hackrf_binary_host_mirror":"https://npm.taobao.org/mirrors/hackrf/v{version}","npm_package_module":"dist/index.esm.js","PAGER":"less","APPCODE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/appcode.vmoptions","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_config_heading":"npm","npm_config_audit_level":"low","npm_package_devDependencies__types_react_dom":"^18.0.6","LSCOLORS":"Gxfxcxdxbxegedabagacad","npm_config_searchlimit":"20","npm_config_read_only":"","npm_config_offline":"","npm_config_fetch_retry_mintimeout":"10000","npm_config_json":"","npm_config_access":"","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"run\\",\\"docs:build\\"]}","npm_package_dependencies_docxtemplater":"3.5","PATH":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/yarn--1667619546929-0.3430975608032618:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.config/yarn/link/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/Library/pnpm:/home/eternallycyf/jdk1.7.0_03/bin:/usr/local/opt/mysql@5.6/bin:/usr/local/opt/redis@4.0/bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/eternallycyf/Library/Android/sdk/emulator:/Users/eternallycyf/Library/Android/sdk/tools:/Users/eternallycyf/Library/Android/sdk/tools/bin:/Users/eternallycyf/Library/Android/sdk/platform-tools:/usr/local/Cellar/mysql/8.0.27/bin/:/usr/local/mongodb/bin/:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4/bin","npm_config_allow_same_version":"","GH_EMAIL_TOKEN":"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___MY_VMOPTIONS_SHELL_FILE=/Users/eternallycyf/.jetbrains.vmoptions.sh","npm_config_engine_strict":"","npm_config_description":"true","npm_config_https_proxy":"","npm_config_mknod_binary_host_mirror":"https://npm.taobao.org/mirrors/mknod/v{version}","_":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin/dumi","LaunchInstanceID":"685F2635-AF2E-429C-B9BD-AE2FC9F0F9C1","npm_config_userconfig":"/Users/eternallycyf/.npmrc","npm_config_init_module":"/Users/eternallycyf/.npm-init.js","npm_config_sqlite3_binary_site":"https://npm.taobao.org/mirrors/sqlite3","npm_package_devDependencies_ejs":"^3.1.6","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","NVM_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","__CFBundleIdentifier":"com.apple.Terminal","npm_config_cidr":"","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","PWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_user":"501","npm_config_node_version":"14.17.0","npm_config_node_sqlite3_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_package_bugs_url":"https://github.com/eternallycyf/my-demo-markdown/issues","NODIST_NODE_MIRROR":"https://npm.taobao.org/mirrors/node","JAVA_HOME":"/home/eternallycyf/jdk1.7.0_03","npm_lifecycle_event":"docs:build","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","npm_config_save":"true","npm_config_ignore_prepublish":"","npm_config_editor":"vi","npm_config_auth_type":"legacy","npm_package_repository_branch":"main","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","LANG":"zh_CN.UTF-8","CLION_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/clion.vmoptions","IDEA_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/idea.vmoptions","npm_config_tag":"latest","npm_config_script_shell":"","npm_package_dependencies_file_saver":"^2.0.5","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_config_progress":"true","npm_config_global":"","npm_config_before":"","npm_config_nodegit_binary_host_mirror":"https://npm.taobao.org/mirrors/nodegit/v{version}/","npm_config_version_commit_hooks":"true","npm_package_scripts_build":"father-build","npm_package_scripts_start":"dumi dev","npm_config_searchstaleness":"900","npm_config_optional":"true","npm_config_ham_it_up":"","npm_package_devDependencies_dumi":"^1.1.0","XPC_FLAGS":"0x0","npm_config_save_prod":"","npm_config_force":"","npm_config_rabin_binary_host_mirror":"https://npm.taobao.org/mirrors/rabin/v{version}","npm_config_bin_links":"true","npm_package_devDependencies__types_antd":"^1.0.0","WEBSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webstorm.vmoptions","npm_config_searchopts":"","npm_config_electron_mirror":"https://npm.taobao.org/mirrors/electron/","npm_config_debug_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector","npm_package_dependencies_jszip":"^3.10.1","npm_package_dependencies_classnames":"^2.3.1","DATASPELL_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/dataspell.vmoptions","npm_config_node_gyp":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_config_depth":"Infinity","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_main":"dist/index.js","npm_config_sso_poll_frequency":"500","npm_config_rebuild_bundle":"true","npm_config_sass_binary_site":"https://npm.taobao.org/mirrors/node-sass/","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","npm_config_unicode":"true","NVMW_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","HOME":"/Users/eternallycyf","SHLVL":"3","npm_config_fetch_retry_maxtimeout":"60000","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_scripts_test":"umi-test","npm_config_tag_version_prefix":"v","npm_config_sso_type":"oauth","npm_config_loglevel":"notice","npm_config_ca":"","npm_config_NO_PROXY":"registry.taobao.org","npm_config_scripts_prepend_node_path":"true","npm_config_strict_ssl":"true","npm_config_save_prefix":"^","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_config_save_exact":"","npm_config_group":"20","npm_config_fetch_retry_factor":"10","npm_config_dev":"","npm_config_version_git_message":"v%s","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_dependencies_braft_editor":"^2.3.9","npm_config_version":"","npm_config_prefer_offline":"","npm_config_cache_lock_stale":"60000","npm_config_leveldown_hyper_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown-hyper/v{version}","npm_package_dependencies_echarts":"^5.3.3","npm_config_otp":"","npm_config_cache_min":"10","npm_config_disturl":"https://npm.taobao.org/dist","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","npm_package_scripts_docs_build":"dumi build","npm_config_searchexclude":"","npm_config_cache":"/Users/eternallycyf/.npm","npm_package_devDependencies__types_three":"0.143.0","npm_package_dependencies_pizzip":"^3.1.1","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_dependencies_exceljs":"^4.3.0","npm_package_typings":"dist/index.d.ts","npm_package_scripts_test_coverage":"umi-test --coverage","YARN_WRAP_OUTPUT":"false","LESS":"-R","LOGNAME":"eternallycyf","npm_lifecycle_script":"dumi build","npm_config_color":"true","npm_package_devDependencies_gh_pages":"^4.0.0","NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","npm_config_proxy":"","npm_config_package_lock":"true","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","CLASSPATH":".:/home/eternallycyf/jdk1.7.0_03/lib/dt.jar:/home/eternallycyf/jdk1.7.0_03/lib/tools.jar","GATEWAY_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/gateway.vmoptions","npm_config_package_lock_only":"","npm_config_fund":"true","npm_package_dependencies_react":"^18.2.0","npm_config_save_optional":"","NVM_BIN":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin","DATAGRIP_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/datagrip.vmoptions","npm_config_ignore_scripts":"","npm_config_user_agent":"yarn/1.22.15 npm/? node/v14.17.0 darwin x64","npm_package_dependencies_react_excel_renderer":"^1.1.0","NVM_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_cache_lock_wait":"10000","npm_package_gitHooks_pre_commit":"lint-staged","npm_config_production":"","npm_config_send_metrics":"","npm_config_save_bundle":"","npm_config_git4win_mirror":"https://npm.taobao.org/mirrors/git-for-windows","RIDER_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rider.vmoptions","JETBRAINS_CLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrains_client.vmoptions","npm_config_umask":"0022","npm_config_node_options":"","npm_config_fse_binary_host_mirror":"https://npm.taobao.org/mirrors/fsevents","npm_config_init_version":"1.0.0","npm_package_dependencies_antd":"^4.22.7","RUBYMINE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rubymine.vmoptions","npm_config_init_author_name":"","npm_config_git":"git","npm_config_utf_8_validate_binary_host_mirror":"https://npm.taobao.org/mirrors/utf-8-validate/v{version}","npm_config_python_mirror":"https://npm.taobao.org/mirrors/python","npm_config_profiler_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector/","npm_config_operadriver_cdnurl":"https://npm.taobao.org/mirrors/operadriver","npm_config_scope":"","npm_package_dependencies_prismjs":"^1.29.0","SECURITYSESSIONID":"186a6","npm_config_unsafe_perm":"true","npm_config_tmp":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T","npm_config_onload_script":"","npm_config_fuse_bindings_binary_host_mirror":"https://npm.taobao.org/mirrors/fuse-bindings/v{version}","npm_node_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_prefix":"/Users/eternallycyf/.nvm/versions/node/v14.17.0","npm_config_link":"","npm_config_format_package_lock":"true","npm_config_puppeteer_download_host":"https://npm.taobao.org/mirrors","npm_config_version_tag_prefix":"v","npm_package_devDependencies_father_build":"^1.19.1","UMI_PRESETS":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/umi"} && "production" !== 'production' && typeof window !== 'undefined' && typeof document !== 'undefined') {
+if (typeof process !== 'undefined' && {"npm_config_save_dev":"","npm_config_legacy_bundling":"","npm_config_dry_run":"","npm_config_leveldown_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown/v{version}","npm_package_devDependencies_lint_staged":"^10.0.7","NVM_INC":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/include/node","npm_config_viewer":"man","npm_config_only":"","npm_config_commit_hooks":"true","npm_config_browser":"","npm_config_couchbase_binary_host_mirror":"https://npm.taobao.org/mirrors/couchbase/v{version}","npm_package_gitHead":"3e1bf43266be462a718d83554b1864ef0b77f5d1","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_echarts_for_react":"^3.0.2","npm_package_dependencies_braft_extensions":"^0.1.1","NVMW_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","WEBIDE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webide.vmoptions","PYCHARM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/pycharm.vmoptions","npm_config_also":"","npm_config_sign_git_commit":"","npm_config_rollback":"true","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","TERM_PROGRAM":"Apple_Terminal","npm_config_usage":"","npm_config_audit":"true","NODE":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_version_git_tag":"true","npm_package_homepage":"https://github.com/eternallycyf/my-demo-markdown#readme","npm_package_dependencies_moment":"^2.29.4","ANDROID_HOME":"/Users/eternallycyf/Library/Android/sdk","NVM_CD_FLAGS":"-q","INIT_CWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_globalignorefile":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmignore","npm_config_zmq_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/zmq-prebuilt/v{version}","npm_config_flow_bin_binary_host_mirror":"https://npm.taobao.org/mirrors/flow/v","JETBRAINSCLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrainsclient.vmoptions","TERM":"xterm-256color","SHELL":"/bin/zsh","npm_config_shell":"/bin/zsh","npm_config_maxsockets":"50","npm_config_init_author_url":"","npm_config_gl_binary_host_mirror":"https://npm.taobao.org/mirrors/gl/v{version}","npm_package_dependencies_vditor":"^3.8.17","npm_config_shrinkwrap":"true","npm_config_parseable":"","npm_config_metrics_registry":"https://registry.npm.taobao.org/","TMPDIR":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/","npm_config_timing":"","npm_config_init_license":"MIT","npm_package_scripts_release":"npm run build && npm publish","GRADLE_HOME":"/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4","npm_config_if_present":"","npm_config_chromedriver_cdnurl":"https://npm.taobao.org/mirrors/chromedriver","TERM_PROGRAM_VERSION":"447","npm_config_grpc_node_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_config_sign_git_tag":"","npm_config_init_author_email":"","npm_config_cache_max":"Infinity","npm_package_dependencies_remark_gfm":"^3.0.1","npm_config_preid":"","npm_config_long":"","npm_config_local_address":"","npm_config_git_tag_version":"true","npm_config_cert":"","npm_config_sodium_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/sodium-prebuilt/v{version}","NODIST_IOJS_MIRROR":"https://npm.taobao.org/mirrors/iojs","TERM_SESSION_ID":"7FB8FC5E-983C-4CB2-93CF-DB223E63EEE1","npm_config_noproxy":"","npm_config_fetch_retries":"2","npm_config_home":"https://npm.taobao.org","npm_config_registry":"https://registry.npm.taobao.org/","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_private":"true","npm_config_no_proxy":"registry.taobao.org","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_dependencies_react_dom":"^18.2.0","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies__ant_design_icons":"^4.7.0","npm_package_repository_url":"git+https://github.com/eternallycyf/my-demo-markdown.git","PNPM_HOME":"/Users/eternallycyf/Library/pnpm","ZSH":"/Users/eternallycyf/.oh-my-zsh","npm_config_versions":"","npm_config_message":"%s","npm_config_key":"","npm_package_readmeFilename":"README.md","NVMW_NPM_MIRROR":"https://npm.taobao.org/mirrors/npm","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","NVM_DIR":"/Users/eternallycyf/.nvm","USER":"eternallycyf","npm_config_phantomjs_cdnurl":"https://npm.taobao.org/mirrors/phantomjs","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react":"^18.0.17","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","npm_config_globalconfig":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmrc","IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_prefer_online":"","npm_config_logs_max":"10","npm_config_always_auth":"","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.5vWWpevyPD/Listeners","PHPSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/phpstorm.vmoptions","npm_config_utp_native_binary_host_mirror":"https://npm.taobao.org/mirrors/utp-native/v{version}","npm_config_node_tk5_binary_host_mirror":"https://npm.taobao.org/mirrors/node-tk5/v{version}","__CF_USER_TEXT_ENCODING":"0x1F5:0x19:0x34","npm_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/npm-cli.js","npm_config_global_style":"","npm_config_cache_lock_retries":"10","GOLAND_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/goland.vmoptions","npm_config_update_notifier":"true","npm_config_cafile":"","npm_config_hackrf_binary_host_mirror":"https://npm.taobao.org/mirrors/hackrf/v{version}","npm_package_module":"dist/index.esm.js","PAGER":"less","APPCODE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/appcode.vmoptions","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_config_heading":"npm","npm_config_audit_level":"low","npm_package_devDependencies__types_react_dom":"^18.0.6","LSCOLORS":"Gxfxcxdxbxegedabagacad","npm_config_searchlimit":"20","npm_config_read_only":"","npm_config_offline":"","npm_config_fetch_retry_mintimeout":"10000","npm_config_json":"","npm_config_access":"","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"run\\",\\"docs:build\\"]}","npm_package_dependencies_docxtemplater":"3.5","PATH":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/yarn--1667674137478-0.805672329239369:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.config/yarn/link/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/Library/pnpm:/home/eternallycyf/jdk1.7.0_03/bin:/usr/local/opt/mysql@5.6/bin:/usr/local/opt/redis@4.0/bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/eternallycyf/Library/Android/sdk/emulator:/Users/eternallycyf/Library/Android/sdk/tools:/Users/eternallycyf/Library/Android/sdk/tools/bin:/Users/eternallycyf/Library/Android/sdk/platform-tools:/usr/local/Cellar/mysql/8.0.27/bin/:/usr/local/mongodb/bin/:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4/bin","npm_config_allow_same_version":"","GH_EMAIL_TOKEN":"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___MY_VMOPTIONS_SHELL_FILE=/Users/eternallycyf/.jetbrains.vmoptions.sh","npm_config_engine_strict":"","npm_config_description":"true","npm_config_https_proxy":"","npm_config_mknod_binary_host_mirror":"https://npm.taobao.org/mirrors/mknod/v{version}","_":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin/dumi","npm_config_userconfig":"/Users/eternallycyf/.npmrc","npm_config_init_module":"/Users/eternallycyf/.npm-init.js","npm_config_sqlite3_binary_site":"https://npm.taobao.org/mirrors/sqlite3","npm_package_devDependencies_ejs":"^3.1.6","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","NVM_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","__CFBundleIdentifier":"com.apple.Terminal","npm_config_cidr":"","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","PWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_user":"501","npm_config_node_version":"14.17.0","npm_config_node_sqlite3_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_package_bugs_url":"https://github.com/eternallycyf/my-demo-markdown/issues","NODIST_NODE_MIRROR":"https://npm.taobao.org/mirrors/node","JAVA_HOME":"/home/eternallycyf/jdk1.7.0_03","npm_lifecycle_event":"docs:build","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","npm_config_save":"true","npm_config_ignore_prepublish":"","npm_config_editor":"vi","npm_config_auth_type":"legacy","npm_package_repository_branch":"main","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","LANG":"zh_CN.UTF-8","CLION_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/clion.vmoptions","IDEA_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/idea.vmoptions","npm_config_tag":"latest","npm_config_script_shell":"","npm_package_dependencies_file_saver":"^2.0.5","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_config_progress":"true","npm_config_global":"","npm_config_before":"","npm_config_nodegit_binary_host_mirror":"https://npm.taobao.org/mirrors/nodegit/v{version}/","npm_config_version_commit_hooks":"true","npm_package_scripts_build":"father-build","npm_package_scripts_start":"dumi dev","npm_config_searchstaleness":"900","npm_config_optional":"true","npm_config_ham_it_up":"","npm_package_devDependencies_dumi":"^1.1.0","XPC_FLAGS":"0x0","npm_config_save_prod":"","npm_config_force":"","npm_config_rabin_binary_host_mirror":"https://npm.taobao.org/mirrors/rabin/v{version}","npm_config_bin_links":"true","npm_package_devDependencies__types_antd":"^1.0.0","WEBSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webstorm.vmoptions","npm_config_searchopts":"","npm_config_electron_mirror":"https://npm.taobao.org/mirrors/electron/","npm_config_debug_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector","npm_package_dependencies_jszip":"^3.10.1","npm_package_dependencies_classnames":"^2.3.1","DATASPELL_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/dataspell.vmoptions","npm_config_node_gyp":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_config_depth":"Infinity","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_main":"dist/index.js","npm_config_sso_poll_frequency":"500","npm_config_rebuild_bundle":"true","npm_config_sass_binary_site":"https://npm.taobao.org/mirrors/node-sass/","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","npm_config_unicode":"true","NVMW_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","HOME":"/Users/eternallycyf","SHLVL":"3","npm_config_fetch_retry_maxtimeout":"60000","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_scripts_test":"umi-test","npm_config_tag_version_prefix":"v","npm_config_sso_type":"oauth","npm_config_loglevel":"notice","npm_config_ca":"","npm_config_NO_PROXY":"registry.taobao.org","npm_config_scripts_prepend_node_path":"true","npm_config_strict_ssl":"true","npm_config_save_prefix":"^","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_config_save_exact":"","npm_config_group":"20","npm_config_fetch_retry_factor":"10","npm_config_dev":"","npm_config_version_git_message":"v%s","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_dependencies_braft_editor":"^2.3.9","npm_config_version":"","npm_config_prefer_offline":"","npm_config_cache_lock_stale":"60000","npm_config_leveldown_hyper_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown-hyper/v{version}","npm_package_dependencies_echarts":"^4.8.0","npm_config_otp":"","npm_config_cache_min":"10","npm_config_disturl":"https://npm.taobao.org/dist","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","npm_package_scripts_docs_build":"dumi build","npm_config_searchexclude":"","npm_config_cache":"/Users/eternallycyf/.npm","npm_package_devDependencies__types_three":"0.143.0","npm_package_dependencies_pizzip":"^3.1.1","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_dependencies_exceljs":"^4.3.0","npm_package_typings":"dist/index.d.ts","npm_package_scripts_test_coverage":"umi-test --coverage","YARN_WRAP_OUTPUT":"false","LESS":"-R","LOGNAME":"eternallycyf","npm_lifecycle_script":"dumi build","npm_config_color":"true","npm_package_devDependencies_gh_pages":"^4.0.0","NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","npm_config_proxy":"","npm_config_package_lock":"true","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","CLASSPATH":".:/home/eternallycyf/jdk1.7.0_03/lib/dt.jar:/home/eternallycyf/jdk1.7.0_03/lib/tools.jar","GATEWAY_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/gateway.vmoptions","npm_config_package_lock_only":"","npm_config_fund":"true","npm_package_dependencies_react":"^18.2.0","npm_config_save_optional":"","NVM_BIN":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin","DATAGRIP_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/datagrip.vmoptions","npm_config_ignore_scripts":"","npm_config_user_agent":"yarn/1.22.15 npm/? node/v14.17.0 darwin x64","npm_package_dependencies_react_excel_renderer":"^1.1.0","NVM_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_cache_lock_wait":"10000","npm_package_gitHooks_pre_commit":"lint-staged","npm_config_production":"","npm_config_send_metrics":"","npm_config_save_bundle":"","npm_config_git4win_mirror":"https://npm.taobao.org/mirrors/git-for-windows","RIDER_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rider.vmoptions","JETBRAINS_CLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrains_client.vmoptions","npm_config_umask":"0022","npm_config_node_options":"","npm_config_fse_binary_host_mirror":"https://npm.taobao.org/mirrors/fsevents","npm_config_init_version":"1.0.0","npm_package_dependencies_antd":"^4.22.7","RUBYMINE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rubymine.vmoptions","npm_config_init_author_name":"","npm_config_git":"git","npm_config_utf_8_validate_binary_host_mirror":"https://npm.taobao.org/mirrors/utf-8-validate/v{version}","npm_config_python_mirror":"https://npm.taobao.org/mirrors/python","npm_config_profiler_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector/","npm_config_operadriver_cdnurl":"https://npm.taobao.org/mirrors/operadriver","npm_config_scope":"","npm_package_dependencies_prismjs":"^1.29.0","npm_config_unsafe_perm":"true","npm_config_tmp":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T","npm_config_onload_script":"","npm_config_fuse_bindings_binary_host_mirror":"https://npm.taobao.org/mirrors/fuse-bindings/v{version}","npm_node_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_prefix":"/Users/eternallycyf/.nvm/versions/node/v14.17.0","npm_config_link":"","npm_config_format_package_lock":"true","npm_config_puppeteer_download_host":"https://npm.taobao.org/mirrors","npm_config_version_tag_prefix":"v","npm_package_devDependencies_father_build":"^1.19.1","UMI_PRESETS":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/umi"} && "production" !== 'production' && typeof window !== 'undefined' && typeof document !== 'undefined') {
   warning = function warning(type, errors) {
     if (typeof console !== 'undefined' && console.warn && typeof ASYNC_VALIDATOR_NO_WARNING === 'undefined') {
       if (errors.every(function (e) {
@@ -35595,7 +35662,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 // functional for testing
 function isBMW() {
-  return {"npm_config_save_dev":"","npm_config_legacy_bundling":"","npm_config_dry_run":"","npm_config_leveldown_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown/v{version}","npm_package_devDependencies_lint_staged":"^10.0.7","NVM_INC":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/include/node","npm_config_viewer":"man","npm_config_only":"","npm_config_commit_hooks":"true","npm_config_browser":"","npm_config_couchbase_binary_host_mirror":"https://npm.taobao.org/mirrors/couchbase/v{version}","npm_package_gitHead":"7e9d0aa74c806d1f22a21ded948e65376849e9ed","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_echarts_for_react":"^3.0.2","npm_package_dependencies_braft_extensions":"^0.1.1","NVMW_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","WEBIDE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webide.vmoptions","PYCHARM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/pycharm.vmoptions","npm_config_also":"","npm_config_sign_git_commit":"","npm_config_rollback":"true","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","TERM_PROGRAM":"Apple_Terminal","npm_config_usage":"","npm_config_audit":"true","NODE":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_version_git_tag":"true","npm_package_homepage":"https://github.com/eternallycyf/my-demo-markdown#readme","npm_package_dependencies_moment":"^2.29.4","ANDROID_HOME":"/Users/eternallycyf/Library/Android/sdk","NVM_CD_FLAGS":"-q","INIT_CWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_globalignorefile":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmignore","npm_config_zmq_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/zmq-prebuilt/v{version}","npm_config_flow_bin_binary_host_mirror":"https://npm.taobao.org/mirrors/flow/v","TERM":"xterm-256color","JETBRAINSCLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrainsclient.vmoptions","SHELL":"/bin/zsh","npm_config_shell":"/bin/zsh","npm_config_maxsockets":"50","npm_config_init_author_url":"","npm_config_gl_binary_host_mirror":"https://npm.taobao.org/mirrors/gl/v{version}","npm_package_dependencies_vditor":"^3.8.17","npm_config_shrinkwrap":"true","npm_config_parseable":"","npm_config_metrics_registry":"https://registry.npm.taobao.org/","TMPDIR":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/","npm_config_timing":"","npm_config_init_license":"MIT","npm_package_scripts_release":"npm run build && npm publish","GRADLE_HOME":"/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4","npm_config_if_present":"","npm_config_chromedriver_cdnurl":"https://npm.taobao.org/mirrors/chromedriver","TERM_PROGRAM_VERSION":"447","npm_config_grpc_node_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_config_sign_git_tag":"","npm_config_init_author_email":"","npm_config_cache_max":"Infinity","npm_package_dependencies_remark_gfm":"^3.0.1","npm_config_preid":"","npm_config_long":"","npm_config_local_address":"","npm_config_git_tag_version":"true","npm_config_cert":"","npm_config_sodium_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/sodium-prebuilt/v{version}","NODIST_IOJS_MIRROR":"https://npm.taobao.org/mirrors/iojs","TERM_SESSION_ID":"6992B8DC-4515-43B1-A111-7EC4AB884944","npm_config_noproxy":"","npm_config_fetch_retries":"2","npm_config_home":"https://npm.taobao.org","npm_config_registry":"https://registry.npm.taobao.org/","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_private":"true","npm_config_no_proxy":"registry.taobao.org","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_dependencies_react_dom":"^18.2.0","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies__ant_design_icons":"^4.7.0","npm_package_repository_url":"git+https://github.com/eternallycyf/my-demo-markdown.git","PNPM_HOME":"/Users/eternallycyf/Library/pnpm","ZSH":"/Users/eternallycyf/.oh-my-zsh","npm_config_versions":"","npm_config_message":"%s","npm_config_key":"","npm_package_readmeFilename":"README.md","NVMW_NPM_MIRROR":"https://npm.taobao.org/mirrors/npm","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","NVM_DIR":"/Users/eternallycyf/.nvm","USER":"eternallycyf","npm_config_phantomjs_cdnurl":"https://npm.taobao.org/mirrors/phantomjs","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react":"^18.0.17","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","npm_config_globalconfig":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmrc","IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_prefer_online":"","npm_config_logs_max":"10","npm_config_always_auth":"","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.5vWWpevyPD/Listeners","PHPSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/phpstorm.vmoptions","npm_config_utp_native_binary_host_mirror":"https://npm.taobao.org/mirrors/utp-native/v{version}","npm_config_node_tk5_binary_host_mirror":"https://npm.taobao.org/mirrors/node-tk5/v{version}","__CF_USER_TEXT_ENCODING":"0x1F5:0x19:0x34","npm_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/npm-cli.js","npm_config_global_style":"","npm_config_cache_lock_retries":"10","GOLAND_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/goland.vmoptions","npm_config_update_notifier":"true","npm_config_cafile":"","npm_config_hackrf_binary_host_mirror":"https://npm.taobao.org/mirrors/hackrf/v{version}","npm_package_module":"dist/index.esm.js","PAGER":"less","APPCODE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/appcode.vmoptions","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_config_heading":"npm","npm_config_audit_level":"low","npm_package_devDependencies__types_react_dom":"^18.0.6","LSCOLORS":"Gxfxcxdxbxegedabagacad","npm_config_searchlimit":"20","npm_config_read_only":"","npm_config_offline":"","npm_config_fetch_retry_mintimeout":"10000","npm_config_json":"","npm_config_access":"","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"run\\",\\"docs:build\\"]}","npm_package_dependencies_docxtemplater":"3.5","PATH":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/yarn--1667619546929-0.3430975608032618:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.config/yarn/link/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/Library/pnpm:/home/eternallycyf/jdk1.7.0_03/bin:/usr/local/opt/mysql@5.6/bin:/usr/local/opt/redis@4.0/bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/eternallycyf/Library/Android/sdk/emulator:/Users/eternallycyf/Library/Android/sdk/tools:/Users/eternallycyf/Library/Android/sdk/tools/bin:/Users/eternallycyf/Library/Android/sdk/platform-tools:/usr/local/Cellar/mysql/8.0.27/bin/:/usr/local/mongodb/bin/:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4/bin","npm_config_allow_same_version":"","GH_EMAIL_TOKEN":"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___MY_VMOPTIONS_SHELL_FILE=/Users/eternallycyf/.jetbrains.vmoptions.sh","npm_config_engine_strict":"","npm_config_description":"true","npm_config_https_proxy":"","npm_config_mknod_binary_host_mirror":"https://npm.taobao.org/mirrors/mknod/v{version}","_":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin/dumi","LaunchInstanceID":"685F2635-AF2E-429C-B9BD-AE2FC9F0F9C1","npm_config_userconfig":"/Users/eternallycyf/.npmrc","npm_config_init_module":"/Users/eternallycyf/.npm-init.js","npm_config_sqlite3_binary_site":"https://npm.taobao.org/mirrors/sqlite3","npm_package_devDependencies_ejs":"^3.1.6","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","NVM_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","__CFBundleIdentifier":"com.apple.Terminal","npm_config_cidr":"","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","PWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_user":"501","npm_config_node_version":"14.17.0","npm_config_node_sqlite3_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_package_bugs_url":"https://github.com/eternallycyf/my-demo-markdown/issues","NODIST_NODE_MIRROR":"https://npm.taobao.org/mirrors/node","JAVA_HOME":"/home/eternallycyf/jdk1.7.0_03","npm_lifecycle_event":"docs:build","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","npm_config_save":"true","npm_config_ignore_prepublish":"","npm_config_editor":"vi","npm_config_auth_type":"legacy","npm_package_repository_branch":"main","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","LANG":"zh_CN.UTF-8","CLION_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/clion.vmoptions","IDEA_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/idea.vmoptions","npm_config_tag":"latest","npm_config_script_shell":"","npm_package_dependencies_file_saver":"^2.0.5","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_config_progress":"true","npm_config_global":"","npm_config_before":"","npm_config_nodegit_binary_host_mirror":"https://npm.taobao.org/mirrors/nodegit/v{version}/","npm_config_version_commit_hooks":"true","npm_package_scripts_build":"father-build","npm_package_scripts_start":"dumi dev","npm_config_searchstaleness":"900","npm_config_optional":"true","npm_config_ham_it_up":"","npm_package_devDependencies_dumi":"^1.1.0","XPC_FLAGS":"0x0","npm_config_save_prod":"","npm_config_force":"","npm_config_rabin_binary_host_mirror":"https://npm.taobao.org/mirrors/rabin/v{version}","npm_config_bin_links":"true","npm_package_devDependencies__types_antd":"^1.0.0","WEBSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webstorm.vmoptions","npm_config_searchopts":"","npm_config_electron_mirror":"https://npm.taobao.org/mirrors/electron/","npm_config_debug_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector","npm_package_dependencies_jszip":"^3.10.1","npm_package_dependencies_classnames":"^2.3.1","DATASPELL_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/dataspell.vmoptions","npm_config_node_gyp":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_config_depth":"Infinity","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_main":"dist/index.js","npm_config_sso_poll_frequency":"500","npm_config_rebuild_bundle":"true","npm_config_sass_binary_site":"https://npm.taobao.org/mirrors/node-sass/","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","npm_config_unicode":"true","NVMW_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","HOME":"/Users/eternallycyf","SHLVL":"3","npm_config_fetch_retry_maxtimeout":"60000","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_scripts_test":"umi-test","npm_config_tag_version_prefix":"v","npm_config_sso_type":"oauth","npm_config_loglevel":"notice","npm_config_ca":"","npm_config_NO_PROXY":"registry.taobao.org","npm_config_scripts_prepend_node_path":"true","npm_config_strict_ssl":"true","npm_config_save_prefix":"^","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_config_save_exact":"","npm_config_group":"20","npm_config_fetch_retry_factor":"10","npm_config_dev":"","npm_config_version_git_message":"v%s","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_dependencies_braft_editor":"^2.3.9","npm_config_version":"","npm_config_prefer_offline":"","npm_config_cache_lock_stale":"60000","npm_config_leveldown_hyper_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown-hyper/v{version}","npm_package_dependencies_echarts":"^5.3.3","npm_config_otp":"","npm_config_cache_min":"10","npm_config_disturl":"https://npm.taobao.org/dist","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","npm_package_scripts_docs_build":"dumi build","npm_config_searchexclude":"","npm_config_cache":"/Users/eternallycyf/.npm","npm_package_devDependencies__types_three":"0.143.0","npm_package_dependencies_pizzip":"^3.1.1","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_dependencies_exceljs":"^4.3.0","npm_package_typings":"dist/index.d.ts","npm_package_scripts_test_coverage":"umi-test --coverage","YARN_WRAP_OUTPUT":"false","LESS":"-R","LOGNAME":"eternallycyf","npm_lifecycle_script":"dumi build","npm_config_color":"true","npm_package_devDependencies_gh_pages":"^4.0.0","NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","npm_config_proxy":"","npm_config_package_lock":"true","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","CLASSPATH":".:/home/eternallycyf/jdk1.7.0_03/lib/dt.jar:/home/eternallycyf/jdk1.7.0_03/lib/tools.jar","GATEWAY_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/gateway.vmoptions","npm_config_package_lock_only":"","npm_config_fund":"true","npm_package_dependencies_react":"^18.2.0","npm_config_save_optional":"","NVM_BIN":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin","DATAGRIP_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/datagrip.vmoptions","npm_config_ignore_scripts":"","npm_config_user_agent":"yarn/1.22.15 npm/? node/v14.17.0 darwin x64","npm_package_dependencies_react_excel_renderer":"^1.1.0","NVM_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_cache_lock_wait":"10000","npm_package_gitHooks_pre_commit":"lint-staged","npm_config_production":"","npm_config_send_metrics":"","npm_config_save_bundle":"","npm_config_git4win_mirror":"https://npm.taobao.org/mirrors/git-for-windows","RIDER_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rider.vmoptions","JETBRAINS_CLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrains_client.vmoptions","npm_config_umask":"0022","npm_config_node_options":"","npm_config_fse_binary_host_mirror":"https://npm.taobao.org/mirrors/fsevents","npm_config_init_version":"1.0.0","npm_package_dependencies_antd":"^4.22.7","RUBYMINE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rubymine.vmoptions","npm_config_init_author_name":"","npm_config_git":"git","npm_config_utf_8_validate_binary_host_mirror":"https://npm.taobao.org/mirrors/utf-8-validate/v{version}","npm_config_python_mirror":"https://npm.taobao.org/mirrors/python","npm_config_profiler_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector/","npm_config_operadriver_cdnurl":"https://npm.taobao.org/mirrors/operadriver","npm_config_scope":"","npm_package_dependencies_prismjs":"^1.29.0","SECURITYSESSIONID":"186a6","npm_config_unsafe_perm":"true","npm_config_tmp":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T","npm_config_onload_script":"","npm_config_fuse_bindings_binary_host_mirror":"https://npm.taobao.org/mirrors/fuse-bindings/v{version}","npm_node_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_prefix":"/Users/eternallycyf/.nvm/versions/node/v14.17.0","npm_config_link":"","npm_config_format_package_lock":"true","npm_config_puppeteer_download_host":"https://npm.taobao.org/mirrors","npm_config_version_tag_prefix":"v","npm_package_devDependencies_father_build":"^1.19.1","UMI_PRESETS":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/umi"}.PLATFORM_TYPE === 'BASEMENT';
+  return {"npm_config_save_dev":"","npm_config_legacy_bundling":"","npm_config_dry_run":"","npm_config_leveldown_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown/v{version}","npm_package_devDependencies_lint_staged":"^10.0.7","NVM_INC":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/include/node","npm_config_viewer":"man","npm_config_only":"","npm_config_commit_hooks":"true","npm_config_browser":"","npm_config_couchbase_binary_host_mirror":"https://npm.taobao.org/mirrors/couchbase/v{version}","npm_package_gitHead":"3e1bf43266be462a718d83554b1864ef0b77f5d1","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_echarts_for_react":"^3.0.2","npm_package_dependencies_braft_extensions":"^0.1.1","NVMW_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","WEBIDE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webide.vmoptions","PYCHARM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/pycharm.vmoptions","npm_config_also":"","npm_config_sign_git_commit":"","npm_config_rollback":"true","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","TERM_PROGRAM":"Apple_Terminal","npm_config_usage":"","npm_config_audit":"true","NODE":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_version_git_tag":"true","npm_package_homepage":"https://github.com/eternallycyf/my-demo-markdown#readme","npm_package_dependencies_moment":"^2.29.4","ANDROID_HOME":"/Users/eternallycyf/Library/Android/sdk","NVM_CD_FLAGS":"-q","INIT_CWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_globalignorefile":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmignore","npm_config_zmq_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/zmq-prebuilt/v{version}","npm_config_flow_bin_binary_host_mirror":"https://npm.taobao.org/mirrors/flow/v","JETBRAINSCLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrainsclient.vmoptions","TERM":"xterm-256color","SHELL":"/bin/zsh","npm_config_shell":"/bin/zsh","npm_config_maxsockets":"50","npm_config_init_author_url":"","npm_config_gl_binary_host_mirror":"https://npm.taobao.org/mirrors/gl/v{version}","npm_package_dependencies_vditor":"^3.8.17","npm_config_shrinkwrap":"true","npm_config_parseable":"","npm_config_metrics_registry":"https://registry.npm.taobao.org/","TMPDIR":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/","npm_config_timing":"","npm_config_init_license":"MIT","npm_package_scripts_release":"npm run build && npm publish","GRADLE_HOME":"/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4","npm_config_if_present":"","npm_config_chromedriver_cdnurl":"https://npm.taobao.org/mirrors/chromedriver","TERM_PROGRAM_VERSION":"447","npm_config_grpc_node_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_config_sign_git_tag":"","npm_config_init_author_email":"","npm_config_cache_max":"Infinity","npm_package_dependencies_remark_gfm":"^3.0.1","npm_config_preid":"","npm_config_long":"","npm_config_local_address":"","npm_config_git_tag_version":"true","npm_config_cert":"","npm_config_sodium_prebuilt_binary_host_mirror":"https://npm.taobao.org/mirrors/sodium-prebuilt/v{version}","NODIST_IOJS_MIRROR":"https://npm.taobao.org/mirrors/iojs","TERM_SESSION_ID":"7FB8FC5E-983C-4CB2-93CF-DB223E63EEE1","npm_config_noproxy":"","npm_config_fetch_retries":"2","npm_config_home":"https://npm.taobao.org","npm_config_registry":"https://registry.npm.taobao.org/","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_private":"true","npm_config_no_proxy":"registry.taobao.org","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_dependencies_react_dom":"^18.2.0","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies__ant_design_icons":"^4.7.0","npm_package_repository_url":"git+https://github.com/eternallycyf/my-demo-markdown.git","PNPM_HOME":"/Users/eternallycyf/Library/pnpm","ZSH":"/Users/eternallycyf/.oh-my-zsh","npm_config_versions":"","npm_config_message":"%s","npm_config_key":"","npm_package_readmeFilename":"README.md","NVMW_NPM_MIRROR":"https://npm.taobao.org/mirrors/npm","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","NVM_DIR":"/Users/eternallycyf/.nvm","USER":"eternallycyf","npm_config_phantomjs_cdnurl":"https://npm.taobao.org/mirrors/phantomjs","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react":"^18.0.17","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","npm_config_globalconfig":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/etc/npmrc","IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_prefer_online":"","npm_config_logs_max":"10","npm_config_always_auth":"","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.5vWWpevyPD/Listeners","PHPSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/phpstorm.vmoptions","npm_config_utp_native_binary_host_mirror":"https://npm.taobao.org/mirrors/utp-native/v{version}","npm_config_node_tk5_binary_host_mirror":"https://npm.taobao.org/mirrors/node-tk5/v{version}","__CF_USER_TEXT_ENCODING":"0x1F5:0x19:0x34","npm_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/npm-cli.js","npm_config_global_style":"","npm_config_cache_lock_retries":"10","GOLAND_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/goland.vmoptions","npm_config_update_notifier":"true","npm_config_cafile":"","npm_config_hackrf_binary_host_mirror":"https://npm.taobao.org/mirrors/hackrf/v{version}","npm_package_module":"dist/index.esm.js","PAGER":"less","APPCODE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/appcode.vmoptions","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_config_heading":"npm","npm_config_audit_level":"low","npm_package_devDependencies__types_react_dom":"^18.0.6","LSCOLORS":"Gxfxcxdxbxegedabagacad","npm_config_searchlimit":"20","npm_config_read_only":"","npm_config_offline":"","npm_config_fetch_retry_mintimeout":"10000","npm_config_json":"","npm_config_access":"","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"run\\",\\"docs:build\\"]}","npm_package_dependencies_docxtemplater":"3.5","PATH":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/npm-lifecycle/node-gyp-bin:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T/yarn--1667674137478-0.805672329239369:/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin:/Users/eternallycyf/.config/yarn/link/node_modules/.bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/libexec/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node_modules/npm/bin/node-gyp-bin:/Users/eternallycyf/Library/pnpm:/home/eternallycyf/jdk1.7.0_03/bin:/usr/local/opt/mysql@5.6/bin:/usr/local/opt/redis@4.0/bin:/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/Apple/usr/bin:/Users/eternallycyf/Library/Android/sdk/emulator:/Users/eternallycyf/Library/Android/sdk/tools:/Users/eternallycyf/Library/Android/sdk/tools/bin:/Users/eternallycyf/Library/Android/sdk/platform-tools:/usr/local/Cellar/mysql/8.0.27/bin/:/usr/local/mongodb/bin/:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/bin:/Applications/Android Studio.app/Contents/gradle/gradle-5.6.4/bin","npm_config_allow_same_version":"","GH_EMAIL_TOKEN":"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___MY_VMOPTIONS_SHELL_FILE=/Users/eternallycyf/.jetbrains.vmoptions.sh","npm_config_engine_strict":"","npm_config_description":"true","npm_config_https_proxy":"","npm_config_mknod_binary_host_mirror":"https://npm.taobao.org/mirrors/mknod/v{version}","_":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/.bin/dumi","npm_config_userconfig":"/Users/eternallycyf/.npmrc","npm_config_init_module":"/Users/eternallycyf/.npm-init.js","npm_config_sqlite3_binary_site":"https://npm.taobao.org/mirrors/sqlite3","npm_package_devDependencies_ejs":"^3.1.6","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","NVM_NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","__CFBundleIdentifier":"com.apple.Terminal","npm_config_cidr":"","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","PWD":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown","npm_config_user":"501","npm_config_node_version":"14.17.0","npm_config_node_sqlite3_binary_host_mirror":"https://npm.taobao.org/mirrors","npm_package_bugs_url":"https://github.com/eternallycyf/my-demo-markdown/issues","NODIST_NODE_MIRROR":"https://npm.taobao.org/mirrors/node","JAVA_HOME":"/home/eternallycyf/jdk1.7.0_03","npm_lifecycle_event":"docs:build","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","npm_config_save":"true","npm_config_ignore_prepublish":"","npm_config_editor":"vi","npm_config_auth_type":"legacy","npm_package_repository_branch":"main","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","LANG":"zh_CN.UTF-8","CLION_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/clion.vmoptions","IDEA_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/idea.vmoptions","npm_config_tag":"latest","npm_config_script_shell":"","npm_package_dependencies_file_saver":"^2.0.5","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_config_progress":"true","npm_config_global":"","npm_config_before":"","npm_config_nodegit_binary_host_mirror":"https://npm.taobao.org/mirrors/nodegit/v{version}/","npm_config_version_commit_hooks":"true","npm_package_scripts_build":"father-build","npm_package_scripts_start":"dumi dev","npm_config_searchstaleness":"900","npm_config_optional":"true","npm_config_ham_it_up":"","npm_package_devDependencies_dumi":"^1.1.0","XPC_FLAGS":"0x0","npm_config_save_prod":"","npm_config_force":"","npm_config_rabin_binary_host_mirror":"https://npm.taobao.org/mirrors/rabin/v{version}","npm_config_bin_links":"true","npm_package_devDependencies__types_antd":"^1.0.0","WEBSTORM_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/webstorm.vmoptions","npm_config_searchopts":"","npm_config_electron_mirror":"https://npm.taobao.org/mirrors/electron/","npm_config_debug_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector","npm_package_dependencies_jszip":"^3.10.1","npm_package_dependencies_classnames":"^2.3.1","DATASPELL_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/dataspell.vmoptions","npm_config_node_gyp":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_config_depth":"Infinity","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_main":"dist/index.js","npm_config_sso_poll_frequency":"500","npm_config_rebuild_bundle":"true","npm_config_sass_binary_site":"https://npm.taobao.org/mirrors/node-sass/","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","npm_config_unicode":"true","NVMW_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","HOME":"/Users/eternallycyf","SHLVL":"3","npm_config_fetch_retry_maxtimeout":"60000","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_scripts_test":"umi-test","npm_config_tag_version_prefix":"v","npm_config_sso_type":"oauth","npm_config_loglevel":"notice","npm_config_ca":"","npm_config_NO_PROXY":"registry.taobao.org","npm_config_scripts_prepend_node_path":"true","npm_config_strict_ssl":"true","npm_config_save_prefix":"^","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_config_save_exact":"","npm_config_group":"20","npm_config_fetch_retry_factor":"10","npm_config_dev":"","npm_config_version_git_message":"v%s","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_dependencies_braft_editor":"^2.3.9","npm_config_version":"","npm_config_prefer_offline":"","npm_config_cache_lock_stale":"60000","npm_config_leveldown_hyper_binary_host_mirror":"https://npm.taobao.org/mirrors/leveldown-hyper/v{version}","npm_package_dependencies_echarts":"^4.8.0","npm_config_otp":"","npm_config_cache_min":"10","npm_config_disturl":"https://npm.taobao.org/dist","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","npm_package_scripts_docs_build":"dumi build","npm_config_searchexclude":"","npm_config_cache":"/Users/eternallycyf/.npm","npm_package_devDependencies__types_three":"0.143.0","npm_package_dependencies_pizzip":"^3.1.1","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_dependencies_exceljs":"^4.3.0","npm_package_typings":"dist/index.d.ts","npm_package_scripts_test_coverage":"umi-test --coverage","YARN_WRAP_OUTPUT":"false","LESS":"-R","LOGNAME":"eternallycyf","npm_lifecycle_script":"dumi build","npm_config_color":"true","npm_package_devDependencies_gh_pages":"^4.0.0","NODEJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/node","npm_config_proxy":"","npm_config_package_lock":"true","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","CLASSPATH":".:/home/eternallycyf/jdk1.7.0_03/lib/dt.jar:/home/eternallycyf/jdk1.7.0_03/lib/tools.jar","GATEWAY_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/gateway.vmoptions","npm_config_package_lock_only":"","npm_config_fund":"true","npm_package_dependencies_react":"^18.2.0","npm_config_save_optional":"","NVM_BIN":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin","DATAGRIP_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/datagrip.vmoptions","npm_config_ignore_scripts":"","npm_config_user_agent":"yarn/1.22.15 npm/? node/v14.17.0 darwin x64","npm_package_dependencies_react_excel_renderer":"^1.1.0","NVM_IOJS_ORG_MIRROR":"https://npm.taobao.org/mirrors/iojs","npm_config_cache_lock_wait":"10000","npm_package_gitHooks_pre_commit":"lint-staged","npm_config_production":"","npm_config_send_metrics":"","npm_config_save_bundle":"","npm_config_git4win_mirror":"https://npm.taobao.org/mirrors/git-for-windows","RIDER_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rider.vmoptions","JETBRAINS_CLIENT_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/jetbrains_client.vmoptions","npm_config_umask":"0022","npm_config_node_options":"","npm_config_fse_binary_host_mirror":"https://npm.taobao.org/mirrors/fsevents","npm_config_init_version":"1.0.0","npm_package_dependencies_antd":"^4.22.7","RUBYMINE_VM_OPTIONS":"/Users/eternallycyf/Desktop/mdNodes/0.demo/ja-netfilter-all/vmoptions/rubymine.vmoptions","npm_config_init_author_name":"","npm_config_git":"git","npm_config_utf_8_validate_binary_host_mirror":"https://npm.taobao.org/mirrors/utf-8-validate/v{version}","npm_config_python_mirror":"https://npm.taobao.org/mirrors/python","npm_config_profiler_binary_host_mirror":"https://npm.taobao.org/mirrors/node-inspector/","npm_config_operadriver_cdnurl":"https://npm.taobao.org/mirrors/operadriver","npm_config_scope":"","npm_package_dependencies_prismjs":"^1.29.0","npm_config_unsafe_perm":"true","npm_config_tmp":"/var/folders/m3/c9nzstxn6yqf77lz8wcvmq200000gn/T","npm_config_onload_script":"","npm_config_fuse_bindings_binary_host_mirror":"https://npm.taobao.org/mirrors/fuse-bindings/v{version}","npm_node_execpath":"/Users/eternallycyf/.nvm/versions/node/v14.17.0/bin/node","npm_config_prefix":"/Users/eternallycyf/.nvm/versions/node/v14.17.0","npm_config_link":"","npm_config_format_package_lock":"true","npm_config_puppeteer_download_host":"https://npm.taobao.org/mirrors","npm_config_version_tag_prefix":"v","npm_package_devDependencies_father_build":"^1.19.1","UMI_PRESETS":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/Users/eternallycyf/Documents/GitHub/case/\u81EA\u5DF1\u7684\u5305/my-demo-markdown/node_modules/umi"}.PLATFORM_TYPE === 'BASEMENT';
 }
 /**
  * get demo route name

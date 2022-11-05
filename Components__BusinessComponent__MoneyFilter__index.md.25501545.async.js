@@ -1,7 +1,7 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[96],{"9LyO":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("LtsZ");
+/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("rlch");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("dEAq");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var dumi_theme_default_es_builtins_API_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("+pnj");
@@ -21,7 +21,7 @@
 const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(({
   demos: DUMI_ALL_DEMOS
 }) => {
-  const DumiDemo1 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__["dynamic"])({
+  const DumiDemo1 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
     loader: async () => (await Promise.all(/* import() | demos_md_inline */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(142)]).then(__webpack_require__.bind(null, "UCGG"))).default,
     loading: () => null
   });

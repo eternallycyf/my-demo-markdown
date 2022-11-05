@@ -1,7 +1,7 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[106],{uZjN:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("LtsZ");
+/* harmony import */ var dumi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("rlch");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("dEAq");
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var dumi_theme_default_es_builtins_API_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("+pnj");
@@ -21,11 +21,11 @@
 const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(({
   demos: DUMI_ALL_DEMOS
 }) => {
-  const DumiDemo1 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__["dynamic"])({
-    loader: async () => (await Promise.all(/* import() | demos_md_inline */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(142)]).then(__webpack_require__.bind(null, "ZpqZ"))).default,
+  const DumiDemo1 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
+    loader: async () => (await Promise.all(/* import() | demos_md_inline */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(142)]).then(__webpack_require__.bind(null, "Tnyx"))).default,
     loading: () => null
   });
-  const DumiDemo2 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__["dynamic"])({
+  const DumiDemo2 = Object(dumi__WEBPACK_IMPORTED_MODULE_1__[/* dynamic */ "c"])({
     loader: async () => (await Promise.all(/* import() | demos_md_inline */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(142)]).then(__webpack_require__.bind(null, "XWPg"))).default,
     loading: () => null
   });
@@ -39,14 +39,25 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "echarts-for-react")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DumiDemo1, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "markdown"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_API_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+  })), "echarts-for-react"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
+    code: "import { useRef, useImperativeHandle, forwardRef } from \\"react\\";\\nimport type { EChartsReactProps } from \\"echarts-for-react/lib/types\\";\\nimport ReactECharts from \\"echarts-for-react\\";\\n\\ninterface IHandle {\\n  ref: echarts.ECharts\\n}\\n\\nconst ReactEChart: React.ForwardRefRenderFunction<IHandle, EChartsReactProps> = (props, echartsRef: any) => {\\n  const { option, ...restProps } = props;\\n  const ref = useRef<any>(null!);\\n  useImperativeHandle(echartsRef, () => ({\\n    ref: ref.current.getEchartsInstance(),\\n  }));\\n  return (\\n    <div ref={echartsRef}>\\n      <ReactECharts ref={ref} option={option} {...restProps} />\\n    </div>\\n  );\\n};\\n\\nexport default forwardRef(ReactEChart);",
+    lang: "tsx"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_API_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     src: "./REcharts/index.tsx",
     hidetitle: "",
     identifier: "REcharts",
     export: "ReactEChart"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "doublecharts-\\u4E24\\u4E2A\\u56FE\\u8868\\u8054\\u52A8"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_2__["AnchorLink"], {
+    to: "#doublecharts-\\u4E24\\u4E2A\\u56FE\\u8868\\u8054\\u52A8",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "DoubleCharts \\u4E24\\u4E2A\\u56FE\\u8868\\u8054\\u52A8")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(DumiDemo1, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "markdown"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     id: "\\u624B\\u52A8\\u89E6\\u53D1-hover"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_2__["AnchorLink"], {
     to: "#\\u624B\\u52A8\\u89E6\\u53D1-hover",
