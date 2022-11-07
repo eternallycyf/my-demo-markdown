@@ -100,6 +100,7 @@ const TableEditForm = () => {
 
   const handleOnCancel = () => {
     form.setFieldsValue({ tableForm: cacheFormValues })
+    handleGetCurrentWeight()
     setStatus('view')
   }
 
