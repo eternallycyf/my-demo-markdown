@@ -543,7 +543,8 @@ const getFormItemColumns = (_add, remove, {
   FormItemEditProps,
   handleChangeCode,
   handleCheckIsWeightExceedExcessive,
-  currentWeight
+  currentWeight,
+  handleGetCurrentWeight
 }) => {
   const isEdit = status == 'edit';
   return [{
@@ -583,7 +584,10 @@ const getFormItemColumns = (_add, remove, {
       }, /*#__PURE__*/external_window_React_default.a.createElement(es_select["a" /* default */], Object(helpers_esm_extends["a" /* default */])({
         labelInValue: true,
         options: CODE_OPTIONS_DICT,
-        onChange: value => handleChangeCode(value, index)
+        onChange: value => {
+          handleChangeCode(value, index);
+          handleGetCurrentWeight();
+        }
       }, itemProps)));
     }
 
@@ -632,7 +636,13 @@ const getFormItemColumns = (_add, remove, {
       const isAddonAfter = isEdit ? {
         addonAfter: '%'
       } : {};
-      const itemProps = { ...FormItemEditProps,
+      const itemProps = {
+        min: 0,
+        max: 100,
+        step: 1,
+        precision: 2,
+        onChange: handleGetCurrentWeight,
+        ...FormItemEditProps,
         ...isAddonAfter
       };
       return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
@@ -642,12 +652,7 @@ const getFormItemColumns = (_add, remove, {
         }] : [],
         name: [field.name, 'weight'],
         fieldKey: [field.key, 'weight']
-      }, /*#__PURE__*/external_window_React_default.a.createElement(input_number["a" /* default */], Object(helpers_esm_extends["a" /* default */])({
-        min: 0,
-        max: 100,
-        step: 1,
-        precision: 2
-      }, itemProps)));
+      }, /*#__PURE__*/external_window_React_default.a.createElement(input_number["a" /* default */], itemProps));
     }
 
   }, isEdit ? {
@@ -815,6 +820,7 @@ const TableEditForm = () => {
     form.setFieldsValue({
       tableForm: cacheFormValues
     });
+    handleGetCurrentWeight();
     setStatus('view');
   };
 
@@ -942,7 +948,8 @@ const TableEditForm = () => {
         FormItemEditProps,
         handleChangeCode,
         handleCheckIsWeightExceedExcessive,
-        currentWeight
+        currentWeight,
+        handleGetCurrentWeight
       })
     }), status == 'edit' && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
       wrapperCol: {
