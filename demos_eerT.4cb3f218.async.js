@@ -279,7 +279,7 @@ var modal = __webpack_require__("kLXV");
 // EXTERNAL MODULE: ./node_modules/antd/es/tabs/style/index.js
 var tabs_style = __webpack_require__("Znn+");
 
-// EXTERNAL MODULE: ./node_modules/antd/es/tabs/index.js + 22 modules
+// EXTERNAL MODULE: ./node_modules/antd/es/tabs/index.js + 24 modules
 var tabs = __webpack_require__("ZTPi");
 
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/Tree/components/constant.tsx

@@ -1,23 +1,35 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[138],{"04oG":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
+// EXTERNAL MODULE: ./node_modules/antd/es/table/style/index.js + 2 modules
+var style = __webpack_require__("g9YV");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/table/index.js + 75 modules
+var table = __webpack_require__("wCAj");
+
 // EXTERNAL MODULE: ./node_modules/antd/es/row/style/index.js
-var style = __webpack_require__("14J3");
+var row_style = __webpack_require__("14J3");
 
 // EXTERNAL MODULE: ./node_modules/antd/es/row/index.js
 var row = __webpack_require__("BMrR");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/input/style/index.js
+var input_style = __webpack_require__("5NDa");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/input/index.js + 5 modules
+var input = __webpack_require__("5rEg");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/select/style/index.js
+var select_style = __webpack_require__("OaEy");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/select/index.js
+var es_select = __webpack_require__("2fM7");
 
 // EXTERNAL MODULE: ./node_modules/antd/es/col/style/index.js
 var col_style = __webpack_require__("jCWc");
 
 // EXTERNAL MODULE: ./node_modules/antd/es/col/index.js
 var col = __webpack_require__("kPKH");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/table/style/index.js + 2 modules
-var table_style = __webpack_require__("g9YV");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/table/index.js + 75 modules
-var table = __webpack_require__("wCAj");
 
 // EXTERNAL MODULE: ./node_modules/antd/es/button/style/index.js
 var button_style = __webpack_require__("+L6B");
@@ -38,9 +50,56 @@ var slicedToArray = __webpack_require__("tJVT");
 var external_window_React_ = __webpack_require__("cDcd");
 var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
 
-// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
-var PlusOutlined = __webpack_require__("xvlK");
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+var objectSpread2 = __webpack_require__("VTBJ");
 
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/UploadOutlined.js
+// This icon file is generated automatically.
+var UploadOutlined_UploadOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M400 317.7h73.9V656c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V317.7H624c6.7 0 10.4-7.7 6.3-12.9L518.3 163a8 8 0 00-12.6 0l-112 141.7c-4.1 5.3-.4 13 6.3 13zM878 626h-60c-4.4 0-8 3.6-8 8v154H214V634c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v198c0 17.7 14.3 32 32 32h684c17.7 0 32-14.3 32-32V634c0-4.4-3.6-8-8-8z" } }] }, "name": "upload", "theme": "outlined" };
+/* harmony default export */ var asn_UploadOutlined = (UploadOutlined_UploadOutlined);
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/components/AntdIcon.js + 3 modules
+var AntdIcon = __webpack_require__("6VBw");
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/UploadOutlined.js
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var icons_UploadOutlined_UploadOutlined = function UploadOutlined(props, ref) {
+  return /*#__PURE__*/external_window_React_["createElement"](AntdIcon["a" /* default */], Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
+    ref: ref,
+    icon: asn_UploadOutlined
+  }));
+};
+
+icons_UploadOutlined_UploadOutlined.displayName = 'UploadOutlined';
+/* harmony default export */ var icons_UploadOutlined = (/*#__PURE__*/external_window_React_["forwardRef"](icons_UploadOutlined_UploadOutlined));
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/PlusCircleOutlined.js
+// This icon file is generated automatically.
+var PlusCircleOutlined_PlusCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M696 480H544V328c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v152H328c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h152v152c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V544h152c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8z" } }, { "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }] }, "name": "plus-circle", "theme": "outlined" };
+/* harmony default export */ var asn_PlusCircleOutlined = (PlusCircleOutlined_PlusCircleOutlined);
+
+// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/PlusCircleOutlined.js
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var icons_PlusCircleOutlined_PlusCircleOutlined = function PlusCircleOutlined(props, ref) {
+  return /*#__PURE__*/external_window_React_["createElement"](AntdIcon["a" /* default */], Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
+    ref: ref,
+    icon: asn_PlusCircleOutlined
+  }));
+};
+
+icons_PlusCircleOutlined_PlusCircleOutlined.displayName = 'PlusCircleOutlined';
+/* harmony default export */ var icons_PlusCircleOutlined = (/*#__PURE__*/external_window_React_["forwardRef"](icons_PlusCircleOutlined_PlusCircleOutlined));
 // EXTERNAL MODULE: ./node_modules/antd/es/style/default.less
 var style_default = __webpack_require__("EFp3");
 
@@ -352,56 +411,18 @@ var input_number_style = __webpack_require__("giR+");
 // EXTERNAL MODULE: ./node_modules/antd/es/input-number/index.js + 8 modules
 var input_number = __webpack_require__("fyUT");
 
-// EXTERNAL MODULE: ./node_modules/antd/es/input/style/index.js
-var input_style = __webpack_require__("5NDa");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/input/index.js + 5 modules
-var input = __webpack_require__("5rEg");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/select/style/index.js
-var select_style = __webpack_require__("OaEy");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/select/index.js
-var es_select = __webpack_require__("2fM7");
-
 // EXTERNAL MODULE: ./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/extends.js
 var helpers_esm_extends = __webpack_require__("0Owb");
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
-var objectSpread2 = __webpack_require__("VTBJ");
-
-// CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/DeleteFilled.js
-// This icon file is generated automatically.
-var DeleteFilled_DeleteFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M864 256H736v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zm-200 0H360v-72h304v72z" } }] }, "name": "delete", "theme": "filled" };
-/* harmony default export */ var asn_DeleteFilled = (DeleteFilled_DeleteFilled);
-
-// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/components/AntdIcon.js + 3 modules
-var AntdIcon = __webpack_require__("6VBw");
-
-// CONCATENATED MODULE: ./node_modules/@ant-design/icons/es/icons/DeleteFilled.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var icons_DeleteFilled_DeleteFilled = function DeleteFilled(props, ref) {
-  return /*#__PURE__*/external_window_React_["createElement"](AntdIcon["a" /* default */], Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
-    ref: ref,
-    icon: asn_DeleteFilled
-  }));
-};
-
-icons_DeleteFilled_DeleteFilled.displayName = 'DeleteFilled';
-/* harmony default export */ var icons_DeleteFilled = (/*#__PURE__*/external_window_React_["forwardRef"](icons_DeleteFilled_DeleteFilled));
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/constant.tsx
+// \u7F16\u8F91\u72B6\u6001 | \u5C55\u793A\u72B6\u6001 | \u5386\u53F2\u7EC4\u5408\u72B6\u6001
 // \u53EA\u5C55\u793A\u7684 formItemProps
-const FORMITEMPROPS_ONLYREAD = {
+const FORMITEMPROPS_ONREAD = {
   allowclear: "false",
   readOnly: true,
   bordered: false
-};
+}; // mock\u7684\u6570\u636E  1.\u8054\u52A8\u7684code\u6570\u636E 2.\u56DE\u663E\u7684\u8868\u5355\u6570\u636E 3.\u5386\u53F2\u7EC4\u5408\u9009\u62E9\u65E5\u671F\u7684\u6570\u636E 5.\u5386\u53F2\u7EC4\u5408\u7684dataSource
+
 const CODE_OPTIONS_DICT = [{
   label: 'product1-00001',
   value: 100001,
@@ -422,6 +443,7 @@ const CODE_OPTIONS_DICT = [{
   weight: 20
 }];
 const INIT_FORM_VALUES = {
+  currentDate: '2022-01-01',
   tableForm: [{
     code: {
       label: 'product1-00001',
@@ -434,6 +456,42 @@ const INIT_FORM_VALUES = {
     weight: 10
   }]
 };
+const DATE_OPTIONS = [{
+  label: '2021\u5E7401\u67081\u65E5',
+  value: '2021-01-01'
+}, {
+  label: '2021\u5E7401\u67082\u65E5',
+  value: '2021-01-02'
+}, {
+  label: '2021\u5E7401\u67083\u65E5',
+  value: '2021-01-03'
+}, {
+  label: '2021\u5E7401\u67084\u65E5',
+  value: '2021-01-04'
+}];
+const HISTORY_DATA_SOURCE = [{
+  key: 1,
+  name: '1',
+  label: 'product1-00001',
+  value: 100001,
+  codeName: "product1",
+  company: 'xxx1',
+  currentProfit: 100,
+  profit: 100,
+  yield: 100,
+  weight: 10
+}, {
+  key: 2,
+  name: '2',
+  label: 'product2-00002',
+  value: 100002,
+  codeName: "product2",
+  company: 'xxx2',
+  currentProfit: 200,
+  profit: 200,
+  yield: 200,
+  weight: 20
+}];
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/columns.tsx
 
 
@@ -449,13 +507,45 @@ const INIT_FORM_VALUES = {
 
 
 
-const getColumns = (add, remove, {
-  isEdit,
+
+const historyColumns = [{
+  title: '\u5E8F\u53F7',
+  dataIndex: 'index',
+  width: 80,
+  render: (_text, _field, index) => index + 1
+}, {
+  title: '\u4EE3\u7801',
+  dataIndex: 'label',
+  width: 180
+}, {
+  title: '\u4EE3\u7801\u540D\u79F0',
+  dataIndex: 'codeName',
+  width: 150
+}, {
+  title: '\u516C\u53F8',
+  dataIndex: 'company',
+  width: 150
+}, {
+  title: '\u5F53\u524D\u503C',
+  dataIndex: 'currentProfit',
+  width: 150
+}, {
+  title: '\u6536\u76CA\u7387',
+  dataIndex: 'yield',
+  width: 150
+}, {
+  title: '\u6743\u91CD',
+  dataIndex: 'weight',
+  width: 150
+}];
+const getFormItemColumns = (_add, remove, {
+  status,
   FormItemEditProps,
   handleChangeCode,
-  handleCheckIsWeightExceedCeile,
+  handleCheckIsWeightExceedExcessive,
   currentWeight
 }) => {
+  const isEdit = status == 'edit';
   return [{
     title: '\u5E8F\u53F7',
     dataIndex: 'index',
@@ -466,7 +556,7 @@ const getColumns = (add, remove, {
     dataIndex: 'code',
     width: 180,
 
-    render(text, field, index) {
+    render(_text, field, index) {
       const isOpen = isEdit ? {} : {
         open: false
       };
@@ -476,7 +566,12 @@ const getColumns = (add, remove, {
       const itemProps = { ...FormItemEditProps,
         ...isOpen,
         ...isPlaceholder,
-        showArrow: isEdit ? true : false
+        showArrow: isEdit ? true : false,
+        style: isEdit ? {
+          cursor: 'pointer'
+        } : {
+          cursor: 'text'
+        }
       };
       return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
         rules: isEdit ? [{
@@ -496,56 +591,44 @@ const getColumns = (add, remove, {
     title: '\u4EE3\u7801\u540D\u79F0',
     dataIndex: 'codeName',
     width: 150,
-
-    render(text, field, index) {
-      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
-        name: [field.name, 'codeName'],
-        fieldKey: [field.key, 'codeName']
-      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
-    }
-
+    render: (_text, field, _index) => /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: [field.name, 'codeName'],
+      fieldKey: [field.key, 'codeName']
+    }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONREAD))
   }, {
     title: '\u516C\u53F8',
     dataIndex: 'company',
     width: 150,
-
-    render(text, field) {
-      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
-        name: [field.name, 'company'],
-        fieldKey: [field.key, 'company']
-      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
-    }
-
+    render: (_text, field) => /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: [field.name, 'company'],
+      fieldKey: [field.key, 'company']
+    }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONREAD))
   }, {
     title: '\u5F53\u524D\u503C',
     dataIndex: 'currentProfit',
     width: 150,
-
-    render(text, field) {
-      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
-        name: [field.name, 'currentProfit'],
-        fieldKey: [field.key, 'currentProfit']
-      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
-    }
-
+    render: (_text, field) => /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: [field.name, 'currentProfit'],
+      fieldKey: [field.key, 'currentProfit']
+    }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONREAD))
   }, {
     title: '\u6536\u76CA\u7387',
     dataIndex: 'yield',
     width: 150,
-
-    render(text, field) {
-      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
-        name: [field.name, 'yield'],
-        fieldKey: [field.key, 'yield']
-      }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONLYREAD));
-    }
-
+    render: (_text, field) => /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: [field.name, 'yield'],
+      fieldKey: [field.key, 'yield']
+    }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], FORMITEMPROPS_ONREAD))
   }, {
-    title: /*#__PURE__*/external_window_React_default.a.createElement("div", null, "\\u6743\\u91CD", currentWeight, "%/100%"),
+    title: status == 'edit' ? /*#__PURE__*/external_window_React_default.a.createElement("div", null, "\\u6743\\u91CD", currentWeight, "%", /*#__PURE__*/external_window_React_default.a.createElement("span", {
+      style: {
+        color: '#B3B8C2'
+      }
+    }, "/100%")) : '\u6743\u91CD',
     dataIndex: 'weight',
     width: 150,
 
-    render(text, field) {
+    render(_text, field) {
       const isAddonAfter = isEdit ? {
         addonAfter: '%'
       } : {};
@@ -555,7 +638,7 @@ const getColumns = (add, remove, {
       return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
         rules: isEdit ? [{
           required: true,
-          validator: handleCheckIsWeightExceedCeile
+          validator: handleCheckIsWeightExceedExcessive
         }] : [],
         name: [field.name, 'weight'],
         fieldKey: [field.key, 'weight']
@@ -567,26 +650,20 @@ const getColumns = (add, remove, {
       }, itemProps)));
     }
 
-  }, {
+  }, isEdit ? {
     title: '\u64CD\u4F5C',
-    dataIndex: 'operate',
-    className: 'operate',
+    dataIndex: 'operation',
     width: 150,
-
-    render(text, field) {
-      return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(popconfirm, {
-        title: "\\u786E\\u8BA4\\u662F\\u5426\\u5220\\u9664",
-        onConfirm: () => remove(field.name),
-        okText: "\\u786E\\u8BA4",
-        cancelText: "\\u53D6\\u6D88"
-      }, /*#__PURE__*/external_window_React_default.a.createElement(icons_DeleteFilled, {
-        style: {
-          marginLeft: 10
-        }
-      })));
-    }
-
-  }];
+    render: (_text, field) => /*#__PURE__*/external_window_React_default.a.createElement(popconfirm, {
+      title: "\\u786E\\u8BA4\\u662F\\u5426\\u5220\\u9664",
+      onConfirm: () => remove(field.name),
+      okText: "\\u786E\\u8BA4",
+      cancelText: "\\u53D6\\u6D88"
+    }, /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      type: "link",
+      danger: true
+    }, "\\u5220\\u9664"))
+  } : {}];
 };
 // EXTERNAL MODULE: ./src/Components/BusinessComponent/EditTable/index.less?modules
 var EditTablemodules = __webpack_require__("3Hbs");
@@ -611,6 +688,25 @@ var EditTablemodules_default = /*#__PURE__*/__webpack_require__.n(EditTablemodul
 
 
 
+
+
+ // \u5F53\u524D\u4EA7\u54C1\u7EC4\u5408\u7684\u6570\u636E
+
+const handleFetchCurrentData = async () => {
+  // return await INIT_FORM_VALUES 
+  return await [];
+}; // \u5386\u53F2\u6570\u636E\u7684dataSource
+
+
+const handleFetchHistoryData = async (date = '') => {
+  return await HISTORY_DATA_SOURCE;
+}; // \u5386\u53F2\u6570\u636E\u65E5\u671Fselect\u7684options
+
+
+const handleFetchDateOptions = async () => {
+  return await DATE_OPTIONS;
+};
+
 const TableEditForm = () => {
   const _Form$useForm = es_form["a" /* default */].useForm(),
         _Form$useForm2 = Object(slicedToArray["a" /* default */])(_Form$useForm, 1),
@@ -618,28 +714,63 @@ const TableEditForm = () => {
 
   const _useState = Object(external_window_React_["useState"])(true),
         _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-        isEdit = _useState2[0],
-        setIsEdit = _useState2[1];
+        isEmpty = _useState2[0],
+        setIsEmpty = _useState2[1];
 
-  const _useState3 = Object(external_window_React_["useState"])(0),
+  const _useState3 = Object(external_window_React_["useState"])('edit'),
         _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-        currentWeight = _useState4[0],
-        setCurrentWeight = _useState4[1];
+        status = _useState4[0],
+        setStatus = _useState4[1]; // \u5386\u53F2\u4EA7\u54C1\u7EC4\u5408-\u5386\u53F2\u8BBE\u7F6E\u65E5\u671F-select-option
+
+
+  const _useState5 = Object(external_window_React_["useState"])([]),
+        _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
+        dateOptions = _useState6[0],
+        setDateOptions = _useState6[1]; // \u5F53\u524D\u5DF2\u7ECF\u9009\u62E9\u7684\u6743\u91CD\u4E4B\u548C
+
+
+  const _useState7 = Object(external_window_React_["useState"])(0),
+        _useState8 = Object(slicedToArray["a" /* default */])(_useState7, 2),
+        currentWeight = _useState8[0],
+        setCurrentWeight = _useState8[1]; // \u7F13\u5B58\u7684\u6570\u636E \u7528\u4E8E\u4FDD\u5B58\u7684\u53D6\u6D88\u64CD\u4F5C
+
+
+  const _useState9 = Object(external_window_React_["useState"])([]),
+        _useState10 = Object(slicedToArray["a" /* default */])(_useState9, 2),
+        cacheFormValues = _useState10[0],
+        setCacheFormValues = _useState10[1]; // \u5386\u53F2\u4EA7\u54C1\u7EC4\u5408\u7684 dataSource
+
+
+  const _useState11 = Object(external_window_React_["useState"])([]),
+        _useState12 = Object(slicedToArray["a" /* default */])(_useState11, 2),
+        historyDataSource = _useState12[0],
+        setHistoryDataSource = _useState12[1];
 
   Object(external_window_React_["useEffect"])(() => {
-    form.setFieldsValue(INIT_FORM_VALUES);
-    handleGetCurrentWeight();
+    handleInitPage();
   }, []); // \u7F16\u8F91\u65F6\u7684 formItemProps
 
   const FormItemEditProps = Object(external_window_React_["useMemo"])(() => {
-    if (isEdit) return {
+    if (status == 'edit') return {
       allowclear: "true",
       readOnly: false,
       bordered: true
     };
-    return { ...FORMITEMPROPS_ONLYREAD
+    return { ...FORMITEMPROPS_ONREAD
     };
-  }, [isEdit]);
+  }, [status]);
+
+  const handleInitPage = async () => {
+    const initFormValues = await handleFetchCurrentData();
+    form.setFieldsValue(initFormValues);
+    initFormValues.tableForm && setIsEmpty(false);
+    setCacheFormValues(initFormValues.tableForm);
+    const dataOptions = await handleFetchDateOptions();
+    setDateOptions(dataOptions);
+    const historyData = await handleFetchHistoryData("");
+    setHistoryDataSource(historyData);
+    handleGetCurrentWeight();
+  };
 
   const handleChangeCode = (value, index) => {
     const item = CODE_OPTIONS_DICT.find(item => item.value == value.value) || {};
@@ -652,6 +783,11 @@ const TableEditForm = () => {
     });
   };
 
+  const handleChangeSelectDate = async obj => {
+    const historyDataSource = await handleFetchHistoryData(obj.value);
+    setHistoryDataSource(historyDataSource);
+  };
+
   const handleGetCurrentWeight = () => {
     var _form$getFieldsValue;
 
@@ -661,7 +797,7 @@ const TableEditForm = () => {
     setCurrentWeight(weightSum);
   };
 
-  const handleCheckIsWeightExceedCeile = (_, val) => {
+  const handleCheckIsWeightExceedExcessive = (_, val) => {
     if (val == null) return Promise.reject(new Error('\u5FC5\u586B\u9879'));
     const tableFormValue = form.getFieldValue('tableForm') || [];
     if (!tableFormValue) return Promise.resolve("");
@@ -673,10 +809,96 @@ const TableEditForm = () => {
     return Promise.resolve("");
   };
 
+  const handleExport = () => {};
+
+  const handleOnCancel = () => {
+    form.setFieldsValue({
+      tableForm: cacheFormValues
+    });
+    setStatus('view');
+  };
+
   const onFinish = values => {
-    console.log(values);
-    console.log(form.getFieldsValue());
-    setIsEdit(false);
+    setStatus('view');
+    setCacheFormValues(values.tableForm);
+  };
+
+  const renderButton = () => {
+    var _form$getFieldValue;
+
+    const isHistory = status == 'history';
+    const EditButton = /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+      span: 12,
+      style: {
+        textAlign: 'right'
+      }
+    }, form.getFieldValue('tableForm') && ((_form$getFieldValue = form.getFieldValue('tableForm')) === null || _form$getFieldValue === void 0 ? void 0 : _form$getFieldValue.length) != 0 && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      onClick: () => handleOnCancel(),
+      style: {
+        marginRight: 12
+      }
+    }, "\\u53D6\\u6D88"), /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      htmlType: "submit",
+      type: "primary"
+    }, "\\u4FDD\\u5B58"));
+    const ViewButton = /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+      span: 12,
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      onClick: () => setStatus('history'),
+      style: {
+        marginRight: 12
+      }
+    }, "\\u5386\\u53F2\\u4EA7\\u54C1\\u7EC4\\u5408"), /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      onClick: () => setStatus('edit'),
+      type: "primary"
+    }, "\\u7F16\\u8F91\\u4EA7\\u54C1\\u7EC4\\u5408"));
+    const HistoryButton = /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+      span: 12,
+      style: {
+        textAlign: 'right'
+      }
+    }, /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      onClick: () => setStatus('view'),
+      style: {
+        marginRight: 12
+      }
+    }, "\\u8FD4\\u56DE"), /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+      onClick: () => handleExport(),
+      type: "primary",
+      icon: /*#__PURE__*/external_window_React_default.a.createElement(icons_UploadOutlined, null)
+    }, "\\u5BFC\\u51FA"));
+    return /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], {
+      style: {
+        marginBottom: 24
+      }
+    }, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+      span: 12
+    }, /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], {
+      align: "middle",
+      gutter: [0, 20]
+    }, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], null, isHistory ? /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: "historyDate",
+      label: "\\u5386\\u53F2\\u8BBE\\u7F6E\\u65E5\\u671F",
+      initialValue: dateOptions[0]
+    }, /*#__PURE__*/external_window_React_default.a.createElement(es_select["a" /* default */], {
+      onChange: obj => handleChangeSelectDate(obj),
+      options: dateOptions,
+      labelInValue: true,
+      allowClear: true,
+      style: {
+        width: 160
+      }
+    })) : /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+      name: "currentDate",
+      label: "\\u7EC4\\u5408\\u8BBE\\u7F6E\\u65E5\\u671F"
+    }, /*#__PURE__*/external_window_React_default.a.createElement(input["a" /* default */], {
+      allowClear: false,
+      readOnly: true,
+      bordered: false
+    }))))), status == 'edit' && EditButton, status == 'view' && ViewButton, status == 'history' && HistoryButton);
   };
 
   return /*#__PURE__*/external_window_React_default.a.createElement(row["a" /* default */], {
@@ -684,19 +906,28 @@ const TableEditForm = () => {
     align: "middle",
     justify: "center",
     className: EditTablemodules_default.a.page
-  }, /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+  }, isEmpty ? /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
+    span: 24,
+    style: {
+      height: 400,
+      textAlign: 'center',
+      lineHeight: '400px'
+    }
+  }, /*#__PURE__*/external_window_React_default.a.createElement("div", null, /*#__PURE__*/external_window_React_default.a.createElement("div", {
+    style: {
+      height: 40,
+      color: '#5B6371'
+    }
+  }, "\\u60A8\\u8FD8\\u672A\\u8BBE\\u7F6E\\u4EA7\\u54C1\\u7EC4\\u5408"), /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
+    onClick: () => setIsEmpty(false)
+  }, "\\u8BBE\\u7F6E\\u4EA7\\u54C1\\u7EC4\\u5408"))) : /*#__PURE__*/external_window_React_default.a.createElement(col["a" /* default */], {
     span: 24
   }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */], {
     form: form,
     onFinish: onFinish,
     layout: "horizontal",
     onValuesChange: () => handleGetCurrentWeight()
-  }, /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, null, isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
-    htmlType: "submit",
-    type: "primary"
-  }, "\\u70B9\\u51FB\\u4FDD\\u5B58\\u8FDB\\u5165\\u67E5\\u770B\\u6A21\\u5F0F"), !isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
-    onClick: () => setIsEdit(true)
-  }, "\\u8FD4\\u56DE\\u7F16\\u8F91")), /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].List, {
+  }, renderButton(), status !== 'history' ? /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].List, {
     name: "tableForm"
   }, (fields, {
     add,
@@ -706,30 +937,43 @@ const TableEditForm = () => {
       rowKey: "key",
       pagination: false,
       dataSource: fields,
-      columns: getColumns(add, remove, {
-        isEdit,
+      columns: getFormItemColumns(add, remove, {
+        status,
         FormItemEditProps,
         handleChangeCode,
-        handleCheckIsWeightExceedCeile,
+        handleCheckIsWeightExceedExcessive,
         currentWeight
       })
-    }), isEdit && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+    }), status == 'edit' && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
       wrapperCol: {
-        offset: 6,
-        span: 5
+        span: 24
+      },
+      labelCol: {
+        span: 0
+      },
+      style: {
+        marginTop: 10
       }
     }, /*#__PURE__*/external_window_React_default.a.createElement(es_button["a" /* default */], {
-      type: "dashed",
+      type: "link",
       onClick: () => add(),
-      block: true,
-      icon: /*#__PURE__*/external_window_React_default.a.createElement(PlusOutlined["a" /* default */], null)
-    }, "\\u6DFB\\u52A0\\u4EA7\\u54C1")));
+      block: true
+    }, /*#__PURE__*/external_window_React_default.a.createElement("div", {
+      style: {
+        color: '#3363D7'
+      }
+    }, /*#__PURE__*/external_window_React_default.a.createElement(icons_PlusCircleOutlined, null), " \\xA0\\u6DFB\\u52A0\\u4EA7\\u54C1"))));
+  }) : /*#__PURE__*/external_window_React_default.a.createElement(table["a" /* default */], {
+    rowKey: "key",
+    pagination: false,
+    dataSource: historyDataSource,
+    columns: historyColumns
   }))));
 };
 
 /* harmony default export */ var EditTable = __webpack_exports__["default"] = (TableEditForm);
 
-//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.tsx_+_10_modules?`)},"3Hbs":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.tsx_+_12_modules?`)},"3Hbs":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 module.exports = {"page":"page___1CrUj"};
 
 //# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.less?`)},UADf:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
