@@ -50,7 +50,8 @@ export const getFormItemColumns = (
     FormItemEditProps,
     handleChangeCode,
     handleCheckIsWeightExceedExcessive,
-    currentWeight
+    currentWeight,
+    handleGetCurrentWeight
   }: IGetFormItemColumnsConfigProps
 ): ColumnsType<FormListFieldData> => {
 
@@ -85,7 +86,7 @@ export const getFormItemColumns = (
           <Select
             labelInValue
             options={CODE_OPTIONS_DICT}
-            onChange={(value) => handleChangeCode(value, index)}
+            onChange={(value) => { handleChangeCode(value, index); handleGetCurrentWeight(); }}
             {...itemProps}
           />
         </Form.Item >
@@ -140,6 +141,11 @@ export const getFormItemColumns = (
       render(_text, field) {
         const isAddonAfter = isEdit ? { addonAfter: '%' } : {}
         const itemProps = {
+          min: 0,
+          max: 100,
+          step: 1,
+          precision: 2,
+          onChange: handleGetCurrentWeight,
           ...FormItemEditProps,
           ...isAddonAfter
         }
@@ -148,7 +154,7 @@ export const getFormItemColumns = (
           name={[field.name, 'weight']}
           fieldKey={[field.key, 'weight']}
         >
-          <InputNumber min={0} max={100} step={1} precision={2} {...itemProps} />
+          <InputNumber {...itemProps} />
         </Form.Item>
       }
     },

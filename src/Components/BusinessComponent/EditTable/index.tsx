@@ -178,7 +178,7 @@ const TableEditForm = () => {
                         rowKey='key'
                         pagination={false}
                         dataSource={fields}
-                        columns={getFormItemColumns(add, remove, { status, FormItemEditProps, handleChangeCode, handleCheckIsWeightExceedExcessive, currentWeight })}
+                        columns={getFormItemColumns(add, remove, { status, FormItemEditProps, handleChangeCode, handleCheckIsWeightExceedExcessive, currentWeight, handleGetCurrentWeight })}
                       />
                       {status == 'edit' && (
                         <Form.Item wrapperCol={{ span: 24 }} labelCol={{ span: 0 }} style={{ marginTop: 10 }}>

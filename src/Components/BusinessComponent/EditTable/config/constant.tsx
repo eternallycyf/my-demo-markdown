@@ -26,6 +26,7 @@ export interface IGetFormItemColumnsConfigProps {
   handleChangeCode: (value: LabeledValue, index: number) => void;
   handleCheckIsWeightExceedExcessive: (_: any, val: string) => Promise<string>;
   currentWeight: number;
+  handleGetCurrentWeight: () => void;
 }
 
 // 只展示的 formItemProps
