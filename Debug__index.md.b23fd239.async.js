@@ -490,7 +490,18 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "35. antd table \\u5982\\u679C\\u6BCF\\u4E00\\u4E2A columns \\u90FD\\u6307\\u5B9A\\u4E86 width \\u5C31\\u4F1A\\u4E0D\\u751F\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5FC5\\u987B\\u8981\\u6709\\u4E00\\u4E2A\\u4E0D\\u6307\\u5B9A width \\u5426\\u5219\\u81EA\\u52A8\\u6240\\u6709\\u7684\\u81EA\\u9002\\u5E94"))));
+  })), "35. antd table \\u5982\\u679C\\u6BCF\\u4E00\\u4E2A columns \\u90FD\\u6307\\u5B9A\\u4E86 width \\u5C31\\u4F1A\\u4E0D\\u751F\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5FC5\\u987B\\u8981\\u6709\\u4E00\\u4E2A\\u4E0D\\u6307\\u5B9A width \\u5426\\u5219\\u81EA\\u52A8\\u6240\\u6709\\u7684\\u81EA\\u9002\\u5E94")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "36\\u76F4\\u63A5\\u6839\\u636E\\u670D\\u52A1\\u5668\\u8DEF\\u5F84\\u4E0B\\u8F7D\\u6587\\u4EF6"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#36\\u76F4\\u63A5\\u6839\\u636E\\u670D\\u52A1\\u5668\\u8DEF\\u5F84\\u4E0B\\u8F7D\\u6587\\u4EF6",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "36.\\u76F4\\u63A5\\u6839\\u636E\\u670D\\u52A1\\u5668\\u8DEF\\u5F84\\u4E0B\\u8F7D\\u6587\\u4EF6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "# \u53CD\u5411\u4EE3\u7406\\n'/image':{\\n  target:'http://172.163.212.21:8080/',\\n  changeOrigin: true\\n}\\n# utils\\nexport function postDownLoadFile(fileName, params, data) {\\n  function download(params, data){\\n    return request(\`/image/\${fileName}\`, {\\n      method: 'get',\\n      responseType: 'blob',\\n      params,\\n      data,\\n      header:{\\n        accept: 'application/json',\\n        'Access-Control-Allow-Headers': '*'\\n      }\\n    });\\n  }\\n  return download(parameter, bodyData).then((data) => {\\n    if (!data || data.size === 0) {\\n      message.warning('\u6587\u4EF6\u4E0B\u8F7D\u5931\u8D25');\\n      return;\\n    }\\n    if (typeof window.navigator.msSaveBlob !== 'undefined') {\\n      window.navigator.msSaveBlob(new Blob([data]), fileName);\\n    } else {\\n      let url = window.URL.createObjectURL(new Blob([data]));\\n      let link = document.createElement('a');\\n      link.style.display = 'none';\\n      link.href = url;\\n      link.setAttribute('download', fileName);\\n      document.body.appendChild(link);\\n      link.click();\\n      document.body.removeChild(link);\\n      window.URL.revokeObjectURL(url);\\n    }\\n  })\\n}\\n# use url\u662F\u670D\u52A1\u5668\u4E0A\u6587\u4EF6\u7684\u540D\u5B57(\`http://172.163.212.21:8080/image/aaaa.png\` => \`aaa.png\`)\\nhandleDownFile = ({ url }) => {\\n  postDownLoadFile(ulr, {}, {})\\n}",
+    lang: "js"
+  })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
