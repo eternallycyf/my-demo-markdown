@@ -537,3 +537,51 @@ onchange: ({file,fileList})=> {
 ## 35. antd table 如果每一个 columns 都指定了 width 就会不生效
 
 - 必须要有一个不指定 width 否则自动所有的自适应
+
+## 36.直接根据服务器路径下载文件
+
+```js
+# 反向代理
+'/image':{
+  target:'http://172.163.212.21:8080/',
+  changeOrigin: true
+}
+# utils
+export function postDownLoadFile(fileName, params, data) {
+  function download(params, data){
+    return request(`/image/${fileName}`, {
+      method: 'get',
+      responseType: 'blob',
+      params,
+      data,
+      header:{
+        accept: 'application/json',
+        'Access-Control-Allow-Headers': '*'
+      }
+    });
+  }
+  return download(parameter, bodyData).then((data) => {
+    if (!data || data.size === 0) {
+      message.warning('文件下载失败');
+      return;
+    }
+    if (typeof window.navigator.msSaveBlob !== 'undefined') {
+      window.navigator.msSaveBlob(new Blob([data]), fileName);
+    } else {
+      let url = window.URL.createObjectURL(new Blob([data]));
+      let link = document.createElement('a');
+      link.style.display = 'none';
+      link.href = url;
+      link.setAttribute('download', fileName);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    }
+  })
+}
+# use url是服务器上文件的名字(`http://172.163.212.21:8080/image/aaaa.png` => `aaa.png`)
+handleDownFile = ({ url }) => {
+  postDownLoadFile(ulr, {}, {})
+}
+```
