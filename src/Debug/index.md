@@ -585,3 +585,33 @@ handleDownFile = ({ url }) => {
   postDownLoadFile(ulr, {}, {})
 }
 ```
+
+## 37. react-router(umi) 路由跳转传值 页面接受的是异步的 或者不重新渲染
+
+```js
+# 如果在当前页面跳转 直接router.query componentWillReceiveProps 里面监听最新值 只要setState就会重新渲染
+# 如果是其他页面 使用localStroge 或者
+1.不要使用Link
+2.router.query 自己用原生获取query (react-router返回的参数是错误的 异步 第二次重复点击就不对了 但是网页上显示的路径参数是实时正确的)
+function GetUrlParms()
+{
+ var args=new Object();
+ var query=decodeURIComponent(location.search).substring(1);//获取查询串
+ var pairs=query.split("&");//在逗号处断开
+ for(var i=0;i<pairs.length;i++)
+ {
+  var pos=pairs[i].indexOf('=');//查找name=value
+   if(pos==-1) continue;//如果没有找到就跳过
+   var argname=pairs[i].substring(0,pos);//提取name
+   var value=pairs[i].substring(pos+1);//提取value
+   args[argname]=unescape(value);//存为属性
+ }
+ return args;
+}
+var args = new Object();
+args = GetUrlParms();
+# 强制刷新页面
+window.location.href = '/'
+window.reload
+# 给组件+一个动态的key控制渲染 react如果key变了就会自动渲染
+```
