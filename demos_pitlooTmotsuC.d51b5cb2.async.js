@@ -207,7 +207,19 @@ var typography_style = __webpack_require__("tU7J");
 // EXTERNAL MODULE: ./node_modules/antd/es/typography/index.js + 17 modules
 var typography = __webpack_require__("wFql");
 
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/UpOutlined.js + 1 modules
+var UpOutlined = __webpack_require__("y3Kf");
+
+// EXTERNAL MODULE: ./node_modules/@ant-design/icons/es/icons/DownOutlined.js + 1 modules
+var DownOutlined = __webpack_require__("8Skl");
+
+// EXTERNAL MODULE: ./src/Components/BusinessComponent/CustomTooltip/index.less?modules
+var CustomTooltipmodules = __webpack_require__("oIUC");
+var CustomTooltipmodules_default = /*#__PURE__*/__webpack_require__.n(CustomTooltipmodules);
+
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/CustomTooltip/CustomTooltip.tsx
+
+
 
 
 
@@ -252,9 +264,11 @@ const CustomTooltip = props => {
   const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
   const copyableProps = copyable ? {
     copyable: {
-      text
+      text,
+      tooltips: ['\u70B9\u51FB\u590D\u5236', '\u590D\u5236\u6210\u529F']
     }
   } : {};
+  const ellipsisClassName = row.EllipsisSymbol ? CustomTooltipmodules_default.a.ellipsis : '';
   const styles = {
     // maxWidth: 370,
     // wordWrap: 'break-word',
@@ -269,12 +283,16 @@ const CustomTooltip = props => {
       return /*#__PURE__*/external_window_React_default.a.createElement("a", {
         className: "ant-typography-expand",
         onClick: () => setIsExpand(isExpandStatus)
-      }, "\\u5C55\\u5F00");
+      }, "\\u5C55\\u5F00 ", /*#__PURE__*/external_window_React_default.a.createElement(UpOutlined["a" /* default */], {
+        className: CustomTooltipmodules_default.a['apply-shake']
+      }));
     } else {
       return /*#__PURE__*/external_window_React_default.a.createElement("a", {
         className: "ant-typography-expand",
         onClick: () => setIsExpand(isExpandStatus)
-      }, "\\u6536\\u8D77");
+      }, "\\u6536\\u8D77 ", /*#__PURE__*/external_window_React_default.a.createElement(DownOutlined["a" /* default */], {
+        className: CustomTooltipmodules_default.a['apply-shake']
+      }));
     }
   };
 
@@ -304,20 +322,24 @@ const CustomTooltip = props => {
 
   const SingleOverflowParagraph = /*#__PURE__*/external_window_React_default.a.createElement(tooltip["a" /* default */], {
     title: text,
-    style: styles
+    style: styles,
+    className: ellipsisClassName
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, copyableProps, {
     style: styles
   }), (_ref = text.slice(0, maxLength) + isShowEllipsisSymbol) !== null && _ref !== void 0 ? _ref : '--')); // row.rows = 1 \u4E14 text.length <= maxLength
 
   const SingleParagraph = /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, copyableProps, {
-    style: styles
+    style: styles,
+    className: ellipsisClassName
   }), text !== null && text !== void 0 ? text : '--'); // \u8BBE\u7F6E\u4E86 row.autoSize
 
   const AutoSizeParagraph = isTextToObject ? /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, text !== null && text !== void 0 ? text : '--')) : /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
-  }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, copyableProps, /*#__PURE__*/external_window_React_default.a.createElement(TextArea, {
+  }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, copyableProps, {
+    className: ellipsisClassName
+  }), /*#__PURE__*/external_window_React_default.a.createElement(TextArea, {
     style: {
       resize: 'none',
       ...styles
@@ -328,10 +350,12 @@ const CustomTooltip = props => {
     value: text !== null && text !== void 0 ? text : '--'
   }))));
   const CustomRowExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
-    span: col
+    span: col,
+    className: ellipsisClassName
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, customRowEllipsisParagraphProps, text !== null && text !== void 0 ? text : '--', isExpand && getToggleButton(false)));
   const CustomRowNotExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
-    span: col
+    span: col,
+    className: ellipsisClassName
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, customRowEllipsisNotExpandParagraphProps, text !== null && text !== void 0 ? text : '--'));
 
   if (row.rows == 'autoSize' && isTextToObject) {
@@ -350,7 +374,8 @@ const CustomTooltip = props => {
   return /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, {
-    style: styles
+    style: styles,
+    className: ellipsisClassName
   }, text && text.length > maxLength ? SingleOverflowParagraph : SingleParagraph));
 };
 
@@ -387,8 +412,9 @@ const IndexPage = () => {
     col: 24,
     text: tagS,
     row: {
-      rows: 1,
-      expend: false
+      rows: 2,
+      expend: true,
+      EllipsisSymbol: true
     }
   })), /*#__PURE__*/external_window_React_default.a.createElement(es_row["a" /* default */], {
     gutter: 10
@@ -433,7 +459,10 @@ const IndexPage = () => {
 
 /* harmony default export */ var BusinessComponent_CustomTooltip = __webpack_exports__["default"] = (IndexPage);
 
-//# sourceURL=webpack:///./src/Components/BusinessComponent/CustomTooltip/index.tsx_+_1_modules?`)},tU7J:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
+//# sourceURL=webpack:///./src/Components/BusinessComponent/CustomTooltip/index.tsx_+_1_modules?`)},oIUC:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+module.exports = {"ellipsis":"ellipsis___1JWyh","apply-shake":"apply-shake___1P-o9","shake":"shake___1j9R6"};
+
+//# sourceURL=webpack:///./src/Components/BusinessComponent/CustomTooltip/index.less?`)},tU7J:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
 /* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("/qDX");
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
