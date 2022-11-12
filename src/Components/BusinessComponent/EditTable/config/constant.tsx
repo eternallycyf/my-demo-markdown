@@ -1,10 +1,12 @@
 import type { FormListOperation } from 'antd/es/form/FormList';
 import type { LabeledValue } from 'antd/es/select';
+import moment from "moment";
 
 // 编辑状态 | 展示状态 | 历史组合状态
 export type IStatusState = 'edit' | 'view' | 'history'
 
 export interface IFormItemType {
+  date: [moment.MomentInput, moment.MomentInput] | [];
   code: { label: string, value: number }
   codeName: string;
   company: string;
@@ -19,6 +21,8 @@ export interface IFormValues {
 }
 export type IAddFn = FormListOperation['add'];
 export type IRemoveFn = FormListOperation['remove'];
+export type MomentType = moment.MomentInput;
+export interface ITimesArr { startTime: moment.MomentInput; endTime: moment.MomentInput; }
 
 export interface IGetFormItemColumnsConfigProps {
   status: IStatusState;
@@ -27,6 +31,9 @@ export interface IGetFormItemColumnsConfigProps {
   handleCheckIsWeightExceedExcessive: (_: any, val: string) => Promise<string>;
   currentWeight: number;
   handleGetCurrentWeight: () => void;
+  handleDisabledDate: (list: any[], currentDate: MomentType) => boolean;
+  handleClearBeforeDateAndCheckIsBetween: (date: [MomentType, MomentType], index: number,) => void,
+  getSelectDates: () => ITimesArr[];
 }
 
 // 只展示的 formItemProps
@@ -46,6 +53,7 @@ export const INIT_FORM_VALUES: IFormValues = {
   currentDate: '2022-01-01',
   tableForm: [
     {
+      date: [moment('2021-01-01'), moment('2021-01-01')],
       code: { label: 'product1-00001', value: 100001 },
       codeName: "00001",
       company: 'company1',

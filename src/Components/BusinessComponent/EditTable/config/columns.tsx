@@ -1,7 +1,8 @@
-import { Button, Form, Input, InputNumber, Popconfirm, Select } from 'antd';
+import { Button, DatePicker, Form, Input, InputNumber, Popconfirm, Select } from 'antd';
 import type { FormListFieldData } from 'antd/es/form/FormList';
 import type { ColumnsType } from 'antd/es/table';
-import { CODE_OPTIONS_DICT, FORMITEMPROPS_ONREAD, IAddFn, IGetFormItemColumnsConfigProps, IRemoveFn } from "./constant";
+import { CODE_OPTIONS_DICT, FORMITEMPROPS_ONREAD, IAddFn, IGetFormItemColumnsConfigProps, IRemoveFn, MomentType } from "./constant";
+const { RangePicker } = DatePicker;
 
 export const historyColumns: ColumnsType<FormListFieldData> = [
   {
@@ -51,7 +52,10 @@ export const getFormItemColumns = (
     handleChangeCode,
     handleCheckIsWeightExceedExcessive,
     currentWeight,
-    handleGetCurrentWeight
+    handleGetCurrentWeight,
+    handleDisabledDate,
+    handleClearBeforeDateAndCheckIsBetween,
+    getSelectDates
   }: IGetFormItemColumnsConfigProps
 ): ColumnsType<FormListFieldData> => {
 
@@ -63,6 +67,40 @@ export const getFormItemColumns = (
       dataIndex: 'index',
       render: (_text, _field, index) => index + 1,
       width: 80
+    },
+    {
+      title: '规则生效区间',
+      dataIndex: 'date',
+      width: 300,
+      render(_text, field, index) {
+        const isOpen = isEdit ? {} : { open: false };
+        const isShowSuffixIcon = isEdit ? {} : { suffixIcon: null };
+        const itemProps = {
+          allowClear: isEdit ? true : false,
+          ...FormItemEditProps,
+          ...isOpen,
+          ...isShowSuffixIcon
+        }
+        return (
+          <Form.Item
+            rules={[{ required: true, message: '请选择规则生效区间' }]}
+            name={[field.name, 'date']}
+            fieldKey={[field.key, 'date']}
+          >
+            <RangePicker
+              picker="date"
+              disabledDate={(currentDate: MomentType) => {
+                const list = getSelectDates().filter((_, i) => i != index);
+                return handleDisabledDate(list, currentDate);
+              }}
+              onChange={(date: any) =>
+                handleClearBeforeDateAndCheckIsBetween(date, index)
+              }
+              {...itemProps}
+            />
+          </Form.Item>
+        );
+      },
     },
     {
       title: '代码',

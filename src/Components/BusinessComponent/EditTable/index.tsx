@@ -1,26 +1,12 @@
 import { PlusCircleOutlined, UploadOutlined } from '@ant-design/icons';
-import { Button, Col, Form, Input, Row, Select, Table } from 'antd';
+import { Button, Col, Form, Input, message, Row, Select, Table } from 'antd';
 import type { LabeledValue } from 'antd/es/select';
-import { Fragment, useEffect, useMemo, useState } from 'react';
+import moment from "moment";
+import { Fragment, useCallback, useEffect, useMemo, useState } from 'react';
 import { getFormItemColumns, historyColumns } from "./config/columns";
-import { CODE_OPTIONS_DICT, DATE_OPTIONS, FORMITEMPROPS_ONREAD, HISTORY_DATA_SOURCE, IFormValues, INIT_FORM_VALUES, IStatusState } from "./config/constant";
+import { CODE_OPTIONS_DICT, FORMITEMPROPS_ONREAD, IFormItemType, IFormValues, IStatusState, MomentType } from "./config/constant";
+import { handleFetchCurrentData, handleFetchDateOptions, handleFetchHistoryData, _checkIsBetweenSection, _disabledDateHasListScope, _removeEmptyObject } from "./config/utils";
 import styles from './index.less';
-
-// 当前产品组合的数据
-const handleFetchCurrentData = async (): Promise<any | IFormValues> => {
-  // return await INIT_FORM_VALUES 
-  return await []
-}
-
-// 历史数据的dataSource
-const handleFetchHistoryData = async (date: any = ''): Promise<any[]> => {
-  return await HISTORY_DATA_SOURCE
-}
-
-// 历史数据日期select的options
-const handleFetchDateOptions = async (): Promise<any[]> => {
-  return await DATE_OPTIONS
-}
 
 const TableEditForm = () => {
   const [form] = Form.useForm()
@@ -48,6 +34,18 @@ const TableEditForm = () => {
     }
     return { ...FORMITEMPROPS_ONREAD }
   }, [status])
+
+  const getSelectDates = useCallback(() => {
+    if (!form?.getFieldValue('tableForm')) return [];
+    const values = form.getFieldValue('tableForm');
+    const timeArr = values.map((item: IFormItemType) => {
+      if (!item?.date) return {};
+      const startTime = moment(item.date[0]).startOf('day');
+      const endTime = moment(item.date[1]).endOf('day');
+      return { startTime, endTime };
+    });
+    return _removeEmptyObject(timeArr);
+  }, [form.getFieldValue('tableForm')]);
 
   const handleInitPage = async () => {
     const initFormValues = await handleFetchCurrentData()
@@ -95,8 +93,37 @@ const TableEditForm = () => {
     return Promise.resolve("")
   }
 
-  const handleExport = () => {
-  }
+  const handleDisabledDate = (list: any[], currentDate: MomentType) => {
+    if (currentDate! < moment().endOf('day')) return true;
+    return !!_disabledDateHasListScope(list, currentDate);
+  };
+
+  // 1.如果横跨了禁用的区间 清除并提示 2.如果修改了 将之后的所有表单的时间清空
+  const handleClearBeforeDateAndCheckIsBetween = (
+    date: [MomentType, MomentType],
+    index: number,
+  ) => {
+    if (!date) return false;
+    const values: IFormItemType[] = form.getFieldValue('tableForm');
+    const isBetween = _checkIsBetweenSection(
+      getSelectDates(),
+      date[0],
+      date[1],
+    );
+
+    if (isBetween) {
+      values[index].date = [];
+      form.setFieldsValue({ tableForm: values });
+      return message.error('不能横跨已经禁用的时间段');
+    }
+
+    const newValues = values.map((e, i) =>
+      i > index ? { ...e, date: [] } : { ...e },
+    );
+    form.setFieldsValue({ tableForm: newValues });
+  };
+
+  const handleExport = () => { }
 
   const handleOnCancel = () => {
     form.setFieldsValue({ tableForm: cacheFormValues })
@@ -172,20 +199,42 @@ const TableEditForm = () => {
             <Form form={form} onFinish={onFinish} layout='horizontal' onValuesChange={() => handleGetCurrentWeight()}>
               {renderButton()}
               {status !== 'history' ? (
-                <Form.List name='tableForm'>
-                  {(fields, { add, remove }) => {
+                <Form.List
+                  name='tableForm'
+                  rules={[
+                    {
+                      validator: async (_, tableForm) => {
+                        if (!tableForm || tableForm.length < 1) {
+                          return Promise.reject(new Error('At least 1 passengers'));
+                        }
+                      },
+                    },
+                  ]}
+                >
+                  {(fields, { add, remove }, { errors }) => {
                     return (<Fragment>
                       <Table
                         rowKey='key'
                         pagination={false}
                         dataSource={fields}
-                        columns={getFormItemColumns(add, remove, { status, FormItemEditProps, handleChangeCode, handleCheckIsWeightExceedExcessive, currentWeight, handleGetCurrentWeight })}
+                        columns={getFormItemColumns(add, remove, {
+                          status,
+                          FormItemEditProps,
+                          handleChangeCode,
+                          handleCheckIsWeightExceedExcessive,
+                          currentWeight,
+                          handleGetCurrentWeight,
+                          handleDisabledDate,
+                          handleClearBeforeDateAndCheckIsBetween,
+                          getSelectDates
+                        })}
                       />
                       {status == 'edit' && (
                         <Form.Item wrapperCol={{ span: 24 }} labelCol={{ span: 0 }} style={{ marginTop: 10 }}>
                           <Button type='link' onClick={() => add()} block >
                             <div style={{ color: '#3363D7' }}><PlusCircleOutlined /> &nbsp;添加产品</div>
                           </Button>
+                          <Form.ErrorList errors={errors} />
                         </Form.Item>
                       )}
                     </Fragment>)
