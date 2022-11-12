@@ -37,6 +37,12 @@ var button_style = __webpack_require__("+L6B");
 // EXTERNAL MODULE: ./node_modules/antd/es/button/index.js
 var es_button = __webpack_require__("2/Rp");
 
+// EXTERNAL MODULE: ./node_modules/antd/es/message/style/index.js
+var message_style = __webpack_require__("miYZ");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/message/index.js + 1 modules
+var message = __webpack_require__("tsqr");
+
 // EXTERNAL MODULE: ./node_modules/antd/es/form/style/index.js
 var form_style = __webpack_require__("y8nQ");
 
@@ -100,6 +106,10 @@ var icons_PlusCircleOutlined_PlusCircleOutlined = function PlusCircleOutlined(pr
 
 icons_PlusCircleOutlined_PlusCircleOutlined.displayName = 'PlusCircleOutlined';
 /* harmony default export */ var icons_PlusCircleOutlined = (/*#__PURE__*/external_window_React_["forwardRef"](icons_PlusCircleOutlined_PlusCircleOutlined));
+// EXTERNAL MODULE: external "window.moment"
+var external_window_moment_ = __webpack_require__("wy2R");
+var external_window_moment_default = /*#__PURE__*/__webpack_require__.n(external_window_moment_);
+
 // EXTERNAL MODULE: ./node_modules/antd/es/style/default.less
 var style_default = __webpack_require__("EFp3");
 
@@ -414,8 +424,15 @@ var input_number = __webpack_require__("fyUT");
 // EXTERNAL MODULE: ./node_modules/@umijs/babel-preset-umi/node_modules/@babel/runtime/helpers/esm/extends.js
 var helpers_esm_extends = __webpack_require__("0Owb");
 
+// EXTERNAL MODULE: ./node_modules/antd/es/date-picker/style/index.js
+var date_picker_style = __webpack_require__("iQDF");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/date-picker/index.js + 57 modules
+var date_picker = __webpack_require__("+eQT");
+
 // CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/constant.tsx
-// \u7F16\u8F91\u72B6\u6001 | \u5C55\u793A\u72B6\u6001 | \u5386\u53F2\u7EC4\u5408\u72B6\u6001
+ // \u7F16\u8F91\u72B6\u6001 | \u5C55\u793A\u72B6\u6001 | \u5386\u53F2\u7EC4\u5408\u72B6\u6001
+
 // \u53EA\u5C55\u793A\u7684 formItemProps
 const FORMITEMPROPS_ONREAD = {
   allowclear: "false",
@@ -445,6 +462,7 @@ const CODE_OPTIONS_DICT = [{
 const INIT_FORM_VALUES = {
   currentDate: '2022-01-01',
   tableForm: [{
+    date: [external_window_moment_default()('2021-01-01'), external_window_moment_default()('2021-01-01')],
     code: {
       label: 'product1-00001',
       value: 100001
@@ -508,6 +526,9 @@ const HISTORY_DATA_SOURCE = [{
 
 
 
+
+
+const RangePicker = date_picker["a" /* default */].RangePicker;
 const historyColumns = [{
   title: '\u5E8F\u53F7',
   dataIndex: 'index',
@@ -544,7 +565,10 @@ const getFormItemColumns = (_add, remove, {
   handleChangeCode,
   handleCheckIsWeightExceedExcessive,
   currentWeight,
-  handleGetCurrentWeight
+  handleGetCurrentWeight,
+  handleDisabledDate,
+  handleClearBeforeDateAndCheckIsBetween,
+  getSelectDates
 }) => {
   const isEdit = status == 'edit';
   return [{
@@ -552,6 +576,41 @@ const getFormItemColumns = (_add, remove, {
     dataIndex: 'index',
     render: (_text, _field, index) => index + 1,
     width: 80
+  }, {
+    title: '\u89C4\u5219\u751F\u6548\u533A\u95F4',
+    dataIndex: 'date',
+    width: 300,
+
+    render(_text, field, index) {
+      const isOpen = isEdit ? {} : {
+        open: false
+      };
+      const isShowSuffixIcon = isEdit ? {} : {
+        suffixIcon: null
+      };
+      const itemProps = {
+        allowClear: isEdit ? true : false,
+        ...FormItemEditProps,
+        ...isOpen,
+        ...isShowSuffixIcon
+      };
+      return /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
+        rules: [{
+          required: true,
+          message: '\u8BF7\u9009\u62E9\u89C4\u5219\u751F\u6548\u533A\u95F4'
+        }],
+        name: [field.name, 'date'],
+        fieldKey: [field.key, 'date']
+      }, /*#__PURE__*/external_window_React_default.a.createElement(RangePicker, Object(helpers_esm_extends["a" /* default */])({
+        picker: "date",
+        disabledDate: currentDate => {
+          const list = getSelectDates().filter((_, i) => i != index);
+          return handleDisabledDate(list, currentDate);
+        },
+        onChange: date => handleClearBeforeDateAndCheckIsBetween(date, index)
+      }, itemProps)));
+    }
+
   }, {
     title: '\u4EE3\u7801',
     dataIndex: 'code',
@@ -670,6 +729,59 @@ const getFormItemColumns = (_add, remove, {
     }, "\\u5220\\u9664"))
   } : {}];
 };
+// CONCATENATED MODULE: ./src/Components/BusinessComponent/EditTable/config/utils.tsx
+
+ // \u79FB\u9664\u6570\u7EC4\u4E2D\u7684Undefined
+
+const _removeUndefined = arr => {
+  return arr.filter(item => item !== undefined);
+};
+const flattenDeep = arr => Array.isArray(arr) ? arr.reduce((a, b) => [...a, ...flattenDeep(b)], []) : [arr];
+const _findAllMessage = (originArr, keyArr) => {
+  const arr = [];
+  keyArr.forEach(item => {
+    arr.push(originArr.filter(ele => ele.key == item));
+  });
+  return flattenDeep(arr);
+}; // \u5F53\u524D\u4EA7\u54C1\u7EC4\u5408\u7684\u6570\u636E
+
+const handleFetchCurrentData = async () => {
+  // return await INIT_FORM_VALUES
+  return await [];
+}; // \u5386\u53F2\u6570\u636E\u7684dataSource
+
+const handleFetchHistoryData = async (date = '') => {
+  return await HISTORY_DATA_SOURCE;
+}; // \u5386\u53F2\u6570\u636E\u65E5\u671Fselect\u7684options
+
+const handleFetchDateOptions = async () => {
+  return await DATE_OPTIONS;
+};
+const _removeEmptyObject = arr => {
+  return arr.filter(item => {
+    return Object.keys(item).length > 0;
+  });
+}; // \u68C0\u67E5\u662F\u5426\u8DE8\u533A\u95F4\u64CD\u4F5C
+
+const _checkIsBetweenSection = (arr, startTime, endTime) => {
+  const minStartTime = external_window_moment_default()(startTime).startOf('day');
+  const maxEndTime = external_window_moment_default()(endTime).endOf('day');
+  const result = arr.find(item => external_window_moment_default()(item.startTime).isBetween(minStartTime, maxEndTime) || external_window_moment_default()(item.endTime).isBetween(minStartTime, maxEndTime));
+  const isExist = typeof result == 'object' ? true : false;
+  return isExist;
+}; // \u7981\u7528\u9009\u8FC7\u7684\u65F6\u95F4\u533A\u95F4
+
+const _disabledDateHasListScope = (arr, currentDate = external_window_moment_default()()) => {
+  function getIsExitSection() {
+    if (arr.length == 0) return false;
+    const result = arr.find(item => !(currentDate <= item.startTime || currentDate >= item.endTime));
+    const isExist = typeof result == 'object' ? true : false;
+    return isExist;
+  }
+
+  const isExist = !!getIsExitSection();
+  return currentDate && isExist;
+};
 // EXTERNAL MODULE: ./src/Components/BusinessComponent/EditTable/index.less?modules
 var EditTablemodules = __webpack_require__("3Hbs");
 var EditTablemodules_default = /*#__PURE__*/__webpack_require__.n(EditTablemodules);
@@ -695,22 +807,11 @@ var EditTablemodules_default = /*#__PURE__*/__webpack_require__.n(EditTablemodul
 
 
 
- // \u5F53\u524D\u4EA7\u54C1\u7EC4\u5408\u7684\u6570\u636E
-
-const handleFetchCurrentData = async () => {
-  // return await INIT_FORM_VALUES 
-  return await [];
-}; // \u5386\u53F2\u6570\u636E\u7684dataSource
 
 
-const handleFetchHistoryData = async (date = '') => {
-  return await HISTORY_DATA_SOURCE;
-}; // \u5386\u53F2\u6570\u636E\u65E5\u671Fselect\u7684options
 
 
-const handleFetchDateOptions = async () => {
-  return await DATE_OPTIONS;
-};
+
 
 const TableEditForm = () => {
   const _Form$useForm = es_form["a" /* default */].useForm(),
@@ -764,6 +865,20 @@ const TableEditForm = () => {
     return { ...FORMITEMPROPS_ONREAD
     };
   }, [status]);
+  const getSelectDates = Object(external_window_React_["useCallback"])(() => {
+    if (!(form !== null && form !== void 0 && form.getFieldValue('tableForm'))) return [];
+    const values = form.getFieldValue('tableForm');
+    const timeArr = values.map(item => {
+      if (!(item !== null && item !== void 0 && item.date)) return {};
+      const startTime = external_window_moment_default()(item.date[0]).startOf('day');
+      const endTime = external_window_moment_default()(item.date[1]).endOf('day');
+      return {
+        startTime,
+        endTime
+      };
+    });
+    return _removeEmptyObject(timeArr);
+  }, [form.getFieldValue('tableForm')]);
 
   const handleInitPage = async () => {
     const initFormValues = await handleFetchCurrentData();
@@ -812,6 +927,35 @@ const TableEditForm = () => {
     }
 
     return Promise.resolve("");
+  };
+
+  const handleDisabledDate = (list, currentDate) => {
+    if (currentDate < external_window_moment_default()().endOf('day')) return true;
+    return !!_disabledDateHasListScope(list, currentDate);
+  }; // 1.\u5982\u679C\u6A2A\u8DE8\u4E86\u7981\u7528\u7684\u533A\u95F4 \u6E05\u9664\u5E76\u63D0\u793A 2.\u5982\u679C\u4FEE\u6539\u4E86 \u5C06\u4E4B\u540E\u7684\u6240\u6709\u8868\u5355\u7684\u65F6\u95F4\u6E05\u7A7A
+
+
+  const handleClearBeforeDateAndCheckIsBetween = (date, index) => {
+    if (!date) return false;
+    const values = form.getFieldValue('tableForm');
+
+    const isBetween = _checkIsBetweenSection(getSelectDates(), date[0], date[1]);
+
+    if (isBetween) {
+      values[index].date = [];
+      form.setFieldsValue({
+        tableForm: values
+      });
+      return message["b" /* default */].error('\u4E0D\u80FD\u6A2A\u8DE8\u5DF2\u7ECF\u7981\u7528\u7684\u65F6\u95F4\u6BB5');
+    }
+
+    const newValues = values.map((e, i) => i > index ? { ...e,
+      date: []
+    } : { ...e
+    });
+    form.setFieldsValue({
+      tableForm: newValues
+    });
   };
 
   const handleExport = () => {};
@@ -934,10 +1078,19 @@ const TableEditForm = () => {
     layout: "horizontal",
     onValuesChange: () => handleGetCurrentWeight()
   }, renderButton(), status !== 'history' ? /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].List, {
-    name: "tableForm"
+    name: "tableForm",
+    rules: [{
+      validator: async (_, tableForm) => {
+        if (!tableForm || tableForm.length < 1) {
+          return Promise.reject(new Error('At least 1 passengers'));
+        }
+      }
+    }]
   }, (fields, {
     add,
     remove
+  }, {
+    errors
   }) => {
     return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(table["a" /* default */], {
       rowKey: "key",
@@ -949,7 +1102,10 @@ const TableEditForm = () => {
         handleChangeCode,
         handleCheckIsWeightExceedExcessive,
         currentWeight,
-        handleGetCurrentWeight
+        handleGetCurrentWeight,
+        handleDisabledDate,
+        handleClearBeforeDateAndCheckIsBetween,
+        getSelectDates
       })
     }), status == 'edit' && /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].Item, {
       wrapperCol: {
@@ -969,7 +1125,9 @@ const TableEditForm = () => {
       style: {
         color: '#3363D7'
       }
-    }, /*#__PURE__*/external_window_React_default.a.createElement(icons_PlusCircleOutlined, null), " \\xA0\\u6DFB\\u52A0\\u4EA7\\u54C1"))));
+    }, /*#__PURE__*/external_window_React_default.a.createElement(icons_PlusCircleOutlined, null), " \\xA0\\u6DFB\\u52A0\\u4EA7\\u54C1")), /*#__PURE__*/external_window_React_default.a.createElement(es_form["a" /* default */].ErrorList, {
+      errors: errors
+    })));
   }) : /*#__PURE__*/external_window_React_default.a.createElement(table["a" /* default */], {
     rowKey: "key",
     pagination: false,
@@ -980,7 +1138,7 @@ const TableEditForm = () => {
 
 /* harmony default export */ var EditTable = __webpack_exports__["default"] = (TableEditForm);
 
-//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.tsx_+_12_modules?`)},"3Hbs":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+//# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.tsx_+_13_modules?`)},"3Hbs":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 module.exports = {"page":"page___1CrUj"};
 
 //# sourceURL=webpack:///./src/Components/BusinessComponent/EditTable/index.less?`)},UADf:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin

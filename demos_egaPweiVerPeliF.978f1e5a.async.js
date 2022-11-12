@@ -47265,9 +47265,7 @@ Support inline asm ?
 }
 
 
-//# sourceURL=webpack:///./node_modules/refractor/lang/pascal.js?`)},bXwC:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
-
-//# sourceURL=webpack:///./node_modules/antd/es/message/style/index.less?`)},c0d7:function(module,exports,__webpack_require__){"use strict";eval(`
+//# sourceURL=webpack:///./node_modules/refractor/lang/pascal.js?`)},c0d7:function(module,exports,__webpack_require__){"use strict";eval(`
 
 module.exports = apacheconf
 apacheconf.displayName = 'apacheconf'
@@ -50650,14 +50648,7 @@ function purescript(Prism) {
 }
 
 
-//# sourceURL=webpack:///./node_modules/refractor/lang/purescript.js?`)},miYZ:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("EFp3");
-/* harmony import */ var _style_default_less__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_default_less__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("bXwC");
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less__WEBPACK_IMPORTED_MODULE_1__);
-
-
-
-//# sourceURL=webpack:///./node_modules/antd/es/message/style/index.js?`)},npx2:function(module,exports,__webpack_require__){"use strict";eval(`
+//# sourceURL=webpack:///./node_modules/refractor/lang/purescript.js?`)},npx2:function(module,exports,__webpack_require__){"use strict";eval(`
 
 module.exports = pug
 pug.displayName = 'pug'
