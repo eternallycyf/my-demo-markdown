@@ -167,6 +167,12 @@ var row_style = __webpack_require__("14J3");
 // EXTERNAL MODULE: ./node_modules/antd/es/row/index.js
 var es_row = __webpack_require__("BMrR");
 
+// EXTERNAL MODULE: ./node_modules/antd/es/tag/style/index.js
+var tag_style = __webpack_require__("+BJd");
+
+// EXTERNAL MODULE: ./node_modules/antd/es/tag/index.js + 1 modules
+var tag = __webpack_require__("mr32");
+
 // EXTERNAL MODULE: external "window.React"
 var external_window_React_ = __webpack_require__("cDcd");
 var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
@@ -242,16 +248,17 @@ const CustomTooltip = props => {
         col = _props$col === void 0 ? 8 : _props$col,
         _props$copyable = props.copyable,
         copyable = _props$copyable === void 0 ? false : _props$copyable;
+  const isTextToObject = typeof text === 'object';
+  const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
   const copyableProps = copyable ? {
     copyable: {
       text
     }
   } : {};
-  const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
   const styles = {
-    maxWidth: 370,
-    wordWrap: 'break-word',
-    wordBreak: 'break-all',
+    // maxWidth: 370,
+    // wordWrap: 'break-word',
+    // wordBreak: 'break-all',
     color: 'rgba(0,0,0,0.45)',
     fontSize: 14,
     ...style
@@ -273,24 +280,25 @@ const CustomTooltip = props => {
 
   const customRowBaseProps = {
     style: styles,
-    title: text !== null && text !== void 0 ? text : '--',
     ...copyableProps
-  };
+  }; // \u5982\u679C\u662F\u5143\u7D20 Paragraph \u7EC4\u4EF6\u8BBE\u7F6Erow\u4E3A1\u65F6\u5019 \u53EA\u663E\u793A... \u9700\u8981\u624B\u52A8\u8BBE\u7F6E\u4E3A rows >= 2
+
+  const customRows = isTextToObject ? typeof row.rows == 'number' ? row.rows + 1 : 2 : row.rows;
   const customRowEllipsisParagraphProps = isExpand ? { ...customRowBaseProps
   } : { ...customRowBaseProps,
     ellipsis: {
-      rows: row.rows,
+      rows: customRows,
       expandable: isExpand,
-      suffix: isExpand ? '' : getToggleButton(true),
-      tooltip: text !== null && text !== void 0 ? text : '--',
+      suffix: isExpand ? ' ' : getToggleButton(true),
+      tooltip: isTextToObject ? '' : text,
       onExpand: () => setIsExpand(true)
     }
   };
   const customRowEllipsisNotExpandParagraphProps = { ...customRowBaseProps,
     ellipsis: {
-      rows: row.rows,
+      rows: customRows,
       expandable: false,
-      tooltip: text !== null && text !== void 0 ? text : '--'
+      tooltip: isTextToObject ? '' : text
     }
   }; // row.rows = 1 \u4E14 text.length > maxLength
 
@@ -305,7 +313,9 @@ const CustomTooltip = props => {
     style: styles
   }), text !== null && text !== void 0 ? text : '--'); // \u8BBE\u7F6E\u4E86 row.autoSize
 
-  const AutoSizeParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
+  const AutoSizeParagraph = isTextToObject ? /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
+    span: col
+  }, text !== null && text !== void 0 ? text : '--')) : /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_["Fragment"], null, /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, copyableProps, /*#__PURE__*/external_window_React_default.a.createElement(TextArea, {
     style: {
@@ -316,16 +326,27 @@ const CustomTooltip = props => {
     bordered: false,
     readOnly: true,
     value: text !== null && text !== void 0 ? text : '--'
-  })));
+  }))));
   const CustomRowExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, customRowEllipsisParagraphProps, text !== null && text !== void 0 ? text : '--', isExpand && getToggleButton(false)));
   const CustomRowNotExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, customRowEllipsisNotExpandParagraphProps, text !== null && text !== void 0 ? text : '--'));
+
+  if (row.rows == 'autoSize' && isTextToObject) {
+    console.log('\u5F53\u4F20\u5165\u7684text\u4E0D\u662Fstring\u7C7B\u578B\u65F6, \u5EFA\u8BAE\u4F7F\u7528row={{ rows:1, expend: true }}');
+  }
+
   if (row.rows == 'autoSize') return AutoSizeParagraph;
   if (row.rows > 1 && row.expend == true) return CustomRowExpendParagraph;
   if (row.rows > 1 && !row.expend) return CustomRowNotExpendParagraph;
+
+  if (isTextToObject) {
+    console.log('\u53EA\u6709\u5F53 row.rows >= 2 \u7684\u65F6\u5019\u624D\u53EF\u4EE5\u914D\u7F6E row.expend');
+    return CustomRowExpendParagraph;
+  }
+
   return /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, {
@@ -339,10 +360,37 @@ const CustomTooltip = props => {
 
 
 
+
+
 const TEXT = 'AntV \u662F\u8682\u8681\u91D1\u670D\u5168\u65B0\u4E00\u4EE3\u6570\u636E\u53EF\u89C6\u5316\u89E3\u51B3\u65B9\u6848\uFF0C\u81F4\u529B\u4E8E\u63D0\u4F9B\u4E00\u5957\u7B80\u5355\u65B9\u4FBF\u3001\u4E13\u4E1A\u53EF\u9760\u3001\u4E0D\u9650\u53EF\u80FD\u7684\u6570\u636E\u53EF\u89C6\u5316\u6700\u4F73\u5B9E\u8DF5\u3002\u5F97\u76CA\u4E8E\u4E30\u5BCC\u7684\u4E1A\u52A1\u573A\u666F\u548C\u7528\u6237\u9700\u6C42\u6311\u6218\uFF0CAntV \u7ECF\u5386\u591A\u5E74\u79EF\u7D2F\u4E0E\u4E0D\u65AD\u6253\u78E8\uFF0C\u5DF2\u652F\u6491\u6574\u4E2A\u963F\u91CC\u96C6\u56E2\u5185\u5916 20000+ \u4E1A\u52A1\u7CFB\u7EDF\uFF0C\u901A\u8FC7\u4E86\u65E5\u5747\u5343\u4E07\u7EA7 UV \u4EA7\u54C1\u7684\u4E25\u82DB\u8003\u9A8C\u3002 \u6211\u4EEC\u6B63\u5728\u57FA\u7840\u56FE\u8868\uFF0C\u56FE\u5206\u6790\uFF0C\u56FE\u7F16\u8F91\uFF0C\u5730\u7406\u7A7A\u95F4\u53EF\u89C6\u5316\uFF0C\u667A\u80FD\u53EF\u89C6\u5316\u7B49\u5404\u4E2A\u53EF\u89C6\u5316\u7684\u9886\u57DF\u8015\u8018\uFF0C\u6B22\u8FCE\u540C\u8DEF\u4EBA\u4E00\u8D77\u524D\u884C';
+const COLOR_DICT = {
+  1: 'magenta',
+  2: 'red',
+  3: 'volcano',
+  4: 'orange',
+  5: 'gold',
+  6: 'lime',
+  7: 'green',
+  8: 'cyan',
+  9: 'blue',
+  10: 'purple'
+};
+const tagS = Array.from({
+  length: 200
+}).map((_, i) => /*#__PURE__*/external_window_React_default.a.createElement(tag["a" /* default */], {
+  key: Math.random(),
+  color: COLOR_DICT[~~(Math.random() * 10)]
+}, COLOR_DICT[~~(Math.random() * 10)]));
 
 const IndexPage = () => {
-  return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(es_row["a" /* default */], {
+  return /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null, /*#__PURE__*/external_window_React_default.a.createElement(es_row["a" /* default */], null, /*#__PURE__*/external_window_React_default.a.createElement(CustomTooltip_CustomTooltip, {
+    col: 24,
+    text: tagS,
+    row: {
+      rows: 1,
+      expend: false
+    }
+  })), /*#__PURE__*/external_window_React_default.a.createElement(es_row["a" /* default */], {
     gutter: 10
   }, /*#__PURE__*/external_window_React_default.a.createElement(CustomTooltip_CustomTooltip, {
     text: TEXT,
@@ -377,6 +425,7 @@ const IndexPage = () => {
     copyable: true,
     col: 6,
     row: {
+      rows: 'autoSize',
       EllipsisSymbol: false
     }
   })));
