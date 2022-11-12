@@ -2201,74 +2201,7 @@ class Father extends react__WEBPACK_IMPORTED_MODULE_2___default.a.PureComponent 
 
 }
 
-//# sourceURL=webpack:///./src/Components/React/RefDemo/ClassUseHookRef/index.tsx?`)},gDlH:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("wx14");
-/* harmony import */ var rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("4IlW");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("cDcd");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-/**
- * Wrap of sub component which need use as Button capacity (like Icon component).
- *
- * This helps accessibility reader to tread as a interactive button to operation.
- */
-
-
-var inlineStyle = {
-  border: 0,
-  background: 'transparent',
-  padding: 0,
-  lineHeight: 'inherit',
-  display: 'inline-block'
-};
-var TransButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](function (props, ref) {
-  var onKeyDown = function onKeyDown(event) {
-    var keyCode = event.keyCode;
-    if (keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].ENTER) {
-      event.preventDefault();
-    }
-  };
-  var onKeyUp = function onKeyUp(event) {
-    var keyCode = event.keyCode;
-    var onClick = props.onClick;
-    if (keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_1__[/* default */ "a"].ENTER && onClick) {
-      onClick();
-    }
-  };
-  var style = props.style,
-    noStyle = props.noStyle,
-    disabled = props.disabled,
-    restProps = __rest(props, ["style", "noStyle", "disabled"]);
-  var mergedStyle = {};
-  if (!noStyle) {
-    mergedStyle = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, inlineStyle);
-  }
-  if (disabled) {
-    mergedStyle.pointerEvents = 'none';
-  }
-  mergedStyle = Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({}, mergedStyle), style);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["createElement"]("div", Object(_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])({
-    role: "button",
-    tabIndex: 0,
-    ref: ref
-  }, restProps, {
-    onKeyDown: onKeyDown,
-    onKeyUp: onKeyUp,
-    style: mergedStyle
-  }));
-});
-/* harmony default export */ __webpack_exports__["a"] = (TransButton);
-
-//# sourceURL=webpack:///./node_modules/antd/es/_util/transButton.js?`)},jdOd:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+//# sourceURL=webpack:///./src/Components/React/RefDemo/ClassUseHookRef/index.tsx?`)},jdOd:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd_es_card_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("IzEo");
 /* harmony import */ var antd_es_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("bx4M");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("cDcd");
