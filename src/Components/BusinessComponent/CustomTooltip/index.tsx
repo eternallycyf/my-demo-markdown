@@ -26,7 +26,11 @@ const IndexPage = () => {
   return (
     <>
       <Row>
-        <CustomTooltip col={24} text={tagS} row={{ rows: 1, expend: false }} />
+        <CustomTooltip
+          col={24}
+          text={tagS}
+          row={{ rows: 2, expend: true, EllipsisSymbol: true }}
+        />
       </Row>
       <Row gutter={10}>
         <CustomTooltip text={TEXT} copyable col={3} maxLength={3} />

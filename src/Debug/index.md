@@ -615,3 +615,10 @@ window.location.href = '/'
 window.reload
 # 给组件+一个动态的key控制渲染 react如果key变了就会自动渲染
 ```
+
+## 38. 使用 antd-form.List 时候 自定义了一个表单组件(穿梭框)
+
+- 自己是通过 ref 的方式调用和设置组件内部数据的
+- 但是当 form.list 增加或者删除的时候 索引会变化 ref 的方式很难定位索引
+- 因此将自定义表单的数据放在自己的 select 表单上 当开始了 labelInValue 的时候
+- 这个对象可以自定义的往里面加字段 同时又保持了动态删除 新增的动态性

@@ -1,5 +1,7 @@
 import { Col, Input, Tooltip, Typography } from 'antd';
 import React, { FC, Fragment, useState } from 'react';
+import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import cx from './index.less';
 const { Paragraph } = Typography;
 const { TextArea } = Input;
 
@@ -80,7 +82,10 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
 
   const isTextToObject = typeof text === 'object';
   const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
-  const copyableProps = copyable ? { copyable: { text } } : {};
+  const copyableProps = copyable
+    ? { copyable: { text, tooltips: ['点击复制', '复制成功'] } }
+    : {};
+  const ellipsisClassName = row.EllipsisSymbol ? cx.ellipsis : '';
   const styles = {
     // maxWidth: 370,
     // wordWrap: 'break-word',
@@ -97,7 +102,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
           className="ant-typography-expand"
           onClick={() => setIsExpand(isExpandStatus)}
         >
-          展开
+          展开 <UpOutlined className={cx['apply-shake']} />
         </a>
       );
     } else {
@@ -106,7 +111,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
           className="ant-typography-expand"
           onClick={() => setIsExpand(isExpandStatus)}
         >
-          收起
+          收起 <DownOutlined className={cx['apply-shake']} />
         </a>
       );
     }
@@ -145,7 +150,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
 
   // row.rows = 1 且 text.length > maxLength
   const SingleOverflowParagraph = (
-    <Tooltip title={text} style={styles}>
+    <Tooltip title={text} style={styles} className={ellipsisClassName}>
       <Paragraph {...copyableProps} style={styles}>
         {text.slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
       </Paragraph>
@@ -154,7 +159,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
 
   // row.rows = 1 且 text.length <= maxLength
   const SingleParagraph = (
-    <Paragraph {...copyableProps} style={styles}>
+    <Paragraph {...copyableProps} style={styles} className={ellipsisClassName}>
       {text ?? '--'}
     </Paragraph>
   );
@@ -167,7 +172,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   ) : (
     <Fragment>
       <Col span={col}>
-        <Paragraph {...copyableProps}>
+        <Paragraph {...copyableProps} className={ellipsisClassName}>
           <TextArea
             style={{ resize: 'none', ...styles }}
             autoSize
@@ -181,7 +186,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 
   const CustomRowExpendParagraph = (
-    <Col span={col}>
+    <Col span={col} className={ellipsisClassName}>
       <Paragraph {...customRowEllipsisParagraphProps}>
         {text ?? '--'}
         {isExpand && getToggleButton(false)}
@@ -190,7 +195,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 
   const CustomRowNotExpendParagraph = (
-    <Col span={col}>
+    <Col span={col} className={ellipsisClassName}>
       <Paragraph {...customRowEllipsisNotExpandParagraphProps}>
         {text ?? '--'}
       </Paragraph>
@@ -212,7 +217,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
 
   return (
     <Col span={col}>
-      <Paragraph style={styles}>
+      <Paragraph style={styles} className={ellipsisClassName}>
         {text && text.length > maxLength
           ? SingleOverflowParagraph
           : SingleParagraph}
