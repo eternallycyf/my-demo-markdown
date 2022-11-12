@@ -1,5 +1,5 @@
 import { Col, Input, Tooltip, Typography } from 'antd';
-import React, { FC, useState } from 'react';
+import React, { FC, Fragment, useState } from 'react';
 const { Paragraph } = Typography;
 const { TextArea } = Input;
 
@@ -9,7 +9,7 @@ interface IBaseProps {
    * @type string
    * @default '''
    */
-  text: string;
+  text: string | any;
   style?: React.CSSProperties | any;
   /**
    * @description 栅格
@@ -67,7 +67,7 @@ type Iprops = {
 export const IProps = <T,>(props: Iprops) => <></>;
 export const IRowProps = <T,>(props: RowProps) => <></>;
 
-const CustomTooltip: FC<Iprops> = props => {
+const CustomTooltip: FC<ICustomTooltipProps> = props => {
   const [isExpand, setIsExpand] = useState<boolean>(false);
   const {
     text = '',
@@ -78,12 +78,13 @@ const CustomTooltip: FC<Iprops> = props => {
     copyable = false,
   } = props;
 
-  const copyableProps = copyable ? { copyable: { text } } : {};
+  const isTextToObject = typeof text === 'object';
   const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
+  const copyableProps = copyable ? { copyable: { text } } : {};
   const styles = {
-    maxWidth: 370,
-    wordWrap: 'break-word',
-    wordBreak: 'break-all',
+    // maxWidth: 370,
+    // wordWrap: 'break-word',
+    // wordBreak: 'break-all',
     color: 'rgba(0,0,0,0.45)',
     fontSize: 14,
     ...style,
@@ -113,29 +114,35 @@ const CustomTooltip: FC<Iprops> = props => {
 
   const customRowBaseProps = {
     style: styles,
-    title: text ?? '--',
     ...copyableProps,
   };
+  // 如果是元素 Paragraph 组件设置row为1时候 只显示... 需要手动设置为 rows >= 2
+  const customRows = isTextToObject
+    ? typeof row.rows == 'number'
+      ? row.rows + 1
+      : 2
+    : row.rows;
   const customRowEllipsisParagraphProps = isExpand
     ? { ...customRowBaseProps }
     : {
         ...customRowBaseProps,
         ellipsis: {
-          rows: row.rows,
+          rows: customRows as number,
           expandable: isExpand,
-          suffix: isExpand ? '' : ((getToggleButton(true) as any) as string),
-          tooltip: text ?? '--',
+          suffix: isExpand ? ' ' : ((getToggleButton(true) as any) as string),
+          tooltip: isTextToObject ? '' : text,
           onExpand: () => setIsExpand(true),
         },
       };
   const customRowEllipsisNotExpandParagraphProps = {
     ...customRowBaseProps,
     ellipsis: {
-      rows: row.rows,
+      rows: customRows as number,
       expandable: false,
-      tooltip: text ?? '--',
+      tooltip: isTextToObject ? '' : text,
     },
   };
+
   // row.rows = 1 且 text.length > maxLength
   const SingleOverflowParagraph = (
     <Tooltip title={text} style={styles}>
@@ -153,18 +160,24 @@ const CustomTooltip: FC<Iprops> = props => {
   );
 
   // 设置了 row.autoSize
-  const AutoSizeParagraph = (
-    <Col span={col}>
-      <Paragraph {...copyableProps}>
-        <TextArea
-          style={{ resize: 'none', ...styles }}
-          autoSize
-          bordered={false}
-          readOnly
-          value={text ?? '--'}
-        />
-      </Paragraph>
-    </Col>
+  const AutoSizeParagraph = isTextToObject ? (
+    <Fragment>
+      <Col span={col}>{text ?? '--'}</Col>
+    </Fragment>
+  ) : (
+    <Fragment>
+      <Col span={col}>
+        <Paragraph {...copyableProps}>
+          <TextArea
+            style={{ resize: 'none', ...styles }}
+            autoSize
+            bordered={false}
+            readOnly
+            value={text ?? '--'}
+          />
+        </Paragraph>
+      </Col>
+    </Fragment>
   );
 
   const CustomRowExpendParagraph = (
@@ -184,9 +197,18 @@ const CustomTooltip: FC<Iprops> = props => {
     </Col>
   );
 
+  if (row.rows == 'autoSize' && isTextToObject) {
+    console.log(
+      '当传入的text不是string类型时, 建议使用row={{ rows:1, expend: true }}',
+    );
+  }
   if (row.rows == 'autoSize') return AutoSizeParagraph;
   if (row.rows > 1 && row.expend == true) return CustomRowExpendParagraph;
   if (row.rows > 1 && !row.expend) return CustomRowNotExpendParagraph;
+  if (isTextToObject) {
+    console.log('只有当 row.rows >= 2 的时候才可以配置 row.expend');
+    return CustomRowExpendParagraph;
+  }
 
   return (
     <Col span={col}>
