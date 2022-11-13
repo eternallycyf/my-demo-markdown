@@ -8,10 +8,15 @@ const { TextArea } = Input;
 interface IBaseProps {
   /**
    * @description 需要格式化的string
-   * @type string
+   * @type string | React.ReactNode
    * @default '''
    */
   text: string | any;
+  /**
+   * @description 样式
+   * @type React.CSSProperties
+   * @default {color: 'rgba(0,0,0,0.45)',fontSize: 14,}
+   */
   style?: React.CSSProperties | any;
   /**
    * @description 栅格
