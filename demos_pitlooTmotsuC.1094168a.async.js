@@ -307,7 +307,7 @@ const CustomTooltip = props => {
     ellipsis: {
       rows: customRows,
       expandable: isExpand,
-      suffix: isExpand ? ' ' : getToggleButton(true),
+      suffix: isExpand ? '' : getToggleButton(true),
       tooltip: isTextToObject ? '' : text,
       onExpand: () => setIsExpand(true)
     }
@@ -326,7 +326,7 @@ const CustomTooltip = props => {
     className: ellipsisClassName
   }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, copyableProps, {
     style: styles
-  }), (_ref = text.slice(0, maxLength) + isShowEllipsisSymbol) !== null && _ref !== void 0 ? _ref : '--')); // row.rows = 1 \u4E14 text.length <= maxLength
+  }), isTextToObject ? '' : (_ref = text.slice(0, maxLength) + isShowEllipsisSymbol) !== null && _ref !== void 0 ? _ref : '--')); // row.rows = 1 \u4E14 text.length <= maxLength
 
   const SingleParagraph = /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, copyableProps, {
     style: styles,
