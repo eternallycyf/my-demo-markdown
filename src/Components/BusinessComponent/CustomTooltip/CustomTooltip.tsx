@@ -157,7 +157,9 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   const SingleOverflowParagraph = (
     <Tooltip title={text} style={styles} className={ellipsisClassName}>
       <Paragraph {...copyableProps} style={styles}>
-        {text.slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
+        {isTextToObject
+          ? ''
+          : text.slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
       </Paragraph>
     </Tooltip>
   );
