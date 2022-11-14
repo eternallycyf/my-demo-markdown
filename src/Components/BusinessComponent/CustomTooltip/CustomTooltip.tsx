@@ -139,7 +139,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
         ellipsis: {
           rows: customRows as number,
           expandable: isExpand,
-          suffix: isExpand ? ' ' : ((getToggleButton(true) as any) as string),
+          suffix: isExpand ? '' : ((getToggleButton(true) as any) as string),
           tooltip: isTextToObject ? '' : text,
           onExpand: () => setIsExpand(true),
         },
