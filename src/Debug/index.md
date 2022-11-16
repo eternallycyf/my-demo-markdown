@@ -622,3 +622,10 @@ window.reload
 - 但是当 form.list 增加或者删除的时候 索引会变化 ref 的方式很难定位索引
 - 因此将自定义表单的数据放在自己的 select 表单上 当开始了 labelInValue 的时候
 - 这个对象可以自定义的往里面加字段 同时又保持了动态删除 新增的动态性
+
+## 39. antd table 隐藏某列
+
+```js
+tableLayout = 'fixed';
+width: 0;
+```
