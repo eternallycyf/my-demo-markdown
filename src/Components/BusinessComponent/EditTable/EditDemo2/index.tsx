@@ -213,7 +213,7 @@ const App: React.FC = () => {
     ...restProps
   }) => {
     let index = 10000;
-    if (data.length > 0 && record.key) {
+    if (data.length > 0 && record?.key) {
       index = data.findIndex((item: IDataType) => item.key == record.key);
     }
     const node = _getInputNode(formItemType, index);
