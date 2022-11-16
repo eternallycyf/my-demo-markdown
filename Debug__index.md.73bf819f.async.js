@@ -520,7 +520,18 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "38. \\u4F7F\\u7528 antd-form.List \\u65F6\\u5019 \\u81EA\\u5B9A\\u4E49\\u4E86\\u4E00\\u4E2A\\u8868\\u5355\\u7EC4\\u4EF6(\\u7A7F\\u68AD\\u6846)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u81EA\\u5DF1\\u662F\\u901A\\u8FC7 ref \\u7684\\u65B9\\u5F0F\\u8C03\\u7528\\u548C\\u8BBE\\u7F6E\\u7EC4\\u4EF6\\u5185\\u90E8\\u6570\\u636E\\u7684"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u4F46\\u662F\\u5F53 form.list \\u589E\\u52A0\\u6216\\u8005\\u5220\\u9664\\u7684\\u65F6\\u5019 \\u7D22\\u5F15\\u4F1A\\u53D8\\u5316 ref \\u7684\\u65B9\\u5F0F\\u5F88\\u96BE\\u5B9A\\u4F4D\\u7D22\\u5F15"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u56E0\\u6B64\\u5C06\\u81EA\\u5B9A\\u4E49\\u8868\\u5355\\u7684\\u6570\\u636E\\u653E\\u5728\\u81EA\\u5DF1\\u7684 select \\u8868\\u5355\\u4E0A \\u5F53\\u5F00\\u59CB\\u4E86 labelInValue \\u7684\\u65F6\\u5019"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u8FD9\\u4E2A\\u5BF9\\u8C61\\u53EF\\u4EE5\\u81EA\\u5B9A\\u4E49\\u7684\\u5F80\\u91CC\\u9762\\u52A0\\u5B57\\u6BB5 \\u540C\\u65F6\\u53C8\\u4FDD\\u6301\\u4E86\\u52A8\\u6001\\u5220\\u9664 \\u65B0\\u589E\\u7684\\u52A8\\u6001\\u6027"))));
+  })), "38. \\u4F7F\\u7528 antd-form.List \\u65F6\\u5019 \\u81EA\\u5B9A\\u4E49\\u4E86\\u4E00\\u4E2A\\u8868\\u5355\\u7EC4\\u4EF6(\\u7A7F\\u68AD\\u6846)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u81EA\\u5DF1\\u662F\\u901A\\u8FC7 ref \\u7684\\u65B9\\u5F0F\\u8C03\\u7528\\u548C\\u8BBE\\u7F6E\\u7EC4\\u4EF6\\u5185\\u90E8\\u6570\\u636E\\u7684"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u4F46\\u662F\\u5F53 form.list \\u589E\\u52A0\\u6216\\u8005\\u5220\\u9664\\u7684\\u65F6\\u5019 \\u7D22\\u5F15\\u4F1A\\u53D8\\u5316 ref \\u7684\\u65B9\\u5F0F\\u5F88\\u96BE\\u5B9A\\u4F4D\\u7D22\\u5F15"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u56E0\\u6B64\\u5C06\\u81EA\\u5B9A\\u4E49\\u8868\\u5355\\u7684\\u6570\\u636E\\u653E\\u5728\\u81EA\\u5DF1\\u7684 select \\u8868\\u5355\\u4E0A \\u5F53\\u5F00\\u59CB\\u4E86 labelInValue \\u7684\\u65F6\\u5019"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u8FD9\\u4E2A\\u5BF9\\u8C61\\u53EF\\u4EE5\\u81EA\\u5B9A\\u4E49\\u7684\\u5F80\\u91CC\\u9762\\u52A0\\u5B57\\u6BB5 \\u540C\\u65F6\\u53C8\\u4FDD\\u6301\\u4E86\\u52A8\\u6001\\u5220\\u9664 \\u65B0\\u589E\\u7684\\u52A8\\u6001\\u6027")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "39-antd-table-\\u9690\\u85CF\\u67D0\\u5217"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#39-antd-table-\\u9690\\u85CF\\u67D0\\u5217",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "39. antd table \\u9690\\u85CF\\u67D0\\u5217"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "tableLayout = 'fixed';\\nwidth: 0;",
+    lang: "js"
+  })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
