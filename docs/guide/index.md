@@ -23,6 +23,7 @@ nav:
 - [git 命令及 git-commit 规范](/article/2.基本需要掌握的规范/1.git%20命令及%20git-commit%20规范)
 - [typescript 注释规范](/article/2.基本需要掌握的规范/2.typescript%20注释规范)
 - [json-schema](/article/2.基本需要掌握的规范/3.json-schema)
+- [React 风格指南](/article/2.基本需要掌握的规范/4.react风格指南)
 
 ## 3. CSS
 
