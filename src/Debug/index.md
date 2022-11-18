@@ -629,3 +629,5 @@ window.reload
 tableLayout = 'fixed';
 width: 0;
 ```
+
+## 40. antd upload 组件使用自带的 action 上传 不经过 umi 的拦截器
