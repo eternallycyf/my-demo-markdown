@@ -16,7 +16,13 @@ const COLOR_DICT: any = {
   10: 'purple',
 };
 
-const tagS = Array.from({ length: 200 }).map((_, i) => (
+const tagS = Array.from({ length: 10 }).map((_, i) => (
+  <Tag key={Math.random()} color={COLOR_DICT[~~(Math.random() * 10)]}>
+    {COLOR_DICT[~~(Math.random() * 10)]}
+  </Tag>
+));
+
+const tagS2 = Array.from({ length: 23 }).map((_, i) => (
   <Tag key={Math.random()} color={COLOR_DICT[~~(Math.random() * 10)]}>
     {COLOR_DICT[~~(Math.random() * 10)]}
   </Tag>
@@ -29,7 +35,19 @@ const IndexPage = () => {
         <CustomTooltip
           col={24}
           text={tagS}
-          row={{ rows: 2, expend: true, EllipsisSymbol: true }}
+          row={{ rows: 1, expend: true, EllipsisSymbol: true }}
+        />
+      </Row>
+      <Row>
+        <CustomTooltip
+          col={24}
+          text={tagS2}
+          row={{
+            rows: 1,
+            expend: true,
+            EllipsisSymbol: true,
+            className: 'mustShowClassName',
+          }}
         />
       </Row>
       <Row gutter={10}>

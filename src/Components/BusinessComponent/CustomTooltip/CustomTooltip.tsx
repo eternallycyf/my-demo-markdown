@@ -1,8 +1,8 @@
-import { Col, Input, Tooltip, Typography } from 'antd';
-import React, { FC, Fragment, useState } from 'react';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { Col, Input, Spin, Tooltip, Typography } from 'antd';
+import React, { FC, Fragment, useLayoutEffect, useRef, useState } from 'react';
 import cx from './index.less';
-const { Paragraph } = Typography;
+const { Paragraph, Text } = Typography;
 const { TextArea } = Input;
 
 interface IBaseProps {
@@ -58,6 +58,15 @@ interface RowProps {
    * @default true
    */
   expend?: boolean;
+  /**
+   * @description
+   * 当一页传入两个以上的CustomTooltip展开收起功能时，
+   * 第一个不用设置 其他的必须设置该值，否则会出现展开收起的bug
+   * 是根据类名查找子元素实现的 传入一个随机的字符串即可
+   * @type string
+   * @default ''
+   */
+  className?: string;
 }
 interface IRowProps {
   /**
@@ -74,16 +83,52 @@ type Iprops = {
 export const IProps = <T,>(props: Iprops) => <></>;
 export const IRowProps = <T,>(props: RowProps) => <></>;
 
+/**
+ * todo
+ * 1. 初始化闪烁问题
+ * 2. 初始化必须传入类名问题
+ */
 const CustomTooltip: FC<ICustomTooltipProps> = props => {
+  const [loading, setLoading] = useState<boolean>(false);
   const [isExpand, setIsExpand] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState<boolean>(true);
+  const isInit = useRef<boolean>(false);
+
   const {
     text = '',
     maxLength = 35,
     style = {},
-    row = { rows: 1, EllipsisSymbol: true, expend: true },
+    row = {
+      rows: 1,
+      EllipsisSymbol: true,
+      expend: true,
+      className: Math.random()
+        .toString(36)
+        .substr(2),
+    },
     col = 8,
     copyable = false,
   } = props;
+
+  useLayoutEffect(() => {
+    setLoading(true);
+    setTimeout(function() {
+      try {
+        const classNames = row.className ? row.className : cx.ellipsis;
+        const content = document.getElementsByClassName(classNames)[0]
+          .children[0].children;
+        const item = content[content.length - 2];
+        const isShow = item.getAttribute('aria-hidden') ? true : false;
+        setShowButton(isShow);
+        setLoading(false);
+        isInit.current = true;
+      } catch (error) {
+        setShowButton(true);
+        setLoading(false);
+        isInit.current = true;
+      }
+    }, 200);
+  }, []);
 
   const isTextToObject = typeof text === 'object';
   const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
@@ -139,7 +184,11 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
         ellipsis: {
           rows: customRows as number,
           expandable: isExpand,
-          suffix: isExpand ? '' : ((getToggleButton(true) as any) as string),
+          suffix: showButton
+            ? isExpand
+              ? ''
+              : ((getToggleButton(true) as any) as string)
+            : '',
           tooltip: isTextToObject ? '' : text,
           onExpand: () => setIsExpand(true),
         },
@@ -193,12 +242,14 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 
   const CustomRowExpendParagraph = (
-    <Col span={col} className={ellipsisClassName}>
-      <Paragraph {...customRowEllipsisParagraphProps}>
-        {text ?? '--'}
-        {isExpand && getToggleButton(false)}
-      </Paragraph>
-    </Col>
+    <Spin spinning={loading}>
+      <Col span={col} className={`${ellipsisClassName} ${row.className}`}>
+        <Paragraph {...customRowEllipsisParagraphProps}>
+          {text ?? '--'}
+          {showButton && isExpand && getToggleButton(false)}
+        </Paragraph>
+      </Col>
+    </Spin>
   );
 
   const CustomRowNotExpendParagraph = (
