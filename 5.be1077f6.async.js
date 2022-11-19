@@ -389,7 +389,7 @@ const CustomTooltip = props => {
   }, text && text.length > maxLength ? SingleOverflowParagraph : SingleParagraph));
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (CustomTooltip);
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_10___default.a.memo(CustomTooltip));
 
 //# sourceURL=webpack:///./src/Components/BusinessComponent/CustomTooltip/CustomTooltip.tsx?`)},oIUC:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 module.exports = {"ellipsis":"ellipsis___1JWyh","apply-shake":"apply-shake___1P-o9","shake":"shake___1j9R6"};
