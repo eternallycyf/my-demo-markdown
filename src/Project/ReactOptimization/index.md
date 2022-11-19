@@ -19,6 +19,10 @@ return !this.props.xxx === nextProps.xxx
 
 ### React.Memo
 
+- 一般情况可以无脑用
+- 但是比如 某个组件传入了一万个 props 这样就需要调用很多次 react 内部对比是否变化
+- 反而时间花费更长了
+
 ```js
 // 1.当props变化的时候才会重新渲染 浅层对比
 function Component(props) {}
