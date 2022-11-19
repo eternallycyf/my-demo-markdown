@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[150],{"+QRC":function(module,exports,__webpack_require__){"use strict";eval(`
+(window.webpackJsonp=window.webpackJsonp||[]).push([[149],{"+QRC":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var deselectCurrent = __webpack_require__("E9nw");
 
@@ -177,12 +177,6 @@ var tag = __webpack_require__("mr32");
 var external_window_React_ = __webpack_require__("cDcd");
 var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
 
-// EXTERNAL MODULE: ./node_modules/antd/es/spin/style/index.js
-var spin_style = __webpack_require__("T2oS");
-
-// EXTERNAL MODULE: ./node_modules/antd/es/spin/index.js
-var spin = __webpack_require__("W9HT");
-
 // EXTERNAL MODULE: ./node_modules/antd/es/col/style/index.js
 var col_style = __webpack_require__("jCWc");
 
@@ -237,38 +231,43 @@ var CustomTooltipmodules_default = /*#__PURE__*/__webpack_require__.n(CustomTool
 
 
 
-
-
-const Paragraph = typography["a" /* default */].Paragraph,
-      Text = typography["a" /* default */].Text;
+const Paragraph = typography["a" /* default */].Paragraph;
 const TextArea = input["a" /* default */].TextArea;
 const IProps = props => /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null);
 const IRowProps = props => /*#__PURE__*/external_window_React_default.a.createElement(external_window_React_default.a.Fragment, null);
-/**
- * todo
- * 1. \u521D\u59CB\u5316\u95EA\u70C1\u95EE\u9898
- * 2. \u521D\u59CB\u5316\u5FC5\u987B\u4F20\u5165\u7C7B\u540D\u95EE\u9898
- */
 
 const CustomTooltip = props => {
   var _ref;
 
   const _useState = Object(external_window_React_["useState"])(false),
         _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-        loading = _useState2[0],
-        setLoading = _useState2[1];
+        isExpand = _useState2[0],
+        setIsExpand = _useState2[1]; // \u5982\u679C\u6CA1\u6709\u5C55\u5F00\u7684\u8BDD height\u53EA\u4F1A\u6709\u4E00\u4E2A\u503C \u5982\u679C\u53EF\u4EE5\u5C55\u5F00 \u4F1A\u5148\u8F93\u51FA\u4E24\u4E2A\u503C (\u5C55\u5F00\u524D\u7684\u9AD8\u5EA6 \u6536\u8D77\u540E\u7684\u9AD8\u5EA6)
+
+
+  const heightList = Object(external_window_React_["useRef"])([]);
 
   const _useState3 = Object(external_window_React_["useState"])(false),
         _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-        isExpand = _useState4[0],
-        setIsExpand = _useState4[1];
+        hasExpend = _useState4[0],
+        setHasExpend = _useState4[1];
 
-  const _useState5 = Object(external_window_React_["useState"])(true),
-        _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
-        showButton = _useState6[0],
-        setShowButton = _useState6[1];
+  const contentRef = Object(external_window_React_["useCallback"])(node => {
+    if (node !== null) {
+      const newHeight = node.getBoundingClientRect().height;
+      const list = [...new Set([...heightList.current, newHeight])];
+      heightList.current = [...list];
 
-  const isInit = Object(external_window_React_["useRef"])(false);
+      if (heightList.current.length <= 1) {
+        setHasExpend(false);
+      } else {
+        setHasExpend(true);
+      }
+    }
+
+    console.log(node);
+    return node;
+  }, []);
   const _props$text = props.text,
         text = _props$text === void 0 ? '' : _props$text,
         _props$maxLength = props.maxLength,
@@ -279,31 +278,12 @@ const CustomTooltip = props => {
         row = _props$row === void 0 ? {
     rows: 1,
     EllipsisSymbol: true,
-    expend: true,
-    className: Math.random().toString(36).substr(2)
+    expend: true
   } : _props$row,
         _props$col = props.col,
         col = _props$col === void 0 ? 8 : _props$col,
         _props$copyable = props.copyable,
         copyable = _props$copyable === void 0 ? false : _props$copyable;
-  Object(external_window_React_["useLayoutEffect"])(() => {
-    setLoading(true);
-    setTimeout(function () {
-      try {
-        const classNames = row.className ? row.className : CustomTooltipmodules_default.a.ellipsis;
-        const content = document.getElementsByClassName(classNames)[0].children[0].children;
-        const item = content[content.length - 2];
-        const isShow = item.getAttribute('aria-hidden') ? true : false;
-        setShowButton(isShow);
-        setLoading(false);
-        isInit.current = true;
-      } catch (error) {
-        setShowButton(true);
-        setLoading(false);
-        isInit.current = true;
-      }
-    }, 200);
-  }, []);
   const isTextToObject = typeof text === 'object';
   const isShowEllipsisSymbol = row.EllipsisSymbol ? '...' : '';
   const copyableProps = copyable ? {
@@ -350,8 +330,8 @@ const CustomTooltip = props => {
   } : { ...customRowBaseProps,
     ellipsis: {
       rows: customRows,
-      expandable: isExpand,
-      suffix: showButton ? isExpand ? '' : getToggleButton(true) : '',
+      expandable: hasExpend ? isExpand : false,
+      suffix: hasExpend ? isExpand ? '' : getToggleButton(true) : '',
       tooltip: isTextToObject ? '' : text,
       onExpand: () => setIsExpand(true)
     }
@@ -393,12 +373,12 @@ const CustomTooltip = props => {
     readOnly: true,
     value: text !== null && text !== void 0 ? text : '--'
   }))));
-  const CustomRowExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(spin["a" /* default */], {
-    spinning: loading
-  }, /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
+  const CustomRowExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col,
-    className: \`\${ellipsisClassName} \${row.className}\`
-  }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, customRowEllipsisParagraphProps, text !== null && text !== void 0 ? text : '--', showButton && isExpand && getToggleButton(false))));
+    className: ellipsisClassName
+  }, /*#__PURE__*/external_window_React_default.a.createElement(Paragraph, Object(esm_extends["a" /* default */])({}, customRowEllipsisParagraphProps, {
+    ref: contentRef
+  }), text !== null && text !== void 0 ? text : '--', isExpand && getToggleButton(false)));
   const CustomRowNotExpendParagraph = /*#__PURE__*/external_window_React_default.a.createElement(es_col["a" /* default */], {
     span: col,
     className: ellipsisClassName
@@ -474,8 +454,7 @@ const IndexPage = () => {
     row: {
       rows: 1,
       expend: true,
-      EllipsisSymbol: true,
-      className: 'mustShowClassName'
+      EllipsisSymbol: true
     }
   })), /*#__PURE__*/external_window_React_default.a.createElement(es_row["a" /* default */], {
     gutter: 10

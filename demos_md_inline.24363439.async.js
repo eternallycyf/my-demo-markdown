@@ -1,4 +1,4 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[147],{JMR6:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+(window.webpackJsonp=window.webpackJsonp||[]).push([[146],{JMR6:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
 //# sourceURL=webpack:///./src/Components/Npm/EchartsReact/DoubleCharts/index.less?`)},Tnyx:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
