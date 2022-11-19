@@ -46,7 +46,6 @@ const IndexPage = () => {
             rows: 1,
             expend: true,
             EllipsisSymbol: true,
-            className: 'mustShowClassName',
           }}
         />
       </Row>
