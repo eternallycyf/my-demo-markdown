@@ -58,6 +58,12 @@ interface RowProps {
    * @default true
    */
   expend?: boolean;
+  /**
+   * @description 一行的最大高度 当开启展开收起时 必须传入用于 处理闪烁问题 初次渲染如果超过这个高度自动隐藏
+   * @type number
+   * @default 50
+   */
+  lineMaxHeight?: number;
 }
 interface IRowProps {
   /**
@@ -76,6 +82,9 @@ export const IRowProps = <T,>(props: RowProps) => <></>;
 
 const CustomTooltip: FC<ICustomTooltipProps> = props => {
   const [isExpand, setIsExpand] = useState<boolean>(false);
+  const [overflowStatus, setOverflowStatus] = useState<'hidden' | 'unset'>(
+    'hidden',
+  );
 
   // 如果没有展开的话 height只会有一个值 如果可以展开 会先输出两个值 (展开前的高度 收起后的高度)
   const heightList = useRef<number[]>([]);
@@ -98,7 +107,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
     text = '',
     maxLength = 35,
     style = {},
-    row = { rows: 1, EllipsisSymbol: true, expend: true },
+    row = { rows: 1, EllipsisSymbol: true, expend: true, lineMaxHeight: 50 },
     col = 8,
     copyable = false,
   } = props;
@@ -123,7 +132,10 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
       return (
         <a
           className="ant-typography-expand"
-          onClick={() => setIsExpand(isExpandStatus)}
+          onClick={() => {
+            setOverflowStatus('unset');
+            setIsExpand(isExpandStatus);
+          }}
         >
           展开 <UpOutlined className={cx['apply-shake']} />
         </a>
@@ -150,6 +162,11 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
       ? row.rows + 1
       : 2
     : row.rows;
+  // 处理 初始化的闪烁问题 设置最大高度 为一行的高度, 溢出隐藏 当点击时恢复
+  const customRowsColStyles = {
+    maxHeight: overflowStatus == 'hidden' ? row.lineMaxHeight : '100%',
+    overflow: overflowStatus,
+  };
   const customRowEllipsisParagraphProps = isExpand
     ? { ...customRowBaseProps }
     : {
@@ -215,7 +232,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 
   const CustomRowExpendParagraph = (
-    <Col span={col} className={ellipsisClassName}>
+    <Col span={col} className={ellipsisClassName} style={customRowsColStyles}>
       <Paragraph {...customRowEllipsisParagraphProps} ref={contentRef}>
         {text ?? '--'}
         {isExpand && getToggleButton(false)}

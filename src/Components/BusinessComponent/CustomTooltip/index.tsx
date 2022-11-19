@@ -35,7 +35,12 @@ const IndexPage = () => {
         <CustomTooltip
           col={24}
           text={tagS}
-          row={{ rows: 1, expend: true, EllipsisSymbol: true }}
+          row={{
+            rows: 1,
+            expend: true,
+            EllipsisSymbol: true,
+            lineMaxHeight: 22,
+          }}
         />
       </Row>
       <Row>
@@ -46,6 +51,7 @@ const IndexPage = () => {
             rows: 1,
             expend: true,
             EllipsisSymbol: true,
+            lineMaxHeight: 22,
           }}
         />
       </Row>
