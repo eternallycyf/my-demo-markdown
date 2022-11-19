@@ -64,6 +64,12 @@ interface RowProps {
    * @default 50
    */
   lineMaxHeight?: number;
+  /**
+   * @description 展开收起按钮是否固定在最右边
+   * @type boolean
+   * @default false
+   */
+  isRight?: boolean;
 }
 interface IRowProps {
   /**
@@ -107,7 +113,13 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
     text = '',
     maxLength = 35,
     style = {},
-    row = { rows: 1, EllipsisSymbol: true, expend: true, lineMaxHeight: 50 },
+    row = {
+      rows: 1,
+      EllipsisSymbol: true,
+      expend: true,
+      lineMaxHeight: 50,
+      isRight: false,
+    },
     col = 8,
     copyable = false,
   } = props;
@@ -127,10 +139,18 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
     ...style,
   };
 
+  const buttonStyle = row.isRight
+    ? ({
+        position: 'absolute',
+        right: 0,
+        top: 0,
+      } as React.CSSProperties)
+    : ({} as React.CSSProperties);
   const getToggleButton = (isExpandStatus: boolean) => {
     if (isExpandStatus) {
       return (
         <a
+          style={buttonStyle}
           className="ant-typography-expand"
           onClick={() => {
             setOverflowStatus('unset');
@@ -143,6 +163,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
     } else {
       return (
         <a
+          style={buttonStyle}
           className="ant-typography-expand"
           onClick={() => setIsExpand(isExpandStatus)}
         >
@@ -166,6 +187,7 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   const customRowsColStyles = {
     maxHeight: overflowStatus == 'hidden' ? row.lineMaxHeight : '100%',
     overflow: overflowStatus,
+    paddingRight: row.isRight ? 46 : 0,
   };
   const customRowEllipsisParagraphProps = isExpand
     ? { ...customRowBaseProps }
@@ -232,7 +254,11 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 
   const CustomRowExpendParagraph = (
-    <Col span={col} className={ellipsisClassName} style={customRowsColStyles}>
+    <Col
+      span={col}
+      className={ellipsisClassName}
+      style={{ ...customRowsColStyles, position: 'relative' }}
+    >
       <Paragraph {...customRowEllipsisParagraphProps} ref={contentRef}>
         {text ?? '--'}
         {isExpand && getToggleButton(false)}
