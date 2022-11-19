@@ -298,4 +298,4 @@ const CustomTooltip: FC<ICustomTooltipProps> = props => {
   );
 };
 
-export default CustomTooltip;
+export default React.memo(CustomTooltip);
