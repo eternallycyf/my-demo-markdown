@@ -231,6 +231,37 @@ const CustomTooltip = props => {
 
     return node;
   }, []);
+  /**\u5F53 react \u7248\u672C\u5C0F\u4E8E18.0 */
+
+  /**\u5F53\u4F7F\u7528 useCallback \u65B9\u5F0F\u65E0\u6CD5\u76D1\u542C\u65F6 \u4F7F\u7528 ResizeObserver \u5BF9\u8C61\u76D1\u542C*/
+
+  /** Paragraph \u4E0A\u83B7\u53D6\u4E0D\u5230ref \u5C31\u653E\u5728\u5916\u9762\u7684col\u4E0A\u83B7\u53D6*/
+
+  /**\u5F53\u7EC4\u4EF6 \u65E0\u6CD5\u91CD\u65B0\u6E32\u67D3\u6700\u65B0\u6548\u679C\u7684\u65F6\u5019 \u7ED9 CustomTooltip \u7EC4\u4EF6\u52A0\u4E0A\u4E00\u4E2Akey\u63A7\u5236\u6E32\u67D3 \u4F8B\u5982 key={Math.random()} */
+  // useLayoutEffect(() => {
+  //   if (contentRef.current) {
+  //     const node = contentRef.current as HTMLDivElement;
+  //     console.log(node.firstElementChild!)
+  //     const rObserver = new ResizeObserver(entries => {
+  //       const newHeight = entries[0].contentRect.height;
+  //       console.log(newHeight)
+  //       if (newHeight !== 0) {
+  //         const list = [...new Set([...heightList.current, newHeight])];
+  //         heightList.current = [...list];
+  //       }
+  //       if (heightList.current.length <= 1) {
+  //         setHasExpend(false);
+  //       } else {
+  //         setHasExpend(true);
+  //       }
+  //       rObserver.observe(node.firstElementChild!);
+  //       setTimeout(() => {
+  //         rObserver.unobserve(node.firstElementChild!);
+  //       }, 5000);
+  //     });
+  //   }
+  // })
+
   const _props$text = props.text,
         text = _props$text === void 0 ? '' : _props$text,
         _props$maxLength = props.maxLength,

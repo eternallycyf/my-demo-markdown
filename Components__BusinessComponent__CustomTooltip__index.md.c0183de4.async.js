@@ -13,6 +13,7 @@
 /* harmony import */ var dumi_theme__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(dumi_theme__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var dumi_theme_default_es_builtins_API_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("+pnj");
 /* harmony import */ var dumi_theme_default_es_builtins_Previewer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("Zxc8");
+/* harmony import */ var dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__("H1Ra");
 
 
 
@@ -106,6 +107,25 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     src: "./CustomTooltip.tsx",
     identifier: "CustomTooltip",
     export: "IRowProps"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "faq"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#faq",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "FAQ"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    id: "\\u5F53-react-\\u7248\\u672C\\u5C0F\\u4E8E-180-\\u76D1\\u542C-dom-\\u9AD8\\u5EA6\\u5931\\u6548"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#\\u5F53-react-\\u7248\\u672C\\u5C0F\\u4E8E-180-\\u76D1\\u542C-dom-\\u9AD8\\u5EA6\\u5931\\u6548",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "\\u5F53 react \\u7248\\u672C\\u5C0F\\u4E8E 18.0 \\u76D1\\u542C dom \\u9AD8\\u5EA6\\u5931\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_4__[/* default */ "a"], {
+    code: "/**\u5F53 react \u7248\u672C\u5C0F\u4E8E18.0 */\\n/**\u5F53\u4F7F\u7528 useCallback \u65B9\u5F0F\u65E0\u6CD5\u76D1\u542C\u65F6 \u4F7F\u7528 ResizeObserver \u5BF9\u8C61\u76D1\u542C*/\\n/** Paragraph \u4E0A\u83B7\u53D6\u4E0D\u5230ref \u5C31\u653E\u5728\u5916\u9762\u7684col\u4E0A\u83B7\u53D6*/\\n/**\u5F53\u7EC4\u4EF6 \u65E0\u6CD5\u91CD\u65B0\u6E32\u67D3\u6700\u65B0\u6548\u679C\u7684\u65F6\u5019 \u7ED9 CustomTooltip \u7EC4\u4EF6\u52A0\u4E0A\u4E00\u4E2Akey\u63A7\u5236\u6E32\u67D3 \u4F8B\u5982 key={Math.random()} */\\nuseLayoutEffect(() => {\\n  if (contentRef.current) {\\n    const node = contentRef.current as HTMLDivElement;\\n    console.log(node.firstElementChild!);\\n    const rObserver = new ResizeObserver(entries => {\\n      const newHeight = entries[0].contentRect.height;\\n      console.log(newHeight);\\n      if (newHeight !== 0) {\\n        const list = [...new Set([...heightList.current, newHeight])];\\n        heightList.current = [...list];\\n      }\\n      if (heightList.current.length <= 1) {\\n        setHasExpend(false);\\n      } else {\\n        setHasExpend(true);\\n      }\\n      rObserver.observe(node.firstElementChild!);\\n      setTimeout(() => {\\n        rObserver.unobserve(node.firstElementChild!);\\n      }, 5000);\\n    });\\n  }\\n});",
+    lang: "tsx"
   }))));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
