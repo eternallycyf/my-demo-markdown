@@ -106,3 +106,37 @@ export default () => (
 <API src="./CustomTooltip.tsx" exports='["IProps"]'></API>
 
 <API src="./CustomTooltip.tsx" exports='["IRowProps"]'></API>
+
+## FAQ
+
+### 当 react 版本小于 18.0 监听 dom 高度失效
+
+```tsx | pure
+/**当 react 版本小于18.0 */
+/**当使用 useCallback 方式无法监听时 使用 ResizeObserver 对象监听*/
+/** Paragraph 上获取不到ref 就放在外面的col上获取*/
+/**当组件 无法重新渲染最新效果的时候 给 CustomTooltip 组件加上一个key控制渲染 例如 key={Math.random()} */
+useLayoutEffect(() => {
+  if (contentRef.current) {
+    const node = contentRef.current as HTMLDivElement;
+    console.log(node.firstElementChild!);
+    const rObserver = new ResizeObserver(entries => {
+      const newHeight = entries[0].contentRect.height;
+      console.log(newHeight);
+      if (newHeight !== 0) {
+        const list = [...new Set([...heightList.current, newHeight])];
+        heightList.current = [...list];
+      }
+      if (heightList.current.length <= 1) {
+        setHasExpend(false);
+      } else {
+        setHasExpend(true);
+      }
+      rObserver.observe(node.firstElementChild!);
+      setTimeout(() => {
+        rObserver.unobserve(node.firstElementChild!);
+      }, 5000);
+    });
+  }
+});
+```
