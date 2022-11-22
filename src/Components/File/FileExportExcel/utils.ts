@@ -32,6 +32,8 @@ export interface ISheet {
   columns: ColumnType<any>[];
   // 表格的数据
   dataSource: any[];
+  // 表头
+  header?:string;
 }
 
 export interface ITableHeader {
@@ -144,6 +146,14 @@ function handleEachSheet(workbook: Workbook, sheet: ISheet) {
   // worksheet.properties.defaultRowHeight = 20;
   // 设置列
   worksheet.columns = generateHeaders(sheet.columns);
+  const header = sheet?.header;
+  if(header){
+    worksheet.insertRow(1);
+    const headerMergeCell = String.fromCharCode(64+sheet.columns.length)
+    worksheet.mergeCells(`A1:${headerMergeCell}1`);
+    worksheet.getCell('A1').value = header;
+    worksheet.getRow(1).commit(); 
+  }
   handleHeader(worksheet);
   // handleData(worksheet, sheet);
   handleDataWithRender(worksheet, sheet);
@@ -155,7 +165,7 @@ export function handleHeader(worksheet: Worksheet) {
   headerRow.height = 22;
   // 通过 cell 设置样式，更精准
   headerRow.eachCell((cell) =>
-    addCellStyle(cell, { color: "dff8ff", fontSize: 12, horizontal: "left" }),
+    addCellStyle(cell, { color: "BBBBBB", fontSize: 16, horizontal: "center" }),
   );
 }
 

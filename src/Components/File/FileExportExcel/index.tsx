@@ -150,6 +150,7 @@ export default () => {
           sheetName: "test",
           columns: columns,
           dataSource: list,
+          header:'xxxxxHeader'
         },
       ],
     });
