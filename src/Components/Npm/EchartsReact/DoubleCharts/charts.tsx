@@ -319,8 +319,10 @@ export const option = {
   dataZoom: [
     {
       type: 'inside',
-      start: 0,
-      end: 100,
+      // start: 0,
+      // end: 100,
+      // 只有在第一个设置有效
+      startValue: '2020.01.04',
       xAxisIndex: [0, 1],
       top: 10,
     },
@@ -330,8 +332,6 @@ export const option = {
       type: 'slider',
       y: '90%',
       top: '45%',
-      start: 0,
-      end: 100,
       dataBackground: {
         lineStyle: {
           color: '#B2CFFB',
