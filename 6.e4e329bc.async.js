@@ -90,7 +90,7 @@ var classCallCheck = __webpack_require__("1OyB");
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createClass.js
 var createClass = __webpack_require__("vuIU");
 
-// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js
+// EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/inherits.js + 1 modules
 var inherits = __webpack_require__("Ji7U");
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/createSuper.js + 3 modules
