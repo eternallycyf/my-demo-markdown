@@ -229,6 +229,7 @@ nav:
 
 - <Badge>websocket</Badge>
 - <Badge>requestAnimationFrame</Badge>
+- <Badge>resizeobserver</Badge>
 
 ## [17. 项目难点](/project)
 

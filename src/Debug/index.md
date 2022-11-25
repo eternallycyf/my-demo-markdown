@@ -631,3 +631,22 @@ width: 0;
 ```
 
 ## 40. antd upload 组件使用自带的 action 上传 不经过 umi 的拦截器
+
+## 41. antd 表单自定义触发时机
+
+```js
+<Form.Item
+  label="Username"
+  name="username"
+  validateTrigger={['onChange', 'onSubmit', 'onBlur']}
+  rules={[
+    {
+      required: true,
+      message: 'Please input your username!',
+      validateTrigger: 'onSubmit',
+    },
+  ]}
+>
+  <Input />
+</Form.Item>
+```
