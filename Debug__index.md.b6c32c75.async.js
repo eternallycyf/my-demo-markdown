@@ -539,7 +539,18 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
     tabIndex: -1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
     className: "icon icon-link"
-  })), "40. antd upload \\u7EC4\\u4EF6\\u4F7F\\u7528\\u81EA\\u5E26\\u7684 action \\u4E0A\\u4F20 \\u4E0D\\u7ECF\\u8FC7 umi \\u7684\\u62E6\\u622A\\u5668")));
+  })), "40. antd upload \\u7EC4\\u4EF6\\u4F7F\\u7528\\u81EA\\u5E26\\u7684 action \\u4E0A\\u4F20 \\u4E0D\\u7ECF\\u8FC7 umi \\u7684\\u62E6\\u622A\\u5668"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "41-antd-\\u8868\\u5355\\u81EA\\u5B9A\\u4E49\\u89E6\\u53D1\\u65F6\\u673A"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#41-antd-\\u8868\\u5355\\u81EA\\u5B9A\\u4E49\\u89E6\\u53D1\\u65F6\\u673A",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "41. antd \\u8868\\u5355\\u81EA\\u5B9A\\u4E49\\u89E6\\u53D1\\u65F6\\u673A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "<Form.Item\\n  label=\\"Username\\"\\n  name=\\"username\\"\\n  validateTrigger={['onChange', 'onSubmit', 'onBlur']}\\n  rules={[\\n    {\\n      required: true,\\n      message: 'Please input your username!',\\n      validateTrigger: 'onSubmit',\\n    },\\n  ]}\\n>\\n  <Input />\\n</Form.Item>",
+    lang: "js"
+  })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),
