@@ -471,6 +471,8 @@ xAxis:{
 
 - 使用了 upload 自带的 action 上传 但是需要获取上传成功后的信息 但是 onChange 里面获取不到 done 状态
 - https://github.com/ant-design/ant-design/issues/2423
+- 如果是动态表单 只用一个 upload 定义全局 state 存放 index onChange 时候改变 fileList
+- 替换和加入 status 判断
 
 ```js
 # 我的代码
