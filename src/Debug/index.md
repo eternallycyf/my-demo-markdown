@@ -652,3 +652,14 @@ width: 0;
   <Input />
 </Form.Item>
 ```
+
+## 42.判断页面是否刷新
+
+```js
+if (window.performance) {
+  if (performance.navigation.type == 1) {
+    console.log('-');
+    window.localStorage.setItem('loading', 'true');
+  }
+}
+```
