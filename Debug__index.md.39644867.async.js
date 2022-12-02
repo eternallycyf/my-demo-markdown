@@ -550,6 +550,17 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "41. antd \\u8868\\u5355\\u81EA\\u5B9A\\u4E49\\u89E6\\u53D1\\u65F6\\u673A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "<Form.Item\\n  label=\\"Username\\"\\n  name=\\"username\\"\\n  validateTrigger={['onChange', 'onSubmit', 'onBlur']}\\n  rules={[\\n    {\\n      required: true,\\n      message: 'Please input your username!',\\n      validateTrigger: 'onSubmit',\\n    },\\n  ]}\\n>\\n  <Input />\\n</Form.Item>",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "42\\u5224\\u65AD\\u9875\\u9762\\u662F\\u5426\\u5237\\u65B0"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#42\\u5224\\u65AD\\u9875\\u9762\\u662F\\u5426\\u5237\\u65B0",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "42.\\u5224\\u65AD\\u9875\\u9762\\u662F\\u5426\\u5237\\u65B0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "if (window.performance) {\\n  if (performance.navigation.type == 1) {\\n    console.log('-');\\n    window.localStorage.setItem('loading', 'true');\\n  }\\n}",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
