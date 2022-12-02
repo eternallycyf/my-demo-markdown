@@ -36,3 +36,7 @@ group:
 ```
 
 - [scrollIntoView 滚动元素 使元素出现在视口 有动画效果](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView)
+
+## loading
+
+<code src='./index.tsx' inline={true} transform={true} iframe={true}>
