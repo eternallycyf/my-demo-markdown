@@ -2521,7 +2521,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2550,7 +2550,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2579,7 +2579,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2608,7 +2608,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2639,7 +2639,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2670,7 +2670,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
@@ -2701,7 +2701,7 @@ var index_esm = __webpack_require__("rlch");
           "version": ">=16.9.0"
         },
         "d3": {
-          "version": "7.6.1"
+          "version": "7.7.0"
         },
         "react-dom": {
           "version": ">=16.9.0"
