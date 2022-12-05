@@ -89,3 +89,90 @@ export default {
 }
 </style>
 ```
+
+## DebounceSelect
+
+```tsx | pure
+import { Select, Spin } from 'antd';
+import type { SelectProps } from 'antd/es/select';
+import debounce from 'lodash/debounce';
+import React, { useMemo, useRef, useState } from 'react';
+
+export interface DebounceSelectProps<ValueType = any>
+  extends Omit<SelectProps<ValueType | ValueType[]>, 'options' | 'children'> {
+  fetchOptions: (search: string) => Promise<ValueType[]>;
+  debounceTimeout?: number;
+}
+
+function DebounceSelect<
+  ValueType extends { key?: string; label: React.ReactNode; value: string | number } = any,
+>({
+  fetchOptions,
+  debounceTimeout = 800,
+  setOptions,
+  ...props }: DebounceSelectProps<ValueType>) {
+  const [fetching, setFetching] = useState(false);
+  const fetchRef = useRef(0);
+
+  const debounceFetcher = useMemo(() => {
+    const loadOptions = (value: string) => {
+      fetchRef.current += 1;
+      const fetchId = fetchRef.current;
+      setOptions([]);
+      setFetching(true);
+
+      fetchOptions(value).then(newOptions => {
+        if (fetchId !== fetchRef.current) {
+          // for fetch callback order
+          return;
+        }
+
+        setOptions(newOptions);
+        setFetching(false);
+      });
+    };
+
+    return debounce(loadOptions, debounceTimeout);
+  }, [fetchOptions, debounceTimeout]);
+
+  return (
+    <Select
+      labelInValue
+      filterOption={false}
+      showSearch
+      onSearch={debounceFetcher}
+      notFoundContent={fetching ? <Spin size="small" /> : null}
+      {...props}
+    />
+  );
+}
+```
+
+- use
+
+```tsx | pure
+type ILableInValue = {
+  label: string;
+  value: string;
+};
+async function fetchUserList(kw: string): Promise<ILableInValue> {
+  const { data } = await getList({ kw });
+  return data.map((item: any) => ({
+    label: item.name,
+    value: item.id,
+  }));
+}
+
+const [options, setOptions] = useState<any[]>([]);
+<Form.Item>
+  <DebounceSelect
+    placeholder="请输入"
+    labelInValue
+    allowClear
+    options={options}
+    fetchOptions={fetchUserList}
+    onChange={}
+    setOptions={setOptions}
+  />
+</Form.Item>;
+```
