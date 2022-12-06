@@ -1732,7 +1732,8 @@ var RangePicker = /*#__PURE__*/external_window_React_["forwardRef"](function (pr
   var dropdownClassName = props.dropdownClassName,
     popupClassName = props.popupClassName;
   return /*#__PURE__*/external_window_React_["createElement"](InternalRangePicker, Object(esm_extends["a" /* default */])({}, props, {
-    dropdownClassName: popupClassName || dropdownClassName,
+    dropdownClassName: dropdownClassName,
+    popupClassName: popupClassName,
     picker: "time",
     mode: undefined,
     ref: ref
@@ -1754,9 +1755,9 @@ var TimePicker = /*#__PURE__*/external_window_React_["forwardRef"](function (_a,
     }
     return undefined;
   }, [addon, renderExtraFooter]);
-   false ? undefined : void 0;
   return /*#__PURE__*/external_window_React_["createElement"](InternalTimePicker, Object(esm_extends["a" /* default */])({
-    dropdownClassName: popupClassName || dropdownClassName
+    dropdownClassName: dropdownClassName,
+    popupClassName: popupClassName
   }, restProps, {
     mode: undefined,
     ref: ref,
