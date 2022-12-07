@@ -682,4 +682,29 @@ encodeURI
 decodeURI
 ```
 
-##
+## 45.字符串 slice 不对
+
+- 原因: 有些汉字的码元是 16 位 因为不够用 有的是 32
+- 所以字符串长度有的是一位 有的是两位
+- 不能直接通过 slice 截取 会有问题
+- js 有 api 可以获取码元
+
+```js
+String.prototype.sliceByPoint = function(pStart, pEnd) {
+  let result = ''; // 截取的结果
+  let pIndex = 0; // 码点的指针
+  let cIndex = 0; // 码元的指针
+  while (true) {
+    if (pIndex >= pEnd || cIndex >= this.length) {
+      break;
+    }
+    const point = this.codePointAt(cIndex);
+    if (pIndex >= pStart) {
+      result += String.fromCodePoint(point);
+    }
+    pIndex++;
+    cIndex += point > 0xffff ? 2 : 1;
+  }
+  return result;
+};
+```
