@@ -670,3 +670,16 @@ if (window.performance) {
  TS认为这些文件会被合并成一个文件，并没有会被认为是模块，
 在文件的尾部加上export {};
 ```
+
+## 44.url 解码无效 当不是 url 格式时 需要使用 encodeURIComponent
+
+- 例如 http://xxx.com?download=http://aaa.com/image
+
+```markdown
+encodeURIComponent
+decodeURIComponent
+encodeURI
+decodeURI
+```
+
+##
