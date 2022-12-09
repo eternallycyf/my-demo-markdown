@@ -720,3 +720,16 @@ axios.put('/api/xxx', { id: 1 }, { params: { a: 1 } });
 // right
 axios.put('/api/xxx?id=1');
 ```
+
+## 47 axios 转换成 base64
+
+```js
+function getBase64(url) {
+  return axios
+    .get(url, {
+      responseType: 'arraybuffer',
+    })
+    .then(response => Buffer.from(response.data, 'binary').toString('base64'));
+}
+const url = 'data:image/png;base64,' + (await getBase64(_p));
+```
