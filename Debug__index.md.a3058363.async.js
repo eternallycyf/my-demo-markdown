@@ -607,6 +607,17 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "46.axios put \\u8BF7\\u6C42\\u6DFB\\u52A0 query \\u65E0\\u6548"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u9700\\u8981\\u81EA\\u5DF1\\u624B\\u52A8\\u62FC\\u63A5 \\u4E0D\\u80FD\\u76F4\\u63A5\\u4F20\\u5BF9\\u8C61"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u4F8B\\u5982")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "// error\\naxios.put('/api/xxx', { id: 1 }, { params: { a: 1 } });\\n// right\\naxios.put('/api/xxx?id=1');",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "47-axios-\\u8F6C\\u6362\\u6210-base64"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#47-axios-\\u8F6C\\u6362\\u6210-base64",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "47 axios \\u8F6C\\u6362\\u6210 base64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "function getBase64(url) {\\n  return axios\\n    .get(url, {\\n      responseType: 'arraybuffer',\\n    })\\n    .then(response => Buffer.from(response.data, 'binary').toString('base64'));\\n}\\nconst url = 'data:image/png;base64,' + (await getBase64(_p));",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
