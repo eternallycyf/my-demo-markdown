@@ -708,3 +708,15 @@ String.prototype.sliceByPoint = function(pStart, pEnd) {
   return result;
 };
 ```
+
+## 46.axios put 请求添加 query 无效
+
+- 需要自己手动拼接 不能直接传对象
+- 例如
+
+```js
+// error
+axios.put('/api/xxx', { id: 1 }, { params: { a: 1 } });
+// right
+axios.put('/api/xxx?id=1');
+```
