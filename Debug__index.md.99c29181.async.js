@@ -629,6 +629,17 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "48.react-redux connect \\u540E \\u83B7\\u53D6\\u4E0D\\u5230 ref"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "// react-redux v6\u4E4B\u524D\\nexport default connect(mapStateToProps, mapDispatchToProps, null, {\\n  withRef: true,\\n})(InviteReceiverForm);\\n// v6\\nexport default connect(mapStateToProps, mapDispatchToProps, null, {\\n  forwardRef: true,\\n})(InviteReceiverForm);",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "48-antd-table-\\u653E\\u5728-modal-\\u91CC\\u9762\\u6253\\u5F00\\u5173\\u95ED\\u5361\\u987F"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#48-antd-table-\\u653E\\u5728-modal-\\u91CC\\u9762\\u6253\\u5F00\\u5173\\u95ED\\u5361\\u987F",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "48. antd-table \\u653E\\u5728 modal \\u91CC\\u9762\\u6253\\u5F00\\u5173\\u95ED\\u5361\\u987F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "columns\u5982\u679C;\\ntitle: <div>...</div>;\\n\u9700\u8981\u6362\u6210\u51FD\u6570\u5F62\u5F0F;\\ntitle: () => <div>...</div>;",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
