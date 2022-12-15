@@ -749,6 +749,8 @@ export default connect(mapStateToProps, mapDispatchToProps, null, {
 
 ## 48. antd-table 放在 modal 里面打开关闭卡顿
 
+- react 元素深拷贝 会导致卡顿
+
 ```js
 columns如果;
 title: <div>...</div>;
