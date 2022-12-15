@@ -618,6 +618,17 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "47 axios \\u8F6C\\u6362\\u6210 base64"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "function getBase64(url) {\\n  return axios\\n    .get(url, {\\n      responseType: 'arraybuffer',\\n    })\\n    .then(response => Buffer.from(response.data, 'binary').toString('base64'));\\n}\\nconst url = 'data:image/png;base64,' + (await getBase64(_p));",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "48react-redux-connect-\\u540E-\\u83B7\\u53D6\\u4E0D\\u5230-ref"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#48react-redux-connect-\\u540E-\\u83B7\\u53D6\\u4E0D\\u5230-ref",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "48.react-redux connect \\u540E \\u83B7\\u53D6\\u4E0D\\u5230 ref"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "// react-redux v6\u4E4B\u524D\\nexport default connect(mapStateToProps, mapDispatchToProps, null, {\\n  withRef: true,\\n})(InviteReceiverForm);\\n// v6\\nexport default connect(mapStateToProps, mapDispatchToProps, null, {\\n  forwardRef: true,\\n})(InviteReceiverForm);",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {

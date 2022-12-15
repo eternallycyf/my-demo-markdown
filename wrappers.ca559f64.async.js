@@ -2270,7 +2270,7 @@ var index_esm = __webpack_require__("rlch");
           "version": "3.5.2"
         },
         "pizzip": {
-          "version": "3.1.3"
+          "version": "3.1.4"
         },
         "jszip-utils": {
           "version": "0.1.0"

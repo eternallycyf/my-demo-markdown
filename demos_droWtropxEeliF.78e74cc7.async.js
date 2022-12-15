@@ -1208,19 +1208,17 @@ module.exports = function () {
 exports.base64 = true;
 exports.array = true;
 exports.string = true;
-exports.arraybuffer = typeof ArrayBuffer !== "undefined" && typeof Uint8Array !== "undefined"; // contains true if PizZip can read/generate nodejs Buffer, false otherwise.
+exports.arraybuffer = typeof ArrayBuffer !== "undefined" && typeof Uint8Array !== "undefined";
+// contains true if PizZip can read/generate nodejs Buffer, false otherwise.
 // Browserify will provide a Buffer implementation for browsers, which is
 // an augmented Uint8Array (i.e., can be used as either Buffer or U8).
-
-exports.nodebuffer = typeof Buffer !== "undefined"; // contains true if PizZip can read/generate Uint8Array, false otherwise.
-
+exports.nodebuffer = typeof Buffer !== "undefined";
+// contains true if PizZip can read/generate Uint8Array, false otherwise.
 exports.uint8array = typeof Uint8Array !== "undefined";
-
 if (typeof ArrayBuffer === "undefined") {
   exports.blob = false;
 } else {
   var buffer = new ArrayBuffer(0);
-
   try {
     exports.blob = new Blob([buffer], {
       type: "application/zip"
@@ -3282,10 +3280,8 @@ module.exports = function (data, encoding) {
   if (typeof data === "number") {
     return Buffer.alloc(data);
   }
-
   return Buffer.from(data, encoding);
 };
-
 module.exports.test = function (b) {
   return Buffer.isBuffer(b);
 };
@@ -6617,6 +6613,7 @@ exports.STORE = {
   uncompress: function uncompress(content) {
     return content; // no compression
   },
+
   compressInputType: null,
   uncompressInputType: null
 };
@@ -6730,50 +6727,39 @@ var Group = /** @class */ (function (_super) {
 //# sourceURL=webpack:///./node_modules/@antv/g-svg/esm/group.js?`)},"6FuX":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var DataReader = __webpack_require__("6jWp");
-
 var utils = __webpack_require__("DhW3");
-
 function StringReader(data, optimizedBinaryString) {
   this.data = data;
-
   if (!optimizedBinaryString) {
     this.data = utils.string2binary(this.data);
   }
-
   this.length = this.data.length;
   this.index = 0;
   this.zero = 0;
 }
-
 StringReader.prototype = new DataReader();
 /**
  * @see DataReader.byteAt
  */
-
 StringReader.prototype.byteAt = function (i) {
   return this.data.charCodeAt(this.zero + i);
 };
 /**
  * @see DataReader.lastIndexOfSignature
  */
-
-
 StringReader.prototype.lastIndexOfSignature = function (sig) {
   return this.data.lastIndexOf(sig) - this.zero;
 };
 /**
  * @see DataReader.readData
  */
-
-
 StringReader.prototype.readData = function (size) {
-  this.checkOffset(size); // this will work because the constructor applied the "& 0xff" mask.
-
+  this.checkOffset(size);
+  // this will work because the constructor applied the "& 0xff" mask.
   var result = this.data.slice(this.zero + this.index, this.zero + this.index + size);
   this.index += size;
   return result;
 };
-
 module.exports = StringReader;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/stringReader.js?`)},"6JdA":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
@@ -7033,15 +7019,12 @@ var toCSSGradient = function (gradientColor) {
 //# sourceURL=webpack:///./node_modules/@antv/color-util/esm/index.js?`)},"6jWp":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var utils = __webpack_require__("DhW3");
-
 function DataReader() {
   this.data = null; // type : see implementation
-
   this.length = 0;
   this.index = 0;
   this.zero = 0;
 }
-
 DataReader.prototype = {
   /**
    * Check that the offset will not go too far.
@@ -7051,7 +7034,6 @@ DataReader.prototype = {
   checkOffset: function checkOffset(offset) {
     this.checkIndex(this.index + offset);
   },
-
   /**
    * Check that the specifed index will not be too far.
    * @param {string} newIndex the index to check.
@@ -7062,7 +7044,6 @@ DataReader.prototype = {
       throw new Error("End of data reached (data length = " + this.length + ", asked index = " + newIndex + "). Corrupted zip ?");
     }
   },
-
   /**
    * Change the index.
    * @param {number} newIndex The new index.
@@ -7072,7 +7053,6 @@ DataReader.prototype = {
     this.checkIndex(newIndex);
     this.index = newIndex;
   },
-
   /**
    * Skip the next n bytes.
    * @param {number} n the number of bytes to skip.
@@ -7081,15 +7061,14 @@ DataReader.prototype = {
   skip: function skip(n) {
     this.setIndex(this.index + n);
   },
-
   /**
    * Get the byte at the specified index.
    * @param {number} i the index to use.
    * @return {number} a byte.
    */
-  byteAt: function byteAt() {// see implementations
+  byteAt: function byteAt() {
+    // see implementations
   },
-
   /**
    * Get the next number with a given byte size.
    * @param {number} size the number of bytes to read.
@@ -7097,17 +7076,14 @@ DataReader.prototype = {
    */
   readInt: function readInt(size) {
     var result = 0,
-        i;
+      i;
     this.checkOffset(size);
-
     for (i = this.index + size - 1; i >= this.index; i--) {
       result = (result << 8) + this.byteAt(i);
     }
-
     this.index += size;
     return result;
   },
-
   /**
    * Get the next string with a given byte size.
    * @param {number} size the number of bytes to read.
@@ -7116,62 +7092,64 @@ DataReader.prototype = {
   readString: function readString(size) {
     return utils.transformTo("string", this.readData(size));
   },
-
   /**
    * Get raw data without conversion, <size> bytes.
    * @param {number} size the number of bytes to read.
    * @return {Object} the raw data, implementation specific.
    */
-  readData: function readData() {// see implementations
+  readData: function readData() {
+    // see implementations
   },
-
   /**
    * Find the last occurence of a zip signature (4 bytes).
    * @param {string} sig the signature to find.
    * @return {number} the index of the last occurence, -1 if not found.
    */
-  lastIndexOfSignature: function lastIndexOfSignature() {// see implementations
+  lastIndexOfSignature: function lastIndexOfSignature() {
+    // see implementations
   },
-
   /**
    * Get the next date.
    * @return {Date} the date.
    */
   readDate: function readDate() {
     var dostime = this.readInt(4);
-    return new Date((dostime >> 25 & 0x7f) + 1980, // year
-    (dostime >> 21 & 0x0f) - 1, // month
-    dostime >> 16 & 0x1f, // day
-    dostime >> 11 & 0x1f, // hour
-    dostime >> 5 & 0x3f, // minute
+    return new Date((dostime >> 25 & 0x7f) + 1980,
+    // year
+    (dostime >> 21 & 0x0f) - 1,
+    // month
+    dostime >> 16 & 0x1f,
+    // day
+    dostime >> 11 & 0x1f,
+    // hour
+    dostime >> 5 & 0x3f,
+    // minute
     (dostime & 0x1f) << 1); // second
   }
 };
+
 module.exports = DataReader;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/dataReader.js?`)},"6saL":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var Uint8ArrayReader = __webpack_require__("xI/P");
-
 function NodeBufferReader(data) {
   this.data = data;
   this.length = this.data.length;
   this.index = 0;
   this.zero = 0;
 }
-
 NodeBufferReader.prototype = new Uint8ArrayReader();
+
 /**
  * @see DataReader.readData
  */
-
 NodeBufferReader.prototype.readData = function (size) {
   this.checkOffset(size);
   var result = this.data.slice(this.zero + this.index, this.zero + this.index + size);
   this.index += size;
   return result;
 };
-
 module.exports = NodeBufferReader;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/nodeBufferReader.js?`)},"7+4w":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* unused harmony export P */
@@ -7239,40 +7217,35 @@ var P = /** @class */ (function (_super) {
 
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plugin/index.js?`)},"7WEg":function(module,exports,__webpack_require__){"use strict";eval(`
 
-var utils = __webpack_require__("DhW3"); // prettier-ignore
+var utils = __webpack_require__("DhW3");
 
-
+// prettier-ignore
 var table = [0x00000000, 0x77073096, 0xEE0E612C, 0x990951BA, 0x076DC419, 0x706AF48F, 0xE963A535, 0x9E6495A3, 0x0EDB8832, 0x79DCB8A4, 0xE0D5E91E, 0x97D2D988, 0x09B64C2B, 0x7EB17CBD, 0xE7B82D07, 0x90BF1D91, 0x1DB71064, 0x6AB020F2, 0xF3B97148, 0x84BE41DE, 0x1ADAD47D, 0x6DDDE4EB, 0xF4D4B551, 0x83D385C7, 0x136C9856, 0x646BA8C0, 0xFD62F97A, 0x8A65C9EC, 0x14015C4F, 0x63066CD9, 0xFA0F3D63, 0x8D080DF5, 0x3B6E20C8, 0x4C69105E, 0xD56041E4, 0xA2677172, 0x3C03E4D1, 0x4B04D447, 0xD20D85FD, 0xA50AB56B, 0x35B5A8FA, 0x42B2986C, 0xDBBBC9D6, 0xACBCF940, 0x32D86CE3, 0x45DF5C75, 0xDCD60DCF, 0xABD13D59, 0x26D930AC, 0x51DE003A, 0xC8D75180, 0xBFD06116, 0x21B4F4B5, 0x56B3C423, 0xCFBA9599, 0xB8BDA50F, 0x2802B89E, 0x5F058808, 0xC60CD9B2, 0xB10BE924, 0x2F6F7C87, 0x58684C11, 0xC1611DAB, 0xB6662D3D, 0x76DC4190, 0x01DB7106, 0x98D220BC, 0xEFD5102A, 0x71B18589, 0x06B6B51F, 0x9FBFE4A5, 0xE8B8D433, 0x7807C9A2, 0x0F00F934, 0x9609A88E, 0xE10E9818, 0x7F6A0DBB, 0x086D3D2D, 0x91646C97, 0xE6635C01, 0x6B6B51F4, 0x1C6C6162, 0x856530D8, 0xF262004E, 0x6C0695ED, 0x1B01A57B, 0x8208F4C1, 0xF50FC457, 0x65B0D9C6, 0x12B7E950, 0x8BBEB8EA, 0xFCB9887C, 0x62DD1DDF, 0x15DA2D49, 0x8CD37CF3, 0xFBD44C65, 0x4DB26158, 0x3AB551CE, 0xA3BC0074, 0xD4BB30E2, 0x4ADFA541, 0x3DD895D7, 0xA4D1C46D, 0xD3D6F4FB, 0x4369E96A, 0x346ED9FC, 0xAD678846, 0xDA60B8D0, 0x44042D73, 0x33031DE5, 0xAA0A4C5F, 0xDD0D7CC9, 0x5005713C, 0x270241AA, 0xBE0B1010, 0xC90C2086, 0x5768B525, 0x206F85B3, 0xB966D409, 0xCE61E49F, 0x5EDEF90E, 0x29D9C998, 0xB0D09822, 0xC7D7A8B4, 0x59B33D17, 0x2EB40D81, 0xB7BD5C3B, 0xC0BA6CAD, 0xEDB88320, 0x9ABFB3B6, 0x03B6E20C, 0x74B1D29A, 0xEAD54739, 0x9DD277AF, 0x04DB2615, 0x73DC1683, 0xE3630B12, 0x94643B84, 0x0D6D6A3E, 0x7A6A5AA8, 0xE40ECF0B, 0x9309FF9D, 0x0A00AE27, 0x7D079EB1, 0xF00F9344, 0x8708A3D2, 0x1E01F268, 0x6906C2FE, 0xF762575D, 0x806567CB, 0x196C3671, 0x6E6B06E7, 0xFED41B76, 0x89D32BE0, 0x10DA7A5A, 0x67DD4ACC, 0xF9B9DF6F, 0x8EBEEFF9, 0x17B7BE43, 0x60B08ED5, 0xD6D6A3E8, 0xA1D1937E, 0x38D8C2C4, 0x4FDFF252, 0xD1BB67F1, 0xA6BC5767, 0x3FB506DD, 0x48B2364B, 0xD80D2BDA, 0xAF0A1B4C, 0x36034AF6, 0x41047A60, 0xDF60EFC3, 0xA867DF55, 0x316E8EEF, 0x4669BE79, 0xCB61B38C, 0xBC66831A, 0x256FD2A0, 0x5268E236, 0xCC0C7795, 0xBB0B4703, 0x220216B9, 0x5505262F, 0xC5BA3BBE, 0xB2BD0B28, 0x2BB45A92, 0x5CB36A04, 0xC2D7FFA7, 0xB5D0CF31, 0x2CD99E8B, 0x5BDEAE1D, 0x9B64C2B0, 0xEC63F226, 0x756AA39C, 0x026D930A, 0x9C0906A9, 0xEB0E363F, 0x72076785, 0x05005713, 0x95BF4A82, 0xE2B87A14, 0x7BB12BAE, 0x0CB61B38, 0x92D28E9B, 0xE5D5BE0D, 0x7CDCEFB7, 0x0BDBDF21, 0x86D3D2D4, 0xF1D4E242, 0x68DDB3F8, 0x1FDA836E, 0x81BE16CD, 0xF6B9265B, 0x6FB077E1, 0x18B74777, 0x88085AE6, 0xFF0F6A70, 0x66063BCA, 0x11010B5C, 0x8F659EFF, 0xF862AE69, 0x616BFFD3, 0x166CCF45, 0xA00AE278, 0xD70DD2EE, 0x4E048354, 0x3903B3C2, 0xA7672661, 0xD06016F7, 0x4969474D, 0x3E6E77DB, 0xAED16A4A, 0xD9D65ADC, 0x40DF0B66, 0x37D83BF0, 0xA9BCAE53, 0xDEBB9EC5, 0x47B2CF7F, 0x30B5FFE9, 0xBDBDF21C, 0xCABAC28A, 0x53B39330, 0x24B4A3A6, 0xBAD03605, 0xCDD70693, 0x54DE5729, 0x23D967BF, 0xB3667A2E, 0xC4614AB8, 0x5D681B02, 0x2A6F2B94, 0xB40BBE37, 0xC30C8EA1, 0x5A05DF1B, 0x2D02EF8D];
+
 /**
  *
  *  Javascript crc32
  *  http://www.webtoolkit.info/
  *
  */
-
 module.exports = function crc32(input, crc) {
   if (typeof input === "undefined" || !input.length) {
     return 0;
   }
-
   var isArray = utils.getTypeOf(input) !== "string";
-
   if (typeof crc == "undefined") {
     crc = 0;
   }
-
   var x = 0;
   var y = 0;
   var b = 0;
   crc ^= -1;
-
   for (var i = 0, iTop = input.length; i < iTop; i++) {
     b = isArray ? input[i] : input.charCodeAt(i);
     y = (crc ^ b) & 0xff;
     x = table[y];
     crc = crc >>> 8 ^ x;
   }
-
   return crc ^ -1;
 };
 
@@ -11544,13 +11517,9 @@ function setClip(model, context) {
 //# sourceURL=webpack:///./node_modules/@antv/g-svg/esm/util/svg.js?`)},"B+w6":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var base64 = __webpack_require__("MJy8");
-
 var utf8 = __webpack_require__("vt0s");
-
 var utils = __webpack_require__("DhW3");
-
 var ZipEntries = __webpack_require__("WSHm");
-
 module.exports = function (data, options) {
   var i, input;
   options = utils.extend(options || {}, {
@@ -11560,14 +11529,11 @@ module.exports = function (data, options) {
     createFolders: false,
     decodeFileName: utf8.utf8decode
   });
-
   if (options.base64) {
     data = base64.decode(data);
   }
-
   var zipEntries = new ZipEntries(data, options);
   var files = zipEntries.files;
-
   for (i = 0; i < files.length; i++) {
     input = files[i];
     this.file(input.fileNameStr, input.decompressed, {
@@ -11581,11 +11547,9 @@ module.exports = function (data, options) {
       createFolders: options.createFolders
     });
   }
-
   if (zipEntries.zipComment.length) {
     this.comment = zipEntries.zipComment;
   }
-
   return this;
 };
 
@@ -13984,18 +13948,16 @@ module.exports = function (options) {
 //# sourceURL=webpack:///./node_modules/docxtemplater/js/scope-manager.js?`)},DeQN:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var utils = __webpack_require__("DhW3");
+
 /**
  * An object to write any content to an Uint8Array.
  * @constructor
  * @param {number} length The length of the array.
  */
-
-
 function Uint8ArrayWriter(length) {
   this.data = new Uint8Array(length);
   this.index = 0;
 }
-
 Uint8ArrayWriter.prototype = {
   /**
    * Append any content to the current array.
@@ -14009,7 +13971,6 @@ Uint8ArrayWriter.prototype = {
       this.index += input.length;
     }
   },
-
   /**
    * Finalize the construction an return the result.
    * @return {Uint8Array} the generated array.
@@ -14023,33 +13984,24 @@ module.exports = Uint8ArrayWriter;
 //# sourceURL=webpack:///./node_modules/pizzip/js/uint8ArrayWriter.js?`)},DhW3:function(module,exports,__webpack_require__){"use strict";eval(`
 
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-
 var support = __webpack_require__("/fDI");
-
 var compressions = __webpack_require__("5rse");
-
 var nodeBuffer = __webpack_require__("3YQX");
 /**
  * Convert a string to a "binary string" : a string containing only char codes between 0 and 255.
  * @param {string} str the string to transform.
  * @return {String} the binary string.
  */
-
-
 exports.string2binary = function (str) {
   var result = "";
-
   for (var i = 0; i < str.length; i++) {
     result += String.fromCharCode(str.charCodeAt(i) & 0xff);
   }
-
   return result;
 };
-
 exports.arrayBuffer2Blob = function (buffer, mimeType) {
   exports.checkSupport("blob");
   mimeType = mimeType || "application/zip";
-
   try {
     // Blob constructor
     return new Blob([buffer], {
@@ -14073,33 +14025,28 @@ exports.arrayBuffer2Blob = function (buffer, mimeType) {
  * @param {Object} input the input.
  * @return {Object} the same input.
  */
-
-
 function identity(input) {
   return input;
 }
+
 /**
  * Fill in an array with a string.
  * @param {String} str the string to use.
  * @param {Array|ArrayBuffer|Uint8Array|Buffer} array the array to fill in (will be mutated).
  * @return {Array|ArrayBuffer|Uint8Array|Buffer} the updated array.
  */
-
-
 function stringToArrayLike(str, array) {
   for (var i = 0; i < str.length; ++i) {
     array[i] = str.charCodeAt(i) & 0xff;
   }
-
   return array;
 }
+
 /**
  * Transform an array-like object to a string.
  * @param {Array|ArrayBuffer|Uint8Array|Buffer} array the array to transform.
  * @return {String} the result.
  */
-
-
 function arrayLikeToString(array) {
   // Performances notes :
   // --------------------
@@ -14112,37 +14059,32 @@ function arrayLikeToString(array) {
   // This code is inspired by http://jsperf.com/arraybuffer-to-string-apply-performance/2
   var chunk = 65536;
   var result = [],
-      len = array.length,
-      type = exports.getTypeOf(array);
+    len = array.length,
+    type = exports.getTypeOf(array);
   var k = 0,
-      canUseApply = true;
-
+    canUseApply = true;
   try {
     switch (type) {
       case "uint8array":
         String.fromCharCode.apply(null, new Uint8Array(0));
         break;
-
       case "nodebuffer":
         String.fromCharCode.apply(null, nodeBuffer(0));
         break;
     }
   } catch (e) {
     canUseApply = false;
-  } // no apply : slow and painful algorithm
+  }
+
+  // no apply : slow and painful algorithm
   // default browser on android 4.*
-
-
   if (!canUseApply) {
     var resultStr = "";
-
     for (var i = 0; i < array.length; i++) {
       resultStr += String.fromCharCode(array[i]);
     }
-
     return resultStr;
   }
-
   while (k < len && chunk > 1) {
     try {
       if (type === "array" || type === "nodebuffer") {
@@ -14150,35 +14092,32 @@ function arrayLikeToString(array) {
       } else {
         result.push(String.fromCharCode.apply(null, array.subarray(k, Math.min(k + chunk, len))));
       }
-
       k += chunk;
     } catch (e) {
       chunk = Math.floor(chunk / 2);
     }
   }
-
   return result.join("");
 }
-
 exports.applyFromCharCode = arrayLikeToString;
+
 /**
  * Copy the data from an array-like to an other array-like.
  * @param {Array|ArrayBuffer|Uint8Array|Buffer} arrayFrom the origin array.
  * @param {Array|ArrayBuffer|Uint8Array|Buffer} arrayTo the destination array which will be mutated.
  * @return {Array|ArrayBuffer|Uint8Array|Buffer} the updated destination array.
  */
-
 function arrayLikeToArrayLike(arrayFrom, arrayTo) {
   for (var i = 0; i < arrayFrom.length; i++) {
     arrayTo[i] = arrayFrom[i];
   }
-
   return arrayTo;
-} // a matrix containing functions to transform everything into everything.
+}
 
+// a matrix containing functions to transform everything into everything.
+var transform = {};
 
-var transform = {}; // string to ?
-
+// string to ?
 transform.string = {
   string: identity,
   array: function array(input) {
@@ -14193,8 +14132,9 @@ transform.string = {
   nodebuffer: function nodebuffer(input) {
     return stringToArrayLike(input, nodeBuffer(input.length));
   }
-}; // array to ?
+};
 
+// array to ?
 transform.array = {
   string: arrayLikeToString,
   array: identity,
@@ -14207,8 +14147,9 @@ transform.array = {
   nodebuffer: function nodebuffer(input) {
     return nodeBuffer(input);
   }
-}; // arraybuffer to ?
+};
 
+// arraybuffer to ?
 transform.arraybuffer = {
   string: function string(input) {
     return arrayLikeToString(new Uint8Array(input));
@@ -14223,8 +14164,9 @@ transform.arraybuffer = {
   nodebuffer: function nodebuffer(input) {
     return nodeBuffer(new Uint8Array(input));
   }
-}; // uint8array to ?
+};
 
+// uint8array to ?
 transform.uint8array = {
   string: arrayLikeToString,
   array: function array(input) {
@@ -14237,8 +14179,9 @@ transform.uint8array = {
   nodebuffer: function nodebuffer(input) {
     return nodeBuffer(input);
   }
-}; // nodebuffer to ?
+};
 
+// nodebuffer to ?
 transform.nodebuffer = {
   string: arrayLikeToString,
   array: function array(input) {
@@ -14252,6 +14195,7 @@ transform.nodebuffer = {
   },
   nodebuffer: identity
 };
+
 /**
  * Transform an input into any type.
  * The supported output type are : string, array, uint8array, arraybuffer, nodebuffer.
@@ -14260,87 +14204,71 @@ transform.nodebuffer = {
  * @param {String|Array|ArrayBuffer|Uint8Array|Buffer} input the input to convert.
  * @throws {Error} an Error if the browser doesn't support the requested output type.
  */
-
 exports.transformTo = function (outputType, input) {
   if (!input) {
     // undefined, null, etc
     // an empty string won't harm.
     input = "";
   }
-
   if (!outputType) {
     return input;
   }
-
   exports.checkSupport(outputType);
   var inputType = exports.getTypeOf(input);
   var result = transform[inputType][outputType](input);
   return result;
 };
+
 /**
  * Return the type of the input.
  * The type will be in a format valid for PizZip.utils.transformTo : string, array, uint8array, arraybuffer.
  * @param {Object} input the input to identify.
  * @return {String} the (lowercase) type of the input.
  */
-
-
 exports.getTypeOf = function (input) {
   if (input == null) {
     return;
   }
-
   if (typeof input === "string") {
     return "string";
   }
-
   if (Object.prototype.toString.call(input) === "[object Array]") {
     return "array";
   }
-
   if (support.nodebuffer && nodeBuffer.test(input)) {
     return "nodebuffer";
   }
-
   if (support.uint8array && input instanceof Uint8Array) {
     return "uint8array";
   }
-
   if (support.arraybuffer && input instanceof ArrayBuffer) {
     return "arraybuffer";
   }
-
   if (input instanceof Promise) {
     throw new Error("Cannot read data from a promise, you probably are running new PizZip(data) with a promise");
   }
-
   if (_typeof(input) === "object" && typeof input.file === "function") {
     throw new Error("Cannot read data from a pizzip instance, you probably are running new PizZip(zip) with a zipinstance");
   }
-
   if (input instanceof Date) {
     throw new Error("Cannot read data from a Date, you probably are running new PizZip(data) with a date");
   }
-
   if (_typeof(input) === "object" && input.crc32 == null) {
     throw new Error("Unsupported data given to new PizZip(data) (object given)");
   }
 };
+
 /**
  * Throw an exception if the type is not supported.
  * @param {String} type the type to check.
  * @throws {Error} an Error if the browser doesn't support the requested type.
  */
-
-
 exports.checkSupport = function (type) {
   var supported = support[type.toLowerCase()];
-
   if (!supported) {
     throw new Error(type + " is not supported by this browser");
   }
 };
-
 exports.MAX_VALUE_16BITS = 65535;
 exports.MAX_VALUE_32BITS = -1; // well, "\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF" is parsed as -1
 
@@ -14349,37 +14277,31 @@ exports.MAX_VALUE_32BITS = -1; // well, "\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF\\xFF\\xF
  * @param {string} str the string to prettify.
  * @return {string} a pretty string.
  */
-
 exports.pretty = function (str) {
   var res = "",
-      code,
-      i;
-
+    code,
+    i;
   for (i = 0; i < (str || "").length; i++) {
     code = str.charCodeAt(i);
     res += "\\\\x" + (code < 16 ? "0" : "") + code.toString(16).toUpperCase();
   }
-
   return res;
 };
+
 /**
  * Find a compression registered in PizZip.
  * @param {string} compressionMethod the method magic to find.
  * @return {Object|null} the PizZip compression object, null if none found.
  */
-
-
 exports.findCompression = function (compressionMethod) {
   for (var method in compressions) {
     if (!compressions.hasOwnProperty(method)) {
       continue;
     }
-
     if (compressions[method].magic === compressionMethod) {
       return compressions[method];
     }
   }
-
   return null;
 };
 /**
@@ -14388,23 +14310,19 @@ exports.findCompression = function (compressionMethod) {
  * @return {Boolean}        true if the object is a regular expression,
  * false otherwise
  */
-
-
 exports.isRegExp = function (object) {
   return Object.prototype.toString.call(object) === "[object RegExp]";
 };
+
 /**
  * Merge the objects passed as parameters into a new one.
  * @private
  * @param {...Object} var_args All objects to merge.
  * @return {Object} a new object with the data of the others.
  */
-
-
 exports.extend = function () {
   var result = {};
   var i, attr;
-
   for (i = 0; i < arguments.length; i++) {
     // arguments is not enumerable in some browsers
     for (attr in arguments[i]) {
@@ -14413,7 +14331,6 @@ exports.extend = function () {
       }
     }
   }
-
   return result;
 };
 
@@ -29169,15 +29086,16 @@ function isPolygonsIntersect(points1, points2) {
 
 //# sourceMappingURL=index.js.map
 
-//# sourceURL=webpack:///./node_modules/@antv/path-util/esm/index.js_+_22_modules?`)},MJy8:function(module,exports,__webpack_require__){"use strict";eval(` // private property
+//# sourceURL=webpack:///./node_modules/@antv/path-util/esm/index.js_+_22_modules?`)},MJy8:function(module,exports,__webpack_require__){"use strict";eval(`
 
-var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/="; // public method for encoding
+// private property
+var _keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
+// public method for encoding
 exports.encode = function (input) {
   var output = "";
   var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
   var i = 0;
-
   while (i < input.length) {
     chr1 = input.charCodeAt(i++);
     chr2 = input.charCodeAt(i++);
@@ -29186,27 +29104,23 @@ exports.encode = function (input) {
     enc2 = (chr1 & 3) << 4 | chr2 >> 4;
     enc3 = (chr2 & 15) << 2 | chr3 >> 6;
     enc4 = chr3 & 63;
-
     if (isNaN(chr2)) {
       enc3 = enc4 = 64;
     } else if (isNaN(chr3)) {
       enc4 = 64;
     }
-
     output = output + _keyStr.charAt(enc1) + _keyStr.charAt(enc2) + _keyStr.charAt(enc3) + _keyStr.charAt(enc4);
   }
-
   return output;
-}; // public method for decoding
+};
 
-
+// public method for decoding
 exports.decode = function (input) {
   var output = "";
   var chr1, chr2, chr3;
   var enc1, enc2, enc3, enc4;
   var i = 0;
   input = input.replace(/[^A-Za-z0-9\\+\\/\\=]/g, "");
-
   while (i < input.length) {
     enc1 = _keyStr.indexOf(input.charAt(i++));
     enc2 = _keyStr.indexOf(input.charAt(i++));
@@ -29216,16 +29130,13 @@ exports.decode = function (input) {
     chr2 = (enc2 & 15) << 4 | enc3 >> 2;
     chr3 = (enc3 & 3) << 6 | enc4;
     output += String.fromCharCode(chr1);
-
     if (enc3 !== 64) {
       output += String.fromCharCode(chr2);
     }
-
     if (enc4 !== 64) {
       output += String.fromCharCode(chr3);
     }
   }
-
   return output;
 };
 
@@ -31603,64 +31514,51 @@ function adaptor(params) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/histogram/adaptor.js?`)},NH6C:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var DataReader = __webpack_require__("6jWp");
-
 function ArrayReader(data) {
   if (data) {
     this.data = data;
     this.length = this.data.length;
     this.index = 0;
     this.zero = 0;
-
     for (var i = 0; i < this.data.length; i++) {
       data[i] &= data[i];
     }
   }
 }
-
 ArrayReader.prototype = new DataReader();
 /**
  * @see DataReader.byteAt
  */
-
 ArrayReader.prototype.byteAt = function (i) {
   return this.data[this.zero + i];
 };
 /**
  * @see DataReader.lastIndexOfSignature
  */
-
-
 ArrayReader.prototype.lastIndexOfSignature = function (sig) {
   var sig0 = sig.charCodeAt(0),
-      sig1 = sig.charCodeAt(1),
-      sig2 = sig.charCodeAt(2),
-      sig3 = sig.charCodeAt(3);
-
+    sig1 = sig.charCodeAt(1),
+    sig2 = sig.charCodeAt(2),
+    sig3 = sig.charCodeAt(3);
   for (var i = this.length - 4; i >= 0; --i) {
     if (this.data[i] === sig0 && this.data[i + 1] === sig1 && this.data[i + 2] === sig2 && this.data[i + 3] === sig3) {
       return i - this.zero;
     }
   }
-
   return -1;
 };
 /**
  * @see DataReader.readData
  */
-
-
 ArrayReader.prototype.readData = function (size) {
   this.checkOffset(size);
-
   if (size === 0) {
     return [];
   }
-
   var result = this.data.slice(this.zero + this.index, this.zero + this.index + size);
   this.index += size;
   return result;
 };
-
 module.exports = ArrayReader;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/arrayReader.js?`)},NmWf:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("mrSG");
@@ -38230,6 +38128,7 @@ var chord_Chord = /** @class */ (function (_super) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/chord/index.js_+_3_modules?`)},VHzF:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var base64 = __webpack_require__("MJy8");
+
 /**
 Usage:
    zip = new PizZip();
@@ -38248,60 +38147,52 @@ Usage:
  * @param {String=|ArrayBuffer=|Uint8Array=} data the data to load, if any (optional).
  * @param {Object=} options the options for creating this objects (optional).
  */
-
-
 function PizZip(data, options) {
   // if this constructor is used without \`new\`, it adds \`new\` before itself:
   if (!(this instanceof PizZip)) {
     return new PizZip(data, options);
-  } // object containing the files :
+  }
+
+  // object containing the files :
   // {
   //   "folder/" : {...},
   //   "folder/data.txt" : {...}
   // }
-
-
   this.files = {};
-  this.comment = null; // Where we are in the hierarchy
+  this.comment = null;
 
+  // Where we are in the hierarchy
   this.root = "";
-
   if (data) {
     this.load(data, options);
   }
-
   this.clone = function () {
     var _this = this;
-
     var newObj = new PizZip();
     Object.keys(this.files).forEach(function (file) {
       newObj.file(file, _this.files[file].asUint8Array());
     });
     return newObj;
   };
-
   this.shallowClone = function () {
     var newObj = new PizZip();
-
     for (var i in this) {
       if (typeof this[i] !== "function") {
         newObj[i] = this[i];
       }
     }
-
     return newObj;
   };
 }
-
 PizZip.prototype = __webpack_require__("c+Jf");
 PizZip.prototype.load = __webpack_require__("B+w6");
 PizZip.support = __webpack_require__("/fDI");
 PizZip.defaults = __webpack_require__("GJxV");
+
 /**
  * @deprecated
  * This namespace will be removed in a future version without replacement.
  */
-
 PizZip.utils = __webpack_require__("vidx");
 PizZip.base64 = {
   /**
@@ -38311,7 +38202,6 @@ PizZip.base64 = {
   encode: function encode(input) {
     return base64.encode(input);
   },
-
   /**
    * @deprecated
    * This method will be removed in a future version without replacement.
@@ -39135,38 +39025,27 @@ function geometry(params) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/adaptor/geometries/base.js?`)},WSHm:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var StringReader = __webpack_require__("6FuX");
-
 var NodeBufferReader = __webpack_require__("6saL");
-
 var Uint8ArrayReader = __webpack_require__("xI/P");
-
 var ArrayReader = __webpack_require__("NH6C");
-
 var utils = __webpack_require__("DhW3");
-
 var sig = __webpack_require__("ep+q");
-
 var ZipEntry = __webpack_require__("YI5r");
-
-var support = __webpack_require__("/fDI"); //  class ZipEntries {{{
-
+var support = __webpack_require__("/fDI");
+//  class ZipEntries {{{
 /**
  * All the entries in the zip file.
  * @constructor
  * @param {String|ArrayBuffer|Uint8Array} data the binary stream to load.
  * @param {Object} loadOptions Options for loading the stream.
  */
-
-
 function ZipEntries(data, loadOptions) {
   this.files = [];
   this.loadOptions = loadOptions;
-
   if (data) {
     this.load(data);
   }
 }
-
 ZipEntries.prototype = {
   /**
    * Check that the reader is on the speficied signature.
@@ -39175,12 +39054,10 @@ ZipEntries.prototype = {
    */
   checkSignature: function checkSignature(expectedSignature) {
     var signature = this.reader.readString(4);
-
     if (signature !== expectedSignature) {
       throw new Error("Corrupted zip or bug : unexpected signature " + "(" + utils.pretty(signature) + ", expected " + utils.pretty(expectedSignature) + ")");
     }
   },
-
   /**
    * Check if the given signature is at the given index.
    * @param {number} askedIndex the index to check.
@@ -39195,7 +39072,6 @@ ZipEntries.prototype = {
     this.reader.setIndex(currentIndex);
     return result;
   },
-
   /**
    * Read the end of the central directory.
    */
@@ -39206,18 +39082,17 @@ ZipEntries.prototype = {
     this.centralDirRecords = this.reader.readInt(2);
     this.centralDirSize = this.reader.readInt(4);
     this.centralDirOffset = this.reader.readInt(4);
-    this.zipCommentLength = this.reader.readInt(2); // warning : the encoding depends of the system locale
+    this.zipCommentLength = this.reader.readInt(2);
+    // warning : the encoding depends of the system locale
     // On a linux machine with LANG=en_US.utf8, this field is utf8 encoded.
     // On a windows machine, this field is encoded with the localized windows code page.
-
     var zipComment = this.reader.readData(this.zipCommentLength);
-    var decodeParamType = support.uint8array ? "uint8array" : "array"; // To get consistent behavior with the generation part, we will assume that
+    var decodeParamType = support.uint8array ? "uint8array" : "array";
+    // To get consistent behavior with the generation part, we will assume that
     // this is utf8 encoded unless specified otherwise.
-
     var decodeContent = utils.transformTo(decodeParamType, zipComment);
     this.zipComment = this.loadOptions.decodeFileName(decodeContent);
   },
-
   /**
    * Read the end of the Zip 64 central directory.
    * Not merged with the method readEndOfCentral :
@@ -39238,7 +39113,6 @@ ZipEntries.prototype = {
     var extraDataSize = this.zip64EndOfCentralSize - 44;
     var index = 0;
     var extraFieldId, extraFieldLength, extraFieldValue;
-
     while (index < extraDataSize) {
       extraFieldId = this.reader.readInt(2);
       extraFieldLength = this.reader.readInt(4);
@@ -39250,7 +39124,6 @@ ZipEntries.prototype = {
       };
     }
   },
-
   /**
    * Read the end of the Zip 64 central directory locator.
    */
@@ -39258,18 +39131,15 @@ ZipEntries.prototype = {
     this.diskWithZip64CentralDirStart = this.reader.readInt(4);
     this.relativeOffsetEndOfZip64CentralDir = this.reader.readInt(8);
     this.disksCount = this.reader.readInt(4);
-
     if (this.disksCount > 1) {
       throw new Error("Multi-volumes zip are not supported");
     }
   },
-
   /**
    * Read the local files, based on the offset read in the central part.
    */
   readLocalFiles: function readLocalFiles() {
     var i, file;
-
     for (i = 0; i < this.files.length; i++) {
       file = this.files[i];
       this.reader.setIndex(file.localHeaderOffset);
@@ -39279,14 +39149,12 @@ ZipEntries.prototype = {
       file.processAttributes();
     }
   },
-
   /**
    * Read the central directory.
    */
   readCentralDir: function readCentralDir() {
     var file;
     this.reader.setIndex(this.centralDirOffset);
-
     while (this.reader.readString(4) === sig.CENTRAL_FILE_HEADER) {
       file = new ZipEntry({
         zip64: this.zip64
@@ -39294,25 +39162,23 @@ ZipEntries.prototype = {
       file.readCentralPart(this.reader);
       this.files.push(file);
     }
-
     if (this.centralDirRecords !== this.files.length) {
       if (this.centralDirRecords !== 0 && this.files.length === 0) {
         // We expected some records but couldn't find ANY.
         // This is really suspicious, as if something went wrong.
         throw new Error("Corrupted zip or bug: expected " + this.centralDirRecords + " records in central dir, got " + this.files.length);
-      } else {// We found some records but not all.
+      } else {
+        // We found some records but not all.
         // Something is wrong but we got something for the user: no error here.
         // console.warn("expected", this.centralDirRecords, "records in central dir, got", this.files.length);
       }
     }
   },
-
   /**
    * Read the end of central directory.
    */
   readEndOfCentral: function readEndOfCentral() {
     var offset = this.reader.lastIndexOfSignature(sig.CENTRAL_DIRECTORY_END);
-
     if (offset < 0) {
       // Check if the content is a truncated zip or complete garbage.
       // A "LOCAL_FILE_HEADER" is not required at the beginning (auto
@@ -39320,18 +39186,17 @@ ZipEntries.prototype = {
       // If an ajax request was used without responseType, we will also
       // get unreadable data.
       var isGarbage = !this.isSignature(0, sig.LOCAL_FILE_HEADER);
-
       if (isGarbage) {
         throw new Error("Can't find end of central directory : is this a zip file ?");
       } else {
         throw new Error("Corrupted zip : can't find end of central directory");
       }
     }
-
     this.reader.setIndex(offset);
     var endOfCentralDirOffset = offset;
     this.checkSignature(sig.CENTRAL_DIRECTORY_END);
     this.readBlockEndOfCentral();
+
     /* extract from the zip spec :
               4)  If one of the fields in the end of central directory
                   record is too small to hold required data, the field
@@ -39342,9 +39207,9 @@ ZipEntries.prototype = {
                   reside on the same disk when splitting or spanning
                   an archive.
            */
-
     if (this.diskNumber === utils.MAX_VALUE_16BITS || this.diskWithCentralDirStart === utils.MAX_VALUE_16BITS || this.centralDirRecordsOnThisDisk === utils.MAX_VALUE_16BITS || this.centralDirRecords === utils.MAX_VALUE_16BITS || this.centralDirSize === utils.MAX_VALUE_32BITS || this.centralDirOffset === utils.MAX_VALUE_32BITS) {
       this.zip64 = true;
+
       /*
                Warning : the zip64 extension is supported, but ONLY if the 64bits integer read from
                the zip file can fit into a 32bits integer. This cannot be solved : Javascript represents
@@ -39353,47 +39218,38 @@ ZipEntries.prototype = {
                see https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Operators/Bitwise_Operators
                and http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-262.pdf section 8.5
                */
+
       // should look for a zip64 EOCD locator
-
       offset = this.reader.lastIndexOfSignature(sig.ZIP64_CENTRAL_DIRECTORY_LOCATOR);
-
       if (offset < 0) {
         throw new Error("Corrupted zip : can't find the ZIP64 end of central directory locator");
       }
-
       this.reader.setIndex(offset);
       this.checkSignature(sig.ZIP64_CENTRAL_DIRECTORY_LOCATOR);
-      this.readBlockZip64EndOfCentralLocator(); // now the zip64 EOCD record
+      this.readBlockZip64EndOfCentralLocator();
 
+      // now the zip64 EOCD record
       if (!this.isSignature(this.relativeOffsetEndOfZip64CentralDir, sig.ZIP64_CENTRAL_DIRECTORY_END)) {
         // console.warn("ZIP64 end of central directory not where expected.");
         this.relativeOffsetEndOfZip64CentralDir = this.reader.lastIndexOfSignature(sig.ZIP64_CENTRAL_DIRECTORY_END);
-
         if (this.relativeOffsetEndOfZip64CentralDir < 0) {
           throw new Error("Corrupted zip : can't find the ZIP64 end of central directory");
         }
       }
-
       this.reader.setIndex(this.relativeOffsetEndOfZip64CentralDir);
       this.checkSignature(sig.ZIP64_CENTRAL_DIRECTORY_END);
       this.readBlockZip64EndOfCentral();
     }
-
     var expectedEndOfCentralDirOffset = this.centralDirOffset + this.centralDirSize;
-
     if (this.zip64) {
       expectedEndOfCentralDirOffset += 20; // end of central dir 64 locator
-
-      expectedEndOfCentralDirOffset += 12
-      /* should not include the leading 12 bytes */
-      + this.zip64EndOfCentralSize;
+      expectedEndOfCentralDirOffset += 12 /* should not include the leading 12 bytes */ + this.zip64EndOfCentralSize;
     }
-
     var extraBytes = endOfCentralDirOffset - expectedEndOfCentralDirOffset;
-
     if (extraBytes > 0) {
       // console.warn(extraBytes, "extra bytes at beginning or within zipfile");
-      if (this.isSignature(endOfCentralDirOffset, sig.CENTRAL_FILE_HEADER)) {// The offsets seem wrong, but we have something at the specified offset.
+      if (this.isSignature(endOfCentralDirOffset, sig.CENTRAL_FILE_HEADER)) {
+        // The offsets seem wrong, but we have something at the specified offset.
         // So\u2026 we keep it.
       } else {
         // the offset is wrong, update the "zero" of the reader
@@ -39407,7 +39263,6 @@ ZipEntries.prototype = {
   prepareReader: function prepareReader(data) {
     var type = utils.getTypeOf(data);
     utils.checkSupport(type);
-
     if (type === "string" && !support.uint8array) {
       this.reader = new StringReader(data, this.loadOptions.optimizedBinaryString);
     } else if (type === "nodebuffer") {
@@ -39420,7 +39275,6 @@ ZipEntries.prototype = {
       throw new Error("Unexpected error: unsupported type '" + type + "'");
     }
   },
-
   /**
    * Read a zip file and create ZipEntries.
    * @param {String|ArrayBuffer|Uint8Array|Buffer} data the binary string representing a zip file.
@@ -39431,8 +39285,8 @@ ZipEntries.prototype = {
     this.readCentralDir();
     this.readLocalFiles();
   }
-}; // }}} end of ZipEntries
-
+};
+// }}} end of ZipEntries
 module.exports = ZipEntries;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/zipEntries.js?`)},WbAE:function(module,exports){eval(`//# sourceMappingURL=interface.js.map
@@ -40447,30 +40301,24 @@ var bar_Bar = /** @class */ (function (_super) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/bar/index.js_+_1_modules?`)},YI5r:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var StringReader = __webpack_require__("6FuX");
-
 var utils = __webpack_require__("DhW3");
-
 var CompressedObject = __webpack_require__("i94R");
-
 var pizzipProto = __webpack_require__("c+Jf");
-
 var support = __webpack_require__("/fDI");
-
 var MADE_BY_DOS = 0x00;
-var MADE_BY_UNIX = 0x03; // class ZipEntry {{{
+var MADE_BY_UNIX = 0x03;
 
+// class ZipEntry {{{
 /**
  * An entry in the zip file.
  * @constructor
  * @param {Object} options Options of the current file.
  * @param {Object} loadOptions Options for loading the stream.
  */
-
 function ZipEntry(options, loadOptions) {
   this.options = options;
   this.loadOptions = loadOptions;
 }
-
 ZipEntry.prototype = {
   /**
    * say if the file is encrypted.
@@ -40480,7 +40328,6 @@ ZipEntry.prototype = {
     // bit 1 is set
     return (this.bitFlag & 0x0001) === 0x0001;
   },
-
   /**
    * say if the file has utf-8 filename/comment.
    * @return {boolean} true if the filename/comment is in utf-8, false otherwise.
@@ -40489,7 +40336,6 @@ ZipEntry.prototype = {
     // bit 11 is set
     return (this.bitFlag & 0x0800) === 0x0800;
   },
-
   /**
    * Prepare the function used to generate the compressed content from this ZipFile.
    * @param {DataReader} reader the reader to use.
@@ -40506,7 +40352,6 @@ ZipEntry.prototype = {
       return compressedFileData;
     };
   },
-
   /**
    * Prepare the function used to generate the uncompressed content from this ZipFile.
    * @param {DataReader} reader the reader to use.
@@ -40520,15 +40365,12 @@ ZipEntry.prototype = {
     return function () {
       var compressedFileData = utils.transformTo(compression.uncompressInputType, this.getCompressedContent());
       var uncompressedFileData = compression.uncompress(compressedFileData);
-
       if (uncompressedFileData.length !== uncompressedSize) {
         throw new Error("Bug : uncompressed data size mismatch");
       }
-
       return uncompressedFileData;
     };
   },
-
   /**
    * Read the local part of a zip file and add the info in this object.
    * @param {DataReader} reader the reader to use.
@@ -40539,7 +40381,8 @@ ZipEntry.prototype = {
     // On the bright side, the local part is scary  : zip64, data descriptors, both, etc.
     // The less data we get here, the more reliable this should be.
     // Let's skip the whole header and dash to the data !
-    reader.skip(22); // in some zip created on windows, the filename stored in the central dir contains \\ instead of /.
+    reader.skip(22);
+    // in some zip created on windows, the filename stored in the central dir contains \\ instead of /.
     // Strangely, the filename here is OK.
     // I would love to treat these zip files as corrupted (see http://www.info-zip.org/FAQ.html#backslashes
     // or APPNOTE#4.4.17.1, "All slashes MUST be forward slashes '/'") but there are a lot of bad zip generators...
@@ -40550,41 +40393,34 @@ ZipEntry.prototype = {
     // content and the local directory is used to extract the files. Mixing / and \\
     // may be used to display \\ to windows users and use / when extracting the files.
     // Unfortunately, this lead also to some issues : http://seclists.org/fulldisclosure/2009/Sep/394
-
     this.fileNameLength = reader.readInt(2);
     var localExtraFieldsLength = reader.readInt(2); // can't be sure this will be the same as the central dir
-
     this.fileName = reader.readData(this.fileNameLength);
     reader.skip(localExtraFieldsLength);
-
     if (this.compressedSize === -1 || this.uncompressedSize === -1) {
       throw new Error("Bug or corrupted zip : didn't get enough informations from the central directory " + "(compressedSize == -1 || uncompressedSize == -1)");
     }
-
     var compression = utils.findCompression(this.compressionMethod);
-
     if (compression === null) {
       // no compression found
       throw new Error("Corrupted zip : compression " + utils.pretty(this.compressionMethod) + " unknown (inner file : " + utils.transformTo("string", this.fileName) + ")");
     }
-
     this.decompressed = new CompressedObject();
     this.decompressed.compressedSize = this.compressedSize;
     this.decompressed.uncompressedSize = this.uncompressedSize;
     this.decompressed.crc32 = this.crc32;
     this.decompressed.compressionMethod = this.compressionMethod;
     this.decompressed.getCompressedContent = this.prepareCompressedContent(reader, reader.index, this.compressedSize, compression);
-    this.decompressed.getContent = this.prepareContent(reader, reader.index, this.compressedSize, compression, this.uncompressedSize); // we need to compute the crc32...
+    this.decompressed.getContent = this.prepareContent(reader, reader.index, this.compressedSize, compression, this.uncompressedSize);
 
+    // we need to compute the crc32...
     if (this.loadOptions.checkCRC32) {
       this.decompressed = utils.transformTo("string", this.decompressed.getContent());
-
       if (pizzipProto.crc32(this.decompressed) !== this.crc32) {
         throw new Error("Corrupted zip : CRC32 mismatch");
       }
     }
   },
-
   /**
    * Read the central part of a zip file and add the info in this object.
    * @param {DataReader} reader the reader to use.
@@ -40605,73 +40441,66 @@ ZipEntry.prototype = {
     this.internalFileAttributes = reader.readInt(2);
     this.externalFileAttributes = reader.readInt(4);
     this.localHeaderOffset = reader.readInt(4);
-
     if (this.isEncrypted()) {
       throw new Error("Encrypted zip are not supported");
     }
-
     this.fileName = reader.readData(this.fileNameLength);
     this.readExtraFields(reader);
     this.parseZIP64ExtraField(reader);
     this.fileComment = reader.readData(this.fileCommentLength);
   },
-
   /**
    * Parse the external file attributes and get the unix/dos permissions.
    */
   processAttributes: function processAttributes() {
     this.unixPermissions = null;
     this.dosPermissions = null;
-    var madeBy = this.versionMadeBy >> 8; // Check if we have the DOS directory flag set.
+    var madeBy = this.versionMadeBy >> 8;
+
+    // Check if we have the DOS directory flag set.
     // We look for it in the DOS and UNIX permissions
     // but some unknown platform could set it as a compatibility flag.
-
     this.dir = !!(this.externalFileAttributes & 0x0010);
-
     if (madeBy === MADE_BY_DOS) {
       // first 6 bits (0 to 5)
       this.dosPermissions = this.externalFileAttributes & 0x3f;
     }
-
     if (madeBy === MADE_BY_UNIX) {
-      this.unixPermissions = this.externalFileAttributes >> 16 & 0xffff; // the octal permissions are in (this.unixPermissions & 0x01FF).toString(8);
-    } // fail safe : if the name ends with a / it probably means a folder
+      this.unixPermissions = this.externalFileAttributes >> 16 & 0xffff;
+      // the octal permissions are in (this.unixPermissions & 0x01FF).toString(8);
+    }
 
-
+    // fail safe : if the name ends with a / it probably means a folder
     if (!this.dir && this.fileNameStr.slice(-1) === "/") {
       this.dir = true;
     }
   },
-
   /**
    * Parse the ZIP64 extra field and merge the info in the current ZipEntry.
    */
   parseZIP64ExtraField: function parseZIP64ExtraField() {
     if (!this.extraFields[0x0001]) {
       return;
-    } // should be something, preparing the extra reader
+    }
 
+    // should be something, preparing the extra reader
+    var extraReader = new StringReader(this.extraFields[0x0001].value);
 
-    var extraReader = new StringReader(this.extraFields[0x0001].value); // I really hope that these 64bits integer can fit in 32 bits integer, because js
+    // I really hope that these 64bits integer can fit in 32 bits integer, because js
     // won't let us have more.
-
     if (this.uncompressedSize === utils.MAX_VALUE_32BITS) {
       this.uncompressedSize = extraReader.readInt(8);
     }
-
     if (this.compressedSize === utils.MAX_VALUE_32BITS) {
       this.compressedSize = extraReader.readInt(8);
     }
-
     if (this.localHeaderOffset === utils.MAX_VALUE_32BITS) {
       this.localHeaderOffset = extraReader.readInt(8);
     }
-
     if (this.diskNumberStart === utils.MAX_VALUE_32BITS) {
       this.diskNumberStart = extraReader.readInt(4);
     }
   },
-
   /**
    * Read the central part of a zip file and add the info in this object.
    * @param {DataReader} reader the reader to use.
@@ -40680,7 +40509,6 @@ ZipEntry.prototype = {
     var start = reader.index;
     var extraFieldId, extraFieldLength, extraFieldValue;
     this.extraFields = this.extraFields || {};
-
     while (reader.index < start + this.extraFieldsLength) {
       extraFieldId = reader.readInt(2);
       extraFieldLength = reader.readInt(2);
@@ -40692,28 +40520,23 @@ ZipEntry.prototype = {
       };
     }
   },
-
   /**
    * Apply an UTF8 transformation if needed.
    */
   handleUTF8: function handleUTF8() {
     var decodeParamType = support.uint8array ? "uint8array" : "array";
-
     if (this.useUTF8()) {
       this.fileNameStr = pizzipProto.utf8decode(this.fileName);
       this.fileCommentStr = pizzipProto.utf8decode(this.fileComment);
     } else {
       var upath = this.findExtraFieldUnicodePath();
-
       if (upath !== null) {
         this.fileNameStr = upath;
       } else {
         var fileNameByteArray = utils.transformTo(decodeParamType, this.fileName);
         this.fileNameStr = this.loadOptions.decodeFileName(fileNameByteArray);
       }
-
       var ucomment = this.findExtraFieldUnicodeComment();
-
       if (ucomment !== null) {
         this.fileCommentStr = ucomment;
       } else {
@@ -40722,54 +40545,48 @@ ZipEntry.prototype = {
       }
     }
   },
-
   /**
    * Find the unicode path declared in the extra field, if any.
    * @return {String} the unicode path, null otherwise.
    */
   findExtraFieldUnicodePath: function findExtraFieldUnicodePath() {
     var upathField = this.extraFields[0x7075];
-
     if (upathField) {
-      var extraReader = new StringReader(upathField.value); // wrong version
+      var extraReader = new StringReader(upathField.value);
 
+      // wrong version
       if (extraReader.readInt(1) !== 1) {
-        return null;
-      } // the crc of the filename changed, this field is out of date.
-
-
-      if (pizzipProto.crc32(this.fileName) !== extraReader.readInt(4)) {
         return null;
       }
 
+      // the crc of the filename changed, this field is out of date.
+      if (pizzipProto.crc32(this.fileName) !== extraReader.readInt(4)) {
+        return null;
+      }
       return pizzipProto.utf8decode(extraReader.readString(upathField.length - 5));
     }
-
     return null;
   },
-
   /**
    * Find the unicode comment declared in the extra field, if any.
    * @return {String} the unicode comment, null otherwise.
    */
   findExtraFieldUnicodeComment: function findExtraFieldUnicodeComment() {
     var ucommentField = this.extraFields[0x6375];
-
     if (ucommentField) {
-      var extraReader = new StringReader(ucommentField.value); // wrong version
+      var extraReader = new StringReader(ucommentField.value);
 
+      // wrong version
       if (extraReader.readInt(1) !== 1) {
-        return null;
-      } // the crc of the comment changed, this field is out of date.
-
-
-      if (pizzipProto.crc32(this.fileComment) !== extraReader.readInt(4)) {
         return null;
       }
 
+      // the crc of the comment changed, this field is out of date.
+      if (pizzipProto.crc32(this.fileComment) !== extraReader.readInt(4)) {
+        return null;
+      }
       return pizzipProto.utf8decode(extraReader.readString(ucommentField.length - 5));
     }
-
     return null;
   }
 };
@@ -40869,16 +40686,14 @@ var ring_progress_RingProgress = /** @class */ (function (_super) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/ring-progress/index.js_+_1_modules?`)},YT63:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var utils = __webpack_require__("DhW3");
+
 /**
  * An object to write any content to a string.
  * @constructor
  */
-
-
 function StringWriter() {
   this.data = [];
 }
-
 StringWriter.prototype = {
   /**
    * Append any content to the current string.
@@ -40888,7 +40703,6 @@ StringWriter.prototype = {
     input = utils.transformTo("string", input);
     this.data.push(input);
   },
-
   /**
    * Finalize the construction an return the result.
    * @return {string} the generated string.
@@ -41381,17 +41195,13 @@ function kebabCase(word) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/utils/kebab-case.js?`)},Zhvc:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var USE_TYPEDARRAY = typeof Uint8Array !== "undefined" && typeof Uint16Array !== "undefined" && typeof Uint32Array !== "undefined";
-
 var pako = __webpack_require__("GRrg");
-
 exports.uncompressInputType = USE_TYPEDARRAY ? "uint8array" : "array";
 exports.compressInputType = USE_TYPEDARRAY ? "uint8array" : "array";
 exports.magic = "\\x08\\x00";
-
 exports.compress = function (input, compressionOptions) {
   return pako.deflateRaw(input, {
     level: compressionOptions.level || -1 // default compression
-
   });
 };
 
@@ -43659,66 +43469,50 @@ function getStockData(data, yField) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/stock/utils.js?`)},"c+Jf":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var support = __webpack_require__("/fDI");
-
 var utils = __webpack_require__("DhW3");
-
 var _crc = __webpack_require__("7WEg");
-
 var signature = __webpack_require__("ep+q");
-
 var defaults = __webpack_require__("GJxV");
-
 var base64 = __webpack_require__("MJy8");
-
 var compressions = __webpack_require__("5rse");
-
 var CompressedObject = __webpack_require__("i94R");
-
 var nodeBuffer = __webpack_require__("3YQX");
-
 var utf8 = __webpack_require__("vt0s");
-
 var StringWriter = __webpack_require__("YT63");
-
 var Uint8ArrayWriter = __webpack_require__("DeQN");
+
 /**
  * Returns the raw data of a ZipObject, decompress the content if necessary.
  * @param {ZipObject} file the file to use.
  * @return {String|ArrayBuffer|Uint8Array|Buffer} the data.
  */
-
-
 function getRawData(file) {
   if (file._data instanceof CompressedObject) {
     file._data = file._data.getContent();
     file.options.binary = true;
     file.options.base64 = false;
-
     if (utils.getTypeOf(file._data) === "uint8array") {
-      var copy = file._data; // when reading an arraybuffer, the CompressedObject mechanism will keep it and subarray() a Uint8Array.
+      var copy = file._data;
+      // when reading an arraybuffer, the CompressedObject mechanism will keep it and subarray() a Uint8Array.
       // if we request a file in the same format, we might get the same Uint8Array or its ArrayBuffer (the original zip file).
-
-      file._data = new Uint8Array(copy.length); // with an empty Uint8Array, Opera fails with a "Offset larger than array size"
-
+      file._data = new Uint8Array(copy.length);
+      // with an empty Uint8Array, Opera fails with a "Offset larger than array size"
       if (copy.length !== 0) {
         file._data.set(copy, 0);
       }
     }
   }
-
   return file._data;
 }
+
 /**
  * Returns the data of a ZipObject in a binary form. If the content is an unicode string, encode it.
  * @param {ZipObject} file the file to use.
  * @return {String|ArrayBuffer|Uint8Array|Buffer} the data.
  */
-
-
 function getBinaryData(file) {
   var result = getRawData(file),
-      type = utils.getTypeOf(result);
-
+    type = utils.getTypeOf(result);
   if (type === "string") {
     if (!file.options.binary) {
       // unicode text !
@@ -43727,14 +43521,12 @@ function getBinaryData(file) {
         return nodeBuffer(result, "utf-8");
       }
     }
-
     return file.asBinary();
   }
-
   return result;
-} // return the actual prototype of PizZip
+}
 
-
+// return the actual prototype of PizZip
 var out = {
   /**
    * Read an existing zip and merge the data in the current PizZip object.
@@ -43747,7 +43539,6 @@ var out = {
   load: function load() {
     throw new Error("Load method is not defined. Is the file pizzip-load.js included ?");
   },
-
   /**
    * Filter nested files/folders with the specified function.
    * @param {Function} search the predicate to use :
@@ -43758,27 +43549,23 @@ var out = {
   filter: function filter(search) {
     var result = [];
     var filename, relativePath, file, fileClone;
-
     for (filename in this.files) {
       if (!this.files.hasOwnProperty(filename)) {
         continue;
       }
-
-      file = this.files[filename]; // return a new object, don't let the user mess with our internal objects :)
-
+      file = this.files[filename];
+      // return a new object, don't let the user mess with our internal objects :)
       fileClone = new ZipObject(file.name, file._data, utils.extend(file.options));
       relativePath = filename.slice(this.root.length, filename.length);
-
-      if (filename.slice(0, this.root.length) === this.root && // the file is in the current root
+      if (filename.slice(0, this.root.length) === this.root &&
+      // the file is in the current root
       search(relativePath, fileClone)) {
         // and the file matches the function
         result.push(fileClone);
       }
     }
-
     return result;
   },
-
   /**
    * Add a file to the zip file, or search a file.
    * @param   {string|RegExp} name The name of the file to add (if data is defined),
@@ -43795,20 +43582,17 @@ var out = {
         return this.filter(function (relativePath, file) {
           return !file.dir && regexp.test(relativePath);
         });
-      } // text
-
-
+      }
+      // text
       return this.filter(function (relativePath, file) {
         return !file.dir && relativePath === name;
       })[0] || null;
-    } // more than one argument : we have data !
-
-
+    }
+    // more than one argument : we have data !
     name = this.root + name;
     fileAdd.call(this, name, data, o);
     return this;
   },
-
   /**
    * Add a directory to the zip file, or search.
    * @param   {String|RegExp} arg The name of the directory to add, or a regex to search folders.
@@ -43818,22 +43602,21 @@ var out = {
     if (!arg) {
       return this;
     }
-
     if (utils.isRegExp(arg)) {
       return this.filter(function (relativePath, file) {
         return file.dir && arg.test(relativePath);
       });
-    } // else, name is a new folder
+    }
 
-
+    // else, name is a new folder
     var name = this.root + arg;
-    var newFolder = folderAdd.call(this, name); // Allow chaining by returning a new object with this folder as the root
+    var newFolder = folderAdd.call(this, name);
 
+    // Allow chaining by returning a new object with this folder as the root
     var ret = this.shallowClone();
     ret.root = newFolder.name;
     return ret;
   },
-
   /**
    * Delete a file, or a directory and all sub-files, from the zip
    * @param {string} name the name of the file to delete
@@ -43842,16 +43625,13 @@ var out = {
   remove: function remove(name) {
     name = this.root + name;
     var file = this.files[name];
-
     if (!file) {
       // Look for any folders
       if (name.slice(-1) !== "/") {
         name += "/";
       }
-
       file = this.files[name];
     }
-
     if (file && !file.dir) {
       // file
       delete this.files[name];
@@ -43860,15 +43640,12 @@ var out = {
       var kids = this.filter(function (relativePath, file) {
         return file.name.slice(0, name.length) === name;
       });
-
       for (var i = 0; i < kids.length; i++) {
         delete this.files[kids[i].name];
       }
     }
-
     return this;
   },
-
   /**
    * Generate the complete zip file
    * @param {Object} options the options to generate the zip file :
@@ -43888,36 +43665,33 @@ var out = {
       mimeType: "application/zip",
       encodeFileName: utf8.utf8encode
     });
-    utils.checkSupport(options.type); // accept nodejs \`process.platform\`
+    utils.checkSupport(options.type);
 
+    // accept nodejs \`process.platform\`
     if (options.platform === "darwin" || options.platform === "freebsd" || options.platform === "linux" || options.platform === "sunos") {
       options.platform = "UNIX";
     }
-
     if (options.platform === "win32") {
       options.platform = "DOS";
     }
-
     var zipData = [],
-        encodedComment = utils.transformTo("string", options.encodeFileName(options.comment || this.comment || ""));
+      encodedComment = utils.transformTo("string", options.encodeFileName(options.comment || this.comment || ""));
     var localDirLength = 0,
-        centralDirLength = 0,
-        writer,
-        i; // first, generate all the zip parts.
+      centralDirLength = 0,
+      writer,
+      i;
 
+    // first, generate all the zip parts.
     for (var name in this.files) {
       if (!this.files.hasOwnProperty(name)) {
         continue;
       }
-
       var file = this.files[name];
       var compressionName = file.options.compression || options.compression.toUpperCase();
       var compression = compressions[compressionName];
-
       if (!compression) {
         throw new Error(compressionName + " is not a valid compression method !");
       }
-
       var compressionOptions = file.options.compressionOptions || options.compressionOptions || {};
       var compressedObject = generateCompressedObjectFrom.call(this, file, compression, compressionOptions);
       var zipPart = generateZipParts.call(this, name, file, compressedObject, localDirLength, options.platform, options.encodeFileName);
@@ -43925,60 +43699,60 @@ var out = {
       centralDirLength += zipPart.dirRecord.length;
       zipData.push(zipPart);
     }
+    var dirEnd = "";
 
-    var dirEnd = ""; // end of central dir signature
+    // end of central dir signature
+    dirEnd = signature.CENTRAL_DIRECTORY_END +
+    // number of this disk
+    "\\x00\\x00" +
+    // number of the disk with the start of the central directory
+    "\\x00\\x00" +
+    // total number of entries in the central directory on this disk
+    decToHex(zipData.length, 2) +
+    // total number of entries in the central directory
+    decToHex(zipData.length, 2) +
+    // size of the central directory   4 bytes
+    decToHex(centralDirLength, 4) +
+    // offset of start of central directory with respect to the starting disk number
+    decToHex(localDirLength, 4) +
+    // .ZIP file comment length
+    decToHex(encodedComment.length, 2) +
+    // .ZIP file comment
+    encodedComment;
 
-    dirEnd = signature.CENTRAL_DIRECTORY_END + // number of this disk
-    "\\x00\\x00" + // number of the disk with the start of the central directory
-    "\\x00\\x00" + // total number of entries in the central directory on this disk
-    decToHex(zipData.length, 2) + // total number of entries in the central directory
-    decToHex(zipData.length, 2) + // size of the central directory   4 bytes
-    decToHex(centralDirLength, 4) + // offset of start of central directory with respect to the starting disk number
-    decToHex(localDirLength, 4) + // .ZIP file comment length
-    decToHex(encodedComment.length, 2) + // .ZIP file comment
-    encodedComment; // we have all the parts (and the total length)
+    // we have all the parts (and the total length)
     // time to create a writer !
-
     var typeName = options.type.toLowerCase();
-
     if (typeName === "uint8array" || typeName === "arraybuffer" || typeName === "blob" || typeName === "nodebuffer") {
       writer = new Uint8ArrayWriter(localDirLength + centralDirLength + dirEnd.length);
     } else {
       writer = new StringWriter(localDirLength + centralDirLength + dirEnd.length);
     }
-
     for (i = 0; i < zipData.length; i++) {
       writer.append(zipData[i].fileRecord);
       writer.append(zipData[i].compressedObject.compressedContent);
     }
-
     for (i = 0; i < zipData.length; i++) {
       writer.append(zipData[i].dirRecord);
     }
-
     writer.append(dirEnd);
     var zip = writer.finalize();
-
     switch (options.type.toLowerCase()) {
       // case "zip is an Uint8Array"
       case "uint8array":
       case "arraybuffer":
       case "nodebuffer":
         return utils.transformTo(options.type.toLowerCase(), zip);
-
       case "blob":
         return utils.arrayBuffer2Blob(utils.transformTo("arraybuffer", zip), options.mimeType);
       // case "zip is a string"
-
       case "base64":
         return options.base64 ? base64.encode(zip) : zip;
-
       default:
         // case "string" :
         return zip;
     }
   },
-
   /**
    * @deprecated
    * This method will be removed in a future version without replacement.
@@ -43986,7 +43760,6 @@ var out = {
   crc32: function crc32(input, crc) {
     return _crc(input, crc);
   },
-
   /**
    * @deprecated
    * This method will be removed in a future version without replacement.
@@ -43994,7 +43767,6 @@ var out = {
   utf8encode: function utf8encode(string) {
     return utils.transformTo("string", utf8.utf8encode(string));
   },
-
   /**
    * @deprecated
    * This method will be removed in a future version without replacement.
@@ -44008,19 +43780,15 @@ var out = {
  * @param {function} filter a function String -> String, applied if not null on the result.
  * @return {String} the string representing this._data.
  */
-
 function dataToString(asUTF8) {
   var result = getRawData(this);
-
   if (result === null || typeof result === "undefined") {
     return "";
-  } // if the data is a base64 string, we decode it before checking the encoding !
-
-
+  }
+  // if the data is a base64 string, we decode it before checking the encoding !
   if (this.options.base64) {
     result = base64.decode(result);
   }
-
   if (asUTF8 && this.options.binary) {
     // PizZip.prototype.utf8decode supports arrays as input
     // skip to array => string step, utf8decode will do it.
@@ -44029,11 +43797,9 @@ function dataToString(asUTF8) {
     // no utf8 transformation, do the array => string step.
     result = utils.transformTo("string", result);
   }
-
   if (!asUTF8 && !this.options.binary) {
     result = utils.transformTo("string", out.utf8encode(result));
   }
-
   return result;
 }
 /**
@@ -44043,8 +43809,6 @@ function dataToString(asUTF8) {
  * @param {String|ArrayBuffer|Uint8Array|Buffer} data the data
  * @param {Object} options the options of the file
  */
-
-
 function ZipObject(name, data, options) {
   this.name = name;
   this.dir = options.dir;
@@ -44054,18 +43818,17 @@ function ZipObject(name, data, options) {
   this.dosPermissions = options.dosPermissions;
   this._data = data;
   this.options = options;
+
   /*
    * This object contains initial values for dir and date.
    * With them, we can check if the user changed the deprecated metadata in
    * \`ZipObject#options\` or not.
    */
-
   this._initialMetadata = {
     dir: options.dir,
     date: options.date
   };
 }
-
 ZipObject.prototype = {
   /**
    * Return the content as UTF8 string.
@@ -44074,7 +43837,6 @@ ZipObject.prototype = {
   asText: function asText() {
     return dataToString.call(this, true);
   },
-
   /**
    * Returns the binary content.
    * @return {string} the content as binary.
@@ -44082,7 +43844,6 @@ ZipObject.prototype = {
   asBinary: function asBinary() {
     return dataToString.call(this, false);
   },
-
   /**
    * Returns the content as a nodejs Buffer.
    * @return {Buffer} the content as a Buffer.
@@ -44091,7 +43852,6 @@ ZipObject.prototype = {
     var result = getBinaryData(this);
     return utils.transformTo("nodebuffer", result);
   },
-
   /**
    * Returns the content as an Uint8Array.
    * @return {Uint8Array} the content as an Uint8Array.
@@ -44100,7 +43860,6 @@ ZipObject.prototype = {
     var result = getBinaryData(this);
     return utils.transformTo("uint8array", result);
   },
-
   /**
    * Returns the content as an ArrayBuffer.
    * @return {ArrayBuffer} the content as an ArrayBufer.
@@ -44109,6 +43868,7 @@ ZipObject.prototype = {
     return this.asUint8Array().buffer;
   }
 };
+
 /**
  * Transform an integer into a string in hexadecimal.
  * @private
@@ -44116,18 +43876,16 @@ ZipObject.prototype = {
  * @param {number} bytes the number of bytes to generate.
  * @returns {string} the result.
  */
-
 function decToHex(dec, bytes) {
   var hex = "",
-      i;
-
+    i;
   for (i = 0; i < bytes; i++) {
     hex += String.fromCharCode(dec & 0xff);
     dec >>>= 8;
   }
-
   return hex;
 }
+
 /**
  * Transforms the (incomplete) options from the user into the complete
  * set of options to create a file.
@@ -44135,24 +43893,19 @@ function decToHex(dec, bytes) {
  * @param {Object} o the options from the user.
  * @return {Object} the complete set of options.
  */
-
-
 function prepareFileAttrs(o) {
   o = o || {};
-
   if (o.base64 === true && (o.binary === null || o.binary === undefined)) {
     o.binary = true;
   }
-
   o = utils.extend(o, defaults);
   o.date = o.date || new Date();
-
   if (o.compression !== null) {
     o.compression = o.compression.toUpperCase();
   }
-
   return o;
 }
+
 /**
  * Add a file in the current folder.
  * @private
@@ -44161,36 +43914,29 @@ function prepareFileAttrs(o) {
  * @param {Object} o the options of the file
  * @return {Object} the new file.
  */
-
-
 function fileAdd(name, data, o) {
   // be sure sub folders exist
   var dataType = utils.getTypeOf(data),
-      parent;
+    parent;
   o = prepareFileAttrs(o);
-
   if (typeof o.unixPermissions === "string") {
     o.unixPermissions = parseInt(o.unixPermissions, 8);
-  } // UNX_IFDIR  0040000 see zipinfo.c
+  }
 
-
+  // UNX_IFDIR  0040000 see zipinfo.c
   if (o.unixPermissions && o.unixPermissions & 0x4000) {
     o.dir = true;
-  } // Bit 4    Directory
-
-
+  }
+  // Bit 4    Directory
   if (o.dosPermissions && o.dosPermissions & 0x0010) {
     o.dir = true;
   }
-
   if (o.dir) {
     name = forceTrailingSlash(name);
   }
-
   if (o.createFolders && (parent = parentFolder(name))) {
     folderAdd.call(this, parent, true);
   }
-
   if (o.dir || data === null || typeof data === "undefined") {
     o.base64 = false;
     o.binary = false;
@@ -44209,45 +43955,40 @@ function fileAdd(name, data, o) {
     // arraybuffer, uint8array, ...
     o.base64 = false;
     o.binary = true;
-
     if (!dataType && !(data instanceof CompressedObject)) {
       throw new Error("The data of '" + name + "' is in an unsupported format !");
-    } // special case : it's way easier to work with Uint8Array than with ArrayBuffer
+    }
 
-
+    // special case : it's way easier to work with Uint8Array than with ArrayBuffer
     if (dataType === "arraybuffer") {
       data = utils.transformTo("uint8array", data);
     }
   }
-
   var object = new ZipObject(name, data, o);
   this.files[name] = object;
   return object;
 }
+
 /**
  * Find the parent folder of the path.
  * @private
  * @param {string} path the path to use
  * @return {string} the parent folder, or ""
  */
-
-
 function parentFolder(path) {
   if (path.slice(-1) === "/") {
     path = path.substring(0, path.length - 1);
   }
-
   var lastSlash = path.lastIndexOf("/");
   return lastSlash > 0 ? path.substring(0, lastSlash) : "";
 }
+
 /**
  * Returns the path with a slash at the end.
  * @private
  * @param {String} path the path to check.
  * @return {String} the path with a trailing slash.
  */
-
-
 function forceTrailingSlash(path) {
   // Check the name ends with a /
   if (path.slice(-1) !== "/") {
@@ -44264,21 +44005,20 @@ function forceTrailingSlash(path) {
  *  folders. Defaults to false.
  * @return {Object} the new folder.
  */
-
-
 function folderAdd(name, createFolders) {
   createFolders = typeof createFolders !== "undefined" ? createFolders : false;
-  name = forceTrailingSlash(name); // Does this folder already exist?
+  name = forceTrailingSlash(name);
 
+  // Does this folder already exist?
   if (!this.files[name]) {
     fileAdd.call(this, name, null, {
       dir: true,
       createFolders: createFolders
     });
   }
-
   return this.files[name];
 }
+
 /**
  * Generate a PizZip.CompressedObject for a given zipOject.
  * @param {ZipObject} file the object to read.
@@ -44286,16 +44026,14 @@ function folderAdd(name, createFolders) {
  * @param {Object} compressionOptions the options to use when compressing.
  * @return {PizZip.CompressedObject} the compressed result.
  */
-
-
 function generateCompressedObjectFrom(file, compression, compressionOptions) {
   var result = new CompressedObject();
-  var content; // the data has not been decompressed, we might reuse things !
+  var content;
 
+  // the data has not been decompressed, we might reuse things !
   if (file._data instanceof CompressedObject) {
     result.uncompressedSize = file._data.uncompressedSize;
     result.crc32 = file._data.crc32;
-
     if (result.uncompressedSize === 0 || file.dir) {
       compression = compressions.STORE;
       result.compressedContent = "";
@@ -44303,28 +44041,26 @@ function generateCompressedObjectFrom(file, compression, compressionOptions) {
     } else if (file._data.compressionMethod === compression.magic) {
       result.compressedContent = file._data.getCompressedContent();
     } else {
-      content = file._data.getContent(); // need to decompress / recompress
-
+      content = file._data.getContent();
+      // need to decompress / recompress
       result.compressedContent = compression.compress(utils.transformTo(compression.compressInputType, content), compressionOptions);
     }
   } else {
     // have uncompressed data
     content = getBinaryData(file);
-
     if (!content || content.length === 0 || file.dir) {
       compression = compressions.STORE;
       content = "";
     }
-
     result.uncompressedSize = content.length;
     result.crc32 = _crc(content);
     result.compressedContent = compression.compress(utils.transformTo(compression.compressInputType, content), compressionOptions);
   }
-
   result.compressedSize = result.compressedContent.length;
   result.compressionMethod = compression.magic;
   return result;
 }
+
 /**
  * Generate the UNIX part of the external file attributes.
  * @param {Object} unixPermissions the unix permissions or null.
@@ -44340,20 +44076,17 @@ function generateCompressedObjectFrom(file, compression, compressionOptions) {
  *                 ^^^^^^^^^^______ not used ?
  *                           ^^^^^^ DOS attribute bits : Archive, Directory, Volume label, System file, Hidden, Read only
  */
-
-
 function generateUnixExternalFileAttr(unixPermissions, isDir) {
   var result = unixPermissions;
-
   if (!unixPermissions) {
     // I can't use octal values in strict mode, hence the hexa.
     //  040775 => 0x41fd
     // 0100664 => 0x81b4
     result = isDir ? 0x41fd : 0x81b4;
   }
-
   return (result & 0xffff) << 16;
 }
+
 /**
  * Generate the DOS part of the external file attributes.
  * @param {Object} dosPermissions the dos permissions or null.
@@ -44367,12 +44100,12 @@ function generateUnixExternalFileAttr(unixPermissions, isDir) {
  * Bit 4     Directory
  * Bit 5     Archive
  */
-
-
 function generateDosExternalFileAttr(dosPermissions) {
   // the dir flag is already set for compatibility
+
   return (dosPermissions || 0) & 0x3f;
 }
+
 /**
  * Generate the various parts used in the construction of the final zip file.
  * @param {string} name the file name.
@@ -44383,61 +44116,56 @@ function generateDosExternalFileAttr(dosPermissions) {
  * @param {Function} encodeFileName the function to encode the file name / comment.
  * @return {object} the zip parts.
  */
-
-
 function generateZipParts(name, file, compressedObject, offset, platform, encodeFileName) {
   var useCustomEncoding = encodeFileName !== utf8.utf8encode,
-      encodedFileName = utils.transformTo("string", encodeFileName(file.name)),
-      utfEncodedFileName = utils.transformTo("string", utf8.utf8encode(file.name)),
-      comment = file.comment || "",
-      encodedComment = utils.transformTo("string", encodeFileName(comment)),
-      utfEncodedComment = utils.transformTo("string", utf8.utf8encode(comment)),
-      useUTF8ForFileName = utfEncodedFileName.length !== file.name.length,
-      useUTF8ForComment = utfEncodedComment.length !== comment.length,
-      o = file.options;
+    encodedFileName = utils.transformTo("string", encodeFileName(file.name)),
+    utfEncodedFileName = utils.transformTo("string", utf8.utf8encode(file.name)),
+    comment = file.comment || "",
+    encodedComment = utils.transformTo("string", encodeFileName(comment)),
+    utfEncodedComment = utils.transformTo("string", utf8.utf8encode(comment)),
+    useUTF8ForFileName = utfEncodedFileName.length !== file.name.length,
+    useUTF8ForComment = utfEncodedComment.length !== comment.length,
+    o = file.options;
   var dosTime,
-      dosDate,
-      extraFields = "",
-      unicodePathExtraField = "",
-      unicodeCommentExtraField = "",
-      dir,
-      date; // handle the deprecated options.dir
+    dosDate,
+    extraFields = "",
+    unicodePathExtraField = "",
+    unicodeCommentExtraField = "",
+    dir,
+    date;
 
+  // handle the deprecated options.dir
   if (file._initialMetadata.dir !== file.dir) {
     dir = file.dir;
   } else {
     dir = o.dir;
-  } // handle the deprecated options.date
+  }
 
-
+  // handle the deprecated options.date
   if (file._initialMetadata.date !== file.date) {
     date = file.date;
   } else {
     date = o.date;
   }
-
   var extFileAttr = 0;
   var versionMadeBy = 0;
-
   if (dir) {
     // dos or unix, we set the dos dir flag
     extFileAttr |= 0x00010;
   }
-
   if (platform === "UNIX") {
     versionMadeBy = 0x031e; // UNIX, version 3.0
-
     extFileAttr |= generateUnixExternalFileAttr(file.unixPermissions, dir);
   } else {
     // DOS or other, fallback to DOS
     versionMadeBy = 0x0014; // DOS, version 2.0
-
     extFileAttr |= generateDosExternalFileAttr(file.dosPermissions, dir);
-  } // date
+  }
+
+  // date
   // @see http://www.delorie.com/djgpp/doc/rbinter/it/52/13.html
   // @see http://www.delorie.com/djgpp/doc/rbinter/it/65/16.html
   // @see http://www.delorie.com/djgpp/doc/rbinter/it/66/16.html
-
 
   dosTime = date.getHours();
   dosTime <<= 6;
@@ -44449,7 +44177,6 @@ function generateZipParts(name, file, compressedObject, offset, platform, encode
   dosDate |= date.getMonth() + 1;
   dosDate <<= 5;
   dosDate |= date.getDate();
-
   if (useUTF8ForFileName) {
     // set the unicode path extra field. unzip needs at least one extra
     // field to correctly handle unicode path, so using the path is as good
@@ -44460,60 +44187,81 @@ function generateZipParts(name, file, compressedObject, offset, platform, encode
     // with the messy Windows' default compressed folders feature but
     // breaks on p7zip which doesn't seek the unicode path extra field.
     // So for now, UTF-8 everywhere !
-    unicodePathExtraField = // Version
-    decToHex(1, 1) + // NameCRC32
-    decToHex(_crc(encodedFileName), 4) + // UnicodeName
+    unicodePathExtraField =
+    // Version
+    decToHex(1, 1) +
+    // NameCRC32
+    decToHex(_crc(encodedFileName), 4) +
+    // UnicodeName
     utfEncodedFileName;
-    extraFields += // Info-ZIP Unicode Path Extra Field
-    "\\x75\\x70" + // size
-    decToHex(unicodePathExtraField.length, 2) + // content
+    extraFields +=
+    // Info-ZIP Unicode Path Extra Field
+    "\\x75\\x70" +
+    // size
+    decToHex(unicodePathExtraField.length, 2) +
+    // content
     unicodePathExtraField;
   }
-
   if (useUTF8ForComment) {
-    unicodeCommentExtraField = // Version
-    decToHex(1, 1) + // CommentCRC32
-    decToHex(this.crc32(encodedComment), 4) + // UnicodeName
+    unicodeCommentExtraField =
+    // Version
+    decToHex(1, 1) +
+    // CommentCRC32
+    decToHex(this.crc32(encodedComment), 4) +
+    // UnicodeName
     utfEncodedComment;
-    extraFields += // Info-ZIP Unicode Path Extra Field
-    "\\x75\\x63" + // size
-    decToHex(unicodeCommentExtraField.length, 2) + // content
+    extraFields +=
+    // Info-ZIP Unicode Path Extra Field
+    "\\x75\\x63" +
+    // size
+    decToHex(unicodeCommentExtraField.length, 2) +
+    // content
     unicodeCommentExtraField;
   }
+  var header = "";
 
-  var header = ""; // version needed to extract
-
-  header += "\\x0A\\x00"; // general purpose bit flag
+  // version needed to extract
+  header += "\\x0A\\x00";
+  // general purpose bit flag
   // set bit 11 if utf8
-
-  header += !useCustomEncoding && (useUTF8ForFileName || useUTF8ForComment) ? "\\x00\\x08" : "\\x00\\x00"; // compression method
-
-  header += compressedObject.compressionMethod; // last mod file time
-
-  header += decToHex(dosTime, 2); // last mod file date
-
-  header += decToHex(dosDate, 2); // crc-32
-
-  header += decToHex(compressedObject.crc32, 4); // compressed size
-
-  header += decToHex(compressedObject.compressedSize, 4); // uncompressed size
-
-  header += decToHex(compressedObject.uncompressedSize, 4); // file name length
-
-  header += decToHex(encodedFileName.length, 2); // extra field length
-
+  header += !useCustomEncoding && (useUTF8ForFileName || useUTF8ForComment) ? "\\x00\\x08" : "\\x00\\x00";
+  // compression method
+  header += compressedObject.compressionMethod;
+  // last mod file time
+  header += decToHex(dosTime, 2);
+  // last mod file date
+  header += decToHex(dosDate, 2);
+  // crc-32
+  header += decToHex(compressedObject.crc32, 4);
+  // compressed size
+  header += decToHex(compressedObject.compressedSize, 4);
+  // uncompressed size
+  header += decToHex(compressedObject.uncompressedSize, 4);
+  // file name length
+  header += decToHex(encodedFileName.length, 2);
+  // extra field length
   header += decToHex(extraFields.length, 2);
   var fileRecord = signature.LOCAL_FILE_HEADER + header + encodedFileName + extraFields;
-  var dirRecord = signature.CENTRAL_FILE_HEADER + // version made by (00: DOS)
-  decToHex(versionMadeBy, 2) + // file header (common to file and central directory)
-  header + // file comment length
-  decToHex(encodedComment.length, 2) + // disk number start
-  "\\x00\\x00" + // internal file attributes
-  "\\x00\\x00" + // external file attributes
-  decToHex(extFileAttr, 4) + // relative offset of local header
-  decToHex(offset, 4) + // file name
-  encodedFileName + // extra field
-  extraFields + // file comment
+  var dirRecord = signature.CENTRAL_FILE_HEADER +
+  // version made by (00: DOS)
+  decToHex(versionMadeBy, 2) +
+  // file header (common to file and central directory)
+  header +
+  // file comment length
+  decToHex(encodedComment.length, 2) +
+  // disk number start
+  "\\x00\\x00" +
+  // internal file attributes
+  "\\x00\\x00" +
+  // external file attributes
+  decToHex(extFileAttr, 4) +
+  // relative offset of local header
+  decToHex(offset, 4) +
+  // file name
+  encodedFileName +
+  // extra field
+  extraFields +
+  // file comment
   encodedComment;
   return {
     fileRecord: fileRecord,
@@ -44521,7 +44269,6 @@ function generateZipParts(name, file, compressedObject, offset, platform, encode
     compressedObject: compressedObject
   };
 }
-
 module.exports = out;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/object.js?`)},"c+wO":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return createSVGElement; });
@@ -50406,7 +50153,6 @@ function CompressedObject() {
   this.compressionMethod = null;
   this.compressedContent = null;
 }
-
 CompressedObject.prototype = {
   /**
    * Return the decompressed content in an unspecified format.
@@ -50416,7 +50162,6 @@ CompressedObject.prototype = {
   getContent: function getContent() {
     return null; // see implementation
   },
-
   /**
    * Return the compressed content in an unspecified format.
    * The format will depend on the compressed conten source.
@@ -50426,6 +50171,7 @@ CompressedObject.prototype = {
     return null; // see implementation
   }
 };
+
 module.exports = CompressedObject;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/compressedObject.js?`)},iIqE:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getTotalValue; });
@@ -87719,7 +87465,7 @@ var FileSaver_min = __webpack_require__("Iab2");
 
 
 
-const utils_path = {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_59f43f23-f76a-47f9-bb6f-57025c77812f","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.18.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_59f43f23-f76a-47f9-bb6f-57025c77812f","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.5.1","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221018.2","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:20110","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3655942205","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.7/x64","PATH":"/tmp/yarn--1670576620238-0.0353233259231398:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"17dc32a3b9d34bdcacd7aad432223e40","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_725482ba-a5d0-4ed2-a35e-9a7bafe75b30","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"148","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"GitHub Actions 2","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","GITHUB_ACTIONS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","VCPKG_ROOT":"/usr/local/share/vcpkg","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"15ec536636106da331f6fa255c232bf32b92f3eb","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_59f43f23-f76a-47f9-bb6f-57025c77812f","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_59f43f23-f76a-47f9-bb6f-57025c77812f","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.9.10-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_59f43f23-f76a-47f9-bb6f-57025c77812f","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"}.APP_ENV === 'development' ? \`/word.docx\` : \`/my-demo-markdown/word.docx\`;
+const utils_path = {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_3fce17bf-b71d-4859-b357-b31be699d3f0","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.18.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_3fce17bf-b71d-4859-b357-b31be699d3f0","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.5.1","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221018.2","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:22019","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3700544444","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.7/x64","PATH":"/tmp/yarn--1671071842971-0.8967068866942205:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"66c63b8d2b4249378355eb0afb1a0c0b","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_f6ae238d-9afc-4130-8f94-c4c24ca4acdb","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"149","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"Hosted Agent","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","GITHUB_ACTIONS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","VCPKG_ROOT":"/usr/local/share/vcpkg","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"2193b97455fcabdb68a582f0a6e414bac68da000","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_3fce17bf-b71d-4859-b357-b31be699d3f0","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_3fce17bf-b71d-4859-b357-b31be699d3f0","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.9.10-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_3fce17bf-b71d-4859-b357-b31be699d3f0","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.35","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"}.APP_ENV === 'development' ? \`/word.docx\` : \`/my-demo-markdown/word.docx\`;
 /**
  * description\uFF1A \u5BFC\u51FAecharts\u56FE\u7247\uFF0C\u683C\u5F0F\u8F6C\u6362
  */
@@ -93953,115 +93699,104 @@ function assembleFont(attrs) {
 //# sourceURL=webpack:///./node_modules/@antv/g-base/esm/util/text.js?`)},vidx:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var utils = __webpack_require__("DhW3");
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.string2binary = function (str) {
   return utils.string2binary(str);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.string2Uint8Array = function (str) {
   return utils.transformTo("uint8array", str);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.uint8Array2String = function (array) {
   return utils.transformTo("string", array);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.string2Blob = function (str) {
   var buffer = utils.transformTo("arraybuffer", str);
   return utils.arrayBuffer2Blob(buffer);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.arrayBuffer2Blob = function (buffer) {
   return utils.arrayBuffer2Blob(buffer);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.transformTo = function (outputType, input) {
   return utils.transformTo(outputType, input);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.getTypeOf = function (input) {
   return utils.getTypeOf(input);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.checkSupport = function (type) {
   return utils.checkSupport(type);
 };
+
 /**
  * @deprecated
  * This value will be removed in a future version without replacement.
  */
-
-
 exports.MAX_VALUE_16BITS = utils.MAX_VALUE_16BITS;
+
 /**
  * @deprecated
  * This value will be removed in a future version without replacement.
  */
-
 exports.MAX_VALUE_32BITS = utils.MAX_VALUE_32BITS;
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
 exports.pretty = function (str) {
   return utils.pretty(str);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.findCompression = function (compressionMethod) {
   return utils.findCompression(compressionMethod);
 };
+
 /**
  * @deprecated
  * This function will be removed in a future version without replacement.
  */
-
-
 exports.isRegExp = function (object) {
   return utils.isRegExp(object);
 };
@@ -94071,72 +93806,63 @@ exports.isRegExp = function (object) {
 //# sourceURL=webpack:///./node_modules/@antv/component/esm/interfaces.js?`)},vt0s:function(module,exports,__webpack_require__){"use strict";eval(`
 
 var utils = __webpack_require__("DhW3");
-
 var support = __webpack_require__("/fDI");
-
 var nodeBuffer = __webpack_require__("3YQX");
+
 /**
  * The following functions come from pako, from pako/lib/utils/strings
  * released under the MIT license, see pako https://github.com/nodeca/pako/
  */
+
 // Table with utf8 lengths (calculated by first byte of sequence)
 // Note, that 5 & 6-byte values and some 4-byte values can not be represented in JS,
 // because max possible codepoint is 0x10ffff
-
-
 var _utf8len = new Array(256);
-
 for (var i = 0; i < 256; i++) {
   _utf8len[i] = i >= 252 ? 6 : i >= 248 ? 5 : i >= 240 ? 4 : i >= 224 ? 3 : i >= 192 ? 2 : 1;
 }
-
 _utf8len[254] = _utf8len[254] = 1; // Invalid sequence start
-// convert string to array (typed, when possible)
 
+// convert string to array (typed, when possible)
 function string2buf(str) {
   var buf,
-      c,
-      c2,
-      mPos,
-      i,
-      bufLen = 0;
-  var strLen = str.length; // count binary size
+    c,
+    c2,
+    mPos,
+    i,
+    bufLen = 0;
+  var strLen = str.length;
 
+  // count binary size
   for (mPos = 0; mPos < strLen; mPos++) {
     c = str.charCodeAt(mPos);
-
     if ((c & 0xfc00) === 0xd800 && mPos + 1 < strLen) {
       c2 = str.charCodeAt(mPos + 1);
-
       if ((c2 & 0xfc00) === 0xdc00) {
         c = 0x10000 + (c - 0xd800 << 10) + (c2 - 0xdc00);
         mPos++;
       }
     }
-
     bufLen += c < 0x80 ? 1 : c < 0x800 ? 2 : c < 0x10000 ? 3 : 4;
-  } // allocate buffer
+  }
 
-
+  // allocate buffer
   if (support.uint8array) {
     buf = new Uint8Array(bufLen);
   } else {
     buf = new Array(bufLen);
-  } // convert
+  }
 
-
+  // convert
   for (i = 0, mPos = 0; i < bufLen; mPos++) {
     c = str.charCodeAt(mPos);
-
     if ((c & 0xfc00) === 0xd800 && mPos + 1 < strLen) {
       c2 = str.charCodeAt(mPos + 1);
-
       if ((c2 & 0xfc00) === 0xdc00) {
         c = 0x10000 + (c - 0xd800 << 10) + (c2 - 0xdc00);
         mPos++;
       }
     }
-
     if (c < 0x80) {
       /* one byte */
       buf[i++] = c;
@@ -94157,85 +93883,79 @@ function string2buf(str) {
       buf[i++] = 0x80 | c & 0x3f;
     }
   }
-
   return buf;
-} // Calculate max possible position in utf8 buffer,
+}
+
+// Calculate max possible position in utf8 buffer,
 // that will not break sequence. If that's not possible
 // - (very small limits) return max size as is.
 //
 // buf[] - utf8 bytes array
 // max   - length limit (mandatory);
-
-
 function utf8border(buf, max) {
   var pos;
   max = max || buf.length;
-
   if (max > buf.length) {
     max = buf.length;
-  } // go back from last position, until start of sequence found
+  }
 
-
+  // go back from last position, until start of sequence found
   pos = max - 1;
-
   while (pos >= 0 && (buf[pos] & 0xc0) === 0x80) {
     pos--;
-  } // Fuckup - very small and broken sequence,
+  }
+
+  // Fuckup - very small and broken sequence,
   // return max, because we should return something anyway.
-
-
   if (pos < 0) {
-    return max;
-  } // If we came to start of buffer - that means vuffer is too small,
-  // return max too.
-
-
-  if (pos === 0) {
     return max;
   }
 
+  // If we came to start of buffer - that means vuffer is too small,
+  // return max too.
+  if (pos === 0) {
+    return max;
+  }
   return pos + _utf8len[buf[pos]] > max ? pos : max;
-} // convert array to string
+}
 
-
+// convert array to string
 function buf2string(buf) {
   var i, out, c, cLen;
-  var len = buf.length; // Reserve max possible length (2 words per char)
+  var len = buf.length;
+
+  // Reserve max possible length (2 words per char)
   // NB: by unknown reasons, Array is significantly faster for
   //     String.fromCharCode.apply than Uint16Array.
-
   var utf16buf = new Array(len * 2);
-
   for (out = 0, i = 0; i < len;) {
-    c = buf[i++]; // quick process ascii
-
+    c = buf[i++];
+    // quick process ascii
     if (c < 0x80) {
       utf16buf[out++] = c;
       continue;
     }
-
-    cLen = _utf8len[c]; // skip 5 & 6 byte codes
-
+    cLen = _utf8len[c];
+    // skip 5 & 6 byte codes
     if (cLen > 4) {
       utf16buf[out++] = 0xfffd;
       i += cLen - 1;
       continue;
-    } // apply mask on first byte
+    }
 
-
-    c &= cLen === 2 ? 0x1f : cLen === 3 ? 0x0f : 0x07; // join the rest
-
+    // apply mask on first byte
+    c &= cLen === 2 ? 0x1f : cLen === 3 ? 0x0f : 0x07;
+    // join the rest
     while (cLen > 1 && i < len) {
       c = c << 6 | buf[i++] & 0x3f;
       cLen--;
-    } // terminated by end of string?
+    }
 
-
+    // terminated by end of string?
     if (cLen > 1) {
       utf16buf[out++] = 0xfffd;
       continue;
     }
-
     if (c < 0x10000) {
       utf16buf[out++] = c;
     } else {
@@ -94243,20 +93963,22 @@ function buf2string(buf) {
       utf16buf[out++] = 0xd800 | c >> 10 & 0x3ff;
       utf16buf[out++] = 0xdc00 | c & 0x3ff;
     }
-  } // shrinkBuf(utf16buf, out)
+  }
 
-
+  // shrinkBuf(utf16buf, out)
   if (utf16buf.length !== out) {
     if (utf16buf.subarray) {
       utf16buf = utf16buf.subarray(0, out);
     } else {
       utf16buf.length = out;
     }
-  } // return String.fromCharCode.apply(null, utf16buf);
+  }
 
-
+  // return String.fromCharCode.apply(null, utf16buf);
   return utils.applyFromCharCode(utf16buf);
-} // That's all for the pako functions.
+}
+
+// That's all for the pako functions.
 
 /**
  * Transform a javascript string into an array (typed if possible) of bytes,
@@ -94264,50 +93986,42 @@ function buf2string(buf) {
  * @param {String} str the string to encode
  * @return {Array|Uint8Array|Buffer} the UTF-8 encoded string.
  */
-
-
 exports.utf8encode = function utf8encode(str) {
   if (support.nodebuffer) {
     return nodeBuffer(str, "utf-8");
   }
-
   return string2buf(str);
 };
+
 /**
  * Transform a bytes array (or a representation) representing an UTF-8 encoded
  * string into a javascript string.
  * @param {Array|Uint8Array|Buffer} buf the data de decode
  * @return {String} the decoded string.
  */
-
-
 exports.utf8decode = function utf8decode(buf) {
   if (support.nodebuffer) {
     return utils.transformTo("nodebuffer", buf).toString("utf-8");
   }
+  buf = utils.transformTo(support.uint8array ? "uint8array" : "array", buf);
 
-  buf = utils.transformTo(support.uint8array ? "uint8array" : "array", buf); // return buf2string(buf);
+  // return buf2string(buf);
   // Chrome prefers to work with "small" chunks of data
   // for the method buf2string.
   // Firefox and Chrome has their own shortcut, IE doesn't seem to really care.
-
   var result = [],
-      len = buf.length,
-      chunk = 65536;
+    len = buf.length,
+    chunk = 65536;
   var k = 0;
-
   while (k < len) {
     var nextBoundary = utf8border(buf, Math.min(k + chunk, len));
-
     if (support.uint8array) {
       result.push(buf2string(buf.subarray(k, nextBoundary)));
     } else {
       result.push(buf2string(buf.slice(k, nextBoundary)));
     }
-
     k = nextBoundary;
   }
-
   return result.join("");
 };
 
@@ -96019,7 +95733,6 @@ var facet_Facet = /** @class */ (function (_super) {
 //# sourceURL=webpack:///./node_modules/@antv/g2plot/esm/plots/facet/index.js_+_3_modules?`)},"xI/P":function(module,exports,__webpack_require__){"use strict";eval(`
 
 var ArrayReader = __webpack_require__("NH6C");
-
 function Uint8ArrayReader(data) {
   if (data) {
     this.data = data;
@@ -96028,25 +95741,20 @@ function Uint8ArrayReader(data) {
     this.zero = 0;
   }
 }
-
 Uint8ArrayReader.prototype = new ArrayReader();
 /**
  * @see DataReader.readData
  */
-
 Uint8ArrayReader.prototype.readData = function (size) {
   this.checkOffset(size);
-
   if (size === 0) {
     // in IE10, when using subarray(idx, idx), we get the array [0x00] instead of [].
     return new Uint8Array(0);
   }
-
   var result = this.data.subarray(this.zero + this.index, this.zero + this.index + size);
   this.index += size;
   return result;
 };
-
 module.exports = Uint8ArrayReader;
 
 //# sourceURL=webpack:///./node_modules/pizzip/js/uint8ArrayReader.js?`)},xt64:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony default export */ __webpack_exports__["a"] = (function (node) {

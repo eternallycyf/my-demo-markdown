@@ -32885,9 +32885,9 @@ function track_track(options_) {
 
 // CONCATENATED MODULE: ./node_modules/mdast-util-gfm-strikethrough/node_modules/mdast-util-to-markdown/lib/util/container-phrasing.js
 /**
- * @typedef {import('../types.js').Node} Node
  * @typedef {import('../types.js').Parent} Parent
  * @typedef {import('../types.js').SafeOptions} SafeOptions
+ * @typedef {import('../types.js').Handle} Handle
  * @typedef {import('../types.js').Context} Context
  */
 
@@ -32918,8 +32918,11 @@ function containerPhrasing(parent, context, safeOptions) {
     indexStack[indexStack.length - 1] = index
 
     if (index + 1 < children.length) {
+      /** @type {Handle} */
       // @ts-expect-error: hush, it\u2019s actually a \`zwitch\`.
       let handle = context.handle.handlers[children[index + 1].type]
+      /** @type {Handle} */
+      // @ts-expect-error: hush, it\u2019s actually a \`zwitch\`.
       if (handle && handle.peek) handle = handle.peek
       after = handle
         ? handle(children[index + 1], parent, context, {
@@ -33114,9 +33117,9 @@ function util_track_track(options_) {
 
 // CONCATENATED MODULE: ./node_modules/mdast-util-gfm-table/node_modules/mdast-util-to-markdown/lib/util/container-phrasing.js
 /**
- * @typedef {import('../types.js').Node} Node
  * @typedef {import('../types.js').Parent} Parent
  * @typedef {import('../types.js').SafeOptions} SafeOptions
+ * @typedef {import('../types.js').Handle} Handle
  * @typedef {import('../types.js').Context} Context
  */
 
@@ -33147,8 +33150,11 @@ function container_phrasing_containerPhrasing(parent, context, safeOptions) {
     indexStack[indexStack.length - 1] = index
 
     if (index + 1 < children.length) {
+      /** @type {Handle} */
       // @ts-expect-error: hush, it\u2019s actually a \`zwitch\`.
       let handle = context.handle.handlers[children[index + 1].type]
+      /** @type {Handle} */
+      // @ts-expect-error: hush, it\u2019s actually a \`zwitch\`.
       if (handle && handle.peek) handle = handle.peek
       after = handle
         ? handle(children[index + 1], parent, context, {
@@ -33231,7 +33237,11 @@ function pattern_compile_patternCompile(pattern) {
 // CONCATENATED MODULE: ./node_modules/mdast-util-gfm-table/node_modules/mdast-util-to-markdown/lib/handle/inline-code.js
 /**
  * @typedef {import('mdast').InlineCode} InlineCode
- * @typedef {import('../types.js').Handle} Handle
+ * @typedef {import('mdast').Root} Root
+ * @typedef {import('mdast').Content} Content
+ * @typedef {Root|Content} Node
+ * @typedef {Extract<Node, import('mdast').Parent>} Parent
+ * @typedef {import('../types.js').Context} Context
  */
 
 
@@ -33239,8 +33249,10 @@ function pattern_compile_patternCompile(pattern) {
 inline_code_inlineCode.peek = inlineCodePeek
 
 /**
- * @type {Handle}
  * @param {InlineCode} node
+ * @param {Parent|undefined} _
+ * @param {Context} context
+ * @returns {string}
  */
 function inline_code_inlineCode(node, _, context) {
   let value = node.value || ''
@@ -33300,7 +33312,7 @@ function inline_code_inlineCode(node, _, context) {
 }
 
 /**
- * @type {Handle}
+ * @returns {string}
  */
 function inlineCodePeek() {
   return '\`'
@@ -34198,10 +34210,13 @@ function indent_lines_indentLines(value, map) {
 // CONCATENATED MODULE: ./node_modules/mdast-util-gfm-task-list-item/node_modules/mdast-util-to-markdown/lib/handle/list-item.js
 /**
  * @typedef {import('mdast').ListItem} ListItem
- * @typedef {import('mdast').List} List
  * @typedef {import('../util/indent-lines.js').Map} Map
- * @typedef {import('../types.js').Options} Options
- * @typedef {import('../types.js').Handle} Handle
+ * @typedef {import('mdast').Root} Root
+ * @typedef {import('mdast').Content} Content
+ * @typedef {Root|Content} Node
+ * @typedef {Extract<Node, import('mdast').Parent>} Parent
+ * @typedef {import('../types.js').Context} Context
+ * @typedef {import('../types.js').SafeOptions} SafeOptions
  */
 
 
@@ -34211,8 +34226,11 @@ function indent_lines_indentLines(value, map) {
 
 
 /**
- * @type {Handle}
  * @param {ListItem} node
+ * @param {Parent|undefined} parent
+ * @param {Context} context
+ * @param {SafeOptions} safeOptions
+ * @returns {string}
  */
 function handle_list_item_listItem(node, parent, context, safeOptions) {
   const listItemIndent = checkListItemIndent(context)
