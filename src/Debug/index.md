@@ -733,3 +733,16 @@ function getBase64(url) {
 }
 const url = 'data:image/png;base64,' + (await getBase64(_p));
 ```
+
+## 48.react-redux connect 后 获取不到 ref
+
+```js
+// react-redux v6之前
+export default connect(mapStateToProps, mapDispatchToProps, null, {
+  withRef: true,
+})(InviteReceiverForm);
+// v6
+export default connect(mapStateToProps, mapDispatchToProps, null, {
+  forwardRef: true,
+})(InviteReceiverForm);
+```
