@@ -746,3 +746,12 @@ export default connect(mapStateToProps, mapDispatchToProps, null, {
   forwardRef: true,
 })(InviteReceiverForm);
 ```
+
+## 48. antd-table 放在 modal 里面打开关闭卡顿
+
+```js
+columns如果;
+title: <div>...</div>;
+需要换成函数形式;
+title: () => <div>...</div>;
+```
