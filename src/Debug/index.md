@@ -757,3 +757,31 @@ title: <div>...</div>;
 需要换成函数形式;
 title: () => <div>...</div>;
 ```
+
+## 49 img 使用异步的 url
+
+```js
+function Image({userId}){
+  const [actualSrc, setActualSrc] = useState('placeholder image link')
+  useEffect(()=>{
+    const getUrl = async (id) => {
+       let url = `http://127.0.0.1:8000/api/user/${id}/`
+       const response = await fetch(url)
+       const data = await response.json()
+       const avatarurl = data.avatar
+       return avatarurl;
+
+    getUrl(userId).then((url) => setActualSrc(url));
+  }, [userId]);
+
+  return <img src={actualSrc}/>
+}
+{data?.map((data) => (
+  <div className="allpostsingle" key={data.id} onClick={() => sendTo(data.id)}>
+    <div className="allpostheader">
+      <Image userId={data.user} />
+      <p>{data?.description}</p>
+    </div>
+  </div>
+))}
+```
