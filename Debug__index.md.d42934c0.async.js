@@ -640,6 +640,17 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "48. antd-table \\u653E\\u5728 modal \\u91CC\\u9762\\u6253\\u5F00\\u5173\\u95ED\\u5361\\u987F"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "react \\u5143\\u7D20\\u6DF1\\u62F7\\u8D1D \\u4F1A\\u5BFC\\u81F4\\u5361\\u987F")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "columns\u5982\u679C;\\ntitle: <div>...</div>;\\n\u9700\u8981\u6362\u6210\u51FD\u6570\u5F62\u5F0F;\\ntitle: () => <div>...</div>;",
     lang: "js"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "49-img-\\u4F7F\\u7528\\u5F02\\u6B65\\u7684-url"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#49-img-\\u4F7F\\u7528\\u5F02\\u6B65\\u7684-url",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "49 img \\u4F7F\\u7528\\u5F02\\u6B65\\u7684 url"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
+    code: "function Image({userId}){\\n  const [actualSrc, setActualSrc] = useState('placeholder image link')\\n  useEffect(()=>{\\n    const getUrl = async (id) => {\\n       let url = \`http://127.0.0.1:8000/api/user/\${id}/\`\\n       const response = await fetch(url)\\n       const data = await response.json()\\n       const avatarurl = data.avatar\\n       return avatarurl;\\n\\n    getUrl(userId).then((url) => setActualSrc(url));\\n  }, [userId]);\\n\\n  return <img src={actualSrc}/>\\n}\\n{data?.map((data) => (\\n  <div className=\\"allpostsingle\\" key={data.id} onClick={() => sendTo(data.id)}>\\n    <div className=\\"allpostheader\\">\\n      <Image userId={data.user} />\\n      <p>{data?.description}</p>\\n    </div>\\n  </div>\\n))}",
+    lang: "js"
   })));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
