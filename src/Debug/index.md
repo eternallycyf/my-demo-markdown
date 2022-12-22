@@ -785,3 +785,12 @@ function Image({userId}){
   </div>
 ))}
 ```
+
+## 50. react input onchange e.target is null
+
+```js
+onChange = e => {
+  e.persist();
+  console.log(e.target.value);
+};
+```
