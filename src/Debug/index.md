@@ -796,3 +796,18 @@ onChange = e => {
 ```
 
 ## 51. antd col 会默认添加 position:relative => z-index:0
+
+## 52. APP 更新后白屏 必须清缓存才行
+
+- js 文件加了 hash 但是 html 文件缓存了
+
+```
+location / {
+  index index.html
+  try_files $uri $uri/ /index.html;
+  if ($request_filename ~* .*\.(?:htm|html)$)
+  {
+      add_header Cache-Control "no-store, no-store"
+  }
+};
+```
