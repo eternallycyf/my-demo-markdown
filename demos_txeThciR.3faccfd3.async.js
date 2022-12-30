@@ -20609,9 +20609,7 @@ var progress_Circle_Circle = function Circle(props) {
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -20770,9 +20768,7 @@ var Steps_Steps = function Steps(props) {
 
 var progress_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -21444,55 +21440,53 @@ var Upload_InternalUpload = function InternalUpload(props, ref) {
     return __awaiter(void 0, void 0, void 0, /*#__PURE__*/Object(regeneratorRuntime["a" /* default */])().mark(function _callee() {
       var beforeUpload, transformFile, parsedFile, result;
       return Object(regeneratorRuntime["a" /* default */])().wrap(function _callee$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              beforeUpload = props.beforeUpload, transformFile = props.transformFile;
-              parsedFile = file;
-              if (!beforeUpload) {
-                _context.next = 13;
-                break;
-              }
-              _context.next = 5;
-              return beforeUpload(file, fileListArgs);
-            case 5:
-              result = _context.sent;
-              if (!(result === false)) {
-                _context.next = 8;
-                break;
-              }
-              return _context.abrupt("return", false);
-            case 8:
-              // Hack for LIST_IGNORE, we add additional info to remove from the list
-              delete file[LIST_IGNORE];
-              if (!(result === LIST_IGNORE)) {
-                _context.next = 12;
-                break;
-              }
-              Object.defineProperty(file, LIST_IGNORE, {
-                value: true,
-                configurable: true
-              });
-              return _context.abrupt("return", false);
-            case 12:
-              if (Object(esm_typeof["a" /* default */])(result) === 'object' && result) {
-                parsedFile = result;
-              }
-            case 13:
-              if (!transformFile) {
-                _context.next = 17;
-                break;
-              }
-              _context.next = 16;
-              return transformFile(parsedFile);
-            case 16:
-              parsedFile = _context.sent;
-            case 17:
-              return _context.abrupt("return", parsedFile);
-            case 18:
-            case "end":
-              return _context.stop();
-          }
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            beforeUpload = props.beforeUpload, transformFile = props.transformFile;
+            parsedFile = file;
+            if (!beforeUpload) {
+              _context.next = 13;
+              break;
+            }
+            _context.next = 5;
+            return beforeUpload(file, fileListArgs);
+          case 5:
+            result = _context.sent;
+            if (!(result === false)) {
+              _context.next = 8;
+              break;
+            }
+            return _context.abrupt("return", false);
+          case 8:
+            // Hack for LIST_IGNORE, we add additional info to remove from the list
+            delete file[LIST_IGNORE];
+            if (!(result === LIST_IGNORE)) {
+              _context.next = 12;
+              break;
+            }
+            Object.defineProperty(file, LIST_IGNORE, {
+              value: true,
+              configurable: true
+            });
+            return _context.abrupt("return", false);
+          case 12:
+            if (Object(esm_typeof["a" /* default */])(result) === 'object' && result) {
+              parsedFile = result;
+            }
+          case 13:
+            if (!transformFile) {
+              _context.next = 17;
+              break;
+            }
+            _context.next = 16;
+            return transformFile(parsedFile);
+          case 16:
+            parsedFile = _context.sent;
+          case 17:
+            return _context.abrupt("return", parsedFile);
+          case 18:
+          case "end":
+            return _context.stop();
         }
       }, _callee);
     }));
@@ -21738,9 +21732,7 @@ if (false) {}
 
 var Dragger_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }

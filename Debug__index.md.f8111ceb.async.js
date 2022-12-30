@@ -681,7 +681,15 @@ const PageContent = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.me
   })), "52. APP \\u66F4\\u65B0\\u540E\\u767D\\u5C4F \\u5FC5\\u987B\\u6E05\\u7F13\\u5B58\\u624D\\u884C"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "js \\u6587\\u4EF6\\u52A0\\u4E86 hash \\u4F46\\u662F html \\u6587\\u4EF6\\u7F13\\u5B58\\u4E86")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme_default_es_builtins_SourceCode_js__WEBPACK_IMPORTED_MODULE_3__[/* default */ "a"], {
     code: "location / {\\n  index index.html\\n  try_files $uri $uri/ /index.html;\\n  if ($request_filename ~* .*\\\\.(?:htm|html)$)\\n  {\\n      add_header Cache-Control \\"no-store, no-store\\"\\n  }\\n};",
     lang: "unknown"
-  })));
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    id: "53-antd-select-6000-\\u6761\\u6570\\u636E\\u5361\\u987F-\\u6EDA\\u52A8\\u4E0D\\u4E0B\\u53BB"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["AnchorLink"], {
+    to: "#53-antd-select-6000-\\u6761\\u6570\\u636E\\u5361\\u987F-\\u6EDA\\u52A8\\u4E0D\\u4E0B\\u53BB",
+    "aria-hidden": "true",
+    tabIndex: -1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+    className: "icon icon-link"
+  })), "53. antd select 6000 \\u6761\\u6570\\u636E\\u5361\\u987F \\u6EDA\\u52A8\\u4E0D\\u4E0B\\u53BB"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u592A\\u591A\\u6570\\u636E\\u7684 key \\u76F8\\u540C\\u5BFC\\u81F4\\u7684"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "\\u5982\\u679C\\u8FD8\\u9700\\u8981 value \\u53EF\\u4EE5\\u8FD9\\u6837\\u5199 \\u5C06\\u552F\\u4E00\\u503C\\u653E\\u5728 Key \\u90A3\\u91CC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "{", "label:xxx,value:xxx,key:xxx", "}"))));
 });
 /* harmony default export */ __webpack_exports__["default"] = (props => {
   const _React$useContext = react__WEBPACK_IMPORTED_MODULE_0___default.a.useContext(dumi_theme__WEBPACK_IMPORTED_MODULE_1__["context"]),

@@ -4881,9 +4881,7 @@ function transPlacement2DropdownAlign(direction, placement) {
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -5020,9 +5018,7 @@ function generateRangePicker(generateConfig) {
 
 var generateSinglePicker_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -5270,9 +5266,7 @@ var date_picker_DatePicker = date_picker_generatePicker(moment);
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -6920,9 +6914,7 @@ Skeleton_Skeleton.Node = Node;
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -9659,9 +9651,7 @@ exports.default = _default;
 // TODO: 4.0 - codemod should help to change \`filterOption\` to support node props.
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -10598,9 +10588,7 @@ var reactNode = __webpack_require__("0n0R");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -11583,9 +11571,7 @@ var useRemovePasswordTimeout = __webpack_require__("JS9R");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -11710,9 +11696,7 @@ var reactNode = __webpack_require__("0n0R");
 
 var Search_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -18610,9 +18594,7 @@ var toConsumableArray = __webpack_require__("KQm4");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -18732,9 +18714,7 @@ var Content = generator({
 
 var Sider_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -18926,9 +18906,7 @@ var esm_typeof = __webpack_require__("U8pU");
 
 var MenuDivider_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -18975,9 +18953,7 @@ var MenuContext = /*#__PURE__*/Object(external_window_React_["createContext"])({
 
 var MenuItem_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -19135,9 +19111,7 @@ function SubMenu(props) {
 
 var useItems_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -19214,9 +19188,7 @@ var OverrideContext = __webpack_require__("UuAG");
 
 var menu_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -19617,9 +19589,7 @@ var simple_Simple = function Simple() {
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -25575,7 +25545,7 @@ function _wrapNativeSuper(Class) {
 var formatRegExp = /%[sdj%]/g;
 var warning = function warning() {}; // don't print warning message when in production env or node runtime
 
-if (typeof process !== 'undefined' && {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.19.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.6","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221220.1","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:22879","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3792870266","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.9/x64","PATH":"/tmp/yarn--1672218032914-0.20988413093989333:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"7eaf9f856f004cf6a13ee6ee8d27f9dc","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_9957e7fc-575f-45d4-a96b-decea86f759c","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"155","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"Hosted Agent","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","STATS_KEEPALIVE":"false","GITHUB_ACTIONS":"true","STATS_PFS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"dff090a66d6417009d13f1f119d0a1b650c8fbb3","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_789c8027-9852-46d7-8e76-2a77d4e3f7fa","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.10.0-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","STATS_PT":"20","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_789c8027-9852-46d7-8e76-2a77d4e3f7fa","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.36","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"} && "production" !== 'production' && typeof window !== 'undefined' && typeof document !== 'undefined') {
+if (typeof process !== 'undefined' && {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_620f3dd4-293a-49bc-9711-07c3598350c4","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.19.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_620f3dd4-293a-49bc-9711-07c3598350c4","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.6","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221220.1","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:19347","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3806761119","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.9/x64","PATH":"/tmp/yarn--1672402769303-0.6932137260552389:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"4a16a967312b44f29a3bf4fd1602149a","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_77f244cf-423b-4e08-9683-7d837d8af23d","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"156","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"Hosted Agent","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","GITHUB_ACTIONS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"39b1c9f194f95857302b4276aa1a48d35247d187","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_620f3dd4-293a-49bc-9711-07c3598350c4","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_620f3dd4-293a-49bc-9711-07c3598350c4","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.10.0-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_620f3dd4-293a-49bc-9711-07c3598350c4","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.36","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"} && "production" !== 'production' && typeof window !== 'undefined' && typeof document !== 'undefined') {
   warning = function warning(type, errors) {
     if (typeof console !== 'undefined' && console.warn && typeof ASYNC_VALIDATOR_NO_WARNING === 'undefined') {
       if (errors.every(function (e) {
@@ -31277,9 +31247,7 @@ Select_MiddleSelect.Option = es_select["a" /* default */].Option;
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -32465,9 +32433,7 @@ icons_CheckCircleOutlined_CheckCircleOutlined.displayName = 'CheckCircleOutlined
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -32799,9 +32765,7 @@ function useForm(form) {
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -33069,9 +33033,7 @@ var es_tooltip = __webpack_require__("3S7+");
 
 var FormItemLabel_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -33251,9 +33213,7 @@ var FormItemInput_FormItemInput = function FormItemInput(props) {
 
 var ItemHolder_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -33647,9 +33607,7 @@ FormItem.useStatus = hooks_useFormItemStatus;
 
 var FormList_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -34357,9 +34315,7 @@ var space = __webpack_require__("zeV3");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -34898,7 +34854,6 @@ var objectSpread2 = __webpack_require__("VTBJ");
 
 // EXTERNAL MODULE: external "window.React"
 var external_window_React_ = __webpack_require__("cDcd");
-var external_window_React_default = /*#__PURE__*/__webpack_require__.n(external_window_React_);
 
 // CONCATENATED MODULE: ./node_modules/@ant-design/icons-svg/es/asn/PlusOutlined.js
 // This icon file is generated automatically.
@@ -34953,12 +34908,12 @@ var es = __webpack_require__("8XRh");
 
 var TabPane = /*#__PURE__*/external_window_React_["forwardRef"](function (_ref, ref) {
   var prefixCls = _ref.prefixCls,
-    className = _ref.className,
-    style = _ref.style,
-    id = _ref.id,
-    active = _ref.active,
-    tabKey = _ref.tabKey,
-    children = _ref.children;
+      className = _ref.className,
+      style = _ref.style,
+      id = _ref.id,
+      active = _ref.active,
+      tabKey = _ref.tabKey,
+      children = _ref.children;
   return /*#__PURE__*/external_window_React_["createElement"]("div", {
     id: id && "".concat(id, "-panel-").concat(tabKey),
     role: "tabpanel",
@@ -34970,7 +34925,9 @@ var TabPane = /*#__PURE__*/external_window_React_["forwardRef"](function (_ref, 
     ref: ref
   }, children);
 });
+
 if (false) {}
+
 /* harmony default export */ var TabPanelList_TabPane = (TabPane);
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabPanelList/index.js
 
@@ -34985,13 +34942,15 @@ var _excluded = ["key", "forceRender", "style", "className"];
 
 function TabPanelList(_ref) {
   var id = _ref.id,
-    activeKey = _ref.activeKey,
-    animated = _ref.animated,
-    tabPosition = _ref.tabPosition,
-    destroyInactiveTabPane = _ref.destroyInactiveTabPane;
+      activeKey = _ref.activeKey,
+      animated = _ref.animated,
+      tabPosition = _ref.tabPosition,
+      destroyInactiveTabPane = _ref.destroyInactiveTabPane;
+
   var _React$useContext = external_window_React_["useContext"](TabContext),
-    prefixCls = _React$useContext.prefixCls,
-    tabs = _React$useContext.tabs;
+      prefixCls = _React$useContext.prefixCls,
+      tabs = _React$useContext.tabs;
+
   var tabPaneAnimated = animated.tabPane;
   var tabPanePrefixCls = "".concat(prefixCls, "-tabpane");
   return /*#__PURE__*/external_window_React_["createElement"]("div", {
@@ -35000,10 +34959,11 @@ function TabPanelList(_ref) {
     className: classnames_default()("".concat(prefixCls, "-content"), "".concat(prefixCls, "-content-").concat(tabPosition), Object(defineProperty["a" /* default */])({}, "".concat(prefixCls, "-content-animated"), tabPaneAnimated))
   }, tabs.map(function (_ref2) {
     var key = _ref2.key,
-      forceRender = _ref2.forceRender,
-      paneStyle = _ref2.style,
-      paneClassName = _ref2.className,
-      restTabProps = Object(objectWithoutProperties["a" /* default */])(_ref2, _excluded);
+        forceRender = _ref2.forceRender,
+        paneStyle = _ref2.style,
+        paneClassName = _ref2.className,
+        restTabProps = Object(objectWithoutProperties["a" /* default */])(_ref2, _excluded);
+
     var active = key === activeKey;
     return /*#__PURE__*/external_window_React_["createElement"](es["b" /* default */], Object(esm_extends["a" /* default */])({
       key: key,
@@ -35013,7 +34973,7 @@ function TabPanelList(_ref) {
       leavedClassName: "".concat(tabPanePrefixCls, "-hidden")
     }, animated.tabPaneMotion), function (_ref3, ref) {
       var motionStyle = _ref3.style,
-        motionClassName = _ref3.className;
+          motionClassName = _ref3.className;
       return /*#__PURE__*/external_window_React_["createElement"](TabPanelList_TabPane, Object(esm_extends["a" /* default */])({}, restTabProps, {
         prefixCls: tabPanePrefixCls,
         id: id,
@@ -35030,147 +34990,15 @@ function TabPanelList(_ref) {
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js + 2 modules
 var toConsumableArray = __webpack_require__("KQm4");
 
+// EXTERNAL MODULE: ./node_modules/rc-resize-observer/es/index.js + 4 modules
+var rc_resize_observer_es = __webpack_require__("t23M");
+
 // EXTERNAL MODULE: ./node_modules/rc-util/es/raf.js
 var raf = __webpack_require__("wgJM");
 
 // EXTERNAL MODULE: ./node_modules/rc-util/es/ref.js
 var es_ref = __webpack_require__("c+Xe");
 
-// EXTERNAL MODULE: ./node_modules/rc-resize-observer/es/index.js + 4 modules
-var rc_resize_observer_es = __webpack_require__("t23M");
-
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useRaf.js
-
-
-
-function useRaf(callback) {
-  var rafRef = Object(external_window_React_["useRef"])();
-  var removedRef = Object(external_window_React_["useRef"])(false);
-  function trigger() {
-    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-      args[_key] = arguments[_key];
-    }
-    if (!removedRef.current) {
-      raf["a" /* default */].cancel(rafRef.current);
-      rafRef.current = Object(raf["a" /* default */])(function () {
-        callback.apply(void 0, args);
-      });
-    }
-  }
-  Object(external_window_React_["useEffect"])(function () {
-    //be compatible with react 18 StrictMode in dev
-    removedRef.current = false;
-    return function () {
-      removedRef.current = true;
-      raf["a" /* default */].cancel(rafRef.current);
-    };
-  }, []);
-  return trigger;
-}
-function useRafState(defaultState) {
-  var batchRef = Object(external_window_React_["useRef"])([]);
-  var _useState = Object(external_window_React_["useState"])({}),
-    _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-    forceUpdate = _useState2[1];
-  var state = Object(external_window_React_["useRef"])(typeof defaultState === 'function' ? defaultState() : defaultState);
-  var flushUpdate = useRaf(function () {
-    var current = state.current;
-    batchRef.current.forEach(function (callback) {
-      current = callback(current);
-    });
-    batchRef.current = [];
-    state.current = current;
-    forceUpdate({});
-  });
-  function updater(callback) {
-    batchRef.current.push(callback);
-    flushUpdate();
-  }
-  return [state.current, updater];
-}
-// EXTERNAL MODULE: ./node_modules/rc-util/es/KeyCode.js
-var KeyCode = __webpack_require__("4IlW");
-
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/TabNode.js
-
-
-
-
-function TabNode(_ref, ref) {
-  var _classNames;
-  var prefixCls = _ref.prefixCls,
-    id = _ref.id,
-    active = _ref.active,
-    _ref$tab = _ref.tab,
-    key = _ref$tab.key,
-    label = _ref$tab.label,
-    disabled = _ref$tab.disabled,
-    closeIcon = _ref$tab.closeIcon,
-    closable = _ref.closable,
-    renderWrapper = _ref.renderWrapper,
-    removeAriaLabel = _ref.removeAriaLabel,
-    editable = _ref.editable,
-    onClick = _ref.onClick,
-    onRemove = _ref.onRemove,
-    onFocus = _ref.onFocus,
-    style = _ref.style;
-  var tabPrefix = "".concat(prefixCls, "-tab");
-  external_window_React_["useEffect"](function () {
-    return onRemove;
-  }, []);
-  var removable = editable && closable !== false && !disabled;
-  function onInternalClick(e) {
-    if (disabled) {
-      return;
-    }
-    onClick(e);
-  }
-  function onRemoveTab(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    editable.onEdit('remove', {
-      key: key,
-      event: event
-    });
-  }
-  var node = /*#__PURE__*/external_window_React_["createElement"]("div", {
-    key: key,
-    ref: ref,
-    className: classnames_default()(tabPrefix, (_classNames = {}, Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-with-remove"), removable), Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-active"), active), Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
-    style: style,
-    onClick: onInternalClick
-  }, /*#__PURE__*/external_window_React_["createElement"]("div", {
-    role: "tab",
-    "aria-selected": active,
-    id: id && "".concat(id, "-tab-").concat(key),
-    className: "".concat(tabPrefix, "-btn"),
-    "aria-controls": id && "".concat(id, "-panel-").concat(key),
-    "aria-disabled": disabled,
-    tabIndex: disabled ? null : 0,
-    onClick: function onClick(e) {
-      e.stopPropagation();
-      onInternalClick(e);
-    },
-    onKeyDown: function onKeyDown(e) {
-      if ([KeyCode["a" /* default */].SPACE, KeyCode["a" /* default */].ENTER].includes(e.which)) {
-        e.preventDefault();
-        onInternalClick(e);
-      }
-    },
-    onFocus: onFocus
-  }, label), removable && /*#__PURE__*/external_window_React_["createElement"]("button", {
-    type: "button",
-    "aria-label": removeAriaLabel || 'remove',
-    tabIndex: 0,
-    className: "".concat(tabPrefix, "-remove"),
-    onClick: function onClick(e) {
-      e.stopPropagation();
-      onRemoveTab(e);
-    }
-  }, closeIcon || editable.removeIcon || '\xD7'));
-  return renderWrapper ? renderWrapper(node) : node;
-}
-/* harmony default export */ var TabNavList_TabNode = (/*#__PURE__*/external_window_React_["forwardRef"](TabNode));
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useOffsets.js
 
 
@@ -35183,27 +35011,273 @@ var DEFAULT_SIZE = {
 function useOffsets(tabs, tabSizes, holderScrollWidth) {
   return Object(external_window_React_["useMemo"])(function () {
     var _tabs$;
+
     var map = new Map();
     var lastOffset = tabSizes.get((_tabs$ = tabs[0]) === null || _tabs$ === void 0 ? void 0 : _tabs$.key) || DEFAULT_SIZE;
     var rightOffset = lastOffset.left + lastOffset.width;
+
     for (var i = 0; i < tabs.length; i += 1) {
       var key = tabs[i].key;
-      var data = tabSizes.get(key);
-      // Reuse last one when not exist yet
+      var data = tabSizes.get(key); // Reuse last one when not exist yet
+
       if (!data) {
         var _tabs;
+
         data = tabSizes.get((_tabs = tabs[i - 1]) === null || _tabs === void 0 ? void 0 : _tabs.key) || DEFAULT_SIZE;
       }
-      var entity = map.get(key) || Object(objectSpread2["a" /* default */])({}, data);
-      // Right
-      entity.right = rightOffset - entity.left - entity.width;
-      // Update entity
+
+      var entity = map.get(key) || Object(objectSpread2["a" /* default */])({}, data); // Right
+
+
+      entity.right = rightOffset - entity.left - entity.width; // Update entity
+
       map.set(key, entity);
     }
+
     return map;
   }, [tabs.map(function (tab) {
     return tab.key;
   }).join('_'), tabSizes, holderScrollWidth]);
+}
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useRaf.js
+
+
+
+function useRaf(callback) {
+  var rafRef = Object(external_window_React_["useRef"])();
+  var removedRef = Object(external_window_React_["useRef"])(false);
+
+  function trigger() {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    if (!removedRef.current) {
+      raf["a" /* default */].cancel(rafRef.current);
+      rafRef.current = Object(raf["a" /* default */])(function () {
+        callback.apply(void 0, args);
+      });
+    }
+  }
+
+  Object(external_window_React_["useEffect"])(function () {
+    //be compatible with react 18 StrictMode in dev
+    removedRef.current = false;
+    return function () {
+      removedRef.current = true;
+      raf["a" /* default */].cancel(rafRef.current);
+    };
+  }, []);
+  return trigger;
+}
+function useRafState(defaultState) {
+  var batchRef = Object(external_window_React_["useRef"])([]);
+
+  var _useState = Object(external_window_React_["useState"])({}),
+      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+      forceUpdate = _useState2[1];
+
+  var state = Object(external_window_React_["useRef"])(typeof defaultState === 'function' ? defaultState() : defaultState);
+  var flushUpdate = useRaf(function () {
+    var current = state.current;
+    batchRef.current.forEach(function (callback) {
+      current = callback(current);
+    });
+    batchRef.current = [];
+    state.current = current;
+    forceUpdate({});
+  });
+
+  function updater(callback) {
+    batchRef.current.push(callback);
+    flushUpdate();
+  }
+
+  return [state.current, updater];
+}
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useSyncState.js
+
+
+function useSyncState(defaultState, onChange) {
+  var stateRef = external_window_React_["useRef"](defaultState);
+
+  var _React$useState = external_window_React_["useState"]({}),
+      _React$useState2 = Object(slicedToArray["a" /* default */])(_React$useState, 2),
+      forceUpdate = _React$useState2[1];
+
+  function setState(updater) {
+    var newValue = typeof updater === 'function' ? updater(stateRef.current) : updater;
+
+    if (newValue !== stateRef.current) {
+      onChange(newValue, stateRef.current);
+    }
+
+    stateRef.current = newValue;
+    forceUpdate({});
+  }
+
+  return [stateRef.current, setState];
+}
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useTouchMove.js
+
+
+
+var MIN_SWIPE_DISTANCE = 0.1;
+var STOP_SWIPE_DISTANCE = 0.01;
+var REFRESH_INTERVAL = 20;
+var SPEED_OFF_MULTIPLE = Math.pow(0.995, REFRESH_INTERVAL); // ================================= Hook =================================
+
+function useTouchMove(ref, onOffset) {
+  var _useState = Object(external_window_React_["useState"])(),
+      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+      touchPosition = _useState2[0],
+      setTouchPosition = _useState2[1];
+
+  var _useState3 = Object(external_window_React_["useState"])(0),
+      _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
+      lastTimestamp = _useState4[0],
+      setLastTimestamp = _useState4[1];
+
+  var _useState5 = Object(external_window_React_["useState"])(0),
+      _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
+      lastTimeDiff = _useState6[0],
+      setLastTimeDiff = _useState6[1];
+
+  var _useState7 = Object(external_window_React_["useState"])(),
+      _useState8 = Object(slicedToArray["a" /* default */])(_useState7, 2),
+      lastOffset = _useState8[0],
+      setLastOffset = _useState8[1];
+
+  var motionRef = Object(external_window_React_["useRef"])(); // ========================= Events =========================
+  // >>> Touch events
+
+  function onTouchStart(e) {
+    var _e$touches$ = e.touches[0],
+        screenX = _e$touches$.screenX,
+        screenY = _e$touches$.screenY;
+    setTouchPosition({
+      x: screenX,
+      y: screenY
+    });
+    window.clearInterval(motionRef.current);
+  }
+
+  function onTouchMove(e) {
+    if (!touchPosition) return;
+    e.preventDefault();
+    var _e$touches$2 = e.touches[0],
+        screenX = _e$touches$2.screenX,
+        screenY = _e$touches$2.screenY;
+    setTouchPosition({
+      x: screenX,
+      y: screenY
+    });
+    var offsetX = screenX - touchPosition.x;
+    var offsetY = screenY - touchPosition.y;
+    onOffset(offsetX, offsetY);
+    var now = Date.now();
+    setLastTimestamp(now);
+    setLastTimeDiff(now - lastTimestamp);
+    setLastOffset({
+      x: offsetX,
+      y: offsetY
+    });
+  }
+
+  function onTouchEnd() {
+    if (!touchPosition) return;
+    setTouchPosition(null);
+    setLastOffset(null); // Swipe if needed
+
+    if (lastOffset) {
+      var distanceX = lastOffset.x / lastTimeDiff;
+      var distanceY = lastOffset.y / lastTimeDiff;
+      var absX = Math.abs(distanceX);
+      var absY = Math.abs(distanceY); // Skip swipe if low distance
+
+      if (Math.max(absX, absY) < MIN_SWIPE_DISTANCE) return;
+      var currentX = distanceX;
+      var currentY = distanceY;
+      motionRef.current = window.setInterval(function () {
+        if (Math.abs(currentX) < STOP_SWIPE_DISTANCE && Math.abs(currentY) < STOP_SWIPE_DISTANCE) {
+          window.clearInterval(motionRef.current);
+          return;
+        }
+
+        currentX *= SPEED_OFF_MULTIPLE;
+        currentY *= SPEED_OFF_MULTIPLE;
+        onOffset(currentX * REFRESH_INTERVAL, currentY * REFRESH_INTERVAL);
+      }, REFRESH_INTERVAL);
+    }
+  } // >>> Wheel event
+
+
+  var lastWheelDirectionRef = Object(external_window_React_["useRef"])();
+
+  function onWheel(e) {
+    var deltaX = e.deltaX,
+        deltaY = e.deltaY; // Convert both to x & y since wheel only happened on PC
+
+    var mixed = 0;
+    var absX = Math.abs(deltaX);
+    var absY = Math.abs(deltaY);
+
+    if (absX === absY) {
+      mixed = lastWheelDirectionRef.current === 'x' ? deltaX : deltaY;
+    } else if (absX > absY) {
+      mixed = deltaX;
+      lastWheelDirectionRef.current = 'x';
+    } else {
+      mixed = deltaY;
+      lastWheelDirectionRef.current = 'y';
+    }
+
+    if (onOffset(-mixed, -mixed)) {
+      e.preventDefault();
+    }
+  } // ========================= Effect =========================
+
+
+  var touchEventsRef = Object(external_window_React_["useRef"])(null);
+  touchEventsRef.current = {
+    onTouchStart: onTouchStart,
+    onTouchMove: onTouchMove,
+    onTouchEnd: onTouchEnd,
+    onWheel: onWheel
+  };
+  external_window_React_["useEffect"](function () {
+    function onProxyTouchStart(e) {
+      touchEventsRef.current.onTouchStart(e);
+    }
+
+    function onProxyTouchMove(e) {
+      touchEventsRef.current.onTouchMove(e);
+    }
+
+    function onProxyTouchEnd(e) {
+      touchEventsRef.current.onTouchEnd(e);
+    }
+
+    function onProxyWheel(e) {
+      touchEventsRef.current.onWheel(e);
+    }
+
+    document.addEventListener('touchmove', onProxyTouchMove, {
+      passive: false
+    });
+    document.addEventListener('touchend', onProxyTouchEnd, {
+      passive: false
+    }); // No need to clean up since element removed
+
+    ref.current.addEventListener('touchstart', onProxyTouchStart, {
+      passive: false
+    });
+    ref.current.addEventListener('wheel', onProxyWheel);
+    return function () {
+      document.removeEventListener('touchmove', onProxyTouchMove);
+      document.removeEventListener('touchend', onProxyTouchEnd);
+    };
+  }, []);
 }
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useVisibleRange.js
 
@@ -35216,11 +35290,12 @@ var useVisibleRange_DEFAULT_SIZE = {
 };
 function useVisibleRange(tabOffsets, visibleTabContentValue, transform, tabContentSizeValue, addNodeSizeValue, operationNodeSizeValue, _ref) {
   var tabs = _ref.tabs,
-    tabPosition = _ref.tabPosition,
-    rtl = _ref.rtl;
+      tabPosition = _ref.tabPosition,
+      rtl = _ref.rtl;
   var charUnit;
   var position;
   var transformSize;
+
   if (['top', 'bottom'].includes(tabPosition)) {
     charUnit = 'width';
     position = rtl ? 'right' : 'left';
@@ -35230,48 +35305,72 @@ function useVisibleRange(tabOffsets, visibleTabContentValue, transform, tabConte
     position = 'top';
     transformSize = -transform;
   }
+
   return Object(external_window_React_["useMemo"])(function () {
     if (!tabs.length) {
       return [0, 0];
     }
+
     var len = tabs.length;
     var endIndex = len;
+
     for (var i = 0; i < len; i += 1) {
       var offset = tabOffsets.get(tabs[i].key) || useVisibleRange_DEFAULT_SIZE;
+
       if (offset[position] + offset[charUnit] > transformSize + visibleTabContentValue) {
         endIndex = i - 1;
         break;
       }
     }
+
     var startIndex = 0;
+
     for (var _i = len - 1; _i >= 0; _i -= 1) {
       var _offset = tabOffsets.get(tabs[_i].key) || useVisibleRange_DEFAULT_SIZE;
+
       if (_offset[position] < transformSize) {
         startIndex = _i + 1;
         break;
       }
     }
+
     return [startIndex, endIndex];
   }, [tabOffsets, visibleTabContentValue, tabContentSizeValue, addNodeSizeValue, operationNodeSizeValue, transformSize, tabPosition, tabs.map(function (tab) {
     return tab.key;
   }).join('_'), rtl]);
 }
-// EXTERNAL MODULE: ./node_modules/rc-menu/es/index.js + 24 modules
-var rc_menu_es = __webpack_require__("1j5w");
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/util.js
+/**
+ * We trade Map as deps which may change with same value but different ref object.
+ * We should make it as hash for deps
+ * */
+function stringify(obj) {
+  var tgt;
 
-// EXTERNAL MODULE: ./node_modules/rc-dropdown/es/index.js + 3 modules
-var rc_dropdown_es = __webpack_require__("eDIo");
+  if (obj instanceof Map) {
+    tgt = {};
+    obj.forEach(function (v, k) {
+      tgt[k] = v;
+    });
+  } else {
+    tgt = obj;
+  }
 
+  return JSON.stringify(tgt);
+}
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/AddButton.js
+
 
 function AddButton(_ref, ref) {
   var prefixCls = _ref.prefixCls,
-    editable = _ref.editable,
-    locale = _ref.locale,
-    style = _ref.style;
+      editable = _ref.editable,
+      locale = _ref.locale,
+      style = _ref.style;
+
   if (!editable || editable.showAdd === false) {
     return null;
   }
+
   return /*#__PURE__*/external_window_React_["createElement"]("button", {
     ref: ref,
     type: "button",
@@ -35285,8 +35384,54 @@ function AddButton(_ref, ref) {
     }
   }, editable.addIcon || '+');
 }
+
 /* harmony default export */ var TabNavList_AddButton = (/*#__PURE__*/external_window_React_["forwardRef"](AddButton));
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/ExtraContent.js
+
+
+var ExtraContent = /*#__PURE__*/external_window_React_["forwardRef"](function (_ref, ref) {
+  var position = _ref.position,
+      prefixCls = _ref.prefixCls,
+      extra = _ref.extra;
+  if (!extra) return null;
+  var content; // Parse extra
+
+  var assertExtra = {};
+
+  if (Object(esm_typeof["a" /* default */])(extra) === 'object' && ! /*#__PURE__*/external_window_React_["isValidElement"](extra)) {
+    assertExtra = extra;
+  } else {
+    assertExtra.right = extra;
+  }
+
+  if (position === 'right') {
+    content = assertExtra.right;
+  }
+
+  if (position === 'left') {
+    content = assertExtra.left;
+  }
+
+  return content ? /*#__PURE__*/external_window_React_["createElement"]("div", {
+    className: "".concat(prefixCls, "-extra-content"),
+    ref: ref
+  }, content) : null;
+});
+
+if (false) {}
+
+/* harmony default export */ var TabNavList_ExtraContent = (ExtraContent);
+// EXTERNAL MODULE: ./node_modules/rc-dropdown/es/index.js + 3 modules
+var rc_dropdown_es = __webpack_require__("eDIo");
+
+// EXTERNAL MODULE: ./node_modules/rc-menu/es/index.js + 24 modules
+var rc_menu_es = __webpack_require__("1j5w");
+
+// EXTERNAL MODULE: ./node_modules/rc-util/es/KeyCode.js
+var KeyCode = __webpack_require__("4IlW");
+
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/OperationNode.js
+
 
 
 
@@ -35298,35 +35443,39 @@ function AddButton(_ref, ref) {
 
 function OperationNode(_ref, ref) {
   var prefixCls = _ref.prefixCls,
-    id = _ref.id,
-    tabs = _ref.tabs,
-    locale = _ref.locale,
-    mobile = _ref.mobile,
-    _ref$moreIcon = _ref.moreIcon,
-    moreIcon = _ref$moreIcon === void 0 ? 'More' : _ref$moreIcon,
-    moreTransitionName = _ref.moreTransitionName,
-    style = _ref.style,
-    className = _ref.className,
-    editable = _ref.editable,
-    tabBarGutter = _ref.tabBarGutter,
-    rtl = _ref.rtl,
-    removeAriaLabel = _ref.removeAriaLabel,
-    onTabClick = _ref.onTabClick,
-    getPopupContainer = _ref.getPopupContainer,
-    popupClassName = _ref.popupClassName;
+      id = _ref.id,
+      tabs = _ref.tabs,
+      locale = _ref.locale,
+      mobile = _ref.mobile,
+      _ref$moreIcon = _ref.moreIcon,
+      moreIcon = _ref$moreIcon === void 0 ? 'More' : _ref$moreIcon,
+      moreTransitionName = _ref.moreTransitionName,
+      style = _ref.style,
+      className = _ref.className,
+      editable = _ref.editable,
+      tabBarGutter = _ref.tabBarGutter,
+      rtl = _ref.rtl,
+      removeAriaLabel = _ref.removeAriaLabel,
+      onTabClick = _ref.onTabClick,
+      getPopupContainer = _ref.getPopupContainer,
+      popupClassName = _ref.popupClassName;
+
   // ======================== Dropdown ========================
   var _useState = Object(external_window_React_["useState"])(false),
-    _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-    open = _useState2[0],
-    setOpen = _useState2[1];
+      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+      open = _useState2[0],
+      setOpen = _useState2[1];
+
   var _useState3 = Object(external_window_React_["useState"])(null),
-    _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-    selectedKey = _useState4[0],
-    setSelectedKey = _useState4[1];
+      _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
+      selectedKey = _useState4[0],
+      setSelectedKey = _useState4[1];
+
   var popupId = "".concat(id, "-more-popup");
   var dropdownPrefix = "".concat(prefixCls, "-dropdown");
   var selectedItemId = selectedKey !== null ? "".concat(popupId, "-").concat(selectedKey) : null;
   var dropdownAriaLabel = locale === null || locale === void 0 ? void 0 : locale.dropdownAriaLabel;
+
   function onRemoveTab(event, key) {
     event.preventDefault();
     event.stopPropagation();
@@ -35335,10 +35484,11 @@ function OperationNode(_ref, ref) {
       event: event
     });
   }
+
   var menu = /*#__PURE__*/external_window_React_["createElement"](rc_menu_es["g" /* default */], {
     onClick: function onClick(_ref2) {
       var key = _ref2.key,
-        domEvent = _ref2.domEvent;
+          domEvent = _ref2.domEvent;
       onTabClick(key, domEvent);
       setOpen(false);
     },
@@ -35368,6 +35518,7 @@ function OperationNode(_ref, ref) {
       }
     }, tab.closeIcon || editable.removeIcon || '\xD7'));
   }));
+
   function selectOffset(offset) {
     var enabledTabs = tabs.filter(function (tab) {
       return !tab.disabled;
@@ -35376,46 +35527,57 @@ function OperationNode(_ref, ref) {
       return tab.key === selectedKey;
     }) || 0;
     var len = enabledTabs.length;
+
     for (var i = 0; i < len; i += 1) {
       selectedIndex = (selectedIndex + offset + len) % len;
       var tab = enabledTabs[selectedIndex];
+
       if (!tab.disabled) {
         setSelectedKey(tab.key);
         return;
       }
     }
   }
+
   function onKeyDown(e) {
     var which = e.which;
+
     if (!open) {
       if ([KeyCode["a" /* default */].DOWN, KeyCode["a" /* default */].SPACE, KeyCode["a" /* default */].ENTER].includes(which)) {
         setOpen(true);
         e.preventDefault();
       }
+
       return;
     }
+
     switch (which) {
       case KeyCode["a" /* default */].UP:
         selectOffset(-1);
         e.preventDefault();
         break;
+
       case KeyCode["a" /* default */].DOWN:
         selectOffset(1);
         e.preventDefault();
         break;
+
       case KeyCode["a" /* default */].ESC:
         setOpen(false);
         break;
+
       case KeyCode["a" /* default */].SPACE:
       case KeyCode["a" /* default */].ENTER:
         if (selectedKey !== null) onTabClick(selectedKey, e);
         break;
     }
-  }
-  // ========================= Effect =========================
+  } // ========================= Effect =========================
+
+
   Object(external_window_React_["useEffect"])(function () {
     // We use query element here to avoid React strict warning
     var ele = document.getElementById(selectedItemId);
+
     if (ele && ele.scrollIntoView) {
       ele.scrollIntoView(false);
     }
@@ -35424,13 +35586,15 @@ function OperationNode(_ref, ref) {
     if (!open) {
       setSelectedKey(null);
     }
-  }, [open]);
-  // ========================= Render =========================
+  }, [open]); // ========================= Render =========================
+
   var moreStyle = Object(defineProperty["a" /* default */])({}, rtl ? 'marginRight' : 'marginLeft', tabBarGutter);
+
   if (!tabs.length) {
     moreStyle.visibility = 'hidden';
     moreStyle.order = 1;
   }
+
   var overlayClassName = classnames_default()(Object(defineProperty["a" /* default */])({}, "".concat(dropdownPrefix, "-rtl"), rtl));
   var moreNode = mobile ? null : /*#__PURE__*/external_window_React_["createElement"](rc_dropdown_es["a" /* default */], {
     prefixCls: dropdownPrefix,
@@ -35465,238 +35629,97 @@ function OperationNode(_ref, ref) {
     editable: editable
   }));
 }
+
 /* harmony default export */ var TabNavList_OperationNode = (/*#__PURE__*/external_window_React_["memo"]( /*#__PURE__*/external_window_React_["forwardRef"](OperationNode), function (_, next) {
-  return (
-    // https://github.com/ant-design/ant-design/issues/32544
+  return (// https://github.com/ant-design/ant-design/issues/32544
     // We'd better remove syntactic sugar in \`rc-menu\` since this has perf issue
     next.tabMoving
   );
 }));
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useTouchMove.js
+// CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/TabNode.js
 
 
 
-var MIN_SWIPE_DISTANCE = 0.1;
-var STOP_SWIPE_DISTANCE = 0.01;
-var REFRESH_INTERVAL = 20;
-var SPEED_OFF_MULTIPLE = Math.pow(0.995, REFRESH_INTERVAL);
-// ================================= Hook =================================
-function useTouchMove(ref, onOffset) {
-  var _useState = Object(external_window_React_["useState"])(),
-    _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-    touchPosition = _useState2[0],
-    setTouchPosition = _useState2[1];
-  var _useState3 = Object(external_window_React_["useState"])(0),
-    _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-    lastTimestamp = _useState4[0],
-    setLastTimestamp = _useState4[1];
-  var _useState5 = Object(external_window_React_["useState"])(0),
-    _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
-    lastTimeDiff = _useState6[0],
-    setLastTimeDiff = _useState6[1];
-  var _useState7 = Object(external_window_React_["useState"])(),
-    _useState8 = Object(slicedToArray["a" /* default */])(_useState7, 2),
-    lastOffset = _useState8[0],
-    setLastOffset = _useState8[1];
-  var motionRef = Object(external_window_React_["useRef"])();
-  // ========================= Events =========================
-  // >>> Touch events
-  function onTouchStart(e) {
-    var _e$touches$ = e.touches[0],
-      screenX = _e$touches$.screenX,
-      screenY = _e$touches$.screenY;
-    setTouchPosition({
-      x: screenX,
-      y: screenY
-    });
-    window.clearInterval(motionRef.current);
+
+
+function TabNode(_ref) {
+  var _classNames;
+
+  var prefixCls = _ref.prefixCls,
+      id = _ref.id,
+      active = _ref.active,
+      _ref$tab = _ref.tab,
+      key = _ref$tab.key,
+      label = _ref$tab.label,
+      disabled = _ref$tab.disabled,
+      closeIcon = _ref$tab.closeIcon,
+      closable = _ref.closable,
+      renderWrapper = _ref.renderWrapper,
+      removeAriaLabel = _ref.removeAriaLabel,
+      editable = _ref.editable,
+      onClick = _ref.onClick,
+      onFocus = _ref.onFocus,
+      style = _ref.style;
+  var tabPrefix = "".concat(prefixCls, "-tab");
+  var removable = editable && closable !== false && !disabled;
+
+  function onInternalClick(e) {
+    if (disabled) {
+      return;
+    }
+
+    onClick(e);
   }
-  function onTouchMove(e) {
-    if (!touchPosition) return;
-    e.preventDefault();
-    var _e$touches$2 = e.touches[0],
-      screenX = _e$touches$2.screenX,
-      screenY = _e$touches$2.screenY;
-    setTouchPosition({
-      x: screenX,
-      y: screenY
-    });
-    var offsetX = screenX - touchPosition.x;
-    var offsetY = screenY - touchPosition.y;
-    onOffset(offsetX, offsetY);
-    var now = Date.now();
-    setLastTimestamp(now);
-    setLastTimeDiff(now - lastTimestamp);
-    setLastOffset({
-      x: offsetX,
-      y: offsetY
+
+  function onRemoveTab(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    editable.onEdit('remove', {
+      key: key,
+      event: event
     });
   }
-  function onTouchEnd() {
-    if (!touchPosition) return;
-    setTouchPosition(null);
-    setLastOffset(null);
-    // Swipe if needed
-    if (lastOffset) {
-      var distanceX = lastOffset.x / lastTimeDiff;
-      var distanceY = lastOffset.y / lastTimeDiff;
-      var absX = Math.abs(distanceX);
-      var absY = Math.abs(distanceY);
-      // Skip swipe if low distance
-      if (Math.max(absX, absY) < MIN_SWIPE_DISTANCE) return;
-      var currentX = distanceX;
-      var currentY = distanceY;
-      motionRef.current = window.setInterval(function () {
-        if (Math.abs(currentX) < STOP_SWIPE_DISTANCE && Math.abs(currentY) < STOP_SWIPE_DISTANCE) {
-          window.clearInterval(motionRef.current);
-          return;
-        }
-        currentX *= SPEED_OFF_MULTIPLE;
-        currentY *= SPEED_OFF_MULTIPLE;
-        onOffset(currentX * REFRESH_INTERVAL, currentY * REFRESH_INTERVAL);
-      }, REFRESH_INTERVAL);
+
+  var node = /*#__PURE__*/external_window_React_["createElement"]("div", {
+    key: key // ref={ref}
+    ,
+    "data-node-key": key,
+    className: classnames_default()(tabPrefix, (_classNames = {}, Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-with-remove"), removable), Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-active"), active), Object(defineProperty["a" /* default */])(_classNames, "".concat(tabPrefix, "-disabled"), disabled), _classNames)),
+    style: style,
+    onClick: onInternalClick
+  }, /*#__PURE__*/external_window_React_["createElement"]("div", {
+    role: "tab",
+    "aria-selected": active,
+    id: id && "".concat(id, "-tab-").concat(key),
+    className: "".concat(tabPrefix, "-btn"),
+    "aria-controls": id && "".concat(id, "-panel-").concat(key),
+    "aria-disabled": disabled,
+    tabIndex: disabled ? null : 0,
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      onInternalClick(e);
+    },
+    onKeyDown: function onKeyDown(e) {
+      if ([KeyCode["a" /* default */].SPACE, KeyCode["a" /* default */].ENTER].includes(e.which)) {
+        e.preventDefault();
+        onInternalClick(e);
+      }
+    },
+    onFocus: onFocus
+  }, label), removable && /*#__PURE__*/external_window_React_["createElement"]("button", {
+    type: "button",
+    "aria-label": removeAriaLabel || 'remove',
+    tabIndex: 0,
+    className: "".concat(tabPrefix, "-remove"),
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      onRemoveTab(e);
     }
-  }
-  // >>> Wheel event
-  var lastWheelDirectionRef = Object(external_window_React_["useRef"])();
-  function onWheel(e) {
-    var deltaX = e.deltaX,
-      deltaY = e.deltaY;
-    // Convert both to x & y since wheel only happened on PC
-    var mixed = 0;
-    var absX = Math.abs(deltaX);
-    var absY = Math.abs(deltaY);
-    if (absX === absY) {
-      mixed = lastWheelDirectionRef.current === 'x' ? deltaX : deltaY;
-    } else if (absX > absY) {
-      mixed = deltaX;
-      lastWheelDirectionRef.current = 'x';
-    } else {
-      mixed = deltaY;
-      lastWheelDirectionRef.current = 'y';
-    }
-    if (onOffset(-mixed, -mixed)) {
-      e.preventDefault();
-    }
-  }
-  // ========================= Effect =========================
-  var touchEventsRef = Object(external_window_React_["useRef"])(null);
-  touchEventsRef.current = {
-    onTouchStart: onTouchStart,
-    onTouchMove: onTouchMove,
-    onTouchEnd: onTouchEnd,
-    onWheel: onWheel
-  };
-  external_window_React_["useEffect"](function () {
-    function onProxyTouchStart(e) {
-      touchEventsRef.current.onTouchStart(e);
-    }
-    function onProxyTouchMove(e) {
-      touchEventsRef.current.onTouchMove(e);
-    }
-    function onProxyTouchEnd(e) {
-      touchEventsRef.current.onTouchEnd(e);
-    }
-    function onProxyWheel(e) {
-      touchEventsRef.current.onWheel(e);
-    }
-    document.addEventListener('touchmove', onProxyTouchMove, {
-      passive: false
-    });
-    document.addEventListener('touchend', onProxyTouchEnd, {
-      passive: false
-    });
-    // No need to clean up since element removed
-    ref.current.addEventListener('touchstart', onProxyTouchStart, {
-      passive: false
-    });
-    ref.current.addEventListener('wheel', onProxyWheel);
-    return function () {
-      document.removeEventListener('touchmove', onProxyTouchMove);
-      document.removeEventListener('touchend', onProxyTouchEnd);
-    };
-  }, []);
+  }, closeIcon || editable.removeIcon || '\xD7'));
+  return renderWrapper ? renderWrapper(node) : node;
 }
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useRefs.js
 
-
-function useRefs() {
-  var cacheRefs = Object(external_window_React_["useRef"])(new Map());
-  function getRef(key) {
-    if (!cacheRefs.current.has(key)) {
-      cacheRefs.current.set(key, /*#__PURE__*/external_window_React_["createRef"]());
-    }
-    return cacheRefs.current.get(key);
-  }
-  function removeRef(key) {
-    cacheRefs.current.delete(key);
-  }
-  return [getRef, removeRef];
-}
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/hooks/useSyncState.js
-
-
-function useSyncState(defaultState, onChange) {
-  var stateRef = external_window_React_["useRef"](defaultState);
-  var _React$useState = external_window_React_["useState"]({}),
-    _React$useState2 = Object(slicedToArray["a" /* default */])(_React$useState, 2),
-    forceUpdate = _React$useState2[1];
-  function setState(updater) {
-    var newValue = typeof updater === 'function' ? updater(stateRef.current) : updater;
-    if (newValue !== stateRef.current) {
-      onChange(newValue, stateRef.current);
-    }
-    stateRef.current = newValue;
-    forceUpdate({});
-  }
-  return [stateRef.current, setState];
-}
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/util.js
-/**
- * We trade Map as deps which may change with same value but different ref object.
- * We should make it as hash for deps
- * */
-function stringify(obj) {
-  var tgt;
-  if (obj instanceof Map) {
-    tgt = {};
-    obj.forEach(function (v, k) {
-      tgt[k] = v;
-    });
-  } else {
-    tgt = obj;
-  }
-  return JSON.stringify(tgt);
-}
-// CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/ExtraContent.js
-
-
-var ExtraContent = /*#__PURE__*/external_window_React_["forwardRef"](function (_ref, ref) {
-  var position = _ref.position,
-    prefixCls = _ref.prefixCls,
-    extra = _ref.extra;
-  if (!extra) return null;
-  var content;
-  // Parse extra
-  var assertExtra = {};
-  if (Object(esm_typeof["a" /* default */])(extra) === 'object' && ! /*#__PURE__*/external_window_React_["isValidElement"](extra)) {
-    assertExtra = extra;
-  } else {
-    assertExtra.right = extra;
-  }
-  if (position === 'right') {
-    content = assertExtra.right;
-  }
-  if (position === 'left') {
-    content = assertExtra.left;
-  }
-  return content ? /*#__PURE__*/external_window_React_["createElement"]("div", {
-    className: "".concat(prefixCls, "-extra-content"),
-    ref: ref
-  }, content) : null;
-});
-if (false) {}
-/* harmony default export */ var TabNavList_ExtraContent = (ExtraContent);
+/* harmony default export */ var TabNavList_TabNode = (TabNode);
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/TabNavList/index.js
 
 
@@ -35723,101 +35746,113 @@ if (false) {}
 
 var getSize = function getSize(refObj) {
   var _ref = refObj.current || {},
-    _ref$offsetWidth = _ref.offsetWidth,
-    offsetWidth = _ref$offsetWidth === void 0 ? 0 : _ref$offsetWidth,
-    _ref$offsetHeight = _ref.offsetHeight,
-    offsetHeight = _ref$offsetHeight === void 0 ? 0 : _ref$offsetHeight;
+      _ref$offsetWidth = _ref.offsetWidth,
+      offsetWidth = _ref$offsetWidth === void 0 ? 0 : _ref$offsetWidth,
+      _ref$offsetHeight = _ref.offsetHeight,
+      offsetHeight = _ref$offsetHeight === void 0 ? 0 : _ref$offsetHeight;
+
   return [offsetWidth, offsetHeight];
 };
 /**
  * Convert \`SizeInfo\` to unit value. Such as [123, 456] with \`top\` position get \`123\`
  */
+
+
 var getUnitValue = function getUnitValue(size, tabPositionTopOrBottom) {
   return size[tabPositionTopOrBottom ? 0 : 1];
 };
+
 function TabNavList(props, ref) {
   var _classNames;
+
   var _React$useContext = external_window_React_["useContext"](TabContext),
-    prefixCls = _React$useContext.prefixCls,
-    tabs = _React$useContext.tabs;
+      prefixCls = _React$useContext.prefixCls,
+      tabs = _React$useContext.tabs;
+
   var className = props.className,
-    style = props.style,
-    id = props.id,
-    animated = props.animated,
-    activeKey = props.activeKey,
-    rtl = props.rtl,
-    extra = props.extra,
-    editable = props.editable,
-    locale = props.locale,
-    tabPosition = props.tabPosition,
-    tabBarGutter = props.tabBarGutter,
-    children = props.children,
-    onTabClick = props.onTabClick,
-    onTabScroll = props.onTabScroll;
+      style = props.style,
+      id = props.id,
+      animated = props.animated,
+      activeKey = props.activeKey,
+      rtl = props.rtl,
+      extra = props.extra,
+      editable = props.editable,
+      locale = props.locale,
+      tabPosition = props.tabPosition,
+      tabBarGutter = props.tabBarGutter,
+      children = props.children,
+      onTabClick = props.onTabClick,
+      onTabScroll = props.onTabScroll;
   var containerRef = Object(external_window_React_["useRef"])();
   var extraLeftRef = Object(external_window_React_["useRef"])();
   var extraRightRef = Object(external_window_React_["useRef"])();
   var tabsWrapperRef = Object(external_window_React_["useRef"])();
   var tabListRef = Object(external_window_React_["useRef"])();
   var operationsRef = Object(external_window_React_["useRef"])();
-  var innerAddButtonRef = Object(external_window_React_["useRef"])();
-  var _useRefs = useRefs(),
-    _useRefs2 = Object(slicedToArray["a" /* default */])(_useRefs, 2),
-    getBtnRef = _useRefs2[0],
-    removeBtnRef = _useRefs2[1];
+  var innerAddButtonRef = Object(external_window_React_["useRef"])(); // const [getBtnRef, removeBtnRef] = useRefs<HTMLDivElement>();
+
   var tabPositionTopOrBottom = tabPosition === 'top' || tabPosition === 'bottom';
+
   var _useSyncState = useSyncState(0, function (next, prev) {
-      if (tabPositionTopOrBottom && onTabScroll) {
-        onTabScroll({
-          direction: next > prev ? 'left' : 'right'
-        });
-      }
-    }),
-    _useSyncState2 = Object(slicedToArray["a" /* default */])(_useSyncState, 2),
-    transformLeft = _useSyncState2[0],
-    setTransformLeft = _useSyncState2[1];
+    if (tabPositionTopOrBottom && onTabScroll) {
+      onTabScroll({
+        direction: next > prev ? 'left' : 'right'
+      });
+    }
+  }),
+      _useSyncState2 = Object(slicedToArray["a" /* default */])(_useSyncState, 2),
+      transformLeft = _useSyncState2[0],
+      setTransformLeft = _useSyncState2[1];
+
   var _useSyncState3 = useSyncState(0, function (next, prev) {
-      if (!tabPositionTopOrBottom && onTabScroll) {
-        onTabScroll({
-          direction: next > prev ? 'top' : 'bottom'
-        });
-      }
-    }),
-    _useSyncState4 = Object(slicedToArray["a" /* default */])(_useSyncState3, 2),
-    transformTop = _useSyncState4[0],
-    setTransformTop = _useSyncState4[1];
+    if (!tabPositionTopOrBottom && onTabScroll) {
+      onTabScroll({
+        direction: next > prev ? 'top' : 'bottom'
+      });
+    }
+  }),
+      _useSyncState4 = Object(slicedToArray["a" /* default */])(_useSyncState3, 2),
+      transformTop = _useSyncState4[0],
+      setTransformTop = _useSyncState4[1];
+
   var _useState = Object(external_window_React_["useState"])([0, 0]),
-    _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-    containerExcludeExtraSize = _useState2[0],
-    setContainerExcludeExtraSize = _useState2[1];
+      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+      containerExcludeExtraSize = _useState2[0],
+      setContainerExcludeExtraSize = _useState2[1];
+
   var _useState3 = Object(external_window_React_["useState"])([0, 0]),
-    _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-    tabContentSize = _useState4[0],
-    setTabContentSize = _useState4[1];
+      _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
+      tabContentSize = _useState4[0],
+      setTabContentSize = _useState4[1];
+
   var _useState5 = Object(external_window_React_["useState"])([0, 0]),
-    _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
-    addSize = _useState6[0],
-    setAddSize = _useState6[1];
+      _useState6 = Object(slicedToArray["a" /* default */])(_useState5, 2),
+      addSize = _useState6[0],
+      setAddSize = _useState6[1];
+
   var _useState7 = Object(external_window_React_["useState"])([0, 0]),
-    _useState8 = Object(slicedToArray["a" /* default */])(_useState7, 2),
-    operationSize = _useState8[0],
-    setOperationSize = _useState8[1];
+      _useState8 = Object(slicedToArray["a" /* default */])(_useState7, 2),
+      operationSize = _useState8[0],
+      setOperationSize = _useState8[1];
+
   var _useRafState = useRafState(new Map()),
-    _useRafState2 = Object(slicedToArray["a" /* default */])(_useRafState, 2),
-    tabSizes = _useRafState2[0],
-    setTabSizes = _useRafState2[1];
-  var tabOffsets = useOffsets(tabs, tabSizes, tabContentSize[0]);
-  // ========================== Unit =========================
+      _useRafState2 = Object(slicedToArray["a" /* default */])(_useRafState, 2),
+      tabSizes = _useRafState2[0],
+      setTabSizes = _useRafState2[1];
+
+  var tabOffsets = useOffsets(tabs, tabSizes, tabContentSize[0]); // ========================== Unit =========================
+
   var containerExcludeExtraSizeValue = getUnitValue(containerExcludeExtraSize, tabPositionTopOrBottom);
   var tabContentSizeValue = getUnitValue(tabContentSize, tabPositionTopOrBottom);
   var addSizeValue = getUnitValue(addSize, tabPositionTopOrBottom);
   var operationSizeValue = getUnitValue(operationSize, tabPositionTopOrBottom);
   var needScroll = containerExcludeExtraSizeValue < tabContentSizeValue + addSizeValue;
-  var visibleTabContentValue = needScroll ? containerExcludeExtraSizeValue - operationSizeValue : containerExcludeExtraSizeValue - addSizeValue;
-  // ========================== Util =========================
+  var visibleTabContentValue = needScroll ? containerExcludeExtraSizeValue - operationSizeValue : containerExcludeExtraSizeValue - addSizeValue; // ========================== Util =========================
+
   var operationsHiddenClassName = "".concat(prefixCls, "-nav-operations-hidden");
   var transformMin = 0;
   var transformMax = 0;
+
   if (!tabPositionTopOrBottom) {
     transformMin = Math.min(0, visibleTabContentValue - tabContentSizeValue);
     transformMax = 0;
@@ -35828,75 +35863,84 @@ function TabNavList(props, ref) {
     transformMin = Math.min(0, visibleTabContentValue - tabContentSizeValue);
     transformMax = 0;
   }
+
   function alignInRange(value) {
     if (value < transformMin) {
       return transformMin;
     }
+
     if (value > transformMax) {
       return transformMax;
     }
+
     return value;
-  }
-  // ========================= Mobile ========================
+  } // ========================= Mobile ========================
+
+
   var touchMovingRef = Object(external_window_React_["useRef"])();
+
   var _useState9 = Object(external_window_React_["useState"])(),
-    _useState10 = Object(slicedToArray["a" /* default */])(_useState9, 2),
-    lockAnimation = _useState10[0],
-    setLockAnimation = _useState10[1];
+      _useState10 = Object(slicedToArray["a" /* default */])(_useState9, 2),
+      lockAnimation = _useState10[0],
+      setLockAnimation = _useState10[1];
+
   function doLockAnimation() {
     setLockAnimation(Date.now());
   }
+
   function clearTouchMoving() {
     window.clearTimeout(touchMovingRef.current);
   }
+
   useTouchMove(tabsWrapperRef, function (offsetX, offsetY) {
     function doMove(setState, offset) {
       setState(function (value) {
         var newValue = alignInRange(value + offset);
         return newValue;
       });
-    }
-    // Skip scroll if place is enough
+    } // Skip scroll if place is enough
+
+
     if (containerExcludeExtraSizeValue >= tabContentSizeValue) {
       return false;
     }
+
     if (tabPositionTopOrBottom) {
       doMove(setTransformLeft, offsetX);
     } else {
       doMove(setTransformTop, offsetY);
     }
+
     clearTouchMoving();
     doLockAnimation();
     return true;
   });
   Object(external_window_React_["useEffect"])(function () {
     clearTouchMoving();
+
     if (lockAnimation) {
       touchMovingRef.current = window.setTimeout(function () {
         setLockAnimation(0);
       }, 100);
     }
+
     return clearTouchMoving;
-  }, [lockAnimation]);
-  // ===================== Visible Range =====================
+  }, [lockAnimation]); // ===================== Visible Range =====================
   // Render tab node & collect tab offset
-  var _useVisibleRange = useVisibleRange(tabOffsets,
-    // Container
-    visibleTabContentValue,
-    // Transform
-    tabPositionTopOrBottom ? transformLeft : transformTop,
-    // Tabs
-    tabContentSizeValue,
-    // Add
-    addSizeValue,
-    // Operation
-    operationSizeValue, Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
-      tabs: tabs
-    })),
-    _useVisibleRange2 = Object(slicedToArray["a" /* default */])(_useVisibleRange, 2),
-    visibleStart = _useVisibleRange2[0],
-    visibleEnd = _useVisibleRange2[1];
-  // ========================= Scroll ========================
+
+  var _useVisibleRange = useVisibleRange(tabOffsets, // Container
+  visibleTabContentValue, // Transform
+  tabPositionTopOrBottom ? transformLeft : transformTop, // Tabs
+  tabContentSizeValue, // Add
+  addSizeValue, // Operation
+  operationSizeValue, Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, props), {}, {
+    tabs: tabs
+  })),
+      _useVisibleRange2 = Object(slicedToArray["a" /* default */])(_useVisibleRange, 2),
+      visibleStart = _useVisibleRange2[0],
+      visibleEnd = _useVisibleRange2[1]; // ========================= Scroll ========================
+
+
   var scrollToTab = function scrollToTab() {
     var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : activeKey;
     var tabOffset = tabOffsets.get(key) || {
@@ -35906,44 +35950,50 @@ function TabNavList(props, ref) {
       right: 0,
       top: 0
     };
+
     if (tabPositionTopOrBottom) {
       // ============ Align with top & bottom ============
-      var newTransform = transformLeft;
-      // RTL
+      var newTransform = transformLeft; // RTL
+
       if (rtl) {
         if (tabOffset.right < transformLeft) {
           newTransform = tabOffset.right;
         } else if (tabOffset.right + tabOffset.width > transformLeft + visibleTabContentValue) {
           newTransform = tabOffset.right + tabOffset.width - visibleTabContentValue;
         }
-      }
-      // LTR
+      } // LTR
       else if (tabOffset.left < -transformLeft) {
         newTransform = -tabOffset.left;
       } else if (tabOffset.left + tabOffset.width > -transformLeft + visibleTabContentValue) {
         newTransform = -(tabOffset.left + tabOffset.width - visibleTabContentValue);
       }
+
       setTransformTop(0);
       setTransformLeft(alignInRange(newTransform));
     } else {
       // ============ Align with left & right ============
       var _newTransform = transformTop;
+
       if (tabOffset.top < -transformTop) {
         _newTransform = -tabOffset.top;
       } else if (tabOffset.top + tabOffset.height > -transformTop + visibleTabContentValue) {
         _newTransform = -(tabOffset.top + tabOffset.height - visibleTabContentValue);
       }
+
       setTransformLeft(0);
       setTransformTop(alignInRange(_newTransform));
     }
-  };
-  // ========================== Tab ==========================
+  }; // ========================== Tab ==========================
+
+
   var tabNodeStyle = {};
+
   if (tabPosition === 'top' || tabPosition === 'bottom') {
     tabNodeStyle[rtl ? 'marginRight' : 'marginLeft'] = tabBarGutter;
   } else {
     tabNodeStyle.marginTop = tabBarGutter;
   }
+
   var tabNodes = tabs.map(function (tab, i) {
     var key = tab.key;
     return /*#__PURE__*/external_window_React_["createElement"](TabNavList_TabNode, {
@@ -35951,41 +36001,42 @@ function TabNavList(props, ref) {
       prefixCls: prefixCls,
       key: key,
       tab: tab
-      /* first node should not have margin left */,
+      /* first node should not have margin left */
+      ,
       style: i === 0 ? undefined : tabNodeStyle,
       closable: tab.closable,
       editable: editable,
       active: key === activeKey,
       renderWrapper: children,
       removeAriaLabel: locale === null || locale === void 0 ? void 0 : locale.removeAriaLabel,
-      ref: getBtnRef(key),
       onClick: function onClick(e) {
         onTabClick(key, e);
-      },
-      onRemove: function onRemove() {
-        removeBtnRef(key);
       },
       onFocus: function onFocus() {
         scrollToTab(key);
         doLockAnimation();
+
         if (!tabsWrapperRef.current) {
           return;
-        }
-        // Focus element will make scrollLeft change which we should reset back
+        } // Focus element will make scrollLeft change which we should reset back
+
+
         if (!rtl) {
           tabsWrapperRef.current.scrollLeft = 0;
         }
+
         tabsWrapperRef.current.scrollTop = 0;
       }
     });
-  });
-  // Update buttons records
+  }); // Update buttons records
+
   var updateTabSizes = function updateTabSizes() {
     return setTabSizes(function () {
       var newSizes = new Map();
       tabs.forEach(function (_ref2) {
         var key = _ref2.key;
-        var btnNode = getBtnRef(key).current;
+        var btnNode = tabListRef.current.querySelector("[data-node-key=\\"".concat(key, "\\"]"));
+
         if (btnNode) {
           newSizes.set(key, {
             width: btnNode.offsetWidth,
@@ -35998,6 +36049,7 @@ function TabNavList(props, ref) {
       return newSizes;
     });
   };
+
   Object(external_window_React_["useEffect"])(function () {
     updateTabSizes();
   }, [tabs.map(function (tab) {
@@ -36012,28 +36064,34 @@ function TabNavList(props, ref) {
     var newAddSize = getSize(innerAddButtonRef);
     setAddSize(newAddSize);
     var newOperationSize = getSize(operationsRef);
-    setOperationSize(newOperationSize);
-    // Which includes add button size
+    setOperationSize(newOperationSize); // Which includes add button size
+
     var tabContentFullSize = getSize(tabListRef);
-    setTabContentSize([tabContentFullSize[0] - newAddSize[0], tabContentFullSize[1] - newAddSize[1]]);
-  });
-  // ======================== Dropdown =======================
+    setTabContentSize([tabContentFullSize[0] - newAddSize[0], tabContentFullSize[1] - newAddSize[1]]); // Update buttons records
+
+    updateTabSizes();
+  }); // ======================== Dropdown =======================
+
   var startHiddenTabs = tabs.slice(0, visibleStart);
   var endHiddenTabs = tabs.slice(visibleEnd + 1);
-  var hiddenTabs = [].concat(Object(toConsumableArray["a" /* default */])(startHiddenTabs), Object(toConsumableArray["a" /* default */])(endHiddenTabs));
-  // =================== Link & Operations ===================
+  var hiddenTabs = [].concat(Object(toConsumableArray["a" /* default */])(startHiddenTabs), Object(toConsumableArray["a" /* default */])(endHiddenTabs)); // =================== Link & Operations ===================
+
   var _useState11 = Object(external_window_React_["useState"])(),
-    _useState12 = Object(slicedToArray["a" /* default */])(_useState11, 2),
-    inkStyle = _useState12[0],
-    setInkStyle = _useState12[1];
-  var activeTabOffset = tabOffsets.get(activeKey);
-  // Delay set ink style to avoid remove tab blink
+      _useState12 = Object(slicedToArray["a" /* default */])(_useState11, 2),
+      inkStyle = _useState12[0],
+      setInkStyle = _useState12[1];
+
+  var activeTabOffset = tabOffsets.get(activeKey); // Delay set ink style to avoid remove tab blink
+
   var inkBarRafRef = Object(external_window_React_["useRef"])();
+
   function cleanInkBarRaf() {
     raf["a" /* default */].cancel(inkBarRafRef.current);
   }
+
   Object(external_window_React_["useEffect"])(function () {
     var newInkStyle = {};
+
     if (activeTabOffset) {
       if (tabPositionTopOrBottom) {
         if (rtl) {
@@ -36041,35 +36099,36 @@ function TabNavList(props, ref) {
         } else {
           newInkStyle.left = activeTabOffset.left;
         }
+
         newInkStyle.width = activeTabOffset.width;
       } else {
         newInkStyle.top = activeTabOffset.top;
         newInkStyle.height = activeTabOffset.height;
       }
     }
+
     cleanInkBarRaf();
     inkBarRafRef.current = Object(raf["a" /* default */])(function () {
       setInkStyle(newInkStyle);
     });
     return cleanInkBarRaf;
-  }, [activeTabOffset, tabPositionTopOrBottom, rtl]);
-  // ========================= Effect ========================
+  }, [activeTabOffset, tabPositionTopOrBottom, rtl]); // ========================= Effect ========================
+
   Object(external_window_React_["useEffect"])(function () {
-    scrollToTab();
-    // eslint-disable-next-line
-  }, [activeKey, stringify(activeTabOffset), stringify(tabOffsets), tabPositionTopOrBottom]);
-  // Should recalculate when rtl changed
+    scrollToTab(); // eslint-disable-next-line
+  }, [activeKey, stringify(activeTabOffset), stringify(tabOffsets), tabPositionTopOrBottom]); // Should recalculate when rtl changed
+
   Object(external_window_React_["useEffect"])(function () {
-    onListHolderResize();
-    // eslint-disable-next-line
-  }, [rtl]);
-  // ========================= Render ========================
+    onListHolderResize(); // eslint-disable-next-line
+  }, [rtl]); // ========================= Render ========================
+
   var hasDropdown = !!hiddenTabs.length;
   var wrapPrefix = "".concat(prefixCls, "-nav-wrap");
   var pingLeft;
   var pingRight;
   var pingTop;
   var pingBottom;
+
   if (tabPositionTopOrBottom) {
     if (rtl) {
       pingRight = transformLeft > 0;
@@ -36082,6 +36141,7 @@ function TabNavList(props, ref) {
     pingTop = transformTop < 0;
     pingBottom = -transformTop + containerExcludeExtraSizeValue < tabContentSizeValue;
   }
+
   return /*#__PURE__*/external_window_React_["createElement"](rc_resize_observer_es["a" /* default */], {
     onResize: onListHolderResize
   }, /*#__PURE__*/external_window_React_["createElement"]("div", {
@@ -36143,8 +36203,7 @@ function TabNavList(props, ref) {
 
 
 var Wrapper_excluded = ["renderTabBar"],
-  _excluded2 = ["label", "key"];
-
+    _excluded2 = ["label", "key"];
 // zombieJ: To compatible with \`renderTabBar\` usage.
 
 
@@ -36153,26 +36212,31 @@ var Wrapper_excluded = ["renderTabBar"],
 // We have to create a TabNavList components.
 function TabNavListWrapper(_ref) {
   var renderTabBar = _ref.renderTabBar,
-    restProps = Object(objectWithoutProperties["a" /* default */])(_ref, Wrapper_excluded);
-  var _useContext = Object(external_window_React_["useContext"])(TabContext),
-    tabs = _useContext.tabs;
+      restProps = Object(objectWithoutProperties["a" /* default */])(_ref, Wrapper_excluded);
+
+  var _React$useContext = external_window_React_["useContext"](TabContext),
+      tabs = _React$useContext.tabs;
+
   if (renderTabBar) {
     var tabNavBarProps = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, restProps), {}, {
       // Legacy support. We do not use this actually
       panes: tabs.map(function (_ref2) {
         var label = _ref2.label,
-          key = _ref2.key,
-          restTabProps = Object(objectWithoutProperties["a" /* default */])(_ref2, _excluded2);
-        return /*#__PURE__*/external_window_React_default.a.createElement(TabPanelList_TabPane, Object(esm_extends["a" /* default */])({
+            key = _ref2.key,
+            restTabProps = Object(objectWithoutProperties["a" /* default */])(_ref2, _excluded2);
+
+        return /*#__PURE__*/external_window_React_["createElement"](TabPanelList_TabPane, Object(esm_extends["a" /* default */])({
           tab: label,
           key: key,
           tabKey: key
         }, restTabProps));
       })
     });
+
     return renderTabBar(tabNavBarProps, es_TabNavList);
   }
-  return /*#__PURE__*/external_window_React_default.a.createElement(es_TabNavList, restProps);
+
+  return /*#__PURE__*/external_window_React_["createElement"](es_TabNavList, restProps);
 }
 // EXTERNAL MODULE: ./node_modules/rc-util/es/warning.js
 var warning = __webpack_require__("Kwbf");
@@ -36187,6 +36251,7 @@ function useAnimateConfig() {
     tabPane: false
   };
   var mergedAnimated;
+
   if (animated === false) {
     mergedAnimated = {
       inkBar: false,
@@ -36201,15 +36266,19 @@ function useAnimateConfig() {
     mergedAnimated = Object(objectSpread2["a" /* default */])({
       inkBar: true
     }, Object(esm_typeof["a" /* default */])(animated) === 'object' ? animated : {});
-  }
-  // Enable tabPane animation if provide motion
+  } // Enable tabPane animation if provide motion
+
+
   if (mergedAnimated.tabPaneMotion && mergedAnimated.tabPane === undefined) {
     mergedAnimated.tabPane = true;
   }
+
   if (!mergedAnimated.tabPaneMotion && mergedAnimated.tabPane) {
     if (false) {}
+
     mergedAnimated.tabPane = false;
   }
+
   return mergedAnimated;
 }
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/Tabs.js
@@ -36240,108 +36309,122 @@ var Tabs_excluded = ["id", "prefixCls", "className", "items", "direction", "acti
  * - keyboard
  */
 // Used for accessibility
+
 var uuid = 0;
+
 function Tabs(_ref, ref) {
   var _classNames;
+
   var id = _ref.id,
-    _ref$prefixCls = _ref.prefixCls,
-    prefixCls = _ref$prefixCls === void 0 ? 'rc-tabs' : _ref$prefixCls,
-    className = _ref.className,
-    items = _ref.items,
-    direction = _ref.direction,
-    activeKey = _ref.activeKey,
-    defaultActiveKey = _ref.defaultActiveKey,
-    editable = _ref.editable,
-    animated = _ref.animated,
-    _ref$tabPosition = _ref.tabPosition,
-    tabPosition = _ref$tabPosition === void 0 ? 'top' : _ref$tabPosition,
-    tabBarGutter = _ref.tabBarGutter,
-    tabBarStyle = _ref.tabBarStyle,
-    tabBarExtraContent = _ref.tabBarExtraContent,
-    locale = _ref.locale,
-    moreIcon = _ref.moreIcon,
-    moreTransitionName = _ref.moreTransitionName,
-    destroyInactiveTabPane = _ref.destroyInactiveTabPane,
-    renderTabBar = _ref.renderTabBar,
-    onChange = _ref.onChange,
-    onTabClick = _ref.onTabClick,
-    onTabScroll = _ref.onTabScroll,
-    getPopupContainer = _ref.getPopupContainer,
-    popupClassName = _ref.popupClassName,
-    restProps = Object(objectWithoutProperties["a" /* default */])(_ref, Tabs_excluded);
+      _ref$prefixCls = _ref.prefixCls,
+      prefixCls = _ref$prefixCls === void 0 ? 'rc-tabs' : _ref$prefixCls,
+      className = _ref.className,
+      items = _ref.items,
+      direction = _ref.direction,
+      activeKey = _ref.activeKey,
+      defaultActiveKey = _ref.defaultActiveKey,
+      editable = _ref.editable,
+      animated = _ref.animated,
+      _ref$tabPosition = _ref.tabPosition,
+      tabPosition = _ref$tabPosition === void 0 ? 'top' : _ref$tabPosition,
+      tabBarGutter = _ref.tabBarGutter,
+      tabBarStyle = _ref.tabBarStyle,
+      tabBarExtraContent = _ref.tabBarExtraContent,
+      locale = _ref.locale,
+      moreIcon = _ref.moreIcon,
+      moreTransitionName = _ref.moreTransitionName,
+      destroyInactiveTabPane = _ref.destroyInactiveTabPane,
+      renderTabBar = _ref.renderTabBar,
+      onChange = _ref.onChange,
+      onTabClick = _ref.onTabClick,
+      onTabScroll = _ref.onTabScroll,
+      getPopupContainer = _ref.getPopupContainer,
+      popupClassName = _ref.popupClassName,
+      restProps = Object(objectWithoutProperties["a" /* default */])(_ref, Tabs_excluded);
+
   var tabs = external_window_React_["useMemo"](function () {
     return (items || []).filter(function (item) {
       return item && Object(esm_typeof["a" /* default */])(item) === 'object' && 'key' in item;
     });
   }, [items]);
   var rtl = direction === 'rtl';
-  var mergedAnimated = useAnimateConfig(animated);
-  // ======================== Mobile ========================
+  var mergedAnimated = useAnimateConfig(animated); // ======================== Mobile ========================
+
   var _useState = Object(external_window_React_["useState"])(false),
-    _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
-    mobile = _useState2[0],
-    setMobile = _useState2[1];
+      _useState2 = Object(slicedToArray["a" /* default */])(_useState, 2),
+      mobile = _useState2[0],
+      setMobile = _useState2[1];
+
   Object(external_window_React_["useEffect"])(function () {
     // Only update on the client side
     setMobile(Object(isMobile["a" /* default */])());
-  }, []);
-  // ====================== Active Key ======================
+  }, []); // ====================== Active Key ======================
+
   var _useMergedState = Object(useMergedState["a" /* default */])(function () {
-      var _tabs$;
-      return (_tabs$ = tabs[0]) === null || _tabs$ === void 0 ? void 0 : _tabs$.key;
-    }, {
-      value: activeKey,
-      defaultValue: defaultActiveKey
-    }),
-    _useMergedState2 = Object(slicedToArray["a" /* default */])(_useMergedState, 2),
-    mergedActiveKey = _useMergedState2[0],
-    setMergedActiveKey = _useMergedState2[1];
+    var _tabs$;
+
+    return (_tabs$ = tabs[0]) === null || _tabs$ === void 0 ? void 0 : _tabs$.key;
+  }, {
+    value: activeKey,
+    defaultValue: defaultActiveKey
+  }),
+      _useMergedState2 = Object(slicedToArray["a" /* default */])(_useMergedState, 2),
+      mergedActiveKey = _useMergedState2[0],
+      setMergedActiveKey = _useMergedState2[1];
+
   var _useState3 = Object(external_window_React_["useState"])(function () {
-      return tabs.findIndex(function (tab) {
-        return tab.key === mergedActiveKey;
-      });
-    }),
-    _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
-    activeIndex = _useState4[0],
-    setActiveIndex = _useState4[1];
-  // Reset active key if not exist anymore
+    return tabs.findIndex(function (tab) {
+      return tab.key === mergedActiveKey;
+    });
+  }),
+      _useState4 = Object(slicedToArray["a" /* default */])(_useState3, 2),
+      activeIndex = _useState4[0],
+      setActiveIndex = _useState4[1]; // Reset active key if not exist anymore
+
+
   Object(external_window_React_["useEffect"])(function () {
     var newActiveIndex = tabs.findIndex(function (tab) {
       return tab.key === mergedActiveKey;
     });
+
     if (newActiveIndex === -1) {
       var _tabs$newActiveIndex;
+
       newActiveIndex = Math.max(0, Math.min(activeIndex, tabs.length - 1));
       setMergedActiveKey((_tabs$newActiveIndex = tabs[newActiveIndex]) === null || _tabs$newActiveIndex === void 0 ? void 0 : _tabs$newActiveIndex.key);
     }
+
     setActiveIndex(newActiveIndex);
   }, [tabs.map(function (tab) {
     return tab.key;
-  }).join('_'), mergedActiveKey, activeIndex]);
-  // ===================== Accessibility ====================
+  }).join('_'), mergedActiveKey, activeIndex]); // ===================== Accessibility ====================
+
   var _useMergedState3 = Object(useMergedState["a" /* default */])(null, {
-      value: id
-    }),
-    _useMergedState4 = Object(slicedToArray["a" /* default */])(_useMergedState3, 2),
-    mergedId = _useMergedState4[0],
-    setMergedId = _useMergedState4[1];
-  // Async generate id to avoid ssr mapping failed
+    value: id
+  }),
+      _useMergedState4 = Object(slicedToArray["a" /* default */])(_useMergedState3, 2),
+      mergedId = _useMergedState4[0],
+      setMergedId = _useMergedState4[1]; // Async generate id to avoid ssr mapping failed
+
+
   Object(external_window_React_["useEffect"])(function () {
     if (!id) {
       setMergedId("rc-tabs-".concat( false ? undefined : uuid));
       uuid += 1;
     }
-  }, []);
-  // ======================== Events ========================
+  }, []); // ======================== Events ========================
+
   function onInternalTabClick(key, e) {
     onTabClick === null || onTabClick === void 0 ? void 0 : onTabClick(key, e);
     var isActiveChanged = key !== mergedActiveKey;
     setMergedActiveKey(key);
+
     if (isActiveChanged) {
       onChange === null || onChange === void 0 ? void 0 : onChange(key);
     }
-  }
-  // ======================== Render ========================
+  } // ======================== Render ========================
+
+
   var sharedProps = {
     id: mergedId,
     activeKey: mergedActiveKey,
@@ -36351,6 +36434,7 @@ function Tabs(_ref, ref) {
     mobile: mobile
   };
   var tabNavBar;
+
   var tabNavBarProps = Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({}, sharedProps), {}, {
     editable: editable,
     locale: locale,
@@ -36365,6 +36449,7 @@ function Tabs(_ref, ref) {
     getPopupContainer: getPopupContainer,
     popupClassName: popupClassName
   });
+
   return /*#__PURE__*/external_window_React_["createElement"](TabContext.Provider, {
     value: {
       tabs: tabs,
@@ -36382,8 +36467,11 @@ function Tabs(_ref, ref) {
     animated: mergedAnimated
   }))));
 }
+
 var ForwardTabs = /*#__PURE__*/external_window_React_["forwardRef"](Tabs);
+
 if (false) {}
+
 /* harmony default export */ var es_Tabs = (ForwardTabs);
 // CONCATENATED MODULE: ./node_modules/rc-tabs/es/index.js
 
@@ -36441,9 +36529,7 @@ var toArray = __webpack_require__("Zm9Q");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -36491,9 +36577,7 @@ if (false) {}
 
 var tabs_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -36568,7 +36652,7 @@ function tabs_Tabs(_a) {
 tabs_Tabs.TabPane = tabs_TabPane;
 /* harmony default export */ var es_tabs = __webpack_exports__["a"] = (tabs_Tabs);
 
-//# sourceURL=webpack:///./node_modules/antd/es/tabs/index.js_+_24_modules?`)},ZTW2:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+//# sourceURL=webpack:///./node_modules/antd/es/tabs/index.js_+_23_modules?`)},ZTW2:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
 //# sourceURL=webpack:///./node_modules/antd/es/date-picker/style/index.less?`)},Zm9Q:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return toArray; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
@@ -42406,7 +42490,7 @@ function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefine
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // functional for testing
 function isBMW() {
-  return {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.19.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.6","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221220.1","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:22879","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3792870266","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.9/x64","PATH":"/tmp/yarn--1672218032914-0.20988413093989333:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"7eaf9f856f004cf6a13ee6ee8d27f9dc","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_9957e7fc-575f-45d4-a96b-decea86f759c","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"155","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"Hosted Agent","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","STATS_KEEPALIVE":"false","GITHUB_ACTIONS":"true","STATS_PFS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"dff090a66d6417009d13f1f119d0a1b650c8fbb3","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_789c8027-9852-46d7-8e76-2a77d4e3f7fa","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_789c8027-9852-46d7-8e76-2a77d4e3f7fa","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.10.0-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","STATS_PT":"20","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_789c8027-9852-46d7-8e76-2a77d4e3f7fa","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.36","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"}.PLATFORM_TYPE === 'BASEMENT';
+  return {"GITHUB_STATE":"/home/runner/work/_temp/_runner_file_commands/save_state_620f3dd4-293a-49bc-9711-07c3598350c4","npm_package_devDependencies_ts_node":"^10.4.0","npm_package_dependencies_braft_editor":"^2.3.9","DOTNET_NOLOGO":"1","DEPLOYMENT_BASEPATH":"/opt/runner","npm_package_devDependencies__types_antd":"^1.0.0","npm_package_lint_staged___ts__x__0":"prettier --parser=typescript --write","USER":"runner","npm_package_devDependencies_father_build":"^1.19.1","npm_package_devDependencies__types_d3":"^7.4.0","npm_package_scripts_docs_build":"dumi build","npm_config_version_commit_hooks":"true","npm_config_user_agent":"yarn/1.22.19 npm/? node/v16.19.0 linux x64","CI":"true","npm_package_devDependencies_ejs":"^3.1.6","npm_package_scripts_release":"npm run build && npm publish","npm_config_bin_links":"true","PIPX_HOME":"/opt/pipx","GITHUB_ENV":"/home/runner/work/_temp/_runner_file_commands/set_env_620f3dd4-293a-49bc-9711-07c3598350c4","npm_node_execpath":"/usr/local/bin/node","npm_package_devDependencies_gh_pages":"^4.0.0","npm_config_init_version":"1.0.0","JAVA_HOME_8_X64":"/usr/lib/jvm/temurin-8-jdk-amd64","SHLVL":"1","HOME":"/home/runner","npm_package_dependencies_react_fast_marquee":"^1.3.5","npm_package_dependencies__ant_design_icons":"^4.7.0","RUNNER_TEMP":"/home/runner/work/_temp","GITHUB_EVENT_PATH":"/home/runner/work/_temp/_github_workflow/event.json","npm_package_dependencies_react_syntax_highlighter":"^15.5.0","JAVA_HOME_11_X64":"/usr/lib/jvm/temurin-11-jdk-amd64","GITHUB_REPOSITORY_OWNER":"eternallycyf","PIPX_BIN_DIR":"/opt/pipx_bin","npm_config_init_license":"MIT","JAVA_HOME_12_X64":"/usr/lib/jvm/adoptopenjdk-12-hotspot-amd64","STATS_RDCL":"true","GRADLE_HOME":"/usr/share/gradle-7.6","GITHUB_RETENTION_DAYS":"90","ANDROID_NDK_LATEST_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","YARN_WRAP_OUTPUT":"false","npm_config_version_tag_prefix":"v","AZURE_EXTENSION_DIR":"/opt/az/azcliextensions","POWERSHELL_DISTRIBUTION_CHANNEL":"GitHub-Actions-ubuntu18","GITHUB_HEAD_REF":"","npm_package_scripts_docs_deploy":"gh-pages -d docs-dist","npm_package_dependencies_moment":"^2.29.4","npm_package_gitHooks_pre_commit":"lint-staged","GITHUB_GRAPHQL_URL":"https://api.github.com/graphql","npm_package_description":"English | [\u7B80\u4F53\u4E2D\u6587](./README.zh-CN.md)","npm_package_dependencies_antd":"^4.22.7","NVM_DIR":"/home/runner/.nvm","npm_package_readmeFilename":"README.md","npm_package_devDependencies__umijs_test":"^3.0.5","npm_package_devDependencies__types_react_dom":"^18.0.6","npm_package_dependencies_react_excel_renderer":"^1.1.0","npm_package_dependencies_react_color":"^2.19.3","npm_package_dependencies_d3":"^7.6.1","ImageVersion":"20221220.1","DOTNET_SKIP_FIRST_TIME_EXPERIENCE":"1","JAVA_HOME_17_X64":"/usr/lib/jvm/temurin-17-jdk-amd64","npm_package_devDependencies_prettier":"^1.19.1","npm_package_dependencies_prismjs":"^1.29.0","npm_package_dependencies_echarts_for_react":"^3.0.2","GITHUB_API_URL":"https://api.github.com","SWIFT_PATH":"/usr/share/swift/usr/bin","RUNNER_OS":"Linux","JOURNAL_STREAM":"9:19347","CHROMEWEBDRIVER":"/usr/local/share/chrome_driver","RUNNER_USER":"runner","GITHUB_WORKFLOW":"github pages","_":"/usr/local/bin/yarn","npm_package_dependencies_remark_gfm":"^3.0.1","npm_package_module":"dist/index.esm.js","npm_package_private":"true","npm_config_registry":"https://registry.yarnpkg.com","GITHUB_RUN_ID":"3806761119","GOROOT_1_16_X64":"/opt/hostedtoolcache/go/1.16.15/x64","npm_package_devDependencies_babel_plugin_import":"^1.13.5","npm_package_dependencies_docxtemplater":"3.5","ImageOS":"ubuntu18","GITHUB_REF_TYPE":"branch","GOROOT_1_17_X64":"/opt/hostedtoolcache/go/1.17.13/x64","GITHUB_BASE_REF":"","BOOTSTRAP_HASKELL_NONINTERACTIVE":"1","npm_package_dependencies_vditor":"^3.8.17","npm_package_scripts_start":"dumi dev","npm_config_ignore_scripts":"","GITHUB_ACTION_REPOSITORY":"","PERFLOG_LOCATION_SETTING":"RUNNER_PERFLOG","GOROOT_1_18_X64":"/opt/hostedtoolcache/go/1.18.9/x64","PATH":"/tmp/yarn--1672402769303-0.6932137260552389:/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/.bin:/home/runner/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/snap/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin","NODE":"/usr/local/bin/node","INVOCATION_ID":"4a16a967312b44f29a3bf4fd1602149a","RUNNER_TOOL_CACHE":"/opt/hostedtoolcache","RUNNER_TRACKING_ID":"github_77f244cf-423b-4e08-9683-7d837d8af23d","DOTNET_MULTILEVEL_LOOKUP":"0","ANT_HOME":"/usr/share/ant","npm_package_dependencies_file_saver":"^2.0.5","npm_package_repository_type":"git","npm_package_name":"my-demo-markdown","AGENT_TOOLSDIRECTORY":"/opt/hostedtoolcache","GITHUB_ACTION":"__run_3","RUNNER_ARCH":"X64","XDG_RUNTIME_DIR":"/run/user/1001","GITHUB_RUN_NUMBER":"156","GITHUB_TRIGGERING_ACTOR":"eternallycyf","npm_package_dependencies_dom_to_image":"^2.6.0","npm_package_dependencies_echarts":"^5.3.3","LANG":"C.UTF-8","VCPKG_INSTALLATION_ROOT":"/usr/local/share/vcpkg","npm_package_dependencies_react_dom":"^18.2.0","XDG_CONFIG_HOME":"/home/runner/.config","GITHUB_REF_NAME":"main","CONDA":"/usr/share/miniconda","RUNNER_NAME":"Hosted Agent","GITHUB_REPOSITORY":"eternallycyf/my-demo-markdown","npm_lifecycle_script":"dumi build","npm_package_dependencies_react_markdown":"^8.0.3","npm_package_dependencies_jszip_utils":"^0.1.0","npm_package_main":"dist/index.js","GITHUB_ACTION_REF":"","ANDROID_NDK_ROOT":"/usr/local/lib/android/sdk/ndk/25.1.8937393","DEBIAN_FRONTEND":"noninteractive","npm_package_dependencies_open_docxtemplater_image_module":"^1.0.3","npm_package_dependencies_docx_preview":"^0.1.11","npm_package_scripts_test":"umi-test","npm_config_version_git_message":"v%s","GITHUB_ACTIONS":"true","npm_lifecycle_event":"docs:build","npm_package_devDependencies__types_react":"^18.0.17","npm_package_dependencies_exceljs":"^4.3.0","npm_package_lint_staged____js_jsx_less_md_json__0":"prettier --write","npm_package_repository_url":"https://github.com/eternallycyf/my-demo-markdown","npm_package_version":"1.0.0","GITHUB_REF_PROTECTED":"false","npm_config_argv":"{\\"remain\\":[],\\"cooked\\":[\\"run\\",\\"docs:build\\"],\\"original\\":[\\"docs:build\\"]}","npm_package_devDependencies_yorkie":"^2.0.0","npm_package_devDependencies_lint_staged":"^10.0.7","npm_package_dependencies_braft_extensions":"^0.1.1","npm_package_dependencies__ant_design_plots":"^1.2.2","npm_package_scripts_prettier":"prettier --write \\"**/*.{js,jsx,tsx,ts,less,md,json}\\"","npm_package_scripts_build":"father-build","GITHUB_JOB":"deploy","RUNNER_PERFLOG":"/home/runner/perflog","GITHUB_WORKSPACE":"/home/runner/work/my-demo-markdown/my-demo-markdown","ACCEPT_EULA":"Y","npm_package_scripts_test_coverage":"umi-test --coverage","GITHUB_RUN_ATTEMPT":"1","GITHUB_SHA":"39b1c9f194f95857302b4276aa1a48d35247d187","npm_config_version_git_tag":"true","npm_config_version_git_sign":"","ANDROID_SDK_ROOT":"/usr/local/lib/android/sdk","GITHUB_ACTOR":"eternallycyf","GITHUB_REF":"refs/heads/main","npm_package_license":"MIT","npm_package_dependencies_draft_js_prism":"^1.0.6","npm_package_dependencies_classnames":"^2.3.1","npm_package_dependencies__umijs_plugin_esbuild":"^1.4.1","npm_config_strict_ssl":"true","LEIN_HOME":"/usr/local/lib/lein","npm_package_dependencies_jszip":"^3.10.1","JAVA_HOME":"/usr/lib/jvm/temurin-8-jdk-amd64","PWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","RUNNER_WORKSPACE":"/home/runner/work/my-demo-markdown","GITHUB_PATH":"/home/runner/work/_temp/_runner_file_commands/add_path_620f3dd4-293a-49bc-9711-07c3598350c4","npm_execpath":"/usr/local/lib/node_modules/yarn/bin/yarn.js","npm_package_dependencies_pizzip":"^3.1.1","HOMEBREW_NO_AUTO_UPDATE":"1","ANDROID_HOME":"/usr/local/lib/android/sdk","GITHUB_SERVER_URL":"https://github.com","GECKOWEBDRIVER":"/usr/local/share/gecko_driver","GITHUB_OUTPUT":"/home/runner/work/_temp/_runner_file_commands/set_output_620f3dd4-293a-49bc-9711-07c3598350c4","HOMEBREW_CLEANUP_PERIODIC_FULL_DAYS":"3650","GITHUB_EVENT_NAME":"push","LEIN_JAR":"/usr/local/lib/lein/self-installs/leiningen-2.10.0-standalone.jar","npm_package_devDependencies_dumi":"^1.1.0","EDGEWEBDRIVER":"/usr/local/share/edge_driver","npm_package_devDependencies_cross_env":"^7.0.3","npm_package_typings":"dist/index.d.ts","npm_config_save_prefix":"^","npm_config_ignore_optional":"","ANDROID_NDK":"/usr/local/lib/android/sdk/ndk/25.1.8937393","CHROME_BIN":"/usr/bin/google-chrome","npm_package_devDependencies__types_three":"0.143.0","npm_package_scripts_deploy":"npm run docs:build && npm run docs:deploy","SELENIUM_JAR_PATH":"/usr/share/java/selenium-server.jar","npm_package_repository_branch":"main","INIT_CWD":"/home/runner/work/my-demo-markdown/my-demo-markdown","GITHUB_STEP_SUMMARY":"/home/runner/work/_temp/_runner_file_commands/step_summary_620f3dd4-293a-49bc-9711-07c3598350c4","ANDROID_NDK_HOME":"/usr/local/lib/android/sdk/ndk/25.1.8937393","npm_package_dependencies_react":"^18.2.0","UMI_PRESETS":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/@umijs/preset-dumi/lib/index.js","NODE_ENV":"production","UMI_VERSION":"3.5.36","UMI_DIR":"/home/runner/work/my-demo-markdown/my-demo-markdown/node_modules/umi"}.PLATFORM_TYPE === 'BASEMENT';
 }
 /**
  * get demo route name
@@ -42480,7 +42564,7 @@ var SizeContext = __webpack_require__("3Nzz");
 // EXTERNAL MODULE: ./node_modules/antd/es/skeleton/index.js + 11 modules
 var skeleton = __webpack_require__("/ezw");
 
-// EXTERNAL MODULE: ./node_modules/antd/es/tabs/index.js + 24 modules
+// EXTERNAL MODULE: ./node_modules/antd/es/tabs/index.js + 23 modules
 var es_tabs = __webpack_require__("ZTPi");
 
 // CONCATENATED MODULE: ./node_modules/antd/es/card/Grid.js
@@ -42488,9 +42572,7 @@ var es_tabs = __webpack_require__("ZTPi");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -42520,9 +42602,7 @@ var Grid_Grid = function Grid(_a) {
 
 var Card_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -42656,9 +42736,7 @@ var Card = /*#__PURE__*/external_window_React_["forwardRef"](function (props, re
 
 var Meta_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -46514,9 +46592,7 @@ var statusUtils = __webpack_require__("ATYA");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -47008,9 +47084,7 @@ module.exports = stackGet;
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -48566,9 +48640,7 @@ var locale = __webpack_require__("ul5b");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -48799,9 +48871,7 @@ var destroyFns = [];
 
 var confirm_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -49318,9 +49388,7 @@ var omit = __webpack_require__("bT9E");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -49452,9 +49520,7 @@ var DisabledContext = __webpack_require__("caoh");
 
 var Checkbox_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -50345,9 +50411,7 @@ function utils_hasPrefixSuffix(props) {
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -50588,9 +50652,7 @@ var wave = __webpack_require__("g0mS");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -50627,9 +50689,7 @@ var CheckableTag_CheckableTag = function CheckableTag(_a) {
 
 var tag_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -51133,9 +51193,7 @@ module.exports = getAllKeys;
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -60517,9 +60575,7 @@ var form_context = __webpack_require__("ihLV");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -60692,9 +60748,7 @@ var RadioGroup = /*#__PURE__*/external_window_React_["forwardRef"](function (pro
 
 var radioButton_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -61004,9 +61058,7 @@ function convertDirectoryKeysToNodes(treeData, keys) {
 
 var DirectoryTree_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -61897,9 +61949,7 @@ function useLazyKVMap(data, childrenColumnName, getRowKey) {
 
 var usePagination_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -63737,14 +63787,12 @@ api.useNotification = createUseNotification(notification_getNotificationInstance
 var notification_getInstance = function getInstance(cacheKey) {
   return __awaiter(void 0, void 0, void 0, /*#__PURE__*/Object(regeneratorRuntime["a" /* default */])().mark(function _callee() {
     return Object(regeneratorRuntime["a" /* default */])().wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            return _context.abrupt("return",  false ? undefined : null);
-          case 1:
-          case "end":
-            return _context.stop();
-        }
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          return _context.abrupt("return",  false ? undefined : null);
+        case 1:
+        case "end":
+          return _context.stop();
       }
     }, _callee);
   }));
@@ -65204,9 +65252,7 @@ var Input = __webpack_require__("mh/l");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -66349,9 +66395,7 @@ var Compact = __webpack_require__("+f9I");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -66616,9 +66660,7 @@ var wave = __webpack_require__("g0mS");
 
 var __rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
@@ -66728,9 +66770,7 @@ var LoadingIcon_LoadingIcon = function LoadingIcon(_ref) {
 
 var button_rest = undefined && undefined.__rest || function (s, e) {
   var t = {};
-  for (var p in s) {
-    if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  }
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
   if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
     if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
   }
