@@ -811,3 +811,9 @@ location / {
   }
 };
 ```
+
+## 53. antd select 6000 条数据卡顿 滚动不下去
+
+- 太多数据的 key 相同导致的
+- 如果还需要 value 可以这样写 将唯一值放在 Key 那里
+- {label:xxx,value:xxx,key:xxx}
