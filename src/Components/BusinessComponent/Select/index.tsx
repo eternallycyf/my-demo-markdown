@@ -1,7 +1,6 @@
 import React, { useState, FC } from 'react';
 import { Select, Input, Button, Tag, Form } from 'antd';
 import styles from './index.less';
-import { style } from 'd3';
 const { Option } = Select;
 
 interface Iprops {
