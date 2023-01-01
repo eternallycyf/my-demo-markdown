@@ -92,25 +92,32 @@ export default {
 
 ## DebounceSelect
 
+- DebounceSelect
+
 ```tsx | pure
-import { Select, Spin } from 'antd';
-import type { SelectProps } from 'antd/es/select';
-import debounce from 'lodash/debounce';
-import React, { useMemo, useRef, useState } from 'react';
+import { Select, Spin, SelectProps } from 'antd';
+import { debounce } from 'lodash';
+import React, { useMemo, useState, useRef } from 'react';
 
 export interface DebounceSelectProps<ValueType = any>
   extends Omit<SelectProps<ValueType | ValueType[]>, 'options' | 'children'> {
   fetchOptions: (search: string) => Promise<ValueType[]>;
   debounceTimeout?: number;
+  setOptions: (options: ValueType[]) => void;
 }
 
-function DebounceSelect<
-  ValueType extends { key?: string; label: React.ReactNode; value: string | number } = any,
+function DebounceSelectOrigin<
+  ValueType extends {
+    key?: string;
+    label: React.ReactNode;
+    value: string | number;
+  } = any
 >({
   fetchOptions,
   debounceTimeout = 800,
   setOptions,
-  ...props }: DebounceSelectProps<ValueType>) {
+  ...props
+}: DebounceSelectProps<ValueType>) {
   const [fetching, setFetching] = useState(false);
   const fetchRef = useRef(0);
 
@@ -118,6 +125,7 @@ function DebounceSelect<
     const loadOptions = (value: string) => {
       fetchRef.current += 1;
       const fetchId = fetchRef.current;
+
       setOptions([]);
       setFetching(true);
 
@@ -126,7 +134,6 @@ function DebounceSelect<
           // for fetch callback order
           return;
         }
-
         setOptions(newOptions);
         setFetching(false);
       });
@@ -138,41 +145,179 @@ function DebounceSelect<
   return (
     <Select
       labelInValue
-      filterOption={false}
+      allowClear
       showSearch
+      filterOption={false}
       onSearch={debounceFetcher}
       notFoundContent={fetching ? <Spin size="small" /> : null}
       {...props}
     />
   );
 }
+
+export default DebounceSelectOrigin;
+```
+
+- index.tsx
+
+```tsx | pure
+import { request } from 'umi';
+import projectConfig from '@/config/projectConfig';
+import DebounceSelect from './DebounceSelectct';
+import Select from 'antd';
+import React, { useState, useEffect } from 'react';
+const { apiPrefix } = projectConfig;
+
+interface Iprops {
+  placeholder?: any;
+  fetchConfig?: {
+    method?: 'get' | 'post';
+    dictConfig?: { label: string; value: string; key?: string };
+    params?: any;
+    data?: string;
+    url?: string;
+    searchKey?: string;
+    dataPath?: string;
+    renderItem?: (
+      data: any,
+    ) => { label: string; value: string | number; key?: string | number };
+    firstInit?: boolean;
+    openDebounceSearch?: boolean;
+    dict?: any;
+  };
+  [props: string]: any;
+}
+
+export function baseFetchFn({
+  method = 'get',
+  params = {},
+  data = {},
+  url = '',
+  searchKey = 'kw',
+  searchValue = '',
+}): Promise<any> {
+  const methodType = method.toLocaleLowerCase() == 'get' ? 'get' : 'post';
+  const paramsObj =
+    methodType == 'get'
+      ? { params: { ...params, [searchKey]: searchValue } }
+      : { data: { ...data, [searchKey]: searchValue } };
+  return request[methodType](`${url}`, {
+    ...paramsObj,
+  });
+}
+
+const DebounceSelect: React.FC<Iprops> = props => {
+  const { placeholder = '请选择', fetchConfig = {}, ...restProps } = props;
+  const [options, setOptions] = useState<any[]>([]);
+  let newFetchConfig = {
+    method: fetchConfig?.method || 'get',
+    dictConfig: fetchConfig?.dictConfig
+      ? fetchConfig.dictConfig
+      : { label: 'label', value: 'value', key: 'key' },
+    params: fetchConfig?.params || {},
+    data: fetchConfig?.data || {},
+    url: fetchConfig?.url || '',
+    searchKey: fetchConfig?.searchKey || 'kw',
+    dataPath: fetchConfig?.dataPath || 'data',
+    renderItem: fetchConfig?.renderItem || undefined,
+    firstInit: fetchConfig?.firstInit || true,
+    openDebounceSearch: fetchConfig?.openDebounceSearch || false,
+    dict: fetchConfig?.dict || false,
+  };
+
+  const fetchOptions = async (searchValue: string = '') => {
+    const res = await baseFetchFn({ ...newFetchConfig, searchValue });
+    const data = res[newFetchConfig.dataPath];
+    if (newFetchConfig?.renderItem) {
+      return newFetchConfig.renderItem(data);
+    }
+    return data.map((item: any) => ({
+      label: item[newFetchConfig.dictConfig?.label],
+      value: item[newFetchConfig.dictConfig?.value],
+      key:
+        item[newFetchConfig.dictConfig?.key!] ||
+        item[newFetchConfig.dictConfig?.value],
+    }));
+  };
+
+  const handleInitPage = async () => {
+    if (newFetchConfig?.dict) return false;
+    if (newFetchConfig?.firstInit) {
+      const options = await fetchOptions('');
+      setOptions(options);
+    }
+  };
+
+  useEffect(() => {
+    handleInitPage();
+  });
+
+  if (!newFetchConfig.openDebounceSearch) {
+    return (
+      <Select
+        labelInValue
+        allowClear
+        showSearch
+        optionFilterProp="children"
+        filterOption={(input: any, option: any) =>
+          (option?.label ?? '').toLowerCase().indexOf(input.toLowerCase()) >= 0
+        }
+        options={newFetchConfig.dict == false ? options : newFetchConfig.dict}
+        {...props}
+      />
+    );
+  }
+
+  return (
+    <DebounceSelect
+      options={options}
+      fetchOptions={fetchOptions}
+      setOptions={setOptions}
+      placeholder={placeholder}
+      {...restProps}
+    />
+  );
+};
 ```
 
 - use
 
 ```tsx | pure
-type ILableInValue = {
-  label: string;
-  value: string;
-};
-async function fetchUserList(kw: string): Promise<ILableInValue> {
-  const { data } = await getList({ kw });
-  return data.map((item: any) => ({
-    label: item.name,
-    value: item.id,
-  }));
-}
-
-const [options, setOptions] = useState<any[]>([]);
 <Form.Item>
   <DebounceSelect
-    placeholder="请输入"
-    labelInValue
-    allowClear
-    options={options}
-    fetchOptions={fetchUserList}
-    onChange={}
-    setOptions={setOptions}
+    fetchConfig={{
+      dictConfig: { label: 'itemComment', value: 'subEntry' },
+      url: `${baseUrl}/ims/dict/11111`,
+      dataPath: 'data',
+      method: 'get',
+    }}
+    placeholder="请选择"
   />
-</Form.Item>;
+  // <DebounceSelect
+  //   fetchConfig={{
+  //     dictConfig: { label: 'itemComment', value: 'subEntry' },
+  //     url: `${baseUrl}/ims/getBranchList`,
+  //     dataPath: 'data',
+  //     searchKey: 'search',
+  //     method: 'get',
+  //     renderItem: data => {
+  //       return data.map(item => ({
+  //         label: `${item.branchCode} - ${item.branchName}`,
+  //         value: item.branchCode,
+  //       }));
+  //     },
+  //   }}
+  //   placeholder="请选择"
+  // />
+
+  // <DebounceSelect
+  //   fetchConfig={{
+  //     dict: [
+  //       { label:'zhangsan', value:1 },
+  //       { label:'ls', value:2}
+  //     ]
+  //   }}
+  //   placeholder="请选择"
+  // />
+</Form.Item>
 ```

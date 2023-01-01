@@ -1,9 +1,7 @@
 import { request } from 'umi';
-import projectConfig from '@/config/projectConfig';
 import DebounceSelect from './DebounceSelectct';
 import Select from 'antd';
 import React, { useState, useEffect } from 'react';
-const { apiPrefix } = projectConfig;
 
 interface Iprops {
   placeholder?: any;
@@ -64,7 +62,7 @@ const DebounceSelect: React.FC<Iprops> = props => {
 
   const fetchOptions = async (searchValue: string = '') => {
     const res = await baseFetchFn({ ...newFetchConfig, searchValue });
-    const data = res[newFetchConfig['dataPath']];
+    const data = res[newFetchConfig.dataPath];
     if (newFetchConfig?.renderItem) {
       return newFetchConfig.renderItem(data);
     }
