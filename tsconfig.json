@@ -9,6 +9,7 @@
     "sourceMap": true,
     "baseUrl": "./",
     "strict": true,
+    "typeRoots": ["./node_modules/@types/", "./types"],
     "paths": {
       "@/*": ["src/*"],
       "@@/*": ["src/.umi/*"]
