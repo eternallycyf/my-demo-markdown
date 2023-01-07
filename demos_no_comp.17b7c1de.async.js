@@ -1,7 +1,10 @@
 (window.webpackJsonp=window.webpackJsonp||[]).push([[159,4],{"/wSQ":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 module.exports = {"card":"card___1XVQQ","face":"face___1UgHF","back":"back___gSvmS"};
 
-//# sourceURL=webpack:///./src/Components/JS/Css/Card/index.less?`)},"3aFa":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+//# sourceURL=webpack:///./src/Components/JS/Css/Card/index.less?`)},"0hwP":function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+module.exports = {"container":"container___290yt","active":"active___1ijb3","item":"item___2vnml"};
+
+//# sourceURL=webpack:///./src/Components/JS/Css/Swiper/index.less?`)},"3aFa":function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd_es_card_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("IzEo");
 /* harmony import */ var antd_es_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("bx4M");
 /* harmony import */ var antd_es_button_style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("+L6B");
@@ -1131,7 +1134,87 @@ const TransferDemo = () => {
 
 /* harmony default export */ __webpack_exports__["default"] = (TransferDemo);
 
-//# sourceURL=webpack:///./src/Components/BusinessComponent/TransferForm/Hook.tsx?`)},aJyg:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
+//# sourceURL=webpack:///./src/Components/BusinessComponent/TransferForm/Hook.tsx?`)},Zyzu:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _index_less_modules__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("0hwP");
+/* harmony import */ var _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_index_less_modules__WEBPACK_IMPORTED_MODULE_1__);
+
+
+
+const handleInitPage = slider => {
+  let isDown = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  slider.addEventListener('mousedown', e => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+    slider.classList.remove('active');
+  });
+  slider.addEventListener('mousemove', e => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3; //scroll-fast
+
+    slider.scrollLeft = scrollLeft - walk;
+  });
+};
+
+const Swiper = () => {
+  const container = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    handleInitPage(container.current);
+  }, []);
+  const childrenRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(node => {
+    if (node != null) {
+      const OPTIONS = {
+        root: null,
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 0
+      };
+      const observer = new IntersectionObserver((entries, observer) => {
+        console.log(entries);
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            observer.unobserve(node);
+          }
+        });
+      }, OPTIONS);
+      observer.observe(node);
+    }
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0__["Fragment"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "current:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    ref: container,
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default.a.container
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default.a.item
+  }, "1"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default.a.item
+  }, "2"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default.a.item
+  }, "3"), Array.from({
+    length: 3
+  }).map((_, i) => i).map((item, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    "data-key": item,
+    key: item,
+    className: _index_less_modules__WEBPACK_IMPORTED_MODULE_1___default.a.item,
+    ref: childrenRef
+  }, item))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Swiper);
+
+//# sourceURL=webpack:///./src/Components/JS/Css/Swiper/index.tsx?`)},aJyg:function(module,__webpack_exports__,__webpack_require__){"use strict";eval(`
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/defineProperty.js
 var defineProperty = __webpack_require__("rePB");
 

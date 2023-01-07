@@ -1057,6 +1057,10 @@ var index_esm = __webpack_require__("rlch");
 /* harmony default export */ var Carddumi_raw_code = ("import React from 'react';\\nimport styles from './index.less';\\n\\nconst App = () => {\\n  return (\\n    <>\\n      <div className={styles.card}>\\n        <div className={styles.face}>\u6B63\u9762</div>\\n        <p className={styles.back}>\u80CC\u9762</p>\\n      </div>\\n    </>\\n  );\\n};\\n\\nexport default App;");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/JS/Css/Card/index.less?dumi-raw-code
 /* harmony default export */ var Css_Carddumi_raw_code = (".card {\\n  perspective: 500px;\\n}\\n\\n.face {\\n  transition: 0.5s;\\n\\n  backface-visibility: hidden;\\n}\\n\\n.card:hover .face {\\n  transform: rotateY(-180deg);\\n}\\n\\n.back {\\n  transition: 0.5s;\\n  transform: rotateY(180deg);\\n\\n  backface-visibility: hidden;\\n}\\n\\n.card:hover .back {\\n  transform: rotateY(0deg);\\n}");
+// CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/JS/Css/Swiper/index.tsx?dumi-raw-code
+/* harmony default export */ var Swiperdumi_raw_code = ("import React, {\\n  Fragment,\\n  useCallback,\\n  useEffect,\\n  useRef,\\n  useState,\\n} from 'react';\\nimport styles from './index.less';\\n\\nconst handleInitPage = (slider: HTMLDivElement) => {\\n  let isDown = false;\\n  let startX = 0;\\n  let scrollLeft = 0;\\n  slider.addEventListener('mousedown', (e: MouseEvent) => {\\n    isDown = true;\\n    slider.classList.add('active');\\n    startX = e.pageX - slider.offsetLeft;\\n    scrollLeft = slider.scrollLeft;\\n  });\\n  slider.addEventListener('mouseleave', () => {\\n    isDown = false;\\n    slider.classList.remove('active');\\n  });\\n  slider.addEventListener('mouseup', () => {\\n    isDown = false;\\n    slider.classList.remove('active');\\n  });\\n  slider.addEventListener('mousemove', (e: MouseEvent) => {\\n    if (!isDown) return;\\n    e.preventDefault();\\n    const x = e.pageX - slider.offsetLeft;\\n    const walk = (x - startX) * 3; //scroll-fast\\n    slider.scrollLeft = scrollLeft - walk;\\n  });\\n};\\n\\nconst Swiper = () => {\\n  const container = useRef<HTMLDivElement>(null!);\\n\\n  useEffect(() => {\\n    handleInitPage(container.current);\\n  }, []);\\n\\n  const childrenRef = useCallback((node: HTMLDivElement) => {\\n    if (node != null) {\\n      const OPTIONS = {\\n        root: null,\\n        rootMargin: '0px 0px 0px 0px',\\n        threshold: 0,\\n      };\\n      const observer = new IntersectionObserver((entries, observer) => {\\n        console.log(entries);\\n        entries.forEach(entry => {\\n          if (entry.isIntersecting) {\\n            observer.unobserve(node);\\n          }\\n        });\\n      }, OPTIONS);\\n      observer.observe(node);\\n    }\\n  }, []);\\n\\n  return (\\n    <Fragment>\\n      <h1>current:</h1>\\n      <div ref={container} className={styles.container}>\\n        <div className={styles.item}>1</div>\\n        <div className={styles.item}>2</div>\\n        <div className={styles.item}>3</div>\\n        {Array.from({ length: 3 })\\n          .map((_, i) => i)\\n          .map((item, i) => (\\n            <div\\n              data-key={item}\\n              key={item}\\n              className={styles.item}\\n              ref={childrenRef}\\n            >\\n              {item}\\n            </div>\\n          ))}\\n      </div>\\n    </Fragment>\\n  );\\n};\\n\\nexport default Swiper;");
+// CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/JS/Css/Swiper/index.less?dumi-raw-code
+/* harmony default export */ var Css_Swiperdumi_raw_code = (".container {\\n  display: flex;\\n  overflow-x: scroll;\\n  // width: 70%;\\n  width: 100%;\\n  height: 300px;\\n  // \u5438\u9644\u6548\u679C \u6A2A\u5411\u6EDA\u52A8 \u5F3A\u5236\u5438\u9644 \u6CA1\u6709\u4E2D\u95F4\u72B6\u6001\\n  // scroll-snap-type: y proximity;\\n\\n  scroll-snap-type: x mandatory;\\n  scroll-behavior: smooth;\\n}\\n\\n.container::-webkit-scrollbar {\\n  width: 0;\\n}\\n\\n.active {\\n  scroll-snap-type: none;\\n}\\n\\n.item {\\n  display: flex;\\n  align-items: center;\\n  flex-shrink: 0;\\n  justify-content: center;\\n  width: 100%;\\n  height: 100%;\\n  font-size: 3em;\\n  // \u5438\u9644\u7684\u5BF9\u9F50\u65B9\u5411 start end center\\n\\n  scroll-snap-align: start;\\n  // \u6C38\u8FDC\u8981\u505C\u5728\u4E0B\u4E00\u4E2A\u5143\u7D20\u4E0A\\n  scroll-snap-stop: always;\\n}\\n\\n.item:nth-child(1) {\\n  background-color: #f00;\\n}\\n\\n.item:nth-child(2) {\\n  background-color: #0f0;\\n}\\n\\n.item:nth-child(3) {\\n  background-color: #00f;\\n}");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/Npm/DatePicker/index.tsx?dumi-raw-code
 /* harmony default export */ var DatePickerdumi_raw_code = ("import React from \\"react\\";\\nimport Picker1 from \\"./Picker1\\";\\nimport Picker2 from \\"./Picker2\\";\\nimport { Card } from \\"antd\\";\\nexport default function IndexPage() {\\n  return (\\n    <>\\n      <Card style={{ margin: 24 }}>\\n        <Picker1 />\\n        <Picker2 />\\n      </Card>\\n    </>\\n  );\\n}");
 // CONCATENATED MODULE: ./node_modules/@umijs/preset-dumi/lib/loader/rawCode.js!./src/Components/Npm/DatePicker/Picker1/index.tsx?dumi-raw-code
@@ -1095,6 +1099,8 @@ var index_esm = __webpack_require__("rlch");
 /* harmony default export */ var Basedumi_raw_code = ("\\nconst Base: React.FC = () => {\\n  return (\\n    <>\\n\\n      <h2>1. svg\u5BB9\u5668</h2>\\n      <svg\\n        width=\\"20px\\"\\n        height=\\"20px\\"\\n        // min-x min-y width height\\n        viewBox=\\"0 0 100% 100%\\"\\n        xmlns=\\"http://www.w3.org/2000/svg\\"\\n      />\\n      <h2>2. \u5171\u6709\u7684API</h2>\\n      <svg\\n        width=\\"100px\\"\\n        height=\\"100px\\"\\n        // min-x min-y width height\\n        viewBox=\\"0 0 100% 100%\\"\\n        xmlns=\\"http://www.w3.org/2000/svg\\"\\n      >\\n        <rect\\n          x=\\"0\\"\\n          y=\\"0\\"\\n          width=\\"100\\"\\n          height=\\"100\\"\\n          fill=\\"red\\"\\n          stroke=\\"blue\\"\\n          strokeDasharray=\\"10\\"\\n        />\\n      </svg>\\n      <h2>4. demo</h2>\\n      <svg\\n        width=\\"1000px\\"\\n        height=\\"250px\\"\\n        // min-x min-y width height\\n        viewBox=\\"0 0 100% 100%\\"\\n        xmlns=\\"http://www.w3.org/2000/svg\\"\\n      >\\n        <rect\\n          x=\\"0\\"\\n          y=\\"0\\"\\n          width=\\"100\\"\\n          height=\\"200\\"\\n          // \u5706\u89D2\\n          rx=\\"15\\"\\n          ry=\\"15\\"\\n          fill=\\"lavender\\"\\n        />\\n        <circle\\n          // \u5706\u5FC3\u6A2A\u5750\u6807\\n          cx=\\"220\\"\\n          // \u5706\u5FC3\u7EB5\u5750\u6807\\n          cy=\\"100\\"\\n          // \u534A\u5F84\\n          r=\\"100\\"\\n          fill=\\"red\\"\\n        />\\n        <ellipse\\n          //\u5706\u5FC3\u6A2A\u5750\u6807\\n          cx=\\"500\\"\\n          //\u5706\u5FC3\u7EB5\u5750\u6807\\n          cy=\\"100\\"\\n          //\u6A2A\u5411\u534A\u5F84\\n          rx=\\"150\\"\\n          //\u7EB5\u5411\u534A\u5F84\\n          ry=\\"100\\"\\n          fill=\\"#f06\\"\\n        />\\n        <line\\n          // \u8D77\u70B9\u6A2A\u5750\u6807\\n          x1=\\"400\\"\\n          // \u8D77\u70B9\u7EB5\u5750\u6807\\n          y1=\\"100\\"\\n          // \u7EC8\u70B9\u6A2A\u5750\u6807\\n          x2=\\"100\\"\\n          // \u7EC8\u70B9\u7EB5\u5750\u6807\\n          y2=\\"0\\"\\n          stroke=\\"black\\"\\n        />\\n        <polygon\\n          // x1,y1,x2,y2,x3,y3 ...\\n          points=\\"200,10,250,190,160,210\\"\\n          stroke=\\"blue\\"\\n        />\\n        <polyline\\n          // x1,y1,x2,y2,x3,y3 ...\\n          points=\\"200,10,250,190,160,210\\"\\n          stroke=\\"green\\"\\n        />\\n      </svg>\\n    </>\\n  );\\n};\\n\\nexport default Base;");
 // CONCATENATED MODULE: ./src/.umi-production/dumi/demos/index.ts
 // @ts-nocheck
+
+
 
 
 
@@ -2391,6 +2397,29 @@ var index_esm = __webpack_require__("rlch");
       "identifier": "css-card"
     }
   },
+  'css-swiper': {
+    component: Object(index_esm["c" /* dynamic */])({
+      loader: async () => (await Promise.all(/* import() | demos_no_comp */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(3), __webpack_require__.e(159)]).then(__webpack_require__.bind(null, "Zyzu"))).default,
+      loading: () => null
+    }),
+    previewerProps: {
+      "sources": {
+        "_": {
+          "tsx": Swiperdumi_raw_code
+        },
+        "index.less": {
+          "import": "./index.less",
+          "content": Css_Swiperdumi_raw_code
+        }
+      },
+      "dependencies": {
+        "react": {
+          "version": "18.2.0"
+        }
+      },
+      "identifier": "css-swiper"
+    }
+  },
   'npm-datepicker': {
     component: Object(index_esm["c" /* dynamic */])({
       loader: async () => (await Promise.all(/* import() | demos_rekciPetaD */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(4), __webpack_require__.e(161)]).then(__webpack_require__.bind(null, "dgf+"))).default,
@@ -2838,7 +2867,7 @@ var layout_default = /*#__PURE__*/__webpack_require__.n(layout);
   apis: apis
 })));
 
-//# sourceURL=webpack:///./src/.umi-production/dumi/layout.tsx_+_97_modules?`)},fVI1:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
+//# sourceURL=webpack:///./src/.umi-production/dumi/layout.tsx_+_99_modules?`)},fVI1:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
 //# sourceURL=webpack:///./node_modules/dumi-theme-default/es/components/Navbar.less?`)},hJnp:function(module,exports,__webpack_require__){eval(`// extracted by mini-css-extract-plugin
 
