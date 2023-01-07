@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  overflow-x: scroll;
+  // width: 70%;
+  width: 100%;
+  height: 300px;
+  // 吸附效果 横向滚动 强制吸附 没有中间状态
+  // scroll-snap-type: y proximity;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.active {
+  scroll-snap-type: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 3em;
+  // 吸附的对齐方向 start end center
+
+  scroll-snap-align: start;
+  // 永远要停在下一个元素上
+  scroll-snap-stop: always;
+}
+
+.item:nth-child(1) {
+  background-color: #f00;
+}
+
+.item:nth-child(2) {
+  background-color: #0f0;
+}
+
+.item:nth-child(3) {
+  background-color: #00f;
+}
