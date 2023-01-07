@@ -817,3 +817,8 @@ location / {
 - 太多数据的 key 相同导致的
 - 如果还需要 value 可以这样写 将唯一值放在 Key 那里
 - {label:xxx,value:xxx,key:xxx}
+
+
+## put delete 请求 axios params 无效
+- 需要自己拼接 
+- xxx?aaa=222

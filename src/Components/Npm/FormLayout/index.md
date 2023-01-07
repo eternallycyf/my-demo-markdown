@@ -1,8 +1,8 @@
 ---
 order: 1
 group:
-  path: /antd
-  title: antd
+  path: /npm
+  title: npm package
   order: 1
 ---
 

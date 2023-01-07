@@ -8,6 +8,12 @@ group:
 
 ## MoneyFilter 金额格式化
 
+- Number('100000000.1122123123').toLocaleString()
+- '100,000,000.112'
+- https://juejin.cn/post/6844903588045520903
+- date.toLocaleString('zh');
+- 2018-4-4 15:08:38
+
 <code src="./index.tsx" title='MoneyFilter' desc='金额分隔' inline='true'></code>
 
 ```ts

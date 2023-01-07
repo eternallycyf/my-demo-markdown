@@ -9,7 +9,41 @@ nav:
 
 - 单例模式就是保证一个类仅有一个实例，并提供一个访问它的全局访问点（静态方法）。
 
-## 代码实现
+## js 使用 proxy 实现
+
+```js
+export function singleton(className) {
+  let ins;
+  return new Proxy(className, {
+    construct(target, args) {
+      if (!ins) {
+        ins = new target(...args);
+      }
+      return ins;
+    },
+  });
+}
+class Video {
+  constructor() {
+    this.name = 'video';
+  }
+}
+const newVideo = singleton(Video);
+export { newVideo as Video };
+```
+
+```js
+import { Video } from './singleton';
+const v1 = new Video();
+const v2 = new Video();
+console.log(v1 === v2); // true
+Video.prototype.play = function() {
+  console.log('play');
+};
+v1.play();
+```
+
+## ts 代码实现
 
 ### 饿汉式
 
