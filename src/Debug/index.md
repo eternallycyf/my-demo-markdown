@@ -818,7 +818,11 @@ location / {
 - 如果还需要 value 可以这样写 将唯一值放在 Key 那里
 - {label:xxx,value:xxx,key:xxx}
 
-
 ## put delete 请求 axios params 无效
-- 需要自己拼接 
+
+- 需要自己拼接
 - xxx?aaa=222
+
+## antd-table 抖动 || 当屏幕分辨率缩小的时候无限拉伸
+
+- columns width 可能是 NaN 了
