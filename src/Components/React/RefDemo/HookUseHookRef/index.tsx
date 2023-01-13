@@ -12,7 +12,7 @@ type ChildrenHandle = {
 };
 
 interface ChildrenProps {
-  ModalRef: React.RefObject<Partial<HTMLDivElement & ChildrenHandle>>;
+  ModalRef: React.RefObject<ChildrenHandle>;
 }
 
 const Child: React.ForwardRefRenderFunction<ChildrenHandle, ChildrenProps> = (
