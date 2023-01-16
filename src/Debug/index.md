@@ -818,11 +818,21 @@ location / {
 - 如果还需要 value 可以这样写 将唯一值放在 Key 那里
 - {label:xxx,value:xxx,key:xxx}
 
-## put delete 请求 axios params 无效
+## 54.put delete 请求 axios params 无效
 
 - 需要自己拼接
 - xxx?aaa=222
 
-## antd-table 抖动 || 当屏幕分辨率缩小的时候无限拉伸
+## 55.antd-table 抖动 || 当屏幕分辨率缩小的时候无限拉伸
 
 - columns width 可能是 NaN 了
+
+## 56. Array.filter(Boolean) 去空值
+
+- b = a.filter(Boolean);
+- b = a.filter(function (x) { return Boolean(x); });
+
+## 57. 图片保持横纵比例;
+
+- object-fit: contain;
+- background-size: contain;
