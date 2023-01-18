@@ -877,3 +877,8 @@ useEffect(() => {
     { 'http-equiv': 'Cache', content: 'no-cache' },
   ],
 ```
+
+## 59. github workflow 必须给与权限
+
+- 仓库 settings Action General
+- https://github.com/eternallycyf/umi4-tab/settings/actions
