@@ -836,3 +836,44 @@ location / {
 
 - object-fit: contain;
 - background-size: contain;
+
+## 58.页签切换后不触发生命周期
+
+```js
+// hooks
+useEffect(() => {
+
+}, [window.location.pathname])
+
+// class
+// 1.通过 componentDidUpdate 对比
+// 2. 动态设置 key
+<Route path="/page/:pageid" render={(props) => (
+  <Page key={props.match.params.pageid} {...props} />)
+} />
+// 3.动态路由参数
+// https://umijs.org/docs/guides/routes#%E8%B7%AF%E7%94%B1%E5%8A%A8%E6%80%81%E5%8F%82%E6%95%B0
+// 4.通过 history 监听
+  componentDidMount() {
+    history.listen(({ location }) => {
+      console.log(location);
+    })
+  }
+// 5.写一个子hoooks组件 专门监听
+```
+
+## 58 github pages 一直加载失败
+
+- react_devtools_backend.js:4012 ChunkLoadError: Loading chunk 983 failed.
+- 原因是 html 文件缓存问题
+- hash 只对 js css 生效
+
+```js
+  metas: [
+    {
+      'http-equiv': 'Content-Security-Policy',content: 'upgrade-insecure-requests',
+    },
+    { 'http-equiv': 'Cache-control', content: 'no-cache' },
+    { 'http-equiv': 'Cache', content: 'no-cache' },
+  ],
+```
