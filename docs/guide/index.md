@@ -6,17 +6,51 @@ nav:
   order: 1
 ---
 
-## 1. 2022-plan
+## 1. 2023-plan
 
-- 文档尚在编写中的统一用 tag 标签表示
-  - 例如: <Badge>tailwindCSS</Badge>
-- alread done
-  - ~~ ~~
-- `feature`
-  - <Badge>eletron</Badge>
-  - <Badge>webGL</Badge>
-  - <Badge>threejs</Badge>
-  - <Badge>rxjs</Badge>
+- DO
+
+  - 坚持 react 最佳实践
+    - 组件库
+      - [lordaeron](https://github.com/eternallycyf/lordaeron)
+    - PC
+      - [完成自己封装的 antdPro 搭建](https://github.com/eternallycyf/Antd-CustomComponent)
+    - H5
+      - https://github.com/eternallycyf/umi-h5-template
+    - remix
+    - taro
+      - https://github.com/eternallycyf/taro-dva-template
+    - [qiankun](/article/9.react/qiankun)
+    - ...
+  - 加入更多的自动化测试
+  - 工程化
+
+    - [docker](http://wangxince.site/my-demo-markdown/article/6.%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/docker)
+    - [k8s](http://wangxince.site/my-demo-markdown/article/6.%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/k8s)
+    - https://github.com/eternallycyf/umi-gitlab-cicd
+    - [CICD](http://wangxince.site/my-demo-markdown/article/6.%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/cicd)
+    - [jenkins](http://wangxince.site/my-demo-markdown/article/6.%E8%BF%90%E7%BB%B4%E7%9B%B8%E5%85%B3/cicd)
+    - ...
+
+- Learn
+
+  - cssjs mdn 文档每一行都看一遍
+  - [tailwindcss](https://tailwindcss.com/)
+  - threejs d3 webgl
+  - nodejs nextjs
+  - [react18](https://beta.reactjs.org/)
+  - [Type-challenges](https://github.com/type-challenges/type-challenges)
+  - rxjs(https://rxjs.dev/)
+
+- 源码
+  - react
+    - hooks
+      - [useState](https://github.com/eternallycyf/React-hook-useState)
+    - fiber
+      - [时间切片](http://wangxince.site/my-demo-markdown/project/websocket)
+    - suspense
+    - concurrent mode
+    - ...
 
 ## 2. 需要掌握的基本规范
 
@@ -74,7 +108,7 @@ nav:
   - https://github.com/eternallycyf/pluviophobe-react
   - https://github.com/eternallycyf/pluviophobe-react-document
 - 利用 docker docker-compose k8s 部署前端环境 熟悉常用 linux 命令
-- [利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd](/article/8.实践操作/搭建一个gitlab)
+- [利用 docker jenkins 镜像搭建一个 gitlab 并配置触发器流水线 cicd](https://github.com/eternallycyf/umi-gitlab-cicd)
 - 阿里云配置 K8s 集群 熟悉相关基本命令
 - [reactNative 搭建基本项目环境并安卓打包](https://github.com/eternallycyf/story-reader-application)
 - [自己写一个脚手架](https://github.com/eternallycyf/lrxc-cli)
@@ -124,6 +158,7 @@ nav:
 - [react-charts(antv)](/article/9.react/react-charts)
 - [react-map](/article/9.react/react-map)
 - [zustand](/article/9.react/zustand)
+- [qiankun](/article/9.react/qiankun)
 
 ## 10. vue 及周边
 
@@ -215,7 +250,7 @@ nav:
 - [canvas](/article2/14.可视化/canvas)
 - [svg](/article2/14.可视化/svg)
 - [d3](/article2/14.可视化/d3)
-- <Badge>three.js</Badge>
+- [threejs](http://wangxince.site/my-demo-markdown/visualization/threejs)
 
 ## 15. gis
 
@@ -227,9 +262,9 @@ nav:
 
 ## 16. 前端的其他 API
 
-- <Badge>websocket</Badge>
-- <Badge>requestAnimationFrame</Badge>
-- <Badge>resizeobserver</Badge>
+- [websocket](http://wangxince.site/my-demo-markdown/project/websocket)
+- [requestAnimationFrame](http://wangxince.site/my-demo-markdown/components/JS/base#%E6%97%B6%E9%97%B4%E5%88%87%E7%89%87)
+- [resizeobserver](http://wangxince.site/my-demo-markdown/components/my-components/custom-tooltip)
 
 ## [17. 项目难点](/project)
 

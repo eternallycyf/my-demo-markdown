@@ -5,6 +5,8 @@ nav:
   path: /article
 ---
 
+- https://github.com/eternallycyf/umi-gitlab-cicd
+
 # CICD
 
 ## 准备阶段

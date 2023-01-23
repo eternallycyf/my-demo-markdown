@@ -17,6 +17,8 @@ nav:
 - [TypeScript 参数简化实战（进阶知识点 conditional types，中高级必会）](https://juejin.cn/post/6844904057010651143)
 - [有趣的 TypeScript 代码](https://github.com/sl1673495/typescript-codes)
 - [用 ts 实现各种自定义 hook](https://usehooks-ts.com/react-hook/use-boolean)
+- [react-redux 与 TypeScript](https://github.com/piotrwitek/react-redux-typescript-guide)
+- [Type-challenges](https://github.com/type-challenges/type-challenges)
 
 ## 其他文档
 
