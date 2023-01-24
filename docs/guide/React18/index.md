@@ -19,7 +19,7 @@ export default () => (
 );
 ```
 
-## 概念
+## 一、概念
 
 ### 1.How does React know which state to return?
 
@@ -32,7 +32,11 @@ export default () => (
 
 ### 3.[函数式组件与类组件有何不同？](https://overreacted.io/zh-hans/how-are-function-components-different-from-classes/)
 
-## 已发布的 Api
+### 4.自动批处理
+
+- [Automatic batching for fewer renders in React 18](https://github.com/reactwg/react-18/discussions/21)
+
+## 二、旧的 API
 
 ### 1.useRef
 
@@ -96,7 +100,122 @@ const visibleTodos = getFilteredTodos(todos, filter);
 console.timeEnd('filter array');
 ```
 
-## 实验中的
+## 三、新特性
+
+### Suspense
+
+- 基本用法
+
+```tsx | pure
+<Suspense fallback={<Loading />}>
+  <SomeComponent />
+</Suspense>
+```
+
+- 可以嵌套
+
+```tsx | pure
+<Suspense fallback={<Loading />}>
+  <Biography />
+  <Suspense fallback={<Skeleton />}>
+    <Panel>
+      <Albums />
+    </Panel>
+  </Suspense>
+</Suspense>
+```
+
+- loading 期间使用上次的结果
+
+```tsx | pure
+export default function App() {
+  const [query, setQuery] = useState('');
+  const deferredQuery = useDeferredValue(query);
+  return (
+    <>
+      <label>
+        Search albums:
+        <input value={query} onChange={e => setQuery(e.target.value)} />
+      </label>
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <div style={{ opacity: isStale ? 0.5 : 1 }}>
+          <SearchResults query={deferredQuery} />
+        </div>
+      </Suspense>
+    </>
+  );
+}
+```
+
+- 对于嵌套优先级处理 使用 startTransition 标记为非堵塞处理 优先级比它高的先处理
+
+  ```tsx | pure
+  import { Suspense, startTransition, useTransition, useState } from 'react';
+  export default function App() {
+    const [query, setQuery] = useState('');
+    // 可以直接使用 startTransition 也可以使用 useTransition 增加过渡处理
+    const [isPending, startTransition] = useTransition();
+    const handleOnChange = e => {
+      startTransition(() => {
+        setQuery(e.target.value);
+      });
+    };
+
+    return (
+      <>
+        <label>
+          Search albums:
+          <input value={query} onChange={handleOnChange} />
+        </label>
+        <Suspense fallback={<h2>Loading...</h2>}>
+          <div style={{ opacity: isStale ? 0.5 : 1 }}>
+            <SearchResults query={deferredQuery} />
+          </div>
+        </Suspense>
+      </>
+    );
+  }
+  ```
+
+- 错误边界功能
+
+### Lazy
+
+- 当使用 Lazy 进行懒加载时候 必须使用 Suspense 包裹 否则报错
+- import { useState, Suspense, lazy } from 'react';
+- const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
+
+### useSyncExternalStore
+
+### useInsertionEffect
+
+### useTransition
+
+### startTransition
+
+- 在不阻塞 UI 的情况下更新状态。
+- startTransition 与 非常相似 useTransition 但它不提供 isPending 标志来跟踪转换是否正在进行
+
+### useDeferredValue
+
+### useSyncExternalStore
+
+### useId
+
+### useInsertionEffect
+
+### createPortal
+
+- import { flushSync } from 'react-dom';
+- 将一些 dom 渲染到其他区域
+- {createPortal(children, domNode)}
+
+### flushSync(callback)
+
+- import { flushSync } from 'react-dom';
+- 确保了 DOM 立即更新
+
+## 四、实验中的
 
 ### 1.useEffectEvent
 
@@ -189,7 +308,7 @@ useEffect(() => {
 }, [url]);
 ```
 
-## 一些自定义 hook
+## 五、一些自定义 hook
 
 ### 1.useForceUpdate
 
