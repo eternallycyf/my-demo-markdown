@@ -882,3 +882,8 @@ useEffect(() => {
 
 - 仓库 settings Action General
 - https://github.com/eternallycyf/umi4-tab/settings/actions
+
+## 60.tsconfig 关闭隐式报错
+
+- obj[i] = xxx ; // error
+- "suppressImplicitAnyIndexErrors": true
