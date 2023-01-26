@@ -14,7 +14,8 @@ nav:
     - 组件库
       - [lordaeron](https://github.com/eternallycyf/lordaeron)
     - PC
-      - [完成自己封装的 antdPro 搭建](https://github.com/eternallycyf/Antd-CustomComponent)
+      - [antd admin](https://github.com/eternallycyf/vite-react-antd-admin)
+      - [完成自己封装的 antdPro component](https://github.com/eternallycyf/Antd-CustomComponent)
     - H5
       - https://github.com/eternallycyf/umi-h5-template
     - remix | nextjs
