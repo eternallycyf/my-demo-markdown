@@ -40,6 +40,16 @@ export default () => (
 
 ### 1.useRef
 
+- 保持纯函数 最好不要再 render 阶段赋值 保持结果相同
+- 如果很昂贵的消费 可以这样
+
+```tsx | pure
+const playerRef = useRef(null);
+if (playerRef.current === null) {
+  playerRef.current = new VideoPlayer();
+}
+```
+
 - 存储多个
 
   - 使用 map 或数组等方式
@@ -90,15 +100,28 @@ return <div ref={setElement} />;
       - http://wangxince.site/my-demo-markdown/components/react/listen-ref
     - 使用 useSyncExternalStore
 
-### 3.useMemo
+### 3.useLayoutEffect
 
-- 什么时候使用: 比如计算时间过长
+- useLayoutEffect(setup, dependencies?)
+- 在浏览器重新绘制屏幕之前触发
+- 使用场景
+  - 处理闪烁
+  - 处理 Tooltip 等效果 如果区域不够 根据现在的高度 调整到其他地方
+  - 阻止重绘
+
+### 4.useMemo
+
+- 什么时候使用: 比如计算时间过长 切换主题
 
 ```tsx | pure
 console.time('filter array');
 const visibleTodos = getFilteredTodos(todos, filter);
 console.timeEnd('filter array');
 ```
+
+### 5.useImperativeHandle
+
+- useImperativeHandle(ref, createHandle, [deps])
 
 ## 三、新特性
 
@@ -187,9 +210,19 @@ export default function App() {
 
 ### useSyncExternalStore
 
-### useInsertionEffect
+- const snapshot = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot?)
+- 订阅外部数据 window.location.pathname window.navigator.onLine 等
 
 ### useTransition
+
+- - 在不阻塞 UI 的情况下更新状态。
+
+```tsx | pure
+const [isPending, startTransition] = useTransition();
+startTransition(() => {
+  setQuery(e.target.value);
+});
+```
 
 ### startTransition
 
@@ -198,15 +231,49 @@ export default function App() {
 
 ### useDeferredValue
 
-### useSyncExternalStore
+- 推迟更新的部分 生成延迟版的数据
+- const deferredQuery = useDeferredValue(query);
+- 需要 memo
+- 和防抖节流的不同 它没有固定的延迟 如果用户设备好 将立即执行 否则将展示滞后的效果
+- 延迟的重新渲染时可中断的
 
 ### useId
 
+- 生成唯一 ID
+- const id = useId()
+- 可用于 label 与 表单的绑定生成唯一 id 与 key 的关联
+- 只能在顶层 如果要循环生成 封装成子组件
+
 ### useInsertionEffect
+
+- useInsertionEffect(setup, dependencies?)
+- 用于 cssinjs 注入样式
+- 在任何 dom 发生变化前执行
+
+```tsx | pure
+// Inside your CSS-in-JS library
+let isInserted = new Set();
+function useCSS(rule) {
+  useInsertionEffect(() => {
+    // As explained earlier, we don't recommend runtime injection of <style> tags.
+    // But if you have to do it, then it's important to do in useInsertionEffect.
+    if (!isInserted.has(rule)) {
+      isInserted.add(rule);
+      document.head.appendChild(getStyleForRule(rule));
+    }
+  });
+  return rule;
+}
+
+function Button() {
+  const className = useCSS('...');
+  return <div className={className} />;
+}
+```
 
 ### createPortal
 
-- import { flushSync } from 'react-dom';
+- import { createPortal } from 'react-dom';
 - 将一些 dom 渲染到其他区域
 - {createPortal(children, domNode)}
 
@@ -215,27 +282,34 @@ export default function App() {
 - import { flushSync } from 'react-dom';
 - 确保了 DOM 立即更新
 
+### useDebugValue
+
+- 为自定义 hook 添加标签
+- useDebugValue(isOnline ? 'Online' : 'Offline');
+- useDebugValue(date, date => date.toDateString());
+
 ## 四、实验中的
 
 ### 1.useEffectEvent
 
 - 为什么使用它
+- 从 Effect 中读取最新的道具和状态而不对它们做出反应
 
-  - [github-rfcs 地址](https://github.com/reactjs/rfcs/blob/useevent/text/0000-useevent.md#basic-example)
+* [github-rfcs 地址](https://github.com/reactjs/rfcs/blob/useevent/text/0000-useevent.md#basic-example)
 
-  - react 处理函数引用的方式
+* react 处理函数引用的方式
 
-  ```tsx | pure
-    <button onClick={props.onClick}>改标题</button>
-    // 组件的每次渲染都会重新创建一个新的函数 因此函数的引用地址发生了变化
-    // 函数会重新开始执行 倒是子组件重新渲染
-    // 解决办法就是在函数没有改变的时候，重新渲染的时候保持两个函数的引用一致
-    const memoizedCallback = useCallback(()=>{}, [])
-    <Child onClick={memoizedCallback} name="xxx" />
-  ```
+```tsx | pure
+  <button onClick={props.onClick}>改标题</button>
+  // 组件的每次渲染都会重新创建一个新的函数 因此函数的引用地址发生了变化
+  // 函数会重新开始执行 倒是子组件重新渲染
+  // 解决办法就是在函数没有改变的时候，重新渲染的时候保持两个函数的引用一致
+  const memoizedCallback = useCallback(()=>{}, [])
+  <Child onClick={memoizedCallback} name="xxx" />
+```
 
-* 由于闭包产生一个一个问题 在 useCallback 中读取的 state 永远是首次渲染时创建的闭包中的变量
-* 解决方法
+- 由于闭包产生一个一个问题 在 useCallback 中读取的 state 永远是首次渲染时创建的闭包中的变量
+- 解决方法
   - 1.用 ref 追踪最新值
   - 2.deps 数组中增加 counter
     - const memoizedCallback = useCallback(()=>{}, [count])

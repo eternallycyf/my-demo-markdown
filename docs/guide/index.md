@@ -17,7 +17,7 @@ nav:
       - [完成自己封装的 antdPro 搭建](https://github.com/eternallycyf/Antd-CustomComponent)
     - H5
       - https://github.com/eternallycyf/umi-h5-template
-    - remix
+    - remix | nextjs
     - taro
       - https://github.com/eternallycyf/taro-dva-template
     - [qiankun](/article/9.react/qiankun)
@@ -42,12 +42,14 @@ nav:
   - [Type-challenges](https://github.com/type-challenges/type-challenges)
   - rxjs(https://rxjs.dev/)
 
-- 源码
+- 实现源码
   - react
     - hooks
       - [useState](https://github.com/eternallycyf/React-hook-useState)
+      - [redux](https://github.com/eternallycyf/my-redux-react-redux/blob/main/src/component/redux.js)
+      - [react-redux](https://github.com/eternallycyf/my-redux-react-redux)
     - fiber
-      - [时间切片](http://wangxince.site/my-demo-markdown/project/websocket)
+      - [时间切片](http://wangxince.site/my-demo-markdown/components/JS/base#%E6%97%B6%E9%97%B4%E5%88%87%E7%89%87)
     - suspense
     - concurrent mode
     - ...
