@@ -19,7 +19,29 @@ export default () => (
 
 # TypeChallenge
 
-## infer
+## 概念
+
+### [why-does-typescript-use-like-types](https://stackoverflow.com/questions/43712705/why-does-typescript-use-like-types)
+
+- promiseLike 等等
+
+### [unknown 和 any 区别](https://stackoverflow.com/questions/51439843/unknown-vs-any)
+
+- unknown 初始化后的值 不能分配给任何东西 不允许进行操作
+
+## API
+
+### 泛型新增的功能
+
+```ts
+- type Length<T extends { length: number }> = T['length'];
+// 第一个
+- T[0]
+// https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
+type Concat<T extends unknown[], U extends unknown[]> = [...T, ...U];
+```
+
+### infer
 
 - 可以理解为设置一个未知的变量 (一元一次方程)
 - 可以有多个 infer
@@ -43,6 +65,25 @@ type b = unpack<() => void>; // () => void
 type c = unpack<string>; // string
 ```
 
+### class 中的 !:
+
+- class 表示不用初始化赋值 从外界接受 !:
+- Note that the field needs to be initialized in the constructor itself.
+- TypeScript does not analyze methods you invoke from the constructor to detect initializations,
+- because a derived class might override those methods and fail to initialize the members.
+- If you intend to definitely initialize a field through means other than the constructor
+- (for example, maybe an external library is filling in part of your class for you)
+- you can use the definite assignment assertion operator, !:
+
+```ts
+class OKGreeter {
+  // Not initialized, but no error
+  name!: string;
+}
+```
+
+## 其他
+
 ### 绕过 TS 的限制
 
 - 分布条件类型仅在 extends 关键字的前面是类型变量时发生
@@ -59,5 +100,3 @@ type NotEmpty<T> = T extends {}
     : T
   : never;
 ```
-
-## [why-does-typescript-use-like-types](https://stackoverflow.com/questions/43712705/why-does-typescript-use-like-types)
