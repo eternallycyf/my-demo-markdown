@@ -369,3 +369,15 @@ CommonJS 模块在某些特殊规则下被导入
     // CJS fall-back for older versions of Node.js
     "main": "./commonjs/index.cjs"
 ```
+
+## example
+
+## [Equals](https://stackoverflow.com/questions/68961864/how-does-the-equals-work-in-typescript/68963796#68963796)
+
+```ts
+type MyEqual<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y
+  ? 1
+  : 2
+  ? true
+  : false;
+```
