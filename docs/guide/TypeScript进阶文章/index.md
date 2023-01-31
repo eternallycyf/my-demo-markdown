@@ -6,6 +6,8 @@ nav:
   order: 1
 ---
 
+- [我的 TypeScript 深入浅出](http://wangxince.site/TypeScriptAdvance/)
+
 ## TypeScript 进阶文章
 
 - [TypeScript 官方文档](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html)

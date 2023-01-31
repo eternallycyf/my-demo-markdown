@@ -17,6 +17,8 @@ export default () => (
 );
 ```
 
+- - [我的 TypeScript 深入浅出](http://wangxince.site/TypeScriptAdvance/)
+
 # TypeChallenge
 
 ## 概念

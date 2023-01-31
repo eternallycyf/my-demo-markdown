@@ -41,6 +41,7 @@ nav:
   - nodejs nextjs
   - [react18](https://beta.reactjs.org/)
   - [Type-challenges](https://github.com/type-challenges/type-challenges)
+  - [我的 TypeScript 深入浅出](http://wangxince.site/TypeScriptAdvance/)
   - rxjs(https://rxjs.dev/)
 
 - 实现源码
