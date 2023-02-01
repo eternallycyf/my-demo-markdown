@@ -887,3 +887,56 @@ useEffect(() => {
 
 - obj[i] = xxx ; // error
 - "suppressImplicitAnyIndexErrors": true
+
+## 61. antd table 左上角斜线
+
+```ts
+  title: (
+        <div className={styler.headerCell}>
+          <div className={styler.afer}>变更后等级</div>
+          <div className={styler.before}>变更前等级</div>
+        </div>
+      ),
+       width: 220,
+```
+
+```css
+.headerCell {
+  // 画三角形
+  border-top: 43px rgb(250 250 250) solid;
+  /*上边框宽度等于表格第一行行高*/
+  width: 0px;
+  /*让容器宽度为0*/
+  height: 0px;
+  /*让容器高度为0*/
+  border-left: 237px #f8fbff solid;
+  /*左边框宽度等于表格第一行第一格宽度*/
+  position: relative;
+  .afer {
+    position: absolute;
+    top: -36px;
+    left: -70px;
+    width: 60px;
+    color: #666666;
+  }
+  .before {
+    position: absolute;
+    top: -24px;
+    left: -226px;
+    width: 60px;
+    color: #666666;
+  }
+  // 伪元素画分割线
+  &::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 237px;
+    top: -140px;
+    left: -120px;
+    background-color: rgb(239 239 239);
+    display: block;
+    transform: rotate(-80deg);
+  }
+}
+```
