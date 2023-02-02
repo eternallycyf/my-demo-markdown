@@ -892,51 +892,66 @@ useEffect(() => {
 
 ```ts
   title: (
-        <div className={styler.headerCell}>
-          <div className={styler.afer}>变更后等级</div>
-          <div className={styler.before}>变更前等级</div>
-        </div>
-      ),
+      <th className={styles.slashWrap}>
+        <span className={styles.left}>区域</span>
+        <span className={styles.slash}></span>
+        <span className={styles.right}>客户分级</span>
+      </th>
+    ),
        width: 220,
 ```
 
 ```css
-.headerCell {
-  // 画三角形
-  border-top: 43px rgb(250 250 250) solid;
-  /*上边框宽度等于表格第一行行高*/
-  width: 0px;
-  /*让容器宽度为0*/
-  height: 0px;
-  /*让容器高度为0*/
-  border-left: 237px #f8fbff solid;
-  /*左边框宽度等于表格第一行第一格宽度*/
+/* th单元格 */
+.slashWrap {
   position: relative;
-  .afer {
-    position: absolute;
-    top: -36px;
-    left: -70px;
-    width: 60px;
-    color: #666666;
-  }
-  .before {
-    position: absolute;
-    top: -24px;
-    left: -226px;
-    width: 60px;
-    color: #666666;
-  }
-  // 伪元素画分割线
-  &::after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    height: 237px;
-    top: -140px;
-    left: -120px;
-    background-color: rgb(239 239 239);
-    display: block;
-    transform: rotate(-80deg);
+  box-sizing: border-box;
+  width: 150px;
+  height: 80px;
+}
+
+/* 斜线 */
+.slash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  /* 斜边边长 */
+  /* Math.sqrt(Math.pow(width, 2) + Math.pow(height, 2)) */
+  /* Math.sqrt(Math.pow(150, 2) + Math.pow(80, 2)) = 170 */
+  width: 170px;
+  height: 1px;
+  background-color: #ccc;
+  /* 旋转角度计算公式 */
+  /*  Math.atan(height / width) * 180 / Math.PI  */
+  /*  Math.atan(80 / 150) * 180 / Math.PI  = 28.072486935852954 */
+  transform: rotate(28.072486935852954deg);
+  transform-origin: top left;
+}
+
+/* 左下角文字 */
+.left {
+  position: absolute;
+  bottom: 15px;
+  /* 左下角 left:0; bottom: 0; */
+  left: 15px;
+}
+
+/* 右上角文字 */
+.right {
+  position: absolute;
+  top: 15px;
+  /* 右上角 right:0; top: 0; */
+  right: 15px;
+}
+
+:global {
+  .ant-table-thead {
+    tr:nth-child(1) {
+      th:nth-child(1) {
+        padding: 0 !important;
+      }
+    }
   }
 }
 ```
