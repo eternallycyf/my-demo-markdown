@@ -15,7 +15,7 @@ import React from 'react';
 import CustomTooltip from './CustomTooltip';
 import { tagS, text } from './constant.tsx';
 export default () => (
-  <CustomTooltip
+  <CustomTooltip<true>
     col={24}
     text={tagS}
     row={{
@@ -35,7 +35,7 @@ import React from 'react';
 import CustomTooltip from './CustomTooltip';
 import { tagS, tagS2, text } from './constant.tsx';
 export default () => (
-  <CustomTooltip
+  <CustomTooltip<true>
     col={24}
     text={tagS2}
     row={{
@@ -56,7 +56,7 @@ import React from 'react';
 import CustomTooltip from './CustomTooltip';
 import { tagS, tagS2, text } from './constant.tsx';
 export default () => (
-  <CustomTooltip
+  <CustomTooltip<true>
     col={24}
     text={tagS2}
     row={{
@@ -79,21 +79,26 @@ import CustomTooltip from './CustomTooltip';
 import { tagS, tagS2, TEXT } from './constant.tsx';
 export default () => (
   <Row gutter={10}>
-    <CustomTooltip text={TEXT} copyable col={3} maxLength={3} />
-    <CustomTooltip text={TEXT} copyable col={3} row={{ rows: 'autoSize' }} />
-    <CustomTooltip
+    <CustomTooltip<false> text={TEXT} copyable col={3} maxLength={3} />
+    <CustomTooltip<true>
+      text={TEXT}
+      copyable
+      col={3}
+      row={{ rows: 'autoSize' }}
+    />
+    <CustomTooltip<true>
       text={TEXT}
       copyable
       col={4}
       row={{ rows: 3, expend: true }}
     />
-    <CustomTooltip
+    <CustomTooltip<true>
       text={TEXT}
       copyable
       col={5}
       row={{ rows: 3, expend: false }}
     />
-    <CustomTooltip
+    <CustomTooltip<true>
       text={TEXT}
       copyable
       col={6}

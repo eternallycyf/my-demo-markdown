@@ -957,3 +957,12 @@ useEffect(() => {
 ```
 
 ## 62. headers 不能传递中文 需要解码编码操作
+
+## 63. tsx 动态传值
+
+```tsx | pure
+type TestProps<T extends boolean> = T extends true ? { a: string } : { b: string };
+const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some component logic</span>;
+
+<Text<true> b={'ss'}>  // error
+```

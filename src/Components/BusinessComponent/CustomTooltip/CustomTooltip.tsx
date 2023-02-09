@@ -79,14 +79,21 @@ interface IRowProps {
    */
   row?: RowProps;
 }
-type ICustomTooltipProps = IBaseProps & ISingleRowProps & IRowProps;
-type Iprops = {
-  [key in keyof ICustomTooltipProps]: ICustomTooltipProps[keyof ICustomTooltipProps];
-};
-export const IProps = <T,>(props: Iprops) => <></>;
+interface ICustomTooltipProps extends IBaseProps, ISingleRowProps, IRowProps {}
+type ICustomTooltipSimpleProps = IBaseProps & ISingleRowProps;
+type ICustomTooltipRowProps = IBaseProps & IRowProps;
+type Iprops<T extends boolean | unknown> = T extends true
+  ? ICustomTooltipRowProps
+  : T extends false
+  ? ICustomTooltipSimpleProps
+  : ICustomTooltipProps;
+
+export const IProps = <T,>(props: Iprops<T>) => <></>;
 export const IRowProps = <T,>(props: RowProps) => <></>;
 
-const CustomTooltip: FC<ICustomTooltipProps> = props => {
+const CustomTooltip = <T extends unknown | boolean = unknown>(
+  props: Iprops<T>,
+) => {
   const [isExpand, setIsExpand] = useState<boolean>(false);
   const [overflowStatus, setOverflowStatus] = useState<'hidden' | 'unset'>(
     'hidden',
