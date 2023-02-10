@@ -1,4 +1,4 @@
-import { Col, Input, Tooltip, Typography } from 'antd';
+import { Col, ColProps, Input, Tooltip, Typography } from 'antd';
 import React, { FC, Fragment, useState, useRef, useCallback } from 'react';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import cx from './index.less';
@@ -30,6 +30,9 @@ interface IBaseProps {
    * @default false
    */
   copyable?: boolean;
+  colProps?: ColProps;
+  paragraphClassName?: string;
+  tooltipClassName?: string;
 }
 interface ISingleRowProps {
   /**
@@ -156,7 +159,10 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
       isRight: false,
     },
     col = 8,
+    colProps = {},
     copyable = false,
+    paragraphClassName = '',
+    tooltipClassName = '',
   } = props;
 
   const isTextToObject = typeof text === 'object';
@@ -251,8 +257,16 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
 
   // row.rows = 1 且 text.length > maxLength
   const SingleOverflowParagraph = (
-    <Tooltip title={text} style={styles} className={ellipsisClassName}>
-      <Paragraph {...copyableProps} style={styles}>
+    <Tooltip
+      title={text}
+      style={styles}
+      className={`${ellipsisClassName} ${tooltipClassName}`}
+    >
+      <Paragraph
+        {...copyableProps}
+        style={styles}
+        className={paragraphClassName}
+      >
         {isTextToObject
           ? ''
           : text.slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
@@ -262,7 +276,11 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
 
   // row.rows = 1 且 text.length <= maxLength
   const SingleParagraph = (
-    <Paragraph {...copyableProps} style={styles} className={ellipsisClassName}>
+    <Paragraph
+      {...copyableProps}
+      style={styles}
+      className={`${ellipsisClassName} ${paragraphClassName}`}
+    >
       {text ?? '--'}
     </Paragraph>
   );
@@ -270,12 +288,17 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
   // 设置了 row.autoSize
   const AutoSizeParagraph = isTextToObject ? (
     <Fragment>
-      <Col span={col}>{text ?? '--'}</Col>
+      <Col span={col} {...colProps}>
+        {text ?? '--'}
+      </Col>
     </Fragment>
   ) : (
     <Fragment>
-      <Col span={col}>
-        <Paragraph {...copyableProps} className={ellipsisClassName}>
+      <Col span={col} {...colProps}>
+        <Paragraph
+          {...copyableProps}
+          className={`${ellipsisClassName} ${paragraphClassName}`}
+        >
           <TextArea
             style={{ resize: 'none', ...styles }}
             autoSize
@@ -293,8 +316,13 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
       span={col}
       className={ellipsisClassName}
       style={{ ...customRowsColStyles, position: 'relative' }}
+      {...colProps}
     >
-      <Paragraph {...customRowEllipsisParagraphProps} ref={contentRef}>
+      <Paragraph
+        {...customRowEllipsisParagraphProps}
+        ref={contentRef}
+        className={`${paragraphClassName}`}
+      >
         {text ?? '--'}
         {isExpand && getToggleButton(false)}
       </Paragraph>
@@ -302,8 +330,11 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
   );
 
   const CustomRowNotExpendParagraph = (
-    <Col span={col} className={ellipsisClassName}>
-      <Paragraph {...customRowEllipsisNotExpandParagraphProps}>
+    <Col span={col} className={`${ellipsisClassName}`} {...colProps}>
+      <Paragraph
+        {...customRowEllipsisNotExpandParagraphProps}
+        className={paragraphClassName}
+      >
         {text ?? '--'}
       </Paragraph>
     </Col>
@@ -323,8 +354,11 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
   }
 
   return (
-    <Col span={col}>
-      <Paragraph style={styles} className={ellipsisClassName}>
+    <Col span={col} style={{ display: 'inline-block' }} {...colProps}>
+      <Paragraph
+        style={styles}
+        className={`${ellipsisClassName} ${paragraphClassName}`}
+      >
         {text && text.length > maxLength
           ? SingleOverflowParagraph
           : SingleParagraph}
