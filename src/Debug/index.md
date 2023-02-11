@@ -966,3 +966,14 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
 
 <Text<true> b={'ss'}>  // error
 ```
+
+## 64 attr
+
+```tsx | pure
+<div className={styles.div} data-color="red" />
+.div {
+  &::before {
+    content: attr(data-color)
+  }
+}
+```
