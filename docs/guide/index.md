@@ -55,6 +55,9 @@ nav:
     - suspense
     - concurrent mode
     - ...
+- 其他语言
+  - GO
+  - Pythod
 
 ## 2. 需要掌握的基本规范
 
