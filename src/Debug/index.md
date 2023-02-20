@@ -981,3 +981,110 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
 ## 65 table 如何可以 hover 行和列都高亮
 
 - https://github.com/ant-design/ant-design/discussions/40594
+
+## 66. antd RadioStyle
+
+```less
+.radioStyle {
+  :global {
+    .ant-picker.ant-picker-borderless {
+      left: 20% !important;
+      height: 32px;
+      border: 1px solid rgba(11, 10, 25, 0.2) !important;
+      background-color: rgba(255, 255, 255, 1) !important;
+    }
+
+    .ant-picker-suffix,
+    .ant-picker-separator {
+      color: rgba(11, 10, 25, 0.2);
+    }
+
+    .ant-radio-group {
+      margin-left: 15px;
+      border-radius: 4px;
+    }
+
+    .ant-radio-button-wrapper:hover {
+      border-color: rgba(224, 236, 255);
+
+      &:not(:first-child)::before {
+        border-color: rgba(224, 236, 255);
+      }
+    }
+
+    .ant-picker-large .ant-picker-input > input {
+      font-size: 14px;
+    }
+
+    .ant-picker-input > input,
+    .ant-radio-button-wrapper:hover {
+      // 日期选择器字体颜色
+      color: #3363d7;
+      font-size: 14px;
+    }
+
+    .ant-radio-group-large .ant-radio-button-wrapper {
+      height: 32px;
+      font-size: 14px;
+      line-height: 32px;
+    }
+
+    .ant-radio-button-wrapper {
+      border-color: rgba(224, 236, 255);
+      background-color: transparent;
+      // 7天 30天 字体颜色
+      color: rgba(11, 10, 25, 0.65);
+
+      &:first-child {
+        border-color: rgba(224, 236, 255);
+      }
+
+      &:not(:first-child)::before {
+        background-color: rgba(224, 236, 255);
+      }
+
+      &:hover {
+        color: #3363d7;
+      }
+
+      &:focus-within {
+        box-shadow: none;
+      }
+    }
+
+    .ant-radio-button-wrapper-checked:not([class*=' ant-radio-button-wrapper-disabled']).ant-radio-button-wrapper:first-child {
+      // 小时数据边框
+      border-color: rgba(11, 10, 25, 0.2);
+      border-radius: 4px;
+      color: rgba(0, 0, 0, 0.85);
+
+      &:hover {
+        background-color: rgb(224, 236, 255);
+      }
+    }
+
+    .ant-radio-button-wrapper-checked {
+      background: rgb(224, 236, 255) !important;
+      color: #3363d7 !important;
+
+      &:not(.ant-radio-button-wrapper-disabled) {
+        border-color: rgba(11, 10, 25, 0.2);
+        background-color: #3b3b52;
+
+        &:first-child {
+          border-color: rgba(11, 10, 25, 0.2);
+        }
+      }
+
+      &:not(:first-child)::before {
+        background-color: rgba(11, 10, 25, 0.2);
+      }
+
+      &:hover {
+        border: 1px solid #3363d7 !important;
+        background-color: rgb(224, 236, 255);
+      }
+    }
+  }
+}
+```
