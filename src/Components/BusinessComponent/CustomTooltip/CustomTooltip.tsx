@@ -73,6 +73,12 @@ interface RowProps {
    * @default false
    */
   isRight?: boolean;
+  /**
+   * @description 自定义是否展示 展开收起按钮
+   * customShowBtn: () => arr.length > 10 ? true : false
+   * @default undefined
+   */
+  customShowBtn?: () => boolean;
 }
 interface IRowProps {
   /**
@@ -107,6 +113,9 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
   const [hasExpend, setHasExpend] = useState<boolean>(false);
   const contentRef = useCallback((node: HTMLDivElement) => {
     if (node !== null) {
+      if (props.row.customShowBtn) {
+        return setHasExpend(props.row.customShowBtn());
+      }
       const newHeight = node.getBoundingClientRect().height;
       const list = [...new Set([...heightList.current, newHeight])];
       heightList.current = [...list];
@@ -157,6 +166,7 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
       expend: true,
       lineMaxHeight: 50,
       isRight: false,
+      customShowBtn: undefined,
     },
     col = 8,
     colProps = {},
@@ -221,7 +231,9 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
   // 如果是元素 Paragraph 组件设置row为1时候 只显示... 需要手动设置为 rows >= 2
   const customRows = isTextToObject
     ? typeof row.rows == 'number'
-      ? row.rows + 1
+      ? typeof props.row?.customShowBtn == 'function'
+        ? row.rows
+        : row.rows + 1
       : 2
     : row.rows;
   // 处理 初始化的闪烁问题 设置最大高度 为一行的高度, 溢出隐藏 当点击时恢复
@@ -269,7 +281,7 @@ const CustomTooltip = <T extends unknown | boolean = unknown>(
       >
         {isTextToObject
           ? ''
-          : text.slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
+          : String(text).slice(0, maxLength) + isShowEllipsisSymbol ?? '--'}
       </Paragraph>
     </Tooltip>
   );
