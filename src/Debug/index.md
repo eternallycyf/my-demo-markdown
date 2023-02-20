@@ -977,3 +977,7 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
   }
 }
 ```
+
+## 65 table 如何可以 hover 行和列都高亮
+
+- https://github.com/ant-design/ant-design/discussions/40594
