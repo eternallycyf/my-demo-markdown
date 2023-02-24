@@ -1088,3 +1088,33 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
   }
 }
 ```
+
+## 67.echarts xAxis 换行
+
+```js
+{
+  "xAxis": {
+    "axisLabel":{
+      "formatter": (v) => {
+        const values = v.split('-');
+        if(!Array.isArray(values)) return '--';
+        if(values?.length == 0) return '--';
+        return [
+          `{a|${values[1]}}`,
+          `{b|${values[0]}}`,
+        ]
+      }
+    },
+    rich: {
+      a: {
+        fontSize: 12,
+        ...
+      },
+      b: {
+        fontSize: 12,
+        ...
+      }
+    }
+  }
+}
+```
