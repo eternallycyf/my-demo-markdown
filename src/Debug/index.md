@@ -1118,3 +1118,11 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
   }
 }
 ```
+
+## 68 svg-path
+
+```js
+'path://M8,8,h8,v8,h-8Z';
+```
+
+## 69 not-css 兼容 chrome88 以下版本
