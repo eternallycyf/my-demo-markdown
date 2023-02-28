@@ -1126,3 +1126,75 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
 ```
 
 ## 69 not-css 兼容 chrome88 以下版本
+
+## 70.antd table 多行合并
+
+```js
+const getRowSpans = (arr, key) => {
+  let sameValueLength = 0;
+  const rowSpans = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (i === 0) {
+      rowSpans[i] = sameValueLength + 1;
+      continue;
+    }
+    if (arr[i][key] === arr[i - 1][key]) {
+      rowSpans[i] = 0;
+      sameValueLength++;
+    } else {
+      console.log(sameValueLength);
+      rowSpans[i] = sameValueLength + 1;
+      sameValueLength = 0;
+    }
+  }
+  return rowSpans;
+};
+
+const dataSource = [
+  {
+    collector: '0',
+    c: '0',
+  },
+  {
+    collector: '1',
+    c: '1',
+  },
+  {
+    collector: '1',
+    c: '2',
+  },
+  {
+    collector: '1',
+    c: '3',
+  },
+  {
+    collector: '1',
+    c: '4',
+  },
+];
+
+const rowSpans = getRowSpans(dataSource, 'collector');
+
+const columns = [
+  {
+    title: '名称',
+    dataIndex: 'collector',
+    key: 'collector',
+    align: 'center',
+    render: (value, _, index) => {
+      const obj = {
+        children: value,
+        props: {},
+      };
+
+      obj.props.rowSpan = rowSpans[index];
+      return obj;
+    },
+    onCell: () => ({
+      style: { background: '#F7F7F7' },
+    }),
+  },
+  { title: '地址', align: 'center', dataIndex: 'c', key: 'c' },
+];
+<Table dataSource={dataSource} columns={columns} />;
+```
