@@ -13,10 +13,10 @@ group:
 - 然后在 ignore List 添加正则
   - ._\/node_modules\/._
   - ._\/.umi\/._
-  - ^webpack://.\\\\\\\\\\\*/react refresh\$
+  - ^webpack://.\\\\\\\\\\\\*/react refresh\$
   - /umi\.js\$
   - /react_devtools_backend.js\.js\$
-  - ^chrome-extension://fmkadmapgofadopljbjfkapdkoienihi\b.\\\\\\\\*/react_devtools_backend\.js\$
+  - ^chrome-extension://fmkadmapgofadopljbjfkapdkoienihi\b.\\\\\\\\\*/react_devtools_backend\.js\$
   - ![setting](https://img-blog.csdnimg.cn/1ccd12c90d4f4f10a53ddd20f9960b86.png)
 - 或者在这里手动右击 ignore
   - ![ignore](https://img-blog.csdnimg.cn/1c6ff7fa4a1044238cecfe641a5f489d.png)
@@ -98,3 +98,12 @@ module.exports = defineConfig({
   },
 });
 ```
+
+### 生产环境 debugger
+
+- 选择文件存放目录
+- ![1](https://img-blog.csdnimg.cn/8a2ca91d02c648bf9b0426965c23dcfe.png)
+- 保存当前页面的 Html 并 链接到远程
+- ![2](https://img-blog.csdnimg.cn/d0a464fe789145179fe1bc212ba27f79.png)
+- 修改本地文件存放目录的文件然后刷新就会发现生产的也变了
+- ![3](https://img-blog.csdnimg.cn/afc9fba538c34bfa9d3f7224cf1a80e3.png)
