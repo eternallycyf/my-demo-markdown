@@ -1198,3 +1198,9 @@ const columns = [
 ];
 <Table dataSource={dataSource} columns={columns} />;
 ```
+
+## 71.antd tootip 渲染在父元素
+
+```ts
+getPopupContainer={trigger => trigger.parentNode}
+```
