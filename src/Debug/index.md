@@ -1204,3 +1204,7 @@ const columns = [
 ```ts
 getPopupContainer={trigger => trigger.parentNode}
 ```
+
+## 72. antd table 点击筛选后恢复上次的滚动位置
+
+- scroll={{ scrollToFirstRowOnChange: false }}
