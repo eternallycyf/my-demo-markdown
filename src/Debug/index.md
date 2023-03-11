@@ -1207,4 +1207,41 @@ getPopupContainer={trigger => trigger.parentNode}
 
 ## 72. antd table 点击筛选后恢复上次的滚动位置
 
+- 自定义了 component-body 也可以
+
 - scroll={{ scrollToFirstRowOnChange: false }}
+
+## 73 antd table coulumns 泛型
+
+```ts
+import { ColumnGroupType, ColumnType } from 'antd/lib/table/interface';
+
+type AnyData = Record<string, unknown>;
+type RenderReturn<TRecord = AnyData> = ReturnType<NonNullable<ColumnType<TRecord>['render']>>;
+type Column<TRecord = AnyData> =
+  | (Omit<ColumnGroupType<TRecord>, 'render'> & {
+      render?: (value: TRecord, record: TRecord, index: number) => RenderReturn<TRecord>;
+    })
+  | (ColumnType<TRecord> & {
+      dataIndex?: keyof TRecord;
+      render?: <T = TRecord>(value: T, record: TRecord, index: number) => RenderReturn<TRecord>;
+    })
+  | (ColumnType<TRecord> & {
+      // TODO: 为每一个对象拓展属性
+      dataIndex?: keyof TRecord;
+      tooltip?: React.ReactNode;
+      editable: boolean;
+    });
+// 传入泛型:Columns<{ code: string }>
+// 指定dataIndex及render的record类型
+type Columns<TRecord = AnyData> = Column<TRecord>[];
+//表单控件
+export type IColumnsType<T = AnyData> = Columns<T>;
+
+const columns:IColumnsType<{code:string}> = [
+  {
+    dataIndex: 'code';
+    editable: false;
+  }
+]
+```
