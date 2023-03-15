@@ -1245,3 +1245,7 @@ const columns:IColumnsType<{code:string}> = [
   }
 ]
 ```
+
+## 74. antd table rowKey 不生效
+
+- rowKey={string} => rowKey={(record) => record[string]}
