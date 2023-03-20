@@ -1129,6 +1129,16 @@ const Test = <T extends boolean = true>(props: TestProps<T>) => <span>Some compo
 
 ## 70.antd table 多行合并
 
+```ts
+// 合并4行
+render: (value, record, index) => ({
+        children: value,
+        props: {
+          rowSpan: index === 0 ? 4 : 0,
+        },
+      }),
+```
+
 ```js
 const getRowSpans = (arr, key) => {
   let sameValueLength = 0;
@@ -1249,3 +1259,18 @@ const columns:IColumnsType<{code:string}> = [
 ## 74. antd table rowKey 不生效
 
 - rowKey={string} => rowKey={(record) => record[string]}
+
+## 75 动态路由
+
+```ts
+path: '/home/class/detail/:id', -this.props!.match!.params.id;
+history.push({
+  pathname: `/home/class/detail/${21312312323}`,
+});
+```
+
+## 76.chatGTP 行数限制
+
+```ts
+please start at the beginning and provide the lines 1-50 of the script and prompt me to type MORE. Then provide me with lines 50-100 of the script and prompt me to type MORE. Then provide me with lines 100-159 of the script and prompt me to type MORE. Then provide me with lines 150-200 of the script and prompt me to type MORE. Then provide me with lines 200-250 of the script and prompt me to type MORE. Then provide me with lines 250-300 of the script 。 and more than 1000 word code
+```
