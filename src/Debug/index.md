@@ -1261,3 +1261,13 @@ history.push({
 ```ts
 please start at the beginning and provide the lines 1-50 of the script and prompt me to type MORE. Then provide me with lines 50-100 of the script and prompt me to type MORE. Then provide me with lines 100-159 of the script and prompt me to type MORE. Then provide me with lines 150-200 of the script and prompt me to type MORE. Then provide me with lines 200-250 of the script and prompt me to type MORE. Then provide me with lines 250-300 of the script 。 and more than 1000 word code
 ```
+
+## 77. antd select 不使用 labelInvalue 设置默认值
+
+```ts
+form.setFieldsValue({
+  selectName: {
+    key: 'xxx',
+  },
+});
+```
