@@ -1271,3 +1271,94 @@ form.setFieldsValue({
   },
 });
 ```
+
+## 78. step 步骤条
+
+```less
+.arrow {
+  position: absolute;
+  bottom: -2%;
+  z-index: 2;
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+.arrow::before {
+  position: absolute;
+  left: 50%;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-color: #dee1e7;
+  background-color: #fafafb;
+  content: '';
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.card {
+  position: relative;
+  z-index: 3;
+  margin-top: 10px;
+  width: 100%;
+  background: #fafafb;
+}
+```
+
+```tsx | pure
+import React, { useMemo, useState } from 'react';
+import { Divider, Steps, Popover, Row, Col, Card } from 'antd';
+import { CaretUpOutlined } from '@ant-design/icons';
+import styles from './index.less';
+const App: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+
+  const onChange = (value: number) => {
+    console.log('onChange:', value);
+    setCurrent(value);
+  };
+
+  const title = 'ttt';
+  const description = (
+    <>
+      <div>title</div>
+      <div className={styles.arrow}></div>
+    </>
+  );
+
+  return (
+    <>
+      <div>
+        <Steps
+          labelPlacement="vertical"
+          current={current}
+          onChange={onChange}
+          style={{ position: 'relative' }}
+          items={[
+            {
+              title,
+              description,
+            },
+            {
+              title,
+              description,
+            },
+            {
+              title,
+              description,
+            },
+          ]}
+        />
+      </div>
+      <div className={styles.card}>hello word</div>
+    </>
+  );
+};
+
+export default App;
+```
+
+## 79 react forceUpdate 不生效
+
+- 因为变量不是内部维护的
+- 可以用 key 强制刷新
