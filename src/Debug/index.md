@@ -1362,3 +1362,9 @@ export default App;
 
 - 因为变量不是内部维护的
 - 可以用 key 强制刷新
+
+## 80 antd date onChange dateString
+
+```ts
+function(date: dayjs, dateString: string)
+```
