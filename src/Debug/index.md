@@ -1374,3 +1374,35 @@ function(date: dayjs, dateString: string)
 ```ts
 import { stringify } from 'query-string';
 ```
+
+## 82 antd hidden 隐藏表单
+
+- 依然会收集和校验字段
+
+```tsx | pure
+<Form.Item name="name" hidden>
+  <Input />
+</Form.Item>
+```
+
+## 83 antd form.Item 没有 label 自定义校验信息
+
+```tsx | pure
+<Form.Item
+  messageVariables={{ label: '自定义的提示信息' }}
+  name="xxx"
+  rules={[{ required: true, message: '${label}' }]}
+>
+  <Input />
+</Form.Item>
+```
+
+## 84 antd form.Item normalize
+
+- 自定义转换后放置到表单中的值
+
+```tsx | pure
+<Form.Item normalize={e => e + '%'}>
+  <Input />
+</Form.Item>
+```
