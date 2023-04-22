@@ -1407,10 +1407,33 @@ import { stringify } from 'query-string';
 </Form.Item>
 ```
 
-## 85 隐藏 a title
+## 85. 隐藏 a title
 
 ```tsx | pure
 <a href="" title="Something">
   <span title="">Your text</span>
 </a>
+```
+
+## 86.ecahrtx x 轴首尾不要 tick
+
+```ts
+yAxis: {
+  max: val => {
+    return val;
+  };
+
+  boundaryGap: true;
+}
+
+xAxis: {
+  axisTick: {
+    show: true,
+    length: 42,
+    interval: (index,val)=> value =='xxx'
+  },
+  lineStyle: {
+    color: '#EFF1F4',
+  }
+}
 ```
