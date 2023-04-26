@@ -1437,3 +1437,55 @@ xAxis: {
   }
 }
 ```
+
+## 87.echarts 动态 label
+
+- 堆叠图点击 legend 后 label 不是动态的
+- https://www.isqqw.com/viewer?id=20160
+
+```ts
+// echarts for react 需要这样
+const [data,setData] = useState([]);
+const [options,setOptions] = useState({});
+const EchartsRef = useRef(null);
+
+const handelChangeLegened = useCallbackk((obj)=>{
+  const {selected} = obj;
+  // TODO 筛选出 type == 'bar' 的 series
+  // 获取当前展示的 bar 名称
+  // 获取合计的名称及 key
+  // 计算新的data => data.map(item => {...item,total:xxx})
+
+  const newOptions = {...options}
+  newOptions.series[5].label.formatter = (item) =>{
+    const newObj = newData.find(ele => ele.time == item.data.time)
+    return newObj.total ? newObj.total.toLocalString() : ''
+  }
+
+  setOptions(newOptions);
+  EchartsRef.current.getEchartsInstance().setOption(newOptions)
+
+},[data])
+
+const onEvents = {
+  legendselectchanged: handelChangeLegened
+}
+
+<ReactEcharts
+  option={option}
+  style={style}
+  onEvents={onEvents}
+  ref={EchartsRef}
+  theme={theme}
+/>
+```
+
+```ts
+// 切换options时 强制清除label
+useLayoutEffect(() => {
+  setOptions(options);
+  if (EchartsRef.current) {
+    EchartsRef.current.getEchartsInstance().setOption(options, true);
+  }
+}, [data]);
+```
