@@ -1489,3 +1489,41 @@ useLayoutEffect(() => {
   }
 }, [data]);
 ```
+
+## 88.antd table sort 某一行不排序
+
+```tsx | pure
+ sorter: (a, b) => {
+   if(a.name === '合计' || b.name === '合计') return 0;
+   return a.name.length - b.name.length
+ },
+```
+
+- null 排最后
+
+```tsx | pure
+function numeric(x) {
+  const val = parseFloat(x);
+  if (isNaN(val)) {
+    return parseFloat(x.slice(1));
+  } else {
+    return val;
+  }
+}
+
+function descendingComparator(a, b) {
+  if (a === null) return 1;
+  if (b === null) return -1;
+  const numericA = numeric(a);
+  const numericB = numeric(b);
+  if (numericB < numericA) {
+    return -1;
+  }
+  if (numericB > numericA) {
+    return 1;
+  }
+  return 0;
+}
+
+sorter: (a, b) => descendingComparator(a.name, b.name),
+```
