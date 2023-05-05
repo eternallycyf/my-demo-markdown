@@ -54,6 +54,7 @@ nav:
       - [时间切片](http://wangxince.site/my-demo-markdown/components/JS/base#%E6%97%B6%E9%97%B4%E5%88%87%E7%89%87)
     - suspense
     - concurrent mode
+    - [keepAlive](https://github.com/eternallycyf/Antd-CustomComponent)
     - ...
 - 其他语言
   - GO
@@ -143,6 +144,7 @@ nav:
   - [手写 redux](https://github.com/eternallycyf/my-redux-react-redux/blob/main/src/component/redux.js)
   - [手写 react-redux](https://github.com/eternallycyf/my-redux-react-redux)
   - [手写 axios 源码](https://github.com/eternallycyf/eternallcyf-axios)
+  - [keepAlive](https://github.com/eternallycyf/Antd-CustomComponent)
 - 搭建环境
   - [Electron-项目模板](https://github.com/eternallycyf/create-Electron-template-app)
   - [nextJS-docker-部署项目模板](https://github.com/eternallycyf/nextjs-docker-nginx-demo)
