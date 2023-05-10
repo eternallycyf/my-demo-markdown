@@ -1527,3 +1527,67 @@ function descendingComparator(a, b) {
 
 sorter: (a, b) => descendingComparator(a.name, b.name),
 ```
+
+## 89.antd table 固定行
+
+```tsx
+const defaultOnRow = restProps.onRow ? restProps.onRow : null;
+const fixRowkeys = restProps?.fixRowkeys || [];
+const _data = (data?.length > 0 ? data : dataSource) || [];
+restProps.onRow = (record: any, index: number) => {
+  const defaultRowProps = defaultOnRow ? defaultOnRow(record, index) : {};
+  const dataHasFixedKeys =
+    fixRowkeys.filter((key: any) =>
+      _data.some((ele: any) => ele[rowKey as any] == key),
+    ) || [];
+  const currentRowKey = record?.[rowKey as any];
+  const fixedStyle = {};
+
+  if (dataHasFixedKeys.includes(currentRowKey)) {
+    fixedStyle['position'] = 'sticky';
+    fixedStyle['top'] =
+      45 * dataHasFixedKeys.findIndex((item: any) => item == currentRowKey);
+    fixedStyle['zIndex'] = 999;
+  }
+
+  return {
+    index,
+    moveRow: this.moveRow,
+    style: fixedStyle,
+    ...defaultRowProps,
+  } as React.HTMLAttributes<any>;
+};
+```
+
+## 90 sort 根据指定顺序排序
+
+```tsx
+function sortBy<T extends any[]>(
+  data: T,
+  idOrder: Array<string | number>,
+  key: string = 'id',
+): T {
+  const orderMap = (Object.fromEntries(
+    idOrder.map((id, i) => [id, i]),
+  ) as any) as T;
+  return data.sort((a, b) => orderMap[a[key]] - orderMap[b[key]]);
+}
+```
+
+## 91 深层改变对象的 key
+
+```tsx
+const mapKeysDeep = (obj: any, cb: (value: any, key: string) => string): any =>
+  _.mapValues(_.mapKeys(obj, cb), val =>
+    _.isObject(val) ? mapKeysDeep(val, cb) : val,
+  );
+
+const mapValuesDeep = (v, callback) =>
+  _.isObject(v) ? _.mapValues(v, v => mapValuesDeep(v, callback)) : callback(v);
+
+const newObj = mapKeysDeep(obj, (value, key) => {
+  if (key === '账号') return 'account';
+  if (key === '姓名') return 'name';
+  return key;
+});
+```
