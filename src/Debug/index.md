@@ -1592,7 +1592,7 @@ const newObj = mapKeysDeep(obj, (value, key) => {
 });
 ```
 
-## ts 计数
+## 92. ts 计数
 
 ```ts
 type Enumerate<
@@ -1608,4 +1608,65 @@ type IntRange<F extends number, T extends number> = Exclude<
 >;
 
 type T = IntRange<20, 300>;
+```
+
+## 93. [antd-formList-指定检验某一行](https://juejin.cn/post/6844904176770613261)
+
+```tsx | pure
+<Form form={form}>
+    <Form.List name="users">
+        {(fields, { add, remove }) => {
+          return (
+            <div>
+              {fields.map((field,index) => (
+                <Space key={field.key} style={{ display: 'flex', marginBottom: 5, justifyContent: 'center' }} align="start">
+                  <Form.Item
+                    {...field}
+                    name={[field.name, 'firstName']}
+                    fieldKey={[field.fieldKey, 'firstName']}
+                    rules={[{ required: true, message: 'please input firstName' }]}
+                  >
+                    <Input placeholder="first name" />
+                  </Form.Item>
+                  <Form.Item
+                    {...field}
+                    name={[field.name, 'lastName']}
+                    fieldKey={[field.fieldKey, 'lastName']}
+                    rules={[{ required: true, message: 'please input lastName' }]}
+                  >
+                    <Input placeholder="last name"/>
+                  </Form.Item>
+                </Space>
+              ))}
+              <Form.Item style={{width:'50%', margin:'0 auto'}}>
+                <Button type="dashed" onClick={() => { add(); }} block>
+                  <PlusOutlined /> 添加行
+                </Button>
+              </Form.Item>
+            </div>
+          )
+        }}
+    </Form.List>
+    <Form.Item
+      label="分组"
+      name="group"
+      rules: [{ required: true, message: '请输入预付款金额' }]
+      >
+      <Input />
+    </Form.Item>
+</Form>
+
+```
+
+```tsx | pure
+    //单行验证, index代表的是第几行数据
+  form.validateFields([['users', index, 'firstName'], ['users', index, 'lastName']]).then(values => {
+    console.log(values.users[index].firstName, values.users[index].lastName)
+  });
+  //整个users验证需要把每行的field name传进去，暂未找到别的解决方案
+  form.validateFields([    ['users', 0, 'firstName'], ['users', 0, 'lastName']，
+    ['users', 1, 'firstName'], ['users', 1, 'lastName']
+    ...
+  ])
+
 ```
