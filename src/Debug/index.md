@@ -1670,3 +1670,26 @@ type T = IntRange<20, 300>;
   ])
 
 ```
+
+## 94. grid
+
+```less
+.card {
+  display: grid;
+  grid-template-column: 50% 50%;
+  // 2:1 关系
+  // grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  grid-template-areas:
+    'a b'
+    'c d'
+    'e f';
+  place-items: center;
+}
+
+.item1 {
+  grid-area: a;
+  align-self: center;
+  justify-self: start;
+}
+```
