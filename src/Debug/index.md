@@ -1693,3 +1693,18 @@ type T = IntRange<20, 300>;
   justify-self: start;
 }
 ```
+
+## 95 Can only set one of `children` or `props.dangerouslySetInnerHTML`
+
+```tsx | pure
+const RenderHTML = props => (
+  <span dangerouslySetInnerHTML={{ __html: props.HTML }}></span>
+);
+YourData.map((d, i) => {
+  return <RenderHTML HTML={d.YOUR_HTML} />;
+});
+```
+
+## 96 flex 间距
+
+- flexBasis: '86%';
