@@ -793,6 +793,18 @@ onChange = e => {
   e.persist();
   console.log(e.target.value);
 };
+
+## hooks
+const MyComponent = () => {
+  const handleChange = useMemo(() => {
+    const debounced = _.debounce(e => console.log(e.target.value), 1000);
+    return e => {
+      e.persist();
+      return debounced(e);
+    };
+  }, []);
+  return <input onChange={handleChange} />;
+};
 ```
 
 ## 51. antd col 会默认添加 position:relative => z-index:0
