@@ -805,6 +805,24 @@ const MyComponent = () => {
   }, []);
   return <input onChange={handleChange} />;
 };
+
+## class
+class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = _.debounce(this.handleChange.bind(this), 1000);
+  }
+  handleChange(e) {
+    console.log(e.target.value);
+  }
+  render() {
+    return <input onChange={(e)=>{
+      e.persist();
+      this.handleChange
+    }}
+   />;
+  }
+}
 ```
 
 ## 51. antd col 会默认添加 position:relative => z-index:0
@@ -1720,3 +1738,7 @@ YourData.map((d, i) => {
 ## 96 flex 间距
 
 - flexBasis: '86%';
+
+## 97 antd-row-gutter 无效
+
+- 不要给 col 添加 style
