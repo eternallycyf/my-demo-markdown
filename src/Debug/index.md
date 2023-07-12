@@ -1742,3 +1742,11 @@ YourData.map((d, i) => {
 ## 97 antd-row-gutter 无效
 
 - 不要给 col 添加 style
+
+## 98 Omit 失效
+
+- 不能有 {[props:string]:any}
+
+## 99 监听 form.getFormValues 卡顿
+
+- 换成 form.getFormValue('xxx')
