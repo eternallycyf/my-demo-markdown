@@ -1750,3 +1750,7 @@ YourData.map((d, i) => {
 ## 99 监听 form.getFormValues 卡顿
 
 - 换成 form.getFormValue('xxx')
+
+## 100 antd form.item.label 对齐
+
+- labelCol={{style:{minWidth:最大的那个}}}
