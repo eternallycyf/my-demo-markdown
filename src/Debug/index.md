@@ -1754,3 +1754,28 @@ YourData.map((d, i) => {
 ## 100 antd form.item.label 对齐
 
 - labelCol={{style:{minWidth:最大的那个}}}
+
+## 101 useCallback 闭包访问不到外界 state 最新的值
+
+- 添加 depts
+- 从事件触发传参
+
+## 102 antd table 和浏览器自带滚动条 => 两个滚动条
+
+```tsx
+componentDidMount(){
+  const height = document.querySelector(`.${styles.page} .ant-table-body`)?.getBoundingClientRect()?.top! - 60;
+  this.setState({ height });
+}
+
+<Page className={styles.page} style={{ '--height': `${height}px` }} />
+
+.page {
+  :global {
+    .ant-table-body {
+      overflow: auto;
+      height: var(--height) !important;
+    }
+  }
+}
+```
