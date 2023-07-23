@@ -1779,3 +1779,12 @@ componentDidMount(){
   }
 }
 ```
+
+## 103. ssh 登录不用输入密码
+
+```shell
+# 生成本地ssh密匙 后续不用再次输入密码
+ssh-keygen -t rsa
+# 输入密匙文件名 空格跳过默认密码
+ssh-copy-id root@服务器地址
+```
