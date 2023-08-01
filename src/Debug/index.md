@@ -1788,3 +1788,21 @@ ssh-keygen -t rsa
 # 输入密匙文件名 空格跳过默认密码
 ssh-copy-id root@服务器地址
 ```
+
+## 104 less 继承类名
+
+```less
+.subClassOne {
+  &:extend(.parentClass);
+}
+```
+
+## 105 not
+
+```css
+.xxx {
+  &:not(.last-child) {
+    border: 1px solid #ccc;
+  }
+}
+```
