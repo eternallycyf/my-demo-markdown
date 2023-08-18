@@ -1741,7 +1741,7 @@ YourData.map((d, i) => {
 
 ## 97 antd-row-gutter 无效
 
-- 不要给 col 添加 style
+- 不要给 col 添加 style classNames
 
 ## 98 Omit 失效
 
@@ -1803,6 +1803,31 @@ ssh-copy-id root@服务器地址
 .xxx {
   &:not(.last-child) {
     border: 1px solid #ccc;
+  }
+}
+```
+
+## 106 双滚动条问题
+
+```less
+.page {
+  height: 100%;
+
+  .card {
+    display: flex;
+    overflow-y: auto;
+    flex-direction: column;
+    height: 100%;
+
+    .header {
+      flex: none;
+    }
+
+    .content {
+      overflow-y: auto;
+      flex: 1;
+      height: 100%;
+    }
   }
 }
 ```
