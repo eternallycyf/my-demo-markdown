@@ -1831,3 +1831,7 @@ ssh-copy-id root@服务器地址
   }
 }
 ```
+
+## 107 form-按回车自动提交
+
+- button-submit
