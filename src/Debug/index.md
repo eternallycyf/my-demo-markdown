@@ -1835,3 +1835,21 @@ ssh-copy-id root@服务器地址
 ## 107 form-按回车自动提交
 
 - button-submit
+
+## 108 e.target.value ts
+
+```tsx
+ChangeEvent<HTMLTextAreaElement>
+```
+
+## 109 获取滚动元素
+
+```tsx
+function findScroller(element) {
+  element.onscroll = function() {
+    console.log(element);
+  };
+  Array.from(element.children).forEach(findScroller);
+}
+findScroller(document.body);
+```
