@@ -1762,7 +1762,7 @@ YourData.map((d, i) => {
 
 ## 102 antd table 和浏览器自带滚动条 => 两个滚动条
 
-```tsx
+```tsx | pure
 componentDidMount(){
   const height = document.querySelector(`.${styles.page} .ant-table-body`)?.getBoundingClientRect()?.top! - 60;
   this.setState({ height });
@@ -1844,7 +1844,7 @@ ChangeEvent<HTMLTextAreaElement>
 
 ## 109 获取滚动元素
 
-```tsx
+```tsx | pure
 function findScroller(element) {
   element.onscroll = function() {
     console.log(element);
