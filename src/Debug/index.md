@@ -1854,9 +1854,44 @@ function findScroller(element) {
 findScroller(document.body);
 ```
 
-## 110
+## 110 git checkout master error: the following untracked working tree files would be overwritten by checkout
 
 ```shell
-// git checkout master error: the following untracked working tree files would be overwritten by checkout
-git checkout master
+git switch -f master
+```
+
+## 111 antd table 合并行
+
+```tsx | pure
+需要合并的添加
+onCell: (record, rowIndex) => {
+          if (rowIndex == 0) {
+            return {
+              colSpan: 6,
+            };
+          }
+        },
+被合并的添加
+onCell: (record, rowIndex) => {
+          if (rowIndex == 0) {
+            return {
+              colSpan: 0,
+            };
+          }
+        },
+```
+
+## 112 ant-table 第一行空白行
+
+```tsx | pure
+:global{
+    .ant-checkbox-wrapper{
+      margin: -3px !important;
+    }
+
+    tr.ant-table-measure-row{
+      // display: none;
+      visibility: collapse;
+    }
+}
 ```
