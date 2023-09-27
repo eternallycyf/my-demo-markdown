@@ -1895,3 +1895,9 @@ onCell: (record, rowIndex) => {
     }
 }
 ```
+
+## 113 html 识别/n
+
+```tsx | pure
+white-space: pre-line;
+```
