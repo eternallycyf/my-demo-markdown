@@ -1904,8 +1904,9 @@ white-space: pre-line;
 
 ## 114 [pnpm peerDependencies](https://stackoverflow.com/questions/72468635/pnpm-peer-dependencies-auto-install)
 
-## 115 antd table不刷新
-```tsx 
+## 115 antd table 不刷新
+
+```tsx | pure
 setState({
   data:[]
 },()=>{
@@ -1913,4 +1914,20 @@ setState({
      data:relaData
   }
 })
+```
+
+## 116 react 动态组件
+
+```tsx | pure
+https://juejin.cn/post/7112452898402861093
+1.require
+//  FieldComp = require(`ims-view-pc/components/CustomForm/FormItem/simple`).default;
+2.lazy
+// const Simple = React.lazy(() => import('../../components/CustomForm/FormItem/simple'));
+```
+
+## 117. 将 git 设置为 ssh
+
+```shell
+git remote set-url origin git@github.com:eternallycyf/my-demo-markdown.git
 ```
