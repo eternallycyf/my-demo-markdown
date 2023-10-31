@@ -1931,3 +1931,67 @@ https://juejin.cn/post/7112452898402861093
 ```shell
 git remote set-url origin git@github.com:eternallycyf/my-demo-markdown.git
 ```
+
+## 118 promise.all
+
+```ts
+let newList = [];
+newList = await Promise.all(
+  [].map(async item => {
+    return await {};
+  }),
+);
+```
+
+## 119 moment 判断是不是本周上周下周
+
+```ts
+/**
+ * 时间日期工具类
+ */
+import moment from 'moment';
+
+/**
+ * 获取本周周一和周日日期
+ */
+function getCurrentWeek() {
+  let start = moment().weekday(1);
+  const end = moment().weekday(7);
+
+  let weekDays = [];
+  while (start <= end) {
+    weekDays.push(moment(start).format('YYYY-MM-DD'));
+    start = moment(start).add(1, 'days');
+  }
+  return weekDays;
+}
+
+function getLastWeek(i: number) {
+  let weekOfDay = parseInt(moment().format('E')); //计算今天是这周第几天
+  let last_monday = moment().subtract(weekOfDay + 7 * i - 1, 'days');
+
+  let last_sunday = moment().subtract(weekOfDay + 7 * (i - 1), 'days');
+
+  let weekDays = [];
+  while (last_monday <= last_sunday) {
+    weekDays.push(moment(last_monday).format('YYYY-MM-DD'));
+    last_monday = moment(last_monday).add(1, 'days');
+  }
+  return weekDays;
+}
+
+function getNextWeek(i: number) {
+  let weekOfDay = parseInt(moment().format('E')); //计算今天是这周第几天
+  let next_monday = moment().add(7 - weekOfDay + 7 * (i - 1) + 1, 'days');
+
+  let next_sunday = moment().add(7 - weekOfDay + 7 * i, 'days');
+  let weekDays = [];
+
+  while (next_monday <= next_sunday) {
+    weekDays.push(moment(next_monday).format('YYYY-MM-DD'));
+    next_monday = moment(next_monday).add(1, 'days');
+  }
+
+  return weekDays;
+}
+```
