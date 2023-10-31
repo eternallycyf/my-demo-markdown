@@ -1995,3 +1995,17 @@ function getNextWeek(i: number) {
   return weekDays;
 }
 ```
+
+## 120 sticky
+
+```less
+.parent {
+  display: initial;
+  .header {
+    position: sticky;
+    top: 1px;
+  }
+}
+// https://stackoverflow.com/questions/47723554/why-is-my-positionsticky-not-working
+// https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
+```
