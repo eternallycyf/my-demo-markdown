@@ -2009,3 +2009,7 @@ function getNextWeek(i: number) {
 // https://stackoverflow.com/questions/47723554/why-is-my-positionsticky-not-working
 // https://stackoverflow.com/questions/16302483/event-to-detect-when-positionsticky-is-triggered
 ```
+
+## 121 app cdd 不能使用 gap
+
+- 使用 grid-gap 兼容
