@@ -2013,3 +2013,11 @@ function getNextWeek(i: number) {
 ## 121 app cdd 不能使用 gap
 
 - 使用 grid-gap 兼容
+
+## 122 postcss in js
+
+```ts
+const getVwUnit = (num: number): number => (num / window.screen.width) * 100;
+```
+
+## 123 安卓无法识别 width: 0.5px
