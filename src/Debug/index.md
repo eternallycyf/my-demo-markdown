@@ -2021,3 +2021,7 @@ const getVwUnit = (num: number): number => (num / window.screen.width) * 100;
 ```
 
 ## 123 安卓无法识别 width: 0.5px
+
+## 124 antd select defaultValue 重新渲染
+
+- 设置 key
