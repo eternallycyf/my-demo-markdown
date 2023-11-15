@@ -2025,3 +2025,18 @@ const getVwUnit = (num: number): number => (num / window.screen.width) * 100;
 ## 124 antd select defaultValue 重新渲染
 
 - 设置 key
+
+## 125 github 获取文件内容
+
+```ts
+fetch(
+  'https://api.github.com/repos/eternallycyf/ims-graph/contents/config/footer.tsx',
+)
+  .then(res => res.json())
+  .then(data => {
+    const res = decodeURIComponent(
+      escape(atob(data.content.replace('\n', ''))),
+    );
+    console.log(res);
+  });
+```
