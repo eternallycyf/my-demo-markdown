@@ -2040,3 +2040,73 @@ fetch(
     console.log(res);
   });
 ```
+
+## 126.try-catch 多层嵌套
+
+```tsx | pure
+// before
+loading.value = true;
+try {
+  // 获取列表list
+  const list = await getList(params);
+} finally {
+  loading.value = false;
+}
+
+// to
+loading.value = true;
+let res = await getList().catch(() => (loading.value = false));
+if (!res) return;
+// 请求成功后正常操作
+```
+
+```tsx | pure
+/**
+ * @param { Promise } promise
+ * @param { Object= } errorExt - Additional Information you can pass to the err object
+ * @return { Promise }
+ */
+export function to<T, U = Error>(
+  promise: Promise<T>,
+  errorExt?: object,
+): Promise<[U, undefined] | [null, T]> {
+  return promise
+    .then<[null, T]>((data: T) => [null, data])
+    .catch<[U, undefined]>((err: U) => {
+      if (errorExt) {
+        const parsedError = Object.assign({}, err, errorExt);
+        return [parsedError, undefined];
+      }
+
+      return [err, undefined];
+    });
+}
+
+export default to;
+
+// 获取列表list
+const [err, data] = await to(getList(params));
+if (err) return;
+// 获取单个详情
+const info = await to(getListById(list[0]?.id));
+```
+
+## 127. ios 兼容性
+
+```ts
+无法 input.focus()
+需要在点击事件中进行
+input.addEventListener('click', () => {
+  input.focus();
+});
+
+## 移动端最小1px
+transform: scale(0.5);
+zoom: 0.5;
+```
+
+## 128. 安卓兼容性
+
+```ts
+最小是1px;
+```
