@@ -2117,3 +2117,44 @@ zoom: 0.5;
 onfucus事件 首次 e.target.blur()
 所以第二次再点就不会位置被顶出去了。。视觉效果是点击input出现一个新页面 没有初始化聚焦，再点一下不会错位
 ```
+
+## 130 获取 url 参数
+
+```ts
+Object.fromEntries(new URLSearchParams(window.location.search).entries());
+
+/**
+ * @description: 对象转query串
+ * @param {*} obj
+ * @param {*} noFilterEmpty 默认false 去除空值再拼接字符串
+ * @return {*}
+ */
+export const getQueryString = (obj, noFilterEmpty) => {
+  if (!obj) return '';
+
+  let newObj = { ...obj };
+  if (!noFilterEmpty) {
+    newObj = filterParams(newObj);
+  }
+  return new URLSearchParams(Object.entries(newObj)).toString();
+};
+
+/**
+ * @description: 去除对象中的空值
+ * @param {*} obj
+ * @return {*}
+ */
+export const filterParams = obj => {
+  let newObj = {};
+  for (const key in obj) {
+    //如果对象属性的值不为空，就保存该属性（如果属性的值为0 false，保存该属性。如果属性的值全部是空格，属于为空。）
+    if (
+      (obj[key] === 0 || obj[key] === false || obj[key]) &&
+      obj[key].toString().replace(/(^\s*)|(\s*$)/g, '') !== ''
+    ) {
+      newObj[key] = obj[key];
+    }
+  }
+  return newObj;
+};
+```
