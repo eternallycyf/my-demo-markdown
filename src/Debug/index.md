@@ -2158,3 +2158,40 @@ export const filterParams = obj => {
   return newObj;
 };
 ```
+
+## 131 react jsx 与 hook
+
+```tsx | pure
+import { useEffect } from 'react';
+import React from 'react';
+
+const Child = props => {
+  useEffect(() => {
+    console.log('componentDidMount');
+  }, []);
+  return <></>;
+};
+
+const Father = () => {
+  const [number, setNumber] = React.useState(0);
+
+  const getForm = params => {
+    const Component = params?.custom;
+    // return Component(params); 不会重新渲染
+    return <Component {...params} />; // Child 每次都会重新 componentDidMount
+  };
+
+  return (
+    <>
+      {getForm({
+        custom: () => <Child />,
+      })}
+      <button type="button" onClick={() => setNumber(a => a + 1)}>
+        change
+      </button>
+    </>
+  );
+};
+
+export default Father;
+```
