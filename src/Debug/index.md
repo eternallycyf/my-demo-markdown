@@ -2195,3 +2195,7 @@ const Father = () => {
 
 export default Father;
 ```
+
+## 133 antd form.validateFields 没反应
+
+- 有自定义校验没有 Promise.resolve()
