@@ -2199,3 +2199,9 @@ export default Father;
 ## 133 antd form.validateFields 没反应
 
 - 有自定义校验没有 Promise.resolve()
+
+## 134 antd shouldUpte=true 时 没有获取到最新的表单值
+
+- setTimeout
+
+## 135 0/0 = NaN
