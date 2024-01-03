@@ -2205,3 +2205,9 @@ export default Father;
 - setTimeout
 
 ## 135 0/0 = NaN
+
+## 136 antd table 展开行隐藏展开图标
+
+```ts
+expandIconAsCell={false} expandIconColumnIndex={-1}
+```
