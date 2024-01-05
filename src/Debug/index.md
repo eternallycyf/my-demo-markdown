@@ -2211,3 +2211,17 @@ export default Father;
 ```ts
 expandIconAsCell={false} expandIconColumnIndex={-1}
 ```
+
+## 137 iframe 跨域
+
+```html
+<iframe
+  style="width: 100%; height: 100vh"
+  allowfullscreen="true"
+  webkitallowfullscreen="true"
+  mozallowfullscreen="true"
+  referrerpolicy="same-origin"
+  src="xxx"
+  frameborder="0"
+></iframe>
+```
