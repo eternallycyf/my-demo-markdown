@@ -2228,8 +2228,50 @@ expandIconAsCell={false} expandIconColumnIndex={-1}
 
 ## 138 antd 多选日期
 
-- https://codesandbox.io/p/sandbox/antd-reproduction-template-forked-xd34sq?file=%2FmultipleDatePicker%2Findex.js%3A93%2C23
+- https://codesandbox.io/p/sandbox/antd-reproduction-template-forked-1mos9
 
 ### 139 前端导出 excel
 
 - https://github.com/Zheng-Changfu/table-exporter
+
+### 140 富文本生成目录
+
+```js
+// https://github.com/margox/braft-extensions?tab=readme-ov-file#%E6%A0%87%E9%A2%98%E5%8C%BA%E5%9D%97h1-h6id%E6%A8%A1%E5%9D%97
+const treeifyHeaders = dom => {
+  const stack = [{ tag: 'H0', children: [] }];
+  const headers = 'h1, h2, h3, h4, h5, h6';
+
+  let content = document.createElement('div');
+  content.innerHTML = dom;
+
+  for (const header of content.querySelectorAll(headers)) {
+    const { tagName: tag, textContent: text, id = '' } = header;
+    const node = { tag, text, id };
+    let last = stack.at(-1);
+
+    while (last.tag >= node.tag) {
+      stack.pop();
+      last = stack.at(-1);
+    }
+
+    last.children = last.children || [];
+    last.children.push(node);
+    stack.push(node);
+  }
+
+  return stack[0].children;
+};
+
+const dom = `<h1 id="w-e-element-0">1232</h1><p>123</p><h2 id="a8qob">123123</h2><h3 id="e3t9l">123123</h3><p></p><h1 id="8sbb1">123123</h1><h4 id="1he7e">123123</h4><p>123</p>`;
+
+treeifyHeaders(dom);
+```
+
+### 141 富文本搜索高亮
+
+- https://ims-view.site/components/marker
+
+### 142. antd 表单值没了 显示异常
+
+- form.resetFields(['xxx])
