@@ -2275,3 +2275,46 @@ treeifyHeaders(dom);
 ### 142. antd 表单值没了 显示异常
 
 - form.resetFields(['xxx])
+
+### 143. 原生导出 excel
+
+```ts
+const handleExport = () => {
+  const tableHeader = document.querySelector('.ant-table-thead');
+  const tableBody = document.querySelector('.ant-table-tbody');
+
+  const domString = `
+    <html>
+      <head>
+        <meta charset="utf-8"/>
+        <style>
+          table {
+            border-collapse: collapse;
+          }
+          table, td, th {
+            border: 1px solid #666;
+          }
+        </style>
+      </head>
+      <body>
+        <table>
+         ${tableHeader?.outerHTML}
+          ${tableBody?.outerHTML}
+        </table>
+      </body>
+    </html>
+  `;
+
+  const blob = new Blob([domString], { type: 'application/vnd.ms-excel' });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement('a');
+  a.download = `2023.xls`;
+  a.href = url;
+
+  document.body.append(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+};
+```
