@@ -2318,3 +2318,8 @@ const handleExport = () => {
   URL.revokeObjectURL(url);
 };
 ```
+
+### 144. const let 声明的变量是 script 作用域 不能直接 window.xxx
+
+- 需要 window.xxx = xxx
+- var 定义的变量可以直接 window.xxx
