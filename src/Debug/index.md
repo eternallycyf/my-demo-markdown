@@ -2323,3 +2323,114 @@ const handleExport = () => {
 
 - 需要 window.xxx = xxx
 - var 定义的变量可以直接 window.xxx
+
+### 145 vscode 导出插件
+
+- code --list-extensions
+
+### 146. vue 泛型
+
+- 1.generic
+
+```vue
+// child.vue
+<script setup lang="ts">
+import HelloWorld from './HelloWorld.vue';
+
+interface DataType {
+  name: 'zs' | 'l4';
+  age: number;
+}
+type IColumnsType = {
+  dataIndex: keyof DataType;
+  render?: (text: string, record: DataType) => any;
+  [props: string]: any;
+}[];
+const data: IColumnsType = [
+  {
+    dataIndex: 'age',
+    render(_text, record) {
+      return record.age;
+    },
+  },
+  {
+    dataIndex: 'name',
+    visible: false,
+  },
+];
+const params: { kw: '1' | '2' } = {
+  kw: '1',
+};
+</script>
+
+<template>
+  <div>
+    <HelloWorld :data="data" :params="params" v-slot="{ data, params }">
+      {{ data[0].dataIndex == 'age' ? 1 : 2 }}
+      {{ params?.kw == '1' }}
+    </HelloWorld>
+  </div>
+</template>
+
+<style></style>
+```
+
+```vue
+// father.vue
+<script lang="ts" setup generic="Record extends any[], Params extends any">
+defineProps<{
+  data: Record;
+  params?: Params;
+}>();
+</script>
+
+<template>
+  <div>
+    <table>
+      <!-- Todo:  -->
+    </table>
+    <slot :data="data" :params="params" />
+  </div>
+</template>
+```
+
+- 2.tsx
+
+```tsx | pure
+import { PropType, SlotsType, defineComponent } from 'vue';
+
+type Color = 'red' | 'blue' | 'green';
+type IProps<T extends Color> = T extends 'red'
+  ? {
+      color: T;
+      name?: string;
+    }
+  : {
+      name?: string;
+    };
+
+export const Demo: <T extends Color>(
+  props: IProps<T>,
+) => JSX.Element = defineComponent({
+  name: 'Demo',
+  props: {
+    color: String as PropType<Color>,
+    name: String,
+  },
+  slots: Object as SlotsType<{
+    default: (color: Color) => any;
+  }>,
+  setup: (props, ctx) => {
+    return () => (
+      <>
+        {props.name}
+        {props.color}
+        {ctx.slots.default?.(props.color!)}
+      </>
+    );
+  },
+}) as any;
+
+const a = <Demo />;
+const b = <Demo<'red'> color="red" v-slots={{ color: 'red' }} />;
+```
