@@ -2434,3 +2434,28 @@ export const Demo: <T extends Color>(
 const a = <Demo />;
 const b = <Demo<'red'> color="red" v-slots={{ color: 'red' }} />;
 ```
+
+### 147. commonjs 打包报错 index.d.ts
+
+- 必须有一个 js 文件 新建一个空的 index.d.ts
+- 或者在 tsconfig.json 中配置
+
+```json
+{
+  "compilerOptions": {
+    "allowJs": true
+  }
+}
+```
+
+### 148. node 报错
+
+```js
+ERROR No source file included in tsconfig.json, so even if the `declaration` option is enabled, no `.d.ts` dist files will be generated
+SOLUTION Add source directory to tsconfig.json `include` option, or disable the `declaration` option if you don't need `.d.ts` dist files
+// 新增node依赖
+```
+
+### 149 font-face 不生效
+
+- 一段 `@font-face` 中只能有个一个 src 生效
