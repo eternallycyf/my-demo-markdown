@@ -2459,3 +2459,9 @@ SOLUTION Add source directory to tsconfig.json `include` option, or disable the 
 ### 149 font-face 不生效
 
 - 一段 `@font-face` 中只能有个一个 src 生效
+
+### 150 backTop 无效
+
+- 需要 target 指定滚动的容器
+- visibleHeight 滚动高度
+- children 必须是元素 不能是节点 => <span>返回顶部</span>
