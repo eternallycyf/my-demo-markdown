@@ -2208,8 +2208,10 @@ export default Father;
 
 ## 136 antd table 展开行隐藏展开图标
 
-```ts
-expandIconAsCell={false} expandIconColumnIndex={-1}
+```js
+expandIconAsCell={false}
+expandIconColumnIndex={-1}
+defaultExpandAllRows={true},
 ```
 
 ## 137 iframe 跨域
