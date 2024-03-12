@@ -2468,3 +2468,13 @@ SOLUTION Add source directory to tsconfig.json `include` option, or disable the 
 - visibleHeight 滚动高度
 - children 必须是元素 不能是节点 => <span>返回顶部</span>
 - 需要引入 'antd/dist/antd.css'
+
+### 151 删除 cookie
+
+```tsx
+//github.com/markcellus/cookie-store
+
+// await cookieStore.getAll();
+
+await cookieStore.delete({ name: 'Token', domain: 'baidu.com' });
+```
