@@ -2478,3 +2478,12 @@ SOLUTION Add source directory to tsconfig.json `include` option, or disable the 
 
 await cookieStore.delete({ name: 'Token', domain: 'baidu.com' });
 ```
+
+### 152.defaultExpandAllRows 不生效
+
+```md
+// 异步了
+this.state.data ? <Table defaultExpandAllRows={...} dataSource={this.state.data} /> : null
+
+// key={`table-${this.state.data && this.state.data.length}`}
+```
