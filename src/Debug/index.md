@@ -2487,3 +2487,7 @@ this.state.data ? <Table defaultExpandAllRows={...} dataSource={this.state.data}
 
 // key={`table-${this.state.data && this.state.data.length}`}
 ```
+
+### 153.antd formList 校验规则不生效
+
+- shouldUpdate=false 不会重新渲染
