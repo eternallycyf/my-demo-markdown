@@ -2491,3 +2491,7 @@ this.state.data ? <Table defaultExpandAllRows={...} dataSource={this.state.data}
 ### 153.antd formList 校验规则不生效
 
 - shouldUpdate=false 不会重新渲染
+
+### 154.excel 导出合并单元格
+
+- 不必如此 直接加入 \n 换行即可
