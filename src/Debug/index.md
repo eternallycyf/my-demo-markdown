@@ -2495,3 +2495,7 @@ this.state.data ? <Table defaultExpandAllRows={...} dataSource={this.state.data}
 ### 154.excel 导出合并单元格
 
 - 不必如此 直接加入 \n 换行即可
+
+### 155.form.List 卡顿
+
+- form.setFields({name:['list',index,weight],value:4})
