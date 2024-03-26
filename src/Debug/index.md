@@ -2499,3 +2499,33 @@ this.state.data ? <Table defaultExpandAllRows={...} dataSource={this.state.data}
 ### 155.form.List 卡顿
 
 - form.setFields({name:['list',index,weight],value:4})
+
+### 156. 一个泛型
+
+```ts
+interface IBaseParams {
+  page: number;
+  limit: number;
+}
+
+interface Params<T, U> {
+  params: T;
+  searchParams: U & T;
+  request?: (...args: (U & T)[]) => U & T;
+}
+
+const getData = <T, U extends IBaseParams = IBaseParams>(
+  props: Params<T, U>,
+): U & T => {
+  const fetchParams: Params<T, U>['searchParams'] = {
+    ...props.params,
+    ...props.searchParams,
+  };
+  return props.request(fetchParams);
+};
+
+const data = getData({
+  params: { bbb: true },
+  searchParams: { limit: 1, page: 1, bbb: true },
+});
+```
