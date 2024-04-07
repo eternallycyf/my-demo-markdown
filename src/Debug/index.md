@@ -1815,12 +1815,12 @@ ssh-copy-id root@服务器地址
 
   .card {
     display: flex;
-    overflow-y: auto;
     flex-direction: column;
+    overflow-y: auto;
     height: 100%;
 
     .header {
-      flex: none;
+      flex: unset;
     }
 
     .content {
